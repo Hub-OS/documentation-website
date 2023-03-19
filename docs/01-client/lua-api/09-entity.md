@@ -18,11 +18,13 @@ Automatically set for [Players](/docs/client/lua-api/player).
 
 ### `entity:get_element()`
 
-Returns the [Element](/docs/client/lua-api/element) for the entity.
+Returns the [Element](/docs/client/lua-api/spell#element) for the entity.
 
 ### `entity:set_element(element)`
 
-Sets the [Element](/docs/client/lua-api/element) for the entity, affects super effectiveness of attacks.
+- `element`: [Element](/docs/client/lua-api/spell#element)
+
+Sets the Element for the entity, affects super effectiveness of incoming attacks.
 
 Automatically set for [Players](/docs/client/lua-api/player).
 
@@ -40,11 +42,16 @@ Returns the facing [Direction](/docs/client/lua-api/direction) of the entity, us
 
 ### `entity:get_team()`
 
-Returns the [Team](/docs/client/lua-api/team) of the entity
+Returns the [Team](/docs/client/lua-api/entity#entityset_teamteam) of the entity
 
 ### `entity:set_team(team)`
 
-Modifies the [Team](/docs/client/lua-api/team) of the entity. If the entity is a [Players](/docs/client/lua-api/player) the perspective may flip.
+- `team`
+  - `Team.Other`
+  - `Team.Red`
+  - `Team.Blue`
+
+Modifies which team the entity is on. If the entity is a [Player](/docs/client/lua-api/player) the perspective may flip.
 
 ### `entity:is_team(team)`
 

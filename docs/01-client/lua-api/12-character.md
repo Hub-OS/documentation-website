@@ -11,7 +11,7 @@ Returns the entity passed in if the entity is a character or player, otherwise r
 ### `Battle.Character.from_package(package_id, team, rank)`
 
 - `package_id`: string, the package id of the character
-- `team`: [Team](/docs/client/lua-api/team)
+- `team`: [Team](/docs/client/lua-api/entity#entityset_teamteam)
 - `rank`
   - `Rank.V1`
   - `Rank.V2`

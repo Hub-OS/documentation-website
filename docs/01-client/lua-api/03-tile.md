@@ -60,6 +60,14 @@ Returns true if there's any reservations for this tile.
 
 Adds a reservation for this tile by the entity id.
 
+### `tile:get_team()`
+
+Returns [Team](/docs/client/lua-api/entity#entityset_teamteam)
+
+### `tile:set_team(team)`
+
+- `team`: [Team](/docs/client/lua-api/entity#entityset_teamteam)
+
 ### `tile:get_facing()`
 
 Returns a [Direction](/docs/client/lua-api/direction)

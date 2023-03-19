@@ -6,7 +6,7 @@ Spell functions are accessible to all entities, but will throw if the entity is 
 
 ### `Battle.Spell.new(team?)`
 
-- `team`: [Team](/docs/client/lua-api/team)
+- `team`: [Team](/docs/client/lua-api/entity#entityset_teamteam)
 
 Returns a new [Entity](/docs/client/lua-api/entity) instance.
 
@@ -60,8 +60,8 @@ Called after processing damage on the entity, if damage isn't blocked by [Defens
   - `Hit.Blind`
   - `Hit.Confuse`
   - `Hit.PierceGround`
-- `element`: [Element](/docs/client/lua-api/element)
-- `secondary_element`: [Element](/docs/client/lua-api/element)
+- `element`: [Element](/docs/client/lua-api/spell#element)
+- `secondary_element`: [Element](/docs/client/lua-api/spell#element)
 - `context`: The value obtained by [entity:get_context()](/docs/client/lua-api/entity#entityget_context)
 - `drag`: [Drag](#drag)
 
@@ -70,6 +70,20 @@ Returns a new HitProps instance.
 ### `HitProps.new(damage, flags, element, context?, drag)`
 
 Returns a new HitProps instance.
+
+## Element
+
+- `Element.None`
+- `Element.Fire`
+- `Element.Aqua`
+- `Element.Elec`
+- `Element.Wood`
+- `Element.Sword`
+- `Element.Wind`
+- `Element.Cursor`
+- `Element.Summon`
+- `Element.Plus`
+- `Element.Break`
 
 ## Drag
 
@@ -91,7 +105,7 @@ Returns a new [Entity](/docs/client/lua-api/entity) instance.
 
 ## SharedHitbox
 
-Adopts the parent spell's [HitProps](#hitprops) and [Team](/docs/client/lua-api/team), and attacks every frame until deleted.
+Adopts the parent spell's [HitProps](#hitprops) and [Team](/docs/client/lua-api/entity#entityset_teamteam), and attacks every frame until deleted.
 
 The SharedHitbox's `on_collision_func` and `on_attack_func` calls the parent spell's `on_collision_func` and `on_attack_func`.
 

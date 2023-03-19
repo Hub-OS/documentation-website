@@ -4,7 +4,7 @@ Instance of [Entity](/docs/client/lua-api/entity). All [Spell](/docs/client/lua-
 
 ### `Battle.Obstacle.new(team?)`
 
-- `team`: [Team](/docs/client/lua-api/team)
+- `team`: [Team](/docs/client/lua-api/entity#entityset_teamteam)
 
 Returns a new [Entity](/docs/client/lua-api/entity) instance.
 
