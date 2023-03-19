@@ -14,7 +14,7 @@ Returns the displayed name for the entity.
 
 Sets the displayed name for the entity.
 
-Automatically set for player entities.
+Automatically set for [Players](/docs/client/lua-api/player).
 
 ### `entity:get_element()`
 
@@ -24,7 +24,7 @@ Returns the [Element](/docs/client/lua-api/element) for the entity.
 
 Sets the [Element](/docs/client/lua-api/element) for the entity, affects super effectiveness of attacks.
 
-Automatically set for player entities.
+Automatically set for [Players](/docs/client/lua-api/player).
 
 ### `entity:get_facing()`
 
@@ -44,7 +44,7 @@ Returns the [Team](/docs/client/lua-api/team) of the entity
 
 ### `entity:set_team(team)`
 
-Modifies the [Team](/docs/client/lua-api/team) of the entity. If the entity is a player the perspective may flip.
+Modifies the [Team](/docs/client/lua-api/team) of the entity. If the entity is a [Players](/docs/client/lua-api/player) the perspective may flip.
 
 ### `entity:is_team(team)`
 
@@ -202,6 +202,8 @@ Same as `entity:get_animation():load(path)`
 
 ### `entity:get_context()`
 
+Returns a value that can be used to decide if an attack can counter an opponent, and to resolve the owner of an attack.
+
 ### `entity:card_action_event(card_action)`
 
 ### `entity:can_move_to(tile)`
@@ -280,3 +282,33 @@ Calls `entity:erase()` at the end of the animation.
 
 - `strength` affects how aggressively the camera shakes
 - `duration` in seconds
+
+### `entity.on_spawn_func = function(self)`
+
+Called when the entity is spawned by [field:spawn()](/docs/client/lua-api/field/#fieldspawnentity-tile)
+
+### `entity.on_update_func = function(self)`
+
+Called during battle, when not frozen from time freeze or blocked by statuses.
+
+### `entity.on_delete_func = function(self)`
+
+Called when health is 0 or `entity:delete()` is called. `entity:erase()` must be called to truly delete the entity.
+
+This function is pre-set for all entities.
+
+### `entity.on_battle_start_func = function(self)`
+
+Called when battle starts for the first time, or when the entity is spawned if battle has already started.
+
+### `entity.on_battle_end_func = function(self)`
+
+Called when the battle has completed (win or loss).
+
+Not implemented.
+
+### `entity.can_move_to_func = function(self, tile)`
+
+A bool is expected as a return value.
+
+This function is pre-set for all entities.

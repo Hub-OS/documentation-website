@@ -84,9 +84,9 @@ Sets the facing direction used to set the initial direction of spawned entities,
 
 Returns a tile `count` many tiles in `direction`'s direction.
 
-### `tile:attack_entities(entity)`
+### `tile:attack_entities(spell)`
 
-Queues an attack to occur on this tile by this [Entity](/docs/client/lua-api/entity).
+Queues an attack to occur on this tile by this [Spell](/docs/client/lua-api/spell).
 
 ### `tile:contains_entity(entity)`
 
@@ -126,7 +126,7 @@ Only "hittable" [Obstacles](/docs/client/lua-api/obstacle) will be passed to the
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Players](/docs/client/lua-api/players) will be passed to the callback.
+Only "hittable" [Players](/docs/client/lua-api/player) will be passed to the callback.
 
 ### `tile:find_spells(function(entity))`
 
