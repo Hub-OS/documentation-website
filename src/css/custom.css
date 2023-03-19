@@ -59,21 +59,21 @@
 }
 
 /* theme toggle */
-.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module:hover {
+[class*="toggleButton_"]:hover {
   background: #fff4 !important;
 }
 
 /* search */
-.searchClearButton_node_modules-\@easyops-cn-docusaurus-search-local-dist-client-client-theme-SearchBar-SearchBar-module {
+[class*="searchClearButton_"] {
   color: black;
 }
 
-.dropdownMenu_node_modules-\@easyops-cn-docusaurus-search-local-dist-client-client-theme-SearchBar-SearchBar-module {
+[class*="dropdownMenu_"] {
   color: #444950;
 }
 
 /* content and sidebar */
-.docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+[class*="docPage_"] {
   flex: 1;
 }
 
