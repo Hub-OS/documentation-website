@@ -1,0 +1,132 @@
+# Animation
+
+### `Engine.Animation.new(path?)`
+
+Constructs a new Animation instance.
+
+### `animation:copy_from(animation)`
+
+Copies states and settings from the passed animation. Progress is reset.
+
+Internally calls `animation:refresh()` unless the animation was created through `Engine.Animation.new()`
+
+This function will call and clear interrupt callbacks.
+
+### `animation:refresh(sprite)`
+
+Applies the current animation state to the sprite, updating the origin and bounds of the sprite.
+
+### `animation:load(path)`
+
+Loads new states, clears the old states.
+
+Will attempt to retain settings and progress if the new animation has the same state as the active state.
+
+If the animation has not completed and retaining state fails, this function will call and clear interrupt callbacks.
+
+### `animation:update()`
+
+Advances animation progress by 1f or ~0.1666s. Ignored if the animation is paused.
+
+Internally calls `animation:refresh()` unless the animation was created through `Engine.Animation.new()`
+
+Automatically called unless the animation was created through `Engine.Animation.new()`
+
+### `animation:pause()`
+
+Causes `animation:update()` calls (including automatic calls) to be ignored.
+
+### `animation:resume()`
+
+Unpauses the animation.
+
+### `animation:has_state(state)`
+
+Returns true if the state exists.
+
+### `animation:get_state()`
+
+Returns the name of the active state.
+
+### `animation:set_state(state)`
+
+Changes the active state, resets animation progress and settings.
+
+This function will call and clear interrupt callbacks.
+
+Internally calls `animation:refresh()` unless the animation was created through `Engine.Animation.new()`
+
+### `animation:derive_state(state, frame_data)`
+
+- `frame_data` a list of frame index and duration pairs.
+  - Frame index starts at 1
+  - Duration is in game frames (60 per second).
+
+Returns a state name for the derived state.
+
+```lua
+-- modified example from the built-in buster.lua file
+
+local frame_data = { { 1, 1 }, { 2, 2 }, { 3, 2 }, { 1, 1 } }
+
+card_action:override_animation_frames(frame_data)
+
+-- setup buster attachment
+local buster_attachment = card_action:add_attachment("BUSTER")
+
+local buster_sprite = buster_attachment:sprite()
+buster_sprite:set_texture(user:get_texture())
+buster_sprite:set_layer(-2)
+buster_sprite:enable_parent_shader()
+
+local buster_animation = buster_attachment:get_animation()
+buster_animation:copy_from(user:get_animation())
+
+-- relevant
+local derived_state = buster_animation:derive_state("BUSTER", frame_data)
+buster_animation:set_state(derived_state)
+```
+
+### `animation:has_point(name)`
+
+Returns true if the current animation frame has a point with this name.
+
+### `animation:get_point(name)`
+
+Returns a table with `x` and `y` keys.
+
+### `animation:set_playback(playback)`
+
+- `playback`:
+  - `Playback.Once` stops when the animation is completed.
+  - `Playback.Loop` restarts the animation when completed.
+  - `Playback.Bounce` when the animation completes playing forward it will play again reversed and cycle.
+  - `Playback.Reverse` same as `Playback.Once` but reversed.
+    - Currently does not start the animation on the last frame.
+
+```lua
+animation:set_state("example")
+animation:set_playback(Playback.Loop)
+```
+
+### `animation:on_complete(function())`
+
+Adds a function to be called when the animation "completes".
+
+Completion condition differs depending on playback:
+
+- `Playback.Once` when the last frame completes.
+- `Playback.Loop` when the last frame completes.
+- `Playback.Bounce` when the first frame completes when reversed.
+- `Playback.Reverse` when the first frame completes.
+
+### `animation:on_interrupt(function())`
+
+Adds a function to be called when the state changes.
+
+### `animation:on_frame(frame_index, function(), do_once?)`
+
+- `frame_index` starts at 1
+- `do_once` when true, the callback is deleted.
+
+Calls the callback when the frame changes during an update. If the `frame_index` is 1 and the state was just set, it will be called next update.

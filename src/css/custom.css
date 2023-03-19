@@ -1,0 +1,111 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  /* --ifm-color-primary: #52ff39; */
+  --ifm-color-primary: #1088e8;
+  --ifm-color-primary-dark: #52ff39;
+  --ifm-color-primary-darker: #52ff39;
+  --ifm-color-primary-darkest: #52ff39;
+  --ifm-color-primary-light: #52ff39;
+  --ifm-color-primary-lighter: #52ff39;
+  --ifm-color-primary-lightest: #52ff39;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --doc-sidebar-width: 250px !important;
+  --ifm-navbar-search-input-background-color: white;
+  --ifm-navbar-search-input-color: #444950;
+  --ifm-navbar-search-input-placeholder-color: grey;
+  --ifm-pagination-nav-color-hover: #1088e8;
+  --ifm-breadcrumb-color-active: #1088e8;
+  --ifm-link-color: #1088e8;
+  --ifm-menu-color-active: #52ff39;
+  /* --ifm-navbar-link-hover-color: #52ff39; */
+  --ifm-navbar-link-hover-color: white;
+  --ifm-menu-color: #52ff39;
+  --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%)
+    hue-rotate(223deg) brightness(104%) contrast(98%);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  /* --ifm-color-primary: #52ff39; */
+  --ifm-color-primary: #40c0e0;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-navbar-search-input-background-color: white;
+  --ifm-navbar-search-input-color: #444950;
+  --ifm-navbar-search-input-placeholder-color: grey;
+}
+
+/* navbar */
+.navbar {
+  background-color: #1088e8;
+}
+
+.navbar,
+.navbar__brand,
+.navbar__link {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar__link--active,
+.navbar__link:hover {
+  text-decoration: underline;
+}
+
+/* theme toggle */
+.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module:hover {
+  background: #fff4 !important;
+}
+
+/* search */
+.searchClearButton_node_modules-\@easyops-cn-docusaurus-search-local-dist-client-client-theme-SearchBar-SearchBar-module {
+  color: black;
+}
+
+.dropdownMenu_node_modules-\@easyops-cn-docusaurus-search-local-dist-client-client-theme-SearchBar-SearchBar-module {
+  color: #444950;
+}
+
+/* content and sidebar */
+.docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+  flex: 1;
+}
+
+/* sidebar */
+
+.menu {
+  background-color: #105068;
+}
+
+.menu__link,
+.menu__caret {
+  color: white;
+}
+
+/* markdown */
+
+.markdown > h1 {
+  font-size: 2rem;
+}
+
+.markdown > h2,
+.markdown > h3 {
+  margin-top: 0;
+  padding-top: 1.25rem;
+}
+
+.markdown > h2 {
+  border-top: 1px solid #888;
+  font-size: 1.5rem;
+}
+
+.markdown > h3 {
+  border-top: 1px solid #8885;
+  font-size: 1.2rem;
+}
