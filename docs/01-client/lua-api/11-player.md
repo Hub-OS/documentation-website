@@ -174,6 +174,10 @@ Return nil to fallback to the player's implementation.
 
 ## Augment
 
+### `augment:get_id()`
+
+Returns the package id of the augment.
+
 ### `augment:get_level()`
 
 Returns an integer.
