@@ -34,7 +34,7 @@ Called when the spell hits an entity and isn't blocked by [intangibility](/docs/
 
 ### `spell.on_attack_func = function(self, entity)`
 
-Called after processing damage on the entity, if damage isn't blocked by [DefenseRules](/docs/client/lua-api/defense#defenserule).
+Called after processing damage on the entity, if damage isn't blocked by [DefenseRules](/docs/client/lua-api/living#defenserule).
 
 ## HitProps
 

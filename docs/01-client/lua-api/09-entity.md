@@ -205,7 +205,7 @@ Same as `entity:get_animation():load(path)`
   - `Lifetimes.Battle` after every entity has updated and battle is active as long as time is not frozen.
   - `Lifetimes.Scene` near the end of every tick.
 
-  Returns a [Component](/docs/client/lua-api/component)
+  Returns a [Component](#component)
 
 ### `entity:get_context()`
 
@@ -319,3 +319,25 @@ Not implemented.
 A bool is expected as a return value.
 
 This function is pre-set for all entities.
+
+## Component
+
+See [entity:create_component()](/docs/client/lua-api/entity#entitycreate_componentlifetime)
+
+### `component:get_owner()`
+
+Returns an [Entity](/docs/client/lua-api/entity)
+
+### `component:eject()`
+
+Removes the component from the owner.
+
+### `component.on_init_func = function(self)`
+
+Called when the entity is spawned, or immediately if the entity has already spawned.
+
+### `component.on_update_func = function(self)`
+
+Called when the lifetime is relevant.
+
+See [entity:create_component()](/docs/client/lua-api/entity#entitycreate_componentlifetime)
