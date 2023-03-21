@@ -28,7 +28,7 @@ Plays a sound with the specified priority.
 
 Plays audio stored at `path` as music. Loops by default.
 
-### `Engine.get_turn_gauge_value()`
+### `Engine.get_turn_gauge_progress()`
 
 Returns the turn gauge's progress as a value between 0 and 1.
 

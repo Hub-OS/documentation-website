@@ -60,9 +60,18 @@ Only [Spells](/docs/client/lua-api/spell) will be passed to the callback.
 
 Returns a list of [Tiles](#tile) for any tile the callback returned true for.
 
+### `field:shake(strength, duration)`
+
+- `strength` number, affects how aggressively the field shakes
+- `duration` number, how many game frames the effect should last
+
 ### `field:notify_on_delete(target_id, observer_id, function(entity))`
 
+Deprecated. Use [entity:on_delete()](/docs/client/lua-api/entity#entityon_deletefunctionentity) instead.
+
 ### `field:callback_on_delete(id, function(entity))`
+
+Deprecated. Use [entity:on_delete()](/docs/client/lua-api/entity#entityon_deletefunctionentity) instead.
 
 ## Tile
 
@@ -93,7 +102,7 @@ Returns the tile's TileState.
 - `tile_state`
   - `TileState.Hidden`
   - `TileState.Normal`
-  - `TileState.Hole`
+  - `TileState.PermaHole`
   - `TileState.Cracked`
   - `TileState.Broken`
   - `TileState.Ice`
@@ -122,9 +131,21 @@ Returns true if the tile is not a hole. (`TileState.Broken`, `TileState.Hidden`,
 
 Returns true if there's any reservations for this tile.
 
-### `tile:reserve_entity_by_id(entity_id)`
+### `tile:reserve_for(entity)`
 
-Adds a reservation for this tile by the entity id.
+Adds a reservation of this tile for this [Entity](/docs/client/lua-api/entity).
+
+### `tile:remove_reservation_for(entity)`
+
+Removes a reservation for this tile for this [Entity](/docs/client/lua-api/entity).
+
+### `tile:reserve_for_id(entity_id)`
+
+Adds a reservation of this tile for this [Entity](/docs/client/lua-api/entity) using an entity id.
+
+### `tile:remove_reservation_for_id(entity_id)`
+
+Removes a reservation of this tile for this [Entity](/docs/client/lua-api/entity) using an entity id.
 
 ### `tile:get_team()`
 

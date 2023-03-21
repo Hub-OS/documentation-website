@@ -14,7 +14,7 @@ Returns a new [Entity](/docs/client/lua-api/entity) instance.
 
 Returns the entity passed in if the entity is a spell, otherwise returns `nil`.
 
-### `spell:highlight_tile(mode)`
+### `spell:set_tile_highlight(mode)`
 
 Sets the highlight mode for tiles the spell passes over.
 

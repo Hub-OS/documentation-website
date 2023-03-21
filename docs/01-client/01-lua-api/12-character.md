@@ -30,7 +30,7 @@ Returns the entity passed in if the entity is a character or player, otherwise r
   - `Rank.Omega`
   - `Rank.Sigma`
 
-Returns the entity passed in if the entity is a character or player, otherwise returns `nil`.
+Returns a new character entity, throws if the package doesn't exist.
 
 ### `Character:get_rank()`
 

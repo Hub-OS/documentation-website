@@ -8,11 +8,11 @@ Constructs a new Animation instance.
 
 Copies states and settings from the passed animation. Progress is reset.
 
-Internally calls `animation:refresh()` unless the animation was created through `Engine.Animation.new()`
+Internally calls `animation:apply()` unless the animation was created through `Engine.Animation.new()`
 
 This function will call and clear interrupt callbacks.
 
-### `animation:refresh(sprite)`
+### `animation:apply(sprite)`
 
 Applies the current animation state to the sprite, updating the origin and bounds of the sprite.
 
@@ -28,7 +28,7 @@ If the animation has not completed and retaining state fails, this function will
 
 Advances animation progress by 1f or ~0.1666s. Ignored if the animation is paused.
 
-Internally calls `animation:refresh()` unless the animation was created through `Engine.Animation.new()`
+Internally calls `animation:apply()` unless the animation was created through `Engine.Animation.new()`
 
 Automatically called unless the animation was created through `Engine.Animation.new()`
 
@@ -54,7 +54,7 @@ Changes the active state, resets animation progress and settings.
 
 This function will call and clear interrupt callbacks.
 
-Internally calls `animation:refresh()` unless the animation was created through `Engine.Animation.new()`
+Internally calls `animation:apply()` unless the animation was created through `Engine.Animation.new()`
 
 ### `animation:derive_state(state, frame_data)`
 
@@ -69,15 +69,15 @@ Returns a state name for the derived state.
 
 local frame_data = { { 1, 1 }, { 2, 2 }, { 3, 2 }, { 1, 1 } }
 
-card_action:override_animation_frames(frame_data)
+action:override_animation_frames(frame_data)
 
 -- setup buster attachment
-local buster_attachment = card_action:add_attachment("BUSTER")
+local buster_attachment = action:add_attachment("BUSTER")
 
 local buster_sprite = buster_attachment:sprite()
 buster_sprite:set_texture(user:get_texture())
 buster_sprite:set_layer(-2)
-buster_sprite:enable_parent_shader()
+buster_sprite:use_root_shader()
 
 local buster_animation = buster_attachment:get_animation()
 buster_animation:copy_from(user:get_animation())

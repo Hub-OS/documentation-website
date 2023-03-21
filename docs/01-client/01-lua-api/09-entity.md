@@ -133,7 +133,7 @@ Same as `entity:sprite():get_texture()`
 
 Same as `entity:sprite():set_texture(path)`
 
-### `entity:get_current_palette()`
+### `entity:get_palette()`
 
 Same as `entity:sprite():get_palette()`
 
@@ -147,7 +147,7 @@ Same as `entity:sprite():hide()`
 
 ### `entity:reveal()`
 
-Same as `entity:sprite():show()`
+Same as `entity:sprite():reveal()`
 
 ### `entity:get_color()`
 
@@ -193,7 +193,7 @@ Sets whether the shadow is visible or not.
 
 Returns an [Animation](/docs/client/lua-api/animation), can be used to modify the entity's animation data.
 
-### `entity:set_animation(path)`
+### `entity:load_animation(path)`
 
 Same as `entity:get_animation():load(path)`
 
@@ -211,7 +211,9 @@ Same as `entity:get_animation():load(path)`
 
 Returns a value that can be used to decide if an attack can counter an opponent, and to resolve the owner of an attack.
 
-### `entity:card_action_event(card_action)`
+### `entity:queue_action(action)`
+
+- `action`: [Action](/docs/client/lua-api/action)
 
 ### `entity:can_move_to(tile)`
 
@@ -235,7 +237,9 @@ Returns true if the entity can move to the target tile.
 - `duration` is in game frames.
 - callback is called when the movement begins processing
 
-### `entity:raw_move_event(move_event)`
+### `entity:queue_movement(movement)`
+
+- `movement`: [Movement](#movement)
 
 ### `entity:is_moving()`
 
@@ -285,10 +289,9 @@ Calls `entity:delete()`, then plays an animation.
 
 Calls `entity:erase()` at the end of the animation.
 
-### `entity:shake_camera(strength, duration)`
+### `entity:on_delete(function(entity))`
 
-- `strength` affects how aggressively the camera shakes
-- `duration` in seconds
+Adds a callback listener for entity deletion.
 
 ### `entity.on_spawn_func = function(self)`
 
@@ -341,3 +344,51 @@ Called when the entity is spawned, or immediately if the entity has already spaw
 Called when the lifetime is relevant.
 
 See [entity:create_component()](/docs/client/lua-api/entity#entitycreate_componentlifetime)
+
+## Movement
+
+### `Battle.Movement.new()`
+
+Returns a new Movement value for passing to [entity:queue_movement](#entityqueue_movementmovement)
+
+### `movement.elapsed`
+
+The elapsed time in game frames since the movement began.
+
+### `movement.delta`
+
+The duration in game frames for the movement animation to play.
+
+If the delta is greater than zero the entity will slide. If [height](#movementheight) isn't 0, the entity will jump instead.
+
+### `movement.delay`
+
+The required duration in game frames for the movement animation to start.
+
+### `movement.endlag`
+
+The duration in game frames for the movement to drop after delta + delay.
+
+### `movement.height`
+
+The distance above the ground for the entity to jump.
+
+### `movement:get_animation_progress()`
+
+Returns the movement's animation progress as a value between 0 and 1.
+
+### `movement:is_sliding()`
+
+Returns true if the movement is processed as a slide.
+
+### `movement:is_jumping()`
+
+Returns true if the movement is processed as a jump.
+
+### `movement:is_teleporting()`
+
+Returns true if the movement is processed as a teleport.
+
+### `movement.on_begin_func = function()`
+
+Called when the movement begins processing. If the movement is cancelled before executing it won't be called.

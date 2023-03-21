@@ -116,15 +116,15 @@ Should return the amount of time in game frames, the `Shoot` button should be he
 
 ### `player.normal_attack_func = function(self)`
 
-Should return a [CardAction](/docs/client/lua-api/card-action)
+Should return a [Action](/docs/client/lua-api/action)
 
 ### `player.charged_attack_func = function(self)`
 
-Should return a [CardAction](/docs/client/lua-api/card-action)
+Should return a [Action](/docs/client/lua-api/action)
 
 ### `player.special_attack_func = function(self)`
 
-Should return a [CardAction](/docs/client/lua-api/card-action)
+Should return a [Action](/docs/client/lua-api/action)
 
 ## PlayerForm
 

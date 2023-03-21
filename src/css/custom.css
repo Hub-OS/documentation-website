@@ -6,6 +6,8 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-navbar-height: 52px;
+  --ifm-navbar-padding-vertical: 0;
   /* --ifm-color-primary: #52ff39; */
   --ifm-color-primary: #1088e8;
   --ifm-color-primary-dark: #52ff39;

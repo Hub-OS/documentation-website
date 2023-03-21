@@ -28,15 +28,19 @@ Palettes are 256x1 images. Colors on the sprite's texture will be remapped by ta
 
 Use values returned from [Engine.load_texture()](/docs/client/lua-api/engine#engineload_texturepath) for better performance.
 
-### `sprite:show()`
+### `sprite:is_visible()`
 
-Makes the sprite visible if it was previously hidden with `sprite:hide()`
+Returns true if the sprite is visible.
 
-Sprites are visible by default.
+### `sprite:set_visible(visible)`
+
+### `sprite:reveal()`
+
+Same as `sprite:set_visible(true)`
 
 ### `sprite:hide()`
 
-Hides the sprite.
+Same as `sprite:set_visible(false)`
 
 ### `sprite:get_layer()`
 
@@ -122,7 +126,7 @@ The color mode will be reset to `ColorMode.Additive` at the start of the next fr
 
 Prevents player team from flipping the sprite.
 
-### `sprite:enable_parent_shader(enable?)`
+### `sprite:use_root_shader(enable?)`
 
 Temporarily adopts the color, color mode, and palette of the root sprite during render.
 

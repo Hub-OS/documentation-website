@@ -78,7 +78,7 @@ See [living:add_defense_rule()](/docs/client/lua-api/living#livingadd_defense_ru
 - `priority`
   - `DefensePriority.Barrier`
   - `DefensePriority.Body`
-  - `DefensePriority.CardAction`
+  - `DefensePriority.Action`
   - `DefensePriority.Trap`
   - `DefensePriority.Last`
 - `defense_order`
