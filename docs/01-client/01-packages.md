@@ -144,6 +144,15 @@ characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 ```
 
+Expects an entry.lua file. See [Action](/client/lua-api/action)
+
+```lua
+function card_init(entity, card_properties)
+  local action = Battle.Action.new(entity, "PLAYER_IDLE")
+  return action
+end
+```
+
 ## Libraries
 
 Expects a package.toml file
