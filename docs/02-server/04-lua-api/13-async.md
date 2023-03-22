@@ -157,7 +157,7 @@ Returns a promise that resolves to 0-2 for option a-c, or `nil` for disconnected
 
 ### `Async.prompt_player(player_id, character_limit?, default_text?)`
 
-Returns a promise that resolves to `string`, or nil for disconnected.
+Returns a promise that resolves to `string`, or `nil` for disconnected.
 
 ### `Async.initiate_encounter(player_id, package_path, data?)`
 

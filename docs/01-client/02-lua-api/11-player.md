@@ -52,7 +52,7 @@ Can be used up to five times before throwing.
 
 ### `player:get_augment(package_id)`
 
-Returns an [Augment](#augment) or nil if the player doesn't have an augment with that `package_id`.
+Returns an [Augment](#augment) or `nil` if the player doesn't have an augment with that `package_id`.
 
 ### `player:get_augments()`
 
@@ -152,25 +152,31 @@ Called after [player.on_update_func](#playernormal_attack_func--functionself) wh
 
 Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself) when this form is active.
 
-Return nil to fallback to the player's implementation.
+A numer representing the minimum Shoot button held time in game frames is expected as a return value.
 
 ### `player_form.normal_attack_func = function(self, player)`
 
 Overrides [player.normal_attack_func](#playernormal_attack_func--functionself) when this form is active.
 
-Return nil to fallback to the player's implementation.
+An [Action](/client/lua-api/action) is expected as a return value.
+
+Return `nil` to fallback to the player's implementation.
 
 ### `player_form.charged_attack_func = function(self, player)`
 
 Overrides [player.charged_attack_func](#playercharged_attack_func--functionself) when this form is active.
 
-Return nil to fallback to the player's implementation.
+An [Action](/client/lua-api/action) is expected as a return value.
+
+Return `nil` to fallback to the player's implementation.
 
 ### `player_form.special_attack_func = function(self, player)`
 
 Overrides [player.special_attack_func](#playerspecial_attack_func--functionself) when this form is active.
 
-Return nil to fallback to the player's implementation.
+An [Action](/client/lua-api/action) is expected as a return value.
+
+Return `nil` to fallback to the player's implementation.
 
 ## Augment
 
@@ -190,23 +196,31 @@ Returns an [Entity](/client/lua-api/entity)
 
 Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself) also overrides the active form's override.
 
+A numer representing the minimum Shoot button held time in game frames is expected as a return value.
+
 ### `augment.normal_attack_func = function(self)`
 
 Overrides [player.normal_attack_func](#playernormal_attack_func--functionself) also overrides the active form's override.
 
-Return nil to fallback to the player's implementation.
+An [Action](/client/lua-api/action) is expected as a return value.
+
+Return `nil` to fallback to the next implementation (augment, form, or player).
 
 ### `augment.charged_attack_func = function(self)`
 
 Overrides [player.charged_attack_func](#playercharged_attack_func--functionself) also overrides the active form's override.
 
-Return nil to fallback to the player's implementation.
+An [Action](/client/lua-api/action) is expected as a return value.
+
+Return `nil` to fallback to the next implementation (augment, form, or player).
 
 ### `augment.special_attack_func = function(self)`
 
 Overrides [player.special_attack_func](#playerspecial_attack_func--functionself) also overrides the active form's override.
 
-Return nil to fallback to the player's implementation.
+An [Action](/client/lua-api/action) is expected as a return value.
+
+Return `nil` to fallback to the next implementation (augment, form, or player).
 
 ### `augment.on_delete_func = function(self)`
 
