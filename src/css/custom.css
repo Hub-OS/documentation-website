@@ -43,8 +43,15 @@
   --ifm-navbar-search-input-placeholder-color: grey;
 }
 
+:root,
+html[data-theme="dark"] {
+  /* affects sidebar close button */
+  --ifm-color-emphasis-600: white;
+}
+
 /* navbar */
-.navbar {
+.navbar,
+.navbar-sidebar__brand {
   background-color: #1088e8;
 }
 
