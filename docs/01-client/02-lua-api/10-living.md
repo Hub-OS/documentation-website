@@ -139,7 +139,7 @@ The default value is `Hit.PierceInvis`
 
 ### `intangible_rule.element_weaknesses`
 
-A list of [Elements](/client/lua-api/element)
+A list of [Elements](/client/lua-api/spell#element)
 
 The default value is `{}`
 
