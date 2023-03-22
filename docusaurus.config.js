@@ -80,7 +80,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "client/lua-api/engine",
+            docId: "client/packages",
             position: "left",
             label: "Client",
           },
@@ -100,7 +100,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["lua"],
+        additionalLanguages: ["lua", "toml"],
       },
     }),
 
