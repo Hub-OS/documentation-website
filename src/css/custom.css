@@ -25,10 +25,8 @@
   --ifm-pagination-nav-color-hover: #1088e8;
   --ifm-breadcrumb-color-active: #1088e8;
   --ifm-link-color: #1088e8;
-  --ifm-menu-color-active: #52ff39;
-  /* --ifm-navbar-link-hover-color: #52ff39; */
-  --ifm-navbar-link-hover-color: white;
-  --ifm-menu-color: #52ff39;
+  --ifm-menu-color-active: #00daff;
+  --ifm-menu-color: white;
   --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%)
     hue-rotate(223deg) brightness(104%) contrast(98%);
 }
@@ -90,11 +88,6 @@ html[data-theme="dark"] {
 
 .menu {
   background-color: #105068;
-}
-
-.menu__link,
-.menu__caret {
-  color: white;
 }
 
 /* markdown */
