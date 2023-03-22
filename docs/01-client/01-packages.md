@@ -22,10 +22,10 @@ colors = ["pink", "red", "blue"]
 flat = false # optional, defaults to false
 # list of lists, 5x5, filled with 0 or 1s to represent the shape
 shape = [
-  [0, 0, 0, 0, 0]
-  [0, 0, 1, 0, 0]
-  [0, 0, 1, 0, 0]
-  [0, 0, 0, 0, 0]
+  [0, 0, 0, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0]
 ]
 # list of package ids
