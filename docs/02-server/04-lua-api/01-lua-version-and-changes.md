@@ -9,4 +9,4 @@ Small changes to the built-in Lua functions were made for improved development e
 - `warn` will output yellow text to stdout.
 - `printerr` will output red text to stdout.
 
-Note: If you want to use io or interact with other programs see [Async](/docs/server/lua-api/async). While Lua built-ins can be used they are blocking and can cause server hiccups.
+Note: If you want to use io or interact with other programs see [Async](/server/lua-api/async). While Lua built-ins can be used they are blocking and can cause server hiccups.

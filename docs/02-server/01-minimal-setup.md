@@ -6,13 +6,13 @@ sidebar_position: 1
 
 - `areas` folder
   - `.tmx` map files, `default.tmx` required
-  - See [Areas](/docs/server/areas)
+  - See [Areas](/server/areas)
 - `assets` folder
   - Tilesets, textures, audio, animations, packages
-  - See [Assets](/docs/server/assets)
+  - See [Assets](/server/assets)
 - `scripts` folder
   - Lua files. Entry scripts are read from `scripts/*/main.lua` for script projects, and `scripts/*.lua` for single file scripts
-  - See [Lua API](/docs/server/lua-api/lua-version-and-changes/)
+  - See [Lua API](/server/lua-api/lua-version-and-changes/)
 - Server executable
 
 Run the server through a command prompt or terminal and join on `127.0.0.1:8765`

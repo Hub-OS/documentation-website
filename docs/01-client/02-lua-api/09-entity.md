@@ -14,23 +14,23 @@ Returns the displayed name for the entity.
 
 Sets the displayed name for the entity.
 
-Automatically set for [Players](/docs/client/lua-api/player).
+Automatically set for [Players](/client/lua-api/player).
 
 ### `entity:get_element()`
 
-Returns the [Element](/docs/client/lua-api/spell#element) for the entity.
+Returns the [Element](/client/lua-api/spell#element) for the entity.
 
 ### `entity:set_element(element)`
 
-- `element`: [Element](/docs/client/lua-api/spell#element)
+- `element`: [Element](/client/lua-api/spell#element)
 
 Sets the Element for the entity, affects super effectiveness of incoming attacks.
 
-Automatically set for [Players](/docs/client/lua-api/player).
+Automatically set for [Players](/client/lua-api/player).
 
 ### `entity:get_facing()`
 
-Returns the facing [Direction](/docs/client/lua-api/direction) of the entity, used by attacks to decide which direction to move in.
+Returns the facing [Direction](/client/lua-api/direction) of the entity, used by attacks to decide which direction to move in.
 
 ### `entity:get_facing_away()`
 
@@ -38,11 +38,11 @@ Same as `Direction.reverse(entity:get_facing())`
 
 ### `entity:set_facing(direction)`
 
-Returns the facing [Direction](/docs/client/lua-api/direction) of the entity, used by attacks to decide which direction to move in.
+Returns the facing [Direction](/client/lua-api/direction) of the entity, used by attacks to decide which direction to move in.
 
 ### `entity:get_team()`
 
-Returns the [Team](/docs/client/lua-api/entity#entityset_teamteam) of the entity
+Returns the [Team](/client/lua-api/entity#entityset_teamteam) of the entity
 
 ### `entity:set_team(team)`
 
@@ -51,7 +51,7 @@ Returns the [Team](/docs/client/lua-api/entity#entityset_teamteam) of the entity
   - `Team.Red`
   - `Team.Blue`
 
-Modifies which team the entity is on. If the entity is a [Player](/docs/client/lua-api/player) the perspective may flip.
+Modifies which team the entity is on. If the entity is a [Player](/client/lua-api/player) the perspective may flip.
 
 ### `entity:is_team(team)`
 
@@ -59,7 +59,7 @@ Same as `entity:get_team() == team`
 
 ### `entity:get_tile(direction?, count?)`
 
-- `direction`: [Direction](/docs/client/lua-api/direction)
+- `direction`: [Direction](/client/lua-api/direction)
 - `count`: integer
 
 Returns a tile `count` many tiles in `direction`'s direction.
@@ -71,7 +71,7 @@ Returns the tile at the same position as the entity.
 
 ### `entity:get_field()`
 
-Returns the [Field](/docs/client/lua-api/field)
+Returns the [Field](/client/lua-api/field)
 
 ### `entity:share_tile(share?)`
 
@@ -81,13 +81,13 @@ Allows other entities to stand on tiles reserved by this entity.
 
 The entity will ignore tile effects when active.
 
-Automatically set for [Spells](/docs/client/lua-api/spell) and [Artifacts](/docs/client/lua-api/artifact).
+Automatically set for [Spells](/client/lua-api/spell) and [Artifacts](/client/lua-api/artifact).
 
 ### `entity:set_air_shoe(enabled)`
 
 Allows the entity to walk on tiles that normally can't be walked on.
 
-Automatically set for [Spells](/docs/client/lua-api/spell) and [Artifacts](/docs/client/lua-api/artifact).
+Automatically set for [Spells](/client/lua-api/spell) and [Artifacts](/client/lua-api/artifact).
 
 ### `entity:get_tile_offset()`
 
@@ -123,7 +123,7 @@ Sets the height of the entity.
 
 ### `entity:sprite()`
 
-Returns a [Sprite](/docs/client/lua-api/sprite), can be used to modify the entity's appearance.
+Returns a [Sprite](/client/lua-api/sprite), can be used to modify the entity's appearance.
 
 ### `entity:get_texture()`
 
@@ -167,7 +167,7 @@ Same as `entity:sprite():create_node()`
 
 ### `entity:create_sync_node()`
 
-Returns a [SyncNode](/docs/client/lua-api/sprite#syncnode).
+Returns a [SyncNode](/client/lua-api/sprite#syncnode).
 
 ### `entity:remove_sync_node(sync_node)`
 
@@ -177,7 +177,7 @@ Removes the sync node from the entity.
 
 Sets the texture for the shadow. Shadows are not visible by default, use `entity:show_shadow()` to make the shadow visible.
 
-Use values returned from [Engine.load_texture()](/docs/client/lua-api/engine#engineload_texturepath) for better performance.
+Use values returned from [Engine.load_texture()](/client/lua-api/engine#engineload_texturepath) for better performance.
 
 There are built-in shadow textures that can be used as well:
 
@@ -191,7 +191,7 @@ Sets whether the shadow is visible or not.
 
 ### `entity:get_animation()`
 
-Returns an [Animation](/docs/client/lua-api/animation), can be used to modify the entity's animation data.
+Returns an [Animation](/client/lua-api/animation), can be used to modify the entity's animation data.
 
 ### `entity:load_animation(path)`
 
@@ -213,7 +213,7 @@ Returns a value that can be used to decide if an attack can counter an opponent,
 
 ### `entity:queue_action(action)`
 
-- `action`: [Action](/docs/client/lua-api/action)
+- `action`: [Action](/client/lua-api/action)
 
 ### `entity:can_move_to(tile)`
 
@@ -295,7 +295,7 @@ Adds a callback listener for entity deletion.
 
 ### `entity.on_spawn_func = function(self)`
 
-Called when the entity is spawned by [field:spawn()](/docs/client/lua-api/field/#fieldspawnentity-tile)
+Called when the entity is spawned by [field:spawn()](/client/lua-api/field/#fieldspawnentity-tile)
 
 ### `entity.on_update_func = function(self)`
 
@@ -325,11 +325,11 @@ This function is pre-set for all entities.
 
 ## Component
 
-See [entity:create_component()](/docs/client/lua-api/entity#entitycreate_componentlifetime)
+See [entity:create_component()](/client/lua-api/entity#entitycreate_componentlifetime)
 
 ### `component:get_owner()`
 
-Returns an [Entity](/docs/client/lua-api/entity)
+Returns an [Entity](/client/lua-api/entity)
 
 ### `component:eject()`
 
@@ -343,7 +343,7 @@ Called when the entity is spawned, or immediately if the entity has already spaw
 
 Called when the lifetime is relevant.
 
-See [entity:create_component()](/docs/client/lua-api/entity#entitycreate_componentlifetime)
+See [entity:create_component()](/client/lua-api/entity#entitycreate_componentlifetime)
 
 ## Movement
 

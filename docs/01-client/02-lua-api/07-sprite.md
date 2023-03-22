@@ -14,7 +14,7 @@ Returns the path to the sprite's texture.
 
 ### `sprite:set_texture(path)`
 
-Use values returned from [Engine.load_texture()](/docs/client/lua-api/engine#engineload_texturepath) for better performance.
+Use values returned from [Engine.load_texture()](/client/lua-api/engine#engineload_texturepath) for better performance.
 
 ### `sprite:get_palette()`
 
@@ -26,7 +26,7 @@ Sets the palette for the texture to reference.
 
 Palettes are 256x1 images. Colors on the sprite's texture will be remapped by taking the red value of the texture to grab a color from the palette.
 
-Use values returned from [Engine.load_texture()](/docs/client/lua-api/engine#engineload_texturepath) for better performance.
+Use values returned from [Engine.load_texture()](/client/lua-api/engine#engineload_texturepath) for better performance.
 
 ### `sprite:is_visible()`
 
@@ -66,7 +66,7 @@ Returns a table with `x` and `y` keys.
 
 ### `sprite:set_origin(x, y)`
 
-Sets the origin, [Animations](/docs/client/lua-api/animation) will overwrite this value.
+Sets the origin, [Animations](/client/lua-api/animation) will overwrite this value.
 
 ### `sprite:get_scale()`
 
@@ -162,4 +162,4 @@ Returns a reference to the sync node's sprite.
 
 ### `sync_node:get_animation()`
 
-Returns a reference to the sync node's [Animation](/docs/client/lua-api/animation)
+Returns a reference to the sync node's [Animation](/client/lua-api/animation)

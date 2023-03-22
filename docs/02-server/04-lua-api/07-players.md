@@ -18,7 +18,7 @@ Returns the `area_id` for the area the player is currently in.
 
 Returns the IP address of the player as a string. Useful for creating connection whitelists/blacklists.
 
-If you want to track data use [Net.get_player_secret()](/docs/server/lua-api/player-data#netget_player_secretplayer_id). Otherwise you'll have issues when multiple players live within the same house.
+If you want to track data use [Net.get_player_secret()](/server/lua-api/player-data#netget_player_secretplayer_id). Otherwise you'll have issues when multiple players live within the same house.
 
 ### `Net.get_player_name(player_id)`
 
@@ -117,7 +117,7 @@ Net:on("tile_interaction", function(event)
 end)
 ```
 
-If you need something to happen when the animation ends, you should use [Async.sleep()](</docs/server/lua-api/async#Async.sleep(seconds)>)
+If you need something to happen when the animation ends, you should use [Async.sleep()](</server/lua-api/async#Async.sleep(seconds)>)
 
 ### `Net.provide_asset_for_player(player_id, path)`
 
@@ -243,11 +243,11 @@ Sends the player to a different area.
 ### `Net.transfer_server(player_id, address, warp_out?, data?)`
 
 - `data`: `string`
-  - Readable in [player_request](/docs/server/lua-api/events#player_request) on the remote server
+  - Readable in [player_request](/server/lua-api/events#player_request) on the remote server
 
 ### `Net.request_authorization(player_id, address, data?)`
 
 - `data`: `string`
-  - Readable in [authorization](/docs/server/lua-api/events#authorization) on the remote server
+  - Readable in [authorization](/server/lua-api/events#authorization) on the remote server
 
 ### `Net.kick_player(player_id, reason, warp_out?)`

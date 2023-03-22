@@ -47,7 +47,7 @@ characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 ```
 
-Expects an entry.lua file. See [Augment](/docs/client/lua-api/player#augment)
+Expects an entry.lua file. See [Augment](/client/lua-api/player#augment)
 
 ```lua
 function augment_init(augment)
@@ -83,7 +83,7 @@ characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 ```
 
-Expects an entry.lua file. See [Battle](/docs/client/lua-api/battle)
+Expects an entry.lua file. See [Battle](/client/lua-api/battle)
 
 ```lua
 function battle_init(battle)
@@ -92,7 +92,7 @@ end
 
 ## Characters
 
-Expects an entry.lua file. See [Character](/docs/client/lua-api/character)
+Expects an entry.lua file. See [Character](/client/lua-api/character)
 
 ```lua
 function character_init(character)
@@ -208,7 +208,7 @@ characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 ```
 
-Expects an entry.lua file. See [Player](/docs/client/lua-api/player)
+Expects an entry.lua file. See [Player](/client/lua-api/player)
 
 ```lua
 function player_init(player)

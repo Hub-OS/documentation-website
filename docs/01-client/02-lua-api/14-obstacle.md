@@ -1,12 +1,12 @@
 # Obstacle
 
-Instance of [Entity](/docs/client/lua-api/entity). All [Spell](/docs/client/lua-api/spell) and [Living](/docs/client/lua-api/living) functions are available as well.
+Instance of [Entity](/client/lua-api/entity). All [Spell](/client/lua-api/spell) and [Living](/client/lua-api/living) functions are available as well.
 
 ### `Battle.Obstacle.new(team?)`
 
-- `team`: [Team](/docs/client/lua-api/entity#entityset_teamteam)
+- `team`: [Team](/client/lua-api/entity#entityset_teamteam)
 
-Returns a new [Entity](/docs/client/lua-api/entity) instance.
+Returns a new [Entity](/client/lua-api/entity) instance.
 
 ### `Battle.Obstacle.from(entity)`
 

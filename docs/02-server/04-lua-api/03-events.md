@@ -213,7 +213,7 @@ end)
 
 ### `shop_leave`
 
-The player has pressed the Cancel button in the shop menu. A custom message using [Net.set_shop_message()](/docs/server/lua-api/widgets#netset_shop_messageplayer_id-message) is expected, but optional.
+The player has pressed the Cancel button in the shop menu. A custom message using [Net.set_shop_message()](/server/lua-api/widgets#netset_shop_messageplayer_id-message) is expected, but optional.
 
 ```lua
 Net:on("shop_leave", function(event)
@@ -290,7 +290,7 @@ en
 
 ### `authorization`
 
-A player on another server needs to be authenticated with this server, caused by a server calling [Net.request_authorization()](/docs/server/lua-api/players#netrequest_authorizationplayer_id-address-data).
+A player on another server needs to be authenticated with this server, caused by a server calling [Net.request_authorization()](/server/lua-api/players#netrequest_authorizationplayer_id-address-data).
 
 The host for the other server is provided with the event for custom response / implementation.
 

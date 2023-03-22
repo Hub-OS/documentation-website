@@ -1,8 +1,8 @@
 # Living
 
-Instance of [Entity](/docs/client/lua-api/entity).
+Instance of [Entity](/client/lua-api/entity).
 
-Living functions are accessible to all entities, but will throw if the entity is not a [Player](/docs/client/lua-api/player), [Character](/docs/client/lua-api/character), or [Obstacle](/docs/client/lua-api/obstacle).
+Living functions are accessible to all entities, but will throw if the entity is not a [Player](/client/lua-api/player), [Character](/client/lua-api/character), or [Obstacle](/client/lua-api/obstacle).
 
 ### `living:get_max_health()`
 
@@ -28,26 +28,26 @@ Returns true if the entity can currently be countered.
 
 ### `living:is_intangible()`
 
-Returns true if an [IntangibleRule](/docs/client/lua-api/living#intangiblerule) is active.
+Returns true if an [IntangibleRule](/client/lua-api/living#intangiblerule) is active.
 
 ### `living:set_intangible(intangible, intangible_rule?)`
 
 - `intangible`: bool, if false the active rule is removed.
-- `intangible_rule`: [IntangibleRule](/docs/client/lua-api/living#intangiblerule)
+- `intangible_rule`: [IntangibleRule](/client/lua-api/living#intangiblerule)
   - Ignored if `intangible` is false.
   - A default will be used if `intangible_rule` is unset.
 
 ### `living:add_defense_rule(defense_rule)`
 
-- `defense_rule`: [DefenseRule](/docs/client/lua-api/living#defenserule)
+- `defense_rule`: [DefenseRule](/client/lua-api/living#defenserule)
 
 ### `living:remove_defense_rule(defense_rule)`
 
-- `defense_rule`: [DefenseRule](/docs/client/lua-api/living#defenserule)
+- `defense_rule`: [DefenseRule](/client/lua-api/living#defenserule)
 
 ### `living:register_status_callback(hit_flag, function())`
 
-- `hit_flag` a single hit flag, see [HitProps](/docs/client/lua-api/spell#hitprops)
+- `hit_flag` a single hit flag, see [HitProps](/client/lua-api/spell#hitprops)
 
 The callback will be called when the `hit_flag` is applied to the entity.
 
@@ -71,7 +71,7 @@ Returns true if `judge:block_impact()` was called.
 
 ## DefenseRule
 
-See [living:add_defense_rule()](/docs/client/lua-api/living#livingadd_defense_ruledefense_rule)
+See [living:add_defense_rule()](/client/lua-api/living#livingadd_defense_ruledefense_rule)
 
 ### `Battle.DefenseRule.new(priority, defense_order)`
 
@@ -102,14 +102,14 @@ If the defense order is `DefenseOrder.Always`, this function will be called on e
 If the defense order is `DefenseOrder.CollisionOnly`, this function will be called after intangibility is determined to not block the attack.
 
 - `judge`: [DefenseJudge](#defensejudge)
-- `attacker`: [Entity](/docs/client/lua-api/entity)
-- `defender`: [Entity](/docs/client/lua-api/entity)
+- `attacker`: [Entity](/client/lua-api/entity)
+- `defender`: [Entity](/client/lua-api/entity)
 
 ### `defense_rule.filter_statuses_func = function(hit_props)`
 
 Called before applying damage and statuses to the entity.
 
-Should return [HitProps](/docs/client/lua-api/spell#hitprops)
+Should return [HitProps](/client/lua-api/spell#hitprops)
 
 The return value replaces the HitProps applied to the entity.
 
@@ -133,13 +133,13 @@ The default value is 120.
 
 ### `intangible_rule.hit_weaknesses`
 
-Hit flags combined into a single value see [HitProps](/docs/client/lua-api/spell#hitprops)
+Hit flags combined into a single value see [HitProps](/client/lua-api/spell#hitprops)
 
 The default value is `Hit.PierceInvis`
 
 ### `intangible_rule.element_weaknesses`
 
-A list of [Elements](/docs/client/lua-api/element)
+A list of [Elements](/client/lua-api/element)
 
 The default value is `{}`
 

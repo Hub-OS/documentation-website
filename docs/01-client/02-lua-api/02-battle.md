@@ -3,7 +3,7 @@
 ### `battle:create_spawner(package_id, rank)`
 
 - `package_id`: string, the package id for a character package
-- `rank`: [Rank](/docs/client/lua-api/character#battlecharacterfrom_packagepackage_id-team-rank)
+- `rank`: [Rank](/client/lua-api/character#battlecharacterfrom_packagepackage_id-team-rank)
 
 Returns a [Spawner](#spawner)
 
@@ -29,7 +29,7 @@ Experimental. Replacement / removal is under consideration.
 
 ### `battle:get_field()`
 
-Returns [Field](/docs/client/lua-api/field)
+Returns [Field](/client/lua-api/field)
 
 ### `battle:enable_automatic_turn_end(enabled?)`
 
@@ -54,7 +54,7 @@ If this function is never called, it is automatically decided by checking for no
 
 ### `battle:enable_boss_battle(enabled?)`
 
-Affects the score in [battle_results](/docs/server/lua-api/events#battle_results).
+Affects the score in [battle_results](/server/lua-api/events#battle_results).
 
 ## Spawner
 
@@ -68,4 +68,4 @@ Returns a [Mutator](#mutator)
 
 ### `mutator:mutate(function(entity))`
 
-- `entity`: [Entity](/docs/client/lua-api/entity)
+- `entity`: [Entity](/client/lua-api/entity)

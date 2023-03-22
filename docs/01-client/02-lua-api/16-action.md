@@ -2,16 +2,16 @@
 
 While actions execute, their owners will stop auto reserving tiles.
 
-[Players](/docs/client/lua-api/player), [Characters](/docs/client/lua-api/character), and [Obstacles](/docs/client/lua-api/obstacle) automatically reserve tiles outside of executing actions.
+[Players](/client/lua-api/player), [Characters](/client/lua-api/character), and [Obstacles](/client/lua-api/obstacle) automatically reserve tiles outside of executing actions.
 
 ### `Battle.Action.new(entity, state)`
 
-- `entity`: the [Entity](/docs/client/lua-api/entity) to tie the action to.
+- `entity`: the [Entity](/client/lua-api/entity) to tie the action to.
 - `state`: string, the animation state to play when the action executes.
 
 ### `action:get_owner()`
 
-Returns the [Entity](/docs/client/lua-api/entity) tied to this action
+Returns the [Entity](/client/lua-api/entity) tied to this action
 
 ### `action:set_lockout(lockout)`
 
@@ -25,13 +25,13 @@ Returns the [Entity](/docs/client/lua-api/entity) tied to this action
 
 ### `action:override_animation_frames(frame_data)`
 
-See [animation:derive_state()](/docs/client/lua-api/animation#animationderive_statestate-frame_data)
+See [animation:derive_state()](/client/lua-api/animation#animationderive_statestate-frame_data)
 
 ### `action:add_anim_action(frame_index, callback)`
 
 Same as calling `action:get_owner():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself)
 
-See [animation:on_frame()](/docs/client/lua-api/animation#animationon_frameframe_index-function-do_once)
+See [animation:on_frame()](/client/lua-api/animation#animationon_frameframe_index-function-do_once)
 
 ### `action:end_action()`
 

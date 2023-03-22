@@ -16,25 +16,25 @@ Returns true if a shop is open.
 
 Displays a textbox with the message and mug.
 
-See [textbox_response](/docs/server/lua-api/events#textbox_response) or the [async](/docs/server/lua-api/async#asyncmessage_playerplayer_id-message-mug_texture_path-mug_animation_path) version of this function for handling responses.
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncmessage_playerplayer_id-message-mug_texture_path-mug_animation_path) version of this function for handling responses.
 
 ### `Net.question_player(player_id, question, mug_texture_path?, mug_animation_path?)`
 
 Displays a textbox with a Yes / No input after the message.
 
-See [textbox_response](/docs/server/lua-api/events#textbox_response) or the [async](/docs/server/lua-api/async#asyncquestion_playerplayer_id-question-mug_texture_path-mug_animation_path>) version of this function for handling responses.
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquestion_playerplayer_id-question-mug_texture_path-mug_animation_path>) version of this function for handling responses.
 
 ### `Net.quiz_player(player_id, option_a?, option_b?, option_c?, mug_texture_path?, mug_animation_path?)`
 
 Displays a textbox with selectable options.
 
-See [textbox_response](/docs/server/lua-api/events#textbox_response) or the [async](/docs/server/lua-api/async#asyncquiz_playerplayer_id-option_a-option_b-option_c-mug_texture_path-mug_animation_path>) version of this function for handling responses.
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquiz_playerplayer_id-option_a-option_b-option_c-mug_texture_path-mug_animation_path>) version of this function for handling responses.
 
 ### `Net.prompt_player(player_id, character_limit?, default_text?)`
 
 Displays a textbox that accepts text input.
 
-See [textbox_response](/docs/server/lua-api/events#textbox_response) or the [async](/docs/server/lua-api/async#asyncprompt_playerplayer_id-character_limit-default_text) version of this function for handling responses.
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncprompt_playerplayer_id-character_limit-default_text) version of this function for handling responses.
 
 ### `Net.open_board(player_id, board_name, color, posts, open_instantly?)`
 

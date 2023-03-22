@@ -117,4 +117,4 @@ local keyframes = {
 Net.animate_bot_properties(bot_id, keyframes)
 ```
 
-If you need something to happen when the animation ends, you should use [Async.sleep()](</docs/server/lua-api/async#Async.sleep(seconds)>)
+If you need something to happen when the animation ends, you should use [Async.sleep()](</server/lua-api/async#Async.sleep(seconds)>)

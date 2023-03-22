@@ -137,7 +137,7 @@ Returns a promise that resolves to `{}?`
 
 ### `Async.message_server(address, data)`
 
-You will not know if this succeeds, the other server will need to reply. See [server_message](/docs/server/lua-api/events#server_message).
+You will not know if this succeeds, the other server will need to reply. See [server_message](/server/lua-api/events#server_message).
 
 ### `Async.sleep(seconds)`
 

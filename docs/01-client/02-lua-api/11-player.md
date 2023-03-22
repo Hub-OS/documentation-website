@@ -1,6 +1,6 @@
 # Player
 
-Instance of [Entity](/docs/client/lua-api/entity). All [Living](/docs/client/lua-api/living) and [Character](/docs/client/lua-api/character) functions are available as well.
+Instance of [Entity](/client/lua-api/entity). All [Living](/client/lua-api/living) and [Character](/client/lua-api/character) functions are available as well.
 
 Player functions are accessible to all entities, but will throw if the entity is not a Player.
 
@@ -30,7 +30,7 @@ Returns true if `input_query` matches the player's current input state.
 
 ### `player:set_fully_charged_color(color)`
 
-- `color`: [Color](/docs/client/lua-api/sprite#color)
+- `color`: [Color](/client/lua-api/sprite#color)
 
 Sets the color of the fully charged sprite.
 
@@ -116,15 +116,15 @@ Should return the amount of time in game frames, the `Shoot` button should be he
 
 ### `player.normal_attack_func = function(self)`
 
-Should return a [Action](/docs/client/lua-api/action)
+Should return a [Action](/client/lua-api/action)
 
 ### `player.charged_attack_func = function(self)`
 
-Should return a [Action](/docs/client/lua-api/action)
+Should return a [Action](/client/lua-api/action)
 
 ### `player.special_attack_func = function(self)`
 
-Should return a [Action](/docs/client/lua-api/action)
+Should return a [Action](/client/lua-api/action)
 
 ## PlayerForm
 
@@ -184,7 +184,7 @@ Returns an integer.
 
 ### `augment:get_owner()`
 
-Returns an [Entity](/docs/client/lua-api/entity)
+Returns an [Entity](/client/lua-api/entity)
 
 ### `augment.calculate_charge_time_func = function(self)`
 

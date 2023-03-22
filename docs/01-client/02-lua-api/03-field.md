@@ -24,37 +24,37 @@ Spawns the entity at the start of the next frame if the entity hasn't already be
 
 ### `field:get_entity(id)`
 
-Returns an [Entity](/docs/client/lua-api/entity) if it exists.
+Returns an [Entity](/client/lua-api/entity) if it exists.
 
 ### `field:find_entities(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Entities](/docs/client/lua-api/entity) will be passed to the callback.
+Only "hittable" [Entities](/client/lua-api/entity) will be passed to the callback.
 
 ### `field:find_characters(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Characters](/docs/client/lua-api/character) will be passed to the callback.
+Only "hittable" [Characters](/client/lua-api/character) will be passed to the callback.
 
 ### `field:find_obstacles(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Obstacles](/docs/client/lua-api/obstacle) will be passed to the callback.
+Only "hittable" [Obstacles](/client/lua-api/obstacle) will be passed to the callback.
 
 ### `field:find_players(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Players](/docs/client/lua-api/player) will be passed to the callback.
+Only "hittable" [Players](/client/lua-api/player) will be passed to the callback.
 
 ### `field:find_spells(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Spells](/docs/client/lua-api/spell) will be passed to the callback.
+Only [Spells](/client/lua-api/spell) will be passed to the callback.
 
 ### `field:find_tiles(function(tile))`
 
@@ -67,11 +67,11 @@ Returns a list of [Tiles](#tile) for any tile the callback returned true for.
 
 ### `field:notify_on_delete(target_id, observer_id, function(entity))`
 
-Deprecated. Use [entity:on_delete()](/docs/client/lua-api/entity#entityon_deletefunctionentity) instead.
+Deprecated. Use [entity:on_delete()](/client/lua-api/entity#entityon_deletefunctionentity) instead.
 
 ### `field:callback_on_delete(id, function(entity))`
 
-Deprecated. Use [entity:on_delete()](/docs/client/lua-api/entity#entityon_deletefunctionentity) instead.
+Deprecated. Use [entity:on_delete()](/client/lua-api/entity#entityon_deletefunctionentity) instead.
 
 ## Tile
 
@@ -133,35 +133,35 @@ Returns true if there's any reservations for this tile.
 
 ### `tile:reserve_for(entity)`
 
-Adds a reservation of this tile for this [Entity](/docs/client/lua-api/entity).
+Adds a reservation of this tile for this [Entity](/client/lua-api/entity).
 
 ### `tile:remove_reservation_for(entity)`
 
-Removes a reservation for this tile for this [Entity](/docs/client/lua-api/entity).
+Removes a reservation for this tile for this [Entity](/client/lua-api/entity).
 
 ### `tile:reserve_for_id(entity_id)`
 
-Adds a reservation of this tile for this [Entity](/docs/client/lua-api/entity) using an entity id.
+Adds a reservation of this tile for this [Entity](/client/lua-api/entity) using an entity id.
 
 ### `tile:remove_reservation_for_id(entity_id)`
 
-Removes a reservation of this tile for this [Entity](/docs/client/lua-api/entity) using an entity id.
+Removes a reservation of this tile for this [Entity](/client/lua-api/entity) using an entity id.
 
 ### `tile:get_team()`
 
-Returns [Team](/docs/client/lua-api/entity#entityset_teamteam)
+Returns [Team](/client/lua-api/entity#entityset_teamteam)
 
 ### `tile:set_team(team)`
 
-- `team`: [Team](/docs/client/lua-api/entity#entityset_teamteam)
+- `team`: [Team](/client/lua-api/entity#entityset_teamteam)
 
 ### `tile:get_facing()`
 
-Returns a [Direction](/docs/client/lua-api/direction)
+Returns a [Direction](/client/lua-api/direction)
 
 ### `tile:set_facing(direction)`
 
-- `direction`: [Direction](/docs/client/lua-api/direction)
+- `direction`: [Direction](/client/lua-api/direction)
 
 Sets the facing direction used to set the initial direction of spawned entities, as well as for resolving reverting team.
 
@@ -174,57 +174,57 @@ Sets the facing direction used to set the initial direction of spawned entities,
 
 ### `tile:get_tile(direction, count)`
 
-- `direction`: [Direction](/docs/client/lua-api/direction)
+- `direction`: [Direction](/client/lua-api/direction)
 - `count`: integer
 
 Returns a tile `count` many tiles in `direction`'s direction.
 
 ### `tile:attack_entities(spell)`
 
-Queues an attack to occur on this tile by this [Spell](/docs/client/lua-api/spell).
+Queues an attack to occur on this tile by this [Spell](/client/lua-api/spell).
 
 ### `tile:contains_entity(entity)`
 
-Returns true if the [Entity](/docs/client/lua-api/entity) is on the field and at the same position as the tile.
+Returns true if the [Entity](/client/lua-api/entity) is on the field and at the same position as the tile.
 
 ### `tile:add_entity(entity)`
 
-Moves the [Entity](/docs/client/lua-api/entity) to this tile if the entity is spawned.
+Moves the [Entity](/client/lua-api/entity) to this tile if the entity is spawned.
 
 ### `tile:remove_entity(entity)`
 
-Removes the [Entity](/docs/client/lua-api/entity) from the field.
+Removes the [Entity](/client/lua-api/entity) from the field.
 
 ### `tile:remove_entity_by_id(entity_id)`
 
-Removes the [Entity](/docs/client/lua-api/entity) from the field.
+Removes the [Entity](/client/lua-api/entity) from the field.
 
 ### `tile:find_entities(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Entities](/docs/client/lua-api/entity) will be passed to the callback.
+Only "hittable" [Entities](/client/lua-api/entity) will be passed to the callback.
 
 ### `tile:find_characters(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Characters](/docs/client/lua-api/character) will be passed to the callback.
+Only "hittable" [Characters](/client/lua-api/character) will be passed to the callback.
 
 ### `tile:find_obstacles(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Obstacles](/docs/client/lua-api/obstacle) will be passed to the callback.
+Only "hittable" [Obstacles](/client/lua-api/obstacle) will be passed to the callback.
 
 ### `tile:find_players(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Players](/docs/client/lua-api/player) will be passed to the callback.
+Only "hittable" [Players](/client/lua-api/player) will be passed to the callback.
 
 ### `tile:find_spells(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Spells](/docs/client/lua-api/spell) will be passed to the callback.
+Only [Spells](/client/lua-api/spell) will be passed to the callback.
