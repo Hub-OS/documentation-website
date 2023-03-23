@@ -26,6 +26,8 @@ Returns true if the entity can currently be countered.
 
 ### `living:toggle_counter(enabled?)`
 
+Allows the entity to be countered when hit by an attack with a [context](/client/lua-api/entity#entityget_context) created in [card_init](/client/packages/#cards)
+
 ### `living:is_intangible()`
 
 Returns true if an [IntangibleRule](/client/lua-api/living#intangiblerule) is active.
