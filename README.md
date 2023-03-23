@@ -4,7 +4,7 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 Docusaurus automatically creates pages for markdown files in `/docs/client` and `/docs/server`.
 
-View the live website [here](https://real-pet.github.io/documentation-website/client/lua-api/packages/)
+View the live website [here](https://real-pet.github.io/documentation-website/client/packages/)
 
 ### Installation
 
