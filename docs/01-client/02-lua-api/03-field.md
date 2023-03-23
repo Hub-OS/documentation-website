@@ -24,7 +24,7 @@ Spawns the entity at the start of the next frame if the entity hasn't already be
 
 ### `field:get_entity(id)`
 
-Returns an [Entity](/client/lua-api/entity) if it exists.
+Returns an [Entity](/client/lua-api/entity) or `nil`.
 
 ### `field:find_entities(function(entity))`
 
