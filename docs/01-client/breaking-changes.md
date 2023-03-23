@@ -41,7 +41,7 @@ https://github.com/Real-PET/mod-upgrade-tool
 - `package_init` and `package_requires_scripts` removed, replaced with [package.toml](/client/packages)
   - mods/blocks -> mods/augments
   - `block:set_mutator()` -> `function augment_init(augment)`
-  - `charge_boost` + `attack_boost` + `rapid_boost` in package.toml for blocks
+  - `charge_boost` + `attack_boost` + `rapid_boost` in [package.toml](/client/packages) for blocks
 - For battles: `package_build` -> `battle_init`
 - For characters: `package_init` -> `character_init`
 
