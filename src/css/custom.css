@@ -6,22 +6,26 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-navbar-height: 52px;
-  --ifm-navbar-padding-vertical: 0;
-  /* --ifm-color-primary: #52ff39; */
   --ifm-color-primary: #1088e8;
-  --ifm-color-primary-dark: #52ff39;
-  --ifm-color-primary-darker: #52ff39;
-  --ifm-color-primary-darkest: #52ff39;
-  --ifm-color-primary-light: #52ff39;
-  --ifm-color-primary-lighter: #52ff39;
-  --ifm-color-primary-lightest: #52ff39;
+  --ifm-color-primary-dark: var(--ifm-color-primary);
+  --ifm-color-primary-darker: var(--ifm-color-primary);
+  --ifm-color-primary-darkest: var(--ifm-color-primary);
+  --ifm-color-primary-light: var(--ifm-color-primary);
+  --ifm-color-primary-lighter: var(--ifm-color-primary);
+  --ifm-color-primary-lightest: var(--ifm-color-primary);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --doc-sidebar-width: 250px !important;
+  
+  /* navbar */
+  --ifm-navbar-height: 52px;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-background-color:
   --ifm-navbar-search-input-background-color: white;
   --ifm-navbar-search-input-color: #444950;
   --ifm-navbar-search-input-placeholder-color: grey;
+  
+  /* sidebar */
+  --doc-sidebar-width: 250px !important;
   --ifm-pagination-nav-color-hover: #1088e8;
   --ifm-breadcrumb-color-active: #1088e8;
   --ifm-link-color: #1088e8;
@@ -33,7 +37,6 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  /* --ifm-color-primary: #52ff39; */
   --ifm-color-primary: #40c0e0;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-navbar-search-input-background-color: white;
