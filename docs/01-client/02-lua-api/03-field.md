@@ -4,7 +4,7 @@
 
 There's hidden padding around the field, the first visible tile is at (1, 1).
 
-Returns a [Tile](#tile)
+Returns a [Tile](#tile) or `nil`
 
 ### `field:width()`
 
@@ -177,7 +177,7 @@ Sets the facing direction used to set the initial direction of spawned entities,
 - `direction`: [Direction](/client/lua-api/direction)
 - `count`: integer
 
-Returns a tile `count` many tiles in `direction`'s direction.
+Returns a Tile `count` many tiles in `direction`'s direction, or `nil`.
 
 ### `tile:attack_entities(spell)`
 
