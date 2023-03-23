@@ -116,15 +116,31 @@ Should return the amount of time in game frames, the `Shoot` button should be he
 
 ### `player.normal_attack_func = function(self)`
 
-Should return a [Action](/client/lua-api/action)
+Should return an [Action](/client/lua-api/action)
+
+Many player mods use [Buster](/client/lua-api/action#buster) for their return value.
+
+```lua
+player.normal_attack_func = function(self)
+  return Battle.Buster.new(self, false, player:get_attack_level())
+end
+```
 
 ### `player.charged_attack_func = function(self)`
 
-Should return a [Action](/client/lua-api/action)
+Should return an [Action](/client/lua-api/action)
+
+Many player mods use [Buster](/client/lua-api/action#buster) for their return value.
+
+```lua
+player.charged_attack_func = function(self)
+  return Battle.Buster.new(self, true, player:get_attack_level() * 10)
+end
+```
 
 ### `player.special_attack_func = function(self)`
 
-Should return a [Action](/client/lua-api/action)
+Should return an [Action](/client/lua-api/action)
 
 ## PlayerForm
 

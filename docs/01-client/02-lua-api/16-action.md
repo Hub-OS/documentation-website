@@ -110,3 +110,13 @@ Enables time freeze for the action.
 ### card_properties.skip_time_freeze_intro
 
 ### card_properties.meta_classes
+
+## Buster
+
+### `Battle.Buster.new(player, charged, damage)`
+
+- `player`: [Player](/client/lua-api/player)
+- `charged`: bool, affects hit artifact
+- `damage`: number
+
+Returns a new [Action](#action)
