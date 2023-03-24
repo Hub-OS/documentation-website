@@ -58,6 +58,10 @@ Affects the score in [battle_results](/server/lua-api/events#battle_results).
 
 ## Spawner
 
+Spawns characters at the start of battle.
+
+See [encounter:create_spawner()](#encountercreate_spawnerpackage_id-rank) for creating a spawner.
+
 ### `spawner:spawn(col, row)`
 
 Spawns the character at this position.
@@ -67,6 +71,8 @@ The tile at this position decides facing direction and team.
 Returns a [Mutator](#mutator)
 
 ## Mutator
+
+Allows for modification of a spawned character. Usage is optional.
 
 ### `mutator:mutate(function(entity))`
 
