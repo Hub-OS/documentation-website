@@ -32,6 +32,7 @@ https://github.com/Real-PET/mod-upgrade-tool
 - Renamed `animation:refresh(sprite)` to [animation:apply(sprite)](/client/lua-api/animation#animationapplysprite)
 - Moved `entity:shake_camera()` to [field:shake()](/client/lua-api/field#fieldshakestrength-duration)
   - Also accepts game frames instead of seconds
+- Renamed `Engine.stream_music()` to [Engine.play_music()](/client/lua-api/engine#engineplay_music)
 - Renamed `Engine.reset_turn_gauge_to_default()` to [Engine.reset_turn_gauge_max_time()](/client/lua-api/engine#enginereset_turn_gauge_max_time)
 - Renamed `Engine.get_turn_gauge_value()` to [Engine.get_turn_gauge_progress()](/client/lua-api/engine#engineget_turn_gauge_progress)
 - Moved `IntangibleRule` to [Battle.IntangibleRule](/client/lua-api/living#intangiblerule)

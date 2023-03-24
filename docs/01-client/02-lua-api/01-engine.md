@@ -22,7 +22,7 @@ Should be used in global scope for better performance.
 
 Plays a sound with the specified priority.
 
-### `Engine.stream_music(path, loops?, start_ms?, end_ms?)`
+### `Engine.play_music(path, loops?, start_ms?, end_ms?)`
 
 - `path`: file path relative to script file, use values returned from `Engine.load_audio()` for better performance.
 
