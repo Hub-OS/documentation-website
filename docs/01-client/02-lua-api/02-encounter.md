@@ -62,6 +62,8 @@ Affects the score in [battle_results](/server/lua-api/events#battle_results).
 
 Spawns the character at this position.
 
+The tile at this position decides facing direction and team.
+
 Returns a [Mutator](#mutator)
 
 ## Mutator
