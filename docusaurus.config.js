@@ -4,6 +4,8 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+const docsRouteBasePath = "/";
+
 const searchOptions = {
   // `hashed` is recommended as long-term-cache of index file is possible.
   hashed: true,
@@ -11,6 +13,7 @@ const searchOptions = {
   // ```
   // language: ["en", "zh"],
   // ```
+  docsRouteBasePath,
 };
 
 /** @type {import('@docusaurus/types').Config} */
@@ -52,7 +55,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: "/",
+          routeBasePath: docsRouteBasePath,
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
