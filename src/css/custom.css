@@ -6,6 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-font-size-base: 14px;
   --ifm-color-primary: #1088e8;
   --ifm-color-primary-dark: var(--ifm-color-primary);
   --ifm-color-primary-darker: var(--ifm-color-primary);
@@ -23,6 +24,7 @@
   --ifm-navbar-search-input-background-color: white;
   --ifm-navbar-search-input-color: #444950;
   --ifm-navbar-search-input-placeholder-color: grey;
+  --ifm-navbar-link-hover-color: white;
   
   /* sidebar */
   --doc-sidebar-width: 250px !important;

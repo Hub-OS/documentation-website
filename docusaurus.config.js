@@ -61,6 +61,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/Real-PET/documentation-website/tree/master/",
+          breadcrumbs: false,
         },
         blog: false,
         theme: {
@@ -81,6 +82,7 @@ const config = {
         //   alt: "My Site Logo",
         //   src: "img/logo.svg",
         // },
+        // hideOnScroll: true,
         items: [
           {
             type: "doc",
@@ -100,6 +102,11 @@ const config = {
             position: "right",
           },
         ],
+      },
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
       },
       prism: {
         theme: lightCodeTheme,
