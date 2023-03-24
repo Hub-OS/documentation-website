@@ -83,10 +83,10 @@ characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 ```
 
-Expects an `entry.lua` file. See [Battle](/client/lua-api/battle)
+Expects an `entry.lua` file. See [Encounter](/client/lua-api/encounter)
 
 ```lua
-function battle_init(battle)
+function battle_init(encounter)
 end
 ```
 
