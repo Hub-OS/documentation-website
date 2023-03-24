@@ -161,10 +161,6 @@ Same as `entity:sprite():set_color(color)`
 
 Same as `entity:sprite():create_node()`
 
-### `entity:create_node()`
-
-Same as `entity:sprite():create_node()`
-
 ### `entity:create_sync_node()`
 
 Returns a [SyncNode](/client/lua-api/sprite#syncnode).
