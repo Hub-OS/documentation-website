@@ -16,7 +16,7 @@ https://github.com/Real-PET/mod-upgrade-tool
 - Renamed `Battle.CardAction` to [Action](/client/lua-api/action)
 - Renamed `card_properties.short_name` to `card_properties.short_name`
 - Renamed `entity:card_action_event()` to [entity:queue_action()](/client/lua-api/entity#entityqueue_actionaction)
-- Renamed `action:get_actor()` to [action:get_owner()](/client/lua-api/action#actionget_owner)
+- Renamed `action:get_actor()` to [action:owner()](/client/lua-api/action#actionowner)
 - Renamed `action:copy_metadata()` to [action:copy_card_properties()](/client/lua-api/action#actioncopy_card_properties)
   - Replacement / removal is under consideration.
 - Renamed `action:set_metadata()` to [action:set_card_properties()](/client/lua-api/action#actionset_card_propertiesproperties)
@@ -32,7 +32,7 @@ https://github.com/Real-PET/mod-upgrade-tool
 - Renamed `MoveAction` to [Movement](/client/lua-api/entity#movement)
 - Renamed `entity:raw_move_event()` to [entity:queue_movement()](/client/lua-api/entity#entityqueue_movementmovement)
 - Renamed `entity:share_tile()` to [entity:enable_sharing_tile()](/client/lua-api/entity#entityenable_sharing_tileenabled)
-- Renamed `entity:get_current_palette()` to [entity:get_palette()](/client/lua-api/entity#entityget_palette)
+- Renamed `entity:get_current_palette()` to [entity:palette()](/client/lua-api/entity#entitypalette)
 - Renamed `entity:set_animation(path)` to [entity:load_animation(path)](/client/lua-api/entity#entityload_animationpath)
 - Renamed `sprite:show()` to [sprite:reveal()](/client/lua-api/sprite#spritereveal)
 - Renamed `sprite:enable_parent_shader()` to [sprite:use_root_shader()](/client/lua-api/sprite#spriteuse_root_shaderenable)
