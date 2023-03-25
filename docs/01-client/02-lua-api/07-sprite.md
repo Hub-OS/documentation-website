@@ -8,7 +8,7 @@ Returns a new child Sprite instance that renders relative to the parent sprite's
 
 Deletes the passed sprite if it's a child of the parent.
 
-### `sprite:get_texture()`
+### `sprite:texture()`
 
 Returns the path to the sprite's texture.
 
@@ -16,7 +16,7 @@ Returns the path to the sprite's texture.
 
 Use values returned from [Resources.load_texture()](/client/lua-api/resources#resourcesload_texturepath) for better performance.
 
-### `sprite:get_palette()`
+### `sprite:palette()`
 
 Returns the path to the sprite's palette or `nil`.
 
@@ -28,7 +28,7 @@ Palettes are 256x1 images. Colors on the sprite's texture will be remapped by ta
 
 Use values returned from [Resources.load_texture()](/client/lua-api/resources#resourcesload_texturepath) for better performance.
 
-### `sprite:is_visible()`
+### `sprite:visible()`
 
 Returns true if the sprite is visible.
 
@@ -42,7 +42,7 @@ Same as `sprite:set_visible(true)`
 
 Same as `sprite:set_visible(false)`
 
-### `sprite:get_layer()`
+### `sprite:layer()`
 
 Returns an integer used for sorting during render.
 
@@ -52,7 +52,7 @@ Returns an integer used for sorting during render.
 
 Used for sorting during render.
 
-### `sprite:get_offset()`
+### `sprite:offset()`
 
 Returns a table with `x` and `y` keys, represents the parent relative offset.
 
@@ -60,7 +60,7 @@ Returns a table with `x` and `y` keys, represents the parent relative offset.
 
 Sets the parent relative offset.
 
-### `sprite:get_origin()`
+### `sprite:origin()`
 
 Returns a table with `x` and `y` keys.
 
@@ -68,7 +68,7 @@ Returns a table with `x` and `y` keys.
 
 Sets the origin, [Animations](/client/lua-api/animation) will overwrite this value.
 
-### `sprite:get_scale()`
+### `sprite:scale()`
 
 Returns a table with `x` and `y` keys.
 
@@ -76,7 +76,7 @@ Returns a table with `x` and `y` keys.
 
 Sets the scale of the sprite.
 
-### `sprite:get_size()`
+### `sprite:size()`
 
 Returns a table with `x` and `y` keys, representing the size of the sprite. Scale is accounted.
 
@@ -84,7 +84,7 @@ Returns a table with `x` and `y` keys, representing the size of the sprite. Scal
 
 Sets the size of the sprite, updates the scale.
 
-### `sprite:get_width()`
+### `sprite:width()`
 
 Returns the width of the sprite, scale is acounted.
 
@@ -92,7 +92,7 @@ Returns the width of the sprite, scale is acounted.
 
 Sets the width of the sprite, updates the scale.
 
-### `sprite:get_height()`
+### `sprite:height()`
 
 Returns the height of the sprite, scale is acounted.
 
@@ -100,7 +100,7 @@ Returns the height of the sprite, scale is acounted.
 
 Sets the height of the sprite, updates the scale.
 
-### `sprite:get_color()`
+### `sprite:color()`
 
 Returns a [Color](#color)
 
@@ -110,7 +110,7 @@ Returns a [Color](#color)
 
 The color will be reset to black at the start of the next frame for root sprites.
 
-### `sprite:get_color_mode()`
+### `sprite:color_mode()`
 
 Returns the color mode.
 
@@ -160,6 +160,6 @@ SyncNodes are a sprite animation pair that sync settings, state, and progress wi
 
 Returns a reference to the sync node's sprite.
 
-### `sync_node:get_animation()`
+### `sync_node:animation()`
 
 Returns a reference to the sync node's [Animation](/client/lua-api/animation)

@@ -1,14 +1,14 @@
 # TurnGauge
 
-### `TurnGauge.get_progress()`
+### `TurnGauge.progress()`
 
 Returns the turn gauge's progress as a value between 0 and 1.
 
-### `TurnGauge.get_time()`
+### `TurnGauge.time()`
 
 Returns the turn gauge's progress in elapsed frames.
 
-### `TurnGauge.get_max_time()`
+### `TurnGauge.max_time()`
 
 Returns the total elapsed frames required to end a turn.
 

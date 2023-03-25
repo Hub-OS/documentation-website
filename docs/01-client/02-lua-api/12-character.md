@@ -32,6 +32,6 @@ Returns the entity passed in if the entity is a character or player, otherwise r
 
 Returns a new character entity, throws if the package doesn't exist.
 
-### `Character:get_rank()`
+### `Character:rank()`
 
 Returns the character's rank.

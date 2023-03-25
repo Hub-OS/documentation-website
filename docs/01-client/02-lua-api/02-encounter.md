@@ -27,7 +27,7 @@ Sets the spawn position for this player.
 
 Experimental. Replacement / removal is under consideration.
 
-### `encounter:get_field()`
+### `encounter:field()`
 
 Returns [Field](/client/lua-api/field)
 

@@ -4,11 +4,11 @@ Instance of [Entity](/client/lua-api/entity).
 
 Living functions are accessible to all entities, but will throw if the entity is not a [Player](/client/lua-api/player), [Character](/client/lua-api/character), or [Obstacle](/client/lua-api/obstacle).
 
-### `living:get_max_health()`
+### `living:max_health()`
 
 Returns the entity's max health.
 
-### `living:get_health()`
+### `living:health()`
 
 Returns the entity's current health.
 
@@ -20,15 +20,15 @@ Sets the entity's max health.
 
 Passing false will allow attacks to pass through as if the entity didn't exist.
 
-### `living:is_counterable()`
+### `living:counterable()`
 
 Returns true if the entity can currently be countered.
 
 ### `living:set_counterable(enabled?)`
 
-Allows the entity to be countered when hit by an attack with a [context](/client/lua-api/entity#entityget_context) created in [card_init](/client/packages/#cards)
+Allows the entity to be countered when hit by an attack with a [context](/client/lua-api/entity#entitycontext) created in [card_init](/client/packages/#cards)
 
-### `living:is_intangible()`
+### `living:intangible()`
 
 Returns true if an [IntangibleRule](/client/lua-api/living#intangiblerule) is active.
 
@@ -63,11 +63,11 @@ Prevents damage and statuses from applying to the defending entity.
 
 ### `judge:block_impact()`
 
-### `judge:is_damage_blocked()`
+### `judge:damage_blocked()`
 
 Returns true if `judge:block_damage()` was called.
 
-### `judge:is_impact_blocked()`
+### `judge:impact_blocked()`
 
 Returns true if `judge:block_impact()` was called.
 
@@ -89,7 +89,7 @@ See [living:add_defense_rule()](/client/lua-api/living#livingadd_defense_ruledef
 
 Adding a DefenseRule to an entity when a DefenseRule already exists with the same priorty will replace the existing rule.
 
-### `defense_rule:is_replaced()`
+### `defense_rule:replaced()`
 
 Returns true if a DefenseRule with the same priority replaced this rule.
 

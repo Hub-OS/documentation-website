@@ -72,7 +72,7 @@ Adds the `health` value to the max health.
 
 If it is the player's health is greater than the new max health it will be reduced to the new max health.
 
-### `player:get_attack_level()`
+### `player:attack_level()`
 
 Returns the player's total attack level, a combination of `boost_attack_level` and [Augment](#augment) boosts.
 
@@ -82,7 +82,7 @@ Returns the player's total attack level, a combination of `boost_attack_level` a
 
 Adds the `increment` value to the attack level. The attack level can only be boosted by five through this method.
 
-### `player:get_rapid_level()`
+### `player:rapid_level()`
 
 Returns the player's total rapid level, a combination `boost_rapid_level` and [Augment](#augment) boosts.
 
@@ -92,7 +92,7 @@ Returns the player's total rapid level, a combination `boost_rapid_level` and [A
 
 Adds the `increment` value to the rapid level. The rapid level can only be boosted by five through this method.
 
-### `player:get_charge_level()`
+### `player:charge_level()`
 
 Returns the player's total charge level, a combination `boost_charge_level` and [Augment](#augment) boosts.
 
@@ -122,7 +122,7 @@ Many player mods use [Buster](/client/lua-api/action#buster) for their return va
 
 ```lua
 player.normal_attack_func = function(self)
-  return Buster.new(self, false, player:get_attack_level())
+  return Buster.new(self, false, player:attack_level())
 end
 ```
 
@@ -134,7 +134,7 @@ Many player mods use [Buster](/client/lua-api/action#buster) for their return va
 
 ```lua
 player.charged_attack_func = function(self)
-  return Buster.new(self, true, player:get_attack_level() * 10)
+  return Buster.new(self, true, player:attack_level() * 10)
 end
 ```
 
@@ -196,15 +196,15 @@ Return `nil` to fallback to the player's implementation.
 
 ## Augment
 
-### `augment:get_id()`
+### `augment:id()`
 
 Returns the package id of the augment.
 
-### `augment:get_level()`
+### `augment:level()`
 
 Returns an integer.
 
-### `augment:get_owner()`
+### `augment:owner()`
 
 Returns an [Entity](/client/lua-api/entity)
 

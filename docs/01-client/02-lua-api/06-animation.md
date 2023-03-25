@@ -44,7 +44,7 @@ Unpauses the animation.
 
 Returns true if the state exists.
 
-### `animation:get_state()`
+### `animation:state()`
 
 Returns the name of the active state.
 
@@ -75,12 +75,12 @@ action:override_animation_frames(frame_data)
 local buster_attachment = action:add_attachment("BUSTER")
 
 local buster_sprite = buster_attachment:sprite()
-buster_sprite:set_texture(user:get_texture())
+buster_sprite:set_texture(user:texture())
 buster_sprite:set_layer(-2)
 buster_sprite:use_root_shader()
 
-local buster_animation = buster_attachment:get_animation()
-buster_animation:copy_from(user:get_animation())
+local buster_animation = buster_attachment:animation()
+buster_animation:copy_from(user:animation())
 
 -- relevant
 local derived_state = buster_animation:derive_state("BUSTER", frame_data)

@@ -9,7 +9,7 @@ While actions execute, their owners will stop auto reserving tiles.
 - `entity`: the [Entity](/client/lua-api/entity) to tie the action to.
 - `state`: string, the animation state to play when the action executes.
 
-### `action:get_owner()`
+### `action:owner()`
 
 Returns the [Entity](/client/lua-api/entity) tied to this action
 
@@ -23,13 +23,19 @@ Returns the [Entity](/client/lua-api/entity) tied to this action
   - `make_async_lockout(duration)`
     - When the animation ends, entities regain control.
 
+### `action:create_attachment(point_name)`
+
+- `point_name`: string, name of a point in the animation to anchor the attachment to
+
+Returns [Attachment](#attachment)
+
 ### `action:override_animation_frames(frame_data)`
 
 See [animation:derive_state()](/client/lua-api/animation#animationderive_statestate-frame_data)
 
 ### `action:add_anim_action(frame_index, callback)`
 
-Same as calling `action:get_owner():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself)
+Same as calling `action:owner():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself)
 
 See [animation:on_frame()](/client/lua-api/animation#animationon_frameframe_index-function-do_once)
 
@@ -74,6 +80,22 @@ Called when the action ends execution.
 Override's the owner's [can_move_to_func] while executing.
 
 Ignored on async actions when the entity regains control.
+
+## Attachment
+
+### `attachment:create_attachment(point_name)`
+
+- `point_name`: string, name of a point in this attachment's animation to anchor the new attachment to
+
+Returns an Attachment
+
+### `attachment:sprite()`
+
+Returns a reference to the attachment's [Sprite](/client/lua-api/sprite)
+
+### `attachment:animation()`
+
+Returns a reference to the attachment's [Animation](/client/lua-api/animation)
 
 ## CardProperties
 

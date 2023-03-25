@@ -1,12 +1,12 @@
 # Entity
 
-Most of these functions will throw if the entity has been erased. `entity:will_erase_eof()` and `entity:is_deleted()` will never throw and can be used to see if the entity is still safe to use.
+Most of these functions will throw if the entity has been erased. `entity:will_erase_eof()` and `entity:deleted()` will never throw and can be used to see if the entity is still safe to use.
 
-### `entity:get_id()`
+### `entity:id()`
 
 Returns the id for the entity.
 
-### `entity:get_name()`
+### `entity:name()`
 
 Returns the displayed name for the entity.
 
@@ -16,7 +16,7 @@ Sets the displayed name for the entity.
 
 Automatically set for [Players](/client/lua-api/player).
 
-### `entity:get_element()`
+### `entity:element()`
 
 Returns the [Element](/client/lua-api/spell#element) for the entity.
 
@@ -28,19 +28,19 @@ Sets the Element for the entity, affects super effectiveness of incoming attacks
 
 Automatically set for [Players](/client/lua-api/player).
 
-### `entity:get_facing()`
+### `entity:facing()`
 
 Returns the facing [Direction](/client/lua-api/direction) of the entity, used by attacks to decide which direction to move in.
 
-### `entity:get_facing_away()`
+### `entity:facing_away()`
 
-Same as `Direction.reverse(entity:get_facing())`
+Same as `Direction.reverse(entity:facing())`
 
 ### `entity:set_facing(direction)`
 
 Returns the facing [Direction](/client/lua-api/direction) of the entity, used by attacks to decide which direction to move in.
 
-### `entity:get_team()`
+### `entity:team()`
 
 Returns the [Team](/client/lua-api/entity#entityset_teamteam) of the entity
 
@@ -55,7 +55,7 @@ Modifies which team the entity is on. If the entity is a [Player](/client/lua-ap
 
 ### `entity:is_team(team)`
 
-Same as `entity:get_team() == team`
+Same as `entity:team() == team`
 
 ### `entity:get_tile(direction?, count?)`
 
@@ -65,15 +65,15 @@ Same as `entity:get_team() == team`
 Returns a tile `count` many tiles in `direction`'s direction.
 Returns the current tile if any parameters are unset.
 
-### `entity:get_current_tile()`
+### `entity:current_tile()`
 
 Returns the tile at the same position as the entity.
 
-### `entity:get_field()`
+### `entity:field()`
 
 Returns the [Field](/client/lua-api/field)
 
-### `entity:is_sharing_tile()`
+### `entity:sharing_tile()`
 
 Returns true if other entities can stand on this tile.
 
@@ -93,21 +93,21 @@ Allows the entity to walk on tiles that normally can't be walked on.
 
 Automatically set for [Spells](/client/lua-api/spell) and [Artifacts](/client/lua-api/artifact).
 
-### `entity:get_tile_offset()`
+### `entity:tile_offset()`
 
 Returns a table with `x` and `y` keys.
 
 This table represents the offset applied to the entity by movement.
 
-### `entity:get_offset()`
+### `entity:offset()`
 
-Same as `entity:sprite():get_offset()`
+Same as `entity:sprite():offset()`
 
 ### `entity:set_offset(x, y)`
 
 Same as `entity:sprite():set_offset(x, y)`
 
-### `entity:get_elevation()`
+### `entity:elevation()`
 
 Returns the elevation of the entity.
 
@@ -117,7 +117,7 @@ Vertical offset for the entity. When the elevation changes the sprite moves, but
 
 Positive elevation moves the entity upwards.
 
-### `entity:get_height()`
+### `entity:height()`
 
 Returns the height of the entity, used to determine the range where hit artifacts should appear.
 
@@ -129,17 +129,17 @@ Sets the height of the entity.
 
 Returns a [Sprite](/client/lua-api/sprite), can be used to modify the entity's appearance.
 
-### `entity:get_texture()`
+### `entity:texture()`
 
-Same as `entity:sprite():get_texture()`
+Same as `entity:sprite():texture()`
 
 ### `entity:set_texture(path)`
 
 Same as `entity:sprite():set_texture(path)`
 
-### `entity:get_palette()`
+### `entity:palette()`
 
-Same as `entity:sprite():get_palette()`
+Same as `entity:sprite():palette()`
 
 ### `entity:set_palette(path)`
 
@@ -153,9 +153,9 @@ Same as `entity:sprite():hide()`
 
 Same as `entity:sprite():reveal()`
 
-### `entity:get_color()`
+### `entity:color()`
 
-Same as `entity:sprite():get_color()`
+Same as `entity:sprite():color()`
 
 ### `entity:set_color(color)`
 
@@ -189,13 +189,13 @@ There are built-in shadow textures that can be used as well:
 
 Sets whether the shadow is visible or not.
 
-### `entity:get_animation()`
+### `entity:animation()`
 
 Returns an [Animation](/client/lua-api/animation), can be used to modify the entity's animation data.
 
 ### `entity:load_animation(path)`
 
-Same as `entity:get_animation():load(path)`
+Same as `entity:animation():load(path)`
 
 ### `entity:create_component(lifetime)`
 
@@ -207,7 +207,7 @@ Same as `entity:get_animation():load(path)`
 
   Returns a [Component](#component)
 
-### `entity:get_context()`
+### `entity:context()`
 
 Returns a value that can be used to decide if an attack can counter an opponent, and to resolve the owner of an attack.
 
@@ -257,7 +257,7 @@ Returns true if the entity is jumping.
 
 Returns true if the entity is teleporting.
 
-### `entity:is_deleted()`
+### `entity:deleted()`
 
 Returns true if the entity has been marked for deletion, or has been erased.
 
@@ -327,7 +327,7 @@ This function is pre-set for all entities.
 
 See [entity:create_component()](/client/lua-api/entity#entitycreate_componentlifetime)
 
-### `component:get_owner()`
+### `component:owner()`
 
 Returns an [Entity](/client/lua-api/entity)
 
@@ -373,7 +373,7 @@ The duration in game frames for the movement to drop after delta + delay.
 
 The distance above the ground for the entity to jump.
 
-### `movement:get_animation_progress()`
+### `movement:animation_progress()`
 
 Returns the movement's animation progress as a value between 0 and 1.
 

@@ -62,7 +62,7 @@ Called after processing damage on the entity, if damage isn't blocked by [Defens
   - `Hit.PierceGround`
 - `element`: [Element](/client/lua-api/spell#element)
 - `secondary_element`: [Element](/client/lua-api/spell#element)
-- `context`: The value obtained by [entity:get_context()](/client/lua-api/entity#entityget_context)
+- `context`: The value obtained by [entity:context()](/client/lua-api/entity#entitycontext)
 - `drag`: [Drag](#drag)
 
 Returns a new HitProps instance.

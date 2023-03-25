@@ -8,6 +8,7 @@ https://github.com/Real-PET/mod-upgrade-tool
 - Renamed `battle_init` to `encounter_init`
 - Renamed `battle` mod category to `encounter`
 - Renamed `include` to `require`
+- Removed `is_` and `get_` prefix for direct getters
 - Renamed `Engine` to [Resources] (/client/lua-api/resources#resourcesplay_music)
 - Renamed `Engine.stream_music()` to [Resources.play_music()](/client/lua-api/resources)
 - Move `Engine` turn gauge functions to [TurnGauge](/client/lua-api/turn-gauge)

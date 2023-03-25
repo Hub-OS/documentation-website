@@ -93,7 +93,7 @@ Returns the width of the tile in pixels.
 
 Returns the height of the tile in pixels.
 
-### `tile:get_state()`
+### `tile:state()`
 
 Returns the tile's TileState.
 
@@ -147,7 +147,7 @@ Adds a reservation of this tile for this [Entity](/client/lua-api/entity) using 
 
 Removes a reservation of this tile for this [Entity](/client/lua-api/entity) using an entity id.
 
-### `tile:get_team()`
+### `tile:team()`
 
 Returns [Team](/client/lua-api/entity#entityset_teamteam)
 
@@ -155,7 +155,7 @@ Returns [Team](/client/lua-api/entity#entityset_teamteam)
 
 - `team`: [Team](/client/lua-api/entity#entityset_teamteam)
 
-### `tile:get_facing()`
+### `tile:facing()`
 
 Returns a [Direction](/client/lua-api/direction)
 
