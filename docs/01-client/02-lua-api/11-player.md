@@ -4,7 +4,7 @@ Instance of [Entity](/client/lua-api/entity). All [Living](/client/lua-api/livin
 
 Player functions are accessible to all entities, but will throw if the entity is not a Player.
 
-### `Battle.Player.from(entity)`
+### `Player.from(entity)`
 
 Returns the entity passed in if the entity is a player, otherwise returns `nil`.
 
@@ -122,7 +122,7 @@ Many player mods use [Buster](/client/lua-api/action#buster) for their return va
 
 ```lua
 player.normal_attack_func = function(self)
-  return Battle.Buster.new(self, false, player:get_attack_level())
+  return Buster.new(self, false, player:get_attack_level())
 end
 ```
 
@@ -134,7 +134,7 @@ Many player mods use [Buster](/client/lua-api/action#buster) for their return va
 
 ```lua
 player.charged_attack_func = function(self)
-  return Battle.Buster.new(self, true, player:get_attack_level() * 10)
+  return Buster.new(self, true, player:get_attack_level() * 10)
 end
 ```
 
@@ -148,7 +148,7 @@ Created through [player:create_form()](#playercreate_form)
 
 ### `player_form:set_mugshot_texture_path(path)`
 
-- `path`: file path relative to script file, use values returned from `Engine.load_texture()` for better performance.
+- `path`: file path relative to script file, use values returned from `Resources.load_texture()` for better performance.
 
 This texture is used for the form selection menu and emotions.
 

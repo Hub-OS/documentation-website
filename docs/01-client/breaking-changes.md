@@ -4,9 +4,15 @@ https://github.com/Real-PET/mod-upgrade-tool
 
 ## 0.3
 
-- Renamed "enemies" folder to "battles"
+- Renamed "enemies" folder to "encounters"
+- Renamed `battle_init` to `encounter_init`
+- Renamed `battle` mod category to `encounter`
 - Renamed `include` to `require`
-- Renamed `Battle.CardAction` to [Battle.Action](/client/lua-api/action)
+- Renamed `Engine` to [Resources] (/client/lua-api/resources#resourcesplay_music)
+- Renamed `Engine.stream_music()` to [Resources.play_music()](/client/lua-api/resources)
+- Move `Engine` turn gauge functions to [TurnGauge](/client/lua-api/turn-gauge)
+- Removed `Battle.` prefix
+- Renamed `Battle.CardAction` to [Action](/client/lua-api/action)
 - Renamed `card_properties.short_name` to `card_properties.short_name`
 - Renamed `entity:card_action_event()` to [entity:queue_action()](/client/lua-api/entity#entityqueue_actionaction)
 - Renamed `action:get_actor()` to [action:get_owner()](/client/lua-api/action#actionget_owner)
@@ -14,7 +20,6 @@ https://github.com/Real-PET/mod-upgrade-tool
   - Replacement / removal is under consideration.
 - Renamed `action:set_metadata()` to [action:set_card_properties()](/client/lua-api/action#actionset_card_propertiesproperties)
   - Replacement / removal is under consideration.
-- Moved `HitProps` to [Battle.HitProps](/client/lua-api/spell/#hitprops)
 - Renamed `spell:highlight_tile()` to [spell:set_tile_highlight()](/client/lua-api/spell/#spellset_tile_highlightmode)
 - Removed `tile:is_cracked()`, `tile:is_hidden()`, and `tile:is_hole()`
   - `not tile:is_walkable()` can be used where `tile:is_hole()` is called
@@ -23,8 +28,9 @@ https://github.com/Real-PET/mod-upgrade-tool
   - Added [tile:remove_reservation_for_id(entity_id)](/client/lua-api/field#tileremove_reservation_for_identity_id)
   - Added [tile:remove_reservation_for(entity)](/client/lua-api/field#tileremove_reservation_forentity)
 - Renamed `TileState.Empty` to `TileState.PermaHole`
-- Renamed `MoveAction` to [Battle.Movement](/client/lua-api/entity#movement)
+- Renamed `MoveAction` to [Movement](/client/lua-api/entity#movement)
 - Renamed `entity:raw_move_event()` to [entity:queue_movement()](/client/lua-api/entity#entityqueue_movementmovement)
+- Renamed `entity:share_tile()` to [entity:enable_sharing_tile()](/client/lua-api/entity#entityenable_sharing_tileenabled)
 - Renamed `entity:get_current_palette()` to [entity:get_palette()](/client/lua-api/entity#entityget_palette)
 - Renamed `entity:set_animation(path)` to [entity:load_animation(path)](/client/lua-api/entity#entityload_animationpath)
 - Renamed `sprite:show()` to [sprite:reveal()](/client/lua-api/sprite#spritereveal)
@@ -32,10 +38,10 @@ https://github.com/Real-PET/mod-upgrade-tool
 - Renamed `animation:refresh(sprite)` to [animation:apply(sprite)](/client/lua-api/animation#animationapplysprite)
 - Moved `entity:shake_camera()` to [field:shake()](/client/lua-api/field#fieldshakestrength-duration)
   - Also accepts game frames instead of seconds
-- Renamed `Engine.stream_music()` to [Engine.play_music()](/client/lua-api/engine#engineplay_music)
-- Renamed `Engine.reset_turn_gauge_to_default()` to [Engine.reset_turn_gauge_max_time()](/client/lua-api/engine#enginereset_turn_gauge_max_time)
-- Renamed `Engine.get_turn_gauge_value()` to [Engine.get_turn_gauge_progress()](/client/lua-api/engine#engineget_turn_gauge_progress)
-- Moved `IntangibleRule` to [Battle.IntangibleRule](/client/lua-api/living#intangiblerule)
+- Renamed `living:toggle_hitbox()` to [living:enabled_hitbox()](/client/lua-api/living#livingenable_hitboxenabled)
+- Renamed `living:toggle_counter()` to [living:set_counterable()](/client/lua-api/living#livingset_counterableenabled)
+- Moved `IntangibleRule` to [IntangibleRule](/client/lua-api/living#intangiblerule)
+- Renamed `Lifetime.Battlestep` to `Lifetime.Battle`
 
 ## 0.2
 

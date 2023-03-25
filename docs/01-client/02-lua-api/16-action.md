@@ -4,7 +4,7 @@ While actions execute, their owners will stop auto reserving tiles.
 
 [Players](/client/lua-api/player), [Characters](/client/lua-api/character), and [Obstacles](/client/lua-api/obstacle) automatically reserve tiles outside of executing actions.
 
-### `Battle.Action.new(entity, state)`
+### `Action.new(entity, state)`
 
 - `entity`: the [Entity](/client/lua-api/entity) to tie the action to.
 - `state`: string, the animation state to play when the action executes.
@@ -113,7 +113,7 @@ Enables time freeze for the action.
 
 ## Buster
 
-### `Battle.Buster.new(player, charged, damage)`
+### `Buster.new(player, charged, damage)`
 
 - `player`: [Player](/client/lua-api/player)
 - `charged`: bool, affects hit artifact

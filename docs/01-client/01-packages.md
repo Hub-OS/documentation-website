@@ -41,7 +41,7 @@ characters = []
 # this section is optional
 [dependencies]
 augments = [] # optional, list of package ids
-battles = [] # optional, list of package ids
+encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
@@ -54,13 +54,13 @@ function augment_init(augment)
 end
 ```
 
-## Battles
+## Encounters
 
 Expects a `package.toml` file
 
 ```toml
 [package]
-category = "battle" # must match
+category = "encounter" # must match
 id = "com.discord.Konstinople#7692.cactikil" # must be unique
 name = "Cactikil"
 description = 'Cactikil, known as "Sabotekoron" in Japan, is a cactus'
@@ -77,7 +77,7 @@ characters = [
 # this section is optional
 [dependencies]
 augments = [] # optional, list of package ids
-battles = [] # optional, list of package ids
+encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
@@ -86,7 +86,7 @@ libraries = [] # optional, list of package ids
 Expects an `entry.lua` file. See [Encounter](/client/lua-api/encounter)
 
 ```lua
-function battle_init(encounter)
+function encounter_init(encounter)
 end
 ```
 
@@ -138,7 +138,7 @@ characters = []
 # this section is optional
 [dependencies]
 augments = [] # optional, list of package ids
-battles = [] # optional, list of package ids
+encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
@@ -148,7 +148,7 @@ Expects an `entry.lua` file. See [Action](/client/lua-api/action)
 
 ```lua
 function card_init(entity, card_properties)
-  local action = Battle.Action.new(entity, "PLAYER_IDLE")
+  local action = Action.new(entity, "PLAYER_IDLE")
   return action
 end
 ```
@@ -171,7 +171,7 @@ characters = []
 # this section is optional
 [dependencies]
 augments = [] # optional, list of package ids
-battles = [] # optional, list of package ids
+encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
@@ -211,7 +211,7 @@ characters = []
 # this section is optional
 [dependencies]
 augments = [] # optional, list of package ids
-battles = [] # optional, list of package ids
+encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids

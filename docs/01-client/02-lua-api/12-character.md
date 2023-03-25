@@ -4,11 +4,11 @@ Instance of [Entity](/client/lua-api/entity). All [Living](/client/lua-api/livin
 
 Character functions are accessible to all entities, but will throw if the entity is not a Character, [Player](/client/lua-api/player), or [Obstacle](/client/lua-api/obstacle).
 
-### `Battle.Character.from(entity)`
+### `Character.from(entity)`
 
 Returns the entity passed in if the entity is a character or player, otherwise returns `nil`.
 
-### `Battle.Character.from_package(package_id, team, rank)`
+### `Character.from_package(package_id, team, rank)`
 
 - `package_id`: string, the package id of the character
 - `team`: [Team](/client/lua-api/entity#entityset_teamteam)

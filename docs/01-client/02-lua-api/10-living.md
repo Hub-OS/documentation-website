@@ -16,7 +16,7 @@ Returns the entity's current health.
 
 Sets the entity's max health.
 
-### `living:toggle_hitbox(enabled?)`
+### `living:enable_hitbox(enabled?)`
 
 Passing false will allow attacks to pass through as if the entity didn't exist.
 
@@ -24,7 +24,7 @@ Passing false will allow attacks to pass through as if the entity didn't exist.
 
 Returns true if the entity can currently be countered.
 
-### `living:toggle_counter(enabled?)`
+### `living:set_counterable(enabled?)`
 
 Allows the entity to be countered when hit by an attack with a [context](/client/lua-api/entity#entityget_context) created in [card_init](/client/packages/#cards)
 
@@ -75,7 +75,7 @@ Returns true if `judge:block_impact()` was called.
 
 See [living:add_defense_rule()](/client/lua-api/living#livingadd_defense_ruledefense_rule)
 
-### `Battle.DefenseRule.new(priority, defense_order)`
+### `DefenseRule.new(priority, defense_order)`
 
 - `priority`
   - `DefensePriority.Barrier`
@@ -117,7 +117,7 @@ The return value replaces the HitProps applied to the entity.
 
 ## DefenseVirusBody
 
-### `Battle.DefenseVirusBody.new()`
+### `DefenseVirusBody.new()`
 
 Creates a [DefenseRule](#defenserule) with `DefensePriority.Body` and `DefenseOrder.CollisionOnly`.
 
@@ -125,7 +125,7 @@ Filters `Hit.Flinch` and `Hit.Flash` flags during status filtering.
 
 ## IntangibleRule
 
-### `Battle.IntangibleRule.new()`
+### `IntangibleRule.new()`
 
 ### `intangible_rule.duration`
 

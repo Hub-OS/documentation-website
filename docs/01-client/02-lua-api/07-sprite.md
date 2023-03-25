@@ -14,7 +14,7 @@ Returns the path to the sprite's texture.
 
 ### `sprite:set_texture(path)`
 
-Use values returned from [Engine.load_texture()](/client/lua-api/engine#engineload_texturepath) for better performance.
+Use values returned from [Resources.load_texture()](/client/lua-api/resources#resourcesload_texturepath) for better performance.
 
 ### `sprite:get_palette()`
 
@@ -26,7 +26,7 @@ Sets the palette for the texture to reference.
 
 Palettes are 256x1 images. Colors on the sprite's texture will be remapped by taking the red value of the texture to grab a color from the palette.
 
-Use values returned from [Engine.load_texture()](/client/lua-api/engine#engineload_texturepath) for better performance.
+Use values returned from [Resources.load_texture()](/client/lua-api/resources#resourcesload_texturepath) for better performance.
 
 ### `sprite:is_visible()`
 

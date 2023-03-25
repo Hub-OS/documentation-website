@@ -49,11 +49,21 @@ assert(Direction.join(Direction.UpLeft, Direction.Right) == Direction.Up)
 assert(Direction.join(Direction.Left, Direction.Right) == Direction.None)
 ```
 
+### `Direction.vector(direction)`
+
+Returns a table with `x` and `y` keys.
+
+```lua
+local vector = Direction.vector(Direction.UpLeft)
+assert(vector.x == -1 and vector.y == -1)
+```
+
 ### `Direction.unit_vector(direction)`
 
 Returns a table with `x` and `y` keys.
 
 ```lua
 local vector = Direction.unit_vector(Direction.UpLeft)
-assert(vector.x == -1 and vector.y == -1)
+print(vector.x) -- -0.707...
+print(vector.y) -- -0.707...
 ```

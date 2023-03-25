@@ -4,13 +4,13 @@ Instance of [Entity](/client/lua-api/entity).
 
 Spell functions are accessible to all entities, but will throw if the entity is not a Spell or [Obstacle](/client/lua-api/obstacle).
 
-### `Battle.Spell.new(team?)`
+### `Spell.new(team?)`
 
 - `team`: [Team](/client/lua-api/entity#entityset_teamteam)
 
 Returns a new [Entity](/client/lua-api/entity) instance.
 
-### `Battle.Spell.from(entity)`
+### `Spell.from(entity)`
 
 Returns the entity passed in if the entity is a spell, otherwise returns `nil`.
 
@@ -99,7 +99,7 @@ Same as `Drag.new()`
 
 Attacks on first update then deletes self.
 
-### `Battle.Hitbox.new(team?, damage?)`
+### `Hitbox.new(team?, damage?)`
 
 Returns a new [Entity](/client/lua-api/entity) instance.
 
@@ -109,7 +109,7 @@ Adopts the parent spell's [HitProps](#hitprops) and [Team](/client/lua-api/entit
 
 The SharedHitbox's `on_collision_func` and `on_attack_func` calls the parent spell's `on_collision_func` and `on_attack_func`.
 
-### `Battle.SharedHitbox.new(spell, duration)`
+### `SharedHitbox.new(spell, duration)`
 
 Creates a SharedHitbox.
 

@@ -224,17 +224,17 @@ Returns true if the player is in battle.
 ### `Net.initiate_encounter(player_id, package_path, data?)`
 
 - `data`: anything that could be represented as JSON.
-  - Read as second param in battle_init for the battle package
+  - Read as second param in encounter_init for the encounter package
 
 ### `Net.initiate_pvp(player_1_id, player_2_id, package_path?, data?)`
 
 - `data`: anything that could be represented as JSON.
-  - Read as second param in battle_init for the battle package
+  - Read as second param in encounter_init for the encounter package
 
 ### `Net.initiate_netplay(player_ids, package_path?, data?)`
 
 - `data`: anything that could be represented as JSON.
-  - Read as second param in battle_init for the battle package
+  - Read as second param in encounter_init for the encounter package
 
 ### `Net.transfer_player(player_id, area_id, warp_in?, x?, y?, z?, direction?)`
 

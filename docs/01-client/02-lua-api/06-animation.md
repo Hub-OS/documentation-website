@@ -1,6 +1,6 @@
 # Animation
 
-### `Engine.Animation.new(path?)`
+### `Animation.new(path?)`
 
 Constructs a new Animation instance.
 
@@ -8,7 +8,7 @@ Constructs a new Animation instance.
 
 Copies states and settings from the passed animation. Progress is reset.
 
-Internally calls `animation:apply()` unless the animation was created through `Engine.Animation.new()`
+Internally calls `animation:apply()` unless the animation was created through `Animation.new()`
 
 This function will call and clear interrupt callbacks.
 
@@ -28,9 +28,9 @@ If the animation has not completed and retaining state fails, this function will
 
 Advances animation progress by 1f or ~0.1666s. Ignored if the animation is paused.
 
-Internally calls `animation:apply()` unless the animation was created through `Engine.Animation.new()`
+Internally calls `animation:apply()` unless the animation was created through `Animation.new()`
 
-Automatically called unless the animation was created through `Engine.Animation.new()`
+Automatically called unless the animation was created through `Animation.new()`
 
 ### `animation:pause()`
 
@@ -54,7 +54,7 @@ Changes the active state, resets animation progress and settings.
 
 This function will call and clear interrupt callbacks.
 
-Internally calls `animation:apply()` unless the animation was created through `Engine.Animation.new()`
+Internally calls `animation:apply()` unless the animation was created through `Animation.new()`
 
 ### `animation:derive_state(state, frame_data)`
 

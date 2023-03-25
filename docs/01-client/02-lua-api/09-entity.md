@@ -73,7 +73,11 @@ Returns the tile at the same position as the entity.
 
 Returns the [Field](/client/lua-api/field)
 
-### `entity:share_tile(share?)`
+### `entity:is_sharing_tile()`
+
+Returns true if other entities can stand on this tile.
+
+### `entity:enable_sharing_tile(share?)`
 
 Allows other entities to stand on tiles reserved by this entity.
 
@@ -173,7 +177,7 @@ Removes the sync node from the entity.
 
 Sets the texture for the shadow. Shadows are not visible by default, use `entity:show_shadow()` to make the shadow visible.
 
-Use values returned from [Engine.load_texture()](/client/lua-api/engine#engineload_texturepath) for better performance.
+Use values returned from [Resources.load_texture()](/client/lua-api/resources#resourcesload_texturepath) for better performance.
 
 There are built-in shadow textures that can be used as well:
 
@@ -343,7 +347,7 @@ See [entity:create_component()](/client/lua-api/entity#entitycreate_componentlif
 
 ## Movement
 
-### `Battle.Movement.new()`
+### `Movement.new()`
 
 Returns a new Movement value for passing to [entity:queue_movement](#entityqueue_movementmovement)
 
