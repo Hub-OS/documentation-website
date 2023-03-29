@@ -7,6 +7,9 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-font-size-base: 14px;
+  --ifm-list-item-margin: 0;
+  --ifm-toc-padding-vertical: 0.25rem;
+
   --ifm-color-primary: #1088e8;
   --ifm-color-primary-dark: var(--ifm-color-primary);
   --ifm-color-primary-darker: var(--ifm-color-primary);
