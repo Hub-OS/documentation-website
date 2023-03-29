@@ -49,7 +49,6 @@ Called after processing damage on the entity, if damage isn't blocked by [Defens
   - `Hit.Flinch`
   - `Hit.Shake`
   - `Hit.Paralyze`
-  - `Hit.Stun`
   - `Hit.Flash`
   - `Hit.PierceGuard`
   - `Hit.Impact`

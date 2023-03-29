@@ -127,6 +127,8 @@ Filters `Hit.Flinch` and `Hit.Flash` flags during status filtering.
 
 ### `IntangibleRule.new()`
 
+Returns a new IntangibleRule.
+
 ### `intangible_rule.duration`
 
 The maximum time the rule should last for in game frames.

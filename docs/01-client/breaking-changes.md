@@ -21,6 +21,7 @@ https://github.com/Real-PET/mod-upgrade-tool
   - Replacement / removal is under consideration.
 - Renamed `action:set_metadata()` to [action:set_card_properties()](/client/lua-api/action#actionset_card_propertiesproperties)
   - Replacement / removal is under consideration.
+- Renamed `Hit.Stun` to `Hit.Paralyze`
 - Renamed `spell:highlight_tile()` to [spell:set_tile_highlight()](/client/lua-api/spell/#spellset_tile_highlightmode)
 - Removed `tile:is_cracked()`, `tile:is_hidden()`, and `tile:is_hole()`
   - `not tile:is_walkable()` can be used where `tile:is_hole()` is called
