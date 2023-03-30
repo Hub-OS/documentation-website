@@ -4,6 +4,8 @@
 
 Returns the turn gauge's progress as a value between 0 and 1.
 
+Same as `TurnGauge.time() / TurnGauge.max_time()`
+
 ### `TurnGauge.time()`
 
 Returns the turn gauge's progress in elapsed frames.
