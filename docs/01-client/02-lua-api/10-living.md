@@ -53,6 +53,12 @@ Returns true if an [IntangibleRule](/client/lua-api/living#intangiblerule) is ac
 
 The callback will be called when the `hit_flag` is applied to the entity.
 
+### `living.on_countered_func = function(self)`
+
+Called when this entity has been countered.
+
+Not to be confused with [entity.on_counter_func](/client/lua-api/entity#entityon_counter_func--functionself)
+
 ## DefenseJudge
 
 Created for each attack resolution and passed through [DefenseRule](#defenserule) callbacks.

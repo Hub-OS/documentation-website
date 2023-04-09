@@ -316,6 +316,12 @@ Called when the entity is spawned by [field:spawn()](/client/lua-api/field/#fiel
 
 Called during battle, when not frozen from time freeze or blocked by statuses.
 
+### `entity.on_counter_func = function(self)`
+
+Called when an attack using this entity's [context](#entitycontext) counters another entity.
+
+Not to be confused with [living.on_countered_func](/client/lua-api/living#livingon_countered_func--functionself)
+
 ### `entity.on_delete_func = function(self)`
 
 Called when health is 0 or `entity:delete()` is called. `entity:erase()` must be called to truly delete the entity.
