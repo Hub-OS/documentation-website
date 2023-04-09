@@ -150,7 +150,7 @@ Created through [player:create_form()](#playercreate_form)
 
 - `path`: file path relative to script file, use values returned from `Resources.load_texture()` for better performance.
 
-This texture is used for the form selection menu and emotions.
+This texture is used for the form selection menu.
 
 ### `player_form.on_activate_func = function(self, player)`
 
