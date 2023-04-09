@@ -222,7 +222,7 @@ Same as `entity:animation():load(path)`
 
 Returns a value that can be used to decide if an attack can counter an opponent, and to resolve the owner of an attack.
 
-Countering an attack can be achieved by hitting an enemy with [HitProps](/client/lua-api/spell#hitprops) containing context obtained during [card_init](/client/packages#cards)
+Countering an attack can be achieved by hitting an enemy with [HitProps](/client/lua-api/spell#hitprops) containing context obtained during [card_init](/client/packages#cards) or within [action.on_execute_func](/client/lua-api/action#actionon_execute_func--functionself)
 
 Make sure to obtain context in card_init and not within a callback for countering.
 
