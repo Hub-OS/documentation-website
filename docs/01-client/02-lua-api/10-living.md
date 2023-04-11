@@ -16,6 +16,10 @@ Returns the entity's current health.
 
 Sets the entity's max health.
 
+### `living:hitbox_enabled()`
+
+Returns true if the entity can interact with attacks.
+
 ### `living:enable_hitbox(enabled?)`
 
 Passing false will allow attacks to pass through as if the entity didn't exist.
