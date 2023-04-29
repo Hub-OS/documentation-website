@@ -12,6 +12,14 @@ Returns true if a board, shop, or textbox is open.
 
 Returns true if a shop is open.
 
+### `Net.hide_hud(player_id)`
+
+Hides the HUD for the specified player.
+
+### `Net.show_hud(player_id)`
+
+Makes the HUD visible for the specified player.
+
 ### `Net.message_player(player_id, message, mug_texture_path?, mug_animation_path?)`
 
 Displays a textbox with the message and mug.
