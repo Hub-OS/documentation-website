@@ -8,6 +8,20 @@ Player functions are accessible to all entities, but will throw if the entity is
 
 Returns the entity passed in if the entity is a player, otherwise returns `nil`.
 
+### `player:emotions()`
+
+Returns a list of valid values for `player:set_emotion()`.
+
+### `player:emotion()`
+
+Returns the name of the current emotion animation state.
+
+### `player:set_emotion(state)`
+
+Sets the current animation state for the player's emotion.
+
+If the state doesn't exist, this does nothing.
+
 ### `player:input_has(input_query)`
 
 - `input_query`

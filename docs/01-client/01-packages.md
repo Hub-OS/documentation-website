@@ -203,6 +203,7 @@ overworld_texture_path = "overworld.png"
 mugshot_texture_path = "mug.png"
 mugshot_animation_path = "mug.animation"
 emotions_texture_path = "" # optional
+emotions_animation_path = "" # optional
 
 # this section is optional, see the Battle section for an example
 [defines]
