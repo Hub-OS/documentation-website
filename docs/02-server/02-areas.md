@@ -39,8 +39,8 @@ Map:
 
 - Name: string
   - Area name to display in the PersonalMenu
-- Song: string
-  - Path to ogg file
+- Music: string
+  - Path to audio asset
 - Background Texture: string
   - Path to background image file
 - Background Animation: string

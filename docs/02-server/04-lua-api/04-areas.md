@@ -68,13 +68,13 @@ Returns the name of the area, visible to the client.
 
 Sets the name of the area, visible to the client.
 
-### `Net.get_song(area_id)`
+### `Net.get_music(area_id)`
 
-Returns the path of the area's song.
+Returns the path of the area's music.
 
-### `Net.set_song(area_id, path)`
+### `Net.set_music(area_id, path)`
 
-Changes the song for the area, players will be updated at the end of the tick.
+Changes the music for the area, players will be updated at the end of the tick.
 
 ### `Net.get_background(area_id)`
 
