@@ -1,5 +1,9 @@
 # Breaking Changes
 
+## 0.5.0
+
+- `Async.remove_player_item()` removed.
+
 ## 0.2.0
 
 - `Async.promisify()` removed.
