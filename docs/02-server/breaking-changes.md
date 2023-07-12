@@ -4,7 +4,8 @@
 
 - `Async.remove_player_item()` removed.
 - `Net.set_mod_whitelist_for_player()` and `Net.set_mod_blacklist_for_player()` removed.
-  - Use [Net.set_player_restrictions()](/server/lua-api/player-data#netset_player_restrictionsplayer_id-path) instead
+  - Use [Net.set_player_restrictions()](/server/lua-api/players#netset_player_restrictionsplayer_id-path) instead.
+- Replaced MD5 with SHA-256 for hashing packages.
 
 ## 0.2.0
 
