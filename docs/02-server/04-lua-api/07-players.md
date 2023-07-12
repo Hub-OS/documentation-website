@@ -199,19 +199,26 @@ If the player accepts, the package will be installed.
 
 Not implemented.
 
-### `Net.set_mod_whitelist_for_player(player_id, path)`
+### `Net.set_player_restrictions(player_id, path)`
 
 - `path`: `string`
-  - Whitelists have this format: `[md5] [package_id]\n`
+  - Server asset path to a toml file.
 
-Not implemented. Subject to change.
+Expecting structure:
 
-### `Net.set_mod_blacklist_for_player(player_id, path)`
+```toml
+[deck]
+# excluded properties will use these defaults
+required_total = 30
+mega_limit = 5
+giga_limit = 1
+dark_limit = 3
 
-- `path`: `string`
-  - Blacklists have this format: `[md5] [package_id]\n`
-
-Not implemented. Subject to change.
+[packages]
+# empty or excluded properties will allow all packages
+blacklist = ["hash_here", ...]
+whitelist = ["hash_here", ...]
+```
 
 ### `Net.is_player_busy(player_id)`
 
