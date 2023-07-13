@@ -1,6 +1,6 @@
 # Breaking Changes
 
-https://github.com/Real-PET/mod-upgrade-tool
+https://github.com/Hub-OS/mod-upgrade-tool
 
 ## 0.3
 

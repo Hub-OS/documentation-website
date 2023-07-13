@@ -18,7 +18,7 @@ const searchOptions = {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Real-PET",
+  title: "HubOS",
   tagline: "",
   favicon: "img/favicon.ico",
 
@@ -26,11 +26,11 @@ const config = {
   url: "https://your-docusaurus-test-site.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/documentation-website/",
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Real-PET", // Usually your GitHub org/user name.
+  organizationName: "Hub-OS", // Usually your GitHub org/user name.
   projectName: "documentation-website", // Usually your repo name.
   trailingSlash: true,
 
@@ -60,7 +60,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/Real-PET/documentation-website/tree/master/",
+            "https://github.com/Hub-OS/documentation-website/tree/master/",
           breadcrumbs: false,
         },
         blog: false,
@@ -97,7 +97,7 @@ const config = {
             label: "Server",
           },
           {
-            href: "https://github.com/Real-PET/documentation-website",
+            href: "https://github.com/Hub-OS/documentation-website",
             label: "GitHub",
             position: "right",
           },

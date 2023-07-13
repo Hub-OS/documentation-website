@@ -7,7 +7,7 @@ export default function Home() {
 
   useEffect(() => {
     if (context.siteConfig.customFields.NODE_ENV != "development") {
-      window.location.replace("https://real-pet.konstinople.dev");
+      window.location.replace("https://hubos.dev");
     }
   }, []);
 
