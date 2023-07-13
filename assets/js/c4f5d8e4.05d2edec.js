@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[195],{2841:(e,t,n)=>{n.r(t),n.d(t,{default:()=>s});var o=n(7294),u=n(2263),c=n(179);function s(){const e=(0,u.Z)();return(0,o.useEffect)((()=>{"development"!=e.siteConfig.customFields.NODE_ENV&&window.location.replace("https://hubos.dev")}),[]),o.createElement(c.Z,null)}}}]);
