@@ -159,7 +159,7 @@ Expects a `package.toml` file
 
 ```toml
 [package]
-category = "library" # must match
+category = "library" # accepts "library" and "pack"
 id = "com.example.library" # must be unique
 name = "Example Library"
 description = "Example Library"
