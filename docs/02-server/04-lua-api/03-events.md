@@ -255,6 +255,17 @@ Net:on("shop_description_request", function(event)
 end)
 ```
 
+### `item_use`
+
+Emits when the player requests to use an item. Does not automatically remove the item from their inventory.
+
+```lua
+Net:on("item_use", function(event)
+  -- { player_id: string, item_id: string }
+  print(event.player_id, event.item_id)
+end)
+```
+
 ### `battle_results`
 
 Emits after a player leaves any server sent battle, regardless of winning, losing, or running.
