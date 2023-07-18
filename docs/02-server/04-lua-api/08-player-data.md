@@ -48,9 +48,11 @@ Sets the amount of money the player has.
 
 ### `Net.register_item(item_id, item_definition)`
 
-- `item_definition`: `{ consumable?: bool, name: string, description: string }`
+- `item_definition`: `{ name: string, description: string, consumable?: bool }`
 
 Registers an item definition to be shared with the client when the player obtains this item for the first time.
+
+The item's name should be at most 8 characters for best display.
 
 ### `Net.get_item_name(item_id)`
 
