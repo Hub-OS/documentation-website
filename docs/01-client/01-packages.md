@@ -147,6 +147,10 @@ libraries = [] # optional, list of package ids
 Expects an `entry.lua` file. See [Action](/client/lua-api/action)
 
 ```lua
+-- optional implementation, called when package ids change on cards tied to a character
+-- function card_mutate(entity, card_index)
+-- end
+
 function card_init(entity, card_properties)
   local action = Action.new(entity, "PLAYER_IDLE")
   return action

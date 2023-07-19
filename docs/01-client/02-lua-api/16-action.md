@@ -103,21 +103,17 @@ Returns a reference to the attachment's [Animation](/client/lua-api/animation)
 
 Displayed during time freeze.
 
-### card_properties.description
-
-### card_properties.long_description
-
 ### card_properties.damage
 
 Displayed during time freeze.
+
+### card_properties.code
 
 ### card_properties.element
 
 ### card_properties.secondary_element
 
 ### card_properties.card_class
-
-### card_properties.limit
 
 ### card_properties.hit_flags
 
