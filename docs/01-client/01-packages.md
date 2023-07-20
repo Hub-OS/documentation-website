@@ -228,3 +228,17 @@ Expects an `entry.lua` file. See [Player](/client/lua-api/player)
 function player_init(player)
 end
 ```
+
+## Resources
+
+Expects a `package.toml` file
+
+```toml
+[package]
+category = "resource" # must match
+id = "com.example.resource" # must be unique
+name = "Example Resource Package"
+description = "Example Resource Package"
+```
+
+Expects a `resources` folder. Files in this package's `resources` folder will override files in the program's `resources` folder when enabled.
