@@ -9,6 +9,11 @@ While actions execute, their owners will stop auto reserving tiles.
 - `entity`: the [Entity](/client/lua-api/entity) to tie the action to.
 - `state`: string, the animation state to play when the action executes.
 
+### `Action.from_card(entity, card_properties)`
+
+- `entity`: the [Entity](/client/lua-api/entity) to tie the action to.
+- `card_properties`: [CardProperties](#cardproperties)
+
 ### `action:owner()`
 
 Returns the [Entity](/client/lua-api/entity) tied to this action
@@ -99,35 +104,43 @@ Returns a reference to the attachment's [Animation](/client/lua-api/animation)
 
 ## CardProperties
 
-### card_properties.short_name
+### `CardProperties.new()`
+
+Returns a new CardProperties table with default values.
+
+### `CardProperties.from_package(package_id, code?)`
+
+Returns a new CardProperties table using package information.
+
+### `card_properties.short_name`
 
 Displayed during time freeze.
 
-### card_properties.damage
+### `card_properties.damage`
 
 Displayed during time freeze.
 
-### card_properties.code
+### `card_properties.code`
 
-### card_properties.element
+### `card_properties.element`
 
-### card_properties.secondary_element
+### `card_properties.secondary_element`
 
-### card_properties.card_class
+### `card_properties.card_class`
 
-### card_properties.hit_flags
+### `card_properties.hit_flags`
 
-### card_properties.can_boost
+### `card_properties.can_boost`
 
-### card_properties.counterable
+### `card_properties.counterable`
 
-### card_properties.time_freeze
+### `card_properties.time_freeze`
 
 Enables time freeze for the action.
 
-### card_properties.skip_time_freeze_intro
+### `card_properties.skip_time_freeze_intro`
 
-### card_properties.meta_classes
+### `card_properties.meta_classes`
 
 ## Buster
 
