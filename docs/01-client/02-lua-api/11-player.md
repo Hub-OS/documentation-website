@@ -156,6 +156,18 @@ end
 
 Should return an [Action](/client/lua-api/action)
 
+### `player.can_charge_card_func = function(card_properties)`
+
+Will not be called if there's no matching `charged_card_func`
+
+Return true if `charged_card_func` should be called to handle this card.
+
+### `player.charged_card_func = function(self, card_properties)`
+
+Will not be called if there's no matching `can_charge_card_func`
+
+An [Action](/client/lua-api/action) or `nil` is expected as a return value.
+
 ## PlayerForm
 
 Created through [player:create_form()](#playercreate_form)
@@ -208,6 +220,18 @@ An [Action](/client/lua-api/action) is expected as a return value.
 
 Return `nil` to fallback to the player's implementation.
 
+### `player_form.can_charge_card_func = function(card_properties)`
+
+Will not be called if there's no matching `charged_card_func`
+
+Return true if this form's `charged_card_func` should be called to handle this card.
+
+### `player_form.charged_card_func = function(self, card_properties)`
+
+Will not be called if there's no matching `can_charge_card_func`
+
+An [Action](/client/lua-api/action) or `nil` is expected as a return value.
+
 ## Augment
 
 ### `augment:id()`
@@ -251,6 +275,18 @@ Overrides [player.special_attack_func](#playerspecial_attack_func--functionself)
 An [Action](/client/lua-api/action) is expected as a return value.
 
 Return `nil` to fallback to the next implementation (augment, form, or player).
+
+### `augment.can_charge_card_func = function(card_properties)`
+
+Will not be called if there's no matching `charged_card_func`
+
+Return true if this augment's `charged_card_func` should be called to handle this card.
+
+### `augment.charged_card_func = function(self, card_properties)`
+
+Will not be called if there's no matching `can_charge_card_func`
+
+An [Action](/client/lua-api/action) or `nil` is expected as a return value.
 
 ### `augment.on_delete_func = function(self)`
 

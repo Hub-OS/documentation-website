@@ -153,6 +153,8 @@ Expects an `entry.lua` file. See [Action](/client/lua-api/action)
 
 function card_init(entity, card_properties)
   local action = Action.new(entity, "PLAYER_IDLE")
+
+  -- note: returning nil instead of an Action will create a poof effect
   return action
 end
 ```
