@@ -18,7 +18,7 @@ const searchOptions = {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "HubOS",
+  title: "Hub OS Documentation",
   tagline: "",
   favicon: "img/favicon.ico",
 
