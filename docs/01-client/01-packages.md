@@ -16,6 +16,7 @@ rapid_boost = 0 # optional
 charge_boost = 0 # optional
 mega_boost = 0 # optional
 giga_boost = 0 # optional
+hand_size_boost = 0 # optional
 # list of colors, case insensitive
 # valid colors: "red" | "green" | "blue" | "pink" | "yellow" | "white"
 colors = ["pink", "red", "blue"]

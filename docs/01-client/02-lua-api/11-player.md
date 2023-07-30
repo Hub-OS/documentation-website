@@ -86,6 +86,16 @@ Adds the `health` value to the max health.
 
 If it is the player's health is greater than the new max health it will be reduced to the new max health.
 
+### `player:hand_size()`
+
+Returns the max amount of cards the player can view from the deck accounting for boosts.
+
+### `player:boost_hand_size(size)`
+
+- `size`: integer
+
+Adds the `size` value to the `hand_size` or the amount of cards the player can view from the deck.
+
 ### `player:attack_level()`
 
 Returns the player's total attack level, a combination of `boost_attack_level` and [Augment](#augment) boosts.
