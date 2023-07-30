@@ -35,3 +35,33 @@ Returns a new character entity, throws if the package doesn't exist.
 ### `Character:rank()`
 
 Returns the character's rank.
+
+### `Character:field_cards()`
+
+Returns a list of [CardProperties](/client/lua-api/action/#cardproperties), the first card is the next card that can be used.
+
+### `Character:field_card(index)`
+
+- `index`: number, 1 represents the next card that can be used.
+
+Returns [CardProperties](/client/lua-api/action/#cardproperties) or nil.
+
+### `Character:set_field_card(index, card_properties)`
+
+- `index`: number, 1 represents the next card that can be used.
+- `card_properties`: [CardProperties](/client/lua-api/action/#cardproperties)
+
+Changing package_id will cause [card_mutate()](/client/packages#cards) to restart or run again next frame.
+
+### `Character:remove_field_card(index)`
+
+- `index`: number, 1 represents the next card that can be used.
+
+### `Character:insert_field_card(index, card_properties)`
+
+- `index`: number, 1 represents the next card that can be used.
+- `card_properties`: [CardProperties](/client/lua-api/action/#cardproperties)
+
+Inserts a card at this index, shifting cards at this position and after to the right.
+
+Will cause [card_mutate()](/client/packages#cards) to restart or run again next frame.
