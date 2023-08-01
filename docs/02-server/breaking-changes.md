@@ -1,5 +1,16 @@
 # Breaking Changes
 
+## 0.9.0
+
+- Emotes now use an animation file and completely override emotes shipped with the client.
+  - Scaling is defined in the animation file. Adjust a point named SCALE on the first frame to fix scaling from older custom emote files.
+  - Emote IDs use animation state name rather than hard coded numbers.
+  - `--custom-emotes-path` split into `--emotes-animation-path` and `--emotes-texture-path`
+  - Relevant functions:
+    - [Net.set_player_emote()](/server/lua-api/players#netset_player_emoteplayer_id-emote_id)
+    - [Net.exclusive_player_emote()](/server/lua-api/players#netexclusive_player_emoteplayer_id-emoter_id-emote_id)
+    - [Net.set_bot_emote()](/server/lua-api/bots#netset_bot_emotebot_id-emote_id)
+
 ## 0.5.0
 
 - `Async.remove_player_item()` removed.

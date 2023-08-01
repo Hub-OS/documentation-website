@@ -52,19 +52,15 @@ Sets the texture file and animation file used to display the player.
 
 Returns the name of the playable character used by the player.
 
-### `Net.set_player_emote(player_id, emote_id, use_custom_emotes?)`
+### `Net.set_player_emote(player_id, emote_id)`
 
-Displays an emote above the player. `emote_id` is a number.
+Displays an emote above the player. `emote_id` is the name of an animation state in the emotes animation.
 
-Subject to change.
-
-### `Net.exclusive_player_emote(player_id, emoter_id, emote_id, use_custom_emotes?)`
+### `Net.exclusive_player_emote(player_id, emoter_id, emote_id)`
 
 - `emoter_id`: a `bot_id` or `player_id`
 
 Displays an emote exclusively to this player.
-
-Subject to change.
 
 ### `Net.animate_player(player_id, state_name, loop?)`
 

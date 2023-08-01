@@ -64,11 +64,9 @@ Not implemented.
 
 Sets texture and animation files used to display the bot.
 
-### `Net.set_bot_emote(bot_id, emote_id, use_custom_emotes?)`
+### `Net.set_bot_emote(bot_id, emote_id)`
 
-Displays an emote above the bot. `emote_id` is a number.
-
-Subject to change.
+Displays an emote above the bot. `emote_id` is the name of an animation state in the emotes animation.
 
 ### `Net.animate_bot(bot_id, state_name, loop?)`
 
