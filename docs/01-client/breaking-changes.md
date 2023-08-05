@@ -2,6 +2,10 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.9
+
+- Replaced AudioPriority with [AudioBehavior](/client/lua-api/resources#audiobehavior)
+
 ## 0.3
 
 - Renamed "enemies" folder to "encounters"
