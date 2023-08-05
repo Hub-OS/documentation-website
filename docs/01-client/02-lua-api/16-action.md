@@ -26,7 +26,7 @@ Returns the [Entity](/client/lua-api/entity) tied to this action
   - `make_sequence_lockout()`
     - Action completes when the action runs out of [Steps](#actioncreate_step) to execute
   - `make_async_lockout(duration)`
-    - When the animation ends, entities regain control.
+    - When the animation ends, entities regain movement control. Attacks must wait for the duration to end.
 
 ### `action:create_attachment(point_name)`
 
