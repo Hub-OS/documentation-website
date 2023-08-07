@@ -28,6 +28,10 @@ Returns the [Entity](/client/lua-api/entity) tied to this action
   - `make_async_lockout(duration)`
     - When the animation ends, entities regain movement control. Attacks must wait for the duration to end.
 
+### `action:create_step()`
+
+Returns a new [Step](#step)
+
 ### `action:create_attachment(point_name)`
 
 - `point_name`: string, name of a point in the animation to anchor the attachment to
@@ -101,6 +105,16 @@ Returns a reference to the attachment's [Sprite](/client/lua-api/sprite)
 ### `attachment:animation()`
 
 Returns a reference to the attachment's [Animation](/client/lua-api/animation)
+
+## Step
+
+### `step:complete_step()`
+
+Marks the step as complete.
+
+### `step.on_update_func = function(self)`
+
+Called every tick while the associated action is active if this step is not marked as complete, and there are no steps created before this step that haven't been marked as complete.
 
 ## CardProperties
 
