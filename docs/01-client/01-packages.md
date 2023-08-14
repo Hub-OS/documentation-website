@@ -10,6 +10,7 @@ category = "augment" # must match
 id = "dev.konstinople.augment.Attack1.bn6" # must be unique
 name = "Attack+1"
 description = "MegaBstr\nAttck +1"
+preview_texture_path = "preview.png" # optional
 health_boost = 0 # optional
 attack_boost = 1 # optional
 rapid_boost = 0 # optional
@@ -170,6 +171,7 @@ category = "library" # accepts "library" and "pack"
 id = "com.example.library" # must be unique
 name = "Example Library"
 description = "Example Library"
+preview_texture_path = "preview.png" # optional
 
 # this section is optional, see the Battle section for an example
 [defines]
