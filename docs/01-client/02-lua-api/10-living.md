@@ -51,6 +51,15 @@ Returns true if an [IntangibleRule](/client/lua-api/living#intangiblerule) is ac
 
 - `defense_rule`: [DefenseRule](/client/lua-api/living#defenserule)
 
+### `living:apply_status(hit_flag, duration)`
+
+- `hit_flag` a single hit flag, see [HitProps](/client/lua-api/spell#hitprops)
+- `duration` number, how many battle frames the effect should last
+
+### `living:remove_status(hit_flag)`
+
+- `hit_flag` a single hit flag, see [HitProps](/client/lua-api/spell#hitprops)
+
 ### `living:register_status_callback(hit_flag, function())`
 
 - `hit_flag` a single hit flag, see [HitProps](/client/lua-api/spell#hitprops)

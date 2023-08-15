@@ -53,12 +53,12 @@ Called after processing damage on the entity, if damage isn't blocked by [Defens
   - `Hit.PierceGuard`
   - `Hit.Impact`
   - `Hit.Drag`
-  - `Hit.Bubble`
   - `Hit.NoCounter`
   - `Hit.Root`
   - `Hit.Blind`
   - `Hit.Confuse`
   - `Hit.PierceGround`
+  - [Hit.[flag_name]](/client/packages#statuses)
 - `element`: [Element](/client/lua-api/spell#element)
 - `secondary_element`: [Element](/client/lua-api/spell#element)
 - `context`: The value obtained by [entity:context()](/client/lua-api/entity#entitycontext)

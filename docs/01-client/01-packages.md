@@ -47,6 +47,7 @@ encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
+statuses = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file. See [Augment](/client/lua-api/player#augment)
@@ -83,6 +84,7 @@ encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
+statuses = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file. See [Encounter](/client/lua-api/encounter)
@@ -144,6 +146,7 @@ encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
+statuses = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file. See [Action](/client/lua-api/action)
@@ -184,6 +187,7 @@ encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
+statuses = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file.
@@ -192,6 +196,50 @@ Expects an `entry.lua` file.
 -- Can contain anything
 -- The return value will be passed to lua files using require()
 return "hello"
+```
+
+## Statuses
+
+Expects a `package.toml` file
+
+```toml
+[package]
+category = "status" # must match
+id = "com.BN6.Statuses.Bubble"
+description = ""
+preview_texture_path = "preview.png" # optional
+flag_name = "Bubble" # register Hit.Bubble, up to 64 hit flags can exist
+blocks_flags = ["Freeze"] # prevents these other statuses from existing on an entity when self is applied
+blocked_by = []  # prevents self from existing on an entity when these other statuses are applied
+blocks_actions = true
+blocks_mobility = true
+
+# this section is optional, see the Battle section for an example
+[defines]
+characters = []
+
+# this section is optional
+[dependencies]
+augments = [] # optional, list of package ids
+encounters = [] # optional, list of package ids
+cards = [] # optional, list of package ids, must also depend on defining package
+characters = [] # optional, list of package ids
+libraries = [] # optional, list of package ids
+statuses = [] # optional, list of package ids
+```
+
+Expects an `entry.lua` file. See [Status](/client/lua-api/status)
+
+```lua
+function status_init(status)
+  -- apply
+  -- create components and sprites for graphics here
+  -- modify animation state, etc
+
+  status.on_delete_func = function(self)
+    -- clean up
+  end
+end
 ```
 
 ## Players
@@ -225,6 +273,7 @@ encounters = [] # optional, list of package ids
 cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
+statuses = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file. See [Player](/client/lua-api/player)
