@@ -32,6 +32,12 @@ Internally calls `animation:apply()` unless the animation was created through `A
 
 Automatically called unless the animation was created through `Animation.new()`
 
+### `animation:sync_time(time)`
+
+- `time`: number, represents game frames
+
+Updates the animation as if it has only played for `time`. Using the same time will freeze the animation, decreasing time will reverse the animation.
+
 ### `animation:pause()`
 
 Causes `animation:update()` calls (including automatic calls) to be ignored.
@@ -39,6 +45,10 @@ Causes `animation:update()` calls (including automatic calls) to be ignored.
 ### `animation:resume()`
 
 Unpauses the animation.
+
+### `animation:completed()`
+
+Returns true if the animation is complete.
 
 ### `animation:has_state(state)`
 
