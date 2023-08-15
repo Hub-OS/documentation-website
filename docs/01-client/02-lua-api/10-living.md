@@ -56,9 +56,24 @@ Returns true if an [IntangibleRule](/client/lua-api/living#intangiblerule) is ac
 - `hit_flag` a single hit flag, see [HitProps](/client/lua-api/spell#hitprops)
 - `duration` number, how many battle frames the effect should last
 
+Queues a status update. If the status is already applied, the remaining time will be updated to use the longer duration.
+
 ### `living:remove_status(hit_flag)`
 
 - `hit_flag` a single hit flag, see [HitProps](/client/lua-api/spell#hitprops)
+
+### `living:remaining_status_time(hit_flag)`
+
+- `hit_flag` a single hit flag, see [HitProps](/client/lua-api/spell#hitprops)
+
+Returns a number representing the amount of battle frames until the status wears off.
+
+### `living:set_remaining_status_time(hit_flag, duration)`
+
+- `hit_flag` a single hit flag, see [HitProps](/client/lua-api/spell#hitprops)
+- `duration` number, how many battle frames the effect should last.
+
+Updates remaining time for a status already applied, or queues a new status update if isn't.
 
 ### `living:register_status_callback(hit_flag, function())`
 
