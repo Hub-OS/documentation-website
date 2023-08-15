@@ -108,7 +108,11 @@ Automatically set for [Spells](/client/lua-api/spell) and [Artifacts](/client/lu
 
 Returns a table with `x` and `y` keys.
 
-This table represents the offset applied to the entity by movement.
+This table represents the temporary offset applied to the entity by movement.
+
+### `entity:set_tile_offset(x, y)`
+
+Overwrites the frame temporary movement offset.
 
 ### `entity:offset()`
 
