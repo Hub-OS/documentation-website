@@ -10,6 +10,7 @@ category = "augment" # must match
 id = "dev.konstinople.augment.Attack1.bn6" # must be unique
 name = "Attack+1"
 description = "MegaBstr\nAttck +1"
+long_description = "" # optional
 preview_texture_path = "preview.png" # optional
 health_boost = 0 # optional
 attack_boost = 1 # optional
@@ -67,6 +68,7 @@ category = "encounter" # must match
 id = "com.discord.Konstinople#7692.cactikil" # must be unique
 name = "Cactikil"
 description = 'Cactikil, known as "Sabotekoron" in Japan, is a cactus'
+long_description = "" # optional
 preview_texture_path = "preview.png"
 
 # this section is optional
@@ -174,6 +176,7 @@ category = "library" # accepts "library" and "pack"
 id = "com.example.library" # must be unique
 name = "Example Library"
 description = "Example Library"
+long_description = "" # optional
 preview_texture_path = "preview.png" # optional
 
 # this section is optional, see the Battle section for an example
@@ -206,13 +209,14 @@ Expects a `package.toml` file
 [package]
 category = "status" # must match
 id = "com.BN6.Statuses.Bubble"
-description = ""
+description = "" # optional
+long_description = "" # optional
 preview_texture_path = "preview.png" # optional
 flag_name = "Bubble" # register Hit.Bubble, up to 64 hit flags can exist
 blocks_flags = ["Freeze"] # prevents these other statuses from existing on an entity when self is applied
 blocked_by = []  # prevents self from existing on an entity when these other statuses are applied
-blocks_actions = true
-blocks_mobility = true
+blocks_actions = true # prevents the player from using Actions and animating
+blocks_mobility = true # prevents the player from moving
 durations = [90] # a list of durations for each supported level of the status
 
 # this section is optional, see the Battle section for an example
@@ -253,6 +257,7 @@ category = "player" # must match
 id = "com.discord.Konstinople#7692.player.Man" # must be unique
 name = "Man"
 description = "Before he was Mega, he was Man"
+long_description = "" # optional
 health = 1000
 icon_texture_path = "icon.png"
 preview_texture_path = "preview.png"
@@ -294,6 +299,8 @@ category = "resource" # must match
 id = "com.example.resource" # must be unique
 name = "Example Resource Package"
 description = "Example Resource Package"
+long_description = "" # optional
+preview_texture_path = "preview.png" # optional
 ```
 
 Expects a `resources` folder. Files in this package's `resources` folder will override files in the program's `resources` folder when enabled.
