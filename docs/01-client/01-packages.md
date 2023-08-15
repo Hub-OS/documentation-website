@@ -213,6 +213,7 @@ blocks_flags = ["Freeze"] # prevents these other statuses from existing on an en
 blocked_by = []  # prevents self from existing on an entity when these other statuses are applied
 blocks_actions = true
 blocks_mobility = true
+durations = [90] # a list of durations for each supported level of the status
 
 # this section is optional, see the Battle section for an example
 [defines]
