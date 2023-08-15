@@ -209,6 +209,7 @@ Expects a `package.toml` file
 [package]
 category = "status" # must match
 id = "com.BN6.Statuses.Bubble"
+name = "Bubble Status"
 description = "" # optional
 long_description = "" # optional
 preview_texture_path = "preview.png" # optional
