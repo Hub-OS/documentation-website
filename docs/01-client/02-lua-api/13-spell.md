@@ -41,24 +41,7 @@ Called after processing damage on the entity, if damage isn't blocked by [Defens
 ### `HitProps.new(damage, flags, element, secondary_element, context?, drag)`
 
 - `damage`: integer
-- `flags` any of the values below, or combined using bitwise or (`|`)
-  - `Hit.None`
-  - `Hit.RetainIntangible`
-  - `Hit.Freeze`
-  - `Hit.PierceInvis`
-  - `Hit.Flinch`
-  - `Hit.Shake`
-  - `Hit.Paralyze`
-  - `Hit.Flash`
-  - `Hit.PierceGuard`
-  - `Hit.Impact`
-  - `Hit.Drag`
-  - `Hit.NoCounter`
-  - `Hit.Root`
-  - `Hit.Blind`
-  - `Hit.Confuse`
-  - `Hit.PierceGround`
-  - [Hit.[flag_name]](/client/packages#statuses)
+- `flags`: See [flags](#hit_propsflags)
 - `element`: [Element](/client/lua-api/spell#element)
 - `secondary_element`: [Element](/client/lua-api/spell#element)
 - `context`: The value obtained by [entity:context()](/client/lua-api/entity#entitycontext)
@@ -69,6 +52,48 @@ Returns a new HitProps instance.
 ### `HitProps.new(damage, flags, element, context?, drag)`
 
 Returns a new HitProps instance.
+
+### `hit_props.damage`
+
+A number, used to calculate how much health to take away from entities hit by the attack.
+
+### `hit_props.flags`
+
+Any of the values below, or combined using bitwise or (`|`)
+
+- `Hit.None`
+- `Hit.RetainIntangible`
+- `Hit.Freeze`
+- `Hit.PierceInvis`
+- `Hit.Flinch`
+- `Hit.Shake`
+- `Hit.Paralyze`
+- `Hit.Flash`
+- `Hit.PierceGuard`
+- `Hit.Impact`
+- `Hit.Drag`
+- `Hit.NoCounter`
+- `Hit.Root`
+- `Hit.Blind`
+- `Hit.Confuse`
+- `Hit.PierceGround`
+- [Hit.[flag_name]](/client/packages#statuses)
+
+### `hit_props.element`
+
+An [Element](/client/lua-api/spell#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
+
+### `hit_props.secondary_element`
+
+An [Element](/client/lua-api/spell#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
+
+### `hit_props.drag`
+
+[Drag](#drag)
+
+### `hit_props.context`
+
+Context obtained by [entity:context()](/client/lua-api/entity#entitycontext)
 
 ## Element
 
