@@ -66,21 +66,21 @@ A number, used to calculate how much health to take away from entities hit by th
 Any of the values below, or combined using bitwise or (`|`)
 
 - `Hit.None`
-- `Hit.RetainIntangible`
-- `Hit.Freeze`
-- `Hit.PierceInvis`
-- `Hit.Flinch`
-- `Hit.Shake`
-- `Hit.Paralyze`
-- `Hit.Flash`
-- `Hit.PierceGuard`
-- `Hit.Impact`
-- `Hit.Drag`
-- `Hit.NoCounter`
-- `Hit.Root`
-- `Hit.Blind`
-- `Hit.Confuse`
-- `Hit.PierceGround`
+- `Hit.RetainIntangible` prevents intangibility from being lost if the attack pierces.
+- `Hit.NoCounter` prevents the attack from countering.
+- `Hit.Drag` Allows the [drag property](#hit_propsdrag) to drag the entity.
+- `Hit.Impact` allows the attack to counter the entity and causes the entity to appear white for one frame.
+- `Hit.Flinch` read by the hit entity to cancel attacks and play a flinch animation.
+- `Hit.Flash` applies the default intangible rule to the hit entity and flickers the entity's sprite.
+- `Hit.Shake` causes the hit entity to shake.
+- `Hit.PierceInvis` read by defense rules to pierce defenses.
+- `Hit.PierceGuard` read by defense rules to pierce defenses.
+- `Hit.PierceGround` read by defense rules to pierce defenses.
+- `Hit.Freeze` applies freeze status on hit.
+- `Hit.Paralyze` applies paralyze status on hit.
+- `Hit.Root` applies root status on hit.
+- `Hit.Blind` applies blindness status on hit.
+- `Hit.Confuse` applies confusion status on hit.
 - [Hit.[flag_name]](/client/packages#statuses)
 
 ### `hit_props.element`
