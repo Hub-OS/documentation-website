@@ -53,6 +53,10 @@ Returns a new HitProps instance.
 
 Returns a new HitProps instance.
 
+### `HitProps.from_card(card_properties, context?, drag?)`
+
+Returns a new HitProps instance.
+
 ### `hit_props.damage`
 
 A number, used to calculate how much health to take away from entities hit by the attack.
