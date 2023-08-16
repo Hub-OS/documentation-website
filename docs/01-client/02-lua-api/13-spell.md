@@ -38,18 +38,18 @@ Called after processing damage on the entity, if damage isn't blocked by [Defens
 
 ## HitProps
 
-### `HitProps.new(damage, flags, element, secondary_element, context?, drag)`
+### `HitProps.new(damage, flags, element, secondary_element, context?, drag?)`
 
 - `damage`: integer
 - `flags`: See [flags](#hit_propsflags)
 - `element`: [Element](/client/lua-api/spell#element)
 - `secondary_element`: [Element](/client/lua-api/spell#element)
 - `context`: The value obtained by [entity:context()](/client/lua-api/entity#entitycontext)
-- `drag`: [Drag](#drag)
+- `drag`: [Drag](#drag) defaults to Drag.None
 
 Returns a new HitProps instance.
 
-### `HitProps.new(damage, flags, element, context?, drag)`
+### `HitProps.new(damage, flags, element, context?, drag?)`
 
 Returns a new HitProps instance.
 
