@@ -166,7 +166,7 @@ function card_init(entity, card_properties)
 end
 ```
 
-## Libraries
+## Libraries and Packs
 
 Expects a `package.toml` file
 
@@ -193,11 +193,11 @@ libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
 ```
 
-Expects an `entry.lua` file.
+May contain an `entry.lua` file.
 
 ```lua
 -- Can contain anything
--- The return value will be passed to lua files using require()
+-- The return value will be passed to lua files using require(package_id)
 return "hello"
 ```
 
