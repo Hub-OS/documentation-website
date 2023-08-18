@@ -51,6 +51,14 @@ Returns true if an [IntangibleRule](/client/lua-api/living#intangiblerule) is ac
 
 - `defense_rule`: [DefenseRule](/client/lua-api/living#defenserule)
 
+### `living:add_aux_prop(aux_prop)`
+
+- `aux_prop`: [AuxProp](/client/lua-api/aux-prop)
+
+### `living:remove_aux_prop(aux_prop)`
+
+- `aux_prop`: [AuxProp](/client/lua-api/aux-prop)
+
 ### `living:apply_status(hit_flag, duration)`
 
 - `hit_flag` a single hit flag, see [HitProps](/client/lua-api/spell#hitprops)
