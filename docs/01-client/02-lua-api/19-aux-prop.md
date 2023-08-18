@@ -138,21 +138,6 @@ The AuxProp will compare the entity's health divided by it's max health against 
 
 The AuxProp will compare the entity's health against `health`.
 
-## Compare
-
-- `Compare.LT`
-  - Less Than <
-- `Compare.LE`
-  - Less Than Equal <=
-- `Compare.NE`
-  - Not Equal ~=
-- `Compare.EQ`
-  - Equal ==
-- `Compare.GT`
-  - Greater Than >
-- `Compare.GE`
-  - Greater Than Equal >=
-
 ## AuxProp Effects
 
 An AuxProp can have one optional effect (but still have multiple callbacks). The type of effect has a strong influence over the priority and execution order of the effect.
@@ -305,3 +290,18 @@ print(AuxMath.add("a", 2):sub("b"):eval(variables)) -- 4
 -- variables, no chaining
 print(AuxMath.eval(AuxMath.sub(AuxMath.add("a", 2), "b"), variables)) -- 4
 ```
+
+## Compare
+
+- `Compare.LT`
+  - Less Than <
+- `Compare.LE`
+  - Less Than Equal <=
+- `Compare.NE`
+  - Not Equal ~=
+- `Compare.EQ`
+  - Equal ==
+- `Compare.GT`
+  - Greater Than >
+- `Compare.GE`
+  - Greater Than Equal >=
