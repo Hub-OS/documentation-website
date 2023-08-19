@@ -194,7 +194,10 @@ If the result is less than the incoming hit's damage, a warning will be logged.
 
 The difference in the result of `expr` and the incoming hit's damage will be used to update the total incoming damage.
 
-If the result is less than the incoming hit's damage, a warning will be logged.
+If the result is more than the incoming hit's damage, a warning will be logged.
+
+Note: If the result of `expr` is zero, a super effective hit or another AuxProp may still add back the damage as only the difference of the result is used.
+To entirely negate damage a defense rule must be used.
 
 ### `aux_prop:decrease_total_damage(expr)`
 
