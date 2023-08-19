@@ -45,6 +45,8 @@ All hit related requirements will use hit properties after [DefenseRule](/client
 
 The AuxProp can pass if `battle_frame_time % frames == 0`
 
+In the future the AuxProp will store an internal timer that starts as soon as it is attached, increments every battle frame, passing the test on the first frame and at each interval.
+
 ### `aux_prop:require_hit_element(element)`
 
 - Hit priority
