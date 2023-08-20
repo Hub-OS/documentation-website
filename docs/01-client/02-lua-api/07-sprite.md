@@ -122,9 +122,13 @@ Returns the color mode.
 
 The color mode will be reset to `ColorMode.Additive` at the start of the next frame for root sprites.
 
-### `sprite:never_flip(never_flip?)`
+### `sprite:never_flip()`
 
-Prevents player team from flipping the sprite.
+Returns true if perspective does not affect the sprite.
+
+### `sprite:set_never_flip(never_flip?)`
+
+Prevents player perspective from flipping the sprite.
 
 ### `sprite:use_root_shader(enable?)`
 

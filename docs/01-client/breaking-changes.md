@@ -2,6 +2,11 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+# 0.10
+
+- Renamed `card_properties.meta_classes` to [card_properties.tags](/client/lua-api/action#card_propertiestags)
+- Renamed `sprite:never_flip(bool?)` to [sprite:set_never_flip(bool?)](/client/lua-api/sprite#spriteset_never_flipnever_flip)
+
 ## 0.9
 
 - Replaced AudioPriority with [AudioBehavior](/client/lua-api/resources#audiobehavior)

@@ -176,6 +176,14 @@ Same as `entity:sprite():color()`
 
 Same as `entity:sprite():set_color(color)`
 
+### `entity:never_flip()`
+
+Same as `entity:sprite():never_flip()`
+
+### `entity:set_never_flip(never_flip?)`
+
+Same as `entity:sprite():set_never_flip(never_flip)`
+
 ### `entity:create_node()`
 
 Same as `entity:sprite():create_node()`
