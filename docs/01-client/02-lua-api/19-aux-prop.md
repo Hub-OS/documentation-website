@@ -8,6 +8,8 @@ AuxProps can only be tied to a single entity and can not be updated once bound. 
 
 Returns a new AuxProp. Attach to an entity with [living:add_aux_prop()](/client/lua-api/living#livingadd_aux_propaux_prop) and remove with [living:add_aux_prop()](/client/lua-api/living#livingremove_aux_propaux_prop)
 
+All AuxProp methods return the AuxProp for chaining.
+
 ### `aux_prop:once()`
 
 Allows the AuxProp to auto remove after it's effects are first applied.
@@ -105,6 +107,63 @@ The AuxProp will check the attached entity for matching element.
 - `emotion`: string
 
 The AuxProp will check the attached entity for matching emotion.
+
+### `aux_prop:require_card_element(element)`
+
+- Body priority
+- `element`: [Element](/client/lua-api/spell#element)
+
+The AuxProp will check the next card on the attached entity for either matching element or secondary element.
+
+### `aux_prop:require_card_not_element(element)`
+
+- Body priority
+- `element`: [Element](/client/lua-api/spell#element)
+
+The AuxProp will check the next card on the attached entity for a failed match with both element and secondary element.
+
+### `aux_prop:require_card_damage(damage)`
+
+- Body priority
+- `compare`: [Compare](#compare)
+- `damage`: number
+
+The AuxProp will compare the damage on the next card on the attached entity against the `damage` value.
+
+### `aux_prop:require_card_hit_flags(hit_flags)`
+
+- Body priority
+- `hit_flags`: [Hit](/client/lua-api/spell#hit_propsflags)
+
+The AuxProp will check the next card on the attached entity for matching hit flags.
+
+### `aux_prop:require_card_code(code)`
+
+- Body priority
+- `code`: string
+
+The AuxProp will check the next card on the attached entity for matching code.
+
+### `aux_prop:require_card_class(card_class)`
+
+- Body priority
+- `card_class`: [CardClass](/client/lua-api/action#card_propertiescard_class)
+
+The AuxProp will check the next card on the attached entity for matching class.
+
+### `aux_prop:require_card_time_freeze(time_freeze)`
+
+- Body priority
+- `time_freeze`: bool
+
+The AuxProp will check the time freeze value on the next card on the attached entity.
+
+### `aux_prop:require_card_tag(tag)`
+
+- Body priority
+- `tag`: string
+
+The AuxProp will check the next card on the attached entity for matching tag.
 
 ### `aux_prop:require_projected_health_threshold(expr, compare, percentage)`
 
