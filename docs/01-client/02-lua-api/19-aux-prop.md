@@ -80,7 +80,7 @@ The AuxProp will check the incoming hit's [damage](/client/lua-api/spell#hit_pro
 ### `aux_prop:require_projected_hit_damage(expr, compare, damage)`
 
 - Hit priority
-- `expr`: An [AuxMath](#auxmath) expression, `"DAMAGE"` will represent the damage value for the current hit.
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit.
 - `compare`: [Compare](#compare)
 - `damage`: number
 
@@ -168,7 +168,7 @@ The AuxProp will check the next card on the attached entity for matching tag.
 ### `aux_prop:require_projected_health_threshold(expr, compare, percentage)`
 
 - HP Expression priority
-- `expr`: An [AuxMath](#auxmath) expression, `"DAMAGE"` will represent the total damage value for all incoming hits.
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the total damage value for all incoming hits.
 - `compare`: [Compare](#compare)
 - `percentage`: a number in range [0, 1]
 
@@ -177,7 +177,7 @@ The AuxProp will compare the result of the expression divided by the entity's ma
 ### `aux_prop:require_projected_health(health)`
 
 - HP Expression priority
-- `expr`: An [AuxMath](#auxmath) expression, `"DAMAGE"` will represent the total damage value for all incoming hits.
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the total damage value for all incoming hits.
 - `compare`: [Compare](#compare)
 - `health`: a number
 
@@ -240,7 +240,7 @@ Removes an existing status on the entity, won't affect incoming hits.
 ### `aux_prop:increase_hit_damage(expr)`
 
 - Increase Hit Damage priority
-- `expr`: An [AuxMath](#auxmath) expression, `"DAMAGE"` will represent the damage value for the current hit.
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit.
 
 The difference in the result of `expr` and the incoming hit's damage will be used to update the total incoming damage.
 
@@ -249,7 +249,7 @@ If the result is less than the incoming hit's damage, a warning will be logged.
 ### `aux_prop:decrease_hit_damage(expr)`
 
 - Decrease Hit Damage priority
-- `expr`: An [AuxMath](#auxmath) expression, `"DAMAGE"` will represent the damage value for the current hit.
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit.
 
 The difference in the result of `expr` and the incoming hit's damage will be used to update the total incoming damage.
 
@@ -261,7 +261,7 @@ To entirely negate damage a defense rule must be used.
 ### `aux_prop:decrease_total_damage(expr)`
 
 - Decrease Damage Total priority
-- `expr`: An [AuxMath](#auxmath) expression, `"DAMAGE"` will represent the total damage value for all incoming hits.
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the total damage value for all incoming hits.
 
 The result of `expr` will be used to modify the total incoming damage.
 
@@ -277,83 +277,42 @@ If the total damage was previously not zero the final total damage will have a m
 - Recover Health priority
 - `health`: the amount of health to restore
 
-## AuxMath
+## Math Expression Strings
 
-Math expressions for AuxProps that are evalulated later in time.
+Math expressions that are evalulated later in time.
 
-Acceptable values for anything accepting AuxMath:
-
-- Numbers
-- Strings representing variables:
-  - `"HEALTH"`: The attached entities health.
-  - `"MAX_HEALTH"`: The attached entities max health.
-  - `"DAMAGE"`: Context dependent damage value, either from a single hit or the total of all hits.
-- The result of a function returning an AuxMath value (defined below)
-  - Results of these functions can be chained: `AuxMath.sub(AuxMath.add(1, 3), 2)` and `AuxMath.add(1, 3):sub(2)` have the same result.
-
-### `AuxMath.add(a, b)`
-
-Returns an AuxMath expression representing `a + b`
-
-### `AuxMath.sub(a, b)`
-
-Returns an AuxMath expression representing `a - b`
-
-### `AuxMath.mul(a, b)`
-
-Returns an AuxMath expression representing `a * b`
-
-### `AuxMath.div(a, b)`
-
-Returns an AuxMath expression representing `a / b`
-
-### `AuxMath.mod(a, b)`
-
-Returns an AuxMath expression representing `a % b`
-
-### `AuxMath.abs(a)`
-
-Returns an AuxMath expression representing `math.abs(a)`
-
-### `AuxMath.sign(a)`
-
-Returns an AuxMath expression that calculates the sign of `a`
-
-- `a < 0` will evalulate to -1
-- `a == 0` will evalulate to 0
-- `a > 0` will evalulate to 1
-
-### `AuxMath.clamp(a, b, c)`
-
-Returns an AuxMath expression that keeps `a` between `b` and `c`
-
-- `a < b` will evalulate to `b`
-- `a > c` will evalulate to `c`
-- Otherwise it will evalulate to `a`
-
-### `AuxMath.eval(expr, variables?)`
-
-- `expr`: an AuxMath expression
-- `variables`: a table mapping variable names to values
+### Examples:
 
 ```lua
-local variables = {
-  a = 3,
-  b = 1
-}
+-- undershirt
+local aux_prop = AuxProp.new()
+  :require_total_damage(Compare.GT, 0)
+  :decrease_total_damage("clamp(DAMAGE, 1, HEALTH - 1)")
 
--- lua
-print((3 + 2) - 1) -- 4
-
--- chaining
-print(AuxMath.add(3, 2):sub(1):eval()) -- 4
-
--- variables, chaining
-print(AuxMath.add("a", 2):sub("b"):eval(variables)) -- 4
-
--- variables, no chaining
-print(AuxMath.eval(AuxMath.sub(AuxMath.add("a", 2), "b"), variables)) -- 4
+entity:add_aux_prop(aux_prop)
 ```
+
+### Supported values:
+
+- Numbers with optional sign and decimal: `-1.2`, `2`, `3.0`
+- Built-in variables:
+  - `HEALTH`: The attached entities health.
+  - `MAX_HEALTH`: The attached entities max health.
+  - `DAMAGE`: Context dependent damage value, either from a single hit or the total of all hits.
+
+### Supported operations:
+
+- `+` Addition
+- `-` Subtraction
+- `*` Multiplication
+- `/` Division
+- `%` Modulus / Remainder
+
+### Supported functions:
+
+- `clamp(value, min, max)`
+- `abs(value)`
+- `sign(value)`
 
 ## Compare
 
