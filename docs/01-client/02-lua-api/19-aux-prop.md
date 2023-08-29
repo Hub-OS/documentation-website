@@ -281,7 +281,7 @@ If the total damage was previously not zero the final total damage will have a m
 
 Math expressions that are evalulated later in time.
 
-### Examples:
+### Examples
 
 ```lua
 -- undershirt
@@ -292,7 +292,7 @@ local aux_prop = AuxProp.new()
 entity:add_aux_prop(aux_prop)
 ```
 
-### Supported values:
+### Supported Values
 
 - Numbers with optional sign and decimal: `-1.2`, `2`, `3.0`
 - Built-in variables:
@@ -300,7 +300,7 @@ entity:add_aux_prop(aux_prop)
   - `MAX_HEALTH`: The attached entities max health.
   - `DAMAGE`: Context dependent damage value, either from a single hit or the total of all hits.
 
-### Supported operations:
+### Supported Operations
 
 - `+` Addition
 - `-` Subtraction
@@ -308,7 +308,7 @@ entity:add_aux_prop(aux_prop)
 - `/` Division
 - `%` Modulus / Remainder
 
-### Supported functions:
+### Supported Functions
 
 - `clamp(value, min, max)`
 - `abs(value)`
