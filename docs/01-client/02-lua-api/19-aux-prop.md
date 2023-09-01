@@ -213,6 +213,7 @@ The lower the priority is in the list, the later it will execute.
 - Decrease Damage Total
 - Drain Health
 - Recover Health
+- Intercept Action
 - No Effect
 
 ### `aux_prop:declare_immunity(hit_flags)`
@@ -276,6 +277,13 @@ If the total damage was previously not zero the final total damage will have a m
 
 - Recover Health priority
 - `health`: the amount of health to restore
+
+### `aux_prop:intercept_action(callback)`
+
+- Intercept Action priority
+- `callback`: A function that accepts an [Action](/client/lua-api/action) and returns an Action or nil.
+
+Intercepts an Action moving off the action queue for execution. Returning a different Action or nil in the callback will cancel and delete the Action. `aux_prop:require_card_*` will refer to properties on the Action.
 
 ## Math Expression Strings
 

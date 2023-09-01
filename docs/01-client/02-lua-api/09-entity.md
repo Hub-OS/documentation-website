@@ -242,6 +242,10 @@ Make sure to obtain context in card_init and not within a callback for counterin
 
 - `action`: [Action](/client/lua-api/action)
 
+### `entity:cancel_actions()`
+
+Ends and deletes synchronous and pending actions.
+
 ### `entity:can_move_to(tile)`
 
 Returns true if the entity can move to the target tile.
