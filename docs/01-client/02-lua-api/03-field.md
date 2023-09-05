@@ -30,31 +30,43 @@ Returns an [Entity](/client/lua-api/entity) or `nil`.
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Entities](/client/lua-api/entity) will be passed to the callback.
+All spawned [Entities](/client/lua-api/entity) will be passed to the callback.
 
 ### `field:find_characters(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Characters](/client/lua-api/character) will be passed to the callback.
+Only spawned [Characters](/client/lua-api/character) will be passed to the callback, includes [Players](/client/lua-api/player).
 
 ### `field:find_obstacles(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Obstacles](/client/lua-api/obstacle) will be passed to the callback.
+Only spawned [Obstacles](/client/lua-api/obstacle) will be passed to the callback.
 
 ### `field:find_players(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Players](/client/lua-api/player) will be passed to the callback.
+Only spawned [Players](/client/lua-api/player) will be passed to the callback.
 
 ### `field:find_spells(function(entity))`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Spells](/client/lua-api/spell) will be passed to the callback.
+Only spawned [Spells](/client/lua-api/spell) will be passed to the callback, excludes [Obstacles](/client/lua-api/obstacle).
+
+### `field:find_nearest_characters(function(entity))`
+
+Returns a list of entities sorted by distance, for any entity the callback returned true for.
+
+Only spawned [Characters](/client/lua-api/character) will be passed to the callback, includes [Players](/client/lua-api/player).
+
+### `field:find_nearest_players(function(entity))`
+
+Returns a list of entities sorted by distance, for any entity the callback returned true for.
+
+Only spawned [Players](/client/lua-api/player) will be passed to the callback.
 
 ### `field:find_tiles(function(tile))`
 

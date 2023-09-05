@@ -2,6 +2,12 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+# 0.11
+
+- Modified `field:find_*` functions to search through all spawned entities, not just "hittable" entities.
+  - Artifacts will now appear in [field:find_entities()](/client/lua-api/field#fieldfind_entitiesfunctionentity)
+  - [entity:hittable()](/client/lua-api/entity#entityhittable) can be utilized in the filter function for previous behavior
+
 # 0.10
 
 - Renamed `card_properties.meta_classes` to [card_properties.tags](/client/lua-api/action#card_propertiestags)
