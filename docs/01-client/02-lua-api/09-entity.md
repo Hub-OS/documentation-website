@@ -73,6 +73,18 @@ Returns the tile at the same position as the entity.
 
 Returns the [Field](/client/lua-api/field)
 
+### `entity:hittable()`
+
+Returns true if the entity:
+
+- Is [Living](/client/lua-api/living)
+- [Hitbox is enabled](/client/lua-api/living#livinghitbox_enabled)
+- Has health > 0
+- On the field
+- Not deleted
+
+Different from [living:hitbox_enabled()](/client/lua-api/living#livinghitbox_enabled)
+
 ### `entity:sharing_tile()`
 
 Returns true if other entities can stand on this tile.

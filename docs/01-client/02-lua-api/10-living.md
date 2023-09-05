@@ -20,6 +20,8 @@ Sets the entity's max health.
 
 Returns true if the entity can interact with attacks.
 
+Different from [entity:hittable()](/client/lua-api/entity#entityhittable)
+
 ### `living:enable_hitbox(enabled?)`
 
 Passing false will allow attacks to pass through as if the entity didn't exist.
