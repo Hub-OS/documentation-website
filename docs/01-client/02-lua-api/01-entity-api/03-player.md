@@ -1,6 +1,6 @@
 # Player
 
-Instance of [Entity](/client/lua-api/entity). All [Living](/client/lua-api/living) and [Character](/client/lua-api/character) functions are available as well.
+Instance of [Entity](/client/lua-api/entity-api/entity). All [Living](/client/lua-api/entity-api/living) and [Character](/client/lua-api/entity-api/character) functions are available as well.
 
 Player functions are accessible to all entities, but will throw if the entity is not a Player.
 
@@ -44,7 +44,7 @@ Returns true if `input_query` matches the player's current input state.
 
 ### `player:set_fully_charged_color(color)`
 
-- `color`: [Color](/client/lua-api/sprite#color)
+- `color`: [Color](/client/lua-api/resource-api/sprite#color)
 
 Sets the color of the fully charged sprite.
 
@@ -140,9 +140,9 @@ Should return the amount of time in game frames, the `Shoot` button should be he
 
 ### `player.normal_attack_func = function(self)`
 
-Should return an [Action](/client/lua-api/action)
+Should return an [Action](/client/lua-api/attack-api/action)
 
-Many player mods use [Buster](/client/lua-api/action#buster) for their return value.
+Many player mods use [Buster](/client/lua-api/attack-api/action#buster) for their return value.
 
 ```lua
 player.normal_attack_func = function(self)
@@ -152,9 +152,9 @@ end
 
 ### `player.charged_attack_func = function(self)`
 
-Should return an [Action](/client/lua-api/action)
+Should return an [Action](/client/lua-api/attack-api/action)
 
-Many player mods use [Buster](/client/lua-api/action#buster) for their return value.
+Many player mods use [Buster](/client/lua-api/attack-api/action#buster) for their return value.
 
 ```lua
 player.charged_attack_func = function(self)
@@ -164,7 +164,7 @@ end
 
 ### `player.special_attack_func = function(self)`
 
-Should return an [Action](/client/lua-api/action)
+Should return an [Action](/client/lua-api/attack-api/action)
 
 ### `player.can_charge_card_func = function(card_properties)`
 
@@ -176,7 +176,7 @@ Return true if `charged_card_func` should be called to handle this card.
 
 Will not be called if there's no matching `can_charge_card_func`
 
-An [Action](/client/lua-api/action) or `nil` is expected as a return value.
+An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
 ## PlayerForm
 
@@ -210,7 +210,7 @@ A numer representing the minimum Shoot button held time in game frames is expect
 
 Overrides [player.normal_attack_func](#playernormal_attack_func--functionself) when this form is active.
 
-An [Action](/client/lua-api/action) is expected as a return value.
+An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the player's implementation.
 
@@ -218,7 +218,7 @@ Return `nil` to fallback to the player's implementation.
 
 Overrides [player.charged_attack_func](#playercharged_attack_func--functionself) when this form is active.
 
-An [Action](/client/lua-api/action) is expected as a return value.
+An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the player's implementation.
 
@@ -226,7 +226,7 @@ Return `nil` to fallback to the player's implementation.
 
 Overrides [player.special_attack_func](#playerspecial_attack_func--functionself) when this form is active.
 
-An [Action](/client/lua-api/action) is expected as a return value.
+An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the player's implementation.
 
@@ -240,7 +240,7 @@ Return true if this form's `charged_card_func` should be called to handle this c
 
 Will not be called if there's no matching `can_charge_card_func`
 
-An [Action](/client/lua-api/action) or `nil` is expected as a return value.
+An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
 ## Augment
 
@@ -254,7 +254,7 @@ Returns an integer.
 
 ### `augment:owner()`
 
-Returns an [Entity](/client/lua-api/entity)
+Returns an [Entity](/client/lua-api/entity-api/entity)
 
 ### `augment.calculate_charge_time_func = function(self)`
 
@@ -266,7 +266,7 @@ A numer representing the minimum Shoot button held time in game frames is expect
 
 Overrides [player.normal_attack_func](#playernormal_attack_func--functionself) also overrides the active form's override.
 
-An [Action](/client/lua-api/action) is expected as a return value.
+An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the next implementation (augment, form, or player).
 
@@ -274,7 +274,7 @@ Return `nil` to fallback to the next implementation (augment, form, or player).
 
 Overrides [player.charged_attack_func](#playercharged_attack_func--functionself) also overrides the active form's override.
 
-An [Action](/client/lua-api/action) is expected as a return value.
+An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the next implementation (augment, form, or player).
 
@@ -282,7 +282,7 @@ Return `nil` to fallback to the next implementation (augment, form, or player).
 
 Overrides [player.special_attack_func](#playerspecial_attack_func--functionself) also overrides the active form's override.
 
-An [Action](/client/lua-api/action) is expected as a return value.
+An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the next implementation (augment, form, or player).
 
@@ -296,7 +296,7 @@ Return true if this augment's `charged_card_func` should be called to handle thi
 
 Will not be called if there's no matching `can_charge_card_func`
 
-An [Action](/client/lua-api/action) or `nil` is expected as a return value.
+An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
 ### `augment.on_delete_func = function(self)`
 

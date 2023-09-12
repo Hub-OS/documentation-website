@@ -6,7 +6,7 @@ AuxProps can only be tied to a single entity and can not be updated once bound. 
 
 ### `AuxProp.new()`
 
-Returns a new AuxProp. Attach to an entity with [living:add_aux_prop()](/client/lua-api/living#livingadd_aux_propaux_prop) and remove with [living:add_aux_prop()](/client/lua-api/living#livingremove_aux_propaux_prop)
+Returns a new AuxProp. Attach to an entity with [living:add_aux_prop()](/client/lua-api/entity-api/living#livingadd_aux_propaux_prop) and remove with [living:add_aux_prop()](/client/lua-api/entity-api/living#livingremove_aux_propaux_prop)
 
 All AuxProp methods return the AuxProp for chaining.
 
@@ -38,7 +38,7 @@ The lower the priority is in the list, the later it will execute.
 - HP GE
 - HP LE
 
-All hit related requirements will use hit properties after [DefenseRule](/client/lua-api/living#defenserule) modification and before AuxProp modification.
+All hit related requirements will use hit properties after [DefenseRule](/client/lua-api/defense-api/defense-rule) modification and before AuxProp modification.
 
 ### `aux_prop:require_interval(frames)`
 
@@ -52,7 +52,7 @@ In the future the AuxProp will store an internal timer that starts as soon as it
 ### `aux_prop:require_hit_element(element)`
 
 - Hit priority
-- `element`: [Element](/client/lua-api/spell#element)
+- `element`: [Element](/client/lua-api/attack-api/hit-props#element)
 
 The AuxProp will check the incoming hit's element and secondary element of incoming hits for a match.
 
@@ -65,9 +65,9 @@ The AuxProp will check the incoming hit's element and secondary element to see i
 ### `aux_prop:require_hit_flag(hit_flags)`
 
 - Hit priority
-- `hit_flags`: [Hit](/client/lua-api/spell#hit_propsflags)
+- `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
 
-The AuxProp will check the incoming hit's [flags](/client/lua-api/spell#hit_propsflags) to see if all matching flags apply.
+The AuxProp will check the incoming hit's [flags](/client/lua-api/attack-api/hit-props#hit_propsflags) to see if all matching flags apply.
 
 ### `aux_prop:require_hit_damage(compare, damage)`
 
@@ -75,7 +75,7 @@ The AuxProp will check the incoming hit's [flags](/client/lua-api/spell#hit_prop
 - `compare`: [Compare](#compare)
 - `damage`: number
 
-The AuxProp will check the incoming hit's [damage](/client/lua-api/spell#hit_propsdamage).
+The AuxProp will check the incoming hit's [damage](/client/lua-api/attack-api/hit-props#hit_propsdamage).
 
 ### `aux_prop:require_projected_hit_damage(expr, compare, damage)`
 
@@ -84,7 +84,7 @@ The AuxProp will check the incoming hit's [damage](/client/lua-api/spell#hit_pro
 - `compare`: [Compare](#compare)
 - `damage`: number
 
-The AuxProp will check the incoming hit's [damage](/client/lua-api/spell#hit_propsdamage).
+The AuxProp will check the incoming hit's [damage](/client/lua-api/attack-api/hit-props#hit_propsdamage).
 
 ### `aux_prop:require_total_damage(compare, damage)`
 
@@ -97,7 +97,7 @@ The AuxProp will check the total incoming damage from all hits in the current fr
 ### `aux_prop:require_element(element)`
 
 - Body priority
-- `element`: [Element](/client/lua-api/spell#element)
+- `element`: [Element](/client/lua-api/attack-api/hit-props#element)
 
 The AuxProp will check the attached entity for matching element.
 
@@ -111,14 +111,14 @@ The AuxProp will check the attached entity for matching emotion.
 ### `aux_prop:require_card_element(element)`
 
 - Body priority
-- `element`: [Element](/client/lua-api/spell#element)
+- `element`: [Element](/client/lua-api/attack-api/hit-props#element)
 
 The AuxProp will check the next card on the attached entity for either matching element or secondary element.
 
 ### `aux_prop:require_card_not_element(element)`
 
 - Body priority
-- `element`: [Element](/client/lua-api/spell#element)
+- `element`: [Element](/client/lua-api/attack-api/hit-props#element)
 
 The AuxProp will check the next card on the attached entity for a failed match with both element and secondary element.
 
@@ -133,7 +133,7 @@ The AuxProp will compare the damage on the next card on the attached entity agai
 ### `aux_prop:require_card_hit_flags(hit_flags)`
 
 - Body priority
-- `hit_flags`: [Hit](/client/lua-api/spell#hit_propsflags)
+- `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
 
 The AuxProp will check the next card on the attached entity for matching hit flags.
 
@@ -147,7 +147,7 @@ The AuxProp will check the next card on the attached entity for matching code.
 ### `aux_prop:require_card_class(card_class)`
 
 - Body priority
-- `card_class`: [CardClass](/client/lua-api/action#card_propertiescard_class)
+- `card_class`: [CardClass](/client/lua-api/attack-api/card-properties#card_propertiescard_class)
 
 The AuxProp will check the next card on the attached entity for matching class.
 
@@ -219,14 +219,14 @@ The lower the priority is in the list, the later it will execute.
 ### `aux_prop:declare_immunity(hit_flags)`
 
 - Status Immunity priority
-- `hit_flags`: [Hit](/client/lua-api/spell#hit_propsflags)
+- `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
 
 Declares immunity for incoming hits this frame, will not remove existing statuses.
 
 ### `aux_prop:apply_status(hit_flag, duration)`
 
 - Apply Status priority
-- `hit_flag`: [Hit](/client/lua-api/spell#hit_propsflags)
+- `hit_flag`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
 - `duration`: number, how many game frames the effect should last
 
 Applies a status to the entity.
@@ -234,7 +234,7 @@ Applies a status to the entity.
 ### `aux_prop:remove_status(hit_flag)`
 
 - Remove Status priority
-- `hit_flag`: [Hit](/client/lua-api/spell#hit_propsflags)
+- `hit_flag`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
 
 Removes an existing status on the entity, won't affect incoming hits.
 
@@ -281,7 +281,7 @@ If the total damage was previously not zero the final total damage will have a m
 ### `aux_prop:intercept_action(callback)`
 
 - Intercept Action priority
-- `callback`: A function that accepts an [Action](/client/lua-api/action) and returns an Action or nil.
+- `callback`: A function that accepts an [Action](/client/lua-api/attack-api/action) and returns an Action or nil.
 
 Intercepts an Action moving off the action queue for execution. Returning a different Action or nil in the callback will cancel and delete the Action. `aux_prop:require_card_*` will refer to properties on the Action.
 

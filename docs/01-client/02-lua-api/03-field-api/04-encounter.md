@@ -3,7 +3,7 @@
 ### `encounter:create_spawner(package_id, rank)`
 
 - `package_id`: string, the package id for a character package
-- `rank`: [Rank](/client/lua-api/character#battlecharacterfrom_packagepackage_id-team-rank)
+- `rank`: [Rank](/client/lua-api/entity-api/character#characterfrom_packagepackage_id-team-rank)
 
 Returns a [Spawner](#spawner)
 
@@ -29,7 +29,7 @@ Experimental. Replacement / removal is under consideration.
 
 ### `encounter:field()`
 
-Returns [Field](/client/lua-api/field)
+Returns [Field](/client/lua-api/field-api/field)
 
 ### `encounter:enable_automatic_turn_end(enabled?)`
 
@@ -76,4 +76,4 @@ Allows for modification of a spawned character. Usage is optional.
 
 ### `mutator:mutate(function(entity))`
 
-- `entity`: [Entity](/client/lua-api/entity)
+- `entity`: [Entity](/client/lua-api/entity-api/entity)

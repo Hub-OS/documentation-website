@@ -1,0 +1,88 @@
+# HitProps
+
+See [spell:set_hit_props()](/client/lua-api/entity-api/spell#spellset_hit_propshit_props)
+
+### `HitProps.new(damage, flags, element, secondary_element, context?, drag?)`
+
+- `damage`: integer
+- `flags`: See [flags](#hit_propsflags)
+- `element`: [Element](/client/lua-api/attack-api/hit-props#element)
+- `secondary_element`: [Element](/client/lua-api/attack-api/hit-props#element)
+- `context`: The value obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext)
+- `drag`: [Drag](#drag) defaults to Drag.None
+
+Returns a new HitProps instance.
+
+### `HitProps.new(damage, flags, element, context?, drag?)`
+
+Returns a new HitProps instance.
+
+### `HitProps.from_card(card_properties, context?, drag?)`
+
+Returns a new HitProps instance.
+
+### `hit_props.damage`
+
+A number, used to calculate how much health to take away from entities hit by the attack.
+
+### `hit_props.flags`
+
+Any of the values below, or combined using bitwise or (`|`)
+
+- `Hit.None`
+- `Hit.RetainIntangible` prevents intangibility from being lost if the attack pierces.
+- `Hit.NoCounter` prevents the attack from countering.
+- `Hit.Drag` Allows the [drag property](#hit_propsdrag) to drag the entity.
+- `Hit.Impact` allows the attack to counter the entity and causes the entity to appear white for one frame.
+- `Hit.Flinch` read by the hit entity to cancel attacks and play a flinch animation.
+- `Hit.Flash` applies the default intangible rule to the hit entity and flickers the entity's sprite.
+- `Hit.Shake` causes the hit entity to shake.
+- `Hit.PierceInvis` read by defense rules to pierce defenses.
+- `Hit.PierceGuard` read by defense rules to pierce defenses.
+- `Hit.PierceGround` read by defense rules to pierce defenses.
+- `Hit.Freeze` applies freeze status on hit.
+- `Hit.Paralyze` applies paralyze status on hit.
+- `Hit.Root` applies root status on hit.
+- `Hit.Blind` applies blindness status on hit.
+- `Hit.Confuse` applies confusion status on hit.
+- [Hit.[flag_name]](/client/packages#statuses)
+
+### `hit_props.element`
+
+An [Element](/client/lua-api/attack-api/hit-props#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
+
+### `hit_props.secondary_element`
+
+An [Element](/client/lua-api/attack-api/hit-props#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
+
+### `hit_props.drag`
+
+[Drag](#drag)
+
+### `hit_props.context`
+
+Context obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext)
+
+## Element
+
+- `Element.None`
+- `Element.Fire`
+- `Element.Aqua`
+- `Element.Elec`
+- `Element.Wood`
+- `Element.Sword`
+- `Element.Wind`
+- `Element.Cursor`
+- `Element.Summon`
+- `Element.Plus`
+- `Element.Break`
+
+## Drag
+
+### `Drag.new(direction?, count?)`
+
+Returns a new Drag instance.
+
+### `Drag.None`
+
+Same as `Drag.new()`

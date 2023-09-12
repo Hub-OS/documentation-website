@@ -51,7 +51,7 @@ libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
 ```
 
-Expects an `entry.lua` file. See [Augment](/client/lua-api/player#augment)
+Expects an `entry.lua` file. See [Augment](/client/lua-api/entity-api/player#augment)
 
 ```lua
 function augment_init(augment)
@@ -89,7 +89,7 @@ libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
 ```
 
-Expects an `entry.lua` file. See [Encounter](/client/lua-api/encounter)
+Expects an `entry.lua` file. See [Encounter](/client/lua-api/field-api/encounter)
 
 ```lua
 function encounter_init(encounter)
@@ -98,7 +98,7 @@ end
 
 ## Characters
 
-Expects an `entry.lua` file. See [Character](/client/lua-api/character)
+Expects an `entry.lua` file. See [Character](/client/lua-api/entity-api/character)
 
 ```lua
 function character_init(character)
@@ -151,7 +151,7 @@ libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
 ```
 
-Expects an `entry.lua` file. See [Action](/client/lua-api/action)
+Expects an `entry.lua` file. See [Action](/client/lua-api/attack-api/action)
 
 ```lua
 -- optional implementation, called when package ids change on cards tied to a character
@@ -234,7 +234,7 @@ libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
 ```
 
-Expects an `entry.lua` file. See [Status](/client/lua-api/status)
+Expects an `entry.lua` file. See [Status](/client/lua-api/attack-api/status)
 
 ```lua
 function status_init(status)
@@ -283,7 +283,7 @@ libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
 ```
 
-Expects an `entry.lua` file. See [Player](/client/lua-api/player)
+Expects an `entry.lua` file. See [Player](/client/lua-api/entity-api/player)
 
 ```lua
 function player_init(player)

@@ -2,21 +2,21 @@
 
 While actions execute, their owners will stop auto reserving tiles.
 
-[Players](/client/lua-api/player), [Characters](/client/lua-api/character), and [Obstacles](/client/lua-api/obstacle) automatically reserve tiles outside of executing actions.
+[Players](/client/lua-api/entity-api/player), [Characters](/client/lua-api/entity-api/character), and [Obstacles](/client/lua-api/entity-api/obstacle) automatically reserve tiles outside of executing actions.
 
 ### `Action.new(entity, state)`
 
-- `entity`: the [Entity](/client/lua-api/entity) to tie the action to.
+- `entity`: the [Entity](/client/lua-api/entity-api/entity) to tie the action to.
 - `state`: string, the animation state to play when the action executes.
 
 ### `Action.from_card(entity, card_properties)`
 
-- `entity`: the [Entity](/client/lua-api/entity) to tie the action to.
-- `card_properties`: [CardProperties](#cardproperties)
+- `entity`: the [Entity](/client/lua-api/entity-api/entity) to tie the action to.
+- `card_properties`: [CardProperties](/client/lua-api/attack-api/card-properties)
 
 ### `action:owner()`
 
-Returns the [Entity](/client/lua-api/entity) tied to this action
+Returns the [Entity](/client/lua-api/entity-api/entity) tied to this action
 
 ### `action:set_lockout(lockout)`
 
@@ -40,13 +40,13 @@ Returns [Attachment](#attachment)
 
 ### `action:override_animation_frames(frame_data)`
 
-See [animation:derive_state()](/client/lua-api/animation#animationderive_statestate-frame_data)
+See [animation:derive_state()](/client/lua-api/resource-api/animation#animationderive_statestate-frame_data)
 
 ### `action:add_anim_action(frame_index, callback)`
 
 Same as calling `action:owner():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself)
 
-See [animation:on_frame()](/client/lua-api/animation#animationon_frameframe_index-function-do_once)
+See [animation:on_frame()](/client/lua-api/resource-api/animation#animationon_frameframe_index-function-do_once)
 
 ### `action:end_action()`
 
@@ -62,7 +62,7 @@ Experimental. Replacement / removal is under consideration.
 
 ### `action:set_card_properties(card_properties)`
 
-- `card_properties`: [CardProperties](#cardproperties)
+- `card_properties`: [CardProperties](/client/lua-api/attack-api/card-properties)
 
 Sets the the action's card properties, will be overwritten when queued if the action is tied to a card.
 
@@ -86,7 +86,7 @@ Called when the action ends execution.
 
 ### `action.can_move_to_func = function(tile)`
 
-Override's the owner's [can_move_to_func] while executing.
+Override's the owner's [can_move_to_func](/client/lua-api/entity-api/entity/#entitycan_move_to_func--functionself-tile) while executing.
 
 Ignored on async actions when the entity regains control.
 
@@ -100,11 +100,11 @@ Returns an Attachment
 
 ### `attachment:sprite()`
 
-Returns a reference to the attachment's [Sprite](/client/lua-api/sprite)
+Returns a reference to the attachment's [Sprite](/client/lua-api/resource-api/sprite)
 
 ### `attachment:animation()`
 
-Returns a reference to the attachment's [Animation](/client/lua-api/animation)
+Returns a reference to the attachment's [Animation](/client/lua-api/resource-api/animation)
 
 ## Step
 
@@ -116,72 +116,11 @@ Marks the step as complete.
 
 Called every tick while the associated action is active if this step is not marked as complete, and there are no steps created before this step that haven't been marked as complete.
 
-## CardProperties
-
-### `CardProperties.new()`
-
-Returns a new CardProperties table with default values.
-
-### `CardProperties.from_package(package_id, code?)`
-
-Returns a new CardProperties table using package information.
-
-### `card_properties.short_name`
-
-String, displayed during time freeze.
-
-### `card_properties.damage`
-
-Number, influences generated [HitProps](/client/lua-api/spell#hitprops).
-
-Displayed during time freeze.
-
-### `card_properties.code`
-
-String, used by other mods for conditional behavior.
-
-### `card_properties.element`
-
-[Element](/client/lua-api/spell#element), influences generated [HitProps](/client/lua-api/spell#hitprops)
-
-### `card_properties.secondary_element`
-
-[Element](/client/lua-api/spell#element), influences generated [HitProps](/client/lua-api/spell#hitprops)
-
-### `card_properties.card_class`
-
-Any of the values below:
-
-- `CardClass.Standard`
-- `CardClass.Mega`
-- `CardClass.Giga`
-- `CardClass.Dark`
-
-### `card_properties.hit_flags`
-
-[Hit](/client/lua-api/spell#hit_propsflags), influences generated [HitProps](/client/lua-api/spell#hitprops)
-
-### `card_properties.can_boost`
-
-Used by other mods for conditional behavior.
-
-### `card_properties.time_freeze`
-
-Enables time freeze for the action.
-
-### `card_properties.skip_time_freeze_intro`
-
-Boolean, used by actions to skip displaying the name of the attack and prevent time freeze countering.
-
-### `card_properties.tags`
-
-A list of strings, used by other mods for conditional behavior.
-
 ## Buster
 
 ### `Buster.new(player, charged, damage)`
 
-- `player`: [Player](/client/lua-api/player)
+- `player`: [Player](/client/lua-api/entity-api/player)
 - `charged`: bool, affects hit artifact
 - `damage`: number
 

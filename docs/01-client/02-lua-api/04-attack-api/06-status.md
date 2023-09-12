@@ -4,7 +4,7 @@ See [Status Package Documentation](/client/packages#statuses) for creating new s
 
 ### `status:owner()`
 
-Returns an [Entity](/client/lua-api/entity), represents the entity affected by the status.
+Returns an [Entity](/client/lua-api/entity-api/entity), represents the entity affected by the status.
 
 ### `status:remaining_time()`
 
