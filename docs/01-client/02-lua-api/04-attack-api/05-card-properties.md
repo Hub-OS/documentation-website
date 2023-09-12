@@ -18,6 +18,10 @@ Number, influences generated [HitProps](/client/lua-api/attack-api/hit-props).
 
 Displayed during time freeze.
 
+### `card_properties.recover`
+
+Number, used by other mods for conditional behavior.
+
 ### `card_properties.code`
 
 String, used by other mods for conditional behavior.

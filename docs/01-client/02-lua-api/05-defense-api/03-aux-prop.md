@@ -130,6 +130,14 @@ The AuxProp will check the next card on the attached entity for a failed match w
 
 The AuxProp will compare the damage on the next card on the attached entity against the `damage` value.
 
+### `aux_prop:require_card_recover(recover)`
+
+- Body priority
+- `compare`: [Compare](#compare)
+- `recover`: number
+
+The AuxProp will compare the recover amount on the next card on the attached entity against the `recover` value.
+
 ### `aux_prop:require_card_hit_flags(hit_flags)`
 
 - Body priority
