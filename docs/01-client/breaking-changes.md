@@ -7,6 +7,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 - Modified `field:find_*` functions to search through all spawned entities, not just "hittable" entities.
   - Artifacts will now appear in [field:find_entities()](/client/lua-api/field-api/field#fieldfind_entitiesfunctionentity)
   - [entity:hittable()](/client/lua-api/entity-api/entity#entityhittable) can be utilized in the filter function for previous behavior
+- Renamed `player:get_augments()` to [player:augments()](/client/lua-api/entity-api/player#playeraugments)
 
 # 0.10
 

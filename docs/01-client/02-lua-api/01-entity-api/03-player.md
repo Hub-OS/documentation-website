@@ -68,7 +68,7 @@ Can be used up to five times before throwing.
 
 Returns an [Augment](#augment) or `nil` if the player doesn't have an augment with that `package_id`.
 
-### `player:get_augments()`
+### `player:augments()`
 
 Returns a list of [Augments](#augment)
 
