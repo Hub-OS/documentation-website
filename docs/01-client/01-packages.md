@@ -19,7 +19,10 @@ charge_boost = 0 # optional
 mega_boost = 0 # optional
 giga_boost = 0 # optional
 hand_size_boost = 0 # optional
-tags = ["BUG"] # optional, list of strings, custom
+
+# optional, list of strings, custom
+# some tags will be automatically added: "BLOCK", "FLAT_BLOCK"
+tags = ["BUG"]
 
 ## block specific
 # list of colors, case insensitive
