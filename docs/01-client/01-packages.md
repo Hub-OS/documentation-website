@@ -19,6 +19,9 @@ charge_boost = 0 # optional
 mega_boost = 0 # optional
 giga_boost = 0 # optional
 hand_size_boost = 0 # optional
+tags = ["BUG"] # optional, list of strings, custom
+
+## block specific
 # list of colors, case insensitive
 # valid colors: "red" | "green" | "blue" | "pink" | "yellow" | "white"
 colors = ["pink", "red", "blue"]
@@ -135,7 +138,7 @@ hit_flags = ["impact", "flinch", "flash"]
 can_boost = true # optional
 time_freeze = true # optional
 skip_time_freeze_intro = false # optional
-tags = [] # optional, list of strings, custom
+tags = ["NAVI"] # optional, list of strings, custom
 
 # this section is optional, see the Battle section for an example
 [defines]

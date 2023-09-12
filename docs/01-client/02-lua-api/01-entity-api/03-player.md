@@ -256,6 +256,12 @@ Returns an integer.
 
 Returns an [Entity](/client/lua-api/entity-api/entity)
 
+### `augment:has_tag(tag)`
+
+- `tag`: string
+
+Returns true if the augment has a matching tag.
+
 ### `augment.calculate_charge_time_func = function(self)`
 
 Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself) also overrides the active form's override.
