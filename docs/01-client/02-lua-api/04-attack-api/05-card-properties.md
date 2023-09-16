@@ -49,15 +49,15 @@ Any of the values below:
 
 ### `card_properties.can_boost`
 
-Used by other mods for conditional behavior.
+Boolean or nil, used by other mods for conditional behavior.
 
 ### `card_properties.time_freeze`
 
-Enables time freeze for the action.
+Boolean or nil, enables time freeze for the action.
 
 ### `card_properties.skip_time_freeze_intro`
 
-Boolean, used by actions to skip displaying the name of the attack and prevent time freeze countering.
+Boolean or nil, used by actions to skip displaying the name of the attack and prevent time freeze countering.
 
 ### `card_properties.tags`
 
