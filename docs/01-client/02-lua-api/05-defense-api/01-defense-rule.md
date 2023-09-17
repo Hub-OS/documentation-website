@@ -9,6 +9,7 @@ See [living:add_defense_rule()](/client/lua-api/entity-api/living#livingadd_defe
   - `DefensePriority.Body`
   - `DefensePriority.Action`
   - `DefensePriority.Trap`
+    - Additionally causes all players to see `????` in the UI
   - `DefensePriority.Last`
 - `defense_order`
   - `DefenseOrder.Always`
