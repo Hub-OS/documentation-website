@@ -264,18 +264,18 @@ Returns true if the entity can move to the target tile.
 
 ### `entity:teleport(tile?, function())`
 
-- `tile` if unset nothing happens.
+- `tile`: [Tile](/client/lua-api/field-api/tile), if unset nothing happens.
 - callback is called when the movement begins processing
 
 ### `entity:slide(tile?, duration, function())`
 
-- `tile` if unset nothing happens.
+- `tile`: [Tile](/client/lua-api/field-api/tile), if unset nothing happens.
 - `duration` is in game frames.
 - callback is called when the movement begins processing
 
 ### `entity:jump(tile?, height, duration, function())`
 
-- `tile` if unset nothing happens.
+- `tile`: [Tile](/client/lua-api/field-api/tile), if unset nothing happens.
 - `height` how many pixels to offset the entity at the peak of the jump
 - `duration` is in game frames.
 - callback is called when the movement begins processing

@@ -8,6 +8,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
   - Artifacts will now appear in [field:find_entities()](/client/lua-api/field-api/field#fieldfind_entitiesfunctionentity)
   - [entity:hittable()](/client/lua-api/entity-api/entity#entityhittable) can be utilized in the filter function for previous behavior
 - Renamed `player:get_augments()` to [player:augments()](/client/lua-api/entity-api/player#playeraugments)
+- `Movement.new()` replaced with more specific constructors.
 
 # 0.10
 

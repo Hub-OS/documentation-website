@@ -2,7 +2,24 @@
 
 See [entity:queue_movement](/client/lua-api/entity-api/entity#entityqueue_movementmovement)
 
-### `Movement.new()`
+### `Movement.new_teleport(tile)`
+
+- `tile`: [Tile](/client/lua-api/field-api/tile)
+
+Returns a new Movement instance.
+
+### `Movement.new_slide(tile, delta)`
+
+- `tile`: [Tile](/client/lua-api/field-api/tile)
+- `delta`: number
+
+Returns a new Movement instance.
+
+### `Movement.new_jump(tile, height, delta)`
+
+- `tile`: [Tile](/client/lua-api/field-api/tile)
+- `height`: number
+- `delta`: number
 
 Returns a new Movement instance.
 
