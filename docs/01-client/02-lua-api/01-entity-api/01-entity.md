@@ -282,7 +282,7 @@ Returns true if the entity can move to the target tile.
 
 ### `entity:queue_movement(movement)`
 
-- `movement`: [Movement](#movement)
+- `movement`: [Movement](/client/lua-api/field-api/movement)
 
 ### `entity:is_moving()`
 
@@ -393,51 +393,3 @@ Called when the entity is spawned, or immediately if the entity has already spaw
 Called when the lifetime is relevant.
 
 See [entity:create_component()](/client/lua-api/entity-api/entity#entitycreate_componentlifetime)
-
-## Movement
-
-### `Movement.new()`
-
-Returns a new Movement value for passing to [entity:queue_movement](#entityqueue_movementmovement)
-
-### `movement.elapsed`
-
-The elapsed time in game frames since the movement began.
-
-### `movement.delta`
-
-The duration in game frames for the movement animation to play.
-
-If the delta is greater than zero the entity will slide. If [height](#movementheight) isn't 0, the entity will jump instead.
-
-### `movement.delay`
-
-The required duration in game frames for the movement animation to start.
-
-### `movement.endlag`
-
-The duration in game frames for the movement to drop after delta + delay.
-
-### `movement.height`
-
-The distance above the ground for the entity to jump.
-
-### `movement:animation_progress()`
-
-Returns the movement's animation progress as a value between 0 and 1.
-
-### `movement:is_sliding()`
-
-Returns true if the movement is processed as a slide.
-
-### `movement:is_jumping()`
-
-Returns true if the movement is processed as a jump.
-
-### `movement:is_teleporting()`
-
-Returns true if the movement is processed as a teleport.
-
-### `movement.on_begin_func = function()`
-
-Called when the movement begins processing. If the movement is cancelled before executing it won't be called.
