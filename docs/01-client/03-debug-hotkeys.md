@@ -14,3 +14,4 @@ Inputs will be ignored by the battle while the `F3` key is held.
 
 - `F3+S`: Saves a recording of the current battle.
 - `F3+V`: Lists Lua VMs sorted by memory usage in the console.
+- `F3+N`: Displays player indices on Player entities.
