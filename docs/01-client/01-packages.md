@@ -77,6 +77,10 @@ description = 'Cactikil, known as "Sabotekoron" in Japan, is a cactus'
 long_description = "" # optional
 preview_texture_path = "preview.png"
 
+## recording specific
+recording_path = "recording.dat"
+recording_overrides = []
+
 # this section is optional
 [defines]
 characters = [
