@@ -67,6 +67,16 @@ Boolean or nil, enables time freeze for the [Action](/client/lua-api/attack-api/
 
 Boolean or nil, used by [Actions](/client/lua-api/attack-api/action) to skip displaying the name of the attack and prevent time freeze countering.
 
+Additionally the time freeze caused by this Action will not dim the screen.
+
+### `card_properties.prevent_time_freeze_counter`
+
+Boolean or nil, used to decide if a time freezing [Action](/client/lua-api/attack-api/action) can be countered.
+
+### `card_properties.conceal`
+
+Boolean or nil, hides damage and displays question marks when the card's name is displayed to opponents.
+
 ### `card_properties.tags`
 
 A list of strings, used by other mods for conditional behavior.

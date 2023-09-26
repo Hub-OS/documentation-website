@@ -145,6 +145,8 @@ hit_flags = ["impact", "flinch", "flash"]
 can_boost = true # optional
 time_freeze = true # optional
 skip_time_freeze_intro = false # optional
+prevent_freeze_counter = false # optional
+conceal = false # optional
 tags = ["NAVI"] # optional, list of strings, custom
 
 # this section is optional, see the Battle section for an example
