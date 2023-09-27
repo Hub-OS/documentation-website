@@ -254,6 +254,8 @@ Make sure to obtain context in card_init and not within a callback for counterin
 
 - `action`: [Action](/client/lua-api/attack-api/action)
 
+Note: During time freeze, Actions that freeze time skip to the front of the line.
+
 ### `entity:cancel_actions()`
 
 Ends and deletes synchronous and pending actions.
