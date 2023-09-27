@@ -42,6 +42,7 @@ shape = [
 # or when an augment on a grid is out of bounds
 # any package ids here must also be marked as a dependency
 byproducts = []
+prevent_byproducts = false # optional, prevents all blocks from creating byproducts
 
 # this section is optional, see the Battle section for an example
 [defines]
