@@ -52,7 +52,11 @@ Sets the color of the fully charged sprite.
 
 Sets the offset of the fully charged sprite.
 
-### `player:slide_when_moving(bool?)`
+### `player:slide_when_moving()`
+
+Returns a bool.
+
+### `player:set_slide_when_moving(bool?)`
 
 When `true`, the player will slide to tiles and continue using the `PLAYER_IDLE` state.
 

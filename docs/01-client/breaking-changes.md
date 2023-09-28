@@ -9,6 +9,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
   - [entity:hittable()](/client/lua-api/entity-api/entity#entityhittable) can be utilized in the filter function for previous behavior
 - Renamed `player:get_augments()` to [player:augments()](/client/lua-api/entity-api/player#playeraugments)
 - `Movement.new()` replaced with more specific constructors.
+- Renamed `player:slide_when_moving()` to [player:set_slide_when_moving()](/client/lua-api/entity-api/player#playerset_slide_when_movingbool).
 
 # 0.10
 
