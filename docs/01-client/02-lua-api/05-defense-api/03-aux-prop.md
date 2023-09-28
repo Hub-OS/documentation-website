@@ -213,6 +213,8 @@ An AuxProp can have one optional effect (but still have multiple callbacks). The
 
 The lower the priority is in the list, the later it will execute.
 
+- Intercept Action
+- Interrupt Action
 - Status Immunity
 - Apply Status
 - Remove Status
@@ -221,7 +223,6 @@ The lower the priority is in the list, the later it will execute.
 - Decrease Damage Total
 - Drain Health
 - Recover Health
-- Intercept Action
 - No Effect
 
 ### `aux_prop:declare_immunity(hit_flags)`
@@ -292,6 +293,14 @@ If the total damage was previously not zero the final total damage will have a m
 - `callback`: A function that accepts an [Action](/client/lua-api/attack-api/action) and returns an Action or nil.
 
 Intercepts an Action moving off the action queue for execution. Returning a different Action or nil in the callback will cancel and delete the Action. `aux_prop:require_card_*` will refer to properties on the Action.
+
+### `aux_prop:interrupt_action(callback)`
+
+- Intercept Action priority
+- `callback`: A function that accepts an [Action](/client/lua-api/attack-api/action).
+
+Interrupts an Action that is about to execute or has executed. The Action will be deleted after the callback finishes.
+`aux_prop:require_card_*` will refer to properties on the Action.
 
 ## Math Expression Strings
 
