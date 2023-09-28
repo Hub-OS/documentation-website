@@ -2,7 +2,7 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
-# 0.11
+## 0.11
 
 - Modified `field:find_*` functions to search through all spawned entities, not just "hittable" entities.
   - Artifacts will now appear in [field:find_entities()](/client/lua-api/field-api/field#fieldfind_entitiesfunctionentity)
@@ -11,7 +11,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 - `Movement.new()` replaced with more specific constructors.
 - Renamed `player:slide_when_moving()` to [player:set_slide_when_moving()](/client/lua-api/entity-api/player#playerset_slide_when_movingbool).
 
-# 0.10
+## 0.10
 
 - Renamed `card_properties.meta_classes` to [card_properties.tags](/client/lua-api/attack-api/card-properties#card_propertiestags)
 - Renamed `sprite:never_flip(bool?)` to [sprite:set_never_flip(bool?)](/client/lua-api/resource-api/sprite#spriteset_never_flipnever_flip)
