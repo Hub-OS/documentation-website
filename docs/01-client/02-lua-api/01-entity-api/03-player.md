@@ -62,6 +62,12 @@ When `true`, the player will slide to tiles and continue using the `PLAYER_IDLE`
 
 When `false`, the player will teleport to tiles and animate with the `PLAYER_MOVE` state.
 
+### `player:queue_default_player_movement(tile)`
+
+- `tile`: [Tile](/client/lua-api/field-api/tile)
+
+Queues a movement with the default internal logic.
+
 ### `player:create_form()`
 
 Returns a new [PlayerForm](#playerform).
@@ -182,6 +188,10 @@ Will not be called if there's no matching `can_charge_card_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
+### `player.movement_func = function(self, direction)`
+
+Used to handle movement input, setting this overrides the default handling.
+
 ## PlayerForm
 
 Created through [player:create_form()](#playercreate_form)
@@ -246,6 +256,12 @@ Will not be called if there's no matching `can_charge_card_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
+### `player_form.movement_func = function(self, player)`
+
+Overrides [player.movement_func](#playermovement_func--functionself-direction) when this form is active.
+
+Used to handle movement input.
+
 ## Augment
 
 ### `augment:id()`
@@ -307,6 +323,12 @@ Return true if this augment's `charged_card_func` should be called to handle thi
 Will not be called if there's no matching `can_charge_card_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
+
+### `augment.movement_func = function(self, direction)`
+
+Overrides [player.movement_func](#playermovement_func--functionself-direction) also overrides the active form's override.
+
+Used to handle movement input.
 
 ### `augment.on_delete_func = function(self)`
 
