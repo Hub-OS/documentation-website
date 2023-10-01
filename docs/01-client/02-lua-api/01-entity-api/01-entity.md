@@ -302,6 +302,10 @@ Returns true if the entity is jumping.
 
 Returns true if the entity is teleporting.
 
+### `entity:set_idle()`
+
+Calls [entity:on_idle_func()](#entityon_idle_func--functionself)
+
 ### `entity:deleted()`
 
 Returns true if the entity has been marked for deletion, or has been erased.
@@ -345,6 +349,10 @@ Called when the entity is spawned by [field:spawn()](/client/lua-api/field-api/f
 ### `entity.on_update_func = function(self)`
 
 Called during battle, when not frozen from time freeze or blocked by statuses.
+
+### `entity.on_idle_func = function(self)`
+
+Called when [Actions](/client/lua-api/attack-api/action) complete or when [entity:set_idle()](#entityset_idle) is called. For [Players](/client/lua-api/entity-api/player), it is additionally called when the movement animation ends.
 
 ### `entity.on_counter_func = function(self)`
 
