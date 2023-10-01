@@ -38,7 +38,7 @@ Same as `Direction.reverse(entity:facing())`
 
 ### `entity:set_facing(direction)`
 
-Returns the facing [Direction](/client/lua-api/field-api/direction) of the entity, used by attacks to decide which direction to move in.
+Sets the facing [Direction](/client/lua-api/field-api/direction) of the entity, used by attacks to decide which direction to move in.
 
 ### `entity:team()`
 
