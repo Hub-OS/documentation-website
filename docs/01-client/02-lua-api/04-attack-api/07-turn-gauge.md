@@ -1,5 +1,9 @@
 # TurnGauge
 
+### `TurnGauge.frozen()`
+
+Returns true if time is frozen from [time freeze](/client/lua-api/attack-api/card-properties#card_propertiestime_freeze) [Actions](/client/lua-api/attack-api/action).
+
 ### `TurnGauge.progress()`
 
 Returns the turn gauge's progress as a value between 0 and 1.
