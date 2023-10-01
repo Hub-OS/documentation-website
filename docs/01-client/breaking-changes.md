@@ -5,7 +5,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 ## 0.12
 
 - Actions no longer revert to previous animation state on completion for non Players.
-  - Fixed by defining [on_idle_func](/client/lua-api/entity-api#entityon_idle_func--functionself).
+  - Fixed by defining [on_idle_func](/client/lua-api/entity-api/entity#entityon_idle_func--functionself).
 
 ## 0.11
 
