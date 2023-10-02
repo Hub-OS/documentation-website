@@ -61,6 +61,7 @@ statuses = [] # optional, list of package ids
 Expects an `entry.lua` file. See [Augment](/client/lua-api/entity-api/player#augment)
 
 ```lua
+---@param augment Augment
 function augment_init(augment)
 end
 ```
@@ -103,6 +104,7 @@ statuses = [] # optional, list of package ids
 Expects an `entry.lua` file. See [Encounter](/client/lua-api/field-api/encounter)
 
 ```lua
+---@param encounter Encounter
 function encounter_init(encounter)
 end
 ```
@@ -112,6 +114,7 @@ end
 Expects an `entry.lua` file. See [Character](/client/lua-api/entity-api/character)
 
 ```lua
+---@param character Entity
 function character_init(character)
 end
 ```
@@ -168,9 +171,13 @@ Expects an `entry.lua` file. See [Action](/client/lua-api/attack-api/action)
 
 ```lua
 -- optional implementation, called when package ids change on cards tied to a character
+-- ---@param entity Entity
+-- ---@param card_index number
 -- function card_mutate(entity, card_index)
 -- end
 
+---@param entity Entity
+---@param card_properties CardProperties
 function card_init(entity, card_properties)
   local action = Action.new(entity, "PLAYER_IDLE")
 
@@ -250,6 +257,7 @@ statuses = [] # optional, list of package ids
 Expects an `entry.lua` file. See [Status](/client/lua-api/attack-api/status)
 
 ```lua
+---@param status Status
 function status_init(status)
   -- apply
   -- create components and sprites for graphics here
@@ -299,6 +307,7 @@ statuses = [] # optional, list of package ids
 Expects an `entry.lua` file. See [Player](/client/lua-api/entity-api/player)
 
 ```lua
+---@param player Entity
 function player_init(player)
 end
 ```
