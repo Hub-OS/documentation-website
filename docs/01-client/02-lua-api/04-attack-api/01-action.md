@@ -9,6 +9,8 @@ While actions execute, their owners will stop auto reserving tiles.
 - `entity`: the [Entity](/client/lua-api/entity-api/entity) to tie the action to.
 - `state`: string, the animation state to play when the action executes.
 
+Returns a new Action.
+
 ### `Action.from_card(entity, card_properties)`
 
 - `entity`: the [Entity](/client/lua-api/entity-api/entity) to tie the action to.
@@ -20,13 +22,7 @@ Returns the [Entity](/client/lua-api/entity-api/entity) tied to this action
 
 ### `action:set_lockout(lockout)`
 
-- `lockout`
-  - `make_animation_lockout()`
-    - Action completes when the animation ends.
-  - `make_sequence_lockout()`
-    - Action completes when the action runs out of [Steps](#actioncreate_step) to execute
-  - `make_async_lockout(duration)`
-    - When the animation ends, entities regain movement control. Attacks must wait for the duration to end.
+- `lockout`: [ActionLockout](#actionlockout)
 
 ### `action:create_step()`
 
@@ -44,7 +40,7 @@ See [animation:derive_state()](/client/lua-api/resource-api/animation#animationd
 
 ### `action:add_anim_action(frame_index, callback)`
 
-Same as calling `action:owner():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself)
+Same as calling `action:owner():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself_owner)
 
 See [animation:on_frame()](/client/lua-api/resource-api/animation#animationon_frameframe_index-function-do_once)
 
@@ -68,7 +64,7 @@ Sets the the action's card properties, will be overwritten when queued if the ac
 
 Experimental. Replacement / removal is under consideration.
 
-### `action.on_execute_func = function(self)`
+### `action.on_execute_func = function(self, owner)`
 
 Called when the action begins execution.
 
@@ -86,7 +82,7 @@ Called when the action ends execution.
 
 ### `action.can_move_to_func = function(tile)`
 
-Override's the owner's [can_move_to_func](/client/lua-api/entity-api/entity/#entitycan_move_to_func--functionself-tile) while executing.
+Override's the owner's [can_move_to_func](/client/lua-api/entity-api/entity/#entitycan_move_to_func--functionself-tile-boolean) while executing.
 
 Ignored on async actions when the entity regains control.
 
@@ -105,6 +101,28 @@ Returns a reference to the attachment's [Sprite](/client/lua-api/resource-api/sp
 ### `attachment:animation()`
 
 Returns a reference to the attachment's [Animation](/client/lua-api/resource-api/animation)
+
+## ActionLockout
+
+Controls when Actions complete.
+
+### `ActionLockout.new_animation()`
+
+Returns ActionLockout.
+
+Action completes when the animation ends.
+
+### `ActionLockout.new_sequence()`
+
+Returns ActionLockout.
+
+Action completes when the action runs out of [Steps](#actioncreate_step) to execute
+
+### `ActionLockout.new_async(duration)`
+
+Returns ActionLockout.
+
+When the animation ends, entities regain movement control. Attacks must wait for the duration to end.
 
 ## Step
 

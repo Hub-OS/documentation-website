@@ -34,6 +34,8 @@ Returns the facing [Direction](/client/lua-api/field-api/direction) of the entit
 
 ### `entity:facing_away()`
 
+Returns [Direction](/client/lua-api/field-api/direction)
+
 Same as `Direction.reverse(entity:facing())`
 
 ### `entity:set_facing(direction)`
@@ -54,6 +56,8 @@ Returns the [Team](/client/lua-api/entity-api/entity#entityset_teamteam) of the 
 Modifies which team the entity is on. If the entity is a [Player](/client/lua-api/entity-api/player) the perspective may flip.
 
 ### `entity:is_team(team)`
+
+Returns a boolean.
 
 Same as `entity:team() == team`
 
@@ -118,7 +122,7 @@ Automatically set for [Spells](/client/lua-api/entity-api/spell) and [Artifacts]
 
 ### `entity:tile_offset()`
 
-Returns a table with `x` and `y` keys.
+Returns `{ x: number, y: number }`.
 
 This table represents the temporary offset applied to the entity by movement.
 
@@ -127,6 +131,8 @@ This table represents the temporary offset applied to the entity by movement.
 Overwrites the frame temporary movement offset.
 
 ### `entity:offset()`
+
+Returns `{ x: number, y: number }`
 
 Same as `entity:sprite():offset()`
 
@@ -158,6 +164,8 @@ Returns a [Sprite](/client/lua-api/resource-api/sprite), can be used to modify t
 
 ### `entity:texture()`
 
+Returns a string.
+
 Same as `entity:sprite():texture()`
 
 ### `entity:set_texture(path)`
@@ -165,6 +173,8 @@ Same as `entity:sprite():texture()`
 Same as `entity:sprite():set_texture(path)`
 
 ### `entity:palette()`
+
+Returns a string or `nil`
 
 Same as `entity:sprite():palette()`
 
@@ -182,6 +192,8 @@ Same as `entity:sprite():reveal()`
 
 ### `entity:color()`
 
+Returns [Color](/client/lua-api/resources/sprite#color)
+
 Same as `entity:sprite():color()`
 
 ### `entity:set_color(color)`
@@ -190,6 +202,8 @@ Same as `entity:sprite():set_color(color)`
 
 ### `entity:never_flip()`
 
+Returns a boolean.
+
 Same as `entity:sprite():never_flip()`
 
 ### `entity:set_never_flip(never_flip?)`
@@ -197,6 +211,8 @@ Same as `entity:sprite():never_flip()`
 Same as `entity:sprite():set_never_flip(never_flip)`
 
 ### `entity:create_node()`
+
+Returns a [Sprite](/client/lua-api/resource-api/sprite)
 
 Same as `entity:sprite():create_node()`
 
@@ -236,9 +252,9 @@ Same as `entity:animation():load(path)`
 
 - `lifetime` affects when the component's update callback is called.
 
-  - `Lifetimes.Local` when the entity update callback is called (affected by time freeze and status effects)
-  - `Lifetimes.Battle` after every entity has updated and battle is active as long as time is not frozen.
-  - `Lifetimes.Scene` near the end of every tick.
+  - `Lifetime.Local` when the entity update callback is called (affected by time freeze and status effects)
+  - `Lifetime.Battle` after every entity has updated and battle is active as long as time is not frozen.
+  - `Lifetime.Scene` near the end of every tick.
 
   Returns a [Component](#component)
 
@@ -246,7 +262,7 @@ Same as `entity:animation():load(path)`
 
 Returns a value that can be used to decide if an attack can counter an opponent, and to resolve the owner of an attack.
 
-Countering an attack can be achieved by hitting an enemy with [HitProps](/client/lua-api/attack-api/hit-props) containing context obtained during [card_init](/client/packages#cards) or within [action.on_execute_func](/client/lua-api/attack-api/action#actionon_execute_func--functionself)
+Countering an attack can be achieved by hitting an enemy with [HitProps](/client/lua-api/attack-api/hit-props) containing context obtained during [card_init](/client/packages#cards) or within [action.on_execute_func](/client/lua-api/attack-api/action#actionon_execute_func--functionself_owner)
 
 Make sure to obtain context in card_init and not within a callback for countering.
 
@@ -264,18 +280,18 @@ Ends and deletes synchronous and pending actions.
 
 Returns true if the entity can move to the target tile.
 
-### `entity:teleport(tile?, function())`
+### `entity:teleport(tile?, function()?)`
 
 - `tile`: [Tile](/client/lua-api/field-api/tile), if unset nothing happens.
 - callback is called when the movement begins processing
 
-### `entity:slide(tile?, duration, function())`
+### `entity:slide(tile?, duration?, function()?)`
 
 - `tile`: [Tile](/client/lua-api/field-api/tile), if unset nothing happens.
 - `duration` is in game frames.
 - callback is called when the movement begins processing
 
-### `entity:jump(tile?, height, duration, function())`
+### `entity:jump(tile?, height, duration, function()?)`
 
 - `tile`: [Tile](/client/lua-api/field-api/tile), if unset nothing happens.
 - `height` how many pixels to offset the entity at the peak of the jump
@@ -376,9 +392,7 @@ Called when the battle has completed (win or loss).
 
 Not implemented.
 
-### `entity.can_move_to_func = function(self, tile)`
-
-A bool is expected as a return value.
+### `entity.can_move_to_func = function(self, tile): boolean`
 
 This function is pre-set for all entities.
 

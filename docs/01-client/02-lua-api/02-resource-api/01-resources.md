@@ -6,6 +6,8 @@
 
 Caches the texture and returns a normalized path for faster access.
 
+Returns a string.
+
 Should be used in global scope for better performance.
 
 ### `Resources.load_audio(path)`
@@ -13,6 +15,8 @@ Should be used in global scope for better performance.
 - `path`: file path relative to script file
 
 Caches the audio and returns a normalized path for faster access.
+
+Returns a string.
 
 Should be used in global scope for better performance.
 

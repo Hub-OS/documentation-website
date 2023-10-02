@@ -20,7 +20,7 @@ Returns the height of the tile in pixels.
 
 ### `tile:state()`
 
-Returns the tile's TileState.
+Returns the TileState.
 
 ### `tile:set_state(tile_state)`
 
@@ -52,9 +52,9 @@ Returns true if the tile is one of the hidden padding tiles around the edge of t
 
 Returns true if the tile is not a hole. (`TileState.Broken`, `TileState.Hidden`, `TileState.Empty`)
 
-### `tile:is_reserved()`
+### `tile:is_reserved(exclude_list)`
 
-Returns true if there's any reservations for this tile.
+Returns true if there's any reservations for this tile, excluding [entities with ids](/client/lua-api/entity-api/entity#entityid) matching the `exclude_list`.
 
 ### `tile:reserve_for(entity)`
 
@@ -90,9 +90,9 @@ Returns a [Direction](/client/lua-api/field-api/direction)
 
 Sets the facing direction used to set the initial direction of spawned entities, as well as for resolving reverting team.
 
-### `tile:highlight(mode)`
+### `tile:set_highlight(highlight)`
 
-- `mode`
+- `highlight`
   - `Highlight.None`
   - `Highlight.Flash`
   - `Highlight.Solid`
@@ -124,31 +124,31 @@ Removes the [Entity](/client/lua-api/entity-api/entity) from the field.
 
 Removes the [Entity](/client/lua-api/entity-api/entity) from the field.
 
-### `tile:find_entities(function(entity))`
+### `tile:find_entities(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
 Only "hittable" [Entities](/client/lua-api/entity-api/entity) will be passed to the callback.
 
-### `tile:find_characters(function(entity))`
+### `tile:find_characters(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
 Only "hittable" [Characters](/client/lua-api/entity-api/character) will be passed to the callback.
 
-### `tile:find_obstacles(function(entity))`
+### `tile:find_obstacles(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
 Only "hittable" [Obstacles](/client/lua-api/entity-api/obstacle) will be passed to the callback.
 
-### `tile:find_players(function(entity))`
+### `tile:find_players(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
 Only "hittable" [Players](/client/lua-api/entity-api/player) will be passed to the callback.
 
-### `tile:find_spells(function(entity))`
+### `tile:find_spells(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 

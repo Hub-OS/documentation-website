@@ -85,4 +85,6 @@ Returns a new Drag instance.
 
 ### `Drag.None`
 
+Returns a new Drag instance.
+
 Same as `Drag.new()`

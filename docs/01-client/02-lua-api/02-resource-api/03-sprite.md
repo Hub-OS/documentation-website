@@ -54,7 +54,7 @@ Used for sorting during render.
 
 ### `sprite:offset()`
 
-Returns a table with `x` and `y` keys, represents the parent relative offset.
+Returns `{ x: number, y: number }`, represents the parent relative offset.
 
 ### `sprite:set_offset(x, y)`
 
@@ -62,7 +62,7 @@ Sets the parent relative offset.
 
 ### `sprite:origin()`
 
-Returns a table with `x` and `y` keys.
+Returns `{ x: number, y: number }`.
 
 ### `sprite:set_origin(x, y)`
 
@@ -70,7 +70,7 @@ Sets the origin, [Animations](/client/lua-api/resource-api/animation) will overw
 
 ### `sprite:scale()`
 
-Returns a table with `x` and `y` keys.
+Returns `{ x: number, y: number }`.
 
 ### `sprite:set_scale(x, y)`
 
@@ -78,7 +78,7 @@ Sets the scale of the sprite.
 
 ### `sprite:size()`
 
-Returns a table with `x` and `y` keys, representing the size of the sprite. Scale is accounted.
+Returns `{ x: number, y: number }`. Represents the size of the sprite. Scale is accounted.
 
 ### `sprite:set_size(x, y)`
 

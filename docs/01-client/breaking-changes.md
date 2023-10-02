@@ -6,11 +6,13 @@ https://github.com/Hub-OS/mod-upgrade-tool
 
 - Actions no longer revert to previous animation state on completion for non Players.
   - Fixed by defining [on_idle_func](/client/lua-api/entity-api/entity#entityon_idle_func--functionself).
+- Renamed [tile:highlight()] to [tile:set_highlight()](/client/lua-api/field-api/field#tileset_highlighthiglight)
+- Renamed component `Lifetimes` to [Lifetime](/client/lua-api/entity-api/entity#entitycreate_componentlifetime)
 
 ## 0.11
 
 - Modified `field:find_*` functions to search through all spawned entities, not just "hittable" entities.
-  - Artifacts will now appear in [field:find_entities()](/client/lua-api/field-api/field#fieldfind_entitiesfunctionentity)
+  - Artifacts will now appear in [field:find_entities()](/client/lua-api/field-api/field#fieldfind_entitiesfunctionentity-boolean)
   - [entity:hittable()](/client/lua-api/entity-api/entity#entityhittable) can be utilized in the filter function for previous behavior
 - Renamed `player:get_augments()` to [player:augments()](/client/lua-api/entity-api/player#playeraugments)
 - `Movement.new()` replaced with more specific constructors.

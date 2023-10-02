@@ -51,7 +51,7 @@ assert(Direction.join(Direction.Left, Direction.Right) == Direction.None)
 
 ### `Direction.vector(direction)`
 
-Returns a table with `x` and `y` keys.
+Returns `{ x: number, y: number }`.
 
 ```lua
 local vector = Direction.vector(Direction.UpLeft)
@@ -60,7 +60,7 @@ assert(vector.x == -1 and vector.y == -1)
 
 ### `Direction.unit_vector(direction)`
 
-Returns a table with `x` and `y` keys.
+Returns `{ x: number, y: number }`.
 
 ```lua
 local vector = Direction.unit_vector(Direction.UpLeft)

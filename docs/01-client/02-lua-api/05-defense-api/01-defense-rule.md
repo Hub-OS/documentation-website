@@ -2,7 +2,7 @@
 
 See [living:add_defense_rule()](/client/lua-api/entity-api/living#livingadd_defense_ruledefense_rule)
 
-### `DefenseRule.new(priority, defense_order)`
+### `DefenseRule.new(defense_priority, defense_order)`
 
 - `priority`
   - `DefensePriority.Barrier`
@@ -16,6 +16,8 @@ See [living:add_defense_rule()](/client/lua-api/entity-api/living#livingadd_defe
   - `DefenseOrder.CollisionOnly`
 
 Adding a DefenseRule to an entity when a DefenseRule already exists with the same priorty will replace the existing rule.
+
+Returns a new DefenseRule.
 
 ### `defense_rule:replaced()`
 
@@ -36,7 +38,7 @@ If the defense order is `DefenseOrder.CollisionOnly`, this function will be call
 - `defender`: [Entity](/client/lua-api/entity-api/entity)
 - `hit_props`: [HitProps](/client/lua-api/attack-api/hit-props)
 
-### `defense_rule.filter_statuses_func = function(hit_props)`
+### `defense_rule.filter_statuses_func = function(hit_props): HitProps`
 
 Called before applying damage and statuses to the entity.
 
@@ -48,7 +50,7 @@ The return value replaces the HitProps applied to the entity.
 
 ### `DefenseVirusBody.new()`
 
-Creates a [DefenseRule](#defenserule) with `DefensePriority.Body` and `DefenseOrder.CollisionOnly`.
+Returns a [DefenseRule](#defenserule) with `DefensePriority.Body` and `DefenseOrder.CollisionOnly`.
 
 Filters `Hit.Flinch` and `Hit.Flash` flags during status filtering.
 

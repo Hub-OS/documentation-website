@@ -2,7 +2,7 @@
 
 ### `Animation.new(path?)`
 
-Constructs a new Animation instance.
+Returns a new Animation instance.
 
 ### `animation:copy_from(animation)`
 
@@ -103,7 +103,7 @@ Returns true if the current animation frame has a point with this name.
 
 ### `animation:get_point(name)`
 
-Returns a table with `x` and `y` keys.
+Returns `{ x: number, y: number }`.
 
 ### `animation:set_playback(playback)`
 

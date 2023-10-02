@@ -14,11 +14,11 @@ Returns a new [Entity](/client/lua-api/entity-api/entity) instance.
 
 Returns the entity passed in if the entity is a spell, otherwise returns `nil`.
 
-### `spell:set_tile_highlight(mode)`
+### `spell:set_tile_highlight(highlight)`
 
 Sets the highlight mode for tiles the spell passes over.
 
-See [tile:highlight()](/client/lua-api/field-api/field#tilehighlightmode)
+See [tile:set_highlight()](/client/lua-api/field-api/field#tileset_highlighthiglight)
 
 ### `spell:copy_hit_props()`
 

@@ -30,7 +30,7 @@ Returns the entity passed in if the entity is a character or player, otherwise r
   - `Rank.Omega`
   - `Rank.Sigma`
 
-Returns a new character entity, throws if the package doesn't exist.
+Returns a new [Entity](/client/lua-api/entity-api/entity), throws if the package doesn't exist.
 
 ### `Character:rank()`
 
