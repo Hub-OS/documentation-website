@@ -8,6 +8,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
   - Fixed by defining [on_idle_func](/client/lua-api/entity-api/entity#entityon_idle_func--functionself).
 - Renamed [tile:highlight()] to [tile:set_highlight()](/client/lua-api/field-api/field#tileset_highlighthiglight)
 - Renamed component `Lifetimes` to [Lifetime](/client/lua-api/entity-api/entity#entitycreate_componentlifetime)
+- AuxProp `increase_`/`decrease_` effects now add/subtract rather than set final values.
 
 ## 0.11
 

@@ -289,30 +289,29 @@ Removes an existing status on the entity, won't affect incoming hits.
 ### `aux_prop:increase_hit_damage(expr)`
 
 - Increase Hit Damage priority
-- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit.
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit before any modifications.
 
-The difference in the result of `expr` and the incoming hit's damage will be used to update the total incoming damage.
+The result of `expr` will be added to the total incoming damage.
 
-If the result is less than the incoming hit's damage, a warning will be logged.
+If the result is negative, it will be clamped to 0.
 
 ### `aux_prop:decrease_hit_damage(expr)`
 
 - Decrease Hit Damage priority
-- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit.
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit before any modifications.
 
-The difference in the result of `expr` and the incoming hit's damage will be used to update the total incoming damage.
+The result of `expr` will be subtracted from the total incoming damage.
 
-If the result is more than the incoming hit's damage, a warning will be logged.
+If the result is negative, it will be clamped to 0.
 
-Note: If the result of `expr` is zero, a super effective hit or another AuxProp may still add back the damage as only the difference of the result is used.
-To entirely negate damage a defense rule must be used.
+Note: To entirely negate damage a defense rule must be used.
 
 ### `aux_prop:decrease_total_damage(expr)`
 
 - Decrease Damage Total priority
 - `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the total damage value for all incoming hits.
 
-The result of `expr` will be used to modify the total incoming damage.
+The result of `expr` will be subtracted from the total incoming damage.
 
 If the total damage was previously not zero the final total damage will have a minimum value of 1.
 
