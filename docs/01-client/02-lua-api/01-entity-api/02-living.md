@@ -16,6 +16,12 @@ Returns the entity's current health.
 
 Sets the entity's max health.
 
+### `living:hit(hit_props)`
+
+- `hit_props`: [HitProps](/client/lua-api/attack-api/hit-props)
+
+Queues a hit for processing, in most cases [tile:attack_entities()](/client/lua-api/field-api/tile#tileattack_entitiesspell) should be used instead.
+
 ### `living:hitbox_enabled()`
 
 Returns true if the entity can interact with attacks.
