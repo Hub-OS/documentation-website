@@ -101,6 +101,12 @@ The AuxProp will check the total incoming damage from all hits in the current fr
 
 The AuxProp will check the attached entity for matching element.
 
+### `aux_prop:require_negative_tile_interaction()`
+
+- Body priority
+
+The AuxProp will check `entity:ignoring_negative_tile_effects() == false`.
+
 ### `aux_prop:require_emotion(emotion)`
 
 - Body priority
