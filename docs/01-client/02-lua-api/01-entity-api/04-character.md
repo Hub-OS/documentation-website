@@ -2,7 +2,7 @@
 
 Instance of [Entity](/client/lua-api/entity-api/entity). All [Living](/client/lua-api/entity-api/living) functions are available as well.
 
-Character functions are accessible to all entities, but will throw if the entity is not a Character, [Player](/client/lua-api/entity-api/player), or [Obstacle](/client/lua-api/entity-api/obstacle).
+Character functions are accessible to all entities, but will throw if the entity is not a Character or [Player](/client/lua-api/entity-api/player).
 
 ### `Character.from(entity)`
 
