@@ -219,6 +219,7 @@ An AuxProp can have one optional effect (but still have multiple callbacks). The
 
 The lower the priority is in the list, the later it will execute.
 
+- Increase Card Damage
 - Increase Card Multiplier
 - Intercept Action
 - Interrupt Action
@@ -231,6 +232,11 @@ The lower the priority is in the list, the later it will execute.
 - Drain Health
 - Recover Health
 - No Effect
+
+### `aux_prop:increase_card_damage(increase)`
+
+- Increase Card Damage priority
+- `increase`: number, the amount to increase the card damage before multiplying.
 
 ### `aux_prop:increase_card_multiplier(increase)`
 
