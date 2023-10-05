@@ -276,7 +276,7 @@ Note: During time freeze, Actions that freeze time skip to the front of the line
 
 Ends and deletes synchronous and pending actions.
 
-### `entity:can_move_to(tile)`
+### `entity:can_move_to(tile?)`
 
 Returns true if the entity can move to the target tile.
 
