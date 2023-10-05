@@ -97,7 +97,7 @@ Returns true if other entities can stand on this tile.
 
 Allows other entities to stand on tiles reserved by this entity.
 
-### `entity:ignoring_negative_tile_effects(enabled)`
+### `entity:ignoring_negative_tile_effects()`
 
 Returns true if negative tile effects should be ignored for this entity.
 
