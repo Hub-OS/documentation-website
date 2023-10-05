@@ -22,6 +22,7 @@ const CLASS_NAMES = [
   "Component",
   "SyncNode",
   "ActionLockout",
+  "CustomTileState",
 ];
 
 export function defineClasses(definitions: DefinitionMap) {

@@ -56,6 +56,7 @@ cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
+tile_states = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file. See [Augment](/client/lua-api/entity-api/player#augment)
@@ -99,6 +100,7 @@ cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
+tile_states = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file. See [Encounter](/client/lua-api/field-api/encounter)
@@ -165,6 +167,7 @@ cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
+tile_states = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file. See [Action](/client/lua-api/attack-api/action)
@@ -211,6 +214,7 @@ cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
+tile_states = [] # optional, list of package ids
 ```
 
 May contain an `entry.lua` file.
@@ -252,6 +256,7 @@ cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
+tile_states = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file. See [Status](/client/lua-api/attack-api/status)
@@ -267,6 +272,68 @@ function status_init(status)
     -- clean up
   end
 end
+```
+
+## Tile States
+
+Expects a `package.toml` file
+
+```toml
+[package]
+category = "tile_state" # must match
+id = "BattleNetwork6.TileStates.Grass"
+category = "tile_state"
+name = "BN6 Grass Tile"
+state_name = "Grass"
+texture_path = "texture.png"
+animation_path = "animation.animation"
+max_lifetime = 60 # optional
+hide_frame = false # optional
+hide_body = false # optional
+hole = false # optional, affects tile:is_walkable()
+cleanser_element = "Fire" # optional, attacks matching this element will overwrite the state to TileState.Normal
+
+# this section is optional, see the Battle section for an example
+[defines]
+characters = []
+
+# this section is optional
+[dependencies]
+augments = [] # optional, list of package ids
+encounters = [] # optional, list of package ids
+cards = [] # optional, list of package ids, must also depend on defining package
+characters = [] # optional, list of package ids
+libraries = [] # optional, list of package ids
+statuses = [] # optional, list of package ids
+tile_states = [] # optional, list of package ids
+```
+
+Expects an `entry.lua` file. See [CustomTileState](/client/lua-api/field-api/custom-tile-state)
+
+```lua
+---@param custom_tile_state CustomTileState
+function status_init(custom_tile_state)
+  custom_tile_state.on_entity_enter_func = function(self, entity, movement)
+    -- ...
+  end
+end
+```
+
+Animation example:
+
+```
+# prefix state names with "RED_" "BLUE_" "OTHER_" to add support for team differences
+# suffix with "_FLIPPED" to support perspective differences
+# if there's a universal state, just use "DEFAULT"
+
+animation state="1"
+frame x="0" w="40" h="30"
+
+animation state="2"
+frame x="40" w="40" h="30"
+
+animation state="3"
+frame x="80" w="40" h="30"
 ```
 
 ## Players
@@ -302,6 +369,7 @@ cards = [] # optional, list of package ids, must also depend on defining package
 characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
+tile_states = [] # optional, list of package ids
 ```
 
 Expects an `entry.lua` file. See [Player](/client/lua-api/entity-api/player)

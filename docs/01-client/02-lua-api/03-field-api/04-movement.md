@@ -45,6 +45,10 @@ The duration in game frames for the movement to drop after delta + delay.
 
 The distance above the ground for the entity to jump.
 
+### `movement.dest_tile`
+
+The tile where the movement will complete.
+
 ### `movement:animation_progress()`
 
 Returns the movement's animation progress as a value between 0 and 1.

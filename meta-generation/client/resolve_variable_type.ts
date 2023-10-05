@@ -35,7 +35,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Movement", list: ["movement"] },
   { type: "Direction", list: ["direction", "direction_a", "direction_b"] },
   { type: "Drag", list: ["drag"] },
-  { type: "Tile", list: ["tile"] },
+  { type: "Tile", list: ["tile", "prev_tile", "dest_tile"] },
   { type: "TileState", list: ["tile_state"] },
   { type: "Highlight", list: ["highlight"] },
   { type: "HitProps", list: ["hit_props"] },

@@ -30,19 +30,7 @@ Returns the TileState.
   - `TileState.PermaHole`
   - `TileState.Cracked`
   - `TileState.Broken`
-  - `TileState.Ice`
-  - `TileState.Grass`
-  - `TileState.Lava`
-  - `TileState.Poison`
-  - `TileState.Holy`
-  - `TileState.DirectionLeft`
-  - `TileState.DirectionRight`
-  - `TileState.DirectionUp`
-  - `TileState.DirectionDown`
-  - `TileState.Volcano`
-  - `TileState.Sea`
-  - `TileState.Sand`
-  - `TileState.Metal`
+  - [TileState.[state_name]](/client/packages#tile-states)
 
 ### `tile:is_edge()`
 

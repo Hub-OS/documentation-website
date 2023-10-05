@@ -1,3 +1,4 @@
+// npx ts-node meta-generation/client.ts
 // https://luals.github.io/wiki/annotations/
 
 import { defineVague } from "./client/tables/vague";
@@ -54,6 +55,7 @@ function buildMetaFile() {
 
   let output = [
     "---@meta",
+    "-- https://luals.github.io/wiki/annotations/",
     "---@diagnostic disable: missing-return, unused-local",
     "",
   ];
