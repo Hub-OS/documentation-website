@@ -12,7 +12,7 @@ Returns the entity's max health.
 
 Returns the entity's current health.
 
-### `living:set_health()`
+### `living:set_health(health)`
 
 Sets the entity's max health.
 
