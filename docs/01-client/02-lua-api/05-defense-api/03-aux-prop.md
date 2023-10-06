@@ -249,17 +249,15 @@ The lower the priority is in the list, the later it will execute.
 - Increase Card Multiplier priority
 - `increase`: number, the amount to increase the multiplier by.
 
-### `aux_prop:intercept_action(callback)`
+### `aux_prop:intercept_action(function(action): Action|nil)`
 
 - Intercept Action priority
-- `callback`: A function that accepts an [Action](/client/lua-api/attack-api/action) and returns an Action or nil.
 
 Intercepts an Action moving off the action queue for execution. Returning a different Action or nil in the callback will cancel and delete the Action. `aux_prop:require_card_*` will refer to properties on the Action.
 
-### `aux_prop:interrupt_action(callback)`
+### `aux_prop:interrupt_action(function(action))`
 
 - Interrupt Action priority
-- `callback`: A function that accepts an [Action](/client/lua-api/attack-api/action).
 
 Interrupts an Action that is about to execute or has executed. The Action will be deleted after the callback finishes.
 `aux_prop:require_card_*` will refer to properties on the Action.
