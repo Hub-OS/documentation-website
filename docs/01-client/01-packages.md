@@ -8,6 +8,7 @@ Expects a `package.toml` file
 [package]
 category = "augment" # must match
 id = "dev.konstinople.augment.Attack1.bn6" # must be unique
+past_ids = [] # optional, list of strings
 name = "Attack+1"
 description = "MegaBstr\nAttck +1"
 long_description = "" # optional
@@ -75,6 +76,7 @@ Expects a `package.toml` file
 [package]
 category = "encounter" # must match
 id = "com.discord.Konstinople#7692.cactikil" # must be unique
+past_ids = [] # optional, list of strings
 name = "Cactikil"
 description = 'Cactikil, known as "Sabotekoron" in Japan, is a cactus'
 long_description = "" # optional
@@ -129,6 +131,7 @@ Expects a `package.toml` file
 [package]
 category = "card" # must match
 id = "com.discord.Konstinople#7692.card.AreaEater" # must be unique
+past_ids = [] # optional, list of strings
 name = "AreaEatr"
 icon_texture_path = "icon.png"
 preview_texture_path = "preview.png"
@@ -197,6 +200,7 @@ Expects a `package.toml` file
 [package]
 category = "library" # accepts "library" and "pack"
 id = "com.example.library" # must be unique
+past_ids = [] # optional, list of strings
 name = "Example Library"
 description = "Example Library"
 long_description = "" # optional
@@ -233,6 +237,7 @@ Expects a `package.toml` file
 [package]
 category = "status" # must match
 id = "com.BN6.Statuses.Bubble"
+past_ids = [] # optional, list of strings
 name = "Bubble Status"
 description = "" # optional
 long_description = "" # optional
@@ -282,6 +287,7 @@ Expects a `package.toml` file
 [package]
 category = "tile_state" # must match
 id = "BattleNetwork6.TileStates.Grass"
+past_ids = [] # optional, list of strings
 category = "tile_state"
 name = "BN6 Grass Tile"
 state_name = "Grass"
@@ -344,6 +350,7 @@ Expects a `package.toml` file
 [package]
 category = "player" # must match
 id = "com.discord.Konstinople#7692.player.Man" # must be unique
+past_ids = [] # optional, list of strings
 name = "Man"
 description = "Before he was Mega, he was Man"
 long_description = "" # optional
@@ -388,6 +395,7 @@ Expects a `package.toml` file
 [package]
 category = "resource" # must match
 id = "com.example.resource" # must be unique
+past_ids = [] # optional, list of strings
 name = "Example Resource Package"
 description = "Example Resource Package"
 long_description = "" # optional
