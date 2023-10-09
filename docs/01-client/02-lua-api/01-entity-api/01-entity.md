@@ -318,6 +318,10 @@ Returns true if the entity is jumping.
 
 Returns true if the entity is teleporting.
 
+### `entity:is_dragged()`
+
+Returns true if the entity's current movement was caused by drag.
+
 ### `entity:set_idle()`
 
 Calls [entity:on_idle_func()](#entityon_idle_func--functionself)
