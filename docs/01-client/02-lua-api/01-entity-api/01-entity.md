@@ -192,7 +192,7 @@ Same as `entity:sprite():reveal()`
 
 ### `entity:color()`
 
-Returns [Color](/client/lua-api/resources/sprite#color)
+Returns [Color](/client/lua-api/resource-api/sprite#color)
 
 Same as `entity:sprite():color()`
 
