@@ -217,12 +217,14 @@ Called after [player.on_update_func](#playernormal_attack_func--functionself) wh
 ### `player_form.calculate_charge_time_func = function(self, player): number`
 
 Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself-number) when this form is active.
+Also overrides also overrides any [Augment](#augment)'s override.
 
 A numer representing the minimum Shoot button held time in game frames is expected as a return value.
 
 ### `player_form.normal_attack_func = function(self, player): Action|nil`
 
 Overrides [player.normal_attack_func](#playernormal_attack_func--functionself-actionnil) when this form is active.
+Also overrides also overrides any [Augment](#augment)'s override.
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
@@ -231,6 +233,7 @@ Return `nil` to fallback to the player's implementation.
 ### `player_form.charged_attack_func = function(self, player): Action|nil`
 
 Overrides [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil) when this form is active.
+Also overrides also overrides any [Augment](#augment)'s override.
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
@@ -239,6 +242,7 @@ Return `nil` to fallback to the player's implementation.
 ### `player_form.special_attack_func = function(self, player): Action|nil`
 
 Overrides [player.special_attack_func](#playerspecial_attack_func--functionself-action) when this form is active.
+Also overrides also overrides any [Augment](#augment)'s override.
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
@@ -259,6 +263,7 @@ An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return 
 ### `player_form.movement_func = function(self, player)`
 
 Overrides [player.movement_func](#playermovement_func--functionself-direction) when this form is active.
+Also overrides also overrides any [Augment](#augment)'s override.
 
 Used to handle movement input.
 
@@ -284,13 +289,13 @@ Returns true if the augment has a matching tag.
 
 ### `augment.calculate_charge_time_func = function(self): number`
 
-Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself-number) also overrides the active form's override.
+Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself-number)
 
 A numer representing the minimum Shoot button held time in game frames is expected as a return value.
 
 ### `augment.normal_attack_func = function(self): Action|nil`
 
-Overrides [player.normal_attack_func](#playernormal_attack_func--functionself-actionnil) also overrides the active form's override.
+Overrides [player.normal_attack_func](#playernormal_attack_func--functionself-actionnil)
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
@@ -298,7 +303,7 @@ Return `nil` to fallback to the next implementation (augment, form, or player).
 
 ### `augment.charged_attack_func = function(self): Action|nil`
 
-Overrides [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil) also overrides the active form's override.
+Overrides [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil)
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
@@ -306,7 +311,7 @@ Return `nil` to fallback to the next implementation (augment, form, or player).
 
 ### `augment.special_attack_func = function(self): Action|nil`
 
-Overrides [player.special_attack_func](#playerspecial_attack_func--functionself-action) also overrides the active form's override.
+Overrides [player.special_attack_func](#playerspecial_attack_func--functionself-action)
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
@@ -326,7 +331,7 @@ An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return 
 
 ### `augment.movement_func = function(self, direction)`
 
-Overrides [player.movement_func](#playermovement_func--functionself-direction) also overrides the active form's override.
+Overrides [player.movement_func](#playermovement_func--functionself-direction).
 
 Used to handle movement input.
 
