@@ -25,6 +25,10 @@ hand_size_boost = 0 # optional
 # some tags will be automatically added: "BLOCK", "FLAT_BLOCK"
 tags = ["BUG"]
 
+## switch drive specific
+# valid slots: "Head" | "Arms" | "Body" | "Legs"
+slot = "Arms"
+
 ## block specific
 # list of colors, case insensitive
 # valid colors: "red" | "green" | "blue" | "pink" | "yellow" | "white"
