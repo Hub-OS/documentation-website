@@ -148,6 +148,7 @@ element = "sword" # optional
 secondary_element = "none" # optional
 codes = ['A', 'O', 'X']
 card_class = "giga" # optional, "standard" | "mega"| "giga" | "dark"
+regular_allowed = false # optional, defaults to true for "standard" cards
 limit = 3 # optional, defaults to 5
 # optional, case insensitive
 # valid values:
