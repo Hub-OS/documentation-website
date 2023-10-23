@@ -269,6 +269,8 @@ function resolveTableName(heading: string) {
     }
   } else if (table_name == "Judge") {
     return "DefenseJudge";
+  } else if (table_name == "Button") {
+    return "CardSelectButton";
   }
 
   return table_name;

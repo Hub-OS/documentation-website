@@ -68,6 +68,18 @@ When `false`, the player will teleport to tiles and animate with the `PLAYER_MOV
 
 Queues a movement with the default internal logic.
 
+### `player:create_card_button(slot_count)`
+
+Creates a button embedded in the end of the card list in Card Select.
+
+Returns [CardSelectButton](#cardselectbutton)
+
+### `player:create_special_button()`
+
+Creates a button under the "Confirm" button in Card Select.
+
+Returns [CardSelectButton](#cardselectbutton)
+
 ### `player:create_form()`
 
 Returns a new [PlayerForm](#playerform).
@@ -202,6 +214,20 @@ Created through [player:create_form()](#playercreate_form)
 
 This texture is used for the form selection menu.
 
+### `player_form:create_card_button(slot_count)`
+
+Creates a button embedded in the end of the card list in Card Select.
+Overrides the card button created on the Player and any [Augment](#augment).
+
+Returns [CardSelectButton](#cardselectbutton)
+
+### `player_form:create_special_button()`
+
+Creates a button under the "Confirm" button in Card Select.
+Overrides the special button created on the Player and any [Augment](#augment).
+
+Returns [CardSelectButton](#cardselectbutton)
+
 ### `player_form.on_activate_func = function(self, player)`
 
 Called when the form is activated, the player's appearance should be modified here.
@@ -217,14 +243,14 @@ Called after [player.on_update_func](#playernormal_attack_func--functionself) wh
 ### `player_form.calculate_charge_time_func = function(self, player): number`
 
 Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself-number) when this form is active.
-Also overrides also overrides any [Augment](#augment)'s override.
+Also overrides any [Augment](#augment)'s override.
 
-A numer representing the minimum Shoot button held time in game frames is expected as a return value.
+A number representing the minimum Shoot button held time in game frames is expected as a return value.
 
 ### `player_form.normal_attack_func = function(self, player): Action|nil`
 
 Overrides [player.normal_attack_func](#playernormal_attack_func--functionself-actionnil) when this form is active.
-Also overrides also overrides any [Augment](#augment)'s override.
+Also overrides any [Augment](#augment)'s override.
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
@@ -233,7 +259,7 @@ Return `nil` to fallback to the player's implementation.
 ### `player_form.charged_attack_func = function(self, player): Action|nil`
 
 Overrides [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil) when this form is active.
-Also overrides also overrides any [Augment](#augment)'s override.
+Also overrides any [Augment](#augment)'s override.
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
@@ -242,7 +268,7 @@ Return `nil` to fallback to the player's implementation.
 ### `player_form.special_attack_func = function(self, player): Action|nil`
 
 Overrides [player.special_attack_func](#playerspecial_attack_func--functionself-action) when this form is active.
-Also overrides also overrides any [Augment](#augment)'s override.
+Also overrides any [Augment](#augment)'s override.
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
@@ -263,7 +289,7 @@ An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return 
 ### `player_form.movement_func = function(self, player)`
 
 Overrides [player.movement_func](#playermovement_func--functionself-direction) when this form is active.
-Also overrides also overrides any [Augment](#augment)'s override.
+Also overrides any [Augment](#augment)'s override.
 
 Used to handle movement input.
 
@@ -287,11 +313,25 @@ Returns an [Entity](/client/lua-api/entity-api/entity)
 
 Returns true if the augment has a matching tag.
 
+### `augment:create_card_button(slot_count)`
+
+Creates a button embedded in the end of the card list in Card Select.
+Overrides the card button created on the Player.
+
+Returns [CardSelectButton](#cardselectbutton)
+
+### `augment:create_special_button()`
+
+Creates a button under the "Confirm" button in Card Select.
+Overrides the special button created on the Player.
+
+Returns [CardSelectButton](#cardselectbutton)
+
 ### `augment.calculate_charge_time_func = function(self): number`
 
 Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself-number)
 
-A numer representing the minimum Shoot button held time in game frames is expected as a return value.
+A number representing the minimum Shoot button held time in game frames is expected as a return value.
 
 ### `augment.normal_attack_func = function(self): Action|nil`
 
@@ -338,3 +378,53 @@ Used to handle movement input.
 ### `augment.on_delete_func = function(self)`
 
 Called when the player is deleted or when this augment's level is boosted to <= 0.
+
+## CardSelectButton
+
+### `button:sprite()`
+
+Returns a [Sprite](/client/lua-api/resource-api/sprite)
+
+### `button:texture()`
+
+Returns a string.
+
+Same as `button:sprite():texture()`
+
+### `button:set_texture(path)`
+
+Same as `button:sprite():set_texture(path)`
+
+Use values returned from [Resources.load_texture()](/client/lua-api/resource-api/resources#resourcesload_texturepath) for better performance.
+
+### `button:animation()`
+
+Returns an [Animation](/client/lua-api/resource-api/animation)
+
+### `button:preview_sprite()`
+
+Returns a [Sprite](/client/lua-api/resource-api/sprite)
+
+### `button:preview_texture()`
+
+Returns a string.
+
+Same as `button:preview_sprite():texture()`
+
+### `button:set_preview_texture(path)`
+
+Use values returned from [Resources.load_texture()](/client/lua-api/resource-api/resources#resourcesload_texturepath) for better performance.
+
+Same as `button:preview_sprite():set_texture(path)`
+
+### `button:preview_animation()`
+
+Returns an [Animation](/client/lua-api/resource-api/animation)
+
+### `button:owner()`
+
+Returns an [Entity](/client/lua-api/entity-api/entity)
+
+### `button.use_func = function(self): bool`
+
+Return true if the button's usage effect was successful. The result will affect the played sound.

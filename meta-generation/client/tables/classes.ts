@@ -19,6 +19,7 @@ const CLASS_NAMES = [
   "Field",
   "Augment",
   "PlayerForm",
+  "CardSelectButton",
   "Component",
   "SyncNode",
   "ActionLockout",
