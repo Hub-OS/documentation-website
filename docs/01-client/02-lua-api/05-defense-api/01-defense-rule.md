@@ -64,6 +64,10 @@ Prevents damage and statuses from applying to the defending entity.
 
 ### `judge:block_impact()`
 
+Used to mark `Hit.Impact` as handled / retaliated.
+
+Does not strip `Hit.Impact`.
+
 ### `judge:damage_blocked()`
 
 Returns true if `judge:block_damage()` was called.
