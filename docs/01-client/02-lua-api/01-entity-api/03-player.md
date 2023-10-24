@@ -42,6 +42,15 @@ If the state doesn't exist, this does nothing.
 
 Returns true if `input_query` matches the player's current input state.
 
+### `player:play_audio(path, audio_behavior?)`
+
+- `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.
+- `audio_behavior`: [AudioBehavior](/client/lua-api/resource-api/resources#audiobehavior)
+
+Plays an audio file to only this player.
+
+See [Resources.play_audio()](/client/lua-api/resource-api/resources#resourcesplay_audiopath-audio_behavior) for playing audio for all players.
+
 ### `player:set_fully_charged_color(color)`
 
 - `color`: [Color](/client/lua-api/resource-api/sprite#color)
