@@ -167,7 +167,7 @@ The AuxProp will check the next card on the attached entity for matching code.
 ### `aux_prop:require_card_class(card_class)`
 
 - Body priority
-- `card_class`: [CardClass](/client/lua-api/attack-api/card-properties#card_propertiescard_class)
+- `card_class`: [CardClass](/client/lua-api/attack-api/cards#card_propertiescard_class)
 
 The AuxProp will check the next card on the attached entity for matching class.
 

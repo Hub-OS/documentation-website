@@ -29,12 +29,20 @@ const COMPRESSED_RETURN_TYPES = [
     list: ["Returns a copy of the spell's [HitProps]"],
   },
   {
+    type: "DeckCard[]",
+    list: ["Returns a list of [DeckCard]"],
+  },
+  {
     type: "CardProperties",
     list: ["Returns a copy of the action's card properties."],
   },
   {
     type: "CardProperties[]",
     list: ["Returns a list of [CardProperties]"],
+  },
+  {
+    type: "StagedItem[]",
+    list: ["Returns a list of [StagedItem]"],
   },
   {
     type: "Direction",

@@ -68,6 +68,106 @@ When `false`, the player will teleport to tiles and animate with the `PLAYER_MOV
 
 Queues a movement with the default internal logic.
 
+### `player:has_regular_card()`
+
+Returns a bool.
+
+### `player:deck_cards()`
+
+Returns a list of [DeckCard](/client/lua-api/attack-api/cards#deckcard).
+
+### `player:deck_card(index)`
+
+Returns [DeckCard](/client/lua-api/attack-api/cards#deckcard) or nil.
+
+### `player:set_deck_card(index, deck_card)`
+
+- `index`: number, 1 is the first card in the deck.
+- `deck_card`: [DeckCard](/client/lua-api/attack-api/cards#deckcard)
+
+If there's no card at this index, nothing happens.
+
+### `player:remove_deck_card(index)`
+
+- `index`: number, 1 is the first card in the deck.
+
+Removes a card from the player's deck.
+
+Any [StagedItem](#stageditem) referencing this card will be dropped.
+
+### `player:insert_deck_card(index, deck_card)`
+
+- `index`: number, 1 is the first card in the deck.
+- `deck_card`: [DeckCard](/client/lua-api/attack-api/cards#deckcard)
+
+Removes a card from the player's deck.
+
+Any [StagedItem](#stageditem) referencing this card will be dropped.
+
+### `player:stage_card(card_properties, function()?)`
+
+- `card_properties`: [CardProperties](/client/lua-api/attack-api/cards#cardproperties)
+- The callback will be called when the player removes the StagedItem.
+
+Appends a new [StageItem](#stageitem) to display in Card Select.
+
+### `player:stage_deck_card(deck_index, function()?)`
+
+- `deck_index`: number, 1 is the first card in the deck.
+- The callback will be called when the player removes the StagedItem.
+
+Appends a new [StageItem](#stageitem) to display in Card Select.
+
+Any StageItems already referencing `deck_index` will be removed.
+
+### `player:stage_deck_discard(deck_index, function()?)`
+
+- `deck_index`: number, 1 is the first card in the deck.
+- The callback will be called when the player removes the StagedItem.
+
+Appends a new [StageItem](#stageitem) to display in Card Select.
+
+Any StageItems already referencing `deck_index` will be removed.
+
+### `player:stage_form(form, texture_path?, function()?)`
+
+- `form`: [PlayerForm](#playerform)
+- `texture_path`: The texture to use for the icon.
+- The callback will be called when the player removes the StagedItem.
+
+Prepends a new [StageItem](#stageitem) that will be displayed in card select if a texture is set. If a form is already staged this StageItem will replace the existing item.
+
+### `player:stage_icon(texture_path, function()?)`
+
+- `texture_path`: The texture to use for the icon.
+- The callback will be called when the player removes the StagedItem.
+
+Appends a new [StageItem](#stageitem) to display in Card Select.
+
+### `player:pop_staged_item()`
+
+Removes the latest [StagedItem](#stageditem), calling the undo callback.
+
+### `player:staged_items()`
+
+Returns a list of [StagedItem](#stageditem)
+
+### `player:staged_item(index)`
+
+- `index`: number, starts with 1.
+
+Returns a [StagedItem](#stageditem) or `nil`.
+
+### `player:staged_item_texture(index)`
+
+- `index`: number, starts with 1.
+
+Returns a string. Represents the path to the StagedItem's icon texture.
+
+### `player:set_card_selection_blocked(bool)`
+
+Prevents selection in Card Select and hides the cursor.
+
 ### `player:create_card_button(slot_count)`
 
 Creates a button embedded in the end of the card list in Card Select.
@@ -207,6 +307,10 @@ Used to handle movement input, setting this overrides the default handling.
 ## PlayerForm
 
 Created through [player:create_form()](#playercreate_form)
+
+### `player_form:index()`
+
+Returns a number. Used internally to identify the form.
 
 ### `player_form:set_mugshot_texture_path(path)`
 
@@ -425,6 +529,30 @@ Returns an [Animation](/client/lua-api/resource-api/animation)
 
 Returns an [Entity](/client/lua-api/entity-api/entity)
 
-### `button.use_func = function(self): bool`
+### `button.use_func = function(self): boolean`
 
 Return true if the button's usage effect was successful. The result will affect the played sound.
+
+## StagedItem
+
+An item displayed as a pending selection in Card Select.
+
+### `staged_item.category`
+
+- `"deck_card"`
+- `"deck_discard"`
+- `"card"`
+- `"form"`
+- `"icon"`
+
+### `staged_item.index`
+
+A number for `"deck_card"`, `"deck_discard"`, and `"form"`
+
+Otherwise `nil`
+
+### `staged_item.card_properties`
+
+[CardProperties](/client/lua-api/attack-api/cards#cardproperties) for `"card"`
+
+Otherwise: `nil`

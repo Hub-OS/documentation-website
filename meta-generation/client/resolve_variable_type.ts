@@ -18,6 +18,7 @@ const COMPRESSED_VARIABLE_TYPES = [
     type: "EntityContext",
     list: ["context"],
   },
+  { type: "PlayerForm", list: ["form"] },
   { type: "Lifetime", list: ["lifetime"] },
   { type: "Element", list: ["element", "secondary_element"] },
   { type: "Element[]", list: ["element_weaknesses"] },
@@ -40,6 +41,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Highlight", list: ["highlight"] },
   { type: "HitProps", list: ["hit_props"] },
   { type: "number", list: ["hit_weaknesses"] },
+  { type: "DeckCard", list: ["deck_card"] },
   { type: "CardProperties", list: ["card_properties", "card"] },
   { type: "CardClass", list: ["card_class"] },
   { type: "Element", list: ["element"] },
@@ -79,6 +81,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "hit_flags", // todo
       "flags", // todo
       "index",
+      "deck_index",
       "player_index",
       "tile_width",
       "tile_height",

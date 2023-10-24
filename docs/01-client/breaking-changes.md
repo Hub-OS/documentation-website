@@ -21,7 +21,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 
 ## 0.10
 
-- Renamed `card_properties.meta_classes` to [card_properties.tags](/client/lua-api/attack-api/card-properties#card_propertiestags)
+- Renamed `card_properties.meta_classes` to [card_properties.tags](/client/lua-api/attack-api/cards#card_propertiestags)
 - Renamed `sprite:never_flip(bool?)` to [sprite:set_never_flip(bool?)](/client/lua-api/resource-api/sprite#spriteset_never_flipnever_flip)
 
 ## 0.9

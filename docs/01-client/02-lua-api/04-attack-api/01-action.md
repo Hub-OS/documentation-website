@@ -14,7 +14,7 @@ Returns a new Action.
 ### `Action.from_card(entity, card_properties)`
 
 - `entity`: the [Entity](/client/lua-api/entity-api/entity) to tie the action to.
-- `card_properties`: [CardProperties](/client/lua-api/attack-api/card-properties)
+- `card_properties`: [CardProperties](/client/lua-api/attack-api/cards#cardproperties)
 
 ### `action:owner()`
 
@@ -58,7 +58,7 @@ Experimental. Replacement / removal is under consideration.
 
 ### `action:set_card_properties(card_properties)`
 
-- `card_properties`: [CardProperties](/client/lua-api/attack-api/card-properties)
+- `card_properties`: [CardProperties](/client/lua-api/attack-api/cards#cardproperties)
 
 Sets the the action's card properties, will be overwritten when queued if the action is tied to a card.
 

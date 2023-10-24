@@ -38,20 +38,22 @@ Returns the character's rank.
 
 ### `Character:field_cards()`
 
-Returns a list of [CardProperties](/client/lua-api/attack-api/card-properties), the first card is the next card that can be used.
+Returns a list of [CardProperties](/client/lua-api/attack-api/cards#cardproperties), the first card is the next card that can be used.
 
 ### `Character:field_card(index)`
 
 - `index`: number, 1 represents the next card that can be used.
 
-Returns [CardProperties](/client/lua-api/attack-api/card-properties) or nil.
+Returns [CardProperties](/client/lua-api/attack-api/cards#cardproperties) or nil.
 
 ### `Character:set_field_card(index, card_properties)`
 
 - `index`: number, 1 represents the next card that can be used.
-- `card_properties`: [CardProperties](/client/lua-api/attack-api/card-properties)
+- `card_properties`: [CardProperties](/client/lua-api/attack-api/cards#cardproperties)
 
 Changing package_id will cause [card_mutate()](/client/packages#cards) to restart or run again next frame.
+
+If there's no card at this index, nothing happens.
 
 ### `Character:remove_field_card(index)`
 
@@ -60,7 +62,7 @@ Changing package_id will cause [card_mutate()](/client/packages#cards) to restar
 ### `Character:insert_field_card(index, card_properties)`
 
 - `index`: number, 1 represents the next card that can be used.
-- `card_properties`: [CardProperties](/client/lua-api/attack-api/card-properties)
+- `card_properties`: [CardProperties](/client/lua-api/attack-api/cards#cardproperties)
 
 Inserts a card at this index, shifting cards at this position and after to the right.
 

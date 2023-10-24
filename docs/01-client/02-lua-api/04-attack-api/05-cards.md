@@ -1,4 +1,18 @@
-# CardProperties
+# Cards
+
+## DeckCard
+
+A card sitting in a [Player's](/client/lua-api/entity-api/player) deck.
+
+### `deck_card.package_id`
+
+String, passed to [CardProperties.from_package()](#cardpropertiesfrom_packagepackage_id-code).
+
+### `deck_card.code`
+
+String, passed to [CardProperties.from_package()](#cardpropertiesfrom_packagepackage_id-code).
+
+## CardProperties
 
 ### `CardProperties.new()`
 
