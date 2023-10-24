@@ -195,6 +195,10 @@ Returns a new [PlayerForm](#playerform).
 
 Can be used up to five times before throwing.
 
+### `player:create_hidden_form()`
+
+Returns a new [PlayerForm](#playerform).
+
 ### `player:get_augment(package_id)`
 
 Returns an [Augment](#augment) or `nil` if the player doesn't have an augment with that `package_id`.
