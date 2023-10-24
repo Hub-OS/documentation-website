@@ -534,6 +534,10 @@ Same as `button:preview_sprite():set_texture(path)`
 
 Returns an [Animation](/client/lua-api/resource-api/animation)
 
+### `button:use_default_audio(bool)`
+
+A method to disable successful button use audio.
+
 ### `button:owner()`
 
 Returns an [Entity](/client/lua-api/entity-api/entity)
