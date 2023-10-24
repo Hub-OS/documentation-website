@@ -546,6 +546,10 @@ A method to disable successful button use audio.
 
 Returns an [Entity](/client/lua-api/entity-api/entity)
 
+### `button.on_selection_change_func = function(self)`
+
+Called when any changes are made to [player:staged_items()](#playerstaged_items)
+
 ### `button.use_func = function(self): boolean`
 
 Return true if the button's usage effect was successful. The result will affect the played sound.
