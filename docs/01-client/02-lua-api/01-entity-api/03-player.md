@@ -325,7 +325,7 @@ Created through [player:create_form()](#playercreate_form)
 
 Returns a number. Used internally to identify the form.
 
-### `player_form:set_mugshot_texture_path(path)`
+### `player_form:set_mugshot_texture(path)`
 
 - `path`: file path relative to script file, use values returned from `Resources.load_texture()` for better performance.
 

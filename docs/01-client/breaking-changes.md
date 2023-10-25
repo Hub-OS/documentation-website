@@ -4,6 +4,10 @@ https://github.com/Hub-OS/mod-upgrade-tool
 
 ## 0.12
 
+- Renamed `player_form:set_mugshot_texture_path()` -> [player_form:set_mugshot_texture()](/client/lua-api/entity-api/player#player_formset_mugshot_texture_path)
+
+## 0.12
+
 - Actions no longer revert to previous animation state on completion for non Players.
   - Fixed by defining [on_idle_func](/client/lua-api/entity-api/entity#entityon_idle_func--functionself).
 - Renamed [tile:highlight()] to [tile:set_highlight()](/client/lua-api/field-api/field#tileset_highlighthiglight)
