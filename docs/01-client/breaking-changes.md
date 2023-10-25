@@ -2,7 +2,7 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
-## 0.12
+## 0.13
 
 - Renamed `player_form:set_mugshot_texture_path()` -> [player_form:set_mugshot_texture()](/client/lua-api/entity-api/player#player_formset_mugshot_texture_path)
 
