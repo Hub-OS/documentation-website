@@ -255,6 +255,8 @@ Same as `entity:animation():load(path)`
   - `Lifetime.Local` when the entity update callback is called (affected by time freeze and status effects)
   - `Lifetime.Battle` after every entity has updated and battle is active as long as time is not frozen.
   - `Lifetime.Scene` near the end of every tick.
+  - `Lifetime.CardSelectOpen` the frame where card select begins to open.
+  - `Lifetime.CardSelectClose` the frame where card select completely closes.
   - `Lifetime.Nil` never.
 
   Returns a [Component](#component)
@@ -416,10 +418,6 @@ Removes the component from the owner.
 ### `component.on_init_func = function(self)`
 
 Called when the entity is spawned, or immediately if the entity has already spawned.
-
-### `component.on_turn_start_func = function(self)`
-
-Called after the message.
 
 ### `component.on_update_func = function(self)`
 
