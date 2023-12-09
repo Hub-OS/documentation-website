@@ -1,3 +1,7 @@
+# Misc
+
+Extra utilities for scripting.
+
 ### `Net.encode_uri_component(text)`
 
 Encodes characters for use in a URI or within file names.
