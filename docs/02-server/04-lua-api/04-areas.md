@@ -28,13 +28,13 @@ Unloads an area, any players in this area are kicked.
 
 Returns a tmx string for an area.
 
-### `Net.get_width(area_id)`
+### `Net.get_layer_width(area_id)`
 
-Returns the width of an area in tiles.
+Returns the width for tile layers in tiles.
 
-### `Net.get_height(area_id)`
+### `Net.get_layer_height(area_id)`
 
-Returns the height of an area in tiles.
+Returns the height for tile layers in tiles.
 
 ### `Net.get_layer_count(area_id)`
 
