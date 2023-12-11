@@ -294,8 +294,8 @@ end)
 
 ```lua
 Net:on("server_message", function(event)
-  -- { host: string, data: string }
-  print(event.host, event.data)
+  -- { address: string, data: string }
+  print(event.address, event.data)
 en
 ```
 

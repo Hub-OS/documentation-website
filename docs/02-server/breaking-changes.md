@@ -1,5 +1,9 @@
 # Breaking Changes
 
+## 0.14.0
+
+- Removed `host` and `port` from `"server_message"` event, merged into `address`.
+
 ## 0.9.0
 
 - Emotes now use an animation file and completely override emotes shipped with the client.
