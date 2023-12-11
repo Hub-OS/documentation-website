@@ -3,6 +3,7 @@
 ## 0.14.0
 
 - Removed `host` and `port` from `"server_message"` event, merged into `address`.
+- Direction values returned from the server are now uppercase.
 
 ## 0.9.0
 
