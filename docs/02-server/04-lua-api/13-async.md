@@ -5,9 +5,9 @@ Note: paths in this section use system paths and not asset paths.
 
 ## Promises
 
-A promise is just a table that has an `and_then` function, which accepts another function that can be called in the future. Most async functions will return a promise.
+A promise is a table stand-in for an eventual value. It has an `and_then` function, which accepts a callback that will eventually be called with the promised value or nil on failure. Most async functions will return a promise.
 
-```Lua
+```lua
 promise.and_then(function(value)
   print(value)
 end)
