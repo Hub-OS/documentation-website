@@ -64,6 +64,7 @@ const COMPRESSED_RETURN_TYPES = [
       "Returns a new child Sprite ",
     ],
   },
+  { type: "Sprite[]", list: ["Returns a list of Sprites"] },
   {
     type: "Animation",
     list: [
@@ -108,6 +109,10 @@ const COMPRESSED_RETURN_TYPES = [
     type: "string[]",
     list: ["Returns a list of valid values for `player:set_emotion()`."],
   },
+  {
+    type: "{ package_id?: string, code?: string }",
+    list: ["Returns `{ package_id?: string, code?: string }`"],
+  },
 ];
 
 const FLATTENED_RETURN_TYPES = COMPRESSED_RETURN_TYPES.flatMap(
@@ -151,7 +156,7 @@ export default function resolveReturnType(
   } else if (text.startsWith("`")) {
     typeText = text.substring(1, text.indexOf("`", 1));
   } else {
-    typeText = text.substring(0, text.search(/(?:\.| |$)/));
+    typeText = text.substring(0, text.search(/(?:[,. ]|$)/));
 
     if (typeText == "true") {
       typeText = "boolean";

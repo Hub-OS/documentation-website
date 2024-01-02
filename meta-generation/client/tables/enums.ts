@@ -50,6 +50,7 @@ const FLAT_ENUMS = {
   AudioBehavior: ["Default", "NoOverlap"],
   Playback: ["Once", "Loop", "Bounce", "Reverse"],
   ColorMode: ["Additive", "Multiply"],
+  SpriteShaderEffect: ["None", "Grayscale", "Pixelate"],
   Compare: ["LT", "LE", "EQ", "NE", "GT", "GE"],
   DefensePriority: ["Barrier", "Body", "Action", "Trap", "Last"],
   DefenseOrder: ["Always", "CollisionOnly"],

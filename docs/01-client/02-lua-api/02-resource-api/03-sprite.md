@@ -4,9 +4,33 @@
 
 Returns a new child Sprite instance that renders relative to the parent sprite's origin.
 
+### `sprite:create_text_node(font_name, text)`
+
+- `font_name`: The name of the font to use.
+  - `"THICK"`
+  - `"THIN"`
+  - `"THIN_SMALL"`
+  - `"MICRO"`
+  - `"CONTEXT"`
+  - `"CODE"`
+  - `"PLAYER_HP"`
+  - `"PLAYER_HP_ORANGE"`
+  - `"PLAYER_HP_GREEN"`
+  - `"DAMAGE"`
+  - `"RESULT"`
+  - `"BATTLE"`
+  - `"ENTITY_HP"`
+- `text`: The text to render.
+
+Returns a Sprite, similar to `sprite:create_node()`. The returned sprite node has a child for each character in `text`, all with [sprite:use_parent_shader(true)](#spriteuse_parent_shaderenable) set.
+
 ### `sprite:remove_node(sprite)`
 
 Deletes the passed sprite if it's a child of the parent.
+
+### `sprite:children()`
+
+Returns a list of Sprites.
 
 ### `sprite:texture()`
 
@@ -130,9 +154,25 @@ Returns true if perspective does not affect the sprite.
 
 Prevents player perspective from flipping the sprite.
 
+### `sprite:shader_effect()`
+
+Returns a SpriteShaderEffect.
+
+### `sprite:set_shader_effect(sprite_shader_effect)`
+
+- `sprite_shader_effect`
+  - `SpriteShaderEffect.None`
+  - ``SpriteShaderEffect.Grayscale`
+  - `SpriteShaderEffect.Pixelate`
+    - Scales with alpha.
+
 ### `sprite:use_root_shader(enable?)`
 
-Temporarily adopts the color, color mode, and palette of the root sprite during render.
+Temporarily adopts the color, color mode, palette, and shader effect of the root sprite during render.
+
+### `sprite:use_parent_shader(enable?)`
+
+Adopts the color, color mode, palette, and shader effect of the parent sprite during render.
 
 ## Color
 
