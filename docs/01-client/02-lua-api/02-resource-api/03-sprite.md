@@ -4,22 +4,9 @@
 
 Returns a new child Sprite instance that renders relative to the parent sprite's origin.
 
-### `sprite:create_text_node(font_name, text)`
+### `sprite:create_text_node(text_style, text)`
 
-- `font_name`: The name of the font to use.
-  - `"THICK"`
-  - `"THIN"`
-  - `"THIN_SMALL"`
-  - `"MICRO"`
-  - `"CONTEXT"`
-  - `"CODE"`
-  - `"PLAYER_HP"`
-  - `"PLAYER_HP_ORANGE"`
-  - `"PLAYER_HP_GREEN"`
-  - `"DAMAGE"`
-  - `"RESULT"`
-  - `"BATTLE"`
-  - `"ENTITY_HP"`
+- `text_style`: [TextStyle](#textstyle)
 - `text`: The text to render.
 
 Returns a Sprite, similar to `sprite:create_node()`. The returned sprite node has a child for each character in `text`, all with [sprite:use_parent_shader(true)](#spriteuse_parent_shaderenable) set.
@@ -195,6 +182,38 @@ A `progress` of 1.0 will return a table with the same values as `color_b`.
 Other values of `progress` will linearly interpolate each component between `color_a` and `color_b`.
 
 Returns a color.
+
+## TextStyle
+
+### `TextStyle.new(font_name, texture_path?, animation_path?)`
+
+- `font_name`: The name of the font to use.
+  - Built in fonts:
+    - `"THICK"`
+    - `"THIN"`
+    - `"THIN_SMALL"`
+    - `"MENU_TITLE"`
+    - `"MICRO"`
+    - `"CONTEXT"`
+    - `"CODE"`
+    - `"PLAYER_HP"`
+    - `"PLAYER_HP_ORANGE"`
+    - `"PLAYER_HP_GREEN"`
+    - `"DAMAGE"`
+    - `"RESULT"`
+    - `"BATTLE"`
+    - `"ENTITY_HP"`
+  - `texture_path`: Required for custom fonts.
+  - `animation_path`: Required for custom fonts.
+
+For custom fonts, the format `[FONT_NAME]_U+[CHAR_HEX]` is used for mapping characters. Only the first frame in the animation is used to render the character.
+
+Example: An animation file containing the character `A` for the font `COOL_FONT`
+
+```
+animation state="COOL_FONT_U+0041"
+frame x="0" y="0" w="7" h="12
+```
 
 ## SyncNode
 
