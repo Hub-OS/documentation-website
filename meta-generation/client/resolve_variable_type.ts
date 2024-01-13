@@ -30,6 +30,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "any", list: ["frame_data"] }, // todo: [number, number][]
   { type: "Color", list: ["color", "color_a", "color_b"] },
   { type: "ColorMode", list: ["color_mode"] },
+  { type: "TextStyle", list: ["text_style"] },
   { type: "Sprite", list: ["sprite"] },
   { type: "SpriteShaderEffect", list: ["sprite_shader_effect"] },
   { type: "SyncNode", list: ["sync_node"] },
@@ -135,6 +136,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "emotion",
       "tag",
       "package_id",
+      "description",
       "code",
       "state",
       "name",

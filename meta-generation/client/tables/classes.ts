@@ -2,6 +2,7 @@ import { DefinitionMap } from "../definition_map";
 
 const CLASS_NAMES = [
   "Entity",
+  "TextStyle",
   "Sprite",
   "Animation",
   "Action",
