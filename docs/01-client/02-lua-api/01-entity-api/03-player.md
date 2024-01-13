@@ -339,6 +339,10 @@ Returns a number. Used internally to identify the form.
 
 This texture is used for the form selection menu.
 
+### `player_form:set_description(description?)`
+
+Sets the description to display when the player requests for info.
+
 ### `player_form:set_fixed_card(card_properties)`
 
 Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
@@ -567,6 +571,14 @@ Changes the cursor (when hovered) from a dynamic cursor based on button width to
 ### `button:use_default_audio(bool)`
 
 A method to disable successful button use audio.
+
+### `button:set_description(description?)`
+
+Sets the description to display when the player requests for info.
+
+### `button:use_card_description(card_properties)`
+
+Sets the button's description to match a specified card.
 
 ### `button:owner()`
 
