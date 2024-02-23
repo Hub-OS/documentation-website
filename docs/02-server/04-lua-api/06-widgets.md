@@ -20,19 +20,30 @@ Hides the HUD for the specified player.
 
 Makes the HUD visible for the specified player.
 
-### `Net.message_player(player_id, message, mug_texture_path?, mug_animation_path?)`
+### `Net.message_player(player_id, message, textbox_options)`
+
+- `message`: `string`
+- `textbox_options`: [Textbox Options](#textbox-options)
 
 Displays a textbox with the message and mug.
 
 See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncmessage_playerplayer_id-message-mug_texture_path-mug_animation_path) version of this function for handling responses.
 
-### `Net.question_player(player_id, question, mug_texture_path?, mug_animation_path?)`
+### `Net.question_player(player_id, question)`
+
+- `question`: `string`
+- `textbox_options`: [Textbox Options](#textbox-options)
 
 Displays a textbox with a Yes / No input after the message.
 
 See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquestion_playerplayer_id-question-mug_texture_path-mug_animation_path>) version of this function for handling responses.
 
-### `Net.quiz_player(player_id, option_a?, option_b?, option_c?, mug_texture_path?, mug_animation_path?)`
+### `Net.quiz_player(player_id, option_a?, option_b?, option_c?, textbox_options)`
+
+- `option_a`: `string`
+- `option_b`: `string`
+- `option_c`: `string`
+- `textbox_options`: [Textbox Options](#textbox-options)
 
 Displays a textbox with selectable options.
 
@@ -121,3 +132,17 @@ Sets the color of the marker used in the map menu to represent this player. Defa
 - `color`: `{ r: 0-255, g: 0-255, b: 0-255, a?: 0-255 }`
 
 Sets the color of the marker used in the map menu to represent this bot. Defaults to `{ r: 0, g: 0, b: 0, a: 0 }`
+
+## Textbox Options
+
+```lua
+-- note modified syntax: ? marks a field as optional
+local textbox_options = {
+  mug? = {
+    texture_path = "/server/assets/[...].png",
+    animation_path = "/server/assets/[...].animation",
+  }
+}
+
+Net.message_player(player_id, message, textbox_options)
+```

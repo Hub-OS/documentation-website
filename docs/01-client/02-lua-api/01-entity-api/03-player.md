@@ -113,6 +113,14 @@ Removes a card from the player's deck.
 
 Any [StagedItem](#stageditem) referencing this card will be dropped.
 
+### `player:staged_items_confirmed()`
+
+Returns true if Card Select can close.
+
+### `player:confirm_staged_items()`
+
+Allows Card Select to close.
+
 ### `player:stage_card(card_properties, function()?)`
 
 - `card_properties`: [CardProperties](/client/lua-api/attack-api/cards#cardproperties)
