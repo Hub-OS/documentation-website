@@ -134,7 +134,7 @@ The AuxProp will check the next card on the attached entity for either matching 
 
 The AuxProp will check the next card on the attached entity for a failed match with both element and secondary element.
 
-### `aux_prop:require_card_damage(damage)`
+### `aux_prop:require_card_damage(compare, damage)`
 
 - Body priority
 - `compare`: [Compare](#compare)
@@ -142,7 +142,7 @@ The AuxProp will check the next card on the attached entity for a failed match w
 
 The AuxProp will compare the damage on the next card on the attached entity against the `damage` value.
 
-### `aux_prop:require_card_recover(recover)`
+### `aux_prop:require_card_recover(compare, recover)`
 
 - Body priority
 - `compare`: [Compare](#compare)
@@ -194,7 +194,7 @@ The AuxProp will check the next card on the attached entity for matching tag.
 
 The AuxProp will compare the result of the expression divided by the entity's max_health against `percentage`.
 
-### `aux_prop:require_projected_health(health)`
+### `aux_prop:require_projected_health(expr, compare, health)`
 
 - HP Expression priority
 - `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the total damage value for all incoming hits.
