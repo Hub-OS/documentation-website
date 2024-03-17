@@ -11,3 +11,7 @@ Alphanumeric characters, spaces, dashes, and underscores will be unmodified. Per
 ### `Net.decode_uri_component(text)`
 
 Decodes a string encoded for use in a URI.
+
+### `Net.system_random()`
+
+Returns a cryptographically secure 64 bit random integer using the system's random number generator.
