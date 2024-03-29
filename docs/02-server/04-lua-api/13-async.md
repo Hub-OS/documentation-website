@@ -180,7 +180,7 @@ Returns a promise that resolves to:
 
 ### `Async.initiate_pvp(player_1_id, player_2_id, package_path?, data?)`
 
-Returns a promise that resolves to:
+Returns a list of promises that each resolves to:
 
 ```lua
 {
@@ -199,7 +199,7 @@ Returns a promise that resolves to:
 
 ### `Async.initiate_netplay(player_ids, package_path?, data?)`
 
-Returns a promise that resolves to:
+Returns a list of promises that each resolves to:
 
 ```lua
 {
