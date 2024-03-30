@@ -146,3 +146,17 @@ local textbox_options = {
 
 Net.message_player(player_id, message, textbox_options)
 ```
+
+### `Net.refer_server(player_id, name, address)`
+
+Opens a menu for the player to save the referred server.
+
+### `Net.refer_package(player_id, package_id)`
+
+Opens a menu on the client for the player to view and install a package from their preferred package repo.
+
+### `Net.offer_package(player_id, package_id)`
+
+Allows the client to directly download packages from the server.
+
+Currently unimplemented on the client.
