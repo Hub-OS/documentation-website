@@ -184,7 +184,6 @@ Classes are used to denote special tiles or objects understood by the client.
 - Allows players to walk up or down a layer
 - Makes tile directly above become treated as a hole
 - Custom properties:
-
   - Direction: string
     - Marks the direction the player will travel up
     - Up Left
@@ -197,7 +196,6 @@ Classes are used to denote special tiles or objects understood by the client.
 - Tiles only
 - Visible in map
 - Custom properties:
-
   - Direction: string
     - Marks the direction the player will travel
     - Up Left
@@ -211,7 +209,6 @@ Classes are used to denote special tiles or objects understood by the client.
 
 - Tiles only
 - Custom properties:
-
   - Speed: number? (Tiles per second, default: 6)
   - Sound Effect: string
 
@@ -219,7 +216,6 @@ Classes are used to denote special tiles or objects understood by the client.
 
 - Tiles only
 - Custom properties:
-
   - Direction: string
     - Marks the direction the player will travel
     - Up Left
