@@ -226,12 +226,14 @@ Classes are used to denote special tiles or objects understood by the client.
 
 ### Board
 
-- Tile Objects only
 - Visible in map
 
 ### Shop
 
-- Tile Objects only
+- Visible in map
+
+### Bookmark
+
 - Visible in map
 
 ### Arrow
@@ -239,7 +241,6 @@ Classes are used to denote special tiles or objects understood by the client.
 - Tiles only
 - Visible in map
 - Custom properties:
-
   - Direction: string
     - Up Left
     - Up Right
