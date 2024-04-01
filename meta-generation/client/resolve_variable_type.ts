@@ -104,8 +104,6 @@ const COMPRESSED_VARIABLE_TYPES = [
       "progress",
       "damage",
       "recover",
-      "start_ms",
-      "end_ms",
       "size",
       "slot_count",
       "level_increment",

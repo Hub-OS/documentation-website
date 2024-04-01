@@ -29,7 +29,7 @@ Plays a sound with the specified priority.
 
 See [player:play_audio()](/client/lua-api/entity-api/player#playerplay_audiopath-audio_behavior) for playing audio to a specific player.
 
-### `Resources.play_music(path, loops?, start_ms?, end_ms?)`
+### `Resources.play_music(path, loops?)`
 
 - `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.
 
