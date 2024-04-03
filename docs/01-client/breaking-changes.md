@@ -44,7 +44,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 - Move `Engine` turn gauge functions to [TurnGauge](/client/lua-api/attack-api/turn-gauge)
 - Removed `Battle.` prefix
 - Renamed `Battle.CardAction` to [Action](/client/lua-api/attack-api/action)
-- Renamed `card_properties.short_name` to `card_properties.short_name`
+- Renamed `card_properties.shortname` to `card_properties.short_name`
 - Renamed `entity:card_action_event()` to [entity:queue_action()](/client/lua-api/entity-api/entity#entityqueue_actionaction)
 - Renamed `action:get_actor()` to [action:owner()](/client/lua-api/attack-api/action#actionowner)
 - Renamed `action:copy_metadata()` to [action:copy_card_properties()](/client/lua-api/attack-api/action#actioncopy_card_properties)
