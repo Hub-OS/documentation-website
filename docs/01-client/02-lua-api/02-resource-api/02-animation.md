@@ -58,21 +58,18 @@ Returns true if the state exists.
 
 Returns the name of the active state.
 
-### `animation:set_state(state)`
+### `animation:set_state(state, frame_data?)`
+
+- `frame_data` a list of frame index and duration pairs.
+  - When provided, the animation will remap frames and durations to match until the next `set_state` call.
+  - Frame index starts at 1
+  - Duration is in game frames (60 per second).
 
 Changes the active state, resets animation progress and settings.
 
 This function will call and clear interrupt callbacks.
 
 Internally calls `animation:apply()` unless the animation was created through `Animation.new()`
-
-### `animation:derive_state(state, frame_data)`
-
-- `frame_data` a list of frame index and duration pairs.
-  - Frame index starts at 1
-  - Duration is in game frames (60 per second).
-
-Returns a state name for the derived state.
 
 ```lua
 -- modified example from the built-in buster.lua file
@@ -93,8 +90,7 @@ local buster_animation = buster_attachment:animation()
 buster_animation:copy_from(user:animation())
 
 -- relevant
-local derived_state = buster_animation:derive_state("BUSTER", frame_data)
-buster_animation:set_state(derived_state)
+buster_animation:set_state("BUSTER", frame_data)
 ```
 
 ### `animation:has_point(name)`

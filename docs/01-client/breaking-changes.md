@@ -2,6 +2,10 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.17
+
+- Removed `animation:derive_state()`, replaced with a new parameter on [animation:set_state()](/client/lua-api/resource-api/animation#animationset_statestate-frame_data)
+
 ## 0.13
 
 - Renamed `player_form:set_mugshot_texture_path()` -> [player_form:set_mugshot_texture()](/client/lua-api/entity-api/player#player_formset_mugshot_texture_path)

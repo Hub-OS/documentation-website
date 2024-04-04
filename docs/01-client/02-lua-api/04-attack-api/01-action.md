@@ -36,7 +36,7 @@ Returns [Attachment](#attachment)
 
 ### `action:override_animation_frames(frame_data)`
 
-See [animation:derive_state()](/client/lua-api/resource-api/animation#animationderive_statestate-frame_data)
+See [animation:set_state()](/client/lua-api/resource-api/animation#animationset_statestate-frame_data)
 
 ### `action:add_anim_action(frame_index, callback)`
 
@@ -80,7 +80,7 @@ Called when the action's animation ends.
 
 Called when the action ends execution.
 
-### `action.can_move_to_func = function(tile)`
+### `action.can_move_to_func = function(tile): boolean`
 
 Override's the owner's [can_move_to_func](/client/lua-api/entity-api/entity/#entitycan_move_to_func--functionself-tile-boolean) while executing.
 
