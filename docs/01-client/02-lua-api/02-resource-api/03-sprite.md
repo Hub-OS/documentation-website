@@ -11,6 +11,10 @@ Returns a new child Sprite instance that renders relative to the parent sprite's
 
 Returns a Sprite, similar to `sprite:create_node()`. The returned sprite node has a child for each character in `text`, all with [sprite:use_parent_shader(true)](#spriteuse_parent_shaderenable) set.
 
+### `sprite:copy_from(sprite)`
+
+Copies all data from the other sprite, other than children.
+
 ### `sprite:remove_node(sprite)`
 
 Deletes the passed sprite if it's a child of the parent.
