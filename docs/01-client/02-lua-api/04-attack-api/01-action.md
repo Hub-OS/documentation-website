@@ -26,7 +26,7 @@ Returns the [Entity](/client/lua-api/entity-api/entity) tied to this action
 
 ### `action:create_step()`
 
-Returns a new [Step](#step)
+Returns a new [ActionStep](#actionstep)
 
 ### `action:create_attachment(point_name)`
 
@@ -116,7 +116,7 @@ Action completes when the animation ends.
 
 Returns ActionLockout.
 
-Action completes when the action runs out of [Steps](#actioncreate_step) to execute
+Action completes when the action runs out of [ActionSteps](#actionstepcreate_step) to execute
 
 ### `ActionLockout.new_async(duration)`
 
@@ -124,13 +124,13 @@ Returns ActionLockout.
 
 When the animation ends, entities regain movement control. Attacks must wait for the duration to end.
 
-## Step
+## ActionStep
 
-### `step:complete_step()`
+### `action_step:complete_step()`
 
 Marks the step as complete.
 
-### `step.on_update_func = function(self)`
+### `action_step.on_update_func = function(self)`
 
 Called every tick while the associated action is active if this step is not marked as complete, and there are no steps created before this step that haven't been marked as complete.
 

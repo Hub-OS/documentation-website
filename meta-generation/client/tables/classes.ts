@@ -11,7 +11,7 @@ const CLASS_NAMES = [
   "AuxProp",
   "DefenseJudge",
   "Status",
-  "Step",
+  "ActionStep",
   "Attachment",
   "Spawner",
   "Mutator",
