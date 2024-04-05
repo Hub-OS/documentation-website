@@ -183,7 +183,7 @@ Returns a string. Represents the path to the StagedItem's icon texture.
 
 ### `player:card_select_restriction()`
 
-Returns `{ package_id?: string, code?: string } | nil`. Cards must match any of the set fields.
+Returns `{ package_id?: string, code?: string }`. Cards must match any of the set fields.
 
 ### `player:set_card_selection_blocked(bool)`
 
