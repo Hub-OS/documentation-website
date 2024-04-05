@@ -592,6 +592,14 @@ Sets the button's description to match a specified card.
 
 Returns an [Entity](/client/lua-api/entity-api/entity)
 
+### `button:delete()`
+
+Deletes the button.
+
+### `button:deleted()`
+
+Returns true if the button was deleted.
+
 ### `button.on_selection_change_func = function(self)`
 
 Called when any changes are made to [player:staged_items()](#playerstaged_items)
