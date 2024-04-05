@@ -193,6 +193,8 @@ Prevents selection in Card Select and hides the cursor.
 
 Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
 
+Returns [CardSelectButton](#cardselectbutton)
+
 ### `player:create_card_button(slot_count)`
 
 Creates a button embedded in the end of the card list in Card Select.
@@ -356,6 +358,8 @@ Sets the description to display when the player requests for info.
 Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
 Overrides the card button created on the Player and any [Augment](#augment).
 
+Returns [CardSelectButton](#cardselectbutton)
+
 ### `player_form:create_card_button(slot_count)`
 
 Creates a button embedded in the end of the card list in Card Select.
@@ -459,6 +463,8 @@ Returns true if the augment has a matching tag.
 
 Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
 Overrides the card button created on the Player.
+
+Returns [CardSelectButton](#cardselectbutton)
 
 ### `augment:create_card_button(slot_count)`
 
