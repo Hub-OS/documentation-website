@@ -317,7 +317,7 @@ end
 
 Should return an [Action](/client/lua-api/attack-api/action)
 
-### `player.can_charge_card_func = function(card_properties)`
+### `player.can_charge_card_func = function(card_properties): boolean`
 
 Will not be called if there's no matching `charged_card_func`
 
