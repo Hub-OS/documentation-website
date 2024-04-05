@@ -1,7 +1,14 @@
 import { DefinitionMap } from "../definition_map";
 
 const FLAT_ENUMS = {
-  Lifetime: ["Local", "Battle", "Scene", "Nil"],
+  Lifetime: [
+    "Local",
+    "Battle",
+    "Scene",
+    "CardSelectOpen",
+    "CardSelectClose",
+    "Nil",
+  ],
   Direction: [
     "None",
     "Up",
