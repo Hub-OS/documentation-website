@@ -219,6 +219,8 @@ animation state="COOL_FONT_U+0041"
 frame x="0" y="0" w="7" h="12
 ```
 
+Returns TextStyle.
+
 ## SyncNode
 
 SyncNodes are a sprite animation pair that sync settings, state, and progress with an entity's root animation.
