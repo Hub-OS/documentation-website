@@ -46,7 +46,7 @@ See [animation:on_frame()](/client/lua-api/resource-api/animation#animationon_fr
 
 ### `action:end_action()`
 
-Calls [action.on_end_func](#actionon_end_func--functionself)
+Calls [action.on_action_end_func](#actionon_action_end_func--functionself)
 
 Stops execution and deletes the action.
 
@@ -76,7 +76,7 @@ Called while the action is executing.
 
 Called when the action's animation ends.
 
-### `action.on_end_func = function(self)`
+### `action.on_action_end_func = function(self)`
 
 Called when the action ends execution.
 
