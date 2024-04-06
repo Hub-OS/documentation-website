@@ -315,7 +315,7 @@ player.charged_attack_func = function(self)
 end
 ```
 
-### `player.special_attack_func = function(self): Action`
+### `player.special_attack_func = function(self): Action|nil`
 
 Should return an [Action](/client/lua-api/attack-api/action)
 

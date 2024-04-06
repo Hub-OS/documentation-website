@@ -16,6 +16,8 @@ Returns a new Action.
 - `entity`: the [Entity](/client/lua-api/entity-api/entity) to tie the action to.
 - `card_properties`: [CardProperties](/client/lua-api/attack-api/cards#cardproperties)
 
+Returns Action or `nil`
+
 ### `action:owner()`
 
 Returns the [Entity](/client/lua-api/entity-api/entity) tied to this action
