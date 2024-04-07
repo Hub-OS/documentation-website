@@ -73,6 +73,10 @@ Any of the values below:
 
 Boolean or nil, used by other mods for conditional behavior.
 
+### `card_properties.can_charge`
+
+Boolean or nil, used by other mods for conditional behavior.
+
 ### `card_properties.time_freeze`
 
 Boolean or nil, enables time freeze for the [Action](/client/lua-api/attack-api/action).

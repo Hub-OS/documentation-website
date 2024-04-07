@@ -157,6 +157,7 @@ limit = 3 # optional, defaults to 5
 # "nocounter" | "root" | "blind" | "confuse" | "pierceground"
 hit_flags = ["impact", "flinch", "flash"]
 can_boost = true # optional
+can_charge = true # optional
 time_freeze = true # optional
 skip_time_freeze_intro = false # optional
 prevent_freeze_counter = false # optional

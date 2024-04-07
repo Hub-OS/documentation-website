@@ -74,6 +74,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "prevent_time_freeze_counter",
       "skip_time_freeze_intro",
       "can_boost",
+      "can_charge",
     ],
   },
   {
