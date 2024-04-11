@@ -97,6 +97,11 @@ const config = {
             label: "Server",
           },
           {
+            href: "https://hubos.dev",
+            label: "Website",
+            position: "right",
+          },
+          {
             href: "https://github.com/Hub-OS/documentation-website",
             label: "GitHub",
             position: "right",
