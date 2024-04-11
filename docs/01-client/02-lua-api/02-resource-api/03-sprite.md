@@ -127,7 +127,7 @@ The color will be reset to black at the start of the next frame for root sprites
 
 ### `sprite:color_mode()`
 
-Returns the color mode.
+Returns the ColorMode.
 
 ### `sprite:set_color_mode(color_mode)`
 
