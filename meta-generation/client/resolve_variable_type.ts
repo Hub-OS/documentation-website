@@ -143,6 +143,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "point_name",
       "path",
       "texture_path",
+      "category",
       "animation_path",
       "expr",
     ],
