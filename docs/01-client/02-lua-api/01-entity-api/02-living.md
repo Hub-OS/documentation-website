@@ -4,6 +4,10 @@ Instance of [Entity](/client/lua-api/entity-api/entity).
 
 Living functions are accessible to all entities, but will throw if the entity is not a [Player](/client/lua-api/entity-api/player), [Character](/client/lua-api/entity-api/character), or [Obstacle](/client/lua-api/entity-api/obstacle).
 
+### `Living.from(entity)`
+
+Returns the entity passed in if the entity is considered living, otherwise returns `nil`.
+
 ### `living:max_health()`
 
 Returns the entity's max health.
@@ -96,6 +100,14 @@ Updates remaining time for a status already applied, or queues a new status upda
 - `hit_flag` a single hit flag, see [HitProps](/client/lua-api/attack-api/hit-props)
 
 The callback will be called when the `hit_flag` is applied to the entity.
+
+### `living:is_inactionable()`
+
+Returns true if status effects that entity processing are applied.
+
+### `living:is_immobile()`
+
+Returns true if status effects that immobilize are applied.
 
 ### `living.on_countered_func = function(self)`
 
