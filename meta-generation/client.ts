@@ -58,6 +58,9 @@ function buildMetaFile() {
     "-- https://luals.github.io/wiki/annotations/",
     "---@diagnostic disable: missing-return, unused-local",
     "",
+    "---@type string",
+    "_folder_path = nil",
+    "",
   ];
 
   // finish building TABLE_DEFINITIONS
