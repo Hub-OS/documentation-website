@@ -44,6 +44,10 @@ Returns true if the tile is not a hole. (`TileState.Broken`, `TileState.Hidden`,
 
 Returns true if there's any reservations for this tile, excluding [entities with ids](/client/lua-api/entity-api/entity#entityid) matching the `exclude_list`.
 
+### `tile:reserve_count_for(entity)`
+
+Returns a number, representing the total reservation count for this [Entity](/client/lua-api/entity-api/entity).
+
 ### `tile:reserve_for(entity)`
 
 Adds a reservation of this tile for this [Entity](/client/lua-api/entity-api/entity).
