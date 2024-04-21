@@ -40,7 +40,7 @@ Returns true if the tile is one of the hidden padding tiles around the edge of t
 
 Returns true if the tile is not a hole. (`TileState.Broken`, `TileState.Hidden`, `TileState.Empty`)
 
-### `tile:is_reserved(exclude_list)`
+### `tile:is_reserved(exclude_list?)`
 
 Returns true if there's any reservations for this tile, excluding [entities with ids](/client/lua-api/entity-api/entity#entityid) matching the `exclude_list`.
 
