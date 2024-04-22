@@ -120,25 +120,25 @@ Removes the [Entity](/client/lua-api/entity-api/entity) from the field.
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Entities](/client/lua-api/entity-api/entity) will be passed to the callback.
+Only [Entities](/client/lua-api/entity-api/entity) on the field and not marked for deletion will be passed to the callback.
 
 ### `tile:find_characters(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Characters](/client/lua-api/entity-api/character) will be passed to the callback.
+Only [Characters](/client/lua-api/entity-api/character) on the field and not marked for deletion will be passed to the callback.
 
 ### `tile:find_obstacles(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Obstacles](/client/lua-api/entity-api/obstacle) will be passed to the callback.
+Only [Obstacles](/client/lua-api/entity-api/obstacle) on the field and not marked for deletion will be passed to the callback.
 
 ### `tile:find_players(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only "hittable" [Players](/client/lua-api/entity-api/player) will be passed to the callback.
+Only [Players](/client/lua-api/entity-api/player) on the field and not marked for deletion will be passed to the callback.
 
 ### `tile:find_spells(function(entity): boolean)`
 
