@@ -80,7 +80,7 @@ Called when the action's animation ends.
 
 ### `action.on_action_end_func = function(self)`
 
-Called when the action ends execution.
+Called when the action ends execution, including cancellation without execution.
 
 ### `action.can_move_to_func = function(tile): boolean`
 
