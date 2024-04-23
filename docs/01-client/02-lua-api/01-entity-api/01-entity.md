@@ -269,6 +269,10 @@ Countering an attack can be achieved by hitting an enemy with [HitProps](/client
 
 Make sure to obtain context in card_init and not within a callback for countering.
 
+### `entity:has_actions()`
+
+Returns true if the entity has an executing action or pending actions.
+
 ### `entity:queue_action(action)`
 
 - `action`: [Action](/client/lua-api/attack-api/action)
@@ -304,6 +308,10 @@ Returns true if the entity can move to the target tile.
 ### `entity:queue_movement(movement)`
 
 - `movement`: [Movement](/client/lua-api/field-api/movement)
+
+### `entity:cancel_movement()`
+
+Cancels non-drag movement.
 
 ### `entity:is_moving()`
 
