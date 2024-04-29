@@ -34,15 +34,15 @@ Gets the facing direction of the player.
 
 ### `Net.get_player_position(player_id)`
 
-Returns `{ x, y, z }`
+Returns [TilePosition](/server/lua-api/misc#tileposition)
 
 ### `Net.get_player_mugshot(player_id)`
 
-Returns `{ texture_path, animation_path }`
+Returns [TextureAnimationPair](/server/lua-api/widgets#textureanimationpair)
 
 ### `Net.get_player_avatar(player_id)`
 
-Returns `{ texture_path, animation_path }`
+Returns [TextureAnimationPair](/server/lua-api/widgets#textureanimationpair)
 
 ### `Net.set_player_avatar(player_id, texture_path, animation_path)`
 
@@ -65,55 +65,6 @@ Displays an emote exclusively to this player.
 ### `Net.animate_player(player_id, state_name, loop?)`
 
 Sets the animation state for the player, the default states will be used if the player moves.
-
-### `Net.animate_player_properties(player_id, keyframes)`
-
-```lua
-keyframes: {
-  properties: {
-    property: "Animation" | "Animation Speed" | "X" | "Y" | "Z" | "ScaleX" | "ScaleY" | "Rotation" | "Direction" | "Sound Effect" | "Sound Effect Loop",
-    ease?: "Linear" | "In" | "Out" | "InOut" | "Floor",
-    value: number | string
-  }[],
-  duration: number
-}[]
-```
-
-Interpolated animation for fancy effects.
-
-If a keyframe at duration 0 does not exist for a property, the client will default to initial values or a blank value. Ex: X/Y/Z will use the player's current position, and "Sound Effect" would use blank / play no sounds.
-
-If the position is not animated, the player can control their actor while the animations play.
-
-The final state of the animation will stick to the player, excluding sounds.
-
-```lua
-Net:on("tile_interaction", function(event)
-  local position = Net.get_player_position(event.player_id)
-
-  -- a stretched jump. if the player disappears, you may need to add a new tile layer
-  local keyframes = {
-    {
-      properties = {
-        { property = "Z",      value = position.z + 1, ease = "Out" },
-        { property = "ScaleY", value = 1.5,            ease = "Out" }
-      },
-      duration = 0.5
-    },
-    {
-      properties = {
-        { property = "Z",      value = position.z, ease = "In" },
-        { property = "ScaleY", value = 1,          ease = "In" }
-      },
-      duration = 0.5
-    }
-  }
-
-  Net.animate_player_properties(event.player_id, keyframes)
-end)
-```
-
-If you need something to happen when the animation ends, you should use [Async.sleep()](</server/lua-api/async#Async.sleep(seconds)>)
 
 ### `Net.provide_asset_for_player(player_id, path)`
 
@@ -139,7 +90,10 @@ Disables collisions, interactions, and hides the actor for this player.
 
 Brings back functionality removed by `Net.exclude_actor_for_player()` for this player.
 
-### `Net.enable_camera_controls(player_id, range_x?, range_y?) -- range is in pixels`
+### `Net.enable_camera_controls(player_id, range_x?, range_y?)`
+
+- `range_x`: number
+- `range_y`: number
 
 Not implemented. Subject to change.
 
@@ -224,19 +178,19 @@ Returns true if the player is in a server sent battle, or if a board, shop, or t
 
 Returns true if the player is in battle.
 
-### `Net.initiate_encounter(player_id, package_path, data?)`
+### `Net.initiate_encounter(player_id, package_path, encounter_data?)`
 
-- `data`: anything that could be represented as JSON.
+- `encounter_data`: anything that could be represented as JSON.
   - Read as second param in encounter_init for the encounter package
 
-### `Net.initiate_pvp(player_1_id, player_2_id, package_path?, data?)`
+### `Net.initiate_pvp(player_1_id, player_2_id, package_path?, encounter_data?)`
 
-- `data`: anything that could be represented as JSON.
+- `encounter_data`: anything that could be represented as JSON.
   - Read as second param in encounter_init for the encounter package
 
-### `Net.initiate_netplay(player_ids, package_path?, data?)`
+### `Net.initiate_netplay(player_ids, package_path?, encounter_data?)`
 
-- `data`: anything that could be represented as JSON.
+- `encounter_data`: anything that could be represented as JSON.
   - Read as second param in encounter_init for the encounter package
 
 ### `Net.transfer_player(player_id, area_id, warp_in?, x?, y?, z?, direction?)`

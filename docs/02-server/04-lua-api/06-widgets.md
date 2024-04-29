@@ -20,30 +20,56 @@ Hides the HUD for the specified player.
 
 Makes the HUD visible for the specified player.
 
-### `Net.message_player(player_id, message, textbox_options)`
+### `Net.message_player(player_id, message, texture_path?, animation_path?)`
 
 - `message`: `string`
-- `textbox_options`: [Textbox Options](#textbox-options)
 
 Displays a textbox with the message and mug.
 
 See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncmessage_playerplayer_id-message-mug_texture_path-mug_animation_path) version of this function for handling responses.
 
-### `Net.question_player(player_id, question)`
+### `Net.message_player(player_id, message, textbox_options?)`
+
+- `message`: `string`
+- `textbox_options`: [TextboxOptions](#textboxoptions)
+
+Displays a textbox with the message and mug.
+
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncmessage_playerplayer_id-message-mug_texture_path-mug_animation_path) version of this function for handling responses.
+
+### `Net.question_player(player_id, question, texture_path?, animation_path?)`
 
 - `question`: `string`
-- `textbox_options`: [Textbox Options](#textbox-options)
 
 Displays a textbox with a Yes / No input after the message.
 
 See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquestion_playerplayer_id-question-mug_texture_path-mug_animation_path>) version of this function for handling responses.
 
-### `Net.quiz_player(player_id, option_a?, option_b?, option_c?, textbox_options)`
+### `Net.question_player(player_id, question, textbox_options?)`
+
+- `question`: `string`
+- `textbox_options`: [TextboxOptions](#textboxoptions)
+
+Displays a textbox with a Yes / No input after the message.
+
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquestion_playerplayer_id-question-mug_texture_path-mug_animation_path>) version of this function for handling responses.
+
+### `Net.quiz_player(player_id, option_a?, option_b?, option_c?, texture_path?, animation_path?)`
 
 - `option_a`: `string`
 - `option_b`: `string`
 - `option_c`: `string`
-- `textbox_options`: [Textbox Options](#textbox-options)
+
+Displays a textbox with selectable options.
+
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquiz_playerplayer_id-option_a-option_b-option_c-mug_texture_path-mug_animation_path>) version of this function for handling responses.
+
+### `Net.quiz_player(player_id, option_a?, option_b?, option_c?, textbox_options?)`
+
+- `option_a`: `string`
+- `option_b`: `string`
+- `option_c`: `string`
+- `textbox_options`: [TextboxOptions](#textboxoptions)
 
 Displays a textbox with selectable options.
 
@@ -57,10 +83,10 @@ See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/
 
 ### `Net.open_board(player_id, board_name, color, posts, open_instantly?)`
 
-- `color`: `{ r: 0-255, g: 0-255, b: 0-255 }`
-- `posts`: `{ id: string, read: bool?, title: string?, author: string? }[]`
+- `color`: [Color](#color)
+- `posts`: [BoardPost[]](#boardpost)
 
-Returns EventEmitter, re-emits `post_selection`, `post_request`, and `board_close` server events.
+Returns [EventEmitter](/server/lua-api/event-emitters), re-emits `post_selection`, `post_request`, and `board_close` server events.
 
 ### `Net.prepend_posts(player_id, posts, post_id?)`
 
@@ -78,38 +104,30 @@ Issues may arise when multiple scripts create boards at the same time.
 
 Closes the currently opened board for the player.
 
-### `Net.open_shop(player_id, items, mug_texture_path?, mug_animation_path?)`
+### `Net.open_shop(player_id, shop_items, mug_texture_path?, mug_animation_path?)`
 
-- `items`: `{ id: string?, name: string, price: number | string }[]`
+- `shop_items`: [ShopItem[]](#shopitem)
   - If the `id` is unset, the `name` is used as the `id` instead.
 
-Returns EventEmitter, re-emits `shop_purchase`, `shop_description_request`, `shop_leave`, and `shop_close` server events.
+Returns [EventEmitter](/server/lua-api/event-emitters), re-emits `shop_purchase`, `shop_description_request`, `shop_leave`, and `shop_close` server events.
 
 ### `Net.set_shop_message(player_id, message)`
 
 Sets the default text for the shop keeper. Ignored if no shop is open.
 
-### `Net.update_shop_item(player_id, item_data)`
+### `Net.update_shop_item(player_id, shop_item)`
 
-- `item_data`: `{ id: string?, name: string, price: number | string }`
+- `shop_item`: [ShopItem](#shopitem)
 
-Replaces the `item_data` for the item matching the `id`.
+Replaces the `shop_item` for the item matching the `id`.
 
 ### `Net.remove_shop_item(player_id, item_id)`
 
 Delete the item from the open shop.
 
-### `Net.create_sprite({ player_id?, parent_id, parent_point?, x?, y?, layer?, texture_path, animation_path?, animation? })`
+### `Net.create_sprite(sprite_options)`
 
-- `player_id` restricts visibility to this specific player if set.
-- `parent_id` can be "widget", "hud", or an actor_id.
-- `parent_point` a point defined in the parent's animation file or built-in point.
-  - If unset the origin will be used. For "widget" and "hud" the origin is the top left of the screen.
-- `x`, `y` offset from `parent_point` in screen pixels.
-- `layer` an integer used for sorting sprites relative to the parent.
-  - Smaller numbers display on top of larger numbers, use negatives if you want to display in front of other sprites.
-  - Positives display under the parent if the parent is an actor.
-- `animation` is an animation state, this state will be looped.
+- `sprite_options` [SpriteOptions](#spriteoptions)
 
 Returns sprite_id
 
@@ -123,29 +141,15 @@ Deletes the the sprite.
 
 ### `Net.set_player_map_color(player_id, color)`
 
-- `color`: `{ r: 0-255, g: 0-255, b: 0-255, a?: 0-255 }`
+- `color`: [Color](#color)
 
 Sets the color of the marker used in the map menu to represent this player. Defaults to `{ r: 0, g: 0, b: 0, a: 0 }`
 
 ### `Net.set_bot_map_color(bot_id, color)`
 
-- `color`: `{ r: 0-255, g: 0-255, b: 0-255, a?: 0-255 }`
+- `color`: [Color](#color)
 
 Sets the color of the marker used in the map menu to represent this bot. Defaults to `{ r: 0, g: 0, b: 0, a: 0 }`
-
-## Textbox Options
-
-```lua
--- note modified syntax: ? marks a field as optional
-local textbox_options = {
-  mug? = {
-    texture_path = "/server/assets/[...].png",
-    animation_path = "/server/assets/[...].animation",
-  }
-}
-
-Net.message_player(player_id, message, textbox_options)
-```
 
 ### `Net.refer_server(player_id, name, address)`
 
@@ -160,3 +164,94 @@ Opens a menu on the client for the player to view and install a package from the
 Allows the client to directly download packages from the server.
 
 Currently unimplemented on the client.
+
+## TextureAnimationPair
+
+```lua
+---@class TextureAnimationPair
+---@field texture_path string
+---@field animation_path string
+```
+
+## Color
+
+```lua
+--- All fields are in the range: [0, 255]
+---@class Color
+---@field r number
+---@field g number
+---@field b number
+---@field a? number
+```
+
+## TextboxOptions
+
+```lua
+---@class TextboxOptions
+---@field mug TextureAnimationPair
+---@field text_style TextStyle
+```
+
+## TextStyle
+
+```lua
+---@class TextStyle
+---@field font_name? string
+---@field monospace? boolean
+---@field min_glyph_width? number
+---@field letter_spacing? number
+---@field line_spacing? number
+---@field scale_x? number
+---@field scale_y? number
+---@field color? Color
+---@field shadow_color? Color
+---@field custom_atlas? TextureAnimationPair,
+```
+
+Example:
+
+```lua
+-- note modified syntax: ? marks a field as optional
+local textbox_options = {
+  mug? = {
+    texture_path = "/server/assets/[...].png",
+    animation_path = "/server/assets/[...].animation",
+  }
+}
+
+Net.message_player(player_id, message, textbox_options)
+```
+
+## BoardPost
+
+```lua
+---@class BoardPost
+---@field id string
+---@field read boolean?
+---@field title string?
+---@field author string?
+```
+
+## ShopItem
+
+```lua
+---@class ShopItem
+---@field id string?
+---@field name string,
+---@field price number | string
+```
+
+## SpriteOptions
+
+```lua
+---@class SpriteOptions
+---@field player_id? ActorId restricts visibility to this specific player if set.
+---@field parent_id "widget" | "hud" | ActorId a point defined in the parent's animation file or built-in point.
+---@field parent_point? string If unset the origin will be used. For "widget" and "hud" the origin is the top left of the screen.
+---@field x? number offset from `parent_point` in screen pixels
+---@field y? number offset from `parent_point` in screen pixels
+---@field layer? number used for sorting sprites relative to the parent. Use negatives if you want to display in front of other sprites.
+---@field texture_path string
+---@field animation_path? string
+---@field animation? string Animation state, this state will be looped.
+```

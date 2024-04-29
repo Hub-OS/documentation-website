@@ -19,3 +19,12 @@ Returns a string.
 ### `Net.system_random()`
 
 Returns a number, specifically a cryptographically secure 64 bit random integer using the system's random number generator.
+
+## TilePosition
+
+```lua
+---@class TilePosition
+---@field x number
+---@field y number
+---@field z number
+```

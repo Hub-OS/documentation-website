@@ -13,7 +13,7 @@ promise.and_then(function(value)
 end)
 ```
 
-### `Async.create_promise(function(resolve))`
+### `Async.create_promise<T>(function(resolve))`
 
 Returns a promise from a callback. A resolve function is passed to this callback, which calls functions passed to `and_then`
 
@@ -82,7 +82,7 @@ Can only be used within an async scope or coroutine.
 
 Takes a list of promises and returns a list of values.
 
-### `Async.create_scope(function())`
+### `Async.create_scope<T>(function(): T)`
 
 Returns a promise, resolves to the return value.
 
@@ -96,7 +96,7 @@ end)
 promise.and_then(print) -- says "hi" after 5s
 ```
 
-### `Async.create_function(function(...))`
+### `Async.create_function<T>(function(...): T|nil)`
 
 Returns a function that returns a promise, which resolves to the return value.
 
@@ -111,11 +111,15 @@ say_after("hello", 5).and_then(print) -- says "hello" after 5s
 say_after("world", 10).and_then(print) -- says "world" after 10s
 ```
 
-### `Async.request(url, { method?, headers?, body? }?)`
+### `Async.request(url, request_options?)`
+
+- `request_options`: [RequestOptions](#requestoptions)
 
 Returns a promise that resolves to `{ status, headers, body }?`
 
-### `Async.download(path, url, { method?, headers?, body? }?)`
+### `Async.download(path, url, request_options?)`
+
+- `request_options`: [RequestOptions](#requestoptions)
 
 Downloads a file straight to disk.
 
@@ -143,15 +147,33 @@ You will not know if this succeeds, the other server will need to reply. See [se
 
 Returns a promise that resolves after the duration has passed.
 
-### `Async.message_player(player_id, message, mug_texture_path?, mug_animation_path?)`
+### `Async.message_player(player_id, message, texture_path?, animation_path?)`
 
 Returns a promise that resolves to `0` or `nil` for disconnected.
 
-### `Async.question_player(player_id, question, mug_texture_path?, mug_animation_path?)`
+### `Async.message_player(player_id, message, textbox_options?)`
+
+- `textbox_options`: [TextboxOptions](/server/lua-api/widgets#textboxoptions)
+
+Returns a promise that resolves to `0` or `nil` for disconnected.
+
+### `Async.question_player(player_id, question, texture_path?, animation_path?)`
 
 Returns a promise that resolves to `1` for yes, `0` for no, and `nil` for disconnected.
 
-### `Async.quiz_player(player_id, option_a?, option_b?, option_c?, mug_texture_path?, mug_animation_path?)`
+### `Async.question_player(player_id, question, textbox_options?)`
+
+- `textbox_options`: [TextboxOptions](/server/lua-api/widgets#textboxoptions)
+
+Returns a promise that resolves to `1` for yes, `0` for no, and `nil` for disconnected.
+
+### `Async.quiz_player(player_id, option_a?, option_b?, option_c?, texture_path?, animation_path?)`
+
+Returns a promise that resolves to 0-2 for option a-c, or `nil` for disconnected.
+
+### `Async.quiz_player(player_id, option_a?, option_b?, option_c?, textbox_options?)`
+
+- `textbox_options`: [TextboxOptions](/server/lua-api/widgets#textboxoptions)
 
 Returns a promise that resolves to 0-2 for option a-c, or `nil` for disconnected.
 
@@ -159,59 +181,48 @@ Returns a promise that resolves to 0-2 for option a-c, or `nil` for disconnected
 
 Returns a promise that resolves to `string`, or `nil` for disconnected.
 
-### `Async.initiate_encounter(player_id, package_path, data?)`
+### `Async.initiate_encounter(player_id, package_path, encounter_data?)`
 
-Returns a promise that resolves to:
+- `encounter_data`: anything that could be represented as JSON.
+  - Read as second param in encounter_init for the encounter package
+
+Returns `Promise<BattleResults?>`
+
+### `Async.initiate_pvp(player_1_id, player_2_id, package_path?, encounter_data?)`
+
+- `encounter_data`: anything that could be represented as JSON.
+  - Read as second param in encounter_init for the encounter package
+
+Returns `Promise<BattleResults?>[]`
+
+### `Async.initiate_netplay(player_ids, package_path?, encounter_data?)`
+
+- `encounter_data`: anything that could be represented as JSON.
+  - Read as second param in encounter_init for the encounter package
+
+Returns `Promise<BattleResults?>[]`
+
+## BattleResults
 
 ```lua
-{
-  player_id: string,
-  health: number,
-  score: number,
-  time: number,
-  ran: bool,
-  emotion: number,
-  turns: number,
-  allies: { name: String, health: number }[],
-  enemies: { name: String, health: number }[],
-  neutral: { name: String, health: number }[],
-}?
+---@class BattleResults
+---@field player_id string
+---@field health number
+---@field score number
+---@field time number
+---@field ran boolean
+---@field emotion number
+---@field turns number
+---@field allies { name: string, health: number }[]
+---@field enemies { name: string, health: number }[]
+---@field neutral { name: string, health: number }[]
 ```
 
-### `Async.initiate_pvp(player_1_id, player_2_id, package_path?, data?)`
-
-Returns a list of promises that each resolves to:
+## RequestOptions
 
 ```lua
-{
-  player_id: string,
-  health: number,
-  score: number,
-  time: number,
-  ran: bool,
-  emotion: number,
-  turns: number,
-  allies: { name: String, health: number }[],
-  enemies: { name: String, health: number }[],
-  neutral: { name: String, health: number }[],
-}?
-```
-
-### `Async.initiate_netplay(player_ids, package_path?, data?)`
-
-Returns a list of promises that each resolves to:
-
-```lua
-{
-  player_id: string,
-  health: number,
-  score: number,
-  time: number,
-  ran: bool,
-  emotion: number,
-  turns: number,
-  allies: { name: String, health: number }[],
-  enemies: { name: String, health: number }[],
-  neutral: { name: String, health: number }[],
-}?
+---@class RequestOptions
+---@field method? string
+---@field headers? table<string, string>
+---@field body? string
 ```

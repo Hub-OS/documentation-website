@@ -9,12 +9,13 @@ const SECTION_REGEX = /^#* (?:(?!^#).)+$/gms;
 
 export default function (
   config: DocusaurusConfig,
-  relative_path: string
+  relative_path: string,
+  api_sub_path: string
 ): Chapter[] {
   const docs_folder = path.join(module.path, relative_path);
-  const api_folder = path.join(docs_folder, "01-client/02-lua-api");
-  const folders = fs
-    .readdirSync(api_folder)
+  const api_folder = path.join(docs_folder, api_sub_path);
+  const api_root_entries = fs.readdirSync(api_folder);
+  const folders = api_root_entries
     .filter((name) => !name.includes("."))
     .map((name) => path.join(api_folder, name));
 
@@ -23,6 +24,12 @@ export default function (
       .readdirSync(folder_path)
       .filter((name) => name.endsWith(".md"))
       .map((name) => path.join(folder_path, name))
+  );
+
+  files.push(
+    ...api_root_entries
+      .filter((name) => name.endsWith(".md"))
+      .map((name) => path.join(api_folder, name))
   );
 
   const chapters: Chapter[] = [];

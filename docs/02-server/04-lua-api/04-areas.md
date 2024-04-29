@@ -50,13 +50,13 @@ Returns the screen height of a tile in pixels.
 
 ### `Net.get_area_custom_properties(area_id)`
 
-Returns a table containing custom properties with property names as keys.
+Returns a [TiledCustomProperties](#tiledcustomproperties)
 
 ### `Net.get_area_custom_property(area_id, name)`
 
 Returns a string value for the property matching the name.
 
-### `Net.set_area_custom_property(area_id, name, value)`
+### `Net.set_area_custom_property(area_id, name, property_value)`
 
 Sets a value for the property matching the name.
 
@@ -78,7 +78,7 @@ Changes the music for the area, players will be updated at the end of the tick.
 
 ### `Net.get_background(area_id)`
 
-Returns `{ texture_path: string, animation_path: string }`
+Returns [TextureAnimationPair](/server/lua-api/widgets#textureanimationpair)
 
 ### `Net.get_background_velocity(area_id)`
 
@@ -110,7 +110,7 @@ Modifies foreground properties all at once, players will be updated at the end o
 
 ### `Net.get_spawn_position(area_id)`
 
-Returns `{ x, y, z }`
+Returns [TilePosition](/server/lua-api/misc#tileposition)
 
 Defaults to either the Home Warp or (0, 0, 0)
 
@@ -134,17 +134,17 @@ Returns a list of `tileset_path`s
 
 ### `Net.get_tileset(area_id, tileset_path)`
 
-Returns `{ path, first_gid }?`
+Returns [TilesetData](#tilesetdata) or `nil`.
 
 ### `Net.get_tileset_for_tile(area_id, tile_gid)`
 
-Returns `{ path, first_gid }?`
+Returns [TilesetData](#tilesetdata) or `nil`.
 
 Note: The same `tile_gid` can return different values for different areas.
 
 ### `Net.get_tile(area_id, x, y, z)`
 
-Returns `{ gid: number, flipped_horizontally: bool, flipped_vertically: bool, rotated: bool }`
+Returns [TileData](#tiledata)
 
 ### `Net.set_tile(area_id, x, y, z, tile_gid, flip_h?, flip_v?, rotate?)`
 
@@ -159,3 +159,21 @@ Useful for avoiding lag spikes during gameplay with dynamically loaded large ass
 ### `Net.play_sound(area_id, path)`
 
 Plays a sound for every player within the area.
+
+## TilesetData
+
+```lua
+---@class TilesetData
+---@field path string
+---@field first_gid number
+```
+
+## TileData
+
+```lua
+---@class TileData
+---@field gid number
+---@field flipped_horizontally boolean
+---@field flipped_vertically boolean
+---@field rotated boolean
+```

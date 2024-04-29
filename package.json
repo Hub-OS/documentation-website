@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "build-type-info": "npx ts-node meta-generation/client.ts"
+    "build-type-info": "npx ts-node meta-generation/client.ts && npx ts-node meta-generation/server.ts"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.0",

@@ -1,4 +1,4 @@
-import { DefinitionMap } from "../definition_map";
+import { DefinitionMap } from "../../shared/definition_map";
 
 export const ENTITY_SUBCATEGORIES = [
   "Artifact",

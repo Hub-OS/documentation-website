@@ -6,11 +6,9 @@ Positions are in tile space. To get the center of a tile add `0.5`
 
 Returns a list of `bot_id`s.
 
-### `Net.create_bot(bot_id, { name?, area_id?, warp_in?, texture_path?, animation_path?, animation?, x?, y?, z?, direction?, solid? })`
+### `Net.create_bot(bot_options)`
 
-Creates a bot using the id.
-
-### `Net.create_bot({ name?, area_id?, warp_in?, texture_path?, animation_path?, animation?, x?, y?, z?, direction?, solid? })`
+- `bot_options`: [BotOptions](#botoptions)
 
 Creates a bot.
 
@@ -46,7 +44,7 @@ Sets the facing direction of the bot.
 
 ### `Net.get_bot_position(bot_id)`
 
-Returns `{ x, y, z }`
+Returns [TilePosition](/server/lua-api/misc#tileposition)
 
 ### `Net.move_bot(bot_id, x, y, z)`
 
@@ -72,47 +70,19 @@ Displays an emote above the bot. `emote_id` is the name of an animation state in
 
 Sets the animation state for the bot, the default states will be used if the bot moves.
 
-### `Net.animate_bot_properties(bot_id, keyframes)`
+## BotOptions
 
 ```lua
-keyframes: {
-  properties: {
-    property: "Animation" | "Animation Speed" | "X" | "Y" | "Z" | "ScaleX" | "ScaleY" | "Rotation" | "Direction" | "Sound Effect" | "Sound Effect Loop",
-    ease?: "Linear" | "In" | "Out" | "InOut" | "Floor",
-    value: number | string
-  }[],
-  duration: number
-}[]
+---@class BotOptions
+---@field name? string
+---@field area_id? string
+---@field warp_in? boolean
+---@field texture_path? string
+---@field animation_path? string
+---@field animation? string
+---@field x? number
+---@field y? number
+---@field z? number
+---@field direction? string
+---@field solid? boolean
 ```
-
-Interpolated animation for fancy effects.
-
-If a keyframe at duration 0 does not exist for a property, the client will default to initial values or a blank value. Ex: X/Y/Z will use the bot's current position, and "Sound Effect" would use blank / play no sounds.
-
-The final state of the animation will stick to the bot, excluding sounds.
-
-```lua
-local position = Net.get_bot_position(bot_id)
-
--- a stretched jump. if the bot disappears, you may need to add a new tile layer
-local keyframes = {
-  {
-    properties = {
-      { property = "Z",      value = position.z + 1, ease = "Out" },
-      { property = "ScaleY", value = 1.5,            ease = "Out" }
-    },
-    duration = 0.5
-  },
-  {
-    properties = {
-      { property = "Z",      value = position.z, ease = "In" },
-      { property = "ScaleY", value = 1,          ease = "In" }
-    },
-    duration = 0.5
-  }
-}
-
-Net.animate_bot_properties(bot_id, keyframes)
-```
-
-If you need something to happen when the animation ends, you should use [Async.sleep()](</server/lua-api/async#Async.sleep(seconds)>)

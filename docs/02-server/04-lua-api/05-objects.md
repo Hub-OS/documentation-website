@@ -8,13 +8,15 @@ Returns a list of `object_id`s.
 
 ### `Net.get_object_by_id(area_id, object_id)`
 
-Returns `{ id, name, class, type, visible, x, y, z, width, height, rotation, data, custom_properties }?`
+Returns [TiledObject](#tiledobject) or `nil`
 
 ### `Net.get_object_by_name(area_id, name)`
 
-Returns `{ id, name, class, visible, x, y, z, width, height, rotation, data, custom_properties }?`
+Returns [TiledObject](#tiledobject) or `nil`
 
-### `Net.create_object(area_id, { name?, type?, visible?, x?, y?, z?, width?, height?, rotation?, data, custom_properties? })`
+### `Net.create_object(area_id, object_options)`
+
+- `object_options`: [TiledObjectOptions](#tiledobjectoptions)
 
 Returns an `object_id`
 
@@ -34,7 +36,7 @@ Changes the object's class, clients will be updated at the end of the tick.
 
 Deprecated. Use set_object_class instead.
 
-### `Net.set_object_custom_property(area_id, object_id, name, value)`
+### `Net.set_object_custom_property(area_id, object_id, name, property_value)`
 
 Modifies an object's custom property, clients will be updated at the end of the tick.
 
@@ -54,26 +56,83 @@ Resizes the object, clients will be updated at the end of the tick.
 
 Moves the object, clients will be updated at the end of the tick.
 
-### `Net.set_object_data(area_id, object_id, data)`
+### `Net.set_object_data(area_id, object_id, object_data)`
+
+- `object_data`: [TiledObjectData](#tiledobjectdata)
 
 Allows for the type and shape of the object to be adjusted. Clients will be updated at the end of the tick.
 
+## TiledObjectOptions
+
 ```lua
--- possible values for data:
-{
-  type: "point" | "rect" | "ellipse"
-}
+---@class TiledObjectOptions
+---@field id? number
+---@field name? string
+---@field class? string deprecated
+---@field type? string
+---@field visible? boolean
+---@field x? number
+---@field y? number
+---@field z? number
+---@field width? number
+---@field height? number
+---@field rotation? number
+---@field data TiledObjectData
+---@field custom_properties? TiledCustomProperties
+```
 
-{
-  type: "polygon" | "polyline"
-  points: { x, y }[],
-}
+## TiledObject
 
-{
-  type: "tile",
-  gid: number,
-  flipped_horizontally: bool?,
-  flipped_vertically: bool?,
-  rotated?, -- always false
-}
+```lua
+---@class TiledObject
+---@field id number
+---@field name string
+---@field class string deprecated
+---@field type string
+---@field visible boolean
+---@field x number
+---@field y number
+---@field z number
+---@field width number
+---@field height number
+---@field rotation number
+---@field data TiledObjectData
+---@field custom_properties TiledCustomProperties
+```
+
+## TiledObjectData
+
+```lua
+---@alias TiledObjectData TiledBasicObjectData | TiledPolygonObjectData | TiledTileObjectData
+```
+
+## TiledBasicObjectData
+
+```lua
+---@class TiledBasicObjectData
+---@field type "point" | "rect" | "ellipse"
+```
+
+## TiledPolygonObjectData
+
+```lua
+---@class TiledPolygonObjectData
+---@field type "polygon" | "polyline"
+---@field points { x: number, y: number }[],
+```
+
+## TiledTileObjectData
+
+```lua
+---@class TiledTileObjectData
+---@field type "tile"
+---@field gid number
+---@field flipped_horizontally boolean
+---@field flipped_vertically boolean
+```
+
+## TiledCustomProperties
+
+```lua
+---@alias TiledCustomProperties table<string, string>
 ```

@@ -2,7 +2,7 @@
 
 import { DefinitionMap } from "../../shared/definition_map";
 
-const ALIASES = ["EntityId", "EntityContext", "Namespace"];
+const ALIASES = ["ActorId", "SpriteId"];
 
 export function defineVague(definitions: DefinitionMap) {
   for (const name of ALIASES) {

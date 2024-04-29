@@ -28,7 +28,7 @@ Sets the player's maximum health without augments.
 
 ### `Net.get_player_max_health(player_id)`
 
-Returns the player's maximmum health with augments.
+Returns the player's maximum health with augments.
 
 ### `Net.get_player_emotion(player_id)`
 
@@ -48,7 +48,7 @@ Sets the amount of money the player has.
 
 ### `Net.register_item(item_id, item_definition)`
 
-- `item_definition`: `{ name: string, description: string, consumable?: bool }`
+- `item_definition`: [ItemDefinition](#itemdefinition)
 
 Registers an item definition to be shared with the client when the player obtains this item for the first time.
 
@@ -113,3 +113,12 @@ Returns true if the player can use the playable character's abilities.
 Allows the player to use the playable character's abilities.
 
 Enabling any playable character locks the player out of using abilities on non enabled playable characters.
+
+## ItemDefinition
+
+```lua
+---@class ItemDefinition
+---@field name string
+---@field description string
+---@field consumable boolean?
+```
