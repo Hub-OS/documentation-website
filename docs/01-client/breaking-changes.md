@@ -8,13 +8,13 @@ https://github.com/Hub-OS/mod-upgrade-tool
 
 ## 0.13
 
-- Renamed `player_form:set_mugshot_texture_path()` -> [player_form:set_mugshot_texture()](/client/lua-api/entity-api/player#player_formset_mugshot_texture_path)
+- Renamed `player_form:set_mugshot_texture_path()` -> [player_form:set_mugshot_texture()](/client/lua-api/entity-api/player#player_formset_mugshot_texturepath)
 
 ## 0.12
 
 - Actions no longer revert to previous animation state on completion for non Players.
   - Fixed by defining [on_idle_func](/client/lua-api/entity-api/entity#entityon_idle_func--functionself).
-- Renamed [tile:highlight()] to [tile:set_highlight()](/client/lua-api/field-api/field#tileset_highlighthiglight)
+- Renamed [tile:highlight()] to [tile:set_highlight()](/client/lua-api/field-api/tile#tileset_highlighthighlight)
 - Renamed component `Lifetimes` to [Lifetime](/client/lua-api/entity-api/entity#entitycreate_componentlifetime)
 - AuxProp `increase_`/`decrease_` effects now add/subtract rather than set final values.
 
@@ -43,7 +43,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 - Renamed `battle` mod category to `encounter`
 - Renamed `include` to `require`
 - Removed `is_` and `get_` prefix for direct getters
-- Renamed `Engine` to [Resources](/client/lua-api/resource-api/resources#resourcesplay_music)
+- Renamed `Engine` to [Resources](/client/lua-api/resource-api/resources#resourcesplay_musicpath-loops)
 - Renamed `Engine.stream_music()` to [Resources.play_music()](/client/lua-api/resource-api/resources)
 - Move `Engine` turn gauge functions to [TurnGauge](/client/lua-api/attack-api/turn-gauge)
 - Removed `Battle.` prefix
@@ -53,20 +53,20 @@ https://github.com/Hub-OS/mod-upgrade-tool
 - Renamed `action:get_actor()` to [action:owner()](/client/lua-api/attack-api/action#actionowner)
 - Renamed `action:copy_metadata()` to [action:copy_card_properties()](/client/lua-api/attack-api/action#actioncopy_card_properties)
   - Replacement / removal is under consideration.
-- Renamed `action:set_metadata()` to [action:set_card_properties()](/client/lua-api/attack-api/action#actionset_card_propertiesproperties)
+- Renamed `action:set_metadata()` to [action:set_card_properties()](/client/lua-api/attack-api/action#actionset_card_propertiescard_properties)
   - Replacement / removal is under consideration.
 - Renamed `Hit.Stun` to `Hit.Paralyze`
-- Renamed `spell:highlight_tile()` to [spell:set_tile_highlight()](/client/lua-api/entity-api/spell/#spellset_tile_highlightmode)
+- Renamed `spell:highlight_tile()` to [spell:set_tile_highlight()](/client/lua-api/entity-api/spell/#spellset_tile_highlighthighlight)
 - Removed `tile:is_cracked()`, `tile:is_hidden()`, and `tile:is_hole()`
   - `not tile:is_walkable()` can be used where `tile:is_hole()` is called
-- Renamed `tile:reserve_entity_by_id()` to [tile:reserve_for_id()](/client/lua-api/field-api/field#tilereserve_for_identity_id)
-  - Added [tile:reserve_for(entity)](/client/lua-api/field-api/field#tilereserve_forentity)
-  - Added [tile:remove_reservation_for_id(entity_id)](/client/lua-api/field-api/field#tileremove_reservation_for_identity_id)
-  - Added [tile:remove_reservation_for(entity)](/client/lua-api/field-api/field#tileremove_reservation_forentity)
+- Renamed `tile:reserve_entity_by_id()` to [tile:reserve_for_id()](/client/lua-api/field-api/tile#tilereserve_for_identity_id)
+  - Added [tile:reserve_for(entity)](/client/lua-api/field-api/tile#tilereserve_forentity)
+  - Added [tile:remove_reservation_for_id(entity_id)](/client/lua-api/field-api/tile#tileremove_reservation_for_identity_id)
+  - Added [tile:remove_reservation_for(entity)](/client/lua-api/field-api/tile#tileremove_reservation_forentity)
 - Renamed `TileState.Empty` to `TileState.PermaHole`
-- Renamed `MoveAction` to [Movement](/client/lua-api/entity-api/entity#movement)
+- Renamed `MoveAction` to [Movement](/client/lua-api/field-api/movement)
 - Renamed `entity:raw_move_event()` to [entity:queue_movement()](/client/lua-api/entity-api/entity#entityqueue_movementmovement)
-- Renamed `entity:share_tile()` to [entity:enable_sharing_tile()](/client/lua-api/entity-api/entity#entityenable_sharing_tileenabled)
+- Renamed `entity:share_tile()` to [entity:enable_sharing_tile()](/client/lua-api/entity-api/entity#entityenable_sharing_tileshare)
 - Renamed `entity:set_float_shoe()` to [entity:ignore_negative_tile_effects()](/client/lua-api/entity-api/entity#entityignore_negative_tile_effectsenabled)
 - Renamed `entity:set_air_shoe()` to [entity:ignore_hole_tiles()](/client/lua-api/entity-api/entity#entityignore_hole_tilesenabled)
 - Renamed `entity:get_current_palette()` to [entity:palette()](/client/lua-api/entity-api/entity#entitypalette)
@@ -94,7 +94,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 
 - [entity.on_delete_func](/client/lua-api/entity-api/entity#entityon_delete_func--functionself)
   - Requires call to [entity:erase()](/client/lua-api/entity-api/entity#entityerase), [entity:default_character_delete()](/client/lua-api/entity-api/entity#entitydefault_character_delete), or [entity:default_player_delete()](/client/lua-api/entity-api/entity#entitydefault_player_delete)
-- `charged_time_table_func` -> [calculate_charge_time_func](/client/lua-api/entity-api/player#playercalculate_charge_time_func--functionself)
+- `charged_time_table_func` -> [calculate_charge_time_func](/client/lua-api/entity-api/player#playercalculate_charge_time_func--functionself-number)
 - Simplified `Battle.Step.new()` + `card_action:add_step(step)` to [card_action:create_step()](/client/lua-api/attack-api/action#actioncreate_step)
 - Simplified `Battle.Component.new(lifetime)` + `entity:register_component(component)` to [entity:create_component(lifetime)](/client/lua-api/entity-api/entity#entitycreate_componentlifetime)
 - Removed `frames(number)`, just use the number directly

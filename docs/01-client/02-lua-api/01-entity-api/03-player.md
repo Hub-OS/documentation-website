@@ -126,25 +126,25 @@ Allows Card Select to close.
 - `card_properties`: [CardProperties](/client/lua-api/attack-api/cards#cardproperties)
 - The callback will be called when the player removes the StagedItem.
 
-Appends a new [StageItem](#stageitem) to display in Card Select.
+Appends a new [StagedItem](#stageditem) to display in Card Select.
 
 ### `player:stage_deck_card(deck_index, function()?)`
 
 - `deck_index`: number, 1 is the first card in the deck.
 - The callback will be called when the player removes the StagedItem.
 
-Appends a new [StageItem](#stageitem) to display in Card Select.
+Appends a new [StagedItem](#stageditem) to display in Card Select.
 
-Any StageItems already referencing `deck_index` will be removed.
+Any StagedItems already referencing `deck_index` will be removed.
 
 ### `player:stage_deck_discard(deck_index, function()?)`
 
 - `deck_index`: number, 1 is the first card in the deck.
 - The callback will be called when the player removes the StagedItem.
 
-Appends a new [StageItem](#stageitem) to display in Card Select.
+Appends a new [StagedItem](#stageditem) to display in Card Select.
 
-Any StageItems already referencing `deck_index` will be removed.
+Any StagedItems already referencing `deck_index` will be removed.
 
 ### `player:stage_form(form, texture_path?, function()?)`
 
@@ -152,14 +152,14 @@ Any StageItems already referencing `deck_index` will be removed.
 - `texture_path`: The texture to use for the icon.
 - The callback will be called when the player removes the StagedItem.
 
-Prepends a new [StageItem](#stageitem) that will be displayed in card select if a texture is set. If a form is already staged this StageItem will replace the existing item.
+Prepends a new [StagedItem](#stageditem) that will be displayed in card select if a texture is set. If a form is already staged this StagedItem will replace the existing item.
 
 ### `player:stage_icon(texture_path, function()?)`
 
 - `texture_path`: The texture to use for the icon.
 - The callback will be called when the player removes the StagedItem.
 
-Appends a new [StageItem](#stageitem) to display in Card Select.
+Appends a new [StagedItem](#stageditem) to display in Card Select.
 
 ### `player:pop_staged_item()`
 
@@ -384,7 +384,7 @@ Called when the form is deactivated, the player's appearance should be reverted 
 
 ### `player_form.on_update_func = function(self, player)`
 
-Called after [player.on_update_func](#playernormal_attack_func--functionself) when this form is active.
+Called after [player.on_update_func](#playernormal_attack_func--functionself-actionnil) when this form is active.
 
 ### `player_form.calculate_charge_time_func = function(self, player): number`
 
@@ -413,7 +413,7 @@ Return `nil` to fallback to the player's implementation.
 
 ### `player_form.special_attack_func = function(self, player): Action|nil`
 
-Overrides [player.special_attack_func](#playerspecial_attack_func--functionself-action) when this form is active.
+Overrides [player.special_attack_func](#playerspecial_attack_func--functionself-actionnil) when this form is active.
 Also overrides any [Augment](#augment)'s override.
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
@@ -504,7 +504,7 @@ Return `nil` to fallback to the next implementation (augment, form, or player).
 
 ### `augment.special_attack_func = function(self): Action|nil`
 
-Overrides [player.special_attack_func](#playerspecial_attack_func--functionself-action)
+Overrides [player.special_attack_func](#playerspecial_attack_func--functionself-actionnil)
 
 An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 

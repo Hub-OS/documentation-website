@@ -147,7 +147,7 @@ You will not know if this succeeds, the other server will need to reply. See [se
 
 Returns a promise that resolves after the duration has passed.
 
-### `Async.message_player(player_id, message, texture_path?, animation_path?)`
+### `Async.message_player(player_id, message, mug_texture_path?, mug_animation_path?)`
 
 Returns a promise that resolves to `0` or `nil` for disconnected.
 
@@ -157,7 +157,7 @@ Returns a promise that resolves to `0` or `nil` for disconnected.
 
 Returns a promise that resolves to `0` or `nil` for disconnected.
 
-### `Async.question_player(player_id, question, texture_path?, animation_path?)`
+### `Async.question_player(player_id, question, mug_texture_path?, mug_animation_path?)`
 
 Returns a promise that resolves to `1` for yes, `0` for no, and `nil` for disconnected.
 
@@ -167,7 +167,7 @@ Returns a promise that resolves to `1` for yes, `0` for no, and `nil` for discon
 
 Returns a promise that resolves to `1` for yes, `0` for no, and `nil` for disconnected.
 
-### `Async.quiz_player(player_id, option_a?, option_b?, option_c?, texture_path?, animation_path?)`
+### `Async.quiz_player(player_id, option_a?, option_b?, option_c?, mug_texture_path?, mug_animation_path?)`
 
 Returns a promise that resolves to 0-2 for option a-c, or `nil` for disconnected.
 

@@ -18,7 +18,7 @@ Returns the entity passed in if the entity is a spell, otherwise returns `nil`.
 
 Sets the highlight mode for tiles the spell passes over.
 
-See [tile:set_highlight()](/client/lua-api/field-api/field#tileset_highlighthiglight)
+See [tile:set_highlight()](/client/lua-api/field-api/tile#tileset_highlighthighlight)
 
 ### `spell:copy_hit_props()`
 

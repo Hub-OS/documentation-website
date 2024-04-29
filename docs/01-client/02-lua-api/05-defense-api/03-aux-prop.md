@@ -118,7 +118,7 @@ The AuxProp will check the attached entity for matching emotion.
 
 - Body priority
 
-The AuxProp will require a [Player](/client/lua-api/entity-api/player) to be holding a fully [charged](/client/lua-api/entity-api/player#playercan_charge_card_func--functioncard_properties) card.
+The AuxProp will require a [Player](/client/lua-api/entity-api/player) to be holding a fully [charged](/client/lua-api/entity-api/player#playercan_charge_card_func--functioncard_properties-boolean) card.
 
 ### `aux_prop:require_card_element(element)`
 

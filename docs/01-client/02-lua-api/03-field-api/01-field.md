@@ -70,7 +70,7 @@ Only [Players](/client/lua-api/entity-api/player) on the field and not deleted w
 
 ### `field:find_tiles(function(tile): boolean)`
 
-Returns a list of [Tiles](#tile) for any tile the callback returned true for.
+Returns a list of [Tiles](/client/lua-api/field-api/tile) for any tile the callback returned true for.
 
 ### `field:shake(strength, duration)`
 

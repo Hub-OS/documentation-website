@@ -50,13 +50,13 @@ The return value replaces the HitProps applied to the entity.
 
 ### `DefenseVirusBody.new()`
 
-Returns a [DefenseRule](#defenserule) with `DefensePriority.Body` and `DefenseOrder.CollisionOnly`.
+Returns a [DefenseRule](./) with `DefensePriority.Body` and `DefenseOrder.CollisionOnly`.
 
 Filters `Hit.Flinch` and `Hit.Flash` flags during status filtering.
 
 ## DefenseJudge
 
-Created for each attack resolution and passed through [DefenseRule](#defenserule) callbacks.
+Created for each attack resolution and passed through [DefenseRule](./) callbacks.
 
 ### `judge:block_damage()`
 

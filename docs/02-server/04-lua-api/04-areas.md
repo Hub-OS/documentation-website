@@ -50,7 +50,7 @@ Returns the screen height of a tile in pixels.
 
 ### `Net.get_area_custom_properties(area_id)`
 
-Returns a [TiledCustomProperties](#tiledcustomproperties)
+Returns a [TiledCustomProperties](/server/lua-api/objects#tiledcustomproperties)
 
 ### `Net.get_area_custom_property(area_id, name)`
 

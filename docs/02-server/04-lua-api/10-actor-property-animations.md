@@ -42,7 +42,7 @@ Net:on("tile_interaction", function(event)
 end)
 ```
 
-If you need something to happen when the animation ends, you should use [Async.sleep()](</server/lua-api/async#Async.sleep(seconds)>)
+If you need something to happen when the animation ends, you should use [Async.sleep()](/server/lua-api/async#asyncsleepseconds)
 
 ### `Net.animate_bot_properties(bot_id, keyframes)`
 
@@ -78,7 +78,7 @@ local keyframes = {
 Net.animate_bot_properties(bot_id, keyframes)
 ```
 
-If you need something to happen when the animation ends, you should use [Async.sleep()](</server/lua-api/async#Async.sleep(seconds)>)
+If you need something to happen when the animation ends, you should use [Async.sleep()](/server/lua-api/async#asyncsleepseconds)
 
 ## ActorKeyframe
 

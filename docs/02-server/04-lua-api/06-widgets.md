@@ -20,7 +20,7 @@ Hides the HUD for the specified player.
 
 Makes the HUD visible for the specified player.
 
-### `Net.message_player(player_id, message, texture_path?, animation_path?)`
+### `Net.message_player(player_id, message, mug_texture_path?, mug_animation_path?)`
 
 - `message`: `string`
 
@@ -35,15 +35,15 @@ See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/
 
 Displays a textbox with the message and mug.
 
-See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncmessage_playerplayer_id-message-mug_texture_path-mug_animation_path) version of this function for handling responses.
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncmessage_playerplayer_id-message-textbox_options) version of this function for handling responses.
 
-### `Net.question_player(player_id, question, texture_path?, animation_path?)`
+### `Net.question_player(player_id, question, mug_texture_path?, mug_animation_path?)`
 
 - `question`: `string`
 
 Displays a textbox with a Yes / No input after the message.
 
-See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquestion_playerplayer_id-question-mug_texture_path-mug_animation_path>) version of this function for handling responses.
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquestion_playerplayer_id-question-mug_texture_path-mug_animation_path) version of this function for handling responses.
 
 ### `Net.question_player(player_id, question, textbox_options?)`
 
@@ -52,9 +52,9 @@ See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/
 
 Displays a textbox with a Yes / No input after the message.
 
-See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquestion_playerplayer_id-question-mug_texture_path-mug_animation_path>) version of this function for handling responses.
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquestion_playerplayer_id-question-textbox_options) version of this function for handling responses.
 
-### `Net.quiz_player(player_id, option_a?, option_b?, option_c?, texture_path?, animation_path?)`
+### `Net.quiz_player(player_id, option_a?, option_b?, option_c?, mug_texture_path?, mug_animation_path?)`
 
 - `option_a`: `string`
 - `option_b`: `string`
@@ -62,7 +62,7 @@ See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/
 
 Displays a textbox with selectable options.
 
-See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquiz_playerplayer_id-option_a-option_b-option_c-mug_texture_path-mug_animation_path>) version of this function for handling responses.
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquiz_playerplayer_id-option_a-option_b-option_c-mug_texture_path-mug_animation_path) version of this function for handling responses.
 
 ### `Net.quiz_player(player_id, option_a?, option_b?, option_c?, textbox_options?)`
 
@@ -73,7 +73,7 @@ See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/
 
 Displays a textbox with selectable options.
 
-See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquiz_playerplayer_id-option_a-option_b-option_c-mug_texture_path-mug_animation_path>) version of this function for handling responses.
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncquiz_playerplayer_id-option_a-option_b-option_c-textbox_options) version of this function for handling responses.
 
 ### `Net.prompt_player(player_id, character_limit?, default_text?)`
 

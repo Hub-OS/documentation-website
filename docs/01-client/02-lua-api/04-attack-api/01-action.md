@@ -42,7 +42,7 @@ See [animation:set_state()](/client/lua-api/resource-api/animation#animationset_
 
 ### `action:add_anim_action(frame_index, callback)`
 
-Same as calling `action:owner():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself_owner)
+Same as calling `action:owner():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself-owner)
 
 See [animation:on_frame()](/client/lua-api/resource-api/animation#animationon_frameframe_index-function-do_once)
 
@@ -118,7 +118,7 @@ Action completes when the animation ends.
 
 Returns ActionLockout.
 
-Action completes when the action runs out of [ActionSteps](#actionstepcreate_step) to execute
+Action completes when the action runs out of [ActionSteps](#actionstep) to execute
 
 ### `ActionLockout.new_async(duration)`
 
@@ -144,4 +144,4 @@ Called every tick while the associated action is active if this step is not mark
 - `charged`: bool, affects hit artifact
 - `damage`: number
 
-Returns a new [Action](#action)
+Returns a new [Action](./)
