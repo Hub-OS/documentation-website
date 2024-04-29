@@ -156,7 +156,7 @@ function buildMetaFile() {
     output.pop();
   }
 
-  fs.writeFileSync("hubos-server.d.lua", output.join("\n"));
+  fs.writeFileSync("static/hubos-server.d.lua", output.join("\n"));
 }
 
 function resolveFieldName(trimmed_section_name: string): string {
