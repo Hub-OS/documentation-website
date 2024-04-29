@@ -195,6 +195,7 @@ Net.EventEmitter = {}
 --- Note: paths in this section use system paths and not asset paths.
 Async = {}
 
+---@class Net: Net.EventEmitter
 Net = {}
 
 --- Constructs a new EventEmitter instance.
