@@ -34,7 +34,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Hub-OS", // Usually your GitHub org/user name.
   projectName: "documentation-website", // Usually your repo name.
-  trailingSlash: true,
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",

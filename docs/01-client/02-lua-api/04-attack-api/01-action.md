@@ -144,4 +144,4 @@ Called every tick while the associated action is active if this step is not mark
 - `charged`: bool, affects hit artifact
 - `damage`: number
 
-Returns a new [Action](./)
+Returns a new Action
