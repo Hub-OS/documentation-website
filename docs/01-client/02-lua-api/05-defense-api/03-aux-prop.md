@@ -363,14 +363,14 @@ entity:add_aux_prop(aux_prop)
 ## Compare
 
 - `Compare.LT`
-  - Less Than <
+  - Less Than `<`
 - `Compare.LE`
-  - Less Than Equal <=
+  - Less Than Equal `<=`
 - `Compare.NE`
-  - Not Equal ~=
+  - Not Equal `~=`
 - `Compare.EQ`
-  - Equal ==
+  - Equal `==`
 - `Compare.GT`
-  - Greater Than >
+  - Greater Than `>`
 - `Compare.GE`
-  - Greater Than Equal >=
+  - Greater Than Equal `>=`

@@ -530,7 +530,7 @@ Used to handle movement input.
 
 ### `augment.on_delete_func = function(self)`
 
-Called when the player is deleted or when this augment's level is boosted to <= 0.
+Called when the player is deleted or when this augment's level is boosted to `<= 0`.
 
 ## CardSelectButton
 
