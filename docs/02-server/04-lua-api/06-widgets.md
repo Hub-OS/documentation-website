@@ -31,7 +31,7 @@ See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/
 ### `Net.message_player(player_id, message, textbox_options?)`
 
 - `message`: `string`
-- `textbox_options`: [TextboxOptions](#textboxoptions)
+- `textbox_options`: [Net.TextboxOptions](#nettextboxoptions)
 
 Displays a textbox with the message and mug.
 
@@ -48,7 +48,7 @@ See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/
 ### `Net.question_player(player_id, question, textbox_options?)`
 
 - `question`: `string`
-- `textbox_options`: [TextboxOptions](#textboxoptions)
+- `textbox_options`: [Net.TextboxOptions](#nettextboxoptions)
 
 Displays a textbox with a Yes / No input after the message.
 
@@ -69,7 +69,7 @@ See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/
 - `option_a`: `string`
 - `option_b`: `string`
 - `option_c`: `string`
-- `textbox_options`: [TextboxOptions](#textboxoptions)
+- `textbox_options`: [Net.TextboxOptions](#nettextboxoptions)
 
 Displays a textbox with selectable options.
 
@@ -83,10 +83,10 @@ See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/
 
 ### `Net.open_board(player_id, board_name, color, posts, open_instantly?)`
 
-- `color`: [Color](#color)
-- `posts`: [BoardPost[]](#boardpost)
+- `color`: [Net.Color](#netcolor)
+- `posts`: [Net.BoardPost[]](#netboardpost)
 
-Returns [EventEmitter](/server/lua-api/event-emitters), re-emits `post_selection`, `post_request`, and `board_close` server events.
+Returns [Net.EventEmitter](/server/lua-api/event-emitters), re-emits `post_selection`, `post_request`, and `board_close` server events.
 
 ### `Net.prepend_posts(player_id, posts, post_id?)`
 
@@ -106,10 +106,10 @@ Closes the currently opened board for the player.
 
 ### `Net.open_shop(player_id, shop_items, mug_texture_path?, mug_animation_path?)`
 
-- `shop_items`: [ShopItem[]](#shopitem)
+- `shop_items`: [Net.ShopItem[]](#netshopitem)
   - If the `id` is unset, the `name` is used as the `id` instead.
 
-Returns [EventEmitter](/server/lua-api/event-emitters), re-emits `shop_purchase`, `shop_description_request`, `shop_leave`, and `shop_close` server events.
+Returns [Net.EventEmitter](/server/lua-api/event-emitters), re-emits `shop_purchase`, `shop_description_request`, `shop_leave`, and `shop_close` server events.
 
 ### `Net.set_shop_message(player_id, message)`
 
@@ -117,7 +117,7 @@ Sets the default text for the shop keeper. Ignored if no shop is open.
 
 ### `Net.update_shop_item(player_id, shop_item)`
 
-- `shop_item`: [ShopItem](#shopitem)
+- `shop_item`: [Net.ShopItem](#netshopitem)
 
 Replaces the `shop_item` for the item matching the `id`.
 
@@ -127,7 +127,7 @@ Delete the item from the open shop.
 
 ### `Net.create_sprite(sprite_options)`
 
-- `sprite_options` [SpriteOptions](#spriteoptions)
+- `sprite_options` [Net.SpriteOptions](#netspriteoptions)
 
 Returns sprite_id
 
@@ -141,13 +141,13 @@ Deletes the the sprite.
 
 ### `Net.set_player_map_color(player_id, color)`
 
-- `color`: [Color](#color)
+- `color`: [Net.Color](#netcolor)
 
 Sets the color of the marker used in the map menu to represent this player. Defaults to `{ r: 0, g: 0, b: 0, a: 0 }`
 
 ### `Net.set_bot_map_color(bot_id, color)`
 
-- `color`: [Color](#color)
+- `color`: [Net.Color](#netcolor)
 
 Sets the color of the marker used in the map menu to represent this bot. Defaults to `{ r: 0, g: 0, b: 0, a: 0 }`
 
@@ -165,37 +165,37 @@ Allows the client to directly download packages from the server.
 
 Currently unimplemented on the client.
 
-## TextureAnimationPair
+## Net.TextureAnimationPair
 
 ```lua
----@class TextureAnimationPair
+---@class Net.TextureAnimationPair
 ---@field texture_path string
 ---@field animation_path string
 ```
 
-## Color
+## Net.Color
 
 ```lua
 --- All fields are in the range: [0, 255]
----@class Color
+---@class Net.Color
 ---@field r number
 ---@field g number
 ---@field b number
 ---@field a? number
 ```
 
-## TextboxOptions
+## Net.TextboxOptions
 
 ```lua
----@class TextboxOptions
----@field mug TextureAnimationPair
----@field text_style TextStyle
+---@class Net.TextboxOptions
+---@field mug? Net.TextureAnimationPair
+---@field text_style? Net.TextStyle
 ```
 
-## TextStyle
+## Net.TextStyle
 
 ```lua
----@class TextStyle
+---@class Net.TextStyle
 ---@field font_name? string
 ---@field monospace? boolean
 ---@field min_glyph_width? number
@@ -203,9 +203,9 @@ Currently unimplemented on the client.
 ---@field line_spacing? number
 ---@field scale_x? number
 ---@field scale_y? number
----@field color? Color
----@field shadow_color? Color
----@field custom_atlas? TextureAnimationPair,
+---@field color? Net.Color
+---@field shadow_color? Net.Color
+---@field custom_atlas? Net.TextureAnimationPair,
 ```
 
 Example:
@@ -222,31 +222,31 @@ local textbox_options = {
 Net.message_player(player_id, message, textbox_options)
 ```
 
-## BoardPost
+## Net.BoardPost
 
 ```lua
----@class BoardPost
+---@class Net.BoardPost
 ---@field id string
 ---@field read boolean?
 ---@field title string?
 ---@field author string?
 ```
 
-## ShopItem
+## Net.ShopItem
 
 ```lua
----@class ShopItem
+---@class Net.ShopItem
 ---@field id string?
 ---@field name string,
 ---@field price number | string
 ```
 
-## SpriteOptions
+## Net.SpriteOptions
 
 ```lua
----@class SpriteOptions
----@field player_id? ActorId restricts visibility to this specific player if set.
----@field parent_id "widget" | "hud" | ActorId a point defined in the parent's animation file or built-in point.
+---@class Net.SpriteOptions
+---@field player_id? Net.ActorId restricts visibility to this specific player if set.
+---@field parent_id "widget" | "hud" | Net.ActorId a point defined in the parent's animation file or built-in point.
 ---@field parent_point? string If unset the origin will be used. For "widget" and "hud" the origin is the top left of the screen.
 ---@field x? number offset from `parent_point` in screen pixels
 ---@field y? number offset from `parent_point` in screen pixels

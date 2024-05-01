@@ -48,7 +48,7 @@ Sets the amount of money the player has.
 
 ### `Net.register_item(item_id, item_definition)`
 
-- `item_definition`: [ItemDefinition](#itemdefinition)
+- `item_definition`: [Net.ItemDefinition](#netitemdefinition)
 
 Registers an item definition to be shared with the client when the player obtains this item for the first time.
 
@@ -114,10 +114,10 @@ Allows the player to use the playable character's abilities.
 
 Enabling any playable character locks the player out of using abilities on non enabled playable characters.
 
-## ItemDefinition
+## Net.ItemDefinition
 
 ```lua
----@class ItemDefinition
+---@class Net.ItemDefinition
 ---@field name string
 ---@field description string
 ---@field consumable boolean?

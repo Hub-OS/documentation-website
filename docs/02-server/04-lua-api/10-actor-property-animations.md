@@ -6,7 +6,7 @@ Inspired by CSS animations.
 
 ### `Net.animate_player_properties(player_id, keyframes)`
 
-- `keyframes`: [ActorKeyframe[]](#actorkeyframe)
+- `keyframes`: [Net.ActorKeyframe[]](#netactorkeyframe)
 
 Interpolated animation for fancy effects.
 
@@ -46,7 +46,7 @@ If you need something to happen when the animation ends, you should use [Async.s
 
 ### `Net.animate_bot_properties(bot_id, keyframes)`
 
-- `keyframes`: [ActorKeyframe[]](#actorkeyframe)
+- `keyframes`: [Net.ActorKeyframe[]](#netactorkeyframe)
 
 Interpolated animation for fancy effects.
 
@@ -80,11 +80,11 @@ Net.animate_bot_properties(bot_id, keyframes)
 
 If you need something to happen when the animation ends, you should use [Async.sleep()](/server/lua-api/async#asyncsleepseconds)
 
-## ActorKeyframe
+## Net.ActorKeyframe
 
 ```lua
----@class ActorKeyframe
----@field properties ActorPropertyKeyframe[]
+---@class Net.ActorKeyframe
+---@field properties Net.ActorPropertyKeyframe[]
 ---@field duration number in seconds
 ```
 
@@ -101,10 +101,10 @@ keyframes: {
 }[]
 ```
 
-## ActorPropertyKeyframe
+## Net.ActorPropertyKeyframe
 
 ```lua
----@class ActorPropertyKeyframe
+---@class Net.ActorPropertyKeyframe
 ---@field property "Animation" | "Animation Speed" | "X" | "Y" | "Z" | "ScaleX" | "ScaleY" | "Rotation" | "Direction" | "Sound Effect" | "Sound Effect Loop"
 ---@field ease? "Linear" | "In" | "Out" | "InOut" | "Floor",
 ---@field value number | string

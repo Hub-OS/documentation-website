@@ -34,15 +34,15 @@ Gets the facing direction of the player.
 
 ### `Net.get_player_position(player_id)`
 
-Returns [TilePosition](/server/lua-api/misc#tileposition)
+Returns [Net.Position](/server/lua-api/misc#netposition)
 
 ### `Net.get_player_mugshot(player_id)`
 
-Returns [TextureAnimationPair](/server/lua-api/widgets#textureanimationpair)
+Returns [Net.TextureAnimationPair](/server/lua-api/widgets#nettextureanimationpair)
 
 ### `Net.get_player_avatar(player_id)`
 
-Returns [TextureAnimationPair](/server/lua-api/widgets#textureanimationpair)
+Returns [Net.TextureAnimationPair](/server/lua-api/widgets#nettextureanimationpair)
 
 ### `Net.set_player_avatar(player_id, texture_path, animation_path)`
 

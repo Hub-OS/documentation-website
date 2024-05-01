@@ -8,7 +8,7 @@ Returns a list of `bot_id`s.
 
 ### `Net.create_bot(bot_options)`
 
-- `bot_options`: [BotOptions](#botoptions)
+- `bot_options`: [Net.BotOptions](#netbotoptions)
 
 Creates a bot.
 
@@ -44,7 +44,7 @@ Sets the facing direction of the bot.
 
 ### `Net.get_bot_position(bot_id)`
 
-Returns [TilePosition](/server/lua-api/misc#tileposition)
+Returns [Net.Position](/server/lua-api/misc#netposition)
 
 ### `Net.move_bot(bot_id, x, y, z)`
 
@@ -70,10 +70,10 @@ Displays an emote above the bot. `emote_id` is the name of an animation state in
 
 Sets the animation state for the bot, the default states will be used if the bot moves.
 
-## BotOptions
+## Net.BotOptions
 
 ```lua
----@class BotOptions
+---@class Net.BotOptions
 ---@field name? string
 ---@field area_id? string
 ---@field warp_in? boolean

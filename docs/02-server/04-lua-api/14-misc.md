@@ -20,10 +20,10 @@ Returns a string.
 
 Returns a number, specifically a cryptographically secure 64 bit random integer using the system's random number generator.
 
-## TilePosition
+## Net.Position
 
 ```lua
----@class TilePosition
+---@class Net.Position
 ---@field x number
 ---@field y number
 ---@field z number

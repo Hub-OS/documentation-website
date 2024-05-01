@@ -12,6 +12,6 @@ export function defineClasses(definitions: DefinitionMap) {
   }
 
   definitions["Promise"] = [
-    "---@class Promise<T>: { and_then: fun(callback: fun(T)) }",
+    "---@class Net.Promise<T>: { and_then: fun(callback: fun(T)) }",
   ];
 }

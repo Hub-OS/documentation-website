@@ -8,15 +8,15 @@ Returns a list of `object_id`s.
 
 ### `Net.get_object_by_id(area_id, object_id)`
 
-Returns [TiledObject](#tiledobject) or `nil`
+Returns [Net.Object](#netobject) or `nil`
 
 ### `Net.get_object_by_name(area_id, name)`
 
-Returns [TiledObject](#tiledobject) or `nil`
+Returns [Net.Object](#netobject) or `nil`
 
 ### `Net.create_object(area_id, object_options)`
 
-- `object_options`: [TiledObjectOptions](#tiledobjectoptions)
+- `object_options`: [Net.ObjectOptions](#netobjectoptions)
 
 Returns an `object_id`
 
@@ -58,14 +58,14 @@ Moves the object, clients will be updated at the end of the tick.
 
 ### `Net.set_object_data(area_id, object_id, object_data)`
 
-- `object_data`: [TiledObjectData](#tiledobjectdata)
+- `object_data`: [Net.ObjectData](#netobjectdata)
 
 Allows for the type and shape of the object to be adjusted. Clients will be updated at the end of the tick.
 
-## TiledObjectOptions
+## Net.ObjectOptions
 
 ```lua
----@class TiledObjectOptions
+---@class Net.ObjectOptions
 ---@field id? number
 ---@field name? string
 ---@field class? string deprecated
@@ -77,14 +77,14 @@ Allows for the type and shape of the object to be adjusted. Clients will be upda
 ---@field width? number
 ---@field height? number
 ---@field rotation? number
----@field data TiledObjectData
----@field custom_properties? TiledCustomProperties
+---@field data Net.ObjectData
+---@field custom_properties? Net.CustomProperties
 ```
 
-## TiledObject
+## Net.Object
 
 ```lua
----@class TiledObject
+---@class Net.Object
 ---@field id number
 ---@field name string
 ---@field class string deprecated
@@ -96,43 +96,43 @@ Allows for the type and shape of the object to be adjusted. Clients will be upda
 ---@field width number
 ---@field height number
 ---@field rotation number
----@field data TiledObjectData
----@field custom_properties TiledCustomProperties
+---@field data Net.ObjectData
+---@field custom_properties Net.CustomProperties
 ```
 
-## TiledObjectData
+## Net.ObjectData
 
 ```lua
----@alias TiledObjectData TiledBasicObjectData | TiledPolygonObjectData | TiledTileObjectData
+---@alias Net.ObjectData Net.BasicObjectData | Net.PolygonObjectData | Net.TileObjectData
 ```
 
-## TiledBasicObjectData
+## Net.BasicObjectData
 
 ```lua
----@class TiledBasicObjectData
+---@class Net.BasicObjectData
 ---@field type "point" | "rect" | "ellipse"
 ```
 
-## TiledPolygonObjectData
+## Net.PolygonObjectData
 
 ```lua
----@class TiledPolygonObjectData
+---@class Net.PolygonObjectData
 ---@field type "polygon" | "polyline"
 ---@field points { x: number, y: number }[],
 ```
 
-## TiledTileObjectData
+## Net.TileObjectData
 
 ```lua
----@class TiledTileObjectData
+---@class Net.TileObjectData
 ---@field type "tile"
 ---@field gid number
 ---@field flipped_horizontally boolean
 ---@field flipped_vertically boolean
 ```
 
-## TiledCustomProperties
+## Net.CustomProperties
 
 ```lua
----@alias TiledCustomProperties table<string, string>
+---@alias Net.CustomProperties table<string, string>
 ```

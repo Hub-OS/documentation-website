@@ -113,13 +113,13 @@ say_after("world", 10).and_then(print) -- says "world" after 10s
 
 ### `Async.request(url, request_options?)`
 
-- `request_options`: [RequestOptions](#requestoptions)
+- `request_options`: [Net.RequestOptions](#netrequestoptions)
 
 Returns a promise that resolves to `{ status, headers, body }?`
 
 ### `Async.download(path, url, request_options?)`
 
-- `request_options`: [RequestOptions](#requestoptions)
+- `request_options`: [Net.RequestOptions](#netrequestoptions)
 
 Downloads a file straight to disk.
 
@@ -153,7 +153,7 @@ Returns a promise that resolves to `0` or `nil` for disconnected.
 
 ### `Async.message_player(player_id, message, textbox_options?)`
 
-- `textbox_options`: [TextboxOptions](/server/lua-api/widgets#textboxoptions)
+- `textbox_options`: [Net.TextboxOptions](/server/lua-api/widgets#nettextboxoptions)
 
 Returns a promise that resolves to `0` or `nil` for disconnected.
 
@@ -163,7 +163,7 @@ Returns a promise that resolves to `1` for yes, `0` for no, and `nil` for discon
 
 ### `Async.question_player(player_id, question, textbox_options?)`
 
-- `textbox_options`: [TextboxOptions](/server/lua-api/widgets#textboxoptions)
+- `textbox_options`: [Net.TextboxOptions](/server/lua-api/widgets#nettextboxoptions)
 
 Returns a promise that resolves to `1` for yes, `0` for no, and `nil` for disconnected.
 
@@ -173,7 +173,7 @@ Returns a promise that resolves to 0-2 for option a-c, or `nil` for disconnected
 
 ### `Async.quiz_player(player_id, option_a?, option_b?, option_c?, textbox_options?)`
 
-- `textbox_options`: [TextboxOptions](/server/lua-api/widgets#textboxoptions)
+- `textbox_options`: [Net.TextboxOptions](/server/lua-api/widgets#nettextboxoptions)
 
 Returns a promise that resolves to 0-2 for option a-c, or `nil` for disconnected.
 
@@ -186,26 +186,26 @@ Returns a promise that resolves to `string`, or `nil` for disconnected.
 - `encounter_data`: anything that could be represented as JSON.
   - Read as second param in encounter_init for the encounter package
 
-Returns `Promise<BattleResults?>`
+Returns `Net.Promise<Net.BattleResults?>`
 
 ### `Async.initiate_pvp(player_1_id, player_2_id, package_path?, encounter_data?)`
 
 - `encounter_data`: anything that could be represented as JSON.
   - Read as second param in encounter_init for the encounter package
 
-Returns `Promise<BattleResults?>[]`
+Returns `Net.Promise<Net.BattleResults?>[]`
 
 ### `Async.initiate_netplay(player_ids, package_path?, encounter_data?)`
 
 - `encounter_data`: anything that could be represented as JSON.
   - Read as second param in encounter_init for the encounter package
 
-Returns `Promise<BattleResults?>[]`
+Returns `Net.Promise<Net.BattleResults?>[]`
 
-## BattleResults
+## Net.BattleResults
 
 ```lua
----@class BattleResults
+---@class Net.BattleResults
 ---@field player_id string
 ---@field health number
 ---@field score number
@@ -218,10 +218,10 @@ Returns `Promise<BattleResults?>[]`
 ---@field neutral { name: string, health: number }[]
 ```
 
-## RequestOptions
+## Net.RequestOptions
 
 ```lua
----@class RequestOptions
+---@class Net.RequestOptions
 ---@field method? string
 ---@field headers? table<string, string>
 ---@field body? string

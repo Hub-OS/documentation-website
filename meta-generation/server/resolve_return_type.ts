@@ -2,72 +2,78 @@ import { Section } from "../shared/read_docs";
 import PRIMITIVES from "../shared/primitives";
 
 const COMPRESSED_RETURN_TYPES = [
-  { type: "ActorId", list: ["Returns a `bot_id`"] },
+  { type: "Net.ActorId", list: ["Returns a `bot_id`"] },
   {
-    type: "ActorId[]",
+    type: "Net.ActorId[]",
     list: ["Returns a list of `player_id`", "Returns a list of `bot_id`"],
   },
-  { type: "SpriteId", list: ["Returns sprite_id"] },
-  { type: "TextureAnimationPair", list: ["Returns [TextureAnimationPair]"] },
-  { type: "TilesetData|nil", list: ["Returns [TilesetData]"] },
-  { type: "TileData|nil", list: ["Returns [TileData]"] },
-  { type: "Net.EventEmitter", list: ["Returns [EventEmitter]"] },
+  { type: "Net.SpriteId", list: ["Returns sprite_id"] },
+  {
+    type: "Net.TextureAnimationPair",
+    list: ["Returns [Net.TextureAnimationPair]"],
+  },
+  { type: "Net.TilesetData|nil", list: ["Returns [Net.TilesetData]"] },
+  { type: "Net.TileData|nil", list: ["Returns [Net.TileData]"] },
+  { type: "Net.EventEmitter", list: ["Returns [Net.EventEmitter]"] },
   {
     type: "fun(): any",
     list: ["Returns an Iterator"],
   },
   {
-    type: "fun(...): Promise<T>",
+    type: "fun(...): Net.Promise<T>",
     list: [
       "Returns a function that returns a promise, which resolves to the return value.",
     ],
   },
   {
-    type: "fun(): Promise",
+    type: "fun(): Net.Promise",
     list: ["Returns an iterator that returns promises"],
   },
-  { type: "Promise<0|nil>", list: ["Returns a promise that resolves to `0`"] },
   {
-    type: "Promise<0|1|nil>",
+    type: "Net.Promise<0|nil>",
+    list: ["Returns a promise that resolves to `0`"],
+  },
+  {
+    type: "Net.Promise<0|1|nil>",
     list: ["Returns a promise that resolves to `1`"],
   },
   {
-    type: "Promise<0|1|2|nil>",
+    type: "Net.Promise<0|1|2|nil>",
     list: ["Returns a promise that resolves to 0-2"],
   },
   {
-    type: "Promise<string|nil>",
+    type: "Net.Promise<string|nil>",
     list: ["Returns a promise that resolves to `string`"],
   },
   {
-    type: "Promise<{ status: number, headers: table<string, string>, body:string }|nil>",
+    type: "Net.Promise<{ status: number, headers: table<string, string>, body:string }|nil>",
     list: ["Returns a promise that resolves to `{ status, headers, body }?`"],
   },
   {
-    type: "Promise<boolean>",
+    type: "Net.Promise<boolean>",
     list: [
       "Returns a promise that resolves to `true` if the file was successfully saved, or `false` if the operation failed.",
     ],
   },
   {
-    type: "Promise<string>",
+    type: "Net.Promise<string>",
     list: [
       "Returns a promise that resolves to a string representing the bytes stored in the file.",
     ],
   },
   {
-    type: "Promise<T>",
+    type: "Net.Promise<T>",
     list: [
       "Returns a promise from a callback. A resolve function is passed to this callback",
       "Returns a promise, resolves to the return value.",
     ],
   },
   {
-    type: "Promise<{}|nil>",
+    type: "Net.Promise<{}|nil>",
     list: ["Returns a promise that resolves to `{}?`"],
   },
   {
-    type: "Promise<nil>",
+    type: "Net.Promise<nil>",
     list: ["Returns a promise that resolves after the duration has passed."],
   },
   {

@@ -50,7 +50,7 @@ Returns the screen height of a tile in pixels.
 
 ### `Net.get_area_custom_properties(area_id)`
 
-Returns a [TiledCustomProperties](/server/lua-api/objects#tiledcustomproperties)
+Returns a [Net.CustomProperties](/server/lua-api/objects#netcustomproperties)
 
 ### `Net.get_area_custom_property(area_id, name)`
 
@@ -78,7 +78,7 @@ Changes the music for the area, players will be updated at the end of the tick.
 
 ### `Net.get_background(area_id)`
 
-Returns [TextureAnimationPair](/server/lua-api/widgets#textureanimationpair)
+Returns [Net.TextureAnimationPair](/server/lua-api/widgets#nettextureanimationpair)
 
 ### `Net.get_background_velocity(area_id)`
 
@@ -110,7 +110,7 @@ Modifies foreground properties all at once, players will be updated at the end o
 
 ### `Net.get_spawn_position(area_id)`
 
-Returns [TilePosition](/server/lua-api/misc#tileposition)
+Returns [Net.Position](/server/lua-api/misc#netposition)
 
 Defaults to either the Home Warp or (0, 0, 0)
 
@@ -134,17 +134,17 @@ Returns a list of `tileset_path`s
 
 ### `Net.get_tileset(area_id, tileset_path)`
 
-Returns [TilesetData](#tilesetdata) or `nil`.
+Returns [Net.TilesetData](#nettilesetdata) or `nil`.
 
 ### `Net.get_tileset_for_tile(area_id, tile_gid)`
 
-Returns [TilesetData](#tilesetdata) or `nil`.
+Returns [Net.TilesetData](#nettilesetdata) or `nil`.
 
 Note: The same `tile_gid` can return different values for different areas.
 
 ### `Net.get_tile(area_id, x, y, z)`
 
-Returns [TileData](#tiledata)
+Returns [Net.TileData](#nettiledata)
 
 ### `Net.set_tile(area_id, x, y, z, tile_gid, flip_h?, flip_v?, rotate?)`
 
@@ -160,18 +160,18 @@ Useful for avoiding lag spikes during gameplay with dynamically loaded large ass
 
 Plays a sound for every player within the area.
 
-## TilesetData
+## Net.TilesetData
 
 ```lua
----@class TilesetData
+---@class Net.TilesetData
 ---@field path string
 ---@field first_gid number
 ```
 
-## TileData
+## Net.TileData
 
 ```lua
----@class TileData
+---@class Net.TileData
 ---@field gid number
 ---@field flipped_horizontally boolean
 ---@field flipped_vertically boolean
