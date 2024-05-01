@@ -450,9 +450,9 @@ function Net.get_background_parallax(area_id) end
 ---@param parallax? number
 function Net.set_background(area_id, texture_path, animation_path, vel_x, vel_y, parallax) end
 
---- Returns `{ texture_path: string, animation_path: string }`
+--- Returns [Net.TextureAnimationPair](https://docs.hubos.dev/server/lua-api/widgets#nettextureanimationpair)
 ---@param area_id string
----@return { texture_path: string, animation_path: string }
+---@return Net.TextureAnimationPair
 function Net.get_foreground(area_id) end
 
 --- Returns `{ x: number, y: number }`
@@ -877,8 +877,9 @@ function Net.get_player_area(player_id) end
 ---@return string
 function Net.get_player_ip(player_id) end
 
---- Gets the name of the player. "Nickname" in config.
+--- Returns the name of the player. "Nickname" in config.
 ---@param player_id Net.ActorId
+---@return string
 function Net.get_player_name(player_id) end
 
 --- Sets the name of the player for all players to see.
@@ -886,8 +887,9 @@ function Net.get_player_name(player_id) end
 ---@param name string
 function Net.set_player_name(player_id, name) end
 
---- Gets the facing direction of the player.
+--- Returns the facing direction of the player.
 ---@param player_id Net.ActorId
+---@return string
 function Net.get_player_direction(player_id) end
 
 --- Returns [Net.Position](https://docs.hubos.dev/server/lua-api/misc#netposition)
@@ -1122,8 +1124,9 @@ function Net.request_authorization(player_id, address, data) end
 ---@param warp_out? boolean
 function Net.kick_player(player_id, reason, warp_out) end
 
---- The secret identifier for this player, also known as `identity`. Similar to a password, do not share.
+--- Returns the secret identifier for this player, also known as `identity`. Similar to a password, do not share.
 ---@param player_id Net.ActorId
+---@return string
 function Net.get_player_secret(player_id) end
 
 --- Returns `"None" | "Fire" | "Aqua" | "Elec" | "Wood" | "Sword" | "Wind" | "Cursor" | "Summon" | "Plus" | "Break"`
@@ -1308,8 +1311,9 @@ function Net.get_bot_name(bot_id) end
 ---@param name string
 function Net.set_bot_name(bot_id, name) end
 
---- Gets the facing direction of the bot.
+--- Returns the facing direction of the bot.
 ---@param bot_id Net.ActorId
+---@return string
 function Net.get_bot_direction(bot_id) end
 
 --- Sets the facing direction of the bot.
