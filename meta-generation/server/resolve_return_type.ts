@@ -106,6 +106,8 @@ const COMPRESSED_RETURN_TYPES = [
       "Returns the path",
       "Returns the `area_id`",
       "Returns the IP",
+      "Returns the secret identifier for this player",
+      "Returns the facing direction",
     ],
   },
   {

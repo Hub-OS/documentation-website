@@ -36,7 +36,7 @@ Sets the name shown to players for the bot.
 
 ### `Net.get_bot_direction(bot_id)`
 
-Gets the facing direction of the bot.
+Returns the facing direction of the bot.
 
 ### `Net.set_bot_direction(bot_id, direction)`
 

@@ -4,7 +4,7 @@ Functions relevant to items, money, stats, and tracking data.
 
 ### `Net.get_player_secret(player_id)`
 
-The secret identifier for this player, also known as `identity`. Similar to a password, do not share.
+Returns the secret identifier for this player, also known as `identity`. Similar to a password, do not share.
 
 ### `Net.get_player_element(player_id)`
 

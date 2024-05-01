@@ -94,7 +94,7 @@ Modifies background properties all at once, players will be updated at the end o
 
 ### `Net.get_foreground(area_id)`
 
-Returns `{ texture_path: string, animation_path: string }`
+Returns [Net.TextureAnimationPair](/server/lua-api/widgets#nettextureanimationpair)
 
 ### `Net.get_foreground_velocity(area_id)`
 

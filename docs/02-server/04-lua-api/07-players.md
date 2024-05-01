@@ -22,7 +22,7 @@ If you want to track data use [Net.get_player_secret()](/server/lua-api/player-d
 
 ### `Net.get_player_name(player_id)`
 
-Gets the name of the player. "Nickname" in config.
+Returns the name of the player. "Nickname" in config.
 
 ### `Net.set_player_name(player_id, name)`
 
@@ -30,7 +30,7 @@ Sets the name of the player for all players to see.
 
 ### `Net.get_player_direction(player_id)`
 
-Gets the facing direction of the player.
+Returns the facing direction of the player.
 
 ### `Net.get_player_position(player_id)`
 
