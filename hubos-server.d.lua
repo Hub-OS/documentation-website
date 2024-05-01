@@ -90,7 +90,7 @@ Net.EventEmitter = {}
 ---```
 ---@class Net.ActorKeyframe
 ---@field properties Net.ActorPropertyKeyframe[]
----@field duration number in seconds
+---@field duration? number in seconds
 
 ---@class Net.ActorPropertyKeyframe
 ---@field property "Animation" | "Animation Speed" | "X" | "Y" | "Z" | "ScaleX" | "ScaleY" | "Rotation" | "Direction" | "Sound Effect" | "Sound Effect Loop"
