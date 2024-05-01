@@ -85,7 +85,7 @@ If you need something to happen when the animation ends, you should use [Async.s
 ```lua
 ---@class Net.ActorKeyframe
 ---@field properties Net.ActorPropertyKeyframe[]
----@field duration number in seconds
+---@field duration? number in seconds
 ```
 
 Expanded:
