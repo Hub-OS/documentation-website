@@ -12,8 +12,9 @@ const COMPRESSED_RETURN_TYPES = [
     type: "Net.TextureAnimationPair",
     list: ["Returns [Net.TextureAnimationPair]"],
   },
-  { type: "Net.TilesetData|nil", list: ["Returns [Net.TilesetData]"] },
-  { type: "Net.TileData|nil", list: ["Returns [Net.TileData]"] },
+  { type: "Net.Object", list: ["Returns [Net.Object]"] },
+  { type: "Net.TilesetData", list: ["Returns [Net.TilesetData]"] },
+  { type: "Net.TileData", list: ["Returns [Net.TileData]"] },
   { type: "Net.EventEmitter", list: ["Returns [Net.EventEmitter]"] },
   {
     type: "fun(): any",
