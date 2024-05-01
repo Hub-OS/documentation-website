@@ -66,6 +66,8 @@ Sets texture and animation files used to display the bot.
 
 Displays an emote above the bot. `emote_id` is the name of an animation state in the emotes animation.
 
+An invalid `emote_id` will hide an existing emote.
+
 ### `Net.animate_bot(bot_id, state_name, loop?)`
 
 Sets the animation state for the bot, the default states will be used if the bot moves.

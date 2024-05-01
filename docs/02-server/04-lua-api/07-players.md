@@ -56,6 +56,8 @@ Returns the name of the playable character used by the player.
 
 Displays an emote above the player. `emote_id` is the name of an animation state in the emotes animation.
 
+An invalid `emote_id` will hide an existing emote.
+
 ### `Net.exclusive_player_emote(player_id, emoter_id, emote_id)`
 
 - `emoter_id`: a `bot_id` or `player_id`
