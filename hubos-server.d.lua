@@ -897,6 +897,15 @@ function Net.get_player_direction(player_id) end
 ---@return Net.Position
 function Net.get_player_position(player_id) end
 
+--- Returns the player's position using multi-values.
+--- 
+--- ```lua
+--- local x, y, z = Net.get_player_position_multi(bot_id)
+--- ```
+---@param player_id Net.ActorId
+---@return number, number, number
+function Net.get_player_position_multi(player_id) end
+
 --- Returns [Net.TextureAnimationPair](https://docs.hubos.dev/server/lua-api/widgets#nettextureanimationpair)
 ---@param player_id Net.ActorId
 ---@return Net.TextureAnimationPair
@@ -1325,6 +1334,15 @@ function Net.set_bot_direction(bot_id, direction) end
 ---@param bot_id Net.ActorId
 ---@return Net.Position
 function Net.get_bot_position(bot_id) end
+
+--- Returns the bot's position using multi-values.
+--- 
+--- ```lua
+--- local x, y, z = Net.get_bot_position_multi(bot_id)
+--- ```
+---@param bot_id Net.ActorId
+---@return number, number, number
+function Net.get_bot_position_multi(bot_id) end
 
 --- Sets the position of the bot, will play a warp animation on the clients if the bot is moving too fast.
 ---@param bot_id Net.ActorId
