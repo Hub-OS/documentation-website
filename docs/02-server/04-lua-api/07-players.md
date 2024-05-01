@@ -36,6 +36,14 @@ Returns the facing direction of the player.
 
 Returns [Net.Position](/server/lua-api/misc#netposition)
 
+### `Net.get_player_position_multi(player_id)`
+
+Returns the player's position using multi-values.
+
+```lua
+local x, y, z = Net.get_player_position_multi(bot_id)
+```
+
 ### `Net.get_player_mugshot(player_id)`
 
 Returns [Net.TextureAnimationPair](/server/lua-api/widgets#nettextureanimationpair)

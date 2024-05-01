@@ -46,6 +46,14 @@ Sets the facing direction of the bot.
 
 Returns [Net.Position](/server/lua-api/misc#netposition)
 
+### `Net.get_bot_position_multi(bot_id)`
+
+Returns the bot's position using multi-values.
+
+```lua
+local x, y, z = Net.get_bot_position_multi(bot_id)
+```
+
 ### `Net.move_bot(bot_id, x, y, z)`
 
 Sets the position of the bot, will play a warp animation on the clients if the bot is moving too fast.

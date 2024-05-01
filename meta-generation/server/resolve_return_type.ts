@@ -94,6 +94,13 @@ const COMPRESSED_RETURN_TYPES = [
       "Returns the screen height",
     ],
   },
+  {
+    type: "number, number, number",
+    list: [
+      "Returns the player's position using multi-values.",
+      "Returns the bot's position using multi-values.",
+    ],
+  },
   { type: "number[]", list: ["Returns a list of `object_id`"] },
   {
     type: "string",
