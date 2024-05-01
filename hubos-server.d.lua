@@ -917,6 +917,8 @@ function Net.set_player_avatar(player_id, texture_path, animation_path) end
 function Net.get_player_avatar_name(player_id) end
 
 --- Displays an emote above the player. `emote_id` is the name of an animation state in the emotes animation.
+--- 
+--- An invalid `emote_id` will hide an existing emote.
 ---@param player_id Net.ActorId
 ---@param emote_id string
 function Net.set_player_emote(player_id, emote_id) end
@@ -1348,6 +1350,8 @@ function Net.set_bot_solid(bot_id, solid) end
 function Net.set_bot_avatar(bot_id, texture_path, animation_path) end
 
 --- Displays an emote above the bot. `emote_id` is the name of an animation state in the emotes animation.
+--- 
+--- An invalid `emote_id` will hide an existing emote.
 ---@param bot_id Net.ActorId
 ---@param emote_id string
 function Net.set_bot_emote(bot_id, emote_id) end
