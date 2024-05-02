@@ -341,9 +341,10 @@ function Net.EventEmitter:destroy() end
 ---@return string[]
 function Net.list_areas() end
 
---- Not implemented.
----@param new_area_id string
-function Net.create_area(new_area_id) end
+--- Returns true if the area_id matches an existing area.
+---@param area_id string
+---@return boolean
+function Net.is_area(area_id) end
 
 --- Overwrites all objects, tiles, and custom properties for the area, clients will be updated at the end of the tick.
 ---@param area_id string
@@ -508,7 +509,7 @@ function Net.list_tilesets(area_id) end
 --- Returns [Net.TilesetData](https://docs.hubos.dev/server/lua-api/areas#nettilesetdata) or `nil`.
 ---@param area_id string
 ---@param tileset_path string
----@return Net.TilesetData|nil
+---@return Net.TilesetData
 function Net.get_tileset(area_id, tileset_path) end
 
 --- Returns [Net.TilesetData](https://docs.hubos.dev/server/lua-api/areas#nettilesetdata) or `nil`.
@@ -516,7 +517,7 @@ function Net.get_tileset(area_id, tileset_path) end
 --- Note: The same `tile_gid` can return different values for different areas.
 ---@param area_id string
 ---@param tile_gid number
----@return Net.TilesetData|nil
+---@return Net.TilesetData
 function Net.get_tileset_for_tile(area_id, tile_gid) end
 
 --- Returns [Net.TileData](https://docs.hubos.dev/server/lua-api/areas#nettiledata)
@@ -524,7 +525,7 @@ function Net.get_tileset_for_tile(area_id, tile_gid) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return Net.TileData|nil
+---@return Net.TileData
 function Net.get_tile(area_id, x, y, z) end
 
 --- Sets the tile at the specified position, updates are merged and sent to players at the end of the tick.
@@ -558,13 +559,13 @@ function Net.list_objects(area_id) end
 --- Returns [Net.Object](https://docs.hubos.dev/server/lua-api/objects#netobject) or `nil`
 ---@param area_id string
 ---@param object_id number|string
----@return Net.Object|nil
+---@return Net.Object
 function Net.get_object_by_id(area_id, object_id) end
 
 --- Returns [Net.Object](https://docs.hubos.dev/server/lua-api/objects#netobject) or `nil`
 ---@param area_id string
 ---@param name string
----@return Net.Object|nil
+---@return Net.Object
 function Net.get_object_by_name(area_id, name) end
 
 --- - `object_options`: [Net.ObjectOptions](https://docs.hubos.dev/server/lua-api/objects#netobjectoptions)
