@@ -62,7 +62,7 @@ Spawns characters at the start of battle.
 
 See [encounter:create_spawner()](#encountercreate_spawnerpackage_id-rank) for creating a spawner.
 
-### `spawner:spawn(col, row)`
+### `spawner:spawn_at(col, row)`
 
 Spawns the character at this position.
 
