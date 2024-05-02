@@ -2880,7 +2880,7 @@ function Encounter:enable_boss_battle(enabled) end
 ---@param col number
 ---@param row number
 ---@return Mutator
-function Spawner:spawn(col, row) end
+function Spawner:spawn_at(col, row) end
 
 --- - `entity`: [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity)
 ---@param callback fun(entity: Entity)
