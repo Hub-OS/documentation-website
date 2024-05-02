@@ -8,9 +8,9 @@ Positions are in tile space. To get the center of a tile add `0.5`
 
 Returns a list of area_ids.
 
-### `Net.create_area(new_area_id)`
+### `Net.is_area(area_id)`
 
-Not implemented.
+Returns true if the area_id matches an existing area.
 
 ### `Net.update_area(area_id, tmx_string)`
 
