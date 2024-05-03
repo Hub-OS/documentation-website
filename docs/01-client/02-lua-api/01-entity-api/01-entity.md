@@ -66,7 +66,7 @@ Same as `entity:team() == team`
 - `direction`: [Direction](/client/lua-api/field-api/direction)
 - `count`: integer
 
-Returns a tile `count` many tiles in `direction`'s direction.
+Returns a tile `count` many tiles in `direction`'s direction, or `nil`.
 Returns the current tile if any parameters are unset.
 
 ### `entity:current_tile()`
