@@ -287,8 +287,8 @@ Input = {
 --- 
 --- Not to be confused with [entity.on_counter_func](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityon_counter_func--functionself)
 ---@field on_countered_func fun(self: Entity)
---- This function is pre-set for all entities.
----@field can_move_to_func fun(self: Entity, tile: Tile): boolean
+--- This function is predefined for all entities.
+---@field can_move_to_func fun(tile: Tile): boolean
 --- Called when the battle has completed (win or loss).
 --- 
 --- Not implemented.
