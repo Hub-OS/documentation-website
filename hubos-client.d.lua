@@ -821,11 +821,11 @@ function Entity:is_team(team) end
 --- - `direction`: [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction)
 --- - `count`: integer
 --- 
---- Returns a tile `count` many tiles in `direction`'s direction.
+--- Returns a tile `count` many tiles in `direction`'s direction, or `nil`.
 --- Returns the current tile if any parameters are unset.
 ---@param direction? Direction
 ---@param count? number
----@return Tile
+---@return Tile|nil
 function Entity:get_tile(direction, count) end
 
 --- Returns the tile at the same position as the entity.
@@ -2612,8 +2612,10 @@ function Tile:remove_reservation_for_id(entity_id) end
 function Tile:team() end
 
 --- - `team`: [Team](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityset_teamteam)
+--- - `direction`: [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction) optional override for the duration of the team change.
 ---@param team Team
-function Tile:set_team(team) end
+---@param direction? Direction
+function Tile:set_team(team, direction) end
 
 --- Returns a [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction)
 ---@return Direction
