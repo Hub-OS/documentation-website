@@ -407,9 +407,9 @@ Called when the battle has completed (win or loss).
 
 Not implemented.
 
-### `entity.can_move_to_func = function(self, tile): boolean`
+### `entity.can_move_to_func = function(tile): boolean`
 
-This function is pre-set for all entities.
+This function is predefined for all entities.
 
 ## Component
 
