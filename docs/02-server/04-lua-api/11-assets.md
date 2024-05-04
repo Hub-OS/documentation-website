@@ -28,8 +28,12 @@ Note some assets are compressed when loaded by the server and may differ from th
 
 Allows for assets to be sent ahead of time to reduce apparent server hiccups.
 
+Calling in response to `player_request` will cause cached files on the client to be ignored.
+
 ### `Net.provide_package_for_player(player_id, path)`
 
 Similar to [Net.provide_asset_for_player](#netprovide_asset_for_playerplayer_id-path), but also loads the package on the client.
 
 This does not "install" packages on the client. Use [Net.offer_package()](/server/lua-api/widgets#netoffer_packageplayer_id-package_path) or [Net.refer_package()](/server/lua-api/widgets#netrefer_packageplayer_id-package_id) for that use case.
+
+Calling in response to `player_request` will cause cached files on the client to be ignored.
