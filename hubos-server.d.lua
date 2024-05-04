@@ -849,12 +849,14 @@ function Net.refer_server(player_id, name, address) end
 ---@param package_id string
 function Net.refer_package(player_id, package_id) end
 
---- Allows the client to directly download packages from the server.
+--- Gets permission from the player to permanently install a package on their client, allowing for the package to be used when disconnected and while on other servers.
+--- 
+--- If the player accepts, the package will be installed.
 --- 
 --- Currently unimplemented on the client.
 ---@param player_id Net.ActorId
----@param package_id string
-function Net.offer_package(player_id, package_id) end
+---@param package_path string
+function Net.offer_package(player_id, package_path) end
 
 --- Returns a list of `player_id`s.
 ---@param area_id string
@@ -952,11 +954,6 @@ function Net.animate_player(player_id, state_name, loop) end
 --- Allows for assets to be sent ahead of time to reduce apparent server hiccups.
 ---@param player_id Net.ActorId
 ---@param path string
-function Net.provide_asset_for_player(player_id, path) end
-
---- Allows for assets to be sent ahead of time to reduce apparent server hiccups.
----@param player_id Net.ActorId
----@param path string
 function Net.play_sound_for_player(player_id, path) end
 
 --- Disables collisions, interactions, and hides the object for this player.
@@ -1050,15 +1047,6 @@ function Net.unlock_player_input(player_id) end
 ---@param z number
 ---@param direction? string
 function Net.teleport_player(player_id, warp, x, y, z, direction) end
-
---- Gets permission from the player to permanently install a package on their client, allowing for the package to be used when disconnected and while on other servers.
---- 
---- If the player accepts, the package will be installed.
---- 
---- Not implemented.
----@param player_id Net.ActorId
----@param package_path string
-function Net.offer_package(player_id, package_path) end
 
 --- - `path`: `string`
 ---   - Server asset path to a toml file.
@@ -1490,6 +1478,18 @@ function Net.get_asset_type(server_path) end
 ---@param server_path string
 ---@return number
 function Net.get_asset_size(server_path) end
+
+--- Allows for assets to be sent ahead of time to reduce apparent server hiccups.
+---@param player_id Net.ActorId
+---@param path string
+function Net.provide_asset_for_player(player_id, path) end
+
+--- Similar to [Net.provide_asset_for_player](https://docs.hubos.dev/server/lua-api/assets#netprovide_asset_for_playerplayer_id-path), but also loads the package on the client.
+--- 
+--- This does not "install" packages on the client. Use [Net.offer_package()](https://docs.hubos.dev/server/lua-api/widgets#netoffer_packageplayer_id-package_path) or [Net.refer_package()](https://docs.hubos.dev/server/lua-api/widgets#netrefer_packageplayer_id-package_id) for that use case.
+---@param player_id Net.ActorId
+---@param path string
+function Net.provide_package_for_player(player_id, path) end
 
 --- Packets sent by functions in the callback will wait until all packets arrive, causing every packet to be processed on the same frame and appear synchronized.
 --- 
