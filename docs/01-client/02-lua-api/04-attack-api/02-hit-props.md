@@ -79,7 +79,7 @@ Context obtained by [entity:context()](/client/lua-api/entity-api/entity#entityc
 
 ## Drag
 
-### `Drag.new(direction?, count?)`
+### `Drag.new(direction?, distance?)`
 
 Returns a new Drag instance.
 
@@ -88,3 +88,11 @@ Returns a new Drag instance.
 Returns a new Drag instance.
 
 Same as `Drag.new()`
+
+### `drag.direction`
+
+Direction, the direction to move the entity.
+
+### `drag.distance`
+
+Number, the amount of tiles to drag the entity.

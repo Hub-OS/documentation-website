@@ -61,12 +61,12 @@ Returns a boolean.
 
 Same as `entity:team() == team`
 
-### `entity:get_tile(direction?, count?)`
+### `entity:get_tile(direction?, distance?)`
 
 - `direction`: [Direction](/client/lua-api/field-api/direction)
-- `count`: integer
+- `distance`: integer
 
-Returns a tile `count` many tiles in `direction`'s direction, or `nil`.
+Returns a tile `distance` many tiles in `direction`'s direction, or `nil`.
 Returns the current tile if any parameters are unset.
 
 ### `entity:current_tile()`

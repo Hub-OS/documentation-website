@@ -90,7 +90,7 @@ Sets the facing direction used to set the initial direction of spawned entities,
   - `Highlight.Flash`
   - `Highlight.Solid`
 
-### `tile:get_tile(direction, count)`
+### `tile:get_tile(direction, distance)`
 
 - `direction`: [Direction](/client/lua-api/field-api/direction)
 - `count`: integer
