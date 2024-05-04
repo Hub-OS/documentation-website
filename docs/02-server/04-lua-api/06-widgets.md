@@ -159,9 +159,11 @@ Opens a menu for the player to save the referred server.
 
 Opens a menu on the client for the player to view and install a package from their preferred package repo.
 
-### `Net.offer_package(player_id, package_id)`
+### `Net.offer_package(player_id, package_path)`
 
-Allows the client to directly download packages from the server.
+Gets permission from the player to permanently install a package on their client, allowing for the package to be used when disconnected and while on other servers.
+
+If the player accepts, the package will be installed.
 
 Currently unimplemented on the client.
 

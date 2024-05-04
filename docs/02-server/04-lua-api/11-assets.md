@@ -23,3 +23,13 @@ Returns `"text" | "texture" | "audio" | "data"`
 Returns the asset's size in bytes.
 
 Note some assets are compressed when loaded by the server and may differ from the size on disk.
+
+### `Net.provide_asset_for_player(player_id, path)`
+
+Allows for assets to be sent ahead of time to reduce apparent server hiccups.
+
+### `Net.provide_package_for_player(player_id, path)`
+
+Similar to [Net.provide_asset_for_player](#netprovide_asset_for_playerplayer_id-path), but also loads the package on the client.
+
+This does not "install" packages on the client. Use [Net.offer_package()](/server/lua-api/widgets#netoffer_packageplayer_id-package_path) or [Net.refer_package()](/server/lua-api/widgets#netrefer_packageplayer_id-package_id) for that use case.

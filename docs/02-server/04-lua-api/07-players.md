@@ -76,10 +76,6 @@ Displays an emote exclusively to this player.
 
 Sets the animation state for the player, the default states will be used if the player moves.
 
-### `Net.provide_asset_for_player(player_id, path)`
-
-Allows for assets to be sent ahead of time to reduce apparent server hiccups.
-
 ### `Net.play_sound_for_player(player_id, path)`
 
 Allows for assets to be sent ahead of time to reduce apparent server hiccups.
@@ -150,14 +146,6 @@ Removes a lock on the player's input.
 ### `Net.teleport_player(player_id, warp, x, y, z, direction?)`
 
 Teleports the player to a new position.
-
-### `Net.offer_package(player_id, package_path)`
-
-Gets permission from the player to permanently install a package on their client, allowing for the package to be used when disconnected and while on other servers.
-
-If the player accepts, the package will be installed.
-
-Not implemented.
 
 ### `Net.set_player_restrictions(player_id, path)`
 
