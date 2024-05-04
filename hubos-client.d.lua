@@ -2820,6 +2820,10 @@ function Movement:is_teleporting() end
 ---@return Spawner
 function Encounter:create_spawner(package_id, rank) end
 
+--- Returns a number, the amount of players that will join the battle.
+---@return number
+function Encounter:player_count() end
+
 --- - `player_index`: number, starts at 0
 --- 
 --- Sets the spawn position for this player.
