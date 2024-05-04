@@ -588,6 +588,10 @@ Movement = {}
 
 --- 
 ---@class Drag
+--- Number, the amount of tiles to drag the entity.
+---@field distance number
+--- Direction, the direction to move the entity.
+---@field direction Direction
 
 Drag = {}
 ---@type Drag
@@ -819,14 +823,14 @@ function Entity:set_team(team) end
 function Entity:is_team(team) end
 
 --- - `direction`: [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction)
---- - `count`: integer
+--- - `distance`: integer
 --- 
---- Returns a tile `count` many tiles in `direction`'s direction, or `nil`.
+--- Returns a tile `distance` many tiles in `direction`'s direction, or `nil`.
 --- Returns the current tile if any parameters are unset.
 ---@param direction? Direction
----@param count? number
+---@param distance? number
 ---@return Tile|nil
-function Entity:get_tile(direction, count) end
+function Entity:get_tile(direction, distance) end
 
 --- Returns the tile at the same position as the entity.
 ---@return Tile
@@ -2639,9 +2643,9 @@ function Tile:set_highlight(highlight) end
 --- 
 --- Returns a Tile `count` many tiles in `direction`'s direction, or `nil`.
 ---@param direction Direction
----@param count number
+---@param distance number
 ---@return Tile|nil
-function Tile:get_tile(direction, count) end
+function Tile:get_tile(direction, distance) end
 
 --- Queues an attack to occur on this tile by this [Spell](https://docs.hubos.dev/client/lua-api/entity-api/spell).
 ---@param spell Entity
@@ -3044,9 +3048,9 @@ function HitProps.from_card(card_properties, context, drag) end
 
 --- Returns a new Drag instance.
 ---@param direction? Direction
----@param count? number
+---@param distance? number
 ---@return Drag
-function Drag.new(direction, count) end
+function Drag.new(direction, distance) end
 
 --- Returns a new CardProperties table with default values.
 ---@return CardProperties
