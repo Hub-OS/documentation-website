@@ -7,6 +7,10 @@
 
 Returns a [Spawner](#spawner)
 
+### `encounter:player_count()`
+
+Returns a number, the amount of players that will join the battle.
+
 ### `encounter:spawn_player(player_index, col, row)`
 
 - `player_index`: number, starts at 0
