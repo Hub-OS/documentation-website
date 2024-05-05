@@ -327,7 +327,7 @@ Animation = {}
 --- 
 --- [Players](https://docs.hubos.dev/client/lua-api/entity-api/player), [Characters](https://docs.hubos.dev/client/lua-api/entity-api/character), and [Obstacles](https://docs.hubos.dev/client/lua-api/entity-api/obstacle) automatically reserve tiles outside of executing actions.
 ---@class Action
---- Override's the owner's [can_move_to_func](https://docs.hubos.dev/client/lua-api/entity-api/entity/#entitycan_move_to_func--functionself-tile-boolean) while executing.
+--- Override's the owner's [can_move_to_func](https://docs.hubos.dev/client/lua-api/entity-api/entity/#entitycan_move_to_func--functiontile-boolean) while executing.
 --- 
 --- Ignored on async actions when the entity regains control.
 ---@field can_move_to_func fun(tile: Tile): boolean
@@ -2120,6 +2120,10 @@ function Animation:has_state(state) end
 --- Returns the name of the active state.
 ---@return string
 function Animation:state() end
+
+--- Returns a list of available state names.
+---@return string[]
+function Animation:states() end
 
 --- - `frame_data` a list of frame index and duration pairs.
 ---   - When provided, the animation will remap frames and durations to match until the next `set_state` call.
