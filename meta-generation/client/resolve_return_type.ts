@@ -107,7 +107,10 @@ const COMPRESSED_RETURN_TYPES = [
   },
   {
     type: "string[]",
-    list: ["Returns a list of valid values for `player:set_emotion()`."],
+    list: [
+      "Returns a list of valid values for `player:set_emotion()`.",
+      "Returns a list of available state names.",
+    ],
   },
   {
     type: "{ package_id?: string, code?: string }",

@@ -58,6 +58,10 @@ Returns true if the state exists.
 
 Returns the name of the active state.
 
+### `animation:states()`
+
+Returns a list of available state names.
+
 ### `animation:set_state(state, frame_data?)`
 
 - `frame_data` a list of frame index and duration pairs.
