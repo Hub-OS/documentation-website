@@ -84,7 +84,7 @@ Called when the action ends execution, including cancellation without execution.
 
 ### `action.can_move_to_func = function(tile): boolean`
 
-Override's the owner's [can_move_to_func](/client/lua-api/entity-api/entity/#entitycan_move_to_func--functionself-tile-boolean) while executing.
+Override's the owner's [can_move_to_func](/client/lua-api/entity-api/entity/#entitycan_move_to_func--functiontile-boolean) while executing.
 
 Ignored on async actions when the entity regains control.
 
