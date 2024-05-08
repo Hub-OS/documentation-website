@@ -200,7 +200,7 @@ Hit = {
 ---@type { [string]: {} }
 ---@enum TileState
 TileState = {
-  Hidden = {},
+  Void = {},
   Normal = {},
   PermaHole = {},
   Cracked = {},
@@ -2572,7 +2572,7 @@ function Tile:height() end
 function Tile:state() end
 
 --- - `tile_state`
----   - `TileState.Hidden`
+---   - `TileState.Void`
 ---   - `TileState.Normal`
 ---   - `TileState.PermaHole`
 ---   - `TileState.Cracked`
@@ -2585,7 +2585,9 @@ function Tile:set_state(tile_state) end
 ---@return boolean
 function Tile:is_edge() end
 
---- Returns true if the tile is not a hole. (`TileState.Broken`, `TileState.Hidden`, `TileState.Empty`)
+--- Returns true if the tile is not a hole.
+--- 
+--- Examples: `TileState.Broken`, `TileState.Void`, `TileState.Empty`
 ---@return boolean
 function Tile:is_walkable() end
 
