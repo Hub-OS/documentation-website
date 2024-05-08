@@ -2,6 +2,10 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.20
+
+- Renamed `TileState.Hidden` to `TileState.Void`
+
 ## 0.17
 
 - Removed `animation:derive_state()`, replaced with a new parameter on [animation:set_state()](/client/lua-api/resource-api/animation#animationset_statestate-frame_data)

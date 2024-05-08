@@ -88,7 +88,7 @@ const SPECIAL_ENUMS = {
     "---@type { [string]: {} }",
     "---@enum TileState",
     "TileState = {",
-    "  Hidden = {},",
+    "  Void = {},",
     "  Normal = {},",
     "  PermaHole = {},",
     "  Cracked = {},",

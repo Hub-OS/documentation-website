@@ -25,7 +25,7 @@ Returns the TileState.
 ### `tile:set_state(tile_state)`
 
 - `tile_state`
-  - `TileState.Hidden`
+  - `TileState.Void`
   - `TileState.Normal`
   - `TileState.PermaHole`
   - `TileState.Cracked`
@@ -38,7 +38,9 @@ Returns true if the tile is one of the hidden padding tiles around the edge of t
 
 ### `tile:is_walkable()`
 
-Returns true if the tile is not a hole. (`TileState.Broken`, `TileState.Hidden`, `TileState.Empty`)
+Returns true if the tile is not a hole.
+
+Examples: `TileState.Broken`, `TileState.Void`, `TileState.Empty`
 
 ### `tile:is_reserved(exclude_list?)`
 
