@@ -8,6 +8,18 @@ Player functions are accessible to all entities, but will throw if the entity is
 
 Returns the entity passed in if the entity is a player, otherwise returns `nil`.
 
+### `player:is_local()`
+
+Used for creating small private differences between players, such as playing a sound effect, hiding a sprite, or changing a sprites color.
+
+Returns true if the player is the local player.
+
+Warning: Can cause unintentional desyncs. Limit behavior driven by this.
+
+Creating or deleting sprites, entities, and animations can cause non obvious unintentional desyncs. Of course those aren't the only ways to cause unintentional desyncs.
+
+Even modifying a sprite's color can cause a desync if another script attempts to read the sprite's color to drive behavior.
+
 ### `player:emotions()`
 
 Returns a list of valid values for `player:set_emotion()`.
