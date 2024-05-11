@@ -1,6 +1,7 @@
 import { DefinitionMap } from "../../shared/definition_map";
 
 const FLAT_ENUMS = {
+  Shadow: ["None", "Small", "Big"],
   Lifetime: [
     "Local",
     "Battle",
