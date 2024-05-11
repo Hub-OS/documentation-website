@@ -120,13 +120,13 @@ Allows the entity to walk on Broken and PermaHole tiles.
 
 Automatically set for [Spells](/client/lua-api/entity-api/spell) and [Artifacts](/client/lua-api/entity-api/artifact).
 
-### `entity:tile_offset()`
+### `entity:movement_offset()`
 
 Returns `{ x: number, y: number }`.
 
 This table represents the temporary offset applied to the entity by movement.
 
-### `entity:set_tile_offset(x, y)`
+### `entity:set_movement_offset(x, y)`
 
 Overwrites the frame temporary movement offset.
 

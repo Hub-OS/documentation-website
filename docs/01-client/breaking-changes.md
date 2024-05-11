@@ -5,6 +5,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 ## 0.20
 
 - Renamed `TileState.Hidden` to `TileState.Void`
+- Renamed `entity:tile_offset()` to `entity:movement_offset()`
 
 ## 0.17
 
