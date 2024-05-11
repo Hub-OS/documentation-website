@@ -11,6 +11,13 @@ _folder_path = nil
 
 ---@class Namespace
 
+---@enum Shadow
+Shadow = {
+  None = {},
+  Small = {},
+  Big = {},
+}
+
 ---@enum Lifetime
 Lifetime = {
   Local = {},
@@ -887,12 +894,12 @@ function Entity:ignore_hole_tiles(enabled) end
 --- 
 --- This table represents the temporary offset applied to the entity by movement.
 ---@return { x: number, y: number }
-function Entity:tile_offset() end
+function Entity:movement_offset() end
 
 --- Overwrites the frame temporary movement offset.
 ---@param x number
 ---@param y number
-function Entity:set_tile_offset(x, y) end
+function Entity:set_movement_offset(x, y) end
 
 --- Returns `{ x: number, y: number }`
 --- 
@@ -1169,7 +1176,7 @@ function Entity:set_health(health) end
 
 --- - `hit_props`: [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 --- 
---- Queues a hit for processing, in most cases [tile:attack_entities()](https://docs.hubos.dev/client/lua-api/field-api/tile#tileattack_entitiesspell) should be used instead.
+--- Queues a hit for processing, in most cases [spell:attack_tile()](https://docs.hubos.dev/client/lua-api/entity-api/spell#spellattack_tiletile) should be used instead.
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
 ---@param hit_props HitProps
@@ -1971,6 +1978,18 @@ function Entity:copy_hit_props() end
 --- Throws if the Entity doesn't pass [Spell.from()](https://docs.hubos.dev/client/lua-api/entity-api/spell)
 ---@param hit_props HitProps
 function Entity:set_hit_props(hit_props) end
+
+--- Attack entities on the target tile, defaults to the spell's current tile.
+---
+--- Throws if the Entity doesn't pass [Spell.from()](https://docs.hubos.dev/client/lua-api/entity-api/spell)
+---@param tile? Tile
+function Entity:attack_tile(tile) end
+
+--- Attack entities on multiple tiles.
+---
+--- Throws if the Entity doesn't pass [Spell.from()](https://docs.hubos.dev/client/lua-api/entity-api/spell)
+---@param tiles Tile[]
+function Entity:attack_tiles(tiles) end
 
 --- Returns a new [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) instance.
 ---@param team? Team
