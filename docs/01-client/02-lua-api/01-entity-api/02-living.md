@@ -24,7 +24,7 @@ Sets the entity's max health.
 
 - `hit_props`: [HitProps](/client/lua-api/attack-api/hit-props)
 
-Queues a hit for processing, in most cases [tile:attack_entities()](/client/lua-api/field-api/tile#tileattack_entitiesspell) should be used instead.
+Queues a hit for processing, in most cases [spell:attack_tile()](/client/lua-api/entity-api/spell#spellattack_tiletile) should be used instead.
 
 ### `living:hitbox_enabled()`
 

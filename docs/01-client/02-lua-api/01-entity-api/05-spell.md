@@ -28,6 +28,14 @@ Returns a copy of the spell's [HitProps](/client/lua-api/attack-api/hit-props)
 
 - `hit_props`: [HitProps](/client/lua-api/attack-api/hit-props)
 
+### `spell:attack_tile(tile?)`
+
+Attack entities on the target tile, defaults to the spell's current tile.
+
+### `spell:attack_tiles(tiles)`
+
+Attack entities on multiple tiles.
+
 ### `spell.on_collision_func = function(self, entity)`
 
 Called when the spell hits an entity and isn't blocked by [intangibility](/client/lua-api/entity-api/living#livingset_intangibleintangible-intangible_rule).
