@@ -43,4 +43,16 @@ Audio will play regardless of other audio.
 
 ### `AudioBehavior.NoOverlap`
 
-Audio will not play if another instance of itself is playing with NoOverlap.
+Audio will not play if another instance of itself is playing with NoOverlap or LoopSection.
+
+### `AudioBehavior.LoopSection(start_sample, end_sample)`
+
+Audio will play from the beginning (sample 0), looping back to `start_sample` when `end_sample` is reached.
+
+Stops existing playback of the sound if it has `AudioBehavior.NoOverlap`.
+
+Returns an AudioBehavior.
+
+### `AudioBehavior.EndLoop`
+
+The sound will continue playing if it was already playing. If AudioBehavior.LoopSection was applied, it will stop looping at `end_sample`

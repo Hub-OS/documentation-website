@@ -55,7 +55,7 @@ const FLAT_ENUMS = {
   Highlight: ["None", "Flash", "Solid"],
   CardClass: ["Standard", "Mega", "Giga", "Dark"],
   Team: ["Other", "Red", "Blue"],
-  AudioBehavior: ["Default", "NoOverlap"],
+  AudioBehavior: ["Default", "NoOverlap", "EndLoop"],
   Playback: ["Once", "Loop", "Bounce", "Reverse"],
   ColorMode: ["Additive", "Multiply"],
   SpriteShaderEffect: ["None", "Grayscale", "Pixelate"],

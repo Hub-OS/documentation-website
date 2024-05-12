@@ -127,6 +127,8 @@ const COMPRESSED_VARIABLE_TYPES = [
       "g",
       "b",
       "a",
+      "start_sample",
+      "end_sample",
     ],
   },
   {
