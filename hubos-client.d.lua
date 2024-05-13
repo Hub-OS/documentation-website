@@ -2565,16 +2565,18 @@ function Field:find_spells(callback) end
 --- Returns a list of entities sorted by distance, for any entity the callback returned true for.
 --- 
 --- Only [Characters](https://docs.hubos.dev/client/lua-api/entity-api/character) on the field and not deleted will be passed to the callback, includes [Players](https://docs.hubos.dev/client/lua-api/entity-api/player).
+---@param entity Entity
 ---@param callback fun(entity: Entity): boolean
 ---@return Entity[]
-function Field:find_nearest_characters(callback) end
+function Field:find_nearest_characters(entity, callback) end
 
 --- Returns a list of entities sorted by distance, for any entity the callback returned true for.
 --- 
 --- Only [Players](https://docs.hubos.dev/client/lua-api/entity-api/player) on the field and not deleted will be passed to the callback.
+---@param entity Entity
 ---@param callback fun(entity: Entity): boolean
 ---@return Entity[]
-function Field:find_nearest_players(callback) end
+function Field:find_nearest_players(entity, callback) end
 
 --- Returns a list of [Tiles](https://docs.hubos.dev/client/lua-api/field-api/tile) for any tile the callback returned true for.
 ---@param callback fun(tile: Tile): boolean
@@ -2597,6 +2599,10 @@ function Field:notify_on_delete(target_id, observer_id, callback) end
 ---@param id EntityId
 ---@param callback fun(entity: Entity)
 function Field:callback_on_delete(id, callback) end
+
+--- Causes tiles in the column to return to their previous team as soon as possible, starting at the next frame. The transfer will be delayed by tile reservations in the column.
+---@param x number
+function Field:reclaim_column(x) end
 
 --- Returns the column of the tile.
 ---@return number
@@ -2686,6 +2692,10 @@ function Tile:team() end
 ---@param team Team
 ---@param direction? Direction
 function Tile:set_team(team, direction) end
+
+--- Returns [Team](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityset_teamteam)
+---@return Team
+function Tile:original_team() end
 
 --- Returns a [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction)
 ---@return Direction
