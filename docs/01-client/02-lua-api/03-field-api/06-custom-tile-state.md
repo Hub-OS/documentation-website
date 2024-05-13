@@ -6,9 +6,13 @@ See [Tile State Package Documentation](/client/packages#tile-states) for creatin
 
 Returns [Field](/client/lua-api/field-api/field)
 
-### `custom_tile_state.change_request_func = function(self, tile, tile_state): boolean`
+### `custom_tile_state.can_replace_func = function(self, tile, tile_state): boolean`
 
-Called when [tile:set_state()](/client/lua-api/field-api/tile#tileset_statetile_state) is called. Used to accept or deny the change.
+Called when [tile:set_state()](/client/lua-api/field-api/tile#tileset_statetile_state) or [tile:can_set_state()](/client/lua-api/field-api/tile#tilecan_set_statetile_state) is called. Used to accept or deny the change.
+
+### `custom_tile_state.on_replace_func = function(self, tile)`
+
+Called when [tile:set_state()](/client/lua-api/field-api/tile#tileset_statetile_state) is called and passes [custom_tile_state.can_replace_func](#custom_tile_statecan_replace_func--functionself-tile-tile_state-boolean).
 
 ### `custom_tile_state.on_update_func = function(self, tile)`
 

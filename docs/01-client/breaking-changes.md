@@ -6,6 +6,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 
 - Renamed `TileState.Hidden` to `TileState.Void`
 - Renamed `entity:tile_offset()` to `entity:movement_offset()`
+- Split `tile_state.change_request_func` into `tile_state.can_replace_func` and `tile_state.on_replace_func`
 
 ## 0.17
 
