@@ -32,6 +32,10 @@ Returns the TileState.
   - `TileState.Broken`
   - [TileState.[state_name]](/client/packages#tile-states)
 
+### `tile:can_set_state(tile_state)`
+
+Returns true if the currently applied tile state can be replaced with `tile_state`
+
 ### `tile:is_edge()`
 
 Returns true if the tile is one of the hidden padding tiles around the edge of the field.
