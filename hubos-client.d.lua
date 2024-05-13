@@ -123,8 +123,10 @@ Team = {
 AudioBehavior = {
 --- Audio will play regardless of other audio.
   Default = {},
---- Audio will not play if another instance of itself is playing with NoOverlap.
+--- Audio will not play if another instance of itself is playing with NoOverlap or LoopSection.
   NoOverlap = {},
+--- The sound will continue playing if it was already playing. If AudioBehavior.LoopSection was applied, it will stop looping at `end_sample`
+  EndLoop = {},
 }
 
 ---@enum Playback
@@ -561,8 +563,10 @@ ActionLockout = {}
 ---@field on_entity_enter_func fun(self: CustomTileState, entity: Entity)
 --- Called for every tile matching the state while time isn't frozen.
 ---@field on_update_func fun(self: CustomTileState, tile: Tile)
---- Called when [tile:set_state()](https://docs.hubos.dev/client/lua-api/field-api/tile#tileset_statetile_state) is called. Used to accept or deny the change.
----@field change_request_func fun(self: CustomTileState, tile: Tile, tile_state: TileState): boolean
+--- Called when [tile:set_state()](https://docs.hubos.dev/client/lua-api/field-api/tile#tileset_statetile_state) is called and passes [custom_tile_state.can_replace_func](https://docs.hubos.dev/client/lua-api/field-api/custom-tile-state#custom_tile_statecan_replace_func--functionself-tile-tile_state-boolean).
+---@field on_replace_func fun(self: CustomTileState, tile: Tile)
+--- Called when [tile:set_state()](https://docs.hubos.dev/client/lua-api/field-api/tile#tileset_statetile_state) or [tile:can_set_state()](https://docs.hubos.dev/client/lua-api/field-api/tile#tilecan_set_statetile_state) is called. Used to accept or deny the change.
+---@field can_replace_func fun(self: CustomTileState, tile: Tile, tile_state: TileState): boolean
 CustomTileState = {}
 
 --- Colors are tables with an `r`, `g`, `b`, and `a` key, with each value set to a 0-255 integer.
@@ -2097,6 +2101,16 @@ function Resources.play_audio(path, audio_behavior) end
 ---@param loops? boolean
 function Resources.play_music(path, loops) end
 
+--- Audio will play from the beginning (sample 0), looping back to `start_sample` when `end_sample` is reached.
+--- 
+--- Stops existing playback of the sound if it has `AudioBehavior.NoOverlap`.
+--- 
+--- Returns an AudioBehavior.
+---@param start_sample number
+---@param end_sample number
+---@return AudioBehavior
+function AudioBehavior.LoopSection(start_sample, end_sample) end
+
 --- Returns a new Animation instance.
 ---@param path? string
 ---@return Animation
@@ -2613,6 +2627,19 @@ function Tile:state() end
 ---   - [TileState.[state_name]](https://docs.hubos.dev/client/packages#tile-states)
 ---@param tile_state TileState
 function Tile:set_state(tile_state) end
+
+--- Returns true if the currently applied tile state can be replaced with `tile_state`
+---@param tile_state TileState
+---@return boolean
+function Tile:can_set_state(tile_state) end
+
+--- Returns a TileState, usually the same as [tile:state()](https://docs.hubos.dev/client/lua-api/field-api/tile#tilestate), unless [tile:set_visible_state()](https://docs.hubos.dev/client/lua-api/field-api/tile#tileset_visible_statetile_state) was called.
+---@return TileState
+function Tile:visible_state() end
+
+--- Overrides the visual for the tile to match a tile state, or set to nil to sync with [tile:state()](https://docs.hubos.dev/client/lua-api/field-api/tile#tilestate)
+---@param tile_state? TileState
+function Tile:set_visible_state(tile_state) end
 
 --- Returns true if the tile is one of the hidden padding tiles around the edge of the field.
 ---@return boolean
