@@ -56,13 +56,13 @@ Returns a list of entities for any entity the callback returned true for.
 
 Only [Spells](/client/lua-api/entity-api/spell) on the field and not deleted will be passed to the callback, excludes [Obstacles](/client/lua-api/entity-api/obstacle).
 
-### `field:find_nearest_characters(function(entity): boolean)`
+### `field:find_nearest_characters(entity, function(entity): boolean)`
 
 Returns a list of entities sorted by distance, for any entity the callback returned true for.
 
 Only [Characters](/client/lua-api/entity-api/character) on the field and not deleted will be passed to the callback, includes [Players](/client/lua-api/entity-api/player).
 
-### `field:find_nearest_players(function(entity): boolean)`
+### `field:find_nearest_players(entity, function(entity): boolean)`
 
 Returns a list of entities sorted by distance, for any entity the callback returned true for.
 
