@@ -36,6 +36,14 @@ Returns the TileState.
 
 Returns true if the currently applied tile state can be replaced with `tile_state`
 
+### `tile:visible_state()`
+
+Returns a TileState, usually the same as [tile:state()](#tilestate), unless [tile:set_visible_state()](#tileset_visible_statetile_state) was called.
+
+### `tile:set_visible_state(tile_state?)`
+
+Overrides the visual for the tile to match a tile state, or set to nil to sync with [tile:state()](#tilestate)
+
 ### `tile:is_edge()`
 
 Returns true if the tile is one of the hidden padding tiles around the edge of the field.
