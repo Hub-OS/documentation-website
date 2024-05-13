@@ -87,6 +87,10 @@ Returns [Team](/client/lua-api/entity-api/entity#entityset_teamteam)
 - `team`: [Team](/client/lua-api/entity-api/entity#entityset_teamteam)
 - `direction`: [Direction](/client/lua-api/field-api/direction) optional override for the duration of the team change.
 
+### `tile:original_team()`
+
+Returns [Team](/client/lua-api/entity-api/entity#entityset_teamteam)
+
 ### `tile:facing()`
 
 Returns a [Direction](/client/lua-api/field-api/direction)

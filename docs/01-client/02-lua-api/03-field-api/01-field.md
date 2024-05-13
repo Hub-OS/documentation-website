@@ -84,3 +84,7 @@ Deprecated. Use [entity:on_delete()](/client/lua-api/entity-api/entity#entityon_
 ### `field:callback_on_delete(id, function(entity))`
 
 Deprecated. Use [entity:on_delete()](/client/lua-api/entity-api/entity#entityon_deletefunctionentity) instead.
+
+### `field:reclaim_column(x)`
+
+Causes tiles in the column to return to their previous team as soon as possible, starting at the next frame. The transfer will be delayed by tile reservations in the column.
