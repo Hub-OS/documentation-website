@@ -27,7 +27,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "AudioBehavior", list: ["audio_behavior"] },
   { type: "Animation", list: ["animation"] },
   { type: "Playback", list: ["playback"] },
-  { type: "any", list: ["frame_data"] }, // todo: [number, number][]
+  { type: "[number, number][]", list: ["frame_data"] },
   { type: "Color", list: ["color", "color_a", "color_b"] },
   { type: "ColorMode", list: ["color_mode"] },
   { type: "TextStyle", list: ["text_style"] },
