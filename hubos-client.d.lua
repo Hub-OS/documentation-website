@@ -2205,7 +2205,7 @@ function Animation:states() end
 --- buster_animation:set_state("BUSTER", frame_data)
 --- ```
 ---@param state string
----@param frame_data? any
+---@param frame_data? [number, number][]
 function Animation:set_state(state, frame_data) end
 
 --- Returns true if the current animation frame has a point with this name.
@@ -3014,7 +3014,7 @@ function Action:create_step() end
 function Action:create_attachment(point_name) end
 
 --- See [animation:set_state()](https://docs.hubos.dev/client/lua-api/resource-api/animation#animationset_statestate-frame_data)
----@param frame_data any
+---@param frame_data [number, number][]
 function Action:override_animation_frames(frame_data) end
 
 --- Same as calling `action:owner():on_frame(frame_index, callback)` within [action.on_execute_func](https://docs.hubos.dev/client/lua-api/attack-api/action#actionon_execute_func--functionself-owner)
