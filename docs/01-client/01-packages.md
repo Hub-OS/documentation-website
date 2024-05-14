@@ -13,13 +13,13 @@ name = "Attack+1"
 description = "MegaBstr\nAttck +1"
 long_description = "" # optional
 preview_texture_path = "preview.png" # optional
-health_boost = 0 # optional
-attack_boost = 1 # optional
-rapid_boost = 0 # optional
-charge_boost = 0 # optional
-mega_boost = 0 # optional
-giga_boost = 0 # optional
-hand_size_boost = 0 # optional
+health_boost = 0 # optional, default is 0
+attack_boost = 1 # optional, default is 0
+rapid_boost = 0 # optional, default is 0
+charge_boost = 0 # optional, default is 0
+mega_boost = 0 # optional, default is 0
+giga_boost = 0 # optional, default is 0
+hand_size_boost = 0 # optional, default is 0
 
 # optional, list of strings, custom
 # some tags will be automatically added: "BLOCK", "FLAT_BLOCK"
@@ -47,7 +47,7 @@ shape = [
 # or when an augment on a grid is out of bounds
 # any package ids here must also be marked as a dependency
 byproducts = []
-prevent_byproducts = false # optional, prevents all blocks from creating byproducts
+prevent_byproducts = false # optional, defaults to false, prevents all blocks from creating byproducts
 
 # this section is optional, see the Battle section for an example
 [defines]
@@ -141,11 +141,11 @@ icon_texture_path = "icon.png"
 preview_texture_path = "preview.png"
 description = "Beast steals panels!" # optional, used in preview
 long_description = "Beast steals panels!" # optional, used in battle
-damage = 100 # optional
+damage = 100 # optional, defaults to 0
 # "none" | "fire" | "aqua" | "elec" | "wood" | "sword" |
 # "wind" | "cursor" | "summon" | "plus" | "break"
-element = "sword" # optional
-secondary_element = "none" # optional
+element = "sword" # optional, defaults to "none"
+secondary_element = "none" # optional, defaults to "none"
 codes = ['A', 'O', 'X']
 card_class = "giga" # optional, "standard" | "mega"| "giga" | "dark"
 regular_allowed = false # optional, defaults to true for "standard" cards
@@ -156,12 +156,12 @@ limit = 3 # optional, defaults to 5
 # "paralyze" | "flash" | "pierceguard" | "impact" | "drag" | "bubble" |
 # "nocounter" | "root" | "blind" | "confuse" | "pierceground"
 hit_flags = ["impact", "flinch", "flash"]
-can_boost = true # optional
-can_charge = true # optional
-time_freeze = true # optional
-skip_time_freeze_intro = false # optional
-prevent_freeze_counter = false # optional
-conceal = false # optional
+can_boost = true # optional, defaults to true
+can_charge = true # optional, defaults to true
+time_freeze = true # optional, defaults to false
+skip_time_freeze_intro = false # optional, defaults to false
+prevent_freeze_counter = false # optional, defaults to false
+conceal = false # optional, defaults to false
 tags = ["NAVI"] # optional, list of strings, custom
 
 # this section is optional, see the Battle section for an example
