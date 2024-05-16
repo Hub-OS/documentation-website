@@ -32,9 +32,15 @@ Returns a copy of the spell's [HitProps](/client/lua-api/attack-api/hit-props)
 
 Attack entities on the target tile, defaults to the spell's current tile.
 
+If this function is called on every frame by this spell, attacks queued for the same tile will be ignored after the first frame hits occur in.
+
+To allow a spell to hit multiple times on the same tile, calls to this function should be skipped for at least a frame, or a new spell should be spawned to perform the attack.
+
+See [SharedHitbox](#sharedhitbox) for a convenience spell to handle attacks.
+
 ### `spell:attack_tiles(tiles)`
 
-Attack entities on multiple tiles.
+Same as calling [spell:attack_tile(tile)](#spellattack_tiletile) for each tile.
 
 ### `spell.on_collision_func = function(self, entity)`
 
@@ -54,11 +60,13 @@ Returns a new [Entity](/client/lua-api/entity-api/entity) instance.
 
 ## SharedHitbox
 
-Adopts the parent spell's [HitProps](/client/lua-api/attack-api/hit-props) and [Team](/client/lua-api/entity-api/entity#entityset_teamteam), and attacks every frame until deleted.
+Adopts the parent spell's [HitProps](/client/lua-api/attack-api/hit-props) and [Team](/client/lua-api/entity-api/entity#entityset_teamteam). Attacks every frame until deleted.
 
 The SharedHitbox's `on_collision_func` and `on_attack_func` calls the parent spell's `on_collision_func` and `on_attack_func`.
 
-### `SharedHitbox.new(spell, duration)`
+### `SharedHitbox.new(spell, duration?)`
+
+- `duration`: The amount of frames this spell should exist for. If unset, it will require manual deletion.
 
 Creates a SharedHitbox.
 

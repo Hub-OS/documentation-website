@@ -117,7 +117,7 @@ Returns a Tile `count` many tiles in `direction`'s direction, or `nil`.
 
 ### `tile:attack_entities(spell)`
 
-Queues an attack to occur on this tile by this [Spell](/client/lua-api/entity-api/spell).
+Same as [spell:attack_tile(tile)](/client/lua-api/entity-api/spell#spellattack_tiletile)
 
 ### `tile:contains_entity(entity)`
 
