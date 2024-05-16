@@ -745,7 +745,7 @@ Living = {}
 --- Instance of [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity). All [Spell](https://docs.hubos.dev/client/lua-api/entity-api/spell) and [Living](https://docs.hubos.dev/client/lua-api/entity-api/living) functions are available as well.
 Obstacle = {}
 
---- Adopts the parent spell's [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props) and [Team](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityset_teamteam), and attacks every frame until deleted.
+--- Adopts the parent spell's [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props) and [Team](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityset_teamteam). Attacks every frame until deleted.
 --- 
 --- The SharedHitbox's `on_collision_func` and `on_attack_func` calls the parent spell's `on_collision_func` and `on_attack_func`.
 SharedHitbox = {}
@@ -1984,12 +1984,18 @@ function Entity:copy_hit_props() end
 function Entity:set_hit_props(hit_props) end
 
 --- Attack entities on the target tile, defaults to the spell's current tile.
+--- 
+--- If this function is called on every frame by this spell, attacks queued for the same tile will be ignored after the first frame hits occur in.
+--- 
+--- To allow a spell to hit multiple times on the same tile, calls to this function should be skipped for at least a frame, or a new spell should be spawned to perform the attack.
+--- 
+--- See [SharedHitbox](https://docs.hubos.dev/client/lua-api/entity-api/spell#sharedhitbox) for a convenience spell to handle attacks.
 ---
 --- Throws if the Entity doesn't pass [Spell.from()](https://docs.hubos.dev/client/lua-api/entity-api/spell)
 ---@param tile? Tile
 function Entity:attack_tile(tile) end
 
---- Attack entities on multiple tiles.
+--- Same as calling [spell:attack_tile(tile)](https://docs.hubos.dev/client/lua-api/entity-api/spell#spellattack_tiletile) for each tile.
 ---
 --- Throws if the Entity doesn't pass [Spell.from()](https://docs.hubos.dev/client/lua-api/entity-api/spell)
 ---@param tiles Tile[]
@@ -2001,11 +2007,13 @@ function Entity:attack_tiles(tiles) end
 ---@return Entity
 function Hitbox.new(team, damage) end
 
+--- - `duration`: The amount of frames this spell should exist for. If unset, it will require manual deletion.
+--- 
 --- Creates a SharedHitbox.
 --- 
 --- Returns a new [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) instance.
 ---@param spell Entity
----@param duration number
+---@param duration? number
 ---@return Entity
 function SharedHitbox.new(spell, duration) end
 
@@ -2723,7 +2731,7 @@ function Tile:set_highlight(highlight) end
 ---@return Tile|nil
 function Tile:get_tile(direction, distance) end
 
---- Queues an attack to occur on this tile by this [Spell](https://docs.hubos.dev/client/lua-api/entity-api/spell).
+--- Same as [spell:attack_tile(tile)](https://docs.hubos.dev/client/lua-api/entity-api/spell#spellattack_tiletile)
 ---@param spell Entity
 function Tile:attack_entities(spell) end
 
