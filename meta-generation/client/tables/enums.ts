@@ -8,6 +8,7 @@ const FLAT_ENUMS = {
     "Scene",
     "CardSelectOpen",
     "CardSelectClose",
+    "CardSelectComplete",
     "Nil",
   ],
   Direction: [

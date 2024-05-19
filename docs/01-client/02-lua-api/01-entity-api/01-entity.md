@@ -256,7 +256,8 @@ Same as `entity:animation():load(path)`
   - `Lifetime.Battle` after every entity has updated and battle is active as long as time is not frozen.
   - `Lifetime.Scene` near the end of every tick.
   - `Lifetime.CardSelectOpen` the frame where card select begins to open.
-  - `Lifetime.CardSelectClose` the frame where card select completely closes.
+  - `Lifetime.CardSelectClose` the frame where card select begins to close.
+  - `Lifetime.CardSelectComplete` the frame where all players have confirmed card select.
   - `Lifetime.Nil` never.
 
   Returns a [Component](#component)
