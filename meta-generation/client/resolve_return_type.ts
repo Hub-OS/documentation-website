@@ -3,6 +3,10 @@ import PRIMITIVES from "../shared/primitives";
 
 const COMPRESSED_RETURN_TYPES = [
   {
+    type: "Entity|Team|nil",
+    list: ["Returns an Entity, Team, or `nil`"],
+  },
+  {
     type: "Entity",
     list: ["Returns the entity passed"],
   },

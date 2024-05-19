@@ -35,6 +35,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "SpriteShaderEffect", list: ["sprite_shader_effect"] },
   { type: "SyncNode", list: ["sync_node"] },
   { type: "Team", list: ["team"] },
+  { type: "Team|Entity", list: ["team_or_entity"] },
   { type: "Movement", list: ["movement"] },
   { type: "Direction", list: ["direction", "direction_a", "direction_b"] },
   { type: "Drag", list: ["drag"] },

@@ -61,6 +61,16 @@ Returns a boolean.
 
 Same as `entity:team() == team`
 
+### `entity:owner()`
+
+Returns an Entity, Team, or `nil`
+
+### `entity:set_owner(team_or_entity?)`
+
+Marks a team or entity as the owner of this entity. If `team_or_entity` is unset the entity will be reverted to having no owner.
+
+If a team or entity has too many entities claimed, the oldest claimed entity will be deleted.
+
 ### `entity:get_tile(direction?, distance?)`
 
 - `direction`: [Direction](/client/lua-api/field-api/direction)
