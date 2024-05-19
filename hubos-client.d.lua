@@ -25,6 +25,7 @@ Lifetime = {
   Scene = {},
   CardSelectOpen = {},
   CardSelectClose = {},
+  CardSelectComplete = {},
   Nil = {},
 }
 
@@ -833,6 +834,16 @@ function Entity:set_team(team) end
 ---@return boolean
 function Entity:is_team(team) end
 
+--- Returns an Entity, Team, or `nil`
+---@return Entity|Team|nil
+function Entity:owner() end
+
+--- Marks a team or entity as the owner of this entity. If `team_or_entity` is unset the entity will be reverted to having no owner.
+--- 
+--- If a team or entity has too many entities claimed, the oldest claimed entity will be deleted.
+---@param team_or_entity? Team|Entity
+function Entity:set_owner(team_or_entity) end
+
 --- - `direction`: [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction)
 --- - `distance`: integer
 --- 
@@ -1028,7 +1039,8 @@ function Entity:load_animation(path) end
 ---   - `Lifetime.Battle` after every entity has updated and battle is active as long as time is not frozen.
 ---   - `Lifetime.Scene` near the end of every tick.
 ---   - `Lifetime.CardSelectOpen` the frame where card select begins to open.
----   - `Lifetime.CardSelectClose` the frame where card select completely closes.
+---   - `Lifetime.CardSelectClose` the frame where card select begins to close.
+---   - `Lifetime.CardSelectComplete` the frame where all players have confirmed card select.
 ---   - `Lifetime.Nil` never.
 --- 
 ---   Returns a [Component](https://docs.hubos.dev/client/lua-api/entity-api/entity#component)
