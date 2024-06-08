@@ -87,6 +87,12 @@ Returns the tile at the same position as the entity.
 
 Returns the [Field](/client/lua-api/field-api/field)
 
+### `entity:spawned()`
+
+Returns true if the entity has spawned.
+
+Usually set to true the frame after [field:spawn()](/client/lua-api/field-api/field#fieldspawnentity-tile) is called with this entity.
+
 ### `entity:hittable()`
 
 Returns true if the entity:

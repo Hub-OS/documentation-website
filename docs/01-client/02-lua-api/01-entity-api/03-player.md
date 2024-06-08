@@ -34,6 +34,24 @@ Sets the current animation state for the player's emotion.
 
 If the state doesn't exist, this does nothing.
 
+### `player:emotions_texture()`
+
+Returns a string.
+
+### `player:emotions_animation_path()`
+
+Returns a string.
+
+### `player:set_emotions_texture(path)`
+
+- `path`: file path relative to script file, use values returned from `Resources.load_texture()` for better performance.
+
+### `player:load_emotions_animation(path)`
+
+- `path`: file path relative to script file, use values returned from `Resources.load_texture()` for better performance.
+
+If the animation doesn't have a state matching the current emotion, it will reset the player's emotion to "DEFAULT"
+
 ### `player:input_has(input_query)`
 
 - `input_query`
@@ -385,6 +403,14 @@ Creates a button under the "Confirm" button in Card Select.
 Overrides the special button created on the Player and any [Augment](#augment).
 
 Returns [CardSelectButton](#cardselectbutton)
+
+### `player_form.on_select_func = function(self, player)`
+
+Called when the form is selected or staged, the player's emotions should be modified here.
+
+### `player_form.on_deselect_func = function(self, player)`
+
+Called when the form is deselected or unstaged, the player's emotions should be reverted here.
 
 ### `player_form.on_activate_func = function(self, player)`
 
