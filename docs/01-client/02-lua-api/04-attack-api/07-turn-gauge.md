@@ -29,3 +29,7 @@ Sets the total elapsed frames required to end a turn.
 ### `TurnGauge.reset_max_time()`
 
 Sets the total elapsed frames required to end a turn to the default (512).
+
+### `TurnGauge.complete_turn()`
+
+Ends the turn, causing Card Select to appear.
