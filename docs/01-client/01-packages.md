@@ -147,7 +147,7 @@ damage = 100 # optional, defaults to 0
 element = "sword" # optional, defaults to "none"
 secondary_element = "none" # optional, defaults to "none"
 codes = ['A', 'O', 'X']
-card_class = "giga" # optional, "standard" | "mega"| "giga" | "dark"
+card_class = "giga" # optional, "standard" | "mega"| "giga" | "dark" | "recipe"
 regular_allowed = false # optional, defaults to true for "standard" cards
 limit = 3 # optional, defaults to 5
 # optional, case insensitive
@@ -163,6 +163,16 @@ skip_time_freeze_intro = false # optional, defaults to false
 prevent_freeze_counter = false # optional, defaults to false
 conceal = false # optional, defaults to false
 tags = ["NAVI"] # optional, list of strings, custom
+# optional, used for PAs
+recipes = [
+  { id = "BattleNetwork6.Class01.Standard.001", codes = ["A", "B", "C"] },
+  { name = "Cannon", codes = ["A", "B", "C"] },
+  { mix = [
+    { id = "BattleNetwork6.Class01.Standard.070" },
+    { name = "WideSwrd" },
+    { id = "BattleNetwork6.Class01.Standard.072" }
+  ] },
+]
 
 # this section is optional, see the Battle section for an example
 [defines]
