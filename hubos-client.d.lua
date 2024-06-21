@@ -525,6 +525,10 @@ Augment = {}
 ---@field on_deactivate_func fun(self: PlayerForm, player: Entity)
 --- Called when the form is activated, the player's appearance should be modified here.
 ---@field on_activate_func fun(self: PlayerForm, player: Entity)
+--- Called when the form is deselected or unstaged, the player's emotions should be reverted here.
+---@field on_deselect_func fun(self: PlayerForm, player: Entity)
+--- Called when the form is selected or staged, the player's emotions should be modified here.
+---@field on_select_func fun(self: PlayerForm, player: Entity)
 PlayerForm = {}
 
 --- 
@@ -861,6 +865,12 @@ function Entity:current_tile() end
 --- Returns the [Field](https://docs.hubos.dev/client/lua-api/field-api/field)
 ---@return Field
 function Entity:field() end
+
+--- Returns true if the entity has spawned.
+--- 
+--- Usually set to true the frame after [field:spawn()](https://docs.hubos.dev/client/lua-api/field-api/field#fieldspawnentity-tile) is called with this entity.
+---@return boolean
+function Entity:spawned() end
 
 --- Returns true if the entity:
 --- 
@@ -1358,6 +1368,32 @@ function Entity:emotion() end
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param state string
 function Entity:set_emotion(state) end
+
+--- Returns a string.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return string
+function Entity:emotions_texture() end
+
+--- Returns a string.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return string
+function Entity:emotions_animation_path() end
+
+--- - `path`: file path relative to script file, use values returned from `Resources.load_texture()` for better performance.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param path string
+function Entity:set_emotions_texture(path) end
+
+--- - `path`: file path relative to script file, use values returned from `Resources.load_texture()` for better performance.
+--- 
+--- If the animation doesn't have a state matching the current emotion, it will reset the player's emotion to "DEFAULT"
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param path string
+function Entity:load_emotions_animation(path) end
 
 --- - `input_query`
 ---   - `Input.Held.*`
@@ -3202,6 +3238,9 @@ function TurnGauge.set_max_time(time) end
 
 --- Sets the total elapsed frames required to end a turn to the default (512).
 function TurnGauge.reset_max_time() end
+
+--- Ends the turn, causing Card Select to appear.
+function TurnGauge.complete_turn() end
 
 --- - `priority`
 ---   - `DefensePriority.Barrier`
