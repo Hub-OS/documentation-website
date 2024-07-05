@@ -28,7 +28,7 @@ Returns a new [Entity](/client/lua-api/entity-api/entity) instance.
 
 The entity will play an animation, automatically deletes on completion.
 
-### `Alert.poof(team?)`
+### `Alert.new(team?)`
 
 - `team`: [Team](/client/lua-api/entity-api/entity#entityset_teamteam)
 
