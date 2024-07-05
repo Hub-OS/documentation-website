@@ -2112,11 +2112,9 @@ function Poof.new(team) end
 --- Returns a new [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) instance.
 --- 
 --- The entity will play an animation, automatically deletes on completion.
----
---- Throws if the Entity doesn't pass [Alert.from()](https://docs.hubos.dev/client/lua-api/entity-api/alert)
 ---@param team? Team
 ---@return Entity
-function Entity.poof(team) end
+function Alert.new(team) end
 
 --- - `path`: file path relative to script file
 --- 
