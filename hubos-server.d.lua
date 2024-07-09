@@ -686,6 +686,31 @@ function Net.message_player(player_id, message, mug_texture_path, mug_animation_
 ---@param textbox_options? Net.TextboxOptions
 function Net.message_player(player_id, message, textbox_options) end
 
+--- - `message`: `string`
+--- - `close_delay`: `number` the duration to wait after the text finishes animating to automatically move on.
+--- 
+--- Displays a textbox with the message and mug.
+--- 
+--- See [textbox_response](https://docs.hubos.dev/server/lua-api/events#textbox_response) or the [async](https://docs.hubos.dev/server/lua-api/async#asyncmessage_player_autoplayer_id-message-close_delay-mug_texture_path-mug_animation_path) version of this function for handling responses.
+---@param player_id Net.ActorId
+---@param message string
+---@param close_delay undefined
+---@param mug_texture_path? string
+---@param mug_animation_path? string
+function Net.message_player_auto(player_id, message, close_delay, mug_texture_path, mug_animation_path) end
+
+--- - `message`: `string`
+--- - `close_delay`: `number` the duration to wait after the text finishes animating to automatically move on.
+--- - `textbox_options`: [Net.TextboxOptions](https://docs.hubos.dev/server/lua-api/widgets#nettextboxoptions)
+--- 
+--- Displays a textbox with the message and mug.
+--- 
+--- See [textbox_response](https://docs.hubos.dev/server/lua-api/events#textbox_response) or the [async](https://docs.hubos.dev/server/lua-api/async#asyncmessage_player_autoplayer_id-message-close_delay-textbox_options) version of this function for handling responses.
+---@param player_id Net.ActorId
+---@param message string
+---@param textbox_options? Net.TextboxOptions
+function Net.message_player_auto(player_id, message, textbox_options) end
+
 --- - `question`: `string`
 --- 
 --- Displays a textbox with a Yes / No input after the message.
@@ -1679,6 +1704,25 @@ function Async.message_player(player_id, message, mug_texture_path, mug_animatio
 ---@param textbox_options? Net.TextboxOptions
 ---@return Net.Promise<0|nil>
 function Async.message_player(player_id, message, textbox_options) end
+
+--- Returns a promise that resolves to `0` or `nil` for disconnected.
+---@param player_id Net.ActorId
+---@param message string
+---@param close_delay undefined
+---@param mug_texture_path? string
+---@param mug_animation_path? string
+---@return Net.Promise<0|nil>
+function Async.message_player_auto(player_id, message, close_delay, mug_texture_path, mug_animation_path) end
+
+--- - `textbox_options`: [Net.TextboxOptions](https://docs.hubos.dev/server/lua-api/widgets#nettextboxoptions)
+--- 
+--- Returns a promise that resolves to `0` or `nil` for disconnected.
+---@param player_id Net.ActorId
+---@param message string
+---@param close_delay undefined
+---@param textbox_options? Net.TextboxOptions
+---@return Net.Promise<0|nil>
+function Async.message_player_auto(player_id, message, close_delay, textbox_options) end
 
 --- Returns a promise that resolves to `1` for yes, `0` for no, and `nil` for disconnected.
 ---@param player_id Net.ActorId
