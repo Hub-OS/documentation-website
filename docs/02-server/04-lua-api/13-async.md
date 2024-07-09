@@ -157,6 +157,16 @@ Returns a promise that resolves to `0` or `nil` for disconnected.
 
 Returns a promise that resolves to `0` or `nil` for disconnected.
 
+### `Async.message_player_auto(player_id, message, close_delay, mug_texture_path?, mug_animation_path?)`
+
+Returns a promise that resolves to `0` or `nil` for disconnected.
+
+### `Async.message_player_auto(player_id, message, close_delay, textbox_options?)`
+
+- `textbox_options`: [Net.TextboxOptions](/server/lua-api/widgets#nettextboxoptions)
+
+Returns a promise that resolves to `0` or `nil` for disconnected.
+
 ### `Async.question_player(player_id, question, mug_texture_path?, mug_animation_path?)`
 
 Returns a promise that resolves to `1` for yes, `0` for no, and `nil` for disconnected.

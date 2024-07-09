@@ -37,6 +37,25 @@ Displays a textbox with the message and mug.
 
 See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncmessage_playerplayer_id-message-textbox_options) version of this function for handling responses.
 
+### `Net.message_player_auto(player_id, message, close_delay, mug_texture_path?, mug_animation_path?)`
+
+- `message`: `string`
+- `close_delay`: `number` the duration to wait after the text finishes animating to automatically move on.
+
+Displays a textbox with the message and mug.
+
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncmessage_player_autoplayer_id-message-close_delay-mug_texture_path-mug_animation_path) version of this function for handling responses.
+
+### `Net.message_player_auto(player_id, message, textbox_options?)`
+
+- `message`: `string`
+- `close_delay`: `number` the duration to wait after the text finishes animating to automatically move on.
+- `textbox_options`: [Net.TextboxOptions](#nettextboxoptions)
+
+Displays a textbox with the message and mug.
+
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncmessage_player_autoplayer_id-message-close_delay-textbox_options) version of this function for handling responses.
+
 ### `Net.question_player(player_id, question, mug_texture_path?, mug_animation_path?)`
 
 - `question`: `string`
