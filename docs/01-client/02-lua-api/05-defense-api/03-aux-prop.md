@@ -374,3 +374,9 @@ entity:add_aux_prop(aux_prop)
   - Greater Than `>`
 - `Compare.GE`
   - Greater Than Equal `>=`
+
+## StandardEnemyAux
+
+### `StandardEnemyAux.new()`
+
+Returns an AuxProp that provides `Hit.Flash` immunity.

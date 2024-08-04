@@ -18,7 +18,7 @@ export const ENTITY_SUBCATEGORIES = [
 const STATIC_TABLES = [
   ...ENTITY_SUBCATEGORIES,
   "Resources",
-  "DefenseVirusBody",
+  "StandardEnemyAux",
   "TurnGauge",
   "Buster",
 ];
