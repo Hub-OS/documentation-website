@@ -187,6 +187,22 @@ Other values of `progress` will linearly interpolate each component between `col
 
 Returns a color.
 
+### `color.r`
+
+The red component of the color. Stored as a number in the range [0, 255].
+
+### `color.g`
+
+The green component of the color. Stored as a number in the range [0, 255].
+
+### `color.b`
+
+The blue component of the color. Stored as a number in the range [0, 255].
+
+### `color.a`
+
+The alpha or transparency component of the color. Stored as a number in the range [0, 255].
+
 ## TextStyle
 
 ### `TextStyle.new(font_name, texture_path?, animation_path?)`
