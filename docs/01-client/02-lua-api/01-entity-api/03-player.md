@@ -101,6 +101,14 @@ When `true`, the player will slide to tiles and continue using the `PLAYER_IDLE`
 
 When `false`, the player will teleport to tiles and animate with the `PLAYER_MOVE` state.
 
+### `player:player_move_state()`
+
+Returns a string, the modified `PLAYER_MOVE` animation state internally used by the engine.
+
+### `player:player_hit_state()`
+
+Returns a string, the modified `PLAYER_HIT` animation state internally used by the engine.
+
 ### `player:queue_default_player_movement(tile)`
 
 - `tile`: [Tile](/client/lua-api/field-api/tile)

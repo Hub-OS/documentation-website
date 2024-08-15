@@ -68,3 +68,7 @@ Returns true if the movement is processed as a teleport.
 ### `movement.on_begin_func = function()`
 
 Called when the movement begins processing. If the movement is cancelled before executing it won't be called.
+
+### `movement.on_end_func = function()`
+
+Called when the movement completes or is cancelled.
