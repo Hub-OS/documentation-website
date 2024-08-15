@@ -578,11 +578,21 @@ CustomTileState = {}
 --- 
 --- There's a global table named `Color` with helpers for making new color tables.
 ---@class Color
+--- The alpha or transparency component of the color. Stored as a number in the range [0, 255].
+---@field a number
+--- The blue component of the color. Stored as a number in the range [0, 255].
+---@field b number
+--- The green component of the color. Stored as a number in the range [0, 255].
+---@field g number
+--- The red component of the color. Stored as a number in the range [0, 255].
+---@field r number
 
 Color = {}
 
 --- See [entity:queue_movement](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityqueue_movementmovement)
 ---@class Movement
+--- Called when the movement completes or is cancelled.
+---@field on_end_func fun()
 --- Called when the movement begins processing. If the movement is cancelled before executing it won't be called.
 ---@field on_begin_func fun()
 --- The tile where the movement will complete.
@@ -770,7 +780,7 @@ TrapAlert = {}
 Resources = {}
 
 --- 
-DefenseVirusBody = {}
+StandardEnemyAux = {}
 
 --- 
 TurnGauge = {}
@@ -1458,6 +1468,18 @@ function Entity:slide_when_moving() end
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param bool? boolean
 function Entity:set_slide_when_moving(bool) end
+
+--- Returns a string, the modified `PLAYER_MOVE` animation state internally used by the engine.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return string
+function Entity:player_move_state() end
+
+--- Returns a string, the modified `PLAYER_HIT` animation state internally used by the engine.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return string
+function Entity:player_hit_state() end
 
 --- - `tile`: [Tile](https://docs.hubos.dev/client/lua-api/field-api/tile)
 --- 
@@ -3263,12 +3285,6 @@ function DefenseRule.new(defense_priority, defense_order) end
 ---@return boolean
 function DefenseRule:replaced() end
 
---- Returns a DefenseRule with `DefensePriority.Body` and `DefenseOrder.CollisionOnly`.
---- 
---- Filters `Hit.Flinch` and `Hit.Flash` flags during status filtering.
----@return DefenseRule
-function DefenseVirusBody.new() end
-
 --- Prevents damage and statuses from applying to the defending entity.
 function DefenseJudge:block_damage() end
 
@@ -3616,3 +3632,7 @@ function AuxProp:drain_health(health) end
 ---@param health number
 ---@return AuxProp
 function AuxProp:recover_health(health) end
+
+--- Returns an AuxProp that provides `Hit.Flash` immunity.
+---@return AuxProp
+function StandardEnemyAux.new() end
