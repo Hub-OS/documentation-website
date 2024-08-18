@@ -77,6 +77,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "durationInSeconds",
       "strength",
       "character_limit",
+      "close_delay",
     ],
   },
   {

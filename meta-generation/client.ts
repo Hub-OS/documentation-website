@@ -56,7 +56,7 @@ function buildMetaFile() {
   let output = [
     "---@meta",
     "-- https://luals.github.io/wiki/annotations/",
-    "---@diagnostic disable: missing-return, unused-local",
+    "---@diagnostic disable: missing-return, unused-local, inject-field",
     "",
     "---@type string",
     "_folder_path = nil",
