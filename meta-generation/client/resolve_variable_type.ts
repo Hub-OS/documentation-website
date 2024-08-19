@@ -53,7 +53,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "DefenseRule", list: ["defense_rule"] },
   { type: "DefensePriority", list: ["defense_priority"] },
   { type: "DefenseOrder", list: ["defense_order"] },
-  { type: "DefenseJudge", list: ["judge"] },
+  { type: "Defense", list: ["defense"] },
   { type: "IntangibleRule", list: ["intangible_rule"] },
   { type: "AuxProp", list: ["aux_prop"] },
   { type: "Compare", list: ["compare"] },

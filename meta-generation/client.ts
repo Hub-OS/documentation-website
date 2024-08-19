@@ -278,8 +278,6 @@ function resolveTableName(heading: string) {
     if (!is_constructor) {
       return "Entity";
     }
-  } else if (table_name == "Judge") {
-    return "DefenseJudge";
   } else if (table_name == "Button") {
     return "CardSelectButton";
   }

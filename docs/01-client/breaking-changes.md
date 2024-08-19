@@ -2,6 +2,13 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.25
+
+- `blocks_flags` and `blocked_by` fields in statuses, replaced by `mutual_exclusions`
+- Renamed `defense_rule.can_block_func` to `defense_rule.defense_func`
+- Renamed `defense_rule.filter_statuses_func` to `defense_rule.filter_func`
+- Renamed `DefenseJudge` to `Defense`
+
 ## 0.20
 
 - Renamed `TileState.Hidden` to `TileState.Void`

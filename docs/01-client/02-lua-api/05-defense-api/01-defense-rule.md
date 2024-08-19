@@ -27,13 +27,13 @@ Returns true if a DefenseRule with the same priority replaced this rule.
 
 Called when a DefenseRule with the same priority replaced this rule.
 
-### `defense_rule.can_block_func = function(judge, attacker, defender, hit_props)`
+### `defense_rule.can_block_func = function(defense, attacker, defender, hit_props)`
 
 If the defense order is `DefenseOrder.Always`, this function will be called on every hit.
 
 If the defense order is `DefenseOrder.CollisionOnly`, this function will be called after intangibility is determined to not block the attack.
 
-- `judge`: [DefenseJudge](#defensejudge)
+- `defense`: [Defense](#defense)
 - `attacker`: [Entity](/client/lua-api/entity-api/entity)
 - `defender`: [Entity](/client/lua-api/entity-api/entity)
 - `hit_props`: [HitProps](/client/lua-api/attack-api/hit-props)
@@ -46,24 +46,24 @@ Should return [HitProps](/client/lua-api/attack-api/hit-props)
 
 The return value replaces the HitProps applied to the entity.
 
-## DefenseJudge
+## Defense
 
 Created for each attack resolution and passed through DefenseRule callbacks.
 
-### `judge:block_damage()`
+### `defense:block_damage()`
 
 Prevents damage and statuses from applying to the defending entity.
 
-### `judge:block_impact()`
+### `defense:block_impact()`
 
 Used to mark `Hit.Impact` as handled / retaliated.
 
 Does not strip `Hit.Impact`.
 
-### `judge:damage_blocked()`
+### `defense:damage_blocked()`
 
-Returns true if `judge:block_damage()` was called.
+Returns true if `defense:block_damage()` was called.
 
-### `judge:impact_blocked()`
+### `defense:impact_blocked()`
 
-Returns true if `judge:block_impact()` was called.
+Returns true if `defense:block_impact()` was called.
