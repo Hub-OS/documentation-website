@@ -44,6 +44,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "TileState", list: ["tile_state"] },
   { type: "Highlight", list: ["highlight"] },
   { type: "HitProps", list: ["hit_props"] },
+  { type: "Hit", list: ["hit_flag", "flags"] },
   { type: "DeckCard", list: ["deck_card"] },
   { type: "CardProperties", list: ["card_properties", "card"] },
   { type: "CardClass", list: ["card_class"] },
@@ -84,7 +85,6 @@ const COMPRESSED_VARIABLE_TYPES = [
     list: [
       "hit_weaknesses",
       "distance",
-      "hit_flag", // todo
       "hit_flags", // todo
       "flags", // todo
       "index",
