@@ -74,7 +74,7 @@ Context obtained by [entity:context()](/client/lua-api/entity-api/entity#entityc
 ### `Hit.duration_for(hit_flag, level)`
 
 -`level`: Starts at level 1, clamps to valid (defined) duration levels.
-Durations are specified in [Status Packages](/client/lua-api/packages#statuses)
+Durations are specified in [Status Packages](/client/packages#statuses)
 
 Returns the duration in frames for a status effect at a specific level, or `1` if no durations are specified.
 

@@ -73,7 +73,7 @@ Any of the values below:
 
 A table that maps frame durations for status hit flags.
 
-See [Hit.duration_for()](/client.lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
+See [Hit.duration_for()](/client/lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
 
 ### `card_properties.can_boost`
 
