@@ -150,12 +150,15 @@ codes = ['A', 'O', 'X']
 card_class = "giga" # optional, "standard" | "mega"| "giga" | "dark" | "recipe"
 regular_allowed = false # optional, defaults to true for "standard" cards
 limit = 3 # optional, defaults to 5
-# optional, case insensitive
-# valid values:
-# "retainintangible" | "freeze" | "pierceinvis" | "flinch" | "shake" |
-# "paralyze" | "flash" | "pierceguard" | "impact" | "drag" | "bubble" |
-# "nocounter" | "root" | "blind" | "confuse" | "pierceground"
-hit_flags = ["impact", "flinch", "flash"]
+# optional, case sensitive
+# for valid values, see: https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags
+hit_flags = ["Impact", "Flinch", "Flash"]
+# optional, defaults to a duration matching level 1 for all statuses
+status_durations = [
+  { flag_name = "Flash", level = 1 },
+  # or
+  { flag_name = "Flash", duration = 300 }
+]
 can_boost = true # optional, defaults to true
 can_charge = true # optional, defaults to true
 time_freeze = true # optional, defaults to false
@@ -260,8 +263,7 @@ long_description = "" # optional
 icon_texture_path = "icon.png" # 12x12 optional
 preview_texture_path = "preview.png" # optional
 flag_name = "Bubble" # register Hit.Bubble, up to 64 hit flags can exist
-blocks_flags = ["Freeze"] # prevents these other statuses from existing on an entity when self is applied
-blocked_by = []  # prevents self from existing on an entity when these other statuses are applied
+mutual_exclusions = ["Freeze"] # prevents conflicting statuses from applying, prioritizes the last applied status
 blocks_actions = true # prevents the player from using Actions and animating
 blocks_mobility = true # prevents the player from moving
 durations = [90] # a list of durations for each supported level of the status

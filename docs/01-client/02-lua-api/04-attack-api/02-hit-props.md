@@ -47,6 +47,12 @@ Any of the values below, or combined using bitwise or (`|`)
 - `Hit.Confuse` applies confusion status on hit.
 - [Hit.[flag_name]](/client/packages#statuses)
 
+### `hit_props.status_durations`
+
+A table that maps frame durations for status hit flags.
+
+See [Hit.duration_for()](#hitduration_forhit_flag-level)
+
 ### `hit_props.element`
 
 An [Element](/client/lua-api/attack-api/hit-props#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
@@ -62,6 +68,15 @@ An [Element](/client/lua-api/attack-api/hit-props#element). If element or second
 ### `hit_props.context`
 
 Context obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext)
+
+## Hit
+
+### `Hit.duration_for(hit_flag, level)`
+
+-`level`: Starts at level 1, clamps to valid (defined) duration levels.
+Durations are specified in [Status Packages](/client/lua-api/packages#statuses)
+
+Returns the duration in frames for a status effect at a specific level, or `1` if no durations are specified.
 
 ## Element
 

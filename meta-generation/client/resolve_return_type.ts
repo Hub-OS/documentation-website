@@ -97,6 +97,7 @@ const COMPRESSED_RETURN_TYPES = [
       "Returns the movement's animation progress",
       "Returns the entity's current health.",
       "Returns the entity's max health.",
+      "Returns the duration in frames",
     ],
   },
   {

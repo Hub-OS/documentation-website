@@ -69,6 +69,12 @@ Any of the values below:
 
 [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags), influences generated [HitProps](/client/lua-api/attack-api/hit-props)
 
+### `card_properties.status_durations`
+
+A table that maps frame durations for status hit flags.
+
+See [Hit.duration_for()](/client.lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
+
 ### `card_properties.can_boost`
 
 Boolean or nil, used by other mods for conditional behavior.

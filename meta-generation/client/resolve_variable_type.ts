@@ -57,6 +57,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "IntangibleRule", list: ["intangible_rule"] },
   { type: "AuxProp", list: ["aux_prop"] },
   { type: "Compare", list: ["compare"] },
+  { type: "table<Hit, number>", list: ["status_durations"] },
   {
     type: "boolean",
     list: [
@@ -110,6 +111,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "recover",
       "size",
       "slot_count",
+      "level",
       "level_increment",
       "increment",
       "increase",
