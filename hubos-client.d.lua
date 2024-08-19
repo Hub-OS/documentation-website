@@ -1,6 +1,6 @@
 ---@meta
 -- https://luals.github.io/wiki/annotations/
----@diagnostic disable: missing-return, unused-local
+---@diagnostic disable: missing-return, unused-local, inject-field
 
 ---@type string
 _folder_path = nil
@@ -188,6 +188,7 @@ DefenseOrder = {
   CollisionOnly = {},
 }
 
+--- 
 ---@enum Hit
 Hit = {
   RetainIntangible = 0,
@@ -363,14 +364,18 @@ Action = {}
 --- 
 --- If the defense order is `DefenseOrder.CollisionOnly`, this function will be called after intangibility is determined to not block the attack.
 --- 
---- - `judge`: [DefenseJudge](https://docs.hubos.dev/client/lua-api/defense-api/defense-rule#defensejudge)
+--- - `defense`: [Defense](https://docs.hubos.dev/client/lua-api/defense-api/defense-rule#defense)
 --- - `attacker`: [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity)
 --- - `defender`: [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity)
 --- - `hit_props`: [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
----@field can_block_func fun(judge: DefenseJudge, attacker: Entity, defender: Entity, hit_props: HitProps)
+---@field can_block_func fun(defense: Defense, attacker: Entity, defender: Entity, hit_props: HitProps)
 --- Called when a DefenseRule with the same priority replaced this rule.
 ---@field on_replace_func fun()
 DefenseRule = {}
+
+--- Created for each attack resolution and passed through DefenseRule callbacks.
+---@class Defense
+Defense = {}
 
 --- See [living:set_intangible()](https://docs.hubos.dev/client/lua-api/entity-api/living#livingset_intangibleintangible-intangible_rule)
 ---@class IntangibleRule
@@ -395,10 +400,6 @@ IntangibleRule = {}
 --- AuxProps can only be tied to a single entity and can not be updated once bound. To update an AuxProp it must be removed and added again.
 ---@class AuxProp
 AuxProp = {}
-
---- Created for each attack resolution and passed through DefenseRule callbacks.
----@class DefenseJudge
-DefenseJudge = {}
 
 --- See [Status Package Documentation](https://docs.hubos.dev/client/packages#statuses) for creating new statuses.
 ---@class Status
@@ -633,6 +634,10 @@ Drag.None = nil
 ---@field secondary_element Element
 --- An [Element](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
 ---@field element Element
+--- A table that maps frame durations for status hit flags.
+--- 
+--- See [Hit.duration_for()](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
+---@field status_durations table<Hit, number>
 --- Any of the values below, or combined using bitwise or (`|`)
 --- 
 --- - `Hit.None`
@@ -685,6 +690,10 @@ DeckCard = {}
 ---@field can_charge boolean
 --- Boolean or nil, used by other mods for conditional behavior.
 ---@field can_boost boolean
+--- A table that maps frame durations for status hit flags.
+--- 
+--- See [Hit.duration_for()](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
+---@field status_durations table<Hit, number>
 --- [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags), influences generated [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 ---@field hit_flags number
 --- Any of the values below:
@@ -3202,6 +3211,15 @@ function HitProps.new(damage, flags, element, context, drag) end
 ---@return HitProps
 function HitProps.from_card(card_properties, context, drag) end
 
+--- -`level`: Starts at level 1, clamps to valid (defined) duration levels.
+--- Durations are specified in [Status Packages](https://docs.hubos.dev/client/packages#statuses)
+--- 
+--- Returns the duration in frames for a status effect at a specific level, or `1` if no durations are specified.
+---@param hit_flag number
+---@param level number
+---@return number
+function Hit.duration_for(hit_flag, level) end
+
 --- Returns a new Drag instance.
 ---@param direction? Direction
 ---@param distance? number
@@ -3286,20 +3304,20 @@ function DefenseRule.new(defense_priority, defense_order) end
 function DefenseRule:replaced() end
 
 --- Prevents damage and statuses from applying to the defending entity.
-function DefenseJudge:block_damage() end
+function Defense:block_damage() end
 
 --- Used to mark `Hit.Impact` as handled / retaliated.
 --- 
 --- Does not strip `Hit.Impact`.
-function DefenseJudge:block_impact() end
+function Defense:block_impact() end
 
---- Returns true if `judge:block_damage()` was called.
+--- Returns true if `defense:block_damage()` was called.
 ---@return boolean
-function DefenseJudge:damage_blocked() end
+function Defense:damage_blocked() end
 
---- Returns true if `judge:block_impact()` was called.
+--- Returns true if `defense:block_impact()` was called.
 ---@return boolean
-function DefenseJudge:impact_blocked() end
+function Defense:impact_blocked() end
 
 --- Returns a new IntangibleRule.
 ---@return IntangibleRule
