@@ -13,20 +13,20 @@ _folder_path = nil
 
 ---@enum Shadow
 Shadow = {
-  None = {},
-  Small = {},
-  Big = {},
+  None = 0,
+  Small = 0,
+  Big = 0,
 }
 
 ---@enum Lifetime
 Lifetime = {
-  Local = {},
-  Battle = {},
-  Scene = {},
-  CardSelectOpen = {},
-  CardSelectClose = {},
-  CardSelectComplete = {},
-  Nil = {},
+  Local = 0,
+  Battle = 0,
+  Scene = 0,
+  CardSelectOpen = 0,
+  CardSelectClose = 0,
+  CardSelectComplete = 0,
+  Nil = 0,
 }
 
 --- - `Direction.None`
@@ -40,15 +40,15 @@ Lifetime = {
 --- - `Direction.DownRight`
 ---@enum Direction
 Direction = {
-  None = {},
-  Up = {},
-  Left = {},
-  Down = {},
-  Right = {},
-  UpLeft = {},
-  UpRight = {},
-  DownLeft = {},
-  DownRight = {},
+  None = 0,
+  Up = 0,
+  Left = 0,
+  Down = 0,
+  Right = 0,
+  UpLeft = 0,
+  UpRight = 0,
+  DownLeft = 0,
+  DownRight = 0,
 }
 
 --- - `Element.None`
@@ -64,91 +64,91 @@ Direction = {
 --- - `Element.Break`
 ---@enum Element
 Element = {
-  None = {},
-  Fire = {},
-  Aqua = {},
-  Elec = {},
-  Wood = {},
-  Sword = {},
-  Wind = {},
-  Cursor = {},
-  Summon = {},
-  Plus = {},
-  Break = {},
+  None = 0,
+  Fire = 0,
+  Aqua = 0,
+  Elec = 0,
+  Wood = 0,
+  Sword = 0,
+  Wind = 0,
+  Cursor = 0,
+  Summon = 0,
+  Plus = 0,
+  Break = 0,
 }
 
 ---@enum Rank
 Rank = {
-  V1 = {},
-  V2 = {},
-  V3 = {},
-  V4 = {},
-  V5 = {},
-  SP = {},
-  EX = {},
-  Rare1 = {},
-  Rare2 = {},
-  NM = {},
-  RV = {},
-  DS = {},
-  Alpha = {},
-  Beta = {},
-  Omega = {},
-  Sigma = {},
+  V1 = 0,
+  V2 = 0,
+  V3 = 0,
+  V4 = 0,
+  V5 = 0,
+  SP = 0,
+  EX = 0,
+  Rare1 = 0,
+  Rare2 = 0,
+  NM = 0,
+  RV = 0,
+  DS = 0,
+  Alpha = 0,
+  Beta = 0,
+  Omega = 0,
+  Sigma = 0,
 }
 
 ---@enum Highlight
 Highlight = {
-  None = {},
-  Flash = {},
-  Solid = {},
+  None = 0,
+  Flash = 0,
+  Solid = 0,
 }
 
 ---@enum CardClass
 CardClass = {
-  Standard = {},
-  Mega = {},
-  Giga = {},
-  Dark = {},
+  Standard = 0,
+  Mega = 0,
+  Giga = 0,
+  Dark = 0,
 }
 
 ---@enum Team
 Team = {
-  Other = {},
-  Red = {},
-  Blue = {},
+  Other = 0,
+  Red = 0,
+  Blue = 0,
 }
 
 --- 
 ---@enum AudioBehavior
 AudioBehavior = {
 --- Audio will play regardless of other audio.
-  Default = {},
+  Default = 0,
 --- Audio will not play if another instance of itself is playing with NoOverlap or LoopSection.
-  NoOverlap = {},
+  NoOverlap = 0,
 --- The sound will continue playing if it was already playing. If AudioBehavior.LoopSection was applied, it will stop looping at `end_sample`
-  EndLoop = {},
+  EndLoop = 0,
 }
 
 ---@enum Playback
 Playback = {
-  Once = {},
-  Loop = {},
-  Bounce = {},
-  Reverse = {},
+  Once = 0,
+  Loop = 0,
+  Bounce = 0,
+  Reverse = 0,
 }
 
 ---@enum ColorMode
 ColorMode = {
-  Additive = {},
-  Multiply = {},
+  Additive = 0,
+  Multiply = 0,
 }
 
 ---@enum SpriteShaderEffect
 SpriteShaderEffect = {
-  None = {},
-  Grayscale = {},
-  Pixelate = {},
+  None = 0,
+  Grayscale = 0,
+  Pixelate = 0,
 }
 
 --- - `Compare.LT`
@@ -165,61 +165,60 @@ SpriteShaderEffect = {
 ---   - Greater Than Equal `>=`
 ---@enum Compare
 Compare = {
-  LT = {},
-  LE = {},
-  EQ = {},
-  NE = {},
-  GT = {},
-  GE = {},
+  LT = 0,
+  LE = 0,
+  EQ = 0,
+  NE = 0,
+  GT = 0,
+  GE = 0,
 }
 
 ---@enum DefensePriority
 DefensePriority = {
-  Barrier = {},
-  Body = {},
-  Action = {},
-  Trap = {},
-  Last = {},
+  Barrier = 0,
+  Body = 0,
+  Action = 0,
+  Trap = 0,
+  Last = 0,
 }
 
 ---@enum DefenseOrder
 DefenseOrder = {
-  Always = {},
-  CollisionOnly = {},
+  Always = 0,
+  CollisionOnly = 0,
 }
 
 --- 
 ---@enum Hit
-Hit = {
-  RetainIntangible = 0,
-  NoCounter = 0,
-  Drag = 0,
-  Impact = 0,
-  Flinch = 0,
-  Flash = 0,
-  Shake = 0,
-  PierceInvis = 0,
-  PierceGuard = 0,
-  PierceGround = 0,
-  Freeze = 0,
-  Paralyze = 0,
-  Root = 0,
-  Blind = 0,
-  Confuse = 0,
-}
+---@type { [string]: Hit }
+Hit = {}
+Hit.RetainIntangible = Hit._
+Hit.NoCounter = Hit._
+Hit.Drag = Hit._
+Hit.Impact = Hit._
+Hit.Flinch = Hit._
+Hit.Flash = Hit._
+Hit.Shake = Hit._
+Hit.PierceInvis = Hit._
+Hit.PierceGuard = Hit._
+Hit.PierceGround = Hit._
+Hit.Freeze = Hit._
+Hit.Paralyze = Hit._
+Hit.Root = Hit._
+Hit.Blind = Hit._
+Hit.Confuse = Hit._
 
----@type { [string]: {} }
 ---@enum TileState
-TileState = {
-  Void = {},
-  Normal = {},
-  PermaHole = {},
-  Cracked = {},
-  Broken = {},
-}
+---@type { [string]: TileState }
+TileState = {}
+TileState.Void = TileState._
+TileState.Normal = TileState._
+TileState.PermaHole = TileState._
+TileState.Cracked = TileState._
+TileState.Broken = TileState._
 
 ---@enum Input
-local _Input = { _ = {} }
+local _Input = { _ = 0 }
 
 Input = {
   Held = {
@@ -1299,14 +1298,14 @@ function Entity:remove_aux_prop(aux_prop) end
 --- Queues a status update. If the status is already applied, the remaining time will be updated to use the longer duration.
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
----@param hit_flag number
+---@param hit_flag Hit
 ---@param duration number
 function Entity:apply_status(hit_flag, duration) end
 
 --- - `hit_flag` a single hit flag, see [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
----@param hit_flag number
+---@param hit_flag Hit
 function Entity:remove_status(hit_flag) end
 
 --- - `hit_flag` a single hit flag, see [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
@@ -1314,7 +1313,7 @@ function Entity:remove_status(hit_flag) end
 --- Returns a number representing the amount of battle frames until the status wears off.
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
----@param hit_flag number
+---@param hit_flag Hit
 ---@return number
 function Entity:remaining_status_time(hit_flag) end
 
@@ -1324,7 +1323,7 @@ function Entity:remaining_status_time(hit_flag) end
 --- Updates remaining time for a status already applied, or queues a new status update if isn't.
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
----@param hit_flag number
+---@param hit_flag Hit
 ---@param duration number
 function Entity:set_remaining_status_time(hit_flag, duration) end
 
@@ -1333,7 +1332,7 @@ function Entity:set_remaining_status_time(hit_flag, duration) end
 --- The callback will be called when the `hit_flag` is applied to the entity.
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
----@param hit_flag number
+---@param hit_flag Hit
 ---@param callback fun()
 function Entity:register_status_callback(hit_flag, callback) end
 
@@ -3215,7 +3214,7 @@ function HitProps.from_card(card_properties, context, drag) end
 --- Durations are specified in [Status Packages](https://docs.hubos.dev/client/packages#statuses)
 --- 
 --- Returns the duration in frames for a status effect at a specific level, or `1` if no durations are specified.
----@param hit_flag number
+---@param hit_flag Hit
 ---@param level number
 ---@return number
 function Hit.duration_for(hit_flag, level) end
@@ -3594,7 +3593,7 @@ function AuxProp:declare_immunity(hit_flags) end
 --- - `duration`: number, how many game frames the effect should last
 --- 
 --- Applies a status to the entity.
----@param hit_flag number
+---@param hit_flag Hit
 ---@param duration number
 ---@return AuxProp
 function AuxProp:apply_status(hit_flag, duration) end
@@ -3603,7 +3602,7 @@ function AuxProp:apply_status(hit_flag, duration) end
 --- - `hit_flag`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
 --- 
 --- Removes an existing status on the entity, won't affect incoming hits.
----@param hit_flag number
+---@param hit_flag Hit
 ---@return AuxProp
 function AuxProp:remove_status(hit_flag) end
 
