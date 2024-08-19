@@ -359,7 +359,7 @@ Action = {}
 --- Should return [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 --- 
 --- The return value replaces the HitProps applied to the entity.
----@field filter_statuses_func fun(hit_props: HitProps): HitProps
+---@field filter_func fun(hit_props: HitProps): HitProps
 --- If the defense order is `DefenseOrder.Always`, this function will be called on every hit.
 --- 
 --- If the defense order is `DefenseOrder.CollisionOnly`, this function will be called after intangibility is determined to not block the attack.
@@ -368,7 +368,7 @@ Action = {}
 --- - `attacker`: [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity)
 --- - `defender`: [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity)
 --- - `hit_props`: [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
----@field can_block_func fun(defense: Defense, attacker: Entity, defender: Entity, hit_props: HitProps)
+---@field defense_func fun(defense: Defense, attacker: Entity, defender: Entity, hit_props: HitProps)
 --- Called when a DefenseRule with the same priority replaced this rule.
 ---@field on_replace_func fun()
 DefenseRule = {}
