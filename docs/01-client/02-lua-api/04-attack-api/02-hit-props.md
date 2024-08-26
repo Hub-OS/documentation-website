@@ -78,6 +78,10 @@ Durations are specified in [Status Packages](/client/packages#statuses)
 
 Returns the duration in frames for a status effect at a specific level, or `1` if no durations are specified.
 
+### `Hit.mutual_exclusions_for(hit_flag)`
+
+Returns a number, representing all of the mutually exclusive hit flags for bit manipulation.
+
 ## Element
 
 - `Element.None`
