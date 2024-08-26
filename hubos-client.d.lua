@@ -3219,6 +3219,11 @@ function HitProps.from_card(card_properties, context, drag) end
 ---@return number
 function Hit.duration_for(hit_flag, level) end
 
+--- Returns a number, representing all of the mutually exclusive hit flags for bit manipulation.
+---@param hit_flag Hit
+---@return number
+function Hit.mutual_exclusions_for(hit_flag) end
+
 --- Returns a new Drag instance.
 ---@param direction? Direction
 ---@param distance? number
