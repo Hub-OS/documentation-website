@@ -97,17 +97,9 @@ Returns a bool.
 
 ### `player:set_slide_when_moving(bool?)`
 
-When `true`, the player will slide to tiles and continue using the `PLAYER_IDLE` state.
+When `true`, the player will slide to tiles and continue using the `CHARACTER_IDLE` state.
 
-When `false`, the player will teleport to tiles and animate with the `PLAYER_MOVE` state.
-
-### `player:player_move_state()`
-
-Returns a string, the modified `PLAYER_MOVE` animation state internally used by the engine.
-
-### `player:player_hit_state()`
-
-Returns a string, the modified `PLAYER_HIT` animation state internally used by the engine.
+When `false`, the player will teleport to tiles and animate with the `CHARACTER_MOVE` state.
 
 ### `player:queue_default_player_movement(tile)`
 

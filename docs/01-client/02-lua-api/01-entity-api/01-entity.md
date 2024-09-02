@@ -269,7 +269,8 @@ Same as `entity:animation():load(path)`
 - `lifetime` affects when the component's update callback is called.
 
   - `Lifetime.Local` when the entity update callback is called (affected by time freeze and status effects)
-  - `Lifetime.Battle` after every entity has updated and battle is active as long as time is not frozen.
+  - `Lifetime.ActiveBattle` after every entity has updated and battle is active as long as time is not frozen.
+  - `Lifetime.Battle` after every entity has updated and battle is active.
   - `Lifetime.Scene` near the end of every tick.
   - `Lifetime.CardSelectOpen` the frame where card select begins to open.
   - `Lifetime.CardSelectClose` the frame where card select begins to close.

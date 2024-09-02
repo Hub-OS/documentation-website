@@ -62,12 +62,19 @@ The AuxProp will check the incoming hit's element and secondary element of incom
 
 The AuxProp will check the incoming hit's element and secondary element to see if the attached entity's element is weak to either element.
 
-### `aux_prop:require_hit_flag(hit_flags)`
+### `aux_prop:require_hit_flags(hit_flags)`
 
 - Hit priority
 - `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
 
 The AuxProp will check the incoming hit's [flags](/client/lua-api/attack-api/hit-props#hit_propsflags) to see if all matching flags apply.
+
+### `aux_prop:require_hit_flags_absent(hit_flags)`
+
+- Hit priority
+- `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
+
+The AuxProp will check the incoming hit's [flags](/client/lua-api/attack-api/hit-props#hit_propsflags) to verify no flags match.
 
 ### `aux_prop:require_hit_damage(compare, damage)`
 
@@ -156,6 +163,13 @@ The AuxProp will compare the recover amount on the next card on the attached ent
 - `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
 
 The AuxProp will check the next card on the attached entity for matching hit flags.
+
+### `aux_prop:require_card_hit_flags_absent(hit_flags)`
+
+- Hit priority
+- `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
+
+The AuxProp will check the next card on the attached entity to verify no flags match.
 
 ### `aux_prop:require_card_code(code)`
 

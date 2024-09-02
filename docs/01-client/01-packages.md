@@ -204,7 +204,7 @@ Expects an `entry.lua` file. See [Action](/client/lua-api/attack-api/action)
 ---@param entity Entity
 ---@param card_properties CardProperties
 function card_init(entity, card_properties)
-  local action = Action.new(entity, "PLAYER_IDLE")
+  local action = Action.new(entity, "CHARACTER_IDLE")
 
   -- note: returning nil instead of an Action will create a poof effect
   return action

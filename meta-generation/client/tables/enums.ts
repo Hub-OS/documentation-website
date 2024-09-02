@@ -4,6 +4,7 @@ const FLAT_ENUMS = {
   Shadow: ["None", "Small", "Big"],
   Lifetime: [
     "Local",
+    "ActiveBattle",
     "Battle",
     "Scene",
     "CardSelectOpen",

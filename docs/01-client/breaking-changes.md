@@ -2,6 +2,16 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.27
+
+- `Lifetime.Battle` renamed to `Lifetime.ActiveBattle`
+- Renamed `aux_prop:require_hit_flag()` to `aux_prop:require_hit_flags()`
+- Removed `entity:player_hit_state()` and `entity:player_move_state()`
+- Flinch is now mutually exclusive with flinch-like statuses, such as paralyze and freeze
+- `PLAYER_` animation prefix changed to `CHARACTER_`
+- `PLAYER_SHOOTING` renamed to `CHARACTER_SHOOT`
+  - Related: `PLAYER_SWORD` has been renamed to `CHARACTER_SWING` in mods outside of the engine
+
 ## 0.25
 
 - `blocks_flags` and `blocked_by` fields in statuses, replaced by `mutual_exclusions`
