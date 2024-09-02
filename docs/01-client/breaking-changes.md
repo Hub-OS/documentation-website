@@ -4,7 +4,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 
 ## 0.27
 
-- `Lifetime.Battle` renamed to `Lifetime.ActiveBattle`
+- `Lifetime.Battle` now runs during time freeze, use `Lifetime.ActiveBattle` for the previous behavior
 - Renamed `aux_prop:require_hit_flag()` to `aux_prop:require_hit_flags()`
 - Removed `entity:player_hit_state()` and `entity:player_move_state()`
 - Flinch is now mutually exclusive with flinch-like statuses, such as paralyze and freeze
