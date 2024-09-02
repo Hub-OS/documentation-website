@@ -21,6 +21,7 @@ Shadow = {
 ---@enum Lifetime
 Lifetime = {
   Local = 0,
+  ActiveBattle = 0,
   Battle = 0,
   Scene = 0,
   CardSelectOpen = 0,
@@ -656,7 +657,7 @@ Drag.None = nil
 --- - `Hit.Blind` applies blindness status on hit.
 --- - `Hit.Confuse` applies confusion status on hit.
 --- - [Hit.[flag_name]](https://docs.hubos.dev/client/packages#statuses)
----@field flags number
+---@field flags Hit | number
 --- A number, used to calculate how much health to take away from entities hit by the attack.
 ---@field damage number
 
@@ -694,7 +695,7 @@ DeckCard = {}
 --- See [Hit.duration_for()](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
 ---@field status_durations table<Hit, number>
 --- [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags), influences generated [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
----@field hit_flags number
+---@field hit_flags Hit | number
 --- Any of the values below:
 --- 
 --- - `CardClass.Standard`
@@ -1064,7 +1065,8 @@ function Entity:load_animation(path) end
 --- - `lifetime` affects when the component's update callback is called.
 --- 
 ---   - `Lifetime.Local` when the entity update callback is called (affected by time freeze and status effects)
----   - `Lifetime.Battle` after every entity has updated and battle is active as long as time is not frozen.
+---   - `Lifetime.ActiveBattle` after every entity has updated and battle is active as long as time is not frozen.
+---   - `Lifetime.Battle` after every entity has updated and battle is active.
 ---   - `Lifetime.Scene` near the end of every tick.
 ---   - `Lifetime.CardSelectOpen` the frame where card select begins to open.
 ---   - `Lifetime.CardSelectClose` the frame where card select begins to close.
@@ -1469,25 +1471,13 @@ function Entity:set_charge_position(x, y) end
 ---@return boolean
 function Entity:slide_when_moving() end
 
---- When `true`, the player will slide to tiles and continue using the `PLAYER_IDLE` state.
+--- When `true`, the player will slide to tiles and continue using the `CHARACTER_IDLE` state.
 --- 
---- When `false`, the player will teleport to tiles and animate with the `PLAYER_MOVE` state.
+--- When `false`, the player will teleport to tiles and animate with the `CHARACTER_MOVE` state.
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param bool? boolean
 function Entity:set_slide_when_moving(bool) end
-
---- Returns a string, the modified `PLAYER_MOVE` animation state internally used by the engine.
----
---- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
----@return string
-function Entity:player_move_state() end
-
---- Returns a string, the modified `PLAYER_HIT` animation state internally used by the engine.
----
---- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
----@return string
-function Entity:player_hit_state() end
 
 --- - `tile`: [Tile](https://docs.hubos.dev/client/lua-api/field-api/tile)
 --- 
@@ -3184,7 +3174,7 @@ function Buster.new(player, charged, damage) end
 --- 
 --- Returns a new HitProps instance.
 ---@param damage number
----@param flags number
+---@param flags Hit | number
 ---@param element Element
 ---@param secondary_element Element
 ---@param context? EntityContext
@@ -3195,7 +3185,7 @@ function HitProps.new(damage, flags, element, secondary_element, context, drag) 
 
 --- Returns a new HitProps instance.
 ---@param damage number
----@param flags number
+---@param flags Hit | number
 ---@param element Element
 ---@param context? EntityContext
 ---@param drag? Drag
@@ -3374,9 +3364,17 @@ function AuxProp:require_hit_element_is_weakness() end
 --- - `hit_flags`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
 --- 
 --- The AuxProp will check the incoming hit's [flags](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags) to see if all matching flags apply.
----@param hit_flags number
+---@param hit_flags Hit | number
 ---@return AuxProp
-function AuxProp:require_hit_flag(hit_flags) end
+function AuxProp:require_hit_flags(hit_flags) end
+
+--- - Hit priority
+--- - `hit_flags`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
+--- 
+--- The AuxProp will check the incoming hit's [flags](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags) to verify no flags match.
+---@param hit_flags Hit | number
+---@return AuxProp
+function AuxProp:require_hit_flags_absent(hit_flags) end
 
 --- - Hit priority
 --- - `compare`: [Compare](https://docs.hubos.dev/client/lua-api/defense-api/aux-prop#compare)
@@ -3478,9 +3476,17 @@ function AuxProp:require_card_recover(compare, recover) end
 --- - `hit_flags`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
 --- 
 --- The AuxProp will check the next card on the attached entity for matching hit flags.
----@param hit_flags number
+---@param hit_flags Hit | number
 ---@return AuxProp
 function AuxProp:require_card_hit_flags(hit_flags) end
+
+--- - Hit priority
+--- - `hit_flags`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
+--- 
+--- The AuxProp will check the next card on the attached entity to verify no flags match.
+---@param hit_flags Hit | number
+---@return AuxProp
+function AuxProp:require_card_hit_flags_absent(hit_flags) end
 
 --- - Body priority
 --- - `code`: string
@@ -3589,7 +3595,7 @@ function AuxProp:interrupt_action(callback) end
 --- - `hit_flags`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
 --- 
 --- Declares immunity for incoming hits this frame, will not remove existing statuses.
----@param hit_flags number
+---@param hit_flags Hit | number
 ---@return AuxProp
 function AuxProp:declare_immunity(hit_flags) end
 
