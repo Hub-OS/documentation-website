@@ -2674,9 +2674,10 @@ function Field:notify_on_delete(target_id, observer_id, callback) end
 ---@param callback fun(entity: Entity)
 function Field:callback_on_delete(id, callback) end
 
---- Causes tiles in the column to return to their previous team as soon as possible, starting at the next frame. The transfer will be delayed by tile reservations in the column.
+--- Causes tiles in the column to return to the matching team as soon as possible, starting at the next frame. The transfer will be delayed by tile reservations in the column.
 ---@param x number
-function Field:reclaim_column(x) end
+---@param team Team
+function Field:reclaim_column(x, team) end
 
 --- Returns the column of the tile.
 ---@return number
@@ -2762,9 +2763,9 @@ function Tile:remove_reservation_for_id(entity_id) end
 function Tile:team() end
 
 --- - `team`: [Team](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityset_teamteam)
---- - `direction`: [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction) optional override for the duration of the team change.
+--- - `direction`: [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction) override for the duration of the team change.
 ---@param team Team
----@param direction? Direction
+---@param direction Direction
 function Tile:set_team(team, direction) end
 
 --- Returns [Team](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityset_teamteam)
