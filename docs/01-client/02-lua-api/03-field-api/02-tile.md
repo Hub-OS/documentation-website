@@ -82,10 +82,10 @@ Removes a reservation of this tile for this [Entity](/client/lua-api/entity-api/
 
 Returns [Team](/client/lua-api/entity-api/entity#entityset_teamteam)
 
-### `tile:set_team(team, direction?)`
+### `tile:set_team(team, direction)`
 
 - `team`: [Team](/client/lua-api/entity-api/entity#entityset_teamteam)
-- `direction`: [Direction](/client/lua-api/field-api/direction) optional override for the duration of the team change.
+- `direction`: [Direction](/client/lua-api/field-api/direction) override for the duration of the team change.
 
 ### `tile:original_team()`
 

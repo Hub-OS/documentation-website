@@ -2,6 +2,11 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.28
+
+- `field:reclaim_column(x)` now requires a team: `field:reclaim_column(x, team)`
+- `tile:set_team(team, direction)` now requires direction
+
 ## 0.27
 
 - `Lifetime.Battle` now runs during time freeze, use `Lifetime.ActiveBattle` for the previous behavior
