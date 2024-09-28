@@ -1646,14 +1646,15 @@ function Entity:card_select_restriction() end
 ---@param bool boolean
 function Entity:set_card_selection_blocked(bool) end
 
---- Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton).
+--- Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton).
 --- 
 --- Returns [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton)
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param card_properties CardProperties
+---@param card_button_slot? number
 ---@return CardSelectButton
-function Entity:set_fixed_card(card_properties) end
+function Entity:set_fixed_card(card_properties, card_button_slot) end
 
 --- Creates a button embedded in the end of the card list in Card Select.
 --- 
@@ -1661,8 +1662,9 @@ function Entity:set_fixed_card(card_properties) end
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param slot_count number
+---@param card_button_slot? number
 ---@return CardSelectButton
-function Entity:create_card_button(slot_count) end
+function Entity:create_card_button(slot_count, card_button_slot) end
 
 --- Creates a button under the "Confirm" button in Card Select.
 --- 
@@ -1800,21 +1802,23 @@ function PlayerForm:set_mugshot_texture(path) end
 ---@param description? string
 function PlayerForm:set_description(description) end
 
---- Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton).
+--- Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton).
 --- Overrides the card button created on the Player and any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment).
 --- 
 --- Returns [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton)
 ---@param card_properties CardProperties
+---@param card_button_slot? number
 ---@return CardSelectButton
-function PlayerForm:set_fixed_card(card_properties) end
+function PlayerForm:set_fixed_card(card_properties, card_button_slot) end
 
 --- Creates a button embedded in the end of the card list in Card Select.
---- Overrides the card button created on the Player and any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment).
+--- Overrides card buttons created on the Player and any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment).
 --- 
 --- Returns [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton)
 ---@param slot_count number
+---@param card_button_slot? number
 ---@return CardSelectButton
-function PlayerForm:create_card_button(slot_count) end
+function PlayerForm:create_card_button(slot_count, card_button_slot) end
 
 --- Creates a button under the "Confirm" button in Card Select.
 --- Overrides the special button created on the Player and any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment).
@@ -1842,21 +1846,23 @@ function Augment:owner() end
 ---@return boolean
 function Augment:has_tag(tag) end
 
---- Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton).
+--- Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton).
 --- Overrides the card button created on the Player.
 --- 
 --- Returns [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton)
 ---@param card_properties CardProperties
+---@param card_button_slot? number
 ---@return CardSelectButton
-function Augment:set_fixed_card(card_properties) end
+function Augment:set_fixed_card(card_properties, card_button_slot) end
 
 --- Creates a button embedded in the end of the card list in Card Select.
---- Overrides the card button created on the Player.
+--- Overrides card buttons created on the Player.
 --- 
 --- Returns [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton)
 ---@param slot_count number
+---@param card_button_slot? number
 ---@return CardSelectButton
-function Augment:create_card_button(slot_count) end
+function Augment:create_card_button(slot_count, card_button_slot) end
 
 --- Creates a button under the "Confirm" button in Card Select.
 --- Overrides the special button created on the Player.
