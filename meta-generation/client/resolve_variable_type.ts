@@ -110,6 +110,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "recover",
       "size",
       "slot_count",
+      "card_button_slot",
       "level",
       "level_increment",
       "increment",

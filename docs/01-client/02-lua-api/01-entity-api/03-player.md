@@ -219,13 +219,13 @@ Returns `{ package_id?: string, code?: string }`. Cards must match any of the se
 
 Prevents selection in Card Select and hides the cursor.
 
-### `player:set_fixed_card(card_properties)`
+### `player:set_fixed_card(card_properties, card_button_slot?)`
 
-Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
+Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
 
 Returns [CardSelectButton](#cardselectbutton)
 
-### `player:create_card_button(slot_count)`
+### `player:create_card_button(slot_count, card_button_slot?)`
 
 Creates a button embedded in the end of the card list in Card Select.
 
@@ -383,17 +383,17 @@ This texture is used for the form selection menu.
 
 Sets the description to display when the player requests for info.
 
-### `player_form:set_fixed_card(card_properties)`
+### `player_form:set_fixed_card(card_properties, card_button_slot?)`
 
-Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
+Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
 Overrides the card button created on the Player and any [Augment](#augment).
 
 Returns [CardSelectButton](#cardselectbutton)
 
-### `player_form:create_card_button(slot_count)`
+### `player_form:create_card_button(slot_count, card_button_slot?)`
 
 Creates a button embedded in the end of the card list in Card Select.
-Overrides the card button created on the Player and any [Augment](#augment).
+Overrides card buttons created on the Player and any [Augment](#augment).
 
 Returns [CardSelectButton](#cardselectbutton)
 
@@ -497,17 +497,17 @@ Returns an [Entity](/client/lua-api/entity-api/entity)
 
 Returns true if the augment has a matching tag.
 
-### `augment:set_fixed_card(card_properties)`
+### `augment:set_fixed_card(card_properties, card_button_slot?)`
 
-Dedicates the last card slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
+Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
 Overrides the card button created on the Player.
 
 Returns [CardSelectButton](#cardselectbutton)
 
-### `augment:create_card_button(slot_count)`
+### `augment:create_card_button(slot_count, card_button_slot?)`
 
 Creates a button embedded in the end of the card list in Card Select.
-Overrides the card button created on the Player.
+Overrides card buttons created on the Player.
 
 Returns [CardSelectButton](#cardselectbutton)
 
