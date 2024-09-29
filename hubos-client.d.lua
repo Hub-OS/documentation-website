@@ -1529,9 +1529,7 @@ function Entity:remove_deck_card(index) end
 --- - `index`: number, 1 is the first card in the deck.
 --- - `deck_card`: [DeckCard](https://docs.hubos.dev/client/lua-api/attack-api/cards#deckcard)
 --- 
---- Removes a card from the player's deck.
---- 
---- Any [StagedItem](https://docs.hubos.dev/client/lua-api/entity-api/player#stageditem) referencing this card will be dropped.
+--- Inserts a card into the player's deck.
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param index number
