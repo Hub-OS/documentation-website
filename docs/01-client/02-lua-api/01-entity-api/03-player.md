@@ -139,9 +139,7 @@ Any [StagedItem](#stageditem) referencing this card will be dropped.
 - `index`: number, 1 is the first card in the deck.
 - `deck_card`: [DeckCard](/client/lua-api/attack-api/cards#deckcard)
 
-Removes a card from the player's deck.
-
-Any [StagedItem](#stageditem) referencing this card will be dropped.
+Inserts a card into the player's deck.
 
 ### `player:staged_items_confirmed()`
 
