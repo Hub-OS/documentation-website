@@ -64,6 +64,7 @@ const FLAT_ENUMS = {
   Compare: ["LT", "LE", "EQ", "NE", "GT", "GE"],
   DefensePriority: ["Barrier", "Body", "Action", "Trap", "Last"],
   DefenseOrder: ["Always", "CollisionOnly"],
+  ActionType: ["All", "Normal", "Charged", "Special", "Card", "Scripted"],
 };
 
 const SPECIAL_ENUMS = {

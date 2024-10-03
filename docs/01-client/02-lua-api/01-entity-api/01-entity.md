@@ -405,7 +405,7 @@ Called when [Actions](/client/lua-api/attack-api/action) complete or when [entit
 
 ### `entity.on_counter_func = function(self)`
 
-Called when an attack using this entity's [context](#entitycontext) counters another entity.
+Called when an attack using this entity's [context](/client/lua-api/attack-api/hit-props#attackcontext) counters another entity.
 
 Not to be confused with [living.on_countered_func](/client/lua-api/entity-api/living#livingon_countered_func--functionself)
 

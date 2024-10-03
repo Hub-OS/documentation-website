@@ -19,7 +19,7 @@ const COMPRESSED_RETURN_TYPES = [
     list: ["Returns the id "],
   },
   {
-    type: "EntityContext",
+    type: "AttackContext",
     list: [
       "Returns a value that can be used to decide if an attack can counter",
     ],

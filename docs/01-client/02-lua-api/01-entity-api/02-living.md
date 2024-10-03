@@ -42,7 +42,7 @@ Returns true if the entity can currently be countered.
 
 ### `living:set_counterable(enabled?)`
 
-Allows the entity to be countered when hit by an attack with a [context](/client/lua-api/entity-api/entity#entitycontext) created in [card_init](/client/packages/#cards)
+Allows the entity to be countered when hit by an attack with a [context](/client/lua-api/attack-api/hit-props#attackcontext) created in [card_init](/client/packages/#cards)
 
 ### `living:intangible()`
 

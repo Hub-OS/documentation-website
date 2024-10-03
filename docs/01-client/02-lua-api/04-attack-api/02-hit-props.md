@@ -8,7 +8,7 @@ See [spell:set_hit_props()](/client/lua-api/entity-api/spell#spellset_hit_propsh
 - `flags`: See [flags](#hit_propsflags)
 - `element`: [Element](/client/lua-api/attack-api/hit-props#element)
 - `secondary_element`: [Element](/client/lua-api/attack-api/hit-props#element)
-- `context`: The value obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext)
+- `context`: An [AttackContext](#attackcontext) (obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext))
 - `drag`: [Drag](#drag) defaults to Drag.None
 
 Returns a new HitProps instance.
@@ -67,7 +67,7 @@ An [Element](/client/lua-api/attack-api/hit-props#element). If element or second
 
 ### `hit_props.context`
 
-Context obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext)
+The [AttackContext](#attackcontext) obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext)
 
 ## Hit
 
@@ -115,3 +115,28 @@ Direction, the direction to move the entity.
 ### `drag.distance`
 
 Number, the amount of tiles to drag the entity.
+
+## AttackContext
+
+Data tracking the attacker and [HitProps](#hitprops) overrides.
+Obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext) and passed through HitProps.
+Updates when a player or character starts an attack, or when HitProps are set on an entity.
+By default, the context is used by the engine to pass flags related to countering, see [living:set_counterable()](/client/lua-api/entity-api/living#livingset_counterableenabled).
+
+### `context.aggressor`
+
+The EntityId of the attacking entity.
+
+### `context.flags`
+
+See [HitProps.flags](#hit_propsflags)
+
+### `context.status_durations`
+
+A table that maps frame durations for status hit flags.
+
+See [Hit.duration_for()](#hitduration_forhit_flag-level)
+
+### `context.drag`
+
+[Drag](#drag)

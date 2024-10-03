@@ -268,7 +268,10 @@ function resolveTableName(heading: string) {
   const dotIndex = heading.indexOf(".");
   const colonIndex = heading.indexOf(":");
   const separator_index = dotIndex == -1 ? colonIndex : dotIndex;
-  const table_name = snakeToPascal(heading.slice(0, separator_index));
+  // const table_name = snakeToPascal(heading.slice(0, separator_index));
+
+  const variable_name = heading.slice(0, separator_index);
+  const table_name = resolveVariableType(variable_name) || variable_name;
 
   if (ENTITY_SUBCATEGORIES.includes(table_name)) {
     const is_constructor =
@@ -278,8 +281,6 @@ function resolveTableName(heading: string) {
     if (!is_constructor) {
       return "Entity";
     }
-  } else if (table_name == "Button") {
-    return "CardSelectButton";
   }
 
   return table_name;
