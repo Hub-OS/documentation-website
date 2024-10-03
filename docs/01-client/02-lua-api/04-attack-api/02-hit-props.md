@@ -6,8 +6,8 @@ See [spell:set_hit_props()](/client/lua-api/entity-api/spell#spellset_hit_propsh
 
 - `damage`: integer
 - `flags`: See [flags](#hit_propsflags)
-- `element`: [Element](/client/lua-api/attack-api/hit-props#element)
-- `secondary_element`: [Element](/client/lua-api/attack-api/hit-props#element)
+- `element`: [Element](#element)
+- `secondary_element`: [Element](#element)
 - `context`: An [AttackContext](#attackcontext) (obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext))
 - `drag`: [Drag](#drag) defaults to Drag.None
 
@@ -55,11 +55,11 @@ See [Hit.duration_for()](#hitduration_forhit_flag-level)
 
 ### `hit_props.element`
 
-An [Element](/client/lua-api/attack-api/hit-props#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
+An [Element](#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
 
 ### `hit_props.secondary_element`
 
-An [Element](/client/lua-api/attack-api/hit-props#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
+An [Element](#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
 
 ### `hit_props.drag`
 
@@ -118,7 +118,7 @@ Number, the amount of tiles to drag the entity.
 
 ## AttackContext
 
-Data tracking the attacker and [HitProps](#hitprops) overrides.
+Data tracking the attacker and [HitProps](/client/lua-api/attack-api/hit-props) overrides.
 Obtained by [entity:context()](/client/lua-api/entity-api/entity#entitycontext) and passed through HitProps.
 Updates when a player or character starts an attack, or when HitProps are set on an entity.
 By default, the context is used by the engine to pass flags related to countering, see [living:set_counterable()](/client/lua-api/entity-api/living#livingset_counterableenabled).
