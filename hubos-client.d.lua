@@ -7,8 +7,6 @@ _folder_path = nil
 
 ---@class EntityId
 
----@class EntityContext
-
 ---@class Namespace
 
 ---@enum Shadow
@@ -189,6 +187,16 @@ DefenseOrder = {
   CollisionOnly = 0,
 }
 
+---@enum ActionType
+ActionType = {
+  All = 0,
+  Normal = 0,
+  Charged = 0,
+  Special = 0,
+  Card = 0,
+  Scripted = 0,
+}
+
 --- 
 ---@enum Hit
 ---@type { [string]: Hit }
@@ -310,7 +318,7 @@ Input = {
 --- 
 --- This function is pre-set for all entities.
 ---@field on_delete_func fun(self: Entity)
---- Called when an attack using this entity's [context](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycontext) counters another entity.
+--- Called when an attack using this entity's [context](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#attackcontext) counters another entity.
 --- 
 --- Not to be confused with [living.on_countered_func](https://docs.hubos.dev/client/lua-api/entity-api/living#livingon_countered_func--functionself)
 ---@field on_counter_func fun(self: Entity)
@@ -321,6 +329,23 @@ Input = {
 --- Called when the entity is spawned by [field:spawn()](https://docs.hubos.dev/client/lua-api/field-api/field/#fieldspawnentity-tile)
 ---@field on_spawn_func fun(self: Entity)
 Entity = {}
+
+--- Data tracking the attacker and [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props) overrides.
+--- Obtained by [entity:context()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycontext) and passed through HitProps.
+--- Updates when a player or character starts an attack, or when HitProps are set on an entity.
+--- By default, the context is used by the engine to pass flags related to countering, see [living:set_counterable()](https://docs.hubos.dev/client/lua-api/entity-api/living#livingset_counterableenabled).
+---@class AttackContext
+--- [Drag](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#drag)
+---@field drag Drag
+--- A table that maps frame durations for status hit flags.
+--- 
+--- See [Hit.duration_for()](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
+---@field status_durations table<Hit, number>
+--- See [HitProps.flags](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
+---@field flags Hit | number
+--- The EntityId of the attacking entity.
+---@field aggressor Entity
+AttackContext = {}
 
 --- 
 ---@class TextStyle
@@ -626,8 +651,8 @@ Drag.None = nil
 
 --- See [spell:set_hit_props()](https://docs.hubos.dev/client/lua-api/entity-api/spell#spellset_hit_propshit_props)
 ---@class HitProps
---- Context obtained by [entity:context()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycontext)
----@field context EntityContext
+--- The [AttackContext](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#attackcontext) obtained by [entity:context()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycontext)
+---@field context AttackContext
 --- [Drag](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#drag)
 ---@field drag Drag
 --- An [Element](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#element). If element or secondary_element is super effective against an entity's element, this attack will deal 2x damage.
@@ -1083,7 +1108,7 @@ function Entity:create_component(lifetime) end
 --- Countering an attack can be achieved by hitting an enemy with [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props) containing context obtained during [card_init](https://docs.hubos.dev/client/packages#cards) or within [action.on_execute_func](https://docs.hubos.dev/client/lua-api/attack-api/action#actionon_execute_func--functionself-owner)
 --- 
 --- Make sure to obtain context in card_init and not within a callback for countering.
----@return EntityContext
+---@return AttackContext
 function Entity:context() end
 
 --- Returns true if the entity has an executing action or pending actions.
@@ -1248,7 +1273,7 @@ function Entity:enable_hitbox(enabled) end
 ---@return boolean
 function Entity:counterable() end
 
---- Allows the entity to be countered when hit by an attack with a [context](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycontext) created in [card_init](https://docs.hubos.dev/client/packages/#cards)
+--- Allows the entity to be countered when hit by an attack with a [context](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#attackcontext) created in [card_init](https://docs.hubos.dev/client/packages/#cards)
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
 ---@param enabled? boolean
@@ -3174,7 +3199,7 @@ function Buster.new(player, charged, damage) end
 --- - `flags`: See [flags](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
 --- - `element`: [Element](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#element)
 --- - `secondary_element`: [Element](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#element)
---- - `context`: The value obtained by [entity:context()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycontext)
+--- - `context`: An [AttackContext](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#attackcontext) (obtained by [entity:context()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycontext))
 --- - `drag`: [Drag](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#drag) defaults to Drag.None
 --- 
 --- Returns a new HitProps instance.
@@ -3182,7 +3207,7 @@ function Buster.new(player, charged, damage) end
 ---@param flags Hit | number
 ---@param element Element
 ---@param secondary_element Element
----@param context? EntityContext
+---@param context? AttackContext
 ---@param drag? Drag
 ---@return HitProps
 ---@diagnostic disable-next-line: duplicate-set-field
@@ -3192,7 +3217,7 @@ function HitProps.new(damage, flags, element, secondary_element, context, drag) 
 ---@param damage number
 ---@param flags Hit | number
 ---@param element Element
----@param context? EntityContext
+---@param context? AttackContext
 ---@param drag? Drag
 ---@return HitProps
 ---@diagnostic disable-next-line: duplicate-set-field
@@ -3200,7 +3225,7 @@ function HitProps.new(damage, flags, element, context, drag) end
 
 --- Returns a new HitProps instance.
 ---@param card_properties CardProperties
----@param context? EntityContext
+---@param context? AttackContext
 ---@param drag? Drag
 ---@return HitProps
 function HitProps.from_card(card_properties, context, drag) end
@@ -3427,6 +3452,21 @@ function AuxProp:require_element(element) end
 ---@return AuxProp
 function AuxProp:require_negative_tile_interaction() end
 
+--- - Body Priority
+--- - `action_types`
+---   - `Action.All`: All attack types.
+---   - `Action.Normal`: A player's normal attack.
+---   - `Action.Charged`: A player's charged attack.
+---   - `Action.Special`: A player's special attack.
+---   - `Action.Card`: An attack generated by a card.
+---   - `Action.Scripted`: A scripted attack.
+--- 
+--- If the effect is Modify Context, the `action_types` filter will be tested against the generated action.
+--- Otherwise the filter will be tested against any active action on the associated entity.
+---@param action_types? number
+---@return AuxProp
+function AuxProp:require_action(action_types) end
+
 --- - Body priority
 --- - `emotion`: string
 --- 
@@ -3568,6 +3608,13 @@ function AuxProp:require_health_threshold(compare, percentage) end
 ---@param health number
 ---@return AuxProp
 function AuxProp:require_health(compare, health) end
+
+--- - Update Context priority
+--- 
+--- Allows for modification to the context on the associated entity, executes before actions are generated for cards and attacks.
+---@param callback fun(context: AttackContext): AttackContext
+---@return AuxProp
+function AuxProp:update_context(callback) end
 
 --- - Increase Card Damage priority
 --- - `increase`: number, the amount to increase the card damage before multiplying.
