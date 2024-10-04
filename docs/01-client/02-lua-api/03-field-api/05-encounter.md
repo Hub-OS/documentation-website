@@ -31,6 +31,10 @@ Sets the spawn position for this player.
 
 Experimental. Replacement / removal is under consideration.
 
+### `encounter:set_music(path)`
+
+Sets the initial battle music. Use [Resources.play_music()](/client/lua-api/resource-api/resources#resourcesplay_musicpath-loops) to change the music in the middle of the battle
+
 ### `encounter:field()`
 
 Returns [Field](/client/lua-api/field-api/field)
