@@ -402,34 +402,34 @@ Overrides the special button created on the Player and any [Augment](#augment).
 
 Returns [CardSelectButton](#cardselectbutton)
 
-### `player_form.on_select_func = function(self, player)`
+### `player_form.on_select_func = function(self)`
 
 Called when the form is selected or staged, the player's emotions should be modified here.
 
-### `player_form.on_deselect_func = function(self, player)`
+### `player_form.on_deselect_func = function(self)`
 
 Called when the form is deselected or unstaged, the player's emotions should be reverted here.
 
-### `player_form.on_activate_func = function(self, player)`
+### `player_form.on_activate_func = function(self)`
 
 Called when the form is activated, the player's appearance should be modified here.
 
-### `player_form.on_deactivate_func = function(self, player)`
+### `player_form.on_deactivate_func = function(self)`
 
 Called when the form is deactivated, the player's appearance should be reverted here.
 
-### `player_form.on_update_func = function(self, player)`
+### `player_form.on_update_func = function(self)`
 
 Called after [player.on_update_func](#playernormal_attack_func--functionself-actionnil) when this form is active.
 
-### `player_form.calculate_charge_time_func = function(self, player): number`
+### `player_form.calculate_charge_time_func = function(self): number`
 
 Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself-number) when this form is active.
 Also overrides any [Augment](#augment)'s override.
 
 A number representing the minimum Shoot button held time in game frames is expected as a return value.
 
-### `player_form.normal_attack_func = function(self, player): Action|nil`
+### `player_form.normal_attack_func = function(self): Action|nil`
 
 Overrides [player.normal_attack_func](#playernormal_attack_func--functionself-actionnil) when this form is active.
 Also overrides any [Augment](#augment)'s override.
@@ -438,7 +438,7 @@ An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the player's implementation.
 
-### `player_form.charged_attack_func = function(self, player): Action|nil`
+### `player_form.charged_attack_func = function(self): Action|nil`
 
 Overrides [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil) when this form is active.
 Also overrides any [Augment](#augment)'s override.
@@ -447,7 +447,7 @@ An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the player's implementation.
 
-### `player_form.special_attack_func = function(self, player): Action|nil`
+### `player_form.special_attack_func = function(self): Action|nil`
 
 Overrides [player.special_attack_func](#playerspecial_attack_func--functionself-actionnil) when this form is active.
 Also overrides any [Augment](#augment)'s override.
@@ -468,7 +468,7 @@ Will not be called if there's no matching `can_charge_card_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
-### `player_form.movement_func = function(self, player)`
+### `player_form.movement_func = function(self)`
 
 Overrides [player.movement_func](#playermovement_func--functionself-direction) when this form is active.
 Also overrides any [Augment](#augment)'s override.
