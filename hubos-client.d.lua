@@ -3032,6 +3032,10 @@ function Encounter:set_background(texture_path, animation_path, vel_x, vel_y) en
 ---@param tile_height number
 function Encounter:set_panels(texture_paths, animation_path, tile_width, tile_height) end
 
+--- Sets the initial battle music. Use [Resources.play_music()](https://docs.hubos.dev/client/lua-api/resource-api/resources#resourcesplay_musicpath-loops) to change the music in the middle of the battle
+---@param path string
+function Encounter:set_music(path) end
+
 --- Returns [Field](https://docs.hubos.dev/client/lua-api/field-api/field)
 ---@return Field
 function Encounter:field() end
