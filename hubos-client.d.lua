@@ -510,7 +510,7 @@ Augment = {}
 --- Also overrides any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment)'s override.
 --- 
 --- Used to handle movement input.
----@field movement_func fun(self: PlayerForm, player: Entity)
+---@field movement_func fun(self: PlayerForm)
 --- Will not be called if there's no matching `can_charge_card_func`
 --- 
 --- An [Action](https://docs.hubos.dev/client/lua-api/attack-api/action) or `nil` is expected as a return value.
@@ -525,36 +525,36 @@ Augment = {}
 --- An [Action](https://docs.hubos.dev/client/lua-api/attack-api/action) is expected as a return value.
 --- 
 --- Return `nil` to fallback to the player's implementation.
----@field special_attack_func fun(self: PlayerForm, player: Entity): Action|nil
+---@field special_attack_func fun(self: PlayerForm): Action|nil
 --- Overrides [player.charged_attack_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playercharged_attack_func--functionself-actionnil) when this form is active.
 --- Also overrides any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment)'s override.
 --- 
 --- An [Action](https://docs.hubos.dev/client/lua-api/attack-api/action) is expected as a return value.
 --- 
 --- Return `nil` to fallback to the player's implementation.
----@field charged_attack_func fun(self: PlayerForm, player: Entity): Action|nil
+---@field charged_attack_func fun(self: PlayerForm): Action|nil
 --- Overrides [player.normal_attack_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playernormal_attack_func--functionself-actionnil) when this form is active.
 --- Also overrides any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment)'s override.
 --- 
 --- An [Action](https://docs.hubos.dev/client/lua-api/attack-api/action) is expected as a return value.
 --- 
 --- Return `nil` to fallback to the player's implementation.
----@field normal_attack_func fun(self: PlayerForm, player: Entity): Action|nil
+---@field normal_attack_func fun(self: PlayerForm): Action|nil
 --- Overrides [player.calculate_charge_time_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playercalculate_charge_time_func--functionself-number) when this form is active.
 --- Also overrides any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment)'s override.
 --- 
 --- A number representing the minimum Shoot button held time in game frames is expected as a return value.
----@field calculate_charge_time_func fun(self: PlayerForm, player: Entity): number
+---@field calculate_charge_time_func fun(self: PlayerForm): number
 --- Called after [player.on_update_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playernormal_attack_func--functionself-actionnil) when this form is active.
----@field on_update_func fun(self: PlayerForm, player: Entity)
+---@field on_update_func fun(self: PlayerForm)
 --- Called when the form is deactivated, the player's appearance should be reverted here.
----@field on_deactivate_func fun(self: PlayerForm, player: Entity)
+---@field on_deactivate_func fun(self: PlayerForm)
 --- Called when the form is activated, the player's appearance should be modified here.
----@field on_activate_func fun(self: PlayerForm, player: Entity)
+---@field on_activate_func fun(self: PlayerForm)
 --- Called when the form is deselected or unstaged, the player's emotions should be reverted here.
----@field on_deselect_func fun(self: PlayerForm, player: Entity)
+---@field on_deselect_func fun(self: PlayerForm)
 --- Called when the form is selected or staged, the player's emotions should be modified here.
----@field on_select_func fun(self: PlayerForm, player: Entity)
+---@field on_select_func fun(self: PlayerForm)
 PlayerForm = {}
 
 --- 
