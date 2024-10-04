@@ -6,7 +6,7 @@ AuxProps can only be tied to a single entity and can not be updated once bound. 
 
 ### `AuxProp.new()`
 
-Returns a new AuxProp. Attach to an entity with [living:add_aux_prop()](/client/lua-api/entity-api/living#livingadd_aux_propaux_prop) and remove with [living:add_aux_prop()](/client/lua-api/entity-api/living#livingremove_aux_propaux_prop)
+Returns a new AuxProp. Attach to an entity with [living:add_aux_prop()](/client/lua-api/entity-api/living#livingadd_aux_propaux_prop) and remove with [living:remove_aux_prop()](/client/lua-api/entity-api/living#livingremove_aux_propaux_prop)
 
 All AuxProp methods return the AuxProp for chaining.
 
