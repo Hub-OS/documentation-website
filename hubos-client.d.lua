@@ -3481,6 +3481,22 @@ function AuxProp:require_emotion(emotion) end
 
 --- - Body priority
 --- 
+--- The AuxProp will check a [Player](https://docs.hubos.dev/client/lua-api/entity-api/player)'s held attack charge time against the provided time, the player's charge time will be capped at their max charge time.
+---@param compare Compare
+---@param time number
+---@return AuxProp
+function AuxProp:require_charge_time(compare, time) end
+
+--- - Body priority
+--- 
+--- The AuxProp will check a [Player](https://docs.hubos.dev/client/lua-api/entity-api/player)'s held card charge time against the provided time, the player's charge time will be capped at their max charge time.
+---@param compare Compare
+---@param time number
+---@return AuxProp
+function AuxProp:require_card_charge_time(compare, time) end
+
+--- - Body priority
+--- 
 --- The AuxProp will require a [Player](https://docs.hubos.dev/client/lua-api/entity-api/player) to be holding a fully [charged](https://docs.hubos.dev/client/lua-api/entity-api/player#playercan_charge_card_func--functioncard_properties-boolean) card.
 ---@return AuxProp
 function AuxProp:require_charged_card() end
