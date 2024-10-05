@@ -135,6 +135,18 @@ Otherwise the filter will be tested against any active action on the associated 
 
 The AuxProp will check the attached entity for matching emotion.
 
+### `aux_prop:require_charge_time(compare, time)`
+
+- Body priority
+
+The AuxProp will check a [Player](/client/lua-api/entity-api/player)'s held attack charge time against the provided time, the player's charge time will be capped at their max charge time.
+
+### `aux_prop:require_card_charge_time(compare, time)`
+
+- Body priority
+
+The AuxProp will check a [Player](/client/lua-api/entity-api/player)'s held card charge time against the provided time, the player's charge time will be capped at their max charge time.
+
 ### `aux_prop:require_charged_card()`
 
 - Body priority
