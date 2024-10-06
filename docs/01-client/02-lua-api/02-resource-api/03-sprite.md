@@ -248,3 +248,11 @@ Returns a reference to the sync node's sprite.
 ### `sync_node:animation()`
 
 Returns a reference to the sync node's [Animation](/client/lua-api/resource-api/animation)
+
+## Hud
+
+A global sprite node, used to add sprites to the HUD.
+
+```lua
+local sprite = Hud:create_node()
+```

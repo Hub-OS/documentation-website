@@ -36,4 +36,11 @@ export function defineClasses(definitions: DefinitionMap) {
       name + " = {}",
     ];
   }
+
+  // special case
+  definitions["Hud"] = [
+    //
+    "---@class Hud: Sprite",
+    "Hud = {}",
+  ];
 }
