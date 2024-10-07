@@ -600,6 +600,14 @@ ActionLockout = {}
 ---@field can_replace_func fun(self: CustomTileState, tile: Tile, tile_state: TileState): boolean
 CustomTileState = {}
 
+--- A global sprite node, used to add sprites to the HUD.
+--- 
+--- ```lua
+--- local sprite = Hud:create_node()
+--- ```
+---@class Hud: Sprite
+Hud = {}
+
 --- Colors are tables with an `r`, `g`, `b`, and `a` key, with each value set to a 0-255 integer.
 --- 
 --- There's a global table named `Color` with helpers for making new color tables.
@@ -3504,6 +3512,22 @@ function AuxProp:require_charged_card() end
 --- - Body priority
 --- - `element`: [Element](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#element)
 --- 
+--- The AuxProp will check the primary element on the next card for the attached entity.
+---@param element Element
+---@return AuxProp
+function AuxProp:require_card_primary_element(element) end
+
+--- - Body priority
+--- - `element`: [Element](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#element)
+--- 
+--- The AuxProp will check the next card on the attached entity for a failed match with the primary element.
+---@param element Element
+---@return AuxProp
+function AuxProp:require_card_not_primary_element(element) end
+
+--- - Body priority
+--- - `element`: [Element](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#element)
+--- 
 --- The AuxProp will check the next card on the attached entity for either matching element or secondary element.
 ---@param element Element
 ---@return AuxProp
@@ -3568,6 +3592,14 @@ function AuxProp:require_card_code(code) end
 ---@param card_class CardClass
 ---@return AuxProp
 function AuxProp:require_card_class(card_class) end
+
+--- - Body priority
+--- - `card_class`: [CardClass](https://docs.hubos.dev/client/lua-api/attack-api/cards#card_propertiescard_class)
+--- 
+--- The AuxProp will check the next card on the attached entity for a non-matching class.
+---@param card_class CardClass
+---@return AuxProp
+function AuxProp:require_card_not_class(card_class) end
 
 --- - Body priority
 --- - `time_freeze`: bool
