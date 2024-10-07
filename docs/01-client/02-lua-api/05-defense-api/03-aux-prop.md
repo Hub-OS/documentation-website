@@ -153,6 +153,20 @@ The AuxProp will check a [Player](/client/lua-api/entity-api/player)'s held card
 
 The AuxProp will require a [Player](/client/lua-api/entity-api/player) to be holding a fully [charged](/client/lua-api/entity-api/player#playercan_charge_card_func--functioncard_properties-boolean) card.
 
+### `aux_prop:require_card_primary_element(element)`
+
+- Body priority
+- `element`: [Element](/client/lua-api/attack-api/hit-props#element)
+
+The AuxProp will check the primary element on the next card for the attached entity.
+
+### `aux_prop:require_card_not_primary_element(element)`
+
+- Body priority
+- `element`: [Element](/client/lua-api/attack-api/hit-props#element)
+
+The AuxProp will check the next card on the attached entity for a failed match with the primary element.
+
 ### `aux_prop:require_card_element(element)`
 
 - Body priority
@@ -210,6 +224,13 @@ The AuxProp will check the next card on the attached entity for matching code.
 - `card_class`: [CardClass](/client/lua-api/attack-api/cards#card_propertiescard_class)
 
 The AuxProp will check the next card on the attached entity for matching class.
+
+### `aux_prop:require_card_not_class(card_class)`
+
+- Body priority
+- `card_class`: [CardClass](/client/lua-api/attack-api/cards#card_propertiescard_class)
+
+The AuxProp will check the next card on the attached entity for a non-matching class.
 
 ### `aux_prop:require_card_time_freeze(time_freeze)`
 
