@@ -266,12 +266,16 @@ Net.message_player(player_id, message, textbox_options)
 
 ```lua
 ---@class Net.SpriteOptions
----@field player_id? Net.ActorId restricts visibility to this specific player if set.
----@field parent_id "widget" | "hud" | Net.ActorId a point defined in the parent's animation file or built-in point.
----@field parent_point? string If unset the origin will be used. For "widget" and "hud" the origin is the top left of the screen.
----@field x? number offset from `parent_point` in screen pixels
----@field y? number offset from `parent_point` in screen pixels
----@field layer? number used for sorting sprites relative to the parent. Use negatives if you want to display in front of other sprites.
+---@field player_id? Net.ActorId Restricts visibility to this specific player if set.
+---@field parent_id "widget" | "hud" | Net.ActorId
+---A point defined in the parent's animation file or built-in point such as "EMOTE".
+---If unset the origin will be used.
+---
+---For "widget" and "hud" the origin is the top left of the screen.
+---@field parent_point? string
+---@field x? number Offset from `parent_point` in screen pixels
+---@field y? number Offset from `parent_point` in screen pixels
+---@field layer? number Used for sorting sprites relative to the parent. Use negatives if you want to display in front of other sprites.
 ---@field texture_path string
 ---@field animation_path? string
 ---@field animation? string Animation state, this state will be looped.
