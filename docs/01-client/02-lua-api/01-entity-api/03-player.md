@@ -57,6 +57,7 @@ If the animation doesn't have a state matching the current emotion, it will rese
 - `input_query`
   - `Input.Held.*`
   - `Input.Pressed.*`
+  - `Input.Pulsed.*`
     - `Left`
     - `Right`
     - `Down`
@@ -67,6 +68,8 @@ If the animation doesn't have a state matching the current emotion, it will rese
     - `FaceRight`
     - `LeftShoulder`
     - `RightShoulder`
+    - `Confirm`
+    - `Cancel`
     - `EndTurn`
     - `Ready`
 
