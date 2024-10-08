@@ -242,6 +242,8 @@ Input = {
     FaceRight = _Input._,
     LeftShoulder = _Input._,
     RightShoulder = _Input._,
+    Confirm = _Input._,
+    Cancel = _Input._,
     EndTurn = _Input._,
     Ready = _Input._,
   },
@@ -257,6 +259,25 @@ Input = {
     FaceRight = _Input._,
     LeftShoulder = _Input._,
     RightShoulder = _Input._,
+    Confirm = _Input._,
+    Cancel = _Input._,
+    EndTurn = _Input._,
+    Ready = _Input._,
+  },
+  Pulsed = {
+    Up = _Input._,
+    Left = _Input._,
+    Right = _Input._,
+    Down = _Input._,
+    Use = _Input._,
+    Special = _Input._,
+    Shoot = _Input._,
+    FaceLeft = _Input._,
+    FaceRight = _Input._,
+    LeftShoulder = _Input._,
+    RightShoulder = _Input._,
+    Confirm = _Input._,
+    Cancel = _Input._,
     EndTurn = _Input._,
     Ready = _Input._,
   },
@@ -1451,6 +1472,7 @@ function Entity:load_emotions_animation(path) end
 --- - `input_query`
 ---   - `Input.Held.*`
 ---   - `Input.Pressed.*`
+---   - `Input.Pulsed.*`
 ---     - `Left`
 ---     - `Right`
 ---     - `Down`
@@ -1461,6 +1483,8 @@ function Entity:load_emotions_animation(path) end
 ---     - `FaceRight`
 ---     - `LeftShoulder`
 ---     - `RightShoulder`
+---     - `Confirm`
+---     - `Cancel`
 ---     - `EndTurn`
 ---     - `Ready`
 --- 
