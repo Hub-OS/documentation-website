@@ -2620,6 +2620,13 @@ function Color.mix(color_a, color_b, progress) end
 ---@return TextStyle
 function TextStyle.new(font_name, texture_path, animation_path) end
 
+--- Returns TextStyle, see [TextStyle.new()](https://docs.hubos.dev/client/lua-api/resource-api/sprite#textstylenewfont_name-texture_path-animation_path)
+---@param font_name string
+---@param texture_path? string
+---@param animation_path? string
+---@return TextStyle
+function TextStyle.new_monospace(font_name, texture_path, animation_path) end
+
 --- Returns a reference to the sync node's sprite.
 ---@return Sprite
 function SyncNode:sprite() end
@@ -3308,6 +3315,14 @@ function Status:remaining_time() end
 ---@param duration number
 function Status:set_remaining_time(duration) end
 
+--- Returns true if the turn gauge is visible, automatically progressing, and allows the turn to end.
+---@return boolean
+function TurnGauge.enabled() end
+
+--- Hides the turn gauge, disables automatic progression, and prevents the turn from ending when disabled.
+---@param enabled boolean
+function TurnGauge.set_enabled(enabled) end
+
 --- Returns true if time is frozen from [time freeze](https://docs.hubos.dev/client/lua-api/attack-api/cards#card_propertiestime_freeze) [Actions](https://docs.hubos.dev/client/lua-api/attack-api/action).
 ---@return boolean
 function TurnGauge.frozen() end
@@ -3337,8 +3352,16 @@ function TurnGauge.set_max_time(time) end
 --- Sets the total elapsed frames required to end a turn to the default (512).
 function TurnGauge.reset_max_time() end
 
+--- Returns a number, represents the current turn number. Starts at 0 during the intro, increments when Card Select opens.
+---@return number
+function TurnGauge.current_turn() end
+
 --- Ends the turn, causing Card Select to appear.
 function TurnGauge.complete_turn() end
+
+--- Returns a number or nil, modified through [encounter:set_turn_limit()](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounterset_turn_limitlimit).
+---@return number
+function TurnGauge.turn_limit() end
 
 --- - `priority`
 ---   - `DefensePriority.Barrier`
