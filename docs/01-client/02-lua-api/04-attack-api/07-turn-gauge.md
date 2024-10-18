@@ -1,5 +1,13 @@
 # TurnGauge
 
+### `TurnGauge.enabled()`
+
+Returns true if the turn gauge is visible, automatically progressing, and allows the turn to end.
+
+### `TurnGauge.set_enabled(enabled)`
+
+Hides the turn gauge, disables automatic progression, and prevents the turn from ending when disabled.
+
 ### `TurnGauge.frozen()`
 
 Returns true if time is frozen from [time freeze](/client/lua-api/attack-api/cards#card_propertiestime_freeze) [Actions](/client/lua-api/attack-api/action).
@@ -30,6 +38,14 @@ Sets the total elapsed frames required to end a turn.
 
 Sets the total elapsed frames required to end a turn to the default (512).
 
+### `TurnGauge.current_turn()`
+
+Returns a number, represents the current turn number. Starts at 0 during the intro, increments when Card Select opens.
+
 ### `TurnGauge.complete_turn()`
 
 Ends the turn, causing Card Select to appear.
+
+### `TurnGauge.turn_limit()`
+
+Returns a number or nil, modified through [encounter:set_turn_limit()](/client/lua-api/field-api/encounter#encounterset_turn_limitlimit).
