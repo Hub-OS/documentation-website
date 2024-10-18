@@ -237,6 +237,10 @@ frame x="0" y="0" w="7" h="12
 
 Returns TextStyle.
 
+### `TextStyle.new_monospace(font_name, texture_path?, animation_path?)`
+
+Returns TextStyle, see [TextStyle.new()](#textstylenewfont_name-texture_path-animation_path)
+
 ## SyncNode
 
 SyncNodes are a sprite animation pair that sync settings, state, and progress with an entity's root animation.
