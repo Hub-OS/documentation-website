@@ -96,6 +96,10 @@ Returns a number, representing all of the mutually exclusive hit flags for bit m
 - `Element.Plus`
 - `Element.Break`
 
+### `Element.is_weak_to(element_a, element_b)`
+
+Returns true if `element_a` is weak to `element_b`.
+
 ## Drag
 
 ### `Drag.new(direction?, distance?)`

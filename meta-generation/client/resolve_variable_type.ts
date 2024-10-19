@@ -26,7 +26,10 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "StagedItem", list: ["staged_item"] },
   { type: "Component", list: ["component"] },
   { type: "Lifetime", list: ["lifetime"] },
-  { type: "Element", list: ["element", "secondary_element"] },
+  {
+    type: "Element",
+    list: ["element", "secondary_element", "element_a", "element_b"],
+  },
   { type: "Element[]", list: ["element_weaknesses"] },
   { type: "Rank", list: ["rank"] },
   { type: "Input", list: ["input_query"] },
