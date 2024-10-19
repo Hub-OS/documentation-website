@@ -369,10 +369,6 @@ Entity = {}
 AttackContext = {}
 
 --- 
----@class TextStyle
-TextStyle = {}
-
---- 
 ---@class Sprite
 Sprite = {}
 
@@ -643,6 +639,25 @@ Hud = {}
 ---@field r number
 
 Color = {}
+
+--- 
+---@class TextStyle
+--- Number or nil. Additional vertical space given to new lines. Line height is calculated using the height of either the space character or `A`, added to the line spacing.
+--- 
+--- When unset the text style will use the engine default value of 1.
+---@field line_spacing number|nil
+--- Number or nil. Additional horizontal space between glyphs.
+--- 
+--- When unset the text style will use the engine default value of 1.
+---@field letter_spacing number|nil
+--- Number or nil. The minimum amount of space allocated for a single glyph for resolving glyph placement.
+--- 
+--- When unset the text style will use the engine default value of 0.
+---@field min_glyph_width number|nil
+--- Boolean or nil. When set to true, text created using this text style will use the width of either the space character or `A` to decide how much width will be allocated for a single glyph, instead of the width of the glyph itself.
+---@field monospace boolean|nil
+
+TextStyle = {}
 
 --- See [entity:queue_movement](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityqueue_movementmovement)
 ---@class Movement
@@ -3286,6 +3301,12 @@ function Hit.duration_for(hit_flag, level) end
 ---@param hit_flag Hit
 ---@return number
 function Hit.mutual_exclusions_for(hit_flag) end
+
+--- Returns true if `element_a` is weak to `element_b`.
+---@param element_a Element
+---@param element_b Element
+---@return boolean
+function Element.is_weak_to(element_a, element_b) end
 
 --- Returns a new Drag instance.
 ---@param direction? Direction
