@@ -241,6 +241,28 @@ Returns TextStyle.
 
 Returns TextStyle, see [TextStyle.new()](#textstylenewfont_name-texture_path-animation_path)
 
+### `text_style.monospace`
+
+Boolean or nil. When set to true, text created using this text style will use the width of either the space character or `A` to decide how much width will be allocated for a single glyph, instead of the width of the glyph itself.
+
+### `text_style.min_glyph_width`
+
+Number or nil. The minimum amount of space allocated for a single glyph for resolving glyph placement.
+
+When unset the text style will use the engine default value of 0.
+
+### `text_style.letter_spacing`
+
+Number or nil. Additional horizontal space between glyphs.
+
+When unset the text style will use the engine default value of 1.
+
+### `text_style.line_spacing`
+
+Number or nil. Additional vertical space given to new lines. Line height is calculated using the height of either the space character or `A`, added to the line spacing.
+
+When unset the text style will use the engine default value of 1.
+
 ## SyncNode
 
 SyncNodes are a sprite animation pair that sync settings, state, and progress with an entity's root animation.

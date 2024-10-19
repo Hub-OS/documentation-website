@@ -78,6 +78,11 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Compare", list: ["compare"] },
   { type: "table<Hit, number>", list: ["status_durations"] },
   {
+    type: "number|nil",
+    list: ["letter_spacing", "line_spacing", "min_glyph_width"],
+  },
+  { type: "boolean|nil", list: ["monospace"] },
+  {
     type: "boolean",
     list: [
       "bool",
