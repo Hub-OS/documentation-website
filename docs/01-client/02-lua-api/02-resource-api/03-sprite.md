@@ -263,6 +263,20 @@ Number or nil. Additional vertical space given to new lines. Line height is calc
 
 When unset the text style will use the engine default value of 1.
 
+### `TextStyle.measure(text_style, text)`
+
+Returns TextMetrics
+
+## TextMetrics
+
+### `text_metrics.width`
+
+The width of the text.
+
+### `text_metrics.height`
+
+The height of the text.
+
 ## SyncNode
 
 SyncNodes are a sprite animation pair that sync settings, state, and progress with an entity's root animation.

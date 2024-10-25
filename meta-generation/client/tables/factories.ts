@@ -6,6 +6,7 @@ import { DefinitionMap } from "../../shared/definition_map";
 const FACTORIES = [
   "Color",
   "TextStyle",
+  "TextMetrics",
   "Movement",
   "Drag",
   "HitProps",

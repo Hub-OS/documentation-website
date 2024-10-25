@@ -104,3 +104,7 @@ Boolean or nil, hides damage and displays question marks when the card's name is
 ### `card_properties.tags`
 
 A list of strings, used by other mods for conditional behavior.
+
+### `CardProperties.icon_texture(card_properties)`
+
+Returns a string, usable anywhere a texture is needed.

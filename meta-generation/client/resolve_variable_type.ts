@@ -40,6 +40,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Color", list: ["color", "color_a", "color_b"] },
   { type: "ColorMode", list: ["color_mode"] },
   { type: "TextStyle", list: ["text_style"] },
+  { type: "TextMetrics", list: ["text_metrics"] },
   { type: "Sprite", list: ["sprite"] },
   { type: "SpriteShaderEffect", list: ["sprite_shader_effect"] },
   { type: "SyncNode", list: ["sync_node"] },
