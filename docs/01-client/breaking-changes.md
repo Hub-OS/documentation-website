@@ -2,6 +2,10 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.32
+
+- `player.can_charge_card_func` is replaced by `player.calculate_card_charge_time_func`
+
 ## 0.28
 
 - `field:reclaim_column(x)` now requires a team: `field:reclaim_column(x, team)`

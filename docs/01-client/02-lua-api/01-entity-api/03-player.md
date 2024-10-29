@@ -350,15 +350,15 @@ end
 
 Should return an [Action](/client/lua-api/attack-api/action)
 
-### `player.can_charge_card_func = function(card_properties): boolean`
+### `player.calculate_card_charge_time_func = function(self, card_properties): number|nil`
 
 Will not be called if there's no matching `charged_card_func`
 
-Return true if `charged_card_func` should be called to handle this card.
+Return a number representing the minimum amount of time the card use button must be held for `charged_card_func` to be called to handle this card.
 
 ### `player.charged_card_func = function(self, card_properties): Action|nil`
 
-Will not be called if there's no matching `can_charge_card_func`
+Will not be called if there's no matching `calculate_card_charge_time_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
@@ -459,15 +459,15 @@ An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the player's implementation.
 
-### `player_form.can_charge_card_func = function(card_properties): boolean`
+### `player_form.calculate_card_charge_time_func = function(self, card_properties): number|nil`
 
 Will not be called if there's no matching `charged_card_func`
 
-Return true if this form's `charged_card_func` should be called to handle this card.
+Return a number representing the minimum amount of time the card use button must be held for this form's `charged_card_func` to be called to handle this card.
 
 ### `player_form.charged_card_func = function(self, card_properties): Action|nil`
 
-Will not be called if there's no matching `can_charge_card_func`
+Will not be called if there's no matching `calculate_card_charge_time_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
@@ -549,15 +549,15 @@ An [Action](/client/lua-api/attack-api/action) is expected as a return value.
 
 Return `nil` to fallback to the next implementation (augment, form, or player).
 
-### `augment.can_charge_card_func = function(card_properties): boolean`
+### `augment.calculate_card_charge_time_func = function(self, card_properties): number|nil`
 
 Will not be called if there's no matching `charged_card_func`
 
-Return true if this augment's `charged_card_func` should be called to handle this card.
+Return a number representing the minimum amount of time the card use button must be held for this augment's `charged_card_func` to be called to handle this card.
 
 ### `augment.charged_card_func = function(self, card_properties): Action|nil`
 
-Will not be called if there's no matching `can_charge_card_func`
+Will not be called if there's no matching `calculate_card_charge_time_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
