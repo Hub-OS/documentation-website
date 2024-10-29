@@ -291,14 +291,14 @@ Input = {
 ---@field on_collision_func fun(self: Entity, entity: Entity)
 --- Used to handle movement input, setting this overrides the default handling.
 ---@field movement_func fun(self: Entity, direction: Direction)
---- Will not be called if there's no matching `can_charge_card_func`
+--- Will not be called if there's no matching `calculate_card_charge_time_func`
 --- 
 --- An [Action](https://docs.hubos.dev/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 ---@field charged_card_func fun(self: Entity, card_properties: CardProperties): Action|nil
 --- Will not be called if there's no matching `charged_card_func`
 --- 
---- Return true if `charged_card_func` should be called to handle this card.
----@field can_charge_card_func fun(card_properties: CardProperties): boolean
+--- Return a number representing the minimum amount of time the card use button must be held for `charged_card_func` to be called to handle this card.
+---@field calculate_card_charge_time_func fun(self: Entity, card_properties: CardProperties): number|nil
 --- Should return an [Action](https://docs.hubos.dev/client/lua-api/attack-api/action)
 ---@field special_attack_func fun(self: Entity): Action|nil
 --- Should return an [Action](https://docs.hubos.dev/client/lua-api/attack-api/action)
@@ -489,14 +489,14 @@ Field = {}
 --- 
 --- Used to handle movement input.
 ---@field movement_func fun(self: Augment, direction: Direction)
---- Will not be called if there's no matching `can_charge_card_func`
+--- Will not be called if there's no matching `calculate_card_charge_time_func`
 --- 
 --- An [Action](https://docs.hubos.dev/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 ---@field charged_card_func fun(self: Augment, card_properties: CardProperties): Action|nil
 --- Will not be called if there's no matching `charged_card_func`
 --- 
---- Return true if this augment's `charged_card_func` should be called to handle this card.
----@field can_charge_card_func fun(card_properties: CardProperties): boolean
+--- Return a number representing the minimum amount of time the card use button must be held for this augment's `charged_card_func` to be called to handle this card.
+---@field calculate_card_charge_time_func fun(self: Augment, card_properties: CardProperties): number|nil
 --- Overrides [player.special_attack_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playerspecial_attack_func--functionself-actionnil)
 --- 
 --- An [Action](https://docs.hubos.dev/client/lua-api/attack-api/action) is expected as a return value.
@@ -528,14 +528,14 @@ Augment = {}
 --- 
 --- Used to handle movement input.
 ---@field movement_func fun(self: PlayerForm)
---- Will not be called if there's no matching `can_charge_card_func`
+--- Will not be called if there's no matching `calculate_card_charge_time_func`
 --- 
 --- An [Action](https://docs.hubos.dev/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 ---@field charged_card_func fun(self: PlayerForm, card_properties: CardProperties): Action|nil
 --- Will not be called if there's no matching `charged_card_func`
 --- 
---- Return true if this form's `charged_card_func` should be called to handle this card.
----@field can_charge_card_func fun(card_properties: CardProperties): boolean
+--- Return a number representing the minimum amount of time the card use button must be held for this form's `charged_card_func` to be called to handle this card.
+---@field calculate_card_charge_time_func fun(self: PlayerForm, card_properties: CardProperties): number|nil
 --- Overrides [player.special_attack_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playerspecial_attack_func--functionself-actionnil) when this form is active.
 --- Also overrides any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment)'s override.
 --- 
