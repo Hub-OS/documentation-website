@@ -151,7 +151,7 @@ The AuxProp will check a [Player](/client/lua-api/entity-api/player)'s held card
 
 - Body priority
 
-The AuxProp will require a [Player](/client/lua-api/entity-api/player) to be holding a fully [charged](/client/lua-api/entity-api/player#playercan_charge_card_func--functioncard_properties-boolean) card.
+The AuxProp will require a [Player](/client/lua-api/entity-api/player) to be holding a fully [charged](/client/lua-api/entity-api/player#playercalculate_card_charge_time_func--functionself-card_properties-numbernil) card.
 
 ### `aux_prop:require_card_primary_element(element)`
 
