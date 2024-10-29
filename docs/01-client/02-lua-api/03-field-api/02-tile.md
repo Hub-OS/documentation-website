@@ -121,7 +121,7 @@ Same as [spell:attack_tile(tile)](/client/lua-api/entity-api/spell#spellattack_t
 
 ### `tile:contains_entity(entity)`
 
-Returns true if the [Entity](/client/lua-api/entity-api/entity) is on the field and at the same position as the tile.
+Returns spawned true if the [Entity](/client/lua-api/entity-api/entity) is at the same position as the tile.
 
 ### `tile:add_entity(entity)`
 
@@ -139,25 +139,25 @@ Removes the [Entity](/client/lua-api/entity-api/entity) from the field.
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Entities](/client/lua-api/entity-api/entity) on the field and not marked for deletion will be passed to the callback.
+Only spawned [Entities](/client/lua-api/entity-api/entity) not marked for deletion will be passed to the callback.
 
 ### `tile:find_characters(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Characters](/client/lua-api/entity-api/character) on the field and not marked for deletion will be passed to the callback.
+Only spawned [Characters](/client/lua-api/entity-api/character) not marked for deletion will be passed to the callback.
 
 ### `tile:find_obstacles(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Obstacles](/client/lua-api/entity-api/obstacle) on the field and not marked for deletion will be passed to the callback.
+Only spawned [Obstacles](/client/lua-api/entity-api/obstacle) not marked for deletion will be passed to the callback.
 
 ### `tile:find_players(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Players](/client/lua-api/entity-api/player) on the field and not marked for deletion will be passed to the callback.
+Only spawned [Players](/client/lua-api/entity-api/player) not marked for deletion will be passed to the callback.
 
 ### `tile:find_spells(function(entity): boolean)`
 

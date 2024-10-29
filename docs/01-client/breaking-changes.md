@@ -5,6 +5,7 @@ https://github.com/Hub-OS/mod-upgrade-tool
 ## 0.32
 
 - `player.can_charge_card_func` is replaced by `player.calculate_card_charge_time_func`
+- Entities not "on field" will now appear in tile and field `find_*()` methods as long as the entity has spawned and hasn't been deleted
 
 ## 0.28
 

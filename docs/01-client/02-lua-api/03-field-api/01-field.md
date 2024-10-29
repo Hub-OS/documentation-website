@@ -30,43 +30,43 @@ Returns an [Entity](/client/lua-api/entity-api/entity) or `nil`.
 
 Returns a list of entities for any entity the callback returned true for.
 
-All [Entities](/client/lua-api/entity-api/entity) on the field and not deleted will be passed to the callback.
+All spawned [Entities](/client/lua-api/entity-api/entity) that haven't been deleted will be passed to the callback.
 
 ### `field:find_characters(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Characters](/client/lua-api/entity-api/character) on the field and not deleted will be passed to the callback, includes [Players](/client/lua-api/entity-api/player).
+Only spawned [Characters](/client/lua-api/entity-api/character) that haven't been deleted will be passed to the callback, includes [Players](/client/lua-api/entity-api/player).
 
 ### `field:find_obstacles(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Obstacles](/client/lua-api/entity-api/obstacle) on the field and not deleted will be passed to the callback.
+Only spawned [Obstacles](/client/lua-api/entity-api/obstacle) that haven't been deleted will be passed to the callback.
 
 ### `field:find_players(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Players](/client/lua-api/entity-api/player) on the field and not deleted will be passed to the callback.
+Only spawned [Players](/client/lua-api/entity-api/player) that haven't been deleted will be passed to the callback.
 
 ### `field:find_spells(function(entity): boolean)`
 
 Returns a list of entities for any entity the callback returned true for.
 
-Only [Spells](/client/lua-api/entity-api/spell) on the field and not deleted will be passed to the callback, excludes [Obstacles](/client/lua-api/entity-api/obstacle).
+Only spawned [Spells](/client/lua-api/entity-api/spell) that haven't been deleted will be passed to the callback, excludes [Obstacles](/client/lua-api/entity-api/obstacle).
 
 ### `field:find_nearest_characters(entity, function(entity): boolean)`
 
 Returns a list of entities sorted by distance, for any entity the callback returned true for.
 
-Only [Characters](/client/lua-api/entity-api/character) on the field and not deleted will be passed to the callback, includes [Players](/client/lua-api/entity-api/player).
+Only spawned [Characters](/client/lua-api/entity-api/character) that haven't been deleted will be passed to the callback, includes [Players](/client/lua-api/entity-api/player).
 
 ### `field:find_nearest_players(entity, function(entity): boolean)`
 
 Returns a list of entities sorted by distance, for any entity the callback returned true for.
 
-Only [Players](/client/lua-api/entity-api/player) on the field and not deleted will be passed to the callback.
+Only spawned [Players](/client/lua-api/entity-api/player) that haven't been deleted will be passed to the callback.
 
 ### `field:find_tiles(function(tile): boolean)`
 
