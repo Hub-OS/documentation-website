@@ -9,13 +9,6 @@ _folder_path = nil
 
 ---@class Namespace
 
----@enum Shadow
-Shadow = {
-  None = 0,
-  Small = 0,
-  Big = 0,
-}
-
 ---@enum Lifetime
 Lifetime = {
   Local = 0,
@@ -195,6 +188,13 @@ ActionType = {
   Special = 0,
   Card = 0,
   Scripted = 0,
+}
+
+---@enum Shadow
+Shadow = {
+  None = "",
+  Small = "",
+  Big = "",
 }
 
 --- 
@@ -2900,9 +2900,9 @@ function Tile:get_tile(direction, distance) end
 ---@param spell Entity
 function Tile:attack_entities(spell) end
 
---- Returns spawned true if the [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) is at the same position as the tile.
+--- Returns true if the [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) is at the same position as the tile.
 ---@param entity Entity
----@return Spawned
+---@return boolean
 function Tile:contains_entity(entity) end
 
 --- Moves the [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) to this tile if the entity is spawned.
