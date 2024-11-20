@@ -1,7 +1,6 @@
 import { DefinitionMap } from "../../shared/definition_map";
 
 const FLAT_ENUMS = {
-  Shadow: ["None", "Small", "Big"],
   Lifetime: [
     "Local",
     "ActiveBattle",
@@ -68,6 +67,14 @@ const FLAT_ENUMS = {
 };
 
 const SPECIAL_ENUMS = {
+  Shadow: [
+    "---@enum Shadow",
+    "Shadow = {",
+    '  None = "",',
+    '  Small = "",',
+    '  Big = "",',
+    "}",
+  ],
   Hit: [
     "---@enum Hit",
     "---@type { [string]: Hit }",

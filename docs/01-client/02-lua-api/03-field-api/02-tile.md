@@ -121,7 +121,7 @@ Same as [spell:attack_tile(tile)](/client/lua-api/entity-api/spell#spellattack_t
 
 ### `tile:contains_entity(entity)`
 
-Returns spawned true if the [Entity](/client/lua-api/entity-api/entity) is at the same position as the tile.
+Returns true if the [Entity](/client/lua-api/entity-api/entity) is at the same position as the tile.
 
 ### `tile:add_entity(entity)`
 
