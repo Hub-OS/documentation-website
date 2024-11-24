@@ -31,6 +31,12 @@ Sets the spawn position for this player.
 
 Experimental. Replacement / removal is under consideration.
 
+### `encounter:set_field_size(width, height)`
+
+Resizes the field, remember to add two to each dimension to account for the invisible edge tiles. If the field is larger than the screen allows, the camera will adjust placement and zoom to fit all [Characters](/client/lua-api/entity-api/character).
+
+Resets tile teams and states on the field.
+
 ### `encounter:set_music(path)`
 
 Sets the initial battle music. Use [Resources.play_music()](/client/lua-api/resource-api/resources#resourcesplay_musicpath-loops) to change the music in the middle of the battle
