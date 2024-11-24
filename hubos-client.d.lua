@@ -3101,6 +3101,13 @@ function Encounter:set_background(texture_path, animation_path, vel_x, vel_y) en
 ---@param tile_height number
 function Encounter:set_panels(texture_paths, animation_path, tile_width, tile_height) end
 
+--- Resizes the field, remember to add two to each dimension to account for the invisible edge tiles. If the field is larger than the screen allows, the camera will adjust placement and zoom to fit all [Characters](https://docs.hubos.dev/client/lua-api/entity-api/character).
+--- 
+--- Resets tile teams and states on the field.
+---@param width number
+---@param height number
+function Encounter:set_field_size(width, height) end
+
 --- Sets the initial battle music. Use [Resources.play_music()](https://docs.hubos.dev/client/lua-api/resource-api/resources#resourcesplay_musicpath-loops) to change the music in the middle of the battle
 ---@param path string
 function Encounter:set_music(path) end
