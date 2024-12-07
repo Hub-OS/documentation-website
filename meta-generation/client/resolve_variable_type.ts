@@ -170,6 +170,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "code",
       "state",
       "name",
+      "origin_name",
       "short_name",
       "point_name",
       "path",

@@ -105,6 +105,12 @@ Returns true if the current animation frame has a point with this name.
 
 Returns `{ x: number, y: number }`.
 
+### `animation:relative_point(name, origin_name?)`
+
+Calculates where a point is relative to the origin.
+
+Returns `{ x: number, y: number }`.
+
 ### `animation:set_playback(playback)`
 
 - `playback`:
