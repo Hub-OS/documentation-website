@@ -2377,6 +2377,14 @@ function Animation:has_point(name) end
 ---@return { x: number, y: number }
 function Animation:get_point(name) end
 
+--- Calculates where a point is relative to the origin.
+--- 
+--- Returns `{ x: number, y: number }`.
+---@param name string
+---@param origin_name? string
+---@return { x: number, y: number }
+function Animation:relative_point(name, origin_name) end
+
 --- - `playback`:
 ---   - `Playback.Once` stops when the animation is completed.
 ---   - `Playback.Loop` restarts the animation when completed.
