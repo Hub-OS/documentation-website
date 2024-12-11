@@ -275,7 +275,7 @@ Net:on("battle_results", function(event)
   --[[
     {
       player_id: string,
-      won: number,
+      won: boolean,
       health: number,
       score: number,
       time: number,
