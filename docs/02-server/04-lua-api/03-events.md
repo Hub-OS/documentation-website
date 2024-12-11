@@ -275,11 +275,12 @@ Net:on("battle_results", function(event)
   --[[
     {
       player_id: string,
+      won: number,
       health: number,
       score: number,
       time: number,
       ran: bool,
-      emotion: number,
+      emotion: string,
       turns: number,
       allies: { name: String, health: number }[],
       enemies: { name: String, health: number }[],

@@ -217,11 +217,12 @@ Returns `Net.Promise<Net.BattleResults?>[]`
 ```lua
 ---@class Net.BattleResults
 ---@field player_id string
+---@field won boolean
 ---@field health number
 ---@field score number
 ---@field time number
 ---@field ran boolean
----@field emotion number
+---@field emotion string
 ---@field turns number
 ---@field allies { name: string, health: number }[]
 ---@field enemies { name: string, health: number }[]
