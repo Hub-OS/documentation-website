@@ -21,7 +21,7 @@ Only transfers and kicks should occur in listeners for this event.
 
 ```lua
 Net:on("player_request", function(event)
-  -- { player_id: string, data: string }
+  -- { player_id: Net.ActorId, data: string }
   print(event.player_id, event.data)
 end)
 ```
@@ -32,7 +32,7 @@ Emits when the player connects to the server (good place to setup while the play
 
 ```lua
 Net:on("player_connect", function(event)
-  -- { player_id: string }
+  -- { player_id: Net.ActorId }
   print(event.player_id)
 end)
 ```
@@ -43,7 +43,7 @@ Emits when the player enters their first area after connecting.
 
 ```lua
 Net:on("player_join", function(event)
-  -- { player_id: string }
+  -- { player_id: Net.ActorId }
   print(event.player_id)
 end)
 ```
@@ -54,7 +54,7 @@ Emits when the player changes area.
 
 ```lua
 Net:on("player_area_transfer", function(event)
-  -- { player_id: string }
+  -- { player_id: Net.ActorId }
   print(event.player_id)
 end)
 ```
@@ -65,7 +65,7 @@ The player is invalid after this function executes.
 
 ```lua
 Net:on("player_disconnect", function(event)
-  -- { player_id: string }
+  -- { player_id: Net.ActorId }
   print(event.player_id)
 end)
 ```
@@ -76,7 +76,7 @@ Calling `Net.get_player_position(event.player_id)` within the listener will repo
 
 ```lua
 Net:on("player_move", function(event)
-  -- { player_id: string, x: number, y: number, z: number }
+  -- { player_id: Net.ActorId, x: number, y: number, z: number }
   print(event.player_id, event.x, event.y, event.z)
 end)
 ```
@@ -87,7 +87,7 @@ The player's base health and max health will be updated on the player before thi
 
 ```lua
 Net:on("player_augment", function(event)
-  -- { player_id: string, augments: { id: string }[] }
+  -- { player_id: Net.ActorId, augments: { id: string }[] }
   print(event.player_id, event)
 end)
 ```
@@ -99,7 +99,7 @@ The player's health, base health, max health, and element will be updated on the
 
 ```lua
 Net:on("player_avatar_change", function(event)
-  -- { player_id: string, texture_path: string, animation_path: string, prevent_default: Function }
+  -- { player_id: Net.ActorId, texture_path: string, animation_path: string, prevent_default: Function }
   print(event.player_id, event)
 end)
 ```
@@ -108,7 +108,7 @@ end)
 
 ```lua
 Net:on("player_emote", function(event)
-  -- { player_id: string, emote: number, prevent_default: Function }
+  -- { player_id: Net.ActorId, emote: number, prevent_default: Function }
   print(event.player_id, event.emote)
 end)
 ```
@@ -119,7 +119,7 @@ Player warped out by a "Custom Warp" or "Custom Server Warp".
 
 ```lua
 Net:on("custom_warp", function(event)
-  -- { player_id: string, object_id: number }
+  -- { player_id: Net.ActorId, object_id: number }
   print(event.player_id, event.object_id)
 end)
 ```
@@ -130,7 +130,7 @@ The player has pressed the Interact button on an Object.
 
 ```lua
 Net:on("object_interaction", function(event)
-  -- { player_id: string, object_id: number, button: number }
+  -- { player_id: Net.ActorId, object_id: number, button: number }
   print(event.player_id, event.object_id, event.button)
 end)
 ```
@@ -141,7 +141,7 @@ The player has pressed the Interact button on another Player or Bot.
 
 ```lua
 Net:on("actor_interaction", function(event)
-  -- { player_id: string, actor_id: string, button: number }
+  -- { player_id: Net.ActorId, actor_id: string, button: number }
   -- actor_id is a player or bot id
   print(event.player_id, event.actor_id, event.button)
 end)
@@ -153,7 +153,7 @@ The player has pressed the Interact button with no Actor or Object in range.
 
 ```lua
 Net:on("tile_interaction", function(event)
-  -- { player_id: string, x: number, y: number, z: number, button: number }
+  -- { player_id: Net.ActorId, x: number, y: number, z: number, button: number }
   print(event.player_id, event.x, event.y, event.z, event.button)
 end)
 ```
@@ -162,7 +162,7 @@ end)
 
 ```lua
 Net:on("textbox_response", function(event)
-  -- { player_id: string, response: number | string }
+  -- { player_id: Net.ActorId, response: number | string }
   print(event.player_id, event.response)
 end)
 ```
@@ -173,7 +173,7 @@ Deprecated.
 
 ```lua
 Net:on("board_open", function(event)
-  -- { player_id: string }
+  -- { player_id: Net.ActorId }
   print(event.player_id)
 end)
 ```
@@ -184,7 +184,7 @@ The board menu has closed from either another menu opening or the player pressin
 
 ```lua
 Net:on("board_close", function(event)
-  -- { player_id: string }
+  -- { player_id: Net.ActorId }
   print(event.player_id)
 end)
 ```
@@ -195,7 +195,7 @@ Client has exhausted board posts and is requesting more posts. Useful for implem
 
 ```lua
 Net:on("post_request", function(event)
-  -- { player_id: string }
+  -- { player_id: Net.ActorId }
   print(event.player_id)
 end)
 ```
@@ -206,7 +206,7 @@ The player has pressed the Confirm button on a board post. A custom response usi
 
 ```lua
 Net:on("post_selection", function(event)
-  -- { player_id: string, post_id: string }
+  -- { player_id: Net.ActorId, post_id: string }
   print(event.player_id, event.post_id)
 end)
 ```
@@ -217,7 +217,7 @@ The player has pressed the Cancel button in the shop menu. A custom message usin
 
 ```lua
 Net:on("shop_leave", function(event)
-  -- { player_id: string }
+  -- { player_id: Net.ActorId }
   print(event.player_id)
 end)
 ```
@@ -228,7 +228,7 @@ The shop menu has closed from either another menu opening or completing leave.
 
 ```lua
 Net:on("shop_close", function(event)
-  -- { player_id: string }
+  -- { player_id: Net.ActorId }
   print(event.player_id)
 end)
 ```
@@ -239,7 +239,7 @@ The player has pressed the Confirm button on a shop item. A custom response usin
 
 ```lua
 Net:on("shop_purchase", function(event)
-  -- { player_id: string, item_id: string }
+  -- { player_id: Net.ActorId, item_id: string }
   print(event.player_id, event.item_id)
 end)
 ```
@@ -250,7 +250,7 @@ The player has pressed the Info button on a shop item.
 
 ```lua
 Net:on("shop_description_request", function(event)
-  -- { player_id: string, item_id: string }
+  -- { player_id: Net.ActorId, item_id: string }
   print(event.player_id, event.item_id)
 end)
 ```
@@ -261,7 +261,7 @@ Emits when the player requests to use an item. Does not automatically remove the
 
 ```lua
 Net:on("item_use", function(event)
-  -- { player_id: string, item_id: string }
+  -- { player_id: Net.ActorId, item_id: string }
   print(event.player_id, event.item_id)
 end)
 ```
@@ -274,7 +274,7 @@ Emits after a player leaves any server sent battle, regardless of winning, losin
 Net:on("battle_results", function(event)
   --[[
     {
-      player_id: string,
+      player_id: Net.ActorId,
       won: boolean,
       health: number,
       score: number,
