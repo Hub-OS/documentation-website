@@ -320,9 +320,8 @@ function Net.EventEmitter:async_iter(event_name) end
 --- emitter:emit("example_event", "c", "d")
 --- emitter:destroy()
 --- ```
----@param event_name string
 ---@return fun(): Net.Promise
-function Net.EventEmitter:async_iter_all(event_name) end
+function Net.EventEmitter:async_iter_all() end
 
 --- Allows async iterators to complete. Otherwise iterators will wait until the program ends.
 --- 
