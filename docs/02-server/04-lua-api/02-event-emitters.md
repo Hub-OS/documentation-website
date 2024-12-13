@@ -100,7 +100,7 @@ emitter:emit("example_event", "c", "d")
 emitter:destroy()
 ```
 
-### `emitter:async_iter_all(event_name)`
+### `emitter:async_iter_all()`
 
 Returns an iterator that returns promises with the value set to `event_name, ...`.
 
