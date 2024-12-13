@@ -284,9 +284,8 @@ function Net.EventEmitter:remove_listener(event_name, callback) end
 --- emitter:remove_on_any_listener(listener)
 --- emitter:emit("example_event", "c", "d")  -- no output
 --- ```
----@param event_name string
 ---@param callback fun()
-function Net.EventEmitter:remove_on_any_listener(event_name, callback) end
+function Net.EventEmitter:remove_on_any_listener(callback) end
 
 --- Returns an iterator that returns promises with the value set to `...` (Event custom parameters).
 --- 
