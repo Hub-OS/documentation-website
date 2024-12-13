@@ -179,7 +179,7 @@ Net.EventEmitter = {}
 ---@field rotated boolean
 
 ---@class Net.BattleResults
----@field player_id string
+---@field player_id Net.ActorId
 ---@field won boolean
 ---@field health number
 ---@field score number
@@ -394,6 +394,29 @@ function Net.get_tile_width(area_id) end
 ---@param area_id string
 ---@return number
 function Net.get_tile_height(area_id) end
+
+--- Returns the screen position using multi-values.
+--- 
+--- ```lua
+--- local x, y = Net.world_to_screen_multi(area_id, x, y)
+--- ```
+---@param area_id string
+---@param x number
+---@param y number
+---@param z? number
+---@return number, number
+function Net.world_to_screen_multi(area_id, x, y, z) end
+
+--- Returns the world position using multi-values.
+--- 
+--- ```lua
+--- local x, y = Net.screen_to_world_multi(area_id, x, y)
+--- ```
+---@param area_id string
+---@param x number
+---@param y number
+---@return number, number
+function Net.screen_to_world_multi(area_id, x, y) end
 
 --- Returns a [Net.CustomProperties](https://docs.hubos.dev/server/lua-api/objects#netcustomproperties)
 ---@param area_id string
