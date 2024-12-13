@@ -95,6 +95,14 @@ const COMPRESSED_RETURN_TYPES = [
       "Returns the screen height",
     ],
   },
+
+  {
+    type: "number, number",
+    list: [
+      "Returns the screen position using multi-values.",
+      "Returns the world position using multi-values.",
+    ],
+  },
   {
     type: "number, number, number",
     list: [

@@ -48,6 +48,22 @@ Returns the screen width of a tile in pixels.
 
 Returns the screen height of a tile in pixels.
 
+### `Net.world_to_screen_multi(area_id, x, y, z?)`
+
+Returns the screen position using multi-values.
+
+```lua
+local x, y = Net.world_to_screen_multi(area_id, x, y)
+```
+
+### `Net.screen_to_world_multi(area_id, x, y)`
+
+Returns the world position using multi-values.
+
+```lua
+local x, y = Net.screen_to_world_multi(area_id, x, y)
+```
+
 ### `Net.get_area_custom_properties(area_id)`
 
 Returns a [Net.CustomProperties](/server/lua-api/objects#netcustomproperties)
