@@ -63,7 +63,7 @@ emitter:remove_listener("example_event", listener)
 emitter:emit("example_event", "c", "d")  -- no output
 ```
 
-### `emitter:remove_on_any_listener(event_name, callback)`
+### `emitter:remove_on_any_listener(callback)`
 
 Removes the listener to prevent future calls from the emitter.
 `callback` must be a reference to the same instance of the function.
