@@ -137,7 +137,7 @@ Returns the spawn position using multi-values.
 Defaults to either the Home Warp or (0, 0, 0)
 
 ```lua
-local x, y, z = Net.get_spawn_position_multi(bot_id)
+local x, y, z = Net.get_spawn_position_multi(area_id)
 ```
 
 ### `Net.set_spawn_position(area_id, x, y, z)`
