@@ -108,6 +108,7 @@ const COMPRESSED_RETURN_TYPES = [
     list: [
       "Returns the player's position using multi-values.",
       "Returns the bot's position using multi-values.",
+      "Returns the spawn position using multi-values.",
     ],
   },
   { type: "number[]", list: ["Returns a list of `object_id`"] },
