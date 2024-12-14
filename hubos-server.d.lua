@@ -508,6 +508,17 @@ function Net.set_foreground(area_id, texture_path, animation_path, vel_x, vel_y,
 ---@return Net.Position
 function Net.get_spawn_position(area_id) end
 
+--- Returns the spawn position using multi-values.
+--- 
+--- Defaults to either the Home Warp or (0, 0, 0)
+--- 
+--- ```lua
+--- local x, y, z = Net.get_spawn_position_multi(area_id)
+--- ```
+---@param area_id string
+---@return number, number, number
+function Net.get_spawn_position_multi(area_id) end
+
 --- Sets the default spawn position for players entering the area.
 ---@param area_id string
 ---@param x number
