@@ -52,6 +52,10 @@ Resizes the object, clients will be updated at the end of the tick.
 
 `visibility` is a bool, the object will be invisible if set to `false`. Clients will be updated at the end of the tick.
 
+### `Net.set_object_privacy(area_id, object_id, private)`
+
+If `private` is true, this object won't be sent to clients.
+
 ### `Net.move_object(area_id, object_id, x, y, layer)`
 
 Moves the object, clients will be updated at the end of the tick.
@@ -71,6 +75,7 @@ Allows for the type and shape of the object to be adjusted. Clients will be upda
 ---@field class? string deprecated
 ---@field type? string
 ---@field visible? boolean
+---@field privacy? boolean
 ---@field x? number
 ---@field y? number
 ---@field z? number

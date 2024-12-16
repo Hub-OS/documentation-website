@@ -36,6 +36,7 @@ const COMPRESSED_VARIABLE_TYPES = [
     type: "boolean",
     list: [
       "bool",
+      "private",
       "warp",
       "warp_in",
       "warp_out",
