@@ -28,13 +28,13 @@ Removes an object, clients will be updated at the end of the tick.
 
 Renames an object.
 
-### `Net.set_object_class(area_id, object_id, class)`
-
-Changes the object's class, clients will be updated at the end of the tick.
-
 ### `Net.set_object_type(area_id, object_id, type)`
 
-Deprecated. Use set_object_class instead.
+Changes the object's type, clients will be updated at the end of the tick.
+
+### `Net.set_object_class(area_id, object_id, class)`
+
+Deprecated. Use set_object_type instead.
 
 ### `Net.set_object_custom_property(area_id, object_id, name, property_value)`
 
