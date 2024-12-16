@@ -66,6 +66,12 @@ Moves the object, clients will be updated at the end of the tick.
 
 Allows for the type and shape of the object to be adjusted. Clients will be updated at the end of the tick.
 
+### `Net.is_inside_object(area_id, object_id, x, y)`
+
+Returns true if the point is inside of the object.
+
+Supports rectangle, ellipse, and polygon shape objects. Any other objects, such as tile objects, will always return false.
+
 ## Net.ObjectOptions
 
 ```lua
