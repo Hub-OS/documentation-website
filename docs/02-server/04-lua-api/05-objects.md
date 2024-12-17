@@ -76,7 +76,6 @@ Supports rectangle, ellipse, and polygon shape objects. Any other objects, such 
 
 ```lua
 ---@class Net.ObjectOptions
----@field id? number
 ---@field name? string
 ---@field class? string deprecated
 ---@field type? string
