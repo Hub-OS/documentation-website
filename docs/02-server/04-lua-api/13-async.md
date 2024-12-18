@@ -37,7 +37,7 @@ Returns the value passed by and_then
 
 ### `Async.await(async_iterator)`
 
-Retruns an iterator from an async iterator (an iterator which returns promises).
+Returns an iterator from an async iterator (an iterator which returns promises).
 
 Can only be used within a coroutine. Use `Async.promisify()` to let the server handle resuming the coroutine.
 
