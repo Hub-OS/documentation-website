@@ -32,11 +32,11 @@ Net.EventEmitter = {}
 ---@field custom_properties Net.CustomProperties
 
 ---@class Net.ObjectOptions
----@field id? number
 ---@field name? string
 ---@field class? string deprecated
 ---@field type? string
 ---@field visible? boolean
+---@field privacy? boolean
 ---@field x? number
 ---@field y? number
 ---@field z? number
@@ -624,17 +624,17 @@ function Net.remove_object(area_id, object_id) end
 ---@param name string
 function Net.set_object_name(area_id, object_id, name) end
 
---- Changes the object's class, clients will be updated at the end of the tick.
----@param area_id string
----@param object_id number|string
----@param class string
-function Net.set_object_class(area_id, object_id, class) end
-
---- Deprecated. Use set_object_class instead.
+--- Changes the object's type, clients will be updated at the end of the tick.
 ---@param area_id string
 ---@param object_id number|string
 ---@param type string
 function Net.set_object_type(area_id, object_id, type) end
+
+--- Deprecated. Use set_object_type instead.
+---@param area_id string
+---@param object_id number|string
+---@param class string
+function Net.set_object_class(area_id, object_id, class) end
 
 --- Modifies an object's custom property, clients will be updated at the end of the tick.
 ---@param area_id string
@@ -662,6 +662,12 @@ function Net.set_object_rotation(area_id, object_id, rotation) end
 ---@param visibility boolean
 function Net.set_object_visibility(area_id, object_id, visibility) end
 
+--- If `private` is true, this object won't be sent to clients.
+---@param area_id string
+---@param object_id number|string
+---@param private boolean
+function Net.set_object_privacy(area_id, object_id, private) end
+
 --- Moves the object, clients will be updated at the end of the tick.
 ---@param area_id string
 ---@param object_id number|string
@@ -677,6 +683,16 @@ function Net.move_object(area_id, object_id, x, y, layer) end
 ---@param object_id number|string
 ---@param object_data Net.ObjectData
 function Net.set_object_data(area_id, object_id, object_data) end
+
+--- Returns true if the point is inside of the object.
+--- 
+--- Supports rectangle, ellipse, and polygon shape objects. Any other objects, such as tile objects, will always return false.
+---@param area_id string
+---@param object_id number|string
+---@param x number
+---@param y number
+---@return boolean
+function Net.is_inside_object(area_id, object_id, x, y) end
 
 --- Returns true if the player is in a server sent battle, or if a board, shop, or textbox is open.
 ---@param player_id Net.ActorId
@@ -1598,7 +1614,7 @@ function Async.create_promise(callback) end
 ---@return any
 function Async.await(promise) end
 
---- Retruns an iterator from an async iterator (an iterator which returns promises).
+--- Returns an iterator from an async iterator (an iterator which returns promises).
 --- 
 --- Can only be used within a coroutine. Use `Async.promisify()` to let the server handle resuming the coroutine.
 --- 
@@ -1637,6 +1653,7 @@ function Async.await(promise) end
 --- end))
 --- ```
 ---@param async_iterator fun(): Net.Promise<any>
+---@return Iterator
 function Async.await(async_iterator) end
 
 --- Can only be used within an async scope or coroutine.
