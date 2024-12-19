@@ -24,6 +24,10 @@ Returns the asset's size in bytes.
 
 Note some assets are compressed when loaded by the server and may differ from the size on disk.
 
+### `Net.get_asset_hash(server_path)`
+
+Returns the asset's hash string.
+
 ### `Net.provide_asset_for_player(player_id, path)`
 
 Allows for assets to be sent ahead of time to reduce apparent server hiccups.

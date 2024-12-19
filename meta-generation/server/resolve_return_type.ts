@@ -125,12 +125,14 @@ const COMPRESSED_RETURN_TYPES = [
       "Returns the IP",
       "Returns the secret identifier for this player",
       "Returns the facing direction",
+      "Returns the asset's hash",
     ],
   },
   {
     type: "string[]",
     list: ["Returns a list of `tileset_path`", "Returns a list of area_ids"],
   },
+  { type: "fun(): any", list: ["Returns an iterator from an async iterator"] },
   { type: "any", list: ["Returns the value passed by and_then"] },
 ];
 
