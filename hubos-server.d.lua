@@ -1557,6 +1557,11 @@ function Net.get_asset_type(server_path) end
 ---@return number
 function Net.get_asset_size(server_path) end
 
+--- Returns the asset's hash string.
+---@param server_path string
+---@return string
+function Net.get_asset_hash(server_path) end
+
 --- Allows for assets to be sent ahead of time to reduce apparent server hiccups.
 --- 
 --- Calling in response to `player_request` will cause cached files on the client to be ignored.
@@ -1653,7 +1658,7 @@ function Async.await(promise) end
 --- end))
 --- ```
 ---@param async_iterator fun(): Net.Promise<any>
----@return Iterator
+---@return fun(): any
 function Async.await(async_iterator) end
 
 --- Can only be used within an async scope or coroutine.
@@ -1726,6 +1731,13 @@ function Async.read_file(path) end
 ---@param content string
 ---@return Net.Promise<boolean>
 function Async.write_file(path, content) end
+
+--- Creates a directory at `path` if it does not already exist.
+--- 
+--- Returns a promise.
+---@param path string
+---@return Net.Promise<nil>
+function Async.ensure_dir(path) end
 
 --- Returns a promise that resolves to `{}?`
 ---@param address string
