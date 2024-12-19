@@ -75,7 +75,10 @@ const COMPRESSED_RETURN_TYPES = [
   },
   {
     type: "Net.Promise<nil>",
-    list: ["Returns a promise that resolves after the duration has passed."],
+    list: [
+      "Returns a promise that resolves after the duration has passed.",
+      "Returns a promise.",
+    ],
   },
   {
     type: "boolean",

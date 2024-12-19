@@ -135,6 +135,12 @@ An empty string is returned if reading failed.
 
 Returns a promise that resolves to `true` if the file was successfully saved, or `false` if the operation failed.
 
+### `Async.ensure_dir(path)`
+
+Creates a directory at `path` if it does not already exist.
+
+Returns a promise.
+
 ### `Async.poll_server(address)`
 
 Returns a promise that resolves to `{}?`
