@@ -38,6 +38,7 @@
   --ifm-menu-color: white;
   --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%)
     hue-rotate(223deg) brightness(104%) contrast(98%);
+  --sidebar-color: #273867;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -47,6 +48,7 @@
   --ifm-navbar-search-input-background-color: white;
   --ifm-navbar-search-input-color: #444950;
   --ifm-navbar-search-input-placeholder-color: grey;
+  --sidebar-color: #1F2740;
 }
 
 :root,
@@ -95,7 +97,7 @@ html[data-theme="dark"] {
 /* sidebar */
 
 .menu {
-  background-color: #105068;
+  background-color: var(--sidebar-color);
 }
 
 /* markdown */
