@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-server/script-nodes" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.2.1">
+<title data-rh="true">Script Nodes | Hub OS Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.hubos.dev/server/script-nodes"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Script Nodes | Hub OS Documentation"><meta data-rh="true" name="description" content="A partial alternative to the Lua scripting API on servers is the script nodes library."><meta data-rh="true" property="og:description" content="A partial alternative to the Lua scripting API on servers is the script nodes library."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.hubos.dev/server/script-nodes"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/server/script-nodes" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/server/script-nodes" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.724ceb5c.css">
+<script src="/assets/js/runtime~main.987dadd8.js" defer="defer"></script>
+<script src="/assets/js/main.924fa596.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"></a><a class="navbar__item navbar__link" href="/client/packages">Client</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/server/minimal-setup">Server</a></div><div class="navbar__items navbar__items--right"><a href="https://hubos.dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Website<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://github.com/Hub-OS/documentation-website" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/server/minimal-setup">Minimal Setup</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/server/areas">Areas</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/server/assets">Assets</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/server/script-nodes">Script Nodes</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/server/lua-api/type-definitions">Lua API</a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/server/breaking-changes">Breaking Changes</a></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Script Nodes</h1>
+<p>A partial alternative to the Lua scripting API on servers is the script nodes library.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="basic-usage">Basic Usage<a href="#basic-usage" class="hash-link" aria-label="Direct link to Basic Usage" title="Direct link to Basic Usage">​</a></h2>
+<p>The Script Nodes library is kicked off through the <code>script_nodes_entry.lua</code> file that ships with the server. This file can be modified to register items, implement saving data, and create custom script nodes.</p>
+<p>Nodes are map objects with a &quot;type&quot; starting with <code>Script Entry: </code> or <code>Script Node: </code>, these are known as Script Nodes (or just nodes) and Script Entry Nodes (or just entry nodes) respectively. Entry nodes seed a context for execution and execute script nodes at documented events. Script nodes perform some action, and generally offer support for a <code>Next</code>/<code>Next 1</code> custom property to execute the next script node after the current node has completed. Many script nodes also have support for <code>Next 2</code> or higher custom properties, which will fall back to <code>Next</code> then <code>Next 1</code>.</p>
+<p>Note: Entry nodes are not the only way to begin script execution. Some script node APIs have simplified entry points such as the <code>On Interact</code> custom property for objects and actors or the <code>On Load</code> boolean for self starting script nodes.</p>
+<p>Script node types, aside from the prefixes, are case insensitive. However, the custom properties are case sensitive.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="examples">Examples<a href="#examples" class="hash-link" aria-label="Direct link to Examples" title="Direct link to Examples">​</a></h2>
+<p>Open the <code>default.tmx</code> file provided with the server in <a href="https://www.mapeditor.org/" target="_blank" rel="noopener noreferrer">Tiled</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="event-entry-api">Event Entry API<a href="#event-entry-api" class="hash-link" aria-label="Direct link to Event Entry API" title="Direct link to Event Entry API">​</a></h2>
+<p>Implements support for the <code>Load</code>, <code>Server Event</code>, and <code>Player Interaction</code> entry types and the <code>On Load</code> property on all script nodes.</p>
+<p>When <code>:load()</code> is called on an area, any script nodes with <code>On Load</code> set to true will execute using a context containing <code>area_id</code>.</p>
+<p>As a reminder: entry nodes have a type starting with <code>Script Entry: </code> such as <code>Script Entry: Load</code>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="load"><code>Load</code><a href="#load" class="hash-link" aria-label="Direct link to load" title="Direct link to load">​</a></h3>
+<p>Supplies a context with <code>area_id</code>.</p>
+<p>Custom properties supported by <code>Load</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="server-event"><code>Server Event</code><a href="#server-event" class="hash-link" aria-label="Direct link to server-event" title="Direct link to server-event">​</a></h3>
+<p>Supplies a context with <code>area_id</code>, <code>player_id</code>, <code>object_id</code>, <code>x</code>, <code>y</code>, <code>z</code> when possible.</p>
+<p>Custom properties supported by <code>Server Event</code>:</p>
+<ul>
+<li><code>Event</code> string, an event name (optional)</li>
+<li><code>Events</code> string, a list of event names separated by a comma and space &quot;, &quot; (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="player-interaction"><code>Player Interaction</code><a href="#player-interaction" class="hash-link" aria-label="Direct link to player-interaction" title="Direct link to player-interaction">​</a></h3>
+<p>Supplies a context with <code>player_ids</code> and <code>area_id</code>.</p>
+<p>Custom properties supported by <code>Player Interaction</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tile-interaction"><code>Tile Interaction</code><a href="#tile-interaction" class="hash-link" aria-label="Direct link to tile-interaction" title="Direct link to tile-interaction">​</a></h3>
+<p>Supplies a context with <code>area_id</code>, <code>player_id</code>, <code>x</code>, <code>y</code>, and <code>z</code>.</p>
+<p>Custom properties supported by <code>Tile Interaction</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="help"><code>Help</code><a href="#help" class="hash-link" aria-label="Direct link to help" title="Direct link to help">​</a></h3>
+<p>Supplies a context with <code>player_id</code> and <code>area_id</code>.</p>
+<p>Custom properties supported by <code>Help</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="item-use"><code>Item Use</code><a href="#item-use" class="hash-link" aria-label="Direct link to item-use" title="Direct link to item-use">​</a></h3>
+<p>Supplies a context with <code>player_id</code> and <code>area_id</code>.</p>
+<p>Custom properties supported by <code>Item Use</code>:</p>
+<ul>
+<li><code>Item</code> string, item id</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="area-api">Area API<a href="#area-api" class="hash-link" aria-label="Direct link to Area API" title="Direct link to Area API">​</a></h2>
+<p>Implements support for <code>Set Area Name</code>, <code>Set Area Background</code>, <code>Set Area Foreground</code>,
+<code>Set Area Music</code>, <code>Transfer To Area</code>, <code>Transfer To Instance</code>, <code>Transfer In Instance</code>, and <code>Remove Area</code> nodes.</p>
+<p>Expects <code>area_id</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-area-name"><code>Set Area Name</code><a href="#set-area-name" class="hash-link" aria-label="Direct link to set-area-name" title="Direct link to set-area-name">​</a></h3>
+<p>Custom properties supported by <code>Set Area Name</code>:</p>
+<ul>
+<li><code>Name</code> the new name of the area</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-area-background-and-set-area-foreground"><code>Set Area Background</code> and <code>Set Area Foreground</code><a href="#set-area-background-and-set-area-foreground" class="hash-link" aria-label="Direct link to set-area-background-and-set-area-foreground" title="Direct link to set-area-background-and-set-area-foreground">​</a></h3>
+<p>Custom properties supported by <code>Set Area Background</code> and <code>Set Area Foreground</code>:</p>
+<ul>
+<li><code>Texture</code> the path to the texture</li>
+<li><code>Animation</code> the path to the animation (optional)</li>
+<li><code>Vel X</code> number (optional)</li>
+<li><code>Vel Y</code> number (optional)</li>
+<li><code>Parallax</code> number (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-area-music"><code>Set Area Music</code><a href="#set-area-music" class="hash-link" aria-label="Direct link to set-area-music" title="Direct link to set-area-music">​</a></h3>
+<p>Custom properties supported by <code>Set Area Music</code>:</p>
+<ul>
+<li><code>Music</code> the path to the new music</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="transfer-to-area"><code>Transfer To Area</code><a href="#transfer-to-area" class="hash-link" aria-label="Direct link to transfer-to-area" title="Direct link to transfer-to-area">​</a></h3>
+<p>Custom properties supported by <code>Transfer To Area</code>:</p>
+<ul>
+<li><code>Area</code> string (ignored when <code>Target</code> is set to a player or bot)</li>
+<li><code>Target</code> object, decides the spawn position and can supply <code>Warp</code> and <code>Direction</code> values (optional)</li>
+<li><code>Warp</code> boolean, decides whether players should play a warp animation (optional)</li>
+<li><code>Direction</code> string (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="transfer-to-instance"><code>Transfer To Instance</code><a href="#transfer-to-instance" class="hash-link" aria-label="Direct link to transfer-to-instance" title="Direct link to transfer-to-instance">​</a></h3>
+<p>Custom properties supported by <code>Transfer To Instance</code>:</p>
+<ul>
+<li><code>Area</code> string, a template area used to seed the new instance</li>
+<li><code>Target</code> object, decides the spawn position and can supply <code>Warp</code> and <code>Direction</code> values (optional)</li>
+<li><code>Warp</code> boolean, decides whether players should play a warp animation (optional)</li>
+<li><code>Direction</code> string (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="transfer-in-instance"><code>Transfer In Instance</code><a href="#transfer-in-instance" class="hash-link" aria-label="Direct link to transfer-in-instance" title="Direct link to transfer-in-instance">​</a></h3>
+<p>Custom properties supported by <code>Transfer In Instance</code>:</p>
+<ul>
+<li><code>Area</code> string, a template area used to seed a new area in the instance if the area doesn&#x27;t exist yet</li>
+<li><code>Target</code> object, decides the spawn position and can supply <code>Warp</code> and <code>Direction</code> values (optional)</li>
+<li><code>Warp</code> boolean, decides whether players should play a warp animation (optional)</li>
+<li><code>Direction</code> string (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="remove-area"><code>Remove Area</code><a href="#remove-area" class="hash-link" aria-label="Direct link to remove-area" title="Direct link to remove-area">​</a></h3>
+<p>Does not support any custom properties.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="object-api">Object API<a href="#object-api" class="hash-link" aria-label="Direct link to Object API" title="Direct link to Object API">​</a></h2>
+<p>Implements support for the <code>On Interact</code> property on objects, the <code>On Warp</code> property on <code>Custom Warp</code> objects,
+and support for the <code>Move Object</code>, <code>Hide Object</code>, <code>Show Object</code>, and <code>Remove Object</code> nodes</p>
+<p><code>On Interact</code> should be applied on an interactable object, and the value should be an object usable as a script node.
+When players interact with the object, the node will execute using a context containing <code>area_id</code>, <code>player_id</code>, and <code>object_id</code>.</p>
+<p><code>On Warp</code> should be applied on a <code>Custom Warp</code> object, and the value should be an object usable as a script node.
+When players warp using this object, the node will execute using a context containing <code>area_id</code>, <code>player_id</code>, and <code>object_id</code>.</p>
+<p>All nodes expect <code>area_id</code> and optionally <code>object_id</code> on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="move-object"><code>Move Object</code><a href="#move-object" class="hash-link" aria-label="Direct link to move-object" title="Direct link to move-object">​</a></h3>
+<p>Custom properties supported by <code>Move Object</code>:</p>
+<ul>
+<li><code>Target</code> object (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hide-object-show-object-and-remove-object"><code>Hide Object</code>, <code>Show Object</code>, and <code>Remove Object</code><a href="#hide-object-show-object-and-remove-object" class="hash-link" aria-label="Direct link to hide-object-show-object-and-remove-object" title="Direct link to hide-object-show-object-and-remove-object">​</a></h3>
+<p>Custom properties supported by <code>Hide Object</code>, <code>Show Object</code>, and <code>Remove Object</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tile-api">Tile API<a href="#tile-api" class="hash-link" aria-label="Direct link to Tile API" title="Direct link to Tile API">​</a></h2>
+<p>Implements support for the <code>Has Tile Id</code> and <code>Set Tile Id</code> nodes</p>
+<p>All nodes expect <code>area_id</code> and optionally <code>object_id</code> on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="has-tile-id"><code>Has Tile Id</code><a href="#has-tile-id" class="hash-link" aria-label="Direct link to has-tile-id" title="Direct link to has-tile-id">​</a></h3>
+<p>Custom properties supported by <code>Has Tile Id</code>:</p>
+<ul>
+<li><code>Target</code> object, expects a tile object or a tile under the object (optional)</li>
+<li><code>Next [1]</code> a link to the default node (optional)</li>
+<li><code>Next [1]</code> a link to the passing node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-tile-id"><code>Set Tile Id</code><a href="#set-tile-id" class="hash-link" aria-label="Direct link to set-tile-id" title="Direct link to set-tile-id">​</a></h3>
+<p>Custom properties supported by <code>Set Tile Id</code>:</p>
+<ul>
+<li><code>Target</code> object, expects a tile object or a tile under the object (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="textbox-api">Textbox API<a href="#textbox-api" class="hash-link" aria-label="Direct link to Textbox API" title="Direct link to Textbox API">​</a></h2>
+<p>Implements support for <code>Message</code>, <code>Auto Message</code>, <code>Question</code>, and <code>Quiz</code> nodes</p>
+<p>All nodes expect <code>area_id</code> and either <code>player_id</code> or <code>player_ids</code> defined on the context table.</p>
+<p>If <code>player_ids</code> is defined, the script will wait for all players and resolve to the first option as the response.</p>
+<p>Supported custom properties:</p>
+<ul>
+<li><code>Mug</code> &quot;Random Player&quot; | &quot;Player [1+]&quot; | string, the extensionless texture and animation for the mug. (optional)</li>
+<li><code>Mug Texture</code> string, the texture for the mug. (optional)</li>
+<li><code>Mug Animation</code> string, the animation for the mug. (optional)</li>
+<li><code>Close Delay</code> a duration in seconds to wait before closing the textbox. (<code>Auto Message</code> specific, optional)</li>
+<li><code>Text [1+]</code></li>
+<li><code>Next [1+]</code> a link to the next node based on the response (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="bbs-api">BBS API<a href="#bbs-api" class="hash-link" aria-label="Direct link to BBS API" title="Direct link to BBS API">​</a></h2>
+<p>Implements support for the <code>BBS</code> node.</p>
+<p>Expects <code>area_id</code> and <code>player_id</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bbs"><code>BBS</code><a href="#bbs" class="hash-link" aria-label="Direct link to bbs" title="Direct link to bbs">​</a></h3>
+<p>Custom properties supported by <code>BBS</code>:</p>
+<ul>
+<li><code>Color</code> color (optional)</li>
+<li><code>Name</code> string (optional)</li>
+<li><code>Instant</code> boolean, skips the open and close animations (optional)</li>
+<li><code>Post 1+</code> object (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<p>Custom properties supported by Post objects:</p>
+<ul>
+<li><code>Mug</code> &quot;Random Player&quot; | &quot;Player [1+]&quot; | string, the extensionless texture and animation for the mug. (optional)</li>
+<li><code>Mug Texture</code> string, the texture for the mug. (optional)</li>
+<li><code>Mug Animation</code> string, the animation for the mug. (optional)</li>
+<li><code>Title</code> string (optional)</li>
+<li><code>Author</code> string (optional)</li>
+<li><code>Text</code> string (optional)</li>
+<li><code>On Interact</code> a link to a script node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="shop-api">Shop API<a href="#shop-api" class="hash-link" aria-label="Direct link to Shop API" title="Direct link to Shop API">​</a></h2>
+<p>Implements support for the <code>Shop</code> node.</p>
+<p>Expects <code>area_id</code> and <code>player_id</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="shop"><code>Shop</code><a href="#shop" class="hash-link" aria-label="Direct link to shop" title="Direct link to shop">​</a></h3>
+<p>Custom properties supported by <code>Shop</code>:</p>
+<ul>
+<li><code>Mug</code> &quot;Random Player&quot; | &quot;Player [1+]&quot; | string, the extensionless texture and animation for the shop keeper&#x27;s mug. (optional)</li>
+<li><code>Mug Texture</code> string, the texture for the shop keeper&#x27;s mug. (optional)</li>
+<li><code>Mug Animation</code> string, the animation for the shop keeper&#x27;s mug. (optional)</li>
+<li><code>Text</code> string, the shop keeper&#x27;s default message (optional)</li>
+<li><code>Welcome Text</code> string, shop keeper&#x27;s welcome message (optional)</li>
+<li><code>Leave Text</code> string, the shop keeper&#x27;s goodbye message (optional)</li>
+<li><code>Purchase Question</code> string, the shop keeper&#x27;s confirmation text (optional)</li>
+<li><code>Item 1+</code> object (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<p>Custom properties supported by Item objects:</p>
+<ul>
+<li><code>Name</code> string (optional)</li>
+<li><code>Price</code> number (optional)</li>
+<li><code>Description</code> string (optional)</li>
+<li><code>Item</code> string, an item id, used to populate a name and description for this shop item (optional)</li>
+<li><code>On Interact</code> a link to a script node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="sound-api">Sound API<a href="#sound-api" class="hash-link" aria-label="Direct link to Sound API" title="Direct link to Sound API">​</a></h2>
+<p>Implements support for the <code>Play Sound</code> node.</p>
+<p>Expects <code>area_id</code> and optionally <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="play-sound"><code>Play Sound</code><a href="#play-sound" class="hash-link" aria-label="Direct link to play-sound" title="Direct link to play-sound">​</a></h3>
+<p>Supported custom properties:</p>
+<ul>
+<li><code>Target</code> &quot;Player [1+]&quot; (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="camera-api">Camera API<a href="#camera-api" class="hash-link" aria-label="Direct link to Camera API" title="Direct link to Camera API">​</a></h2>
+<p>Implements support for the <code>Camera</code> node.</p>
+<p>Expects <code>area_id</code> and either <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="camera"><code>Camera</code><a href="#camera" class="hash-link" aria-label="Direct link to camera" title="Direct link to camera">​</a></h3>
+<p>Supported custom properties:</p>
+<ul>
+<li><code>Duration</code> the duration of the effect in seconds (optional)</li>
+<li><code>Fade</code> a color to fade to (optional)</li>
+<li><code>Shake</code> a number representing the strength of the shake effect (optional)</li>
+<li><code>Motion</code> &quot;Snap&quot; | &quot;Slide&quot; | &quot;Track&quot; (optional)</li>
+<li><code>Target</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; | object (optional)</li>
+<li><code>Unlocks</code> boolean, unlocks the camera at the end of the effect if true (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="encounter-api">Encounter API<a href="#encounter-api" class="hash-link" aria-label="Direct link to Encounter API" title="Direct link to Encounter API">​</a></h2>
+<p>Implements support for the <code>Encounter</code> node.</p>
+<p>Expects <code>area_id</code> and <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="encounter"><code>Encounter</code><a href="#encounter" class="hash-link" aria-label="Direct link to encounter" title="Direct link to encounter">​</a></h3>
+<p>Supported custom properties:</p>
+<ul>
+<li><code>Encounter</code> the duration of the delay in seconds (optional)</li>
+<li><code>Data</code> string, custom data to pass to the encounter (optional)</li>
+<li><code>Forget Results</code> boolean (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+<li><code>On Win</code> a link to a node, threads per player (optional)</li>
+<li><code>On Lose</code> a link to a node, threads per player (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="inventory-api">Inventory API<a href="#inventory-api" class="hash-link" aria-label="Direct link to Inventory API" title="Direct link to Inventory API">​</a></h2>
+<p>Implements support for the <code>Give Money</code>, <code>Take Money</code>, <code>Has Money</code>,
+<code>Give Item</code>, <code>Take Item</code>, and <code>Has Item</code> nodes.</p>
+<p>Expects <code>area_id</code> and <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="give-money"><code>Give Money</code><a href="#give-money" class="hash-link" aria-label="Direct link to give-money" title="Direct link to give-money">​</a></h3>
+<p>Supported custom properties for <code>Give Money</code>:</p>
+<ul>
+<li><code>Amount</code> the amount of money to give</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="take-money"><code>Take Money</code><a href="#take-money" class="hash-link" aria-label="Direct link to take-money" title="Direct link to take-money">​</a></h3>
+<p>Supported custom properties for <code>Take Money</code>:</p>
+<ul>
+<li><code>Amount</code> the amount of money to take, no money will be taken on failure</li>
+<li><code>Next [1]</code> a link to the default node (optional)</li>
+<li><code>Next 2</code> a link to the passing node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="has-money"><code>Has Money</code><a href="#has-money" class="hash-link" aria-label="Direct link to has-money" title="Direct link to has-money">​</a></h3>
+<p>Supported custom properties for <code>Has Money</code>:</p>
+<ul>
+<li><code>Amount</code> the minumum amount of money to pass the check</li>
+<li><code>Next [1]</code> a link to the default node (optional)</li>
+<li><code>Next 2</code> a link to the passing node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="give-item"><code>Give Item</code><a href="#give-item" class="hash-link" aria-label="Direct link to give-item" title="Direct link to give-item">​</a></h3>
+<p>Supported custom properties for <code>Give Item</code>:</p>
+<ul>
+<li><code>Item</code> the ID of the item</li>
+<li><code>Amount</code> the amount of items to give (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="take-item"><code>Take Item</code><a href="#take-item" class="hash-link" aria-label="Direct link to take-item" title="Direct link to take-item">​</a></h3>
+<p>Supported custom properties for <code>Take Item</code>:</p>
+<ul>
+<li><code>Item</code> the ID of the item</li>
+<li><code>Amount</code> the amount of items to take, no items will be taken on failure (optional)</li>
+<li><code>Next [1]</code> a link to the default node (optional)</li>
+<li><code>Next 2</code> a link to the passing node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="has-item"><code>Has Item</code><a href="#has-item" class="hash-link" aria-label="Direct link to has-item" title="Direct link to has-item">​</a></h3>
+<p>Supported custom properties for <code>Has Item</code>:</p>
+<ul>
+<li><code>Item</code> the ID of the item</li>
+<li><code>Amount</code> the minumum amount of items to pass the check (optional)</li>
+<li><code>Next [1]</code> a link to the default node (optional)</li>
+<li><code>Next 2</code> a link to the passing node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="link-api">Link API<a href="#link-api" class="hash-link" aria-label="Direct link to Link API" title="Direct link to Link API">​</a></h2>
+<p>Implements support for the <code>Refer Server</code> and <code>Refer Package</code> nodes</p>
+<p>Expects <code>area_id</code> and <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="refer-server"><code>Refer Server</code><a href="#refer-server" class="hash-link" aria-label="Direct link to refer-server" title="Direct link to refer-server">​</a></h3>
+<p>Supported custom properties for <code>Refer Server</code>:</p>
+<ul>
+<li><code>Name</code> string</li>
+<li><code>Address</code> string</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="refer-package"><code>Refer Package</code><a href="#refer-package" class="hash-link" aria-label="Direct link to refer-package" title="Direct link to refer-package">​</a></h3>
+<p>Supported custom properties for <code>Refer Package</code>:</p>
+<ul>
+<li><code>Id</code> string</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="actor-api">Actor API<a href="#actor-api" class="hash-link" aria-label="Direct link to Actor API" title="Direct link to Actor API">​</a></h2>
+<p>Implements support for <code>Spawn Bot</code>, <code>Remove Bot</code>, <code>Emote</code>, <code>Face</code>, <code>Lock Input</code>, and <code>Unlock Input</code> nodes.</p>
+<p>Expects <code>area_id</code> to be defined on the context table.
+Some nodes may also require <code>bot_id</code> and <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="spawn-bot"><code>Spawn Bot</code><a href="#spawn-bot" class="hash-link" aria-label="Direct link to spawn-bot" title="Direct link to spawn-bot">​</a></h3>
+<p>Custom properties supported by <code>Spawn Bot</code>:</p>
+<ul>
+<li>
+<p><code>Id</code> the identifer for the bot for use in nodes matching &quot;Bot [id]&quot; (optional, tied to area)</p>
+</li>
+<li>
+<p><code>Name</code> the displayed name of the bot (optional)</p>
+</li>
+<li>
+<p><code>Warp In</code> boolean, whether the bot should warp in or not (optional)</p>
+</li>
+<li>
+<p><code>Asset</code> the extensionless path to the texture and animation for the bot (optional if <code>Texture</code> and <code>Animation</code> are set)</p>
+</li>
+<li>
+<p><code>Texture</code> the path to the texture for the bot (ignored if <code>Asset</code> is set)</p>
+</li>
+<li>
+<p><code>Animation</code> the path to the animation for the bot (ignored if <code>Asset</code> is set)</p>
+</li>
+<li>
+<p><code>Animation State</code> an initial animation to play on the bot (optional)</p>
+</li>
+<li>
+<p><code>Direction</code> an initial direction for the bot to face (optional)</p>
+</li>
+<li>
+<p><code>Solid</code> boolean, whether this bot should collide with players or not (optional)</p>
+</li>
+<li>
+<p><code>Next [1]</code> a link to the next node (optional)</p>
+</li>
+<li>
+<p><code>On Interact</code> object, a script node to execute on interactions (optional)</p>
+<p>The node will execute using a context populated with <code>area_id</code>, <code>player_id</code>, and <code>bot_id</code>.</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="remove-bot"><code>Remove Bot</code><a href="#remove-bot" class="hash-link" aria-label="Direct link to remove-bot" title="Direct link to remove-bot">​</a></h3>
+<p>Custom properties supported by <code>Remove Bot</code>:</p>
+<ul>
+<li><code>Id</code> the identifier for the bot (optional)</li>
+<li><code>Warp Out</code> boolean (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="emote"><code>Emote</code><a href="#emote" class="hash-link" aria-label="Direct link to emote" title="Direct link to emote">​</a></h3>
+<p>Custom properties supported by <code>Emote</code>:</p>
+<ul>
+<li><code>Actor</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; (optional)</li>
+<li><code>Emote</code> string</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="face"><code>Face</code><a href="#face" class="hash-link" aria-label="Direct link to face" title="Direct link to face">​</a></h3>
+<p>Custom properties supported by <code>Face</code>:</p>
+<ul>
+<li><code>Actor</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; (optional)</li>
+<li><code>Direction</code> string (optional)</li>
+<li><code>Target</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; | object (optional)</li>
+<li><code>Target Diagonally</code> boolean, when true the <code>Target</code> will resolve to a diagonal direction (optional)</li>
+<li><code>Target Diagonal</code> (alias for <code>Target Diagonally</code>, optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="animate"><code>Animate</code><a href="#animate" class="hash-link" aria-label="Direct link to animate" title="Direct link to animate">​</a></h3>
+<p>Custom properties supported by <code>Animate</code>:</p>
+<ul>
+<li><code>Actor</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; (optional)</li>
+<li><code>Animation State</code> string</li>
+<li><code>Loop</code> boolean (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="teleport"><code>Teleport</code><a href="#teleport" class="hash-link" aria-label="Direct link to teleport" title="Direct link to teleport">​</a></h3>
+<p>Custom properties supported by <code>Teleport</code>:</p>
+<ul>
+<li><code>Target</code> object, decides the position and can supply <code>Warp</code> and <code>Direction</code> values (optional)</li>
+<li><code>Warp</code> boolean, decides whether players should play a warp animation (optional)</li>
+<li><code>Direction</code> string (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="lock-input-and-unlock-input"><code>Lock Input</code> and <code>Unlock Input</code><a href="#lock-input-and-unlock-input" class="hash-link" aria-label="Direct link to lock-input-and-unlock-input" title="Direct link to lock-input-and-unlock-input">​</a></h3>
+<p>Custom properties supported by <code>Lock Input</code> and <code>Unlock Input</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tag-api">Tag API<a href="#tag-api" class="hash-link" aria-label="Direct link to Tag API" title="Direct link to Tag API">​</a></h2>
+<p>Implements support for <code>Tag</code>, <code>Untag</code>, and <code>Clear Tag</code> nodes.</p>
+<p>Expects <code>area_id</code> and optionally <code>bot_id</code>, <code>player_id</code>, or <code>player_ids</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tag"><code>Tag</code><a href="#tag" class="hash-link" aria-label="Direct link to tag" title="Direct link to tag">​</a></h3>
+<p>Custom properties supported by <code>Tag</code>:</p>
+<ul>
+<li><code>Actor</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; (optional)</li>
+<li><code>Tag</code> the tag to give the actor</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="untag"><code>Untag</code><a href="#untag" class="hash-link" aria-label="Direct link to untag" title="Direct link to untag">​</a></h3>
+<p>Custom properties supported by <code>Untag</code>:</p>
+<ul>
+<li><code>Actor</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; (optional)</li>
+<li><code>Tag</code> the tag to remove from the actor</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="clear-tag"><code>Clear Tag</code><a href="#clear-tag" class="hash-link" aria-label="Direct link to clear-tag" title="Direct link to clear-tag">​</a></h3>
+<p>Custom properties supported by <code>Clear Tag</code>:</p>
+<ul>
+<li><code>Tag</code> the tag to clear</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="common-animations-api">Common Animations API<a href="#common-animations-api" class="hash-link" aria-label="Direct link to Common Animations API" title="Direct link to Common Animations API">​</a></h2>
+<p>Implements support for the <code>Area Transition</code> node.</p>
+<p>Expects <code>area_id</code> and optionally <code>player_id</code>, or <code>player_ids</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="area-transition"><code>Area Transition</code><a href="#area-transition" class="hash-link" aria-label="Direct link to area-transition" title="Direct link to area-transition">​</a></h3>
+<p>Custom properties supported by <code>Area Transition</code>:</p>
+<ul>
+<li><code>Fade</code> a color to fade to (optional)</li>
+<li><code>Direction</code> number, the direction players should walk or face during the transition (optional)</li>
+<li><code>Walk Distance</code> number, how far players should walk during the transition (optional)</li>
+<li><code>Next [1]</code> a link to the next node, executes before the screen fades back in. (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="path-api">Path API<a href="#path-api" class="hash-link" aria-label="Direct link to Path API" title="Direct link to Path API">​</a></h2>
+<p>Implements support for <code>Set Path</code>, <code>Paused Path</code>, <code>Pause Path</code>, and <code>Resume Path</code> nodes.</p>
+<p>Expects <code>area_id</code> and optionally <code>bot_id</code>, <code>player_id</code>, or <code>player_ids</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-path"><code>Set Path</code><a href="#set-path" class="hash-link" aria-label="Direct link to set-path" title="Direct link to set-path">​</a></h3>
+<p>Custom properties supported by <code>Set Path</code>:</p>
+<ul>
+<li>
+<p><code>Actor</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; (optional)</p>
+</li>
+<li>
+<p><code>Path Start</code> a link to the first path node. (optional)</p>
+<p>Path nodes support optional <code>Path Next</code> and <code>Speed Multiplier</code> properties.</p>
+</li>
+<li>
+<p><code>Speed Multiplier</code> number (optional)</p>
+</li>
+<li>
+<p><code>Interrupt Radius</code> number, if a player enters this radius, movement will be blocked (optional, bot specific)</p>
+</li>
+<li>
+<p><code>Wait</code> number, how long the actor should wait at this point before continuing movement (optional)</p>
+</li>
+<li>
+<p><code>Loop</code> boolean (optional, bot specific)</p>
+<p>If the path doesn&#x27;t contain a loop it will be played in reverse when the path ends.
+If <code>Loop</code> is false or unspecified, paths with a loop will end at the loop.</p>
+</li>
+<li>
+<p><code>Next [1]</code> a link to the next node, executes immediately if <code>Loop</code> is set to true. (optional)</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="paused-path"><code>Paused Path</code><a href="#paused-path" class="hash-link" aria-label="Direct link to paused-path" title="Direct link to paused-path">​</a></h3>
+<p>Custom properties supported by <code>Paused Path</code>:</p>
+<ul>
+<li><code>Actor</code> &quot;Bot [id]&quot; (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+<li><code>Next 2</code> a link to the passing node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pause-path"><code>Pause Path</code><a href="#pause-path" class="hash-link" aria-label="Direct link to pause-path" title="Direct link to pause-path">​</a></h3>
+<p>Custom properties supported by <code>Pause Path</code>:</p>
+<ul>
+<li><code>Actor</code> &quot;Bot [id]&quot; (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="unpause-path"><code>Unpause Path</code><a href="#unpause-path" class="hash-link" aria-label="Direct link to unpause-path" title="Direct link to unpause-path">​</a></h3>
+<p>Custom properties supported by <code>Unpause Path</code>:</p>
+<ul>
+<li><code>Actor</code> &quot;Bot [id]&quot; (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="collision-api">Collision API<a href="#collision-api" class="hash-link" aria-label="Direct link to Collision API" title="Direct link to Collision API">​</a></h2>
+<p>Implements support for the <code>Collision</code> entry node, and the <code>Set Collider</code> script node.</p>
+<p>As a reminder: entry nodes have a type starting with <code>Script Entry: </code> such as <code>Script Entry: Collision</code></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="collision"><code>Collision</code><a href="#collision" class="hash-link" aria-label="Direct link to collision" title="Direct link to collision">​</a></h3>
+<p>Custom properties supported by <code>Collision</code>:</p>
+<ul>
+<li><code>On Enter</code> a link to a script node (optional)</li>
+<li><code>On Exit</code> a link to a script node (optional)</li>
+<li><code>Ignore Transfer</code> boolean, whether collision changes should be detected when players transfer areas (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-collider"><code>Set Collider</code><a href="#set-collider" class="hash-link" aria-label="Direct link to set-collider" title="Direct link to set-collider">​</a></h3>
+<p>Custom properties supported by <code>Set Collider</code>:</p>
+<ul>
+<li><code>Target</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; (optional)</li>
+<li><code>On Enter</code> a link to a script node (optional)</li>
+<li><code>On Exit</code> a link to a script node (optional)</li>
+<li><code>Radius</code> number (optional)</li>
+<li><code>Ignore Transfer</code> boolean, whether collision changes should be detected when players transfer areas (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="delay-api">Delay API<a href="#delay-api" class="hash-link" aria-label="Direct link to Delay API" title="Direct link to Delay API">​</a></h2>
+<p>Implements support for the <code>Delay</code> node.</p>
+<p>Expects <code>area_id</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="delay"><code>Delay</code><a href="#delay" class="hash-link" aria-label="Direct link to delay" title="Direct link to delay">​</a></h3>
+<p>Supported custom properties:</p>
+<ul>
+<li><code>Duration</code> the duration of the delay in seconds (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="random-api">Random API<a href="#random-api" class="hash-link" aria-label="Direct link to Random API" title="Direct link to Random API">​</a></h2>
+<p>Implements support for the <code>Random</code> node. This node will select a random next node.</p>
+<p>Expects <code>area_id</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="random"><code>Random</code><a href="#random" class="hash-link" aria-label="Direct link to random" title="Direct link to random">​</a></h3>
+<p>Supported custom properties:</p>
+<ul>
+<li><code>Weight [1+]</code> a weight for the next node (optional)</li>
+<li><code>Next [1+]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="thread-api">Thread API<a href="#thread-api" class="hash-link" aria-label="Direct link to Thread API" title="Direct link to Thread API">​</a></h2>
+<p>Implements support for the <code>Thread</code> node. This node will execute every supplied next node.</p>
+<p>Expects <code>area_id</code> to be defined on the context table.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="thread"><code>Thread</code><a href="#thread" class="hash-link" aria-label="Direct link to thread" title="Direct link to thread">​</a></h3>
+<p>Supported custom properties:</p>
+<ul>
+<li><code>Next [1+]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="party-api">Party API<a href="#party-api" class="hash-link" aria-label="Direct link to Party API" title="Direct link to Party API">​</a></h2>
+<p>Implements support for the <code>Party All</code>, <code>Party Loaded</code>, <code>Party Instance</code>,
+<code>Party Area</code>, <code>Party Near</code>, <code>Party Inside</code>, <code>Party Tag</code>, <code>Clear Party</code>, <code>Disband Party</code>, <code>Reunite Party</code>,
+<code>Shuffle Party</code>, <code>Split Party</code>, and <code>Require Party Size</code> nodes.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="party-all-party-loaded-party-instance-party-area"><code>Party All</code>, <code>Party Loaded</code>, <code>Party Instance</code>, <code>Party Area</code><a href="#party-all-party-loaded-party-instance-party-area" class="hash-link" aria-label="Direct link to party-all-party-loaded-party-instance-party-area" title="Direct link to party-all-party-loaded-party-instance-party-area">​</a></h3>
+<p>Expects <code>area_id</code> to be defined on the context table.</p>
+<p>Clears <code>player_id</code> and sets <code>player_ids</code> on the context.</p>
+<p>Supported custom properties:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="party-near"><code>Party Near</code><a href="#party-near" class="hash-link" aria-label="Direct link to party-near" title="Direct link to party-near">​</a></h3>
+<p>Expects <code>area_id</code> to be defined on the context table.</p>
+<p>Clears <code>player_id</code> and sets <code>player_ids</code> on the context.</p>
+<p>Supported custom properties for <code>Party Near</code>:</p>
+<ul>
+<li><code>Target</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; | object (optional)</li>
+<li><code>Radius</code> number</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="party-inside"><code>Party Inside</code><a href="#party-inside" class="hash-link" aria-label="Direct link to party-inside" title="Direct link to party-inside">​</a></h3>
+<p>Expects <code>area_id</code> to be defined on the context table.</p>
+<p>Clears <code>player_id</code> and sets <code>player_ids</code> on the context.</p>
+<p>Supported custom properties for <code>Party Inside</code>:</p>
+<ul>
+<li><code>Target</code> the object to build the party from (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="party-tag"><code>Party Tag</code><a href="#party-tag" class="hash-link" aria-label="Direct link to party-tag" title="Direct link to party-tag">​</a></h3>
+<p>Expects <code>area_id</code> to be defined on the context table.</p>
+<p>Clears <code>player_id</code> and sets <code>player_ids</code> on the context.</p>
+<p>Supported custom properties for <code>Party Tag</code>:</p>
+<ul>
+<li><code>Tag</code> the tag to build the party from</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="clear-party"><code>Clear Party</code><a href="#clear-party" class="hash-link" aria-label="Direct link to clear-party" title="Direct link to clear-party">​</a></h3>
+<p>Expects <code>area_id</code> to be defined on the context table.</p>
+<p>Removes <code>player_ids</code> and <code>player_id</code> from the context table.</p>
+<p>Supported custom properties for <code>Clear Party</code>:</p>
+<ul>
+<li><code>Next [1+]</code> a link to the next node for each player (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="disband-party"><code>Disband Party</code><a href="#disband-party" class="hash-link" aria-label="Direct link to disband-party" title="Direct link to disband-party">​</a></h3>
+<p>Expects <code>area_id</code> and <code>player_ids</code> to be defined on the context table.</p>
+<p>Splits <code>player_ids</code> in the context to multiple contexts with <code>player_id</code> and <code>disbanded_party</code>.</p>
+<p>Supported custom properties for <code>Disband Party</code>:</p>
+<ul>
+<li><code>Next [1+]</code> a link to the next node for each player (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reunite-party"><code>Reunite Party</code><a href="#reunite-party" class="hash-link" aria-label="Direct link to reunite-party" title="Direct link to reunite-party">​</a></h3>
+<p>Expects <code>area_id</code> and <code>disbanded_party</code> to be defined on the context table.</p>
+<p>Clears <code>player_id</code> and renames <code>disbanded_party</code> to <code>player_ids</code> on the context.</p>
+<p>Supported custom properties for <code>Reunite Party</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="exclude-busy"><code>Exclude Busy</code><a href="#exclude-busy" class="hash-link" aria-label="Direct link to exclude-busy" title="Direct link to exclude-busy">​</a></h3>
+<p>Expects <code>area_id</code> and <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<p>Filters out busy players from the party.</p>
+<p>Supported custom properties for <code>Exclude Busy</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="shuffle-party"><code>Shuffle Party</code><a href="#shuffle-party" class="hash-link" aria-label="Direct link to shuffle-party" title="Direct link to shuffle-party">​</a></h3>
+<p>Expects <code>area_id</code> and optionally <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<p>Supported custom properties for <code>Shuffle Party</code>:</p>
+<ul>
+<li><code>Start</code> integer, every player at and after the matching index will be shuffled (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="split-party"><code>Split Party</code><a href="#split-party" class="hash-link" aria-label="Direct link to split-party" title="Direct link to split-party">​</a></h3>
+<p>Expects <code>area_id</code> and optionally <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<p>Attempts to split the party in two.</p>
+<p>Supported custom properties for <code>Split Party</code>:</p>
+<ul>
+<li><code>Start</code> integer, the players at and after the matching index will be moved to a second party (optional)</li>
+<li><code>Start Fraction</code> number, splits the party using a value between <code>0</code> and <code>1</code>
+to decide what fraction of the party should be in the first party (an alternative to <code>Start</code>, optional)</li>
+<li><code>Next [1]</code> a link to the default node (optional)</li>
+<li><code>Next 2</code> a link to the next node for the second party (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="require-party-size"><code>Require Party Size</code><a href="#require-party-size" class="hash-link" aria-label="Direct link to require-party-size" title="Direct link to require-party-size">​</a></h3>
+<p>Expects <code>area_id</code> and optionally <code>player_id</code> or <code>player_ids</code> to be defined on the context table.</p>
+<p>Supported custom properties for <code>Require Party Size</code>:</p>
+<ul>
+<li><code>Minimum</code> integer (optional)</li>
+<li><code>Min</code> integer (alias for <code>Minimum</code>, optional)</li>
+<li><code>Maximum</code> integer (optional)</li>
+<li><code>Max</code> integer (alias for <code>Maximum</code>, optional)</li>
+<li><code>Next [1]</code> a link to the default node (optional)</li>
+<li><code>Next 2</code> a link to the passing node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="variable-api">Variable API<a href="#variable-api" class="hash-link" aria-label="Direct link to Variable API" title="Direct link to Variable API">​</a></h2>
+<p>Implements support for the <code>Set Variable</code>, <code>Increment Variable</code>, <code>Require Variable Value</code>,
+<code>Push Variable Scope</code>, <code>Pop Variable Scope</code>, <code>Push Function</code>, <code>Pop Function</code>, and <code>Print Variables</code> nodes.</p>
+<p>Variable names have the following format: <code>[scope: ]Name</code>. (Example <code>Local: X</code>, <code>Global: X</code>, or <code>X</code>)</p>
+<p>Supported scopes:</p>
+<ul>
+<li><code>Local</code> tied to the current context, used for temporary variables.</li>
+<li><code>Up</code> tied to the current context, allows access to the previous local scope after pushing a scope.</li>
+<li><code>Self</code> tied to an object, bot, or player.</li>
+<li><code>Area</code> tied to the area.</li>
+<li><code>Instance</code> tied to the instance or global scope when outside of an instance (the default)</li>
+<li><code>Global</code></li>
+</ul>
+<p>Note: Unless a function or variable scope is pushed, local variables will be shared between threads
+when <code>Thread</code> nodes are used. Variables stored in <code>Up</code> after a scope is pushed will still be shared between threads.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-variable"><code>Set Variable</code><a href="#set-variable" class="hash-link" aria-label="Direct link to set-variable" title="Direct link to set-variable">​</a></h3>
+<p>Supported custom properties for <code>Set Variable</code>:</p>
+<ul>
+<li><code>Variable</code> string</li>
+<li><code>Target</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; | object, allows specification for the <code>Self</code> scope (optional)</li>
+<li><code>Value</code> number | string</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="increment-variable"><code>Increment Variable</code><a href="#increment-variable" class="hash-link" aria-label="Direct link to increment-variable" title="Direct link to increment-variable">​</a></h3>
+<p>Supported custom properties for <code>Increment Variable</code>:</p>
+<ul>
+<li><code>Variable</code> string</li>
+<li><code>Target</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; | object, allows specification for the <code>Self</code> scope (optional)</li>
+<li><code>Value</code> number (optional)</li>
+<li><code>Amount</code> number (alias for <code>Value</code>, optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="decrement-variable"><code>Decrement Variable</code><a href="#decrement-variable" class="hash-link" aria-label="Direct link to decrement-variable" title="Direct link to decrement-variable">​</a></h3>
+<p>Supported custom properties for <code>Decrement Variable</code>:</p>
+<ul>
+<li><code>Variable</code> string</li>
+<li><code>Target</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; | object, allows specification for the <code>Self</code> scope (optional)</li>
+<li><code>Value</code> number (optional)</li>
+<li><code>Amount</code> number (alias for <code>Value</code>, optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="require-variable-value"><code>Require Variable Value</code><a href="#require-variable-value" class="hash-link" aria-label="Direct link to require-variable-value" title="Direct link to require-variable-value">​</a></h3>
+<p>Supported custom properties for <code>Require Variable Value</code>:</p>
+<ul>
+<li><code>Variable</code> string</li>
+<li><code>Target</code> &quot;Player [1+]&quot; | &quot;Bot [id]&quot; | object, allows specification for the <code>Self</code> scope (optional)</li>
+<li><code>Minimum</code> number (optional)</li>
+<li><code>Min</code> number (alias for <code>Minimum</code>, optional)</li>
+<li><code>Maximum</code> number (optional)</li>
+<li><code>Max</code> number (alias for <code>Maximum</code>, optional)</li>
+<li><code>Value</code> number | string (optional)</li>
+<li><code>Next [1]</code> a link to the default node (optional)</li>
+<li><code>Next 2</code> a link to the passing node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="push-variable-scope"><code>Push Variable Scope</code><a href="#push-variable-scope" class="hash-link" aria-label="Direct link to push-variable-scope" title="Direct link to push-variable-scope">​</a></h3>
+<p>Supported custom properties for <code>Push Variable Scope</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pop-variable-scope"><code>Pop Variable Scope</code><a href="#pop-variable-scope" class="hash-link" aria-label="Direct link to pop-variable-scope" title="Direct link to pop-variable-scope">​</a></h3>
+<p>Supported custom properties for <code>Pop Variable Scope</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="push-function"><code>Push Function</code><a href="#push-function" class="hash-link" aria-label="Direct link to push-function" title="Direct link to push-function">​</a></h3>
+<p>Supported custom properties for <code>Push Function</code>:</p>
+<ul>
+<li>
+<p><code>Function</code> a link to a script node</p>
+</li>
+<li>
+<p><code>Next [1]</code> a link to node to run after the function script node finishes (optional)</p>
+<p>Note: the next node will never run if <code>Pop Function</code> is never called.</p>
+</li>
+</ul>
+<p>Automatically pushes a variable scope.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pop-function"><code>Pop Function</code><a href="#pop-function" class="hash-link" aria-label="Direct link to pop-function" title="Direct link to pop-function">​</a></h3>
+<p>Supported custom properties for <code>Pop Function</code>:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Automatically pops a variable scope.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="print-variables"><code>Print Variables</code><a href="#print-variables" class="hash-link" aria-label="Direct link to print-variables" title="Direct link to print-variables">​</a></h3>
+<p>Supported custom properties for <code>Print Variables</code>:</p>
+<ul>
+<li><code>Scope</code> string (optional)</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="debug-api">Debug API<a href="#debug-api" class="hash-link" aria-label="Direct link to Debug API" title="Direct link to Debug API">​</a></h2>
+<p>Implements support for the <code>Print</code> and <code>Print Context</code> nodes.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="print"><code>Print</code><a href="#print" class="hash-link" aria-label="Direct link to print" title="Direct link to print">​</a></h3>
+<p>Supported custom properties for <code>Print</code>:</p>
+<ul>
+<li><code>Text [1]</code> the message to print</li>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="print-context"><code>Print Context</code><a href="#print-context" class="hash-link" aria-label="Direct link to print-context" title="Direct link to print-context">​</a></h3>
+<p>Supported custom properties for <code>Print Context</code>:</p>
+<ul>
+<li><code>Next [1]</code> a link to the next node (optional)</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/Hub-OS/documentation-website/tree/master/docs/02-server/04-script-nodes.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/server/assets"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Assets</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/server/lua-api/type-definitions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Type Definitions</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#basic-usage" class="table-of-contents__link toc-highlight">Basic Usage</a></li><li><a href="#examples" class="table-of-contents__link toc-highlight">Examples</a></li><li><a href="#event-entry-api" class="table-of-contents__link toc-highlight">Event Entry API</a><ul><li><a href="#load" class="table-of-contents__link toc-highlight"><code>Load</code></a></li><li><a href="#server-event" class="table-of-contents__link toc-highlight"><code>Server Event</code></a></li><li><a href="#player-interaction" class="table-of-contents__link toc-highlight"><code>Player Interaction</code></a></li><li><a href="#tile-interaction" class="table-of-contents__link toc-highlight"><code>Tile Interaction</code></a></li><li><a href="#help" class="table-of-contents__link toc-highlight"><code>Help</code></a></li><li><a href="#item-use" class="table-of-contents__link toc-highlight"><code>Item Use</code></a></li></ul></li><li><a href="#area-api" class="table-of-contents__link toc-highlight">Area API</a><ul><li><a href="#set-area-name" class="table-of-contents__link toc-highlight"><code>Set Area Name</code></a></li><li><a href="#set-area-background-and-set-area-foreground" class="table-of-contents__link toc-highlight"><code>Set Area Background</code> and <code>Set Area Foreground</code></a></li><li><a href="#set-area-music" class="table-of-contents__link toc-highlight"><code>Set Area Music</code></a></li><li><a href="#transfer-to-area" class="table-of-contents__link toc-highlight"><code>Transfer To Area</code></a></li><li><a href="#transfer-to-instance" class="table-of-contents__link toc-highlight"><code>Transfer To Instance</code></a></li><li><a href="#transfer-in-instance" class="table-of-contents__link toc-highlight"><code>Transfer In Instance</code></a></li><li><a href="#remove-area" class="table-of-contents__link toc-highlight"><code>Remove Area</code></a></li></ul></li><li><a href="#object-api" class="table-of-contents__link toc-highlight">Object API</a><ul><li><a href="#move-object" class="table-of-contents__link toc-highlight"><code>Move Object</code></a></li><li><a href="#hide-object-show-object-and-remove-object" class="table-of-contents__link toc-highlight"><code>Hide Object</code>, <code>Show Object</code>, and <code>Remove Object</code></a></li></ul></li><li><a href="#tile-api" class="table-of-contents__link toc-highlight">Tile API</a><ul><li><a href="#has-tile-id" class="table-of-contents__link toc-highlight"><code>Has Tile Id</code></a></li><li><a href="#set-tile-id" class="table-of-contents__link toc-highlight"><code>Set Tile Id</code></a></li></ul></li><li><a href="#textbox-api" class="table-of-contents__link toc-highlight">Textbox API</a></li><li><a href="#bbs-api" class="table-of-contents__link toc-highlight">BBS API</a><ul><li><a href="#bbs" class="table-of-contents__link toc-highlight"><code>BBS</code></a></li></ul></li><li><a href="#shop-api" class="table-of-contents__link toc-highlight">Shop API</a><ul><li><a href="#shop" class="table-of-contents__link toc-highlight"><code>Shop</code></a></li></ul></li><li><a href="#sound-api" class="table-of-contents__link toc-highlight">Sound API</a><ul><li><a href="#play-sound" class="table-of-contents__link toc-highlight"><code>Play Sound</code></a></li></ul></li><li><a href="#camera-api" class="table-of-contents__link toc-highlight">Camera API</a><ul><li><a href="#camera" class="table-of-contents__link toc-highlight"><code>Camera</code></a></li></ul></li><li><a href="#encounter-api" class="table-of-contents__link toc-highlight">Encounter API</a><ul><li><a href="#encounter" class="table-of-contents__link toc-highlight"><code>Encounter</code></a></li></ul></li><li><a href="#inventory-api" class="table-of-contents__link toc-highlight">Inventory API</a><ul><li><a href="#give-money" class="table-of-contents__link toc-highlight"><code>Give Money</code></a></li><li><a href="#take-money" class="table-of-contents__link toc-highlight"><code>Take Money</code></a></li><li><a href="#has-money" class="table-of-contents__link toc-highlight"><code>Has Money</code></a></li><li><a href="#give-item" class="table-of-contents__link toc-highlight"><code>Give Item</code></a></li><li><a href="#take-item" class="table-of-contents__link toc-highlight"><code>Take Item</code></a></li><li><a href="#has-item" class="table-of-contents__link toc-highlight"><code>Has Item</code></a></li></ul></li><li><a href="#link-api" class="table-of-contents__link toc-highlight">Link API</a><ul><li><a href="#refer-server" class="table-of-contents__link toc-highlight"><code>Refer Server</code></a></li><li><a href="#refer-package" class="table-of-contents__link toc-highlight"><code>Refer Package</code></a></li></ul></li><li><a href="#actor-api" class="table-of-contents__link toc-highlight">Actor API</a><ul><li><a href="#spawn-bot" class="table-of-contents__link toc-highlight"><code>Spawn Bot</code></a></li><li><a href="#remove-bot" class="table-of-contents__link toc-highlight"><code>Remove Bot</code></a></li><li><a href="#emote" class="table-of-contents__link toc-highlight"><code>Emote</code></a></li><li><a href="#face" class="table-of-contents__link toc-highlight"><code>Face</code></a></li><li><a href="#animate" class="table-of-contents__link toc-highlight"><code>Animate</code></a></li><li><a href="#teleport" class="table-of-contents__link toc-highlight"><code>Teleport</code></a></li><li><a href="#lock-input-and-unlock-input" class="table-of-contents__link toc-highlight"><code>Lock Input</code> and <code>Unlock Input</code></a></li></ul></li><li><a href="#tag-api" class="table-of-contents__link toc-highlight">Tag API</a><ul><li><a href="#tag" class="table-of-contents__link toc-highlight"><code>Tag</code></a></li><li><a href="#untag" class="table-of-contents__link toc-highlight"><code>Untag</code></a></li><li><a href="#clear-tag" class="table-of-contents__link toc-highlight"><code>Clear Tag</code></a></li></ul></li><li><a href="#common-animations-api" class="table-of-contents__link toc-highlight">Common Animations API</a><ul><li><a href="#area-transition" class="table-of-contents__link toc-highlight"><code>Area Transition</code></a></li></ul></li><li><a href="#path-api" class="table-of-contents__link toc-highlight">Path API</a><ul><li><a href="#set-path" class="table-of-contents__link toc-highlight"><code>Set Path</code></a></li><li><a href="#paused-path" class="table-of-contents__link toc-highlight"><code>Paused Path</code></a></li><li><a href="#pause-path" class="table-of-contents__link toc-highlight"><code>Pause Path</code></a></li><li><a href="#unpause-path" class="table-of-contents__link toc-highlight"><code>Unpause Path</code></a></li></ul></li><li><a href="#collision-api" class="table-of-contents__link toc-highlight">Collision API</a><ul><li><a href="#collision" class="table-of-contents__link toc-highlight"><code>Collision</code></a></li><li><a href="#set-collider" class="table-of-contents__link toc-highlight"><code>Set Collider</code></a></li></ul></li><li><a href="#delay-api" class="table-of-contents__link toc-highlight">Delay API</a><ul><li><a href="#delay" class="table-of-contents__link toc-highlight"><code>Delay</code></a></li></ul></li><li><a href="#random-api" class="table-of-contents__link toc-highlight">Random API</a><ul><li><a href="#random" class="table-of-contents__link toc-highlight"><code>Random</code></a></li></ul></li><li><a href="#thread-api" class="table-of-contents__link toc-highlight">Thread API</a><ul><li><a href="#thread" class="table-of-contents__link toc-highlight"><code>Thread</code></a></li></ul></li><li><a href="#party-api" class="table-of-contents__link toc-highlight">Party API</a><ul><li><a href="#party-all-party-loaded-party-instance-party-area" class="table-of-contents__link toc-highlight"><code>Party All</code>, <code>Party Loaded</code>, <code>Party Instance</code>, <code>Party Area</code></a></li><li><a href="#party-near" class="table-of-contents__link toc-highlight"><code>Party Near</code></a></li><li><a href="#party-inside" class="table-of-contents__link toc-highlight"><code>Party Inside</code></a></li><li><a href="#party-tag" class="table-of-contents__link toc-highlight"><code>Party Tag</code></a></li><li><a href="#clear-party" class="table-of-contents__link toc-highlight"><code>Clear Party</code></a></li><li><a href="#disband-party" class="table-of-contents__link toc-highlight"><code>Disband Party</code></a></li><li><a href="#reunite-party" class="table-of-contents__link toc-highlight"><code>Reunite Party</code></a></li><li><a href="#exclude-busy" class="table-of-contents__link toc-highlight"><code>Exclude Busy</code></a></li><li><a href="#shuffle-party" class="table-of-contents__link toc-highlight"><code>Shuffle Party</code></a></li><li><a href="#split-party" class="table-of-contents__link toc-highlight"><code>Split Party</code></a></li><li><a href="#require-party-size" class="table-of-contents__link toc-highlight"><code>Require Party Size</code></a></li></ul></li><li><a href="#variable-api" class="table-of-contents__link toc-highlight">Variable API</a><ul><li><a href="#set-variable" class="table-of-contents__link toc-highlight"><code>Set Variable</code></a></li><li><a href="#increment-variable" class="table-of-contents__link toc-highlight"><code>Increment Variable</code></a></li><li><a href="#decrement-variable" class="table-of-contents__link toc-highlight"><code>Decrement Variable</code></a></li><li><a href="#require-variable-value" class="table-of-contents__link toc-highlight"><code>Require Variable Value</code></a></li><li><a href="#push-variable-scope" class="table-of-contents__link toc-highlight"><code>Push Variable Scope</code></a></li><li><a href="#pop-variable-scope" class="table-of-contents__link toc-highlight"><code>Pop Variable Scope</code></a></li><li><a href="#push-function" class="table-of-contents__link toc-highlight"><code>Push Function</code></a></li><li><a href="#pop-function" class="table-of-contents__link toc-highlight"><code>Pop Function</code></a></li><li><a href="#print-variables" class="table-of-contents__link toc-highlight"><code>Print Variables</code></a></li></ul></li><li><a href="#debug-api" class="table-of-contents__link toc-highlight">Debug API</a><ul><li><a href="#print" class="table-of-contents__link toc-highlight"><code>Print</code></a></li><li><a href="#print-context" class="table-of-contents__link toc-highlight"><code>Print Context</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
