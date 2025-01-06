@@ -49,7 +49,7 @@ const FUNCTION_REGEX = /[A-Za-z_]+[.:][A-Za-z0-9_<, >]*\(.*\)/;
 const EXCLUDED_CHAPTERS = ["Server Events"];
 
 function buildMetaFile() {
-  const chapters = readDocs(config, "../../docs", "02-server/04-lua-api");
+  const chapters = readDocs(config, "../../docs", "02-server/05-lua-api");
   const all_sections = chapters
     .filter((chapter) => !EXCLUDED_CHAPTERS.includes(chapter.name))
     .flatMap((chapter) => {
