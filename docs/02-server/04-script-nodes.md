@@ -6,7 +6,7 @@ A partial alternative to the Lua scripting API on servers is the script nodes li
 
 The Script Nodes library is kicked off through the `script_nodes_entry.lua` file that ships with the server. This file can be modified to register items, implement saving data, and create custom script nodes.
 
-Nodes are map objects with a "type" starting with `Script Entry: ` or `Script Node: `, these are known as Script Nodes (or just nodes) and Script Entry Nodes (or just entry nodes) respectively. Entry nodes seed a context for execution and execute script nodes at documented events. Script nodes perform some action, and generally offer support for a `Next`/`Next 1` custom property to execute the next script node after the current node has completed. Many script nodes also have support for `Next 2` or higher custom properties, which will fall back to `Next` then `Next 1`.
+Nodes are map objects with a "type" starting with `Script Entry: ` or `Script Node: `, these are known as Script Entry Nodes (or just entry nodes) and Script Nodes (or just nodes) respectively. Entry nodes seed a context for execution and execute script nodes at documented events. Script nodes perform some action, and generally offer support for a `Next`/`Next 1` custom property to execute the next script node after the current node has completed. Many script nodes also have support for `Next 2` or higher custom properties, which will fall back to `Next` then `Next 1`.
 
 Note: Entry nodes are not the only way to begin script execution. Some script node APIs have simplified entry points such as the `On Interact` custom property for objects and actors or the `On Load` boolean for self starting script nodes.
 
