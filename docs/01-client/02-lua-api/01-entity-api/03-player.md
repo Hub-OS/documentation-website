@@ -310,6 +310,22 @@ Returns the player's total charge level, a combination `boost_charge_level` and 
 
 Adds the `increment` value to the charge level. The charge level can only be boosted by five through this method.
 
+### `player:charges_with_shoot()`
+
+Returns true if holding the Shoot button is tied to charging for [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil)
+
+With no calls to `*:set_charge_with_shoot()`, the default is true.
+
+### `player:set_charge_with_shoot(bool?)`
+
+Configures whether the Shoot button is tied to charging for [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil), when no other augments or forms are overriding this behavior.
+
+### `player:mark_charging(bool?)`
+
+Marks the player as trying to charge an attack for [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil)
+
+Automatically resets to false when the value is used by the engine.
+
 ### `player:calculate_default_charge_time()`
 
 Returns the amount of time in game frames, the `Shoot` button would need to be held for a fully charged attack if the [player.calculate_charge_time](#playercalculate_charge_time) function was not set.
@@ -425,6 +441,12 @@ Called when the form is deactivated, the player's appearance should be reverted 
 
 Called after [player.on_update_func](#playernormal_attack_func--functionself-actionnil) when this form is active.
 
+### `player_form:set_charge_with_shoot(bool?)`
+
+Configures whether the Shoot button is tied to charging for [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil), when no other augments or forms are overriding this behavior.
+
+When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+
 ### `player_form.calculate_charge_time_func = function(self): number`
 
 Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself-number) when this form is active.
@@ -518,6 +540,12 @@ Creates a button under the "Confirm" button in Card Select.
 Overrides the special button created on the Player.
 
 Returns [CardSelectButton](#cardselectbutton)
+
+### `augment:set_charge_with_shoot(bool?)`
+
+Configures whether the Shoot button is tied to charging for [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil), when no other augments or forms are overriding this behavior.
+
+When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
 
 ### `augment.calculate_charge_time_func = function(self): number`
 
