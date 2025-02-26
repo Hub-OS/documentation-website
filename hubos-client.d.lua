@@ -1861,6 +1861,28 @@ function Entity:charge_level() end
 ---@param increment number
 function Entity:boost_charge_level(increment) end
 
+--- Returns true if holding the Shoot button is tied to charging for [player.charged_attack_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playercharged_attack_func--functionself-actionnil)
+--- 
+--- With no calls to `*:set_charge_with_shoot()`, the default is true.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return boolean
+function Entity:charges_with_shoot() end
+
+--- Configures whether the Shoot button is tied to charging for [player.charged_attack_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playercharged_attack_func--functionself-actionnil), when no other augments or forms are overriding this behavior.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param bool? boolean
+function Entity:set_charge_with_shoot(bool) end
+
+--- Marks the player as trying to charge an attack for [player.charged_attack_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playercharged_attack_func--functionself-actionnil)
+--- 
+--- Automatically resets to false when the value is used by the engine.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param bool? boolean
+function Entity:mark_charging(bool) end
+
 --- Returns the amount of time in game frames, the `Shoot` button would need to be held for a fully charged attack if the [player.calculate_charge_time](https://docs.hubos.dev/client/lua-api/entity-api/player#playercalculate_charge_time) function was not set.
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
@@ -1912,6 +1934,12 @@ function PlayerForm:create_card_button(slot_count, card_button_slot) end
 ---@return CardSelectButton
 function PlayerForm:create_special_button() end
 
+--- Configures whether the Shoot button is tied to charging for [player.charged_attack_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playercharged_attack_func--functionself-actionnil), when no other augments or forms are overriding this behavior.
+--- 
+--- When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+---@param bool? boolean
+function PlayerForm:set_charge_with_shoot(bool) end
+
 --- Returns the package id of the augment.
 ---@return string
 function Augment:id() end
@@ -1955,6 +1983,12 @@ function Augment:create_card_button(slot_count, card_button_slot) end
 --- Returns [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton)
 ---@return CardSelectButton
 function Augment:create_special_button() end
+
+--- Configures whether the Shoot button is tied to charging for [player.charged_attack_func](https://docs.hubos.dev/client/lua-api/entity-api/player#playercharged_attack_func--functionself-actionnil), when no other augments or forms are overriding this behavior.
+--- 
+--- When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+---@param bool? boolean
+function Augment:set_charge_with_shoot(bool) end
 
 --- Returns a [Sprite](https://docs.hubos.dev/client/lua-api/resource-api/sprite)
 ---@return Sprite
