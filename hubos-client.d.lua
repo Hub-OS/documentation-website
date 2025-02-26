@@ -289,6 +289,12 @@ Input = {
 ---@field on_attack_func fun(self: Entity, entity: Entity)
 --- Called when the spell hits an entity and isn't blocked by [intangibility](https://docs.hubos.dev/client/lua-api/entity-api/living#livingset_intangibleintangible-intangible_rule).
 ---@field on_collision_func fun(self: Entity, entity: Entity)
+--- Called at the start of the intro state (the state before card select first opens).
+--- 
+--- When unset or returning nil, the default intro for the character type will be used.
+--- 
+--- The returned action will not be immediately executed. When the action is completed, the next character's intro will begin or the intro state will end.
+---@field intro_func fun(self: Entity): Action|nil
 --- Used to handle movement input, setting this overrides the default handling.
 ---@field movement_func fun(self: Entity, direction: Direction)
 --- Will not be called if there's no matching `calculate_card_charge_time_func`
