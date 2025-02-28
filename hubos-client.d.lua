@@ -2300,6 +2300,18 @@ function Resources.play_audio(path, audio_behavior) end
 ---@param loops? boolean
 function Resources.play_music(path, loops) end
 
+--- Returns true if the index represents the local player.
+---@param player_index number
+---@return boolean
+function Resources.is_local(player_index) end
+
+--- Same as [player:input_has()](https://docs.hubos.dev/client/lua-api/entity-api/player#playerinput_hasinput_query).
+--- 
+--- Allows for spectator input to be read.
+---@param player_index number
+---@param input_query Input
+function Resources.input_has(player_index, input_query) end
+
 --- Audio will play from the beginning (sample 0), looping back to `start_sample` when `end_sample` is reached.
 --- 
 --- Stops existing playback of the sound if it has `AudioBehavior.NoOverlap`.
@@ -3128,6 +3140,12 @@ function Encounter:player_count() end
 ---@param col number
 ---@param row number
 function Encounter:spawn_player(player_index, col, row) end
+
+--- - `player_index`: number, starts at 0
+--- 
+--- Marks the player as a spectator. Avoids creating an entity for this player (Mods from this player will still be loaded).
+---@param player_index number
+function Encounter:mark_spectator(player_index) end
 
 --- - `vel_x`: if unset, uses the "VELOCITY" point on the first frame of the animation.
 --- - `vel_y`: if unset, uses the "VELOCITY" point on the first frame of the animation.
