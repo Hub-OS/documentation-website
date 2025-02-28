@@ -35,6 +35,16 @@ See [player:play_audio()](/client/lua-api/entity-api/player#playerplay_audiopath
 
 Plays audio stored at `path` as music. Loops by default.
 
+### `Resources.is_local(player_index)`
+
+Returns true if the index represents the local player.
+
+### `Resources.input_has(player_index, input_query)`
+
+Same as [player:input_has()](/client/lua-api/entity-api/player#playerinput_hasinput_query).
+
+Allows for spectator input to be read.
+
 ## AudioBehavior
 
 ### `AudioBehavior.Default`
