@@ -1453,6 +1453,12 @@ function Player.from(entity) end
 ---@return boolean
 function Entity:is_local() end
 
+--- Returns a number, represents the index of the player in the list of players sent from the server.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return number
+function Entity:player_index() end
+
 --- Returns a list of valid values for `player:set_emotion()`.
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
@@ -3146,6 +3152,10 @@ function Encounter:spawn_player(player_index, col, row) end
 --- Marks the player as a spectator. Avoids creating an entity for this player (Mods from this player will still be loaded).
 ---@param player_index number
 function Encounter:mark_spectator(player_index) end
+
+--- Converts players to spectators when deleted.
+---@param bool? boolean
+function Encounter:set_spectate_on_delete(bool) end
 
 --- - `vel_x`: if unset, uses the "VELOCITY" point on the first frame of the animation.
 --- - `vel_y`: if unset, uses the "VELOCITY" point on the first frame of the animation.
