@@ -20,6 +20,10 @@ Creating or deleting sprites, entities, and animations can cause non obvious uni
 
 Even modifying a sprite's color can cause a desync if another script attempts to read the sprite's color to drive behavior.
 
+### `player:player_index()`
+
+Returns a number, represents the index of the player in the list of players sent from the server.
+
 ### `player:emotions()`
 
 Returns a list of valid values for `player:set_emotion()`.
