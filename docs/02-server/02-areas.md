@@ -134,7 +134,7 @@ Classes are used to denote special tiles or objects understood by the client.
   - Address: string
   - Data: string
     - Custom data to pass to the other server
-    - Can be read through handle_player_request on the other server
+    - Can be read in the [player_request](/server/lua-api/events#player_request) event on the other server
     - Try to keep it short! Long data strings may get ignored
   - Direction: string
     - Left
@@ -150,7 +150,8 @@ Classes are used to denote special tiles or objects understood by the client.
 
 - Tile Objects only
 - Visible in map
-- Players will be warped out if colliding with the warp, the result of the warp can be resolved in handle_custom_warp
+- Players will be warped out if colliding with the warp,
+  the result of the warp can be resolved in a listener for [custom_warp](/server/lua-api/events#custom_warp)
 - Custom Properties:
   - Direction: string
     - Left
@@ -166,7 +167,8 @@ Classes are used to denote special tiles or objects understood by the client.
 
 - Tile Objects only
 - Visible in map
-- Players will be warped out if colliding with the warp, the result of the warp can be resolved in handle_custom_warp
+- Players will be warped out if colliding with the warp,
+  the result of the warp can be resolved in a listener for [custom_warp](/server/lua-api/events#custom_warp)
   - Direction: string
     - Left
     - Right
