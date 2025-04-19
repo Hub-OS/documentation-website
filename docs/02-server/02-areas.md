@@ -1,4 +1,4 @@
-# Areas
+# Areas, Objects, and Tiles
 
 Maps for areas are stored in `./areas`. The first area players will see is `default.tmx` (required).
 
