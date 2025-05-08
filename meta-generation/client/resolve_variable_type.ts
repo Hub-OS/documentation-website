@@ -182,6 +182,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   },
   { type: "string[]", list: ["texture_paths", "tags"] },
   { type: "fun()", list: ["callback"] },
+  { type: "any", list: ["data"] },
 ];
 
 const VARIABLE_TYPE_MAP: { [name: string]: string } = {};

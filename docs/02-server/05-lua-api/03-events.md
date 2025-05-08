@@ -291,6 +291,23 @@ Net:on("battle_results", function(event)
 end)
 ```
 
+### `battle_message`
+
+Access to data sent by [encounter:send_to_server()](/client/lua-api/field-api/encounter#encountersend_to_serverdata) in encounter mods sent by the server.
+
+```lua
+Net:on("battle_message", function(event)
+  --[[
+    {
+      player_id: Net.ActorId,
+      battle_id: Net.BattleId,
+      data: any
+    }
+  ]]--
+  print(event.player_id, event.data)
+end)
+```
+
 ### `server_message`
 
 ```lua

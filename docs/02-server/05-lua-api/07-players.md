@@ -181,15 +181,48 @@ Returns true if the player is in battle.
 - `encounter_data`: anything that could be represented as JSON.
   - Read as second param in encounter_init for the encounter package
 
+Returns an event emitter and a battle id.
+
+```lua
+local emitter, battle_id = Net.initiate_encounter(player_id, "/server/mods/my-encounter")
+```
+
 ### `Net.initiate_pvp(player_1_id, player_2_id, package_path?, encounter_data?)`
 
 - `encounter_data`: anything that could be represented as JSON.
   - Read as second param in encounter_init for the encounter package
 
+Returns an event emitter and a battle id.
+
+```lua
+local emitter, battle_id = Net.initiate_pvp(player_a, player_b, "/server/mods/my-encounter")
+```
+
 ### `Net.initiate_netplay(player_ids, package_path?, encounter_data?)`
 
 - `encounter_data`: anything that could be represented as JSON.
   - Read as second param in encounter_init for the encounter package
+
+Returns an event emitter and a battle id.
+
+```lua
+local emitter, battle_id = Net.initiate_netplay(player_ids, "/server/mods/my-encounter")
+```
+
+### `Net.send_battle_message(battle_id, encounter_data)`
+
+Sends data to callbacks provided to [encounter:on_server_message()](/client/lua-api/field-api/encounter#encounteron_server_messagefunctiondata) in encounter mods sent to the client.
+
+```lua
+local emitter, battle_id = Net.initiate_encounter(player_ids, "/server/mods/my-encounter")
+
+emitter:on("battle_message", function(event)
+  -- read and respond to encounter:send_to_server() messages
+  print(event.data)
+  Net.send_battle_message(battle_id, "Pong!")
+  Net.send_battle_message(battle_id, { a = "b" })
+end)
+```
 
 ### `Net.transfer_player(player_id, area_id, warp_in?, x?, y?, z?, direction?)`
 

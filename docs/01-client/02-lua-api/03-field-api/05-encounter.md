@@ -80,6 +80,14 @@ If this function is never called, it is automatically decided by checking for no
 
 Affects the score in [battle_results](/server/lua-api/events#battle_results).
 
+### `encounter:send_to_server(data)`
+
+Sends a message to the server that initiated this battle, which can be accessed on the server in the [battle_message](/server/lua-api/events#battle_message) event.
+
+### `encounter:on_server_message(function(data))`
+
+Receives a message sent from the server by [Net.send_battle_message()](/server/lua-api/players#netsend_battle_messagebattle_id-data).
+
 ## Spawner
 
 Spawns characters at the start of battle.

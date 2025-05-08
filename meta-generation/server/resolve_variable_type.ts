@@ -15,6 +15,7 @@ const COMPRESSED_VARIABLE_TYPES = [
     list: ["player_ids"],
   },
   { type: "Net.SpriteId", list: ["sprite_id"] },
+  { type: "Net.BattleId", list: ["battle_id"] },
   { type: "Net.ObjectOptions", list: ["object_options"] },
   { type: "Net.ObjectData", list: ["object_data"] },
   { type: "Net.BotOptions", list: ["bot_options"] },

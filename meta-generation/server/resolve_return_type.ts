@@ -2,6 +2,10 @@ import { Section } from "../shared/read_docs";
 import PRIMITIVES from "../shared/primitives";
 
 const COMPRESSED_RETURN_TYPES = [
+  {
+    type: "Net.EventEmitter, Net.BattleId",
+    list: ["Returns an event emitter and a battle id"],
+  },
   { type: "Net.ActorId", list: ["Returns a `bot_id`"] },
   {
     type: "Net.ActorId[]",
