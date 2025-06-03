@@ -336,9 +336,7 @@ Input = {
 --- This function is predefined for all entities.
 ---@field can_move_to_func fun(tile: Tile): boolean
 --- Called when the battle has completed (win or loss).
---- 
---- Not implemented.
----@field on_battle_end_func fun(self: Entity)
+---@field on_battle_end_func fun(self: Entity, won: boolean)
 --- Called when battle starts for the first time, or when the entity is spawned if battle has already started.
 ---@field on_battle_start_func fun(self: Entity)
 --- Called when health is 0 or `entity:delete()` is called. `entity:erase()` must be called to truly delete the entity.
@@ -2299,6 +2297,9 @@ function Resources.load_audio(path) end
 ---@param audio_behavior? AudioBehavior
 function Resources.play_audio(path, audio_behavior) end
 
+--- Stops the currently playing music.
+function Resources.stop_music() end
+
 --- - `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.
 --- 
 --- Plays audio stored at `path` as music. Loops by default.
@@ -2310,6 +2311,10 @@ function Resources.play_music(path, loops) end
 ---@param player_index number
 ---@return boolean
 function Resources.is_local(player_index) end
+
+--- Returns a number, represents the index of the local player in the list of players sent from the server.
+---@return number
+function Resources.local_index() end
 
 --- Same as [player:input_has()](https://docs.hubos.dev/client/lua-api/entity-api/player#playerinput_hasinput_query).
 --- 
@@ -3217,6 +3222,39 @@ function Encounter:enable_flipping(enable, player_index) end
 --- Affects the score in [battle_results](https://docs.hubos.dev/server/lua-api/events#battle_results).
 ---@param enabled? boolean
 function Encounter:enable_boss_battle(enabled) end
+
+--- Disables the built-in battle result banner and prevents the scene from automatically ending.
+function Encounter:enable_scripted_scene_end() end
+
+--- Disables the built-in win / loss detection.
+function Encounter:enable_scripted_result() end
+
+--- Marks the battle as a win for [battle_results](https://docs.hubos.dev/server/lua-api/events#battle_results).
+--- 
+--- Additionally ends the battle (similar to [encounter:end_battle()](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounterend_battle)), does not end the scene.
+function Encounter:win() end
+
+--- Marks the battle as a loss for [battle_results](https://docs.hubos.dev/server/lua-api/events#battle_results).
+--- 
+--- Additionally ends the battle (similar to [encounter:end_battle()](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounterend_battle)), does not end the scene.
+function Encounter:lose() end
+
+--- Signals the end of the scene, allowing the player to return to a server or previous menu.
+--- 
+--- Additionally ends the battle ([encounter:end_battle()](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounterend_battle))
+function Encounter:end_scene() end
+
+--- Adds a listener for the battle end to handle results.
+---@param callback fun(won: boolean)
+function Encounter:on_battle_end(callback) end
+
+--- Sends a message to the server that initiated this battle, which can be accessed on the server in the [battle_message](https://docs.hubos.dev/server/lua-api/events#battle_message) event.
+---@param data any
+function Encounter:send_to_server(data) end
+
+--- Receives a message sent from the server by [Net.send_battle_message()](https://docs.hubos.dev/server/lua-api/players#netsend_battle_messagebattle_id-data).
+---@param callback fun(data: any)
+function Encounter:on_server_message(callback) end
 
 --- Spawns the character at this position.
 --- 
