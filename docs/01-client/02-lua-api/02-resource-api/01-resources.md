@@ -29,6 +29,10 @@ Plays a sound with the specified priority.
 
 See [player:play_audio()](/client/lua-api/entity-api/player#playerplay_audiopath-audio_behavior) for playing audio to a specific player.
 
+### `Resources.stop_music()`
+
+Stops the currently playing music.
+
 ### `Resources.play_music(path, loops?)`
 
 - `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.
@@ -38,6 +42,10 @@ Plays audio stored at `path` as music. Loops by default.
 ### `Resources.is_local(player_index)`
 
 Returns true if the index represents the local player.
+
+### `Resources.local_index()`
+
+Returns a number, represents the index of the local player in the list of players sent from the server.
 
 ### `Resources.input_has(player_index, input_query)`
 

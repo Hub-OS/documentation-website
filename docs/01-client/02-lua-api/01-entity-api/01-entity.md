@@ -419,11 +419,9 @@ This function is pre-set for all entities.
 
 Called when battle starts for the first time, or when the entity is spawned if battle has already started.
 
-### `entity.on_battle_end_func = function(self)`
+### `entity.on_battle_end_func = function(self, won)`
 
 Called when the battle has completed (win or loss).
-
-Not implemented.
 
 ### `entity.can_move_to_func = function(tile): boolean`
 

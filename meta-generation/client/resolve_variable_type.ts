@@ -102,6 +102,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "skip_time_freeze_intro",
       "can_boost",
       "can_charge",
+      "won",
     ],
   },
   {

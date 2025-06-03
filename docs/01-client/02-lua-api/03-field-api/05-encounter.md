@@ -80,6 +80,36 @@ If this function is never called, it is automatically decided by checking for no
 
 Affects the score in [battle_results](/server/lua-api/events#battle_results).
 
+### `encounter:enable_scripted_scene_end()`
+
+Disables the built-in battle result banner and prevents the scene from automatically ending.
+
+### `encounter:enable_scripted_result()`
+
+Disables the built-in win / loss detection.
+
+### `encounter:win()`
+
+Marks the battle as a win for [battle_results](/server/lua-api/events#battle_results).
+
+Additionally ends the battle (similar to [encounter:end_battle()](#encounterend_battle)), does not end the scene.
+
+### `encounter:lose()`
+
+Marks the battle as a loss for [battle_results](/server/lua-api/events#battle_results).
+
+Additionally ends the battle (similar to [encounter:end_battle()](#encounterend_battle)), does not end the scene.
+
+### `encounter:end_scene()`
+
+Signals the end of the scene, allowing the player to return to a server or previous menu.
+
+Additionally ends the battle ([encounter:end_battle()](#encounterend_battle))
+
+### `encounter:on_battle_end(function(won))`
+
+Adds a listener for the battle end to handle results.
+
 ### `encounter:send_to_server(data)`
 
 Sends a message to the server that initiated this battle, which can be accessed on the server in the [battle_message](/server/lua-api/events#battle_message) event.
