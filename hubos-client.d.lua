@@ -3244,17 +3244,17 @@ function Encounter:enable_scripted_result() end
 
 --- Marks the battle as a win for [battle_results](https://docs.hubos.dev/server/lua-api/events#battle_results).
 --- 
---- Additionally ends the battle (similar to [encounter:end_battle()](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounterend_battle)), does not end the scene.
+--- Additionally [ends the battle](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounteron_battle_endfunctionwon), does not end the scene.
 function Encounter:win() end
 
 --- Marks the battle as a loss for [battle_results](https://docs.hubos.dev/server/lua-api/events#battle_results).
 --- 
---- Additionally ends the battle (similar to [encounter:end_battle()](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounterend_battle)), does not end the scene.
+--- Additionally [ends the battle](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounteron_battle_endfunctionwon), does not end the scene.
 function Encounter:lose() end
 
 --- Signals the end of the scene, allowing the player to return to a server or previous menu.
 --- 
---- Additionally ends the battle ([encounter:end_battle()](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounterend_battle))
+--- Additionally [ends the battle](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounteron_battle_endfunctionwon)
 function Encounter:end_scene() end
 
 --- Adds a listener for the battle end to handle results.
@@ -3265,7 +3265,7 @@ function Encounter:on_battle_end(callback) end
 ---@param data any
 function Encounter:send_to_server(data) end
 
---- Receives a message sent from the server by [Net.send_battle_message()](https://docs.hubos.dev/server/lua-api/players#netsend_battle_messagebattle_id-data).
+--- Receives a message sent from the server by [Net.send_battle_message()](https://docs.hubos.dev/server/lua-api/players#netsend_battle_messagebattle_id-encounter_data).
 ---@param callback fun(data: any)
 function Encounter:on_server_message(callback) end
 

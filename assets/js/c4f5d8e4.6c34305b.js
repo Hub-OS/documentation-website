@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[2634],{7811:(e,n,t)=>{t.r(n),t.d(n,{default:()=>o});var c=t(6540),a=t(5204),u=t(4848);function o(){return(0,c.useEffect)((()=>{window.location.replace("/client/packages")}),[]),(0,u.jsx)(a.A,{})}}}]);
