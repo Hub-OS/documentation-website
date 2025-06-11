@@ -126,6 +126,10 @@ Returns a list of [DeckCard](/client/lua-api/attack-api/cards#deckcard).
 
 Returns [DeckCard](/client/lua-api/attack-api/cards#deckcard) or nil.
 
+### `player:deck_card_properties(index)`
+
+Returns [CardProperties](/client/lua-api/attack-api/cards#cardproperties) or nil.
+
 ### `player:set_deck_card(index, deck_card)`
 
 - `index`: number, 1 is the first card in the deck.
