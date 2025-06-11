@@ -1597,6 +1597,13 @@ function Entity:deck_cards() end
 ---@return DeckCard
 function Entity:deck_card(index) end
 
+--- Returns [CardProperties](https://docs.hubos.dev/client/lua-api/attack-api/cards#cardproperties) or nil.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param index number
+---@return CardProperties
+function Entity:deck_card_properties(index) end
+
 --- - `index`: number, 1 is the first card in the deck.
 --- - `deck_card`: [DeckCard](https://docs.hubos.dev/client/lua-api/attack-api/cards#deckcard)
 --- 
