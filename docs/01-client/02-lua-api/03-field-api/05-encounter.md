@@ -116,7 +116,7 @@ Sends a message to the server that initiated this battle, which can be accessed 
 
 ### `encounter:on_server_message(function(data))`
 
-Receives a message sent from the server by [Net.send_battle_message()](/server/lua-api/players#netsend_battle_messagebattle_id-data).
+Receives a message sent from the server by [Net.send_battle_message()](/server/lua-api/players#netsend_battle_messagebattle_id-encounter_data).
 
 ## Spawner
 
