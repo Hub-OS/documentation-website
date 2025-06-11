@@ -124,9 +124,15 @@ Returns a list of [DeckCard](/client/lua-api/attack-api/cards#deckcard).
 
 ### `player:deck_card(index)`
 
+- `index`: number, 1 is the first card in the deck.
+
 Returns [DeckCard](/client/lua-api/attack-api/cards#deckcard) or nil.
 
+Creating CardProperties through this function rather than [player:deck_card_properties()](#playerdeck_card_propertiesindex) may cause desyncs when the mod is installed on multiple clients in battle.
+
 ### `player:deck_card_properties(index)`
+
+- `index`: number, 1 is the first card in the deck.
 
 Returns [CardProperties](/client/lua-api/attack-api/cards#cardproperties) or nil.
 
