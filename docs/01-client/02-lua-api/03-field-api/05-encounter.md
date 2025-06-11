@@ -92,19 +92,19 @@ Disables the built-in win / loss detection.
 
 Marks the battle as a win for [battle_results](/server/lua-api/events#battle_results).
 
-Additionally ends the battle (similar to [encounter:end_battle()](#encounterend_battle)), does not end the scene.
+Additionally [ends the battle](#encounteron_battle_endfunctionwon), does not end the scene.
 
 ### `encounter:lose()`
 
 Marks the battle as a loss for [battle_results](/server/lua-api/events#battle_results).
 
-Additionally ends the battle (similar to [encounter:end_battle()](#encounterend_battle)), does not end the scene.
+Additionally [ends the battle](#encounteron_battle_endfunctionwon), does not end the scene.
 
 ### `encounter:end_scene()`
 
 Signals the end of the scene, allowing the player to return to a server or previous menu.
 
-Additionally ends the battle ([encounter:end_battle()](#encounterend_battle))
+Additionally [ends the battle](#encounteron_battle_endfunctionwon)
 
 ### `encounter:on_battle_end(function(won))`
 
