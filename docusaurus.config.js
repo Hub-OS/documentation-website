@@ -8,16 +8,6 @@ const prismThemes = require("prism-react-renderer").themes;
 
 const docsRouteBasePath = "/";
 
-const searchOptions = {
-  // `hashed` is recommended as long-term-cache of index file is possible.
-  hashed: true,
-  // For Docs using Chinese, The `language` is recommended to set to:
-  // ```
-  // language: ["en", "zh"],
-  // ```
-  docsRouteBasePath,
-};
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Hub OS Documentation",
@@ -126,7 +116,14 @@ const config = {
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-      searchOptions,
+      {
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        language: ["en"],
+        docsRouteBasePath,
+        removeDefaultStopWordFilter: true,
+        removeDefaultStemmer: true,
+      },
     ],
   ],
 };

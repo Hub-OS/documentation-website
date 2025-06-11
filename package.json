@@ -15,9 +15,9 @@
     "build-type-info": "npx ts-node meta-generation/client.ts && npx ts-node meta-generation/server.ts"
   },
   "dependencies": {
-    "@docusaurus/core": "3.2.1",
-    "@docusaurus/preset-classic": "3.2.1",
-    "@easyops-cn/docusaurus-search-local": "^0.40.0",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "@easyops-cn/docusaurus-search-local": "^0.51.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
@@ -25,8 +25,8 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.2.1",
-    "@docusaurus/types": "3.2.1",
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/types": "^3.8.1",
     "ts-node": "^10.0.0"
   },
   "browserslist": {
