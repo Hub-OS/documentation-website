@@ -1590,13 +1590,19 @@ function Entity:has_regular_card() end
 ---@return DeckCard[]
 function Entity:deck_cards() end
 
+--- - `index`: number, 1 is the first card in the deck.
+--- 
 --- Returns [DeckCard](https://docs.hubos.dev/client/lua-api/attack-api/cards#deckcard) or nil.
+--- 
+--- Creating CardProperties through this function rather than [player:deck_card_properties()](https://docs.hubos.dev/client/lua-api/entity-api/player#playerdeck_card_propertiesindex) may cause desyncs when the mod is installed on multiple clients in battle.
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param index number
 ---@return DeckCard
 function Entity:deck_card(index) end
 
+--- - `index`: number, 1 is the first card in the deck.
+--- 
 --- Returns [CardProperties](https://docs.hubos.dev/client/lua-api/attack-api/cards#cardproperties) or nil.
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
