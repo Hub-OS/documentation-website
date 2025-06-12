@@ -127,7 +127,7 @@ animation:set_playback(Playback.Loop)
 
 ### `animation:on_complete(function())`
 
-Adds a function to be called when the animation "completes".
+Adds a function to be called when the animation "completes". The callback will no longer be called when the state is changed.
 
 Completion condition differs depending on playback:
 
@@ -138,7 +138,7 @@ Completion condition differs depending on playback:
 
 ### `animation:on_interrupt(function())`
 
-Adds a function to be called when the state changes.
+Adds a function to be called when the state changes. The callback will no longer be called after this occurs.
 
 ### `animation:on_frame(frame_index, function(), do_once?)`
 
@@ -146,3 +146,5 @@ Adds a function to be called when the state changes.
 - `do_once` when true, the callback is deleted.
 
 Calls the callback when the frame changes during an update. If the `frame_index` is 1 and the state was just set, it will be called next update.
+
+The callback will no longer be called when the state is changed.
