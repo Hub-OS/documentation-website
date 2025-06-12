@@ -54,7 +54,7 @@ const FLAT_ENUMS = {
     "Sigma",
   ],
   Highlight: ["None", "Flash", "Solid"],
-  CardClass: ["Standard", "Mega", "Giga", "Dark"],
+  CardClass: ["Standard", "Mega", "Giga", "Dark", "Recipe"],
   Team: ["Other", "Red", "Blue"],
   AudioBehavior: ["Default", "NoOverlap", "EndLoop"],
   Playback: ["Once", "Loop", "Bounce", "Reverse"],

@@ -64,6 +64,7 @@ Any of the values below:
 - `CardClass.Mega`
 - `CardClass.Giga`
 - `CardClass.Dark`
+- `CardClass.Recipe`
 
 ### `card_properties.hit_flags`
 
