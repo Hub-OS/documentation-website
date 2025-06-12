@@ -102,6 +102,7 @@ CardClass = {
   Mega = 0,
   Giga = 0,
   Dark = 0,
+  Recipe = 0,
 }
 
 ---@enum Team
@@ -784,6 +785,7 @@ DeckCard = {}
 --- - `CardClass.Mega`
 --- - `CardClass.Giga`
 --- - `CardClass.Dark`
+--- - `CardClass.Recipe`
 ---@field card_class CardClass
 --- [Element](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#element), influences generated [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 ---@field secondary_element Element
