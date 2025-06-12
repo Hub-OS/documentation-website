@@ -2475,7 +2475,7 @@ function Animation:relative_point(name, origin_name) end
 ---@param playback Playback
 function Animation:set_playback(playback) end
 
---- Adds a function to be called when the animation "completes".
+--- Adds a function to be called when the animation "completes". The callback will no longer be called when the state is changed.
 --- 
 --- Completion condition differs depending on playback:
 --- 
@@ -2486,7 +2486,7 @@ function Animation:set_playback(playback) end
 ---@param callback fun()
 function Animation:on_complete(callback) end
 
---- Adds a function to be called when the state changes.
+--- Adds a function to be called when the state changes. The callback will no longer be called after this occurs.
 ---@param callback fun()
 function Animation:on_interrupt(callback) end
 
@@ -2494,6 +2494,8 @@ function Animation:on_interrupt(callback) end
 --- - `do_once` when true, the callback is deleted.
 --- 
 --- Calls the callback when the frame changes during an update. If the `frame_index` is 1 and the state was just set, it will be called next update.
+--- 
+--- The callback will no longer be called when the state is changed.
 ---@param frame_index number
 ---@param callback fun()
 ---@param do_once? boolean
