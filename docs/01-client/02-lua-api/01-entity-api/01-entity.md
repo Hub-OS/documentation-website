@@ -351,6 +351,8 @@ Returns true if the entity is teleporting.
 
 Returns true if the entity's current movement was caused by drag.
 
+This does return true during the drag lockout, use [living:is_immobile()](/client/lua-api/entity-api/living#livingis_immobile) to detect the immobility caused from lockout.
+
 ### `entity:set_idle()`
 
 Calls [entity:on_idle_func()](#entityon_idle_func--functionself)
