@@ -1236,6 +1236,8 @@ function Entity:is_jumping() end
 function Entity:is_teleporting() end
 
 --- Returns true if the entity's current movement was caused by drag.
+--- 
+--- This does return true during the drag lockout, use [living:is_immobile()](https://docs.hubos.dev/client/lua-api/entity-api/living#livingis_immobile) to detect the immobility caused from lockout.
 ---@return boolean
 function Entity:is_dragged() end
 
