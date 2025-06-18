@@ -5,7 +5,7 @@
 - [Install VS Code](#install-visual-studio-code)
 - [Open Mods Folder in VS Code](#open-the-mods-folder-in-vs-code)
 - [Install Extensions](#install-extensions)
-- [Add Type Definitions](#add-type-definitions)
+- [Add Type Definitions File](#add-type-definitions-file)
 - [Understanding the Mods Folder](#understanding-the-mods-folder)
 - [Your First Mod!](#your-first-mod)
 
@@ -25,7 +25,7 @@ You'll want at minimum the Lua extension by sumneko, as it will provide syntax h
 
 ![Sumneko Extension](/img/getting-started/sumneko-install.png)
 
-## Add Type Definitions
+## Add Type Definitions File
 
 You can add our client type definitions file to your project / mods folder: [Client Type Definitions](/hubos-client.d.lua)
 
