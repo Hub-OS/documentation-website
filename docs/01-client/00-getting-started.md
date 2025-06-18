@@ -38,7 +38,7 @@ It should look like this inside of VS Code:
 
 Each category of mod has a specific folder it should exist in. Some categories may share a folder, such as `library` and `pack` / mod packs.
 
-You can read more details about where each category of mod and what is expected in [Packages](/client/packages).
+You can read more details about where each category of mod belongs and what is expected in [Packages](/client/packages).
 
 At minimum a mod must contain a `package.toml` file for meta information such as the category, name, and package ID.
 
