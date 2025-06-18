@@ -1,5 +1,7 @@
 # Getting Started
 
+This guide provides information on creating mods for the client. For creating custom servers, take a look at the [server documentation](/server)
+
 ## Steps
 
 - [Install VS Code](#install-visual-studio-code)
