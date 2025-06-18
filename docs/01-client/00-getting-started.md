@@ -8,6 +8,7 @@
 - [Add Type Definitions File](#add-type-definitions-file)
 - [Understanding the Mods Folder](#understanding-the-mods-folder)
 - [Your First Mod!](#your-first-mod)
+- [Utilizing Types](#utilizing-types)
 
 ## Install Visual Studio Code
 
