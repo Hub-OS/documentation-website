@@ -50,7 +50,7 @@ At minimum a mod must contain a `package.toml` file for meta information such as
 
 The best way to learn is to add your own changes to simple mods from others before trying from scratch.
 
-Some starter mods:
+Some starter mods (Note: some mods have dependencies that can be automatically installed by downloading through the client):
 
 - [Man](https://hubos.dev/mods/com.discord.Konstinople%237692.player.Man)
   - Features: Simple forms, basic attacks.
@@ -69,6 +69,6 @@ Proper annotations for script entry functions can be found in the [Packages sect
 
 [More details on Sumneko Lua's Annotations](https://luals.github.io/wiki/annotations/)
 
-An example of how this works, see how the `button` variable gets suggestions and documentation from only adding `---@param player Entity`:
+An example of how this works, see how the `button` variable receives suggestions and documentation from only adding `---@param player Entity`:
 
 ![Autocomplete](/img/getting-started/utilizing-types.png)
