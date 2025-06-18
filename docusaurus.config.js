@@ -78,7 +78,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "client/packages",
+            docId: "client/getting-started",
             position: "left",
             label: "Client",
           },
