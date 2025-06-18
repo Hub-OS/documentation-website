@@ -36,7 +36,7 @@ It should look like this inside of VS Code:
 
 ## Understanding the Mods Folder
 
-Each category of mod has a specific folder it should exist in, some categories may share a folder (such as `library` and `pack` / mod packs).
+Each category of mod has a specific folder it should exist in. Some categories may share a folder, such as `library` and `pack` / mod packs.
 
 You can read more details about where each category of mod and what is expected in [Packages](/client/packages).
 
