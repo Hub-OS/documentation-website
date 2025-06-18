@@ -59,13 +59,13 @@ Some starter mods (Note: some mods have dependencies that can be automatically i
 - [ProtoMan](https://hubos.dev/mods/BattleNetwork6.ProtoMan)
   - Features: Emotions, custom actions, chip charging, special attack, fixed cards, reusing cards as attacks.
 
-If you want to start from scratch take a look at the [Packages section](/client/packages) for the base requirements of each type of mod.
+If you want to start from scratch take a look at the [Packages](/client/packages) page for the base requirements of each type of mod.
 
 ## Utilizing Types
 
 If you provide correct type information for your function parameters, the Lua extension can provide in-editor documentation and code suggestions from the type definitions file.
 
-Proper annotations for script entry functions can be found in the [Packages section](/client/packages) (Ctrl+F for `entry.lua`).
+Proper annotations for script entry functions can be found in the [Packages](/client/packages) page (Ctrl+F for `entry.lua`).
 
 [More details on Sumneko Lua's Annotations](https://luals.github.io/wiki/annotations/)
 
