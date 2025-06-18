@@ -11,6 +11,7 @@ This guide provides information on creating mods for the client. For creating cu
 - [Understanding the Mods Folder](#understanding-the-mods-folder)
 - [Your First Mod!](#your-first-mod)
 - [Utilizing Types](#utilizing-types)
+- [Useful Tools](#useful-tools)
 
 ## Install Visual Studio Code
 
