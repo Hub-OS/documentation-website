@@ -1566,6 +1566,20 @@ function Entity:set_charge_position(x, y) end
 ---@return boolean
 function Entity:slide_when_moving() end
 
+--- Returns true if holding movement buttons causes the player to move.
+--- 
+--- With no calls to `*:set_movement_on_input()`, the default is true.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return boolean
+function Entity:movement_on_input() end
+
+--- Configures whether holding movement buttons causes the player to move, when no other augments or forms are overriding this behavior.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param bool? boolean
+function Entity:set_movement_on_input(bool) end
+
 --- When `true`, the player will slide to tiles and continue using the `CHARACTER_IDLE` state.
 --- 
 --- When `false`, the player will teleport to tiles and animate with the `CHARACTER_MOVE` state.
@@ -1581,6 +1595,35 @@ function Entity:set_slide_when_moving(bool) end
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param tile Tile
 function Entity:queue_default_player_movement(tile) end
+
+--- Queues an action from a [Form](https://docs.hubos.dev/client/lua-api/entity-api/player#playerform), [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment), or the base player mod.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+function Entity:queue_normal_attack() end
+
+--- Queues an action from a [Form](https://docs.hubos.dev/client/lua-api/entity-api/player#playerform), [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment), or the base player mod.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+function Entity:queue_charged_attack() end
+
+--- Queues an action from a [Form](https://docs.hubos.dev/client/lua-api/entity-api/player#playerform), [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment), or the base player mod.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+function Entity:queue_special_attack() end
+
+--- Returns true if pressing the Special button activates the special attack.
+--- 
+--- With no calls to `*:set_special_on_input()`, the default is true.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return boolean
+function Entity:special_on_input() end
+
+--- Configures whether the Special button should activate the special attack, when no other augments or forms are overriding this behavior.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param bool? boolean
+function Entity:set_special_on_input(bool) end
 
 --- Returns a bool.
 ---
@@ -1961,6 +2004,18 @@ function PlayerForm:create_special_button() end
 ---@param bool? boolean
 function PlayerForm:set_charge_with_shoot(bool) end
 
+--- Configures whether the Special button activate the special attack, when no other augments or forms are overriding this behavior.
+--- 
+--- When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+---@param bool? boolean
+function PlayerForm:set_special_on_input(bool) end
+
+--- Configures whether holding movement buttons causes the player to move, when no other augments or forms are overriding this behavior.
+--- 
+--- When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+---@param bool? boolean
+function PlayerForm:set_movement_on_input(bool) end
+
 --- Returns the package id of the augment.
 ---@return string
 function Augment:id() end
@@ -2010,6 +2065,18 @@ function Augment:create_special_button() end
 --- When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
 ---@param bool? boolean
 function Augment:set_charge_with_shoot(bool) end
+
+--- Configures whether the Special button activate the special attack, when no other augments or forms are overriding this behavior.
+--- 
+--- When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+---@param bool? boolean
+function Augment:set_special_on_input(bool) end
+
+--- Configures whether holding movement buttons causes the player to move, when no other augments or forms are overriding this behavior.
+--- 
+--- When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+---@param bool? boolean
+function Augment:set_movement_on_input(bool) end
 
 --- Returns a [Sprite](https://docs.hubos.dev/client/lua-api/resource-api/sprite)
 ---@return Sprite
