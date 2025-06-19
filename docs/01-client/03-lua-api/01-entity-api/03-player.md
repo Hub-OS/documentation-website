@@ -102,6 +102,16 @@ Sets the offset of the fully charged sprite.
 
 Returns a bool.
 
+### `player:movement_on_input()`
+
+Returns true if holding movement buttons causes the player to move.
+
+With no calls to `*:set_movement_on_input()`, the default is true.
+
+### `player:set_movement_on_input(bool?)`
+
+Configures whether holding movement buttons causes the player to move, when no other augments or forms are overriding this behavior.
+
 ### `player:set_slide_when_moving(bool?)`
 
 When `true`, the player will slide to tiles and continue using the `CHARACTER_IDLE` state.
@@ -113,6 +123,28 @@ When `false`, the player will teleport to tiles and animate with the `CHARACTER_
 - `tile`: [Tile](/client/lua-api/field-api/tile)
 
 Queues a movement with the default internal logic.
+
+### `player:queue_normal_attack()`
+
+Queues an action from a [Form](#playerform), [Augment](#augment), or the base player mod.
+
+### `player:queue_charged_attack()`
+
+Queues an action from a [Form](#playerform), [Augment](#augment), or the base player mod.
+
+### `player:queue_special_attack()`
+
+Queues an action from a [Form](#playerform), [Augment](#augment), or the base player mod.
+
+### `player:special_on_input()`
+
+Returns true if pressing the Special button activates the special attack.
+
+With no calls to `*:set_special_on_input()`, the default is true.
+
+### `player:set_special_on_input(bool?)`
+
+Configures whether the Special button should activate the special attack, when no other augments or forms are overriding this behavior.
 
 ### `player:has_regular_card()`
 
@@ -461,6 +493,18 @@ Configures whether the Shoot button is tied to charging for [player.charged_atta
 
 When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
 
+### `player_form:set_special_on_input(bool?)`
+
+Configures whether the Special button activate the special attack, when no other augments or forms are overriding this behavior.
+
+When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+
+### `player_form:set_movement_on_input(bool?)`
+
+Configures whether holding movement buttons causes the player to move, when no other augments or forms are overriding this behavior.
+
+When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+
 ### `player_form.calculate_charge_time_func = function(self): number`
 
 Overrides [player.calculate_charge_time_func](#playercalculate_charge_time_func--functionself-number) when this form is active.
@@ -558,6 +602,18 @@ Returns [CardSelectButton](#cardselectbutton)
 ### `augment:set_charge_with_shoot(bool?)`
 
 Configures whether the Shoot button is tied to charging for [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil), when no other augments or forms are overriding this behavior.
+
+When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+
+### `augment:set_special_on_input(bool?)`
+
+Configures whether the Special button activate the special attack, when no other augments or forms are overriding this behavior.
+
+When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+
+### `augment:set_movement_on_input(bool?)`
+
+Configures whether holding movement buttons causes the player to move, when no other augments or forms are overriding this behavior.
 
 When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
 
