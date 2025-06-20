@@ -369,7 +369,21 @@ Implements support for the `Refer Server` and `Refer Package` nodes
 
 Expects `area_id` and `player_id` or `player_ids` to be defined on the context table.
 
+### `Refer Link`
+
+Sends a link to the player to open in the browser. Permission will be asked before opening.
+
+Supports `http://` and `https://` protocols.
+
+Supported custom properties for `Refer Server`:
+
+- `Name` string
+- `Address` string
+- `Next [1]` a link to the next node (optional)
+
 ### `Refer Server`
+
+Refers a server to add to the player's server list, useful for bookmark NPCs.
 
 Supported custom properties for `Refer Server`:
 
