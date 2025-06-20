@@ -918,6 +918,13 @@ function Net.set_player_map_color(player_id, color) end
 ---@param color Net.Color
 function Net.set_bot_map_color(bot_id, color) end
 
+--- Sends a link to the player to open in the browser. Permission will be asked before opening.
+--- 
+--- Supports `http://` and `https://` protocols.
+---@param player_id Net.ActorId
+---@param address string
+function Net.refer_link(player_id, address) end
+
 --- Opens a menu for the player to save the referred server.
 ---@param player_id Net.ActorId
 ---@param name string
