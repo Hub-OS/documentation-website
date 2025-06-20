@@ -170,6 +170,12 @@ Sets the color of the marker used in the map menu to represent this player. Defa
 
 Sets the color of the marker used in the map menu to represent this bot. Defaults to `{ r: 0, g: 0, b: 0, a: 0 }`
 
+### `Net.refer_link(player_id, address)`
+
+Sends a link to the player to open in the browser. Permission will be asked before opening.
+
+Supports `http://` and `https://` protocols.
+
 ### `Net.refer_server(player_id, name, address)`
 
 Opens a menu for the player to save the referred server.
