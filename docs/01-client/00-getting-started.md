@@ -22,6 +22,11 @@ You can open your mods folder in VS Code by right clicking on the folder and sel
 
 ![Open Folder Dropdown Option](/img/getting-started/open-folder.png)
 
+The mods folder can be found in `Documents/My Games/Hub OS` on Windows.
+You can find your mods folder by using `Open Mods Folder` in the config menu, or customize where the mods folder is by launching with `--data-folder` flag.
+
+![Open Mods Folder Option](/img/getting-started/open-mods-folder-config.png)
+
 ## Install Extensions
 
 You'll want at minimum the Lua extension by sumneko, as it will provide syntax highlighting and autocomplete for Lua:
