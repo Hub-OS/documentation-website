@@ -1005,7 +1005,7 @@ function Entity:ignoring_negative_tile_effects() end
 --- The entity will ignore negative tile effects when active.
 --- 
 --- Automatically set for [Spells](https://docs.hubos.dev/client/lua-api/entity-api/spell) and [Artifacts](https://docs.hubos.dev/client/lua-api/entity-api/artifact).
----@param enabled boolean
+---@param enabled? boolean
 function Entity:ignore_negative_tile_effects(enabled) end
 
 --- Returns true if the entity should be able to walk on Broken and PermaHole tiles.
@@ -1015,7 +1015,7 @@ function Entity:ignoring_hole_tiles() end
 --- Allows the entity to walk on Broken and PermaHole tiles.
 --- 
 --- Automatically set for [Spells](https://docs.hubos.dev/client/lua-api/entity-api/spell) and [Artifacts](https://docs.hubos.dev/client/lua-api/entity-api/artifact).
----@param enabled boolean
+---@param enabled? boolean
 function Entity:ignore_hole_tiles(enabled) end
 
 --- Returns `{ x: number, y: number }`.
@@ -3268,7 +3268,7 @@ function Encounter:set_background(texture_path, animation_path, vel_x, vel_y) en
 ---@param tile_height number
 function Encounter:set_panels(texture_paths, animation_path, tile_width, tile_height) end
 
---- Resizes the field, remember to add two to each dimension to account for the invisible edge tiles. If the field is larger than the screen allows, the camera will adjust placement and zoom to fit all [Characters](https://docs.hubos.dev/client/lua-api/entity-api/character).
+--- Resizes the field, remember to add two to each dimension to account for the invisible edge tiles (The default field size is 8x5). If the field is larger than the screen allows, the camera will adjust placement and zoom to fit all [Characters](https://docs.hubos.dev/client/lua-api/entity-api/character).
 --- 
 --- Resets tile teams and states on the field.
 ---@param width number
