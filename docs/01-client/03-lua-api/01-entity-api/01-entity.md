@@ -120,7 +120,7 @@ Returns true if negative tile effects should be ignored for this entity.
 Affects only movement and idle effects, such as Cracked tiles converting to Broken or damage from Poison tiles.
 Does not affect tile interactions with attacks, such as freezing on Ice tiles when hit with an Aqua attack.
 
-### `entity:ignore_negative_tile_effects(enabled)`
+### `entity:ignore_negative_tile_effects(enabled?)`
 
 The entity will ignore negative tile effects when active.
 
@@ -130,7 +130,7 @@ Automatically set for [Spells](/client/lua-api/entity-api/spell) and [Artifacts]
 
 Returns true if the entity should be able to walk on Broken and PermaHole tiles.
 
-### `entity:ignore_hole_tiles(enabled)`
+### `entity:ignore_hole_tiles(enabled?)`
 
 Allows the entity to walk on Broken and PermaHole tiles.
 
