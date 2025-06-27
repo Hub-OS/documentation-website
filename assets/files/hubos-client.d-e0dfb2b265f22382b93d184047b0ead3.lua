@@ -1216,6 +1216,12 @@ function Entity:jump(tile, height, duration, callback) end
 ---@param movement Movement
 function Entity:queue_movement(movement) end
 
+--- - `tile`: [Tile](https://docs.hubos.dev/client/lua-api/field-api/tile)
+--- 
+--- Queues a movement with the same animation and timing as one caused by player input.
+---@param tile Tile
+function Entity:queue_default_player_movement(tile) end
+
 --- Cancels non-drag movement.
 function Entity:cancel_movement() end
 
@@ -1587,14 +1593,6 @@ function Entity:set_movement_on_input(bool) end
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param bool? boolean
 function Entity:set_slide_when_moving(bool) end
-
---- - `tile`: [Tile](https://docs.hubos.dev/client/lua-api/field-api/tile)
---- 
---- Queues a movement with the default internal logic.
----
---- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
----@param tile Tile
-function Entity:queue_default_player_movement(tile) end
 
 --- Queues an action from a [Form](https://docs.hubos.dev/client/lua-api/entity-api/player#playerform), [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment), or the base player mod.
 ---
