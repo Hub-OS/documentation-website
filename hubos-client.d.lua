@@ -335,6 +335,8 @@ Input = {
 --- Not to be confused with [entity.on_counter_func](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityon_counter_func--functionself)
 ---@field on_countered_func fun(self: Entity)
 --- This function is predefined for all entities.
+--- 
+--- When overriding, you may want to check for whether the tile is [reserved](https://docs.hubos.dev/client/lua-api/field-api/tile#tileis_reservedexclude_list) or [walkable](https://docs.hubos.dev/client/lua-api/field-api/tile#tileis_walkable). If this overridden on a character, you may also want to check if the entity is [immobile](https://docs.hubos.dev/client/lua-api/entity-api/living#livingis_immobile).
 ---@field can_move_to_func fun(tile: Tile): boolean
 --- Called when the battle has completed (win or loss).
 ---@field on_battle_end_func fun(self: Entity, won: boolean)
