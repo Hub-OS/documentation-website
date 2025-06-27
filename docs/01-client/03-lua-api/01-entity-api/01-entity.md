@@ -327,6 +327,12 @@ Returns true if the entity can move to the target tile.
 
 - `movement`: [Movement](/client/lua-api/field-api/movement)
 
+### `entity:queue_default_player_movement(tile)`
+
+- `tile`: [Tile](/client/lua-api/field-api/tile)
+
+Queues a movement with the same animation and timing as one caused by player input.
+
 ### `entity:cancel_movement()`
 
 Cancels non-drag movement.

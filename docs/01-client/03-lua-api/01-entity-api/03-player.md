@@ -118,12 +118,6 @@ When `true`, the player will slide to tiles and continue using the `CHARACTER_ID
 
 When `false`, the player will teleport to tiles and animate with the `CHARACTER_MOVE` state.
 
-### `player:queue_default_player_movement(tile)`
-
-- `tile`: [Tile](/client/lua-api/field-api/tile)
-
-Queues a movement with the default internal logic.
-
 ### `player:queue_normal_attack()`
 
 Queues an action from a [Form](#playerform), [Augment](#augment), or the base player mod.
