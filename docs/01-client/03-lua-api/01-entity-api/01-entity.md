@@ -435,6 +435,8 @@ Called when the battle has completed (win or loss).
 
 This function is predefined for all entities.
 
+When overriding, you may want to check for whether the tile is [reserved](/client/lua-api/field-api/tile#tileis_reservedexclude_list) or [walkable](/client/lua-api/field-api/tile#tileis_walkable). If this overridden on a character you may also want to check if the entity is [immobile](/client/lua-api/entity-api/living#livingis_immobile).
+
 ## Component
 
 See [entity:create_component()](/client/lua-api/entity-api/entity#entitycreate_componentlifetime)
