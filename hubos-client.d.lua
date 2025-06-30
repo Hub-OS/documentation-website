@@ -3386,6 +3386,13 @@ function Action:owner() end
 ---@param lockout ActionLockout
 function Action:set_lockout(lockout) end
 
+--- By default, actions prevent entities from creating tile reservations on movement.
+--- 
+--- Calling this function with `true` or `nil` will allow the action's owner to reserve entered tiles and unreserve left tiles.
+--- This only matters for entities that automatically reserve tiles by default, such as Characters and Obstacles.
+---@param bool? boolean
+function Action:allow_auto_tile_reservation(bool) end
+
 --- Returns a new [ActionStep](https://docs.hubos.dev/client/lua-api/attack-api/action#actionstep)
 ---@return ActionStep
 function Action:create_step() end
