@@ -25,7 +25,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Net.SpriteOptions", list: ["sprite_options"] },
   { type: "Net.ShopItem[]", list: ["shop_items"] },
   { type: "Net.ShopItem", list: ["shop_item"] },
-  { type: "Net.BoardPost", list: ["posts"] },
+  { type: "Net.BoardPost[]", list: ["posts"] },
   { type: "Net.RequestOptions", list: ["request_options"] },
   { type: "Net.Color", list: ["color"] },
   { type: "Net.Promise<any>", list: ["promise"] },
