@@ -440,6 +440,10 @@ This texture is used for the form selection menu.
 
 Sets the description to display when the player requests for info.
 
+### `player_form:deactivate()`
+
+Deactivates the form.
+
 ### `player_form:set_fixed_card(card_properties, card_button_slot?)`
 
 Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
@@ -461,6 +465,24 @@ Overrides the special button created on the Player and any [Augment](#augment).
 
 Returns [CardSelectButton](#cardselectbutton)
 
+### `player_form:set_charge_with_shoot(bool?)`
+
+Configures whether the Shoot button is tied to charging for [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil), when no other augments or forms are overriding this behavior.
+
+When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+
+### `player_form:set_special_on_input(bool?)`
+
+Configures whether the Special button activate the special attack, when no other augments or forms are overriding this behavior.
+
+When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+
+### `player_form:set_movement_on_input(bool?)`
+
+Configures whether holding movement buttons causes the player to move, when no other augments or forms are overriding this behavior.
+
+When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
+
 ### `player_form.on_select_func = function(self)`
 
 Called when the form is selected or staged, the player's emotions should be modified here.
@@ -480,24 +502,6 @@ Called when the form is deactivated, the player's appearance should be reverted 
 ### `player_form.on_update_func = function(self)`
 
 Called after [player.on_update_func](#playernormal_attack_func--functionself-actionnil) when this form is active.
-
-### `player_form:set_charge_with_shoot(bool?)`
-
-Configures whether the Shoot button is tied to charging for [player.charged_attack_func](#playercharged_attack_func--functionself-actionnil), when no other augments or forms are overriding this behavior.
-
-When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
-
-### `player_form:set_special_on_input(bool?)`
-
-Configures whether the Special button activate the special attack, when no other augments or forms are overriding this behavior.
-
-When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
-
-### `player_form:set_movement_on_input(bool?)`
-
-Configures whether holding movement buttons causes the player to move, when no other augments or forms are overriding this behavior.
-
-When set to nil (default), the final value will try to fall back to a specified non-nil value with a lower priority or true.
 
 ### `player_form.calculate_charge_time_func = function(self): number`
 
