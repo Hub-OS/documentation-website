@@ -1973,6 +1973,9 @@ function PlayerForm:set_mugshot_texture(path) end
 ---@param description? string
 function PlayerForm:set_description(description) end
 
+--- Deactivates the form.
+function PlayerForm:deactivate() end
+
 --- Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton).
 --- Overrides the card button created on the Player and any [Augment](https://docs.hubos.dev/client/lua-api/entity-api/player#augment).
 --- 
