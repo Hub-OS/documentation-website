@@ -20,6 +20,7 @@ charge_boost = 0 # optional, default is 0
 mega_boost = 0 # optional, default is 0
 giga_boost = 0 # optional, default is 0
 hand_size_boost = 0 # optional, default is 0
+priority = false # optional, default is false, this allows the augment to override behavior on forms
 
 # optional, list of strings, custom
 # some tags will be automatically added: "BLOCK", "FLAT_BLOCK"
