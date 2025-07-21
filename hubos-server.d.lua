@@ -833,20 +833,20 @@ function Net.prompt_player(player_id, character_limit, default_text) end
 ---@param player_id Net.ActorId
 ---@param board_name string
 ---@param color Net.Color
----@param posts Net.BoardPost
+---@param posts Net.BoardPost[]
 ---@param open_instantly? boolean
 ---@return Net.EventEmitter
 function Net.open_board(player_id, board_name, color, posts, open_instantly) end
 
 --- Issues may arise when multiple scripts create boards at the same time.
 ---@param player_id Net.ActorId
----@param posts Net.BoardPost
+---@param posts Net.BoardPost[]
 ---@param post_id? string
 function Net.prepend_posts(player_id, posts, post_id) end
 
 --- Issues may arise when multiple scripts create boards at the same time.
 ---@param player_id Net.ActorId
----@param posts Net.BoardPost
+---@param posts Net.BoardPost[]
 ---@param post_id? string
 function Net.append_posts(player_id, posts, post_id) end
 
