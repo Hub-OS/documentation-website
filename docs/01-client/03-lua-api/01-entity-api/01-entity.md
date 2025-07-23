@@ -240,9 +240,9 @@ Returns a [SyncNode](/client/lua-api/resource-api/sprite#syncnode).
 
 Removes the sync node from the entity.
 
-### `entity:set_shadow(path)`
+### `entity:set_shadow(texture_path, animation_path?)`
 
-Sets the texture for the shadow. Shadows are not visible by default, use `entity:show_shadow()` to make the shadow visible.
+Sets the texture and animation for the shadow. Shadows are not visible by default, use `entity:show_shadow()` to make the shadow visible.
 
 Use values returned from [Resources.load_texture()](/client/lua-api/resource-api/resources#resourcesload_texturepath) for better performance.
 
