@@ -2,6 +2,10 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.52
+
+- `sprite:use_parent_shader()` and `sprite:use_root_shader()` no longer overrides palette.
+
 ## 0.32
 
 - `player.can_charge_card_func` is replaced by `player.calculate_card_charge_time_func`

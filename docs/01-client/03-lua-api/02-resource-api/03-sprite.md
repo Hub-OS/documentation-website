@@ -35,7 +35,7 @@ Use values returned from [Resources.load_texture()](/client/lua-api/resource-api
 
 Returns the path to the sprite's palette or `nil`.
 
-### `sprite:set_palette(path)`
+### `sprite:set_palette(path?)`
 
 Sets the palette for the texture to reference.
 
@@ -159,11 +159,11 @@ Returns a SpriteShaderEffect.
 
 ### `sprite:use_root_shader(enable?)`
 
-Temporarily adopts the color, color mode, palette, and shader effect of the root sprite during render.
+Temporarily adopts the color, color mode, and shader effect of the root sprite during render.
 
 ### `sprite:use_parent_shader(enable?)`
 
-Adopts the color, color mode, palette, and shader effect of the parent sprite during render.
+Adopts the color, color mode, and shader effect of the parent sprite during render.
 
 ## Color
 
