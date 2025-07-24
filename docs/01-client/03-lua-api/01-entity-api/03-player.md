@@ -440,6 +440,14 @@ This texture is used for the form selection menu.
 
 Sets the description to display when the player requests for info.
 
+### `player_form:set_close_on_select(bool)`
+
+Sets whether Form Select closes when this form is selected.
+
+### `player_form:set_transition_on_select(bool)`
+
+Sets whether the transition and audio effect plays when this form is selected.
+
 ### `player_form:deactivate()`
 
 Deactivates the form.
