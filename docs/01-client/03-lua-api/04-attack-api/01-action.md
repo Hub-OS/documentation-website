@@ -49,7 +49,7 @@ See [animation:set_state()](/client/lua-api/resource-api/animation#animationset_
 
 ### `action:add_anim_action(frame_index, callback)`
 
-Same as calling `action:owner():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself-owner)
+Same as calling `action:owner():animation():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself-owner)
 
 See [animation:on_frame()](/client/lua-api/resource-api/animation#animationon_frameframe_index-function-do_once)
 
