@@ -53,7 +53,7 @@ Sets the initial battle music. Use [Resources.play_music()](/client/lua-api/reso
 
 ### `encounter:field()`
 
-Returns [Field](/client/lua-api/field-api/field)
+Deprecated. Use [Field](/client/lua-api/field-api/field) directly.
 
 ### `encounter:enable_automatic_turn_end(enabled?)`
 

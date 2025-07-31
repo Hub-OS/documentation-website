@@ -29,8 +29,8 @@ const config = require("../docusaurus.config");
 const DUPLICATE_ALLOWED = [
   "HitProps.new(damage, flags, element, secondary_element, context?, drag?)",
   "HitProps.new(damage, flags, element, context?, drag?)",
-  "field:spawn(entity, tile)",
-  "field:spawn(entity, col, row)",
+  "Field.spawn(entity, tile)",
+  "Field.spawn(entity, col, row)",
 ];
 
 //// definitions
@@ -205,10 +205,12 @@ function outputFunctionDefinition(
   section: Section,
   heading: string
 ) {
-  const separator_index = Math.max(heading.indexOf("."), heading.indexOf(":"));
-  const separator = heading[separator_index];
-
   const paren_open_index = heading.indexOf("(");
+  const separator_index = Math.max(
+    heading.lastIndexOf(".", paren_open_index),
+    heading.lastIndexOf(":", paren_open_index)
+  );
+  const separator = heading[separator_index];
 
   let table_name = resolveTableName(heading);
   const original_table_name = snakeToPascal(baseTableName(heading));

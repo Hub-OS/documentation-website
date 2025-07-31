@@ -85,13 +85,13 @@ Returns the tile at the same position as the entity.
 
 ### `entity:field()`
 
-Returns the [Field](/client/lua-api/field-api/field)
+Deprecated. Use [Field](/client/lua-api/field-api/field) directly.
 
 ### `entity:spawned()`
 
 Returns true if the entity has spawned.
 
-Usually set to true the frame after [field:spawn()](/client/lua-api/field-api/field#fieldspawnentity-tile) is called with this entity.
+Usually set to true the frame after [Field.spawn()](/client/lua-api/field-api/field#fieldspawnentity-tile) is called with this entity.
 
 ### `entity:hittable()`
 
@@ -241,8 +241,6 @@ Returns a [SyncNode](/client/lua-api/resource-api/sprite#syncnode).
 Removes the sync node from the entity.
 
 ### `entity:set_shadow(texture_path, animation_path?)`
-
-Sets the texture and animation for the shadow. Shadows are not visible by default, use `entity:show_shadow()` to make the shadow visible.
 
 Use values returned from [Resources.load_texture()](/client/lua-api/resource-api/resources#resourcesload_texturepath) for better performance.
 
@@ -401,7 +399,7 @@ Adds a callback listener for entity deletion.
 
 ### `entity.on_spawn_func = function(self)`
 
-Called when the entity is spawned by [field:spawn()](/client/lua-api/field-api/field/#fieldspawnentity-tile)
+Called when the entity is spawned by [Field.spawn()](/client/lua-api/field-api/field/#fieldspawnentity-tile)
 
 ### `entity.on_update_func = function(self)`
 

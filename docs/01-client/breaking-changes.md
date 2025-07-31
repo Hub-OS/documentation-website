@@ -2,6 +2,12 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.53
+
+- `entity:set_shadow()` no longer requires `entity:show_shadow()` to display the shadow, it is now visible by default.
+- Direct usage of the global `Field` table requires `.` instead of `:`
+  - `*:field()` deprecated in favor of directly using the `Field` table.
+
 ## 0.52
 
 - `sprite:use_parent_shader()` and `sprite:use_root_shader()` no longer overrides palette.

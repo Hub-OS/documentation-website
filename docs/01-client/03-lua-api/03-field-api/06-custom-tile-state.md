@@ -4,7 +4,7 @@ See [Tile State Package Documentation](/client/packages#tile-states) for creatin
 
 ### `custom_tile_state:field()`
 
-Returns [Field](/client/lua-api/field-api/field)
+Deprecated. Use [Field](/client/lua-api/field-api/field) directly.
 
 ### `custom_tile_state.can_replace_func = function(self, tile, tile_state): boolean`
 
