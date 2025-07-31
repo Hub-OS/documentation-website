@@ -354,7 +354,7 @@ Input = {
 ---@field on_idle_func fun(self: Entity)
 --- Called during battle, when not frozen from time freeze or blocked by statuses.
 ---@field on_update_func fun(self: Entity)
---- Called when the entity is spawned by [field:spawn()](https://docs.hubos.dev/client/lua-api/field-api/field/#fieldspawnentity-tile)
+--- Called when the entity is spawned by [Field.spawn()](https://docs.hubos.dev/client/lua-api/field-api/field/#fieldspawnentity-tile)
 ---@field on_spawn_func fun(self: Entity)
 Entity = {}
 
@@ -967,13 +967,12 @@ function Entity:get_tile(direction, distance) end
 ---@return Tile
 function Entity:current_tile() end
 
---- Returns the [Field](https://docs.hubos.dev/client/lua-api/field-api/field)
----@return Field
+--- Deprecated. Use [Field](https://docs.hubos.dev/client/lua-api/field-api/field) directly.
 function Entity:field() end
 
 --- Returns true if the entity has spawned.
 --- 
---- Usually set to true the frame after [field:spawn()](https://docs.hubos.dev/client/lua-api/field-api/field#fieldspawnentity-tile) is called with this entity.
+--- Usually set to true the frame after [Field.spawn()](https://docs.hubos.dev/client/lua-api/field-api/field#fieldspawnentity-tile) is called with this entity.
 ---@return boolean
 function Entity:spawned() end
 
@@ -1124,8 +1123,6 @@ function Entity:create_sync_node() end
 ---@param sync_node SyncNode
 function Entity:remove_sync_node(sync_node) end
 
---- Sets the texture and animation for the shadow. Shadows are not visible by default, use `entity:show_shadow()` to make the shadow visible.
---- 
 --- Use values returned from [Resources.load_texture()](https://docs.hubos.dev/client/lua-api/resource-api/resources#resourcesload_texturepath) for better performance.
 --- 
 --- There are built-in shadow textures that can be used as well:
@@ -2840,68 +2837,68 @@ function SyncNode:animation() end
 ---@param col number
 ---@param row number
 ---@return Tile|nil
-function Field:tile_at(col, row) end
+function Field.tile_at(col, row) end
 
 --- Returns the total columns in the field.
 ---@return number
-function Field:width() end
+function Field.width() end
 
 --- Returns the total rows in the field.
 ---@return number
-function Field:height() end
+function Field.height() end
 
 --- Spawns the entity at the start of the next frame if the entity hasn't already been spawned, and places the entity at the tile.
 ---@param entity Entity
 ---@param tile Tile
 ---@diagnostic disable-next-line: duplicate-set-field
-function Field:spawn(entity, tile) end
+function Field.spawn(entity, tile) end
 
 --- Spawns the entity at the start of the next frame if the entity hasn't already been spawned, and places the entity at the tile at (col, row).
 ---@param entity Entity
 ---@param col number
 ---@param row number
 ---@diagnostic disable-next-line: duplicate-set-field
-function Field:spawn(entity, col, row) end
+function Field.spawn(entity, col, row) end
 
 --- Returns an [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) or `nil`.
 ---@param id EntityId
 ---@return Entity|nil
-function Field:get_entity(id) end
+function Field.get_entity(id) end
 
 --- Returns a list of entities for any entity the callback returned true for.
 --- 
 --- All spawned [Entities](https://docs.hubos.dev/client/lua-api/entity-api/entity) that haven't been deleted will be passed to the callback.
 ---@param callback fun(entity: Entity): boolean
 ---@return Entity[]
-function Field:find_entities(callback) end
+function Field.find_entities(callback) end
 
 --- Returns a list of entities for any entity the callback returned true for.
 --- 
 --- Only spawned [Characters](https://docs.hubos.dev/client/lua-api/entity-api/character) that haven't been deleted will be passed to the callback, includes [Players](https://docs.hubos.dev/client/lua-api/entity-api/player).
 ---@param callback fun(entity: Entity): boolean
 ---@return Entity[]
-function Field:find_characters(callback) end
+function Field.find_characters(callback) end
 
 --- Returns a list of entities for any entity the callback returned true for.
 --- 
 --- Only spawned [Obstacles](https://docs.hubos.dev/client/lua-api/entity-api/obstacle) that haven't been deleted will be passed to the callback.
 ---@param callback fun(entity: Entity): boolean
 ---@return Entity[]
-function Field:find_obstacles(callback) end
+function Field.find_obstacles(callback) end
 
 --- Returns a list of entities for any entity the callback returned true for.
 --- 
 --- Only spawned [Players](https://docs.hubos.dev/client/lua-api/entity-api/player) that haven't been deleted will be passed to the callback.
 ---@param callback fun(entity: Entity): boolean
 ---@return Entity[]
-function Field:find_players(callback) end
+function Field.find_players(callback) end
 
 --- Returns a list of entities for any entity the callback returned true for.
 --- 
 --- Only spawned [Spells](https://docs.hubos.dev/client/lua-api/entity-api/spell) that haven't been deleted will be passed to the callback, excludes [Obstacles](https://docs.hubos.dev/client/lua-api/entity-api/obstacle).
 ---@param callback fun(entity: Entity): boolean
 ---@return Entity[]
-function Field:find_spells(callback) end
+function Field.find_spells(callback) end
 
 --- Returns a list of entities sorted by distance, for any entity the callback returned true for.
 --- 
@@ -2909,7 +2906,7 @@ function Field:find_spells(callback) end
 ---@param entity Entity
 ---@param callback fun(entity: Entity): boolean
 ---@return Entity[]
-function Field:find_nearest_characters(entity, callback) end
+function Field.find_nearest_characters(entity, callback) end
 
 --- Returns a list of entities sorted by distance, for any entity the callback returned true for.
 --- 
@@ -2917,34 +2914,34 @@ function Field:find_nearest_characters(entity, callback) end
 ---@param entity Entity
 ---@param callback fun(entity: Entity): boolean
 ---@return Entity[]
-function Field:find_nearest_players(entity, callback) end
+function Field.find_nearest_players(entity, callback) end
 
 --- Returns a list of [Tiles](https://docs.hubos.dev/client/lua-api/field-api/tile) for any tile the callback returned true for.
 ---@param callback fun(tile: Tile): boolean
 ---@return Tile[]
-function Field:find_tiles(callback) end
+function Field.find_tiles(callback) end
 
 --- - `strength` number, affects how aggressively the field shakes
 --- - `duration` number, how many game frames the effect should last
 ---@param strength number
 ---@param duration number
-function Field:shake(strength, duration) end
+function Field.shake(strength, duration) end
 
 --- Deprecated. Use [entity:on_delete()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityon_deletefunctionentity) instead.
 ---@param target_id EntityId
 ---@param observer_id EntityId
 ---@param callback fun(entity: Entity)
-function Field:notify_on_delete(target_id, observer_id, callback) end
+function Field.notify_on_delete(target_id, observer_id, callback) end
 
 --- Deprecated. Use [entity:on_delete()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityon_deletefunctionentity) instead.
 ---@param id EntityId
 ---@param callback fun(entity: Entity)
-function Field:callback_on_delete(id, callback) end
+function Field.callback_on_delete(id, callback) end
 
 --- Causes tiles in the column to return to the matching team as soon as possible, starting at the next frame. The transfer will be delayed by tile reservations in the column.
 ---@param x number
 ---@param team Team
-function Field:reclaim_column(x, team) end
+function Field.reclaim_column(x, team) end
 
 --- Returns the column of the tile.
 ---@return number
@@ -3291,8 +3288,7 @@ function Encounter:set_field_size(width, height) end
 ---@param path string
 function Encounter:set_music(path) end
 
---- Returns [Field](https://docs.hubos.dev/client/lua-api/field-api/field)
----@return Field
+--- Deprecated. Use [Field](https://docs.hubos.dev/client/lua-api/field-api/field) directly.
 function Encounter:field() end
 
 --- - `enabled`: defaults to true.
@@ -3368,8 +3364,7 @@ function Spawner:spawn_at(col, row) end
 ---@param callback fun(entity: Entity)
 function Mutator:mutate(callback) end
 
---- Returns [Field](https://docs.hubos.dev/client/lua-api/field-api/field)
----@return Field
+--- Deprecated. Use [Field](https://docs.hubos.dev/client/lua-api/field-api/field) directly.
 function CustomTileState:field() end
 
 --- - `entity`: the [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) to tie the action to.

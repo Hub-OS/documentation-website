@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Entity | Hub OS Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.hubos.dev/client/lua-api/entity-api/entity"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Entity | Hub OS Documentation"><meta data-rh="true" name="description" content="Most of these functions will throw if the entity has been erased. entitydeleted() will never throw and can be used to see if the entity is still safe to use."><meta data-rh="true" property="og:description" content="Most of these functions will throw if the entity has been erased. entitydeleted() will never throw and can be used to see if the entity is still safe to use."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.hubos.dev/client/lua-api/entity-api/entity"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/client/lua-api/entity-api/entity" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/client/lua-api/entity-api/entity" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.9f2af24b.css">
-<script src="/assets/js/runtime~main.fe451f6a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3cb257dc.js" defer="defer"></script>
 <script src="/assets/js/main.63aaf755.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -66,10 +66,10 @@ Returns the current tile if any parameters are unset.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entitycurrent_tile"><code>entity:current_tile()</code><a href="#entitycurrent_tile" class="hash-link" aria-label="Direct link to entitycurrent_tile" title="Direct link to entitycurrent_tile">​</a></h3>
 <p>Returns the tile at the same position as the entity.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityfield"><code>entity:field()</code><a href="#entityfield" class="hash-link" aria-label="Direct link to entityfield" title="Direct link to entityfield">​</a></h3>
-<p>Returns the <a href="/client/lua-api/field-api/field">Field</a></p>
+<p>Deprecated. Use <a href="/client/lua-api/field-api/field">Field</a> directly.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityspawned"><code>entity:spawned()</code><a href="#entityspawned" class="hash-link" aria-label="Direct link to entityspawned" title="Direct link to entityspawned">​</a></h3>
 <p>Returns true if the entity has spawned.</p>
-<p>Usually set to true the frame after <a href="/client/lua-api/field-api/field#fieldspawnentity-tile">field<!-- -->:spawn<!-- -->()</a> is called with this entity.</p>
+<p>Usually set to true the frame after <a href="/client/lua-api/field-api/field#fieldspawnentity-tile">Field.spawn()</a> is called with this entity.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityhittable"><code>entity:hittable()</code><a href="#entityhittable" class="hash-link" aria-label="Direct link to entityhittable" title="Direct link to entityhittable">​</a></h3>
 <p>Returns true if the entity:</p>
 <ul>
@@ -149,7 +149,6 @@ Does not affect tile interactions with attacks, such as freezing on Ice tiles wh
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityremove_sync_nodesync_node"><code>entity:remove_sync_node(sync_node)</code><a href="#entityremove_sync_nodesync_node" class="hash-link" aria-label="Direct link to entityremove_sync_nodesync_node" title="Direct link to entityremove_sync_nodesync_node">​</a></h3>
 <p>Removes the sync node from the entity.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityset_shadowtexture_path-animation_path"><code>entity:set_shadow(texture_path, animation_path?)</code><a href="#entityset_shadowtexture_path-animation_path" class="hash-link" aria-label="Direct link to entityset_shadowtexture_path-animation_path" title="Direct link to entityset_shadowtexture_path-animation_path">​</a></h3>
-<p>Sets the texture and animation for the shadow. Shadows are not visible by default, use <code>entity:show_shadow()</code> to make the shadow visible.</p>
 <p>Use values returned from <a href="/client/lua-api/resource-api/resources#resourcesload_texturepath">Resources.load_texture()</a> for better performance.</p>
 <p>There are built-in shadow textures that can be used as well:</p>
 <ul>
@@ -256,7 +255,7 @@ Does not affect tile interactions with attacks, such as freezing on Ice tiles wh
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityon_deletefunctionentity"><code>entity:on_delete(function(entity))</code><a href="#entityon_deletefunctionentity" class="hash-link" aria-label="Direct link to entityon_deletefunctionentity" title="Direct link to entityon_deletefunctionentity">​</a></h3>
 <p>Adds a callback listener for entity deletion.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityon_spawn_func--functionself"><code>entity.on_spawn_func = function(self)</code><a href="#entityon_spawn_func--functionself" class="hash-link" aria-label="Direct link to entityon_spawn_func--functionself" title="Direct link to entityon_spawn_func--functionself">​</a></h3>
-<p>Called when the entity is spawned by <a href="/client/lua-api/field-api/field#fieldspawnentity-tile">field<!-- -->:spawn<!-- -->()</a></p>
+<p>Called when the entity is spawned by <a href="/client/lua-api/field-api/field#fieldspawnentity-tile">Field.spawn()</a></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityon_update_func--functionself"><code>entity.on_update_func = function(self)</code><a href="#entityon_update_func--functionself" class="hash-link" aria-label="Direct link to entityon_update_func--functionself" title="Direct link to entityon_update_func--functionself">​</a></h3>
 <p>Called during battle, when not frozen from time freeze or blocked by statuses.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityon_idle_func--functionself"><code>entity.on_idle_func = function(self)</code><a href="#entityon_idle_func--functionself" class="hash-link" aria-label="Direct link to entityon_idle_func--functionself" title="Direct link to entityon_idle_func--functionself">​</a></h3>
