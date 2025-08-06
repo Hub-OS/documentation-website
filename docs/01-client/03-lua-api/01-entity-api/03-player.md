@@ -584,6 +584,10 @@ Returns an [Entity](/client/lua-api/entity-api/entity)
 
 Returns true if the augment has a matching tag.
 
+### `augment:deleted()`
+
+Returns true if the augment was deleted from the owner. Calls to other functions will error if this is true.
+
 ### `augment:set_fixed_card(card_properties, card_button_slot?)`
 
 Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
