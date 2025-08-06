@@ -2044,6 +2044,10 @@ function Augment:owner() end
 ---@return boolean
 function Augment:has_tag(tag) end
 
+--- Returns true if the augment was deleted from the owner. Calls to other functions will error if this is true.
+---@return boolean
+function Augment:deleted() end
+
 --- Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](https://docs.hubos.dev/client/lua-api/entity-api/player#cardselectbutton).
 --- Overrides the card button created on the Player.
 --- 
