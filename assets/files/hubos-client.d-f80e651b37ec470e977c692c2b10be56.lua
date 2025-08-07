@@ -437,7 +437,7 @@ Defense = {}
 --- Hit flags combined into a single value see [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 --- 
 --- The default value is `Hit.PierceInvis`
----@field hit_weaknesses number
+---@field hit_weaknesses Hit | number
 --- The maximum time the rule should last for in game frames.
 --- 
 --- The default value is 120.
