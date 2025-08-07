@@ -60,7 +60,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Highlight", list: ["highlight"] },
   { type: "HitProps", list: ["hit_props"] },
   { type: "Hit", list: ["hit_flag"] },
-  { type: "Hit | number", list: ["hit_flags", "flags"] },
+  { type: "Hit | number", list: ["hit_flags", "flags", "hit_weaknesses"] },
   { type: "Status", list: ["status"] },
   { type: "DeckCard", list: ["deck_card"] },
   { type: "CardProperties", list: ["card_properties", "card"] },
@@ -108,7 +108,6 @@ const COMPRESSED_VARIABLE_TYPES = [
   {
     type: "number",
     list: [
-      "hit_weaknesses",
       "distance",
       "index",
       "deck_index",
