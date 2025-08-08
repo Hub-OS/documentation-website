@@ -3573,6 +3573,10 @@ function CardProperties.icon_texture(card_properties) end
 ---@return Entity
 function Status:owner() end
 
+--- Returns true if the status is being reapplied from a time freeze action ending.
+---@return boolean
+function Status:reapplied() end
+
 --- Returns a number representing the amount of battle frames until the status wears off.
 ---@return number
 function Status:remaining_time() end
