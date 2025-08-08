@@ -6,6 +6,10 @@ See [Status Package Documentation](/client/packages#statuses) for creating new s
 
 Returns an [Entity](/client/lua-api/entity-api/entity), represents the entity affected by the status.
 
+### `status:reapplied()`
+
+Returns true if the status is being reapplied from a time freeze action ending.
+
 ### `status:remaining_time()`
 
 Returns a number representing the amount of battle frames until the status wears off.
