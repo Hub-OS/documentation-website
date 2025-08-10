@@ -78,9 +78,9 @@ Returns true if an [IntangibleRule](/client/lua-api/defense-api/intangible-rule)
 
 Queues a status update. If the status is already applied, the remaining time will be updated to use the longer duration.
 
-### `living:remove_status(hit_flag)`
+### `living:remove_status(hit_flags)`
 
-- `hit_flag` a single hit flag, see [HitProps](/client/lua-api/attack-api/hit-props)
+- `hit_flags` one or more hit flags stored as a single number, see [HitProps](/client/lua-api/attack-api/hit-props)
 
 ### `living:remaining_status_time(hit_flag)`
 

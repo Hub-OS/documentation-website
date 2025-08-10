@@ -345,12 +345,12 @@ Declares immunity for incoming hits this frame, will not remove existing statuse
 
 Applies a status to the entity.
 
-### `aux_prop:remove_status(hit_flag)`
+### `aux_prop:remove_status(hit_flags)`
 
 - Remove Status priority
-- `hit_flag`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
+- `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
 
-Removes an existing status on the entity, won't affect incoming hits.
+Removes one or more statuses from the entity, won't affect incoming hits.
 
 ### `aux_prop:increase_hit_damage(expr)`
 
