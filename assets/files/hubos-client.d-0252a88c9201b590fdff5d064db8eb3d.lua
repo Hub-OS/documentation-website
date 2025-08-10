@@ -1396,11 +1396,11 @@ function Entity:remove_aux_prop(aux_prop) end
 ---@param duration number
 function Entity:apply_status(hit_flag, duration) end
 
---- - `hit_flag` a single hit flag, see [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
+--- - `hit_flags` one or more hit flags stored as a single number, see [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
----@param hit_flag Hit
-function Entity:remove_status(hit_flag) end
+---@param hit_flags Hit | number
+function Entity:remove_status(hit_flags) end
 
 --- - `hit_flag` a single hit flag, see [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 --- 
@@ -4031,12 +4031,12 @@ function AuxProp:declare_immunity(hit_flags) end
 function AuxProp:apply_status(hit_flag, duration) end
 
 --- - Remove Status priority
---- - `hit_flag`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
+--- - `hit_flags`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
 --- 
---- Removes an existing status on the entity, won't affect incoming hits.
----@param hit_flag Hit
+--- Removes one or more statuses from the entity, won't affect incoming hits.
+---@param hit_flags Hit | number
 ---@return AuxProp
-function AuxProp:remove_status(hit_flag) end
+function AuxProp:remove_status(hit_flags) end
 
 --- - Increase Hit Damage priority
 --- - `expr`: [Math Expression String](https://docs.hubos.dev/client/lua-api/defense-api/aux-prop#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit before any modifications.
