@@ -177,6 +177,8 @@ recipes = [
     { id = "BattleNetwork6.Class01.Standard.072" }
   ] },
 ]
+# hides the card from the deck editor and library
+hidden = false
 
 # this section is optional, see the Battle section for an example
 [defines]
