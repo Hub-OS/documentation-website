@@ -3269,17 +3269,9 @@ function Encounter:set_spectate_on_delete(bool) end
 ---@param vel_y? number
 function Encounter:set_background(texture_path, animation_path, vel_x, vel_y) end
 
---- - `texture_paths`: a list of path strings, expects a path for `Team.Red`, `Team.Blue`, and `Team.Other`
---- - `animation_path`: an animation file used by tiles, applies to all team textures.
---- - `tile_width`: width used to resolve spacing.
---- - `tile_height`: height used to resolve spacing.
---- 
---- Experimental. Replacement / removal is under consideration.
----@param texture_paths string[]
----@param animation_path string
----@param tile_width number
----@param tile_height number
-function Encounter:set_panels(texture_paths, animation_path, tile_width, tile_height) end
+--- Sets the initial battle music. Use [Resources.play_music()](https://docs.hubos.dev/client/lua-api/resource-api/resources#resourcesplay_musicpath-loops) to change the music in the middle of the battle
+---@param path string
+function Encounter:set_music(path) end
 
 --- Resizes the field, remember to add two to each dimension to account for the invisible edge tiles (The default field size is 8x5). If the field is larger than the screen allows, the camera will adjust placement and zoom to fit all [Characters](https://docs.hubos.dev/client/lua-api/entity-api/character).
 --- 
@@ -3288,12 +3280,21 @@ function Encounter:set_panels(texture_paths, animation_path, tile_width, tile_he
 ---@param height number
 function Encounter:set_field_size(width, height) end
 
---- Sets the initial battle music. Use [Resources.play_music()](https://docs.hubos.dev/client/lua-api/resource-api/resources#resourcesplay_musicpath-loops) to change the music in the middle of the battle
----@param path string
-function Encounter:set_music(path) end
-
 --- Deprecated. Use [Field](https://docs.hubos.dev/client/lua-api/field-api/field) directly.
 function Encounter:field() end
+
+--- Overrides visuals used to render tile states.
+--- 
+--- `TileState.Normal` and `TileState.PermalHole` are special base states, overriding visuals for these states may affect what is drawn for other states.
+---@param tile_state TileState
+---@param texture_path string
+---@param animation_path string
+function Encounter:set_tile_state_resources(tile_state, texture_path, animation_path) end
+
+--- Sets the size of tiles for resolving placement.
+---@param width number
+---@param height number
+function Encounter:set_tile_size(width, height) end
 
 --- - `enabled`: defaults to true.
 --- 
