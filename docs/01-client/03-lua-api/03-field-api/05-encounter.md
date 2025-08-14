@@ -32,14 +32,9 @@ Converts players to spectators when deleted.
 - `vel_x`: if unset, uses the "VELOCITY" point on the first frame of the animation.
 - `vel_y`: if unset, uses the "VELOCITY" point on the first frame of the animation.
 
-### `encounter:set_panels(texture_paths, animation_path, tile_width, tile_height)`
+### `encounter:set_music(path)`
 
-- `texture_paths`: a list of path strings, expects a path for `Team.Red`, `Team.Blue`, and `Team.Other`
-- `animation_path`: an animation file used by tiles, applies to all team textures.
-- `tile_width`: width used to resolve spacing.
-- `tile_height`: height used to resolve spacing.
-
-Experimental. Replacement / removal is under consideration.
+Sets the initial battle music. Use [Resources.play_music()](/client/lua-api/resource-api/resources#resourcesplay_musicpath-loops) to change the music in the middle of the battle
 
 ### `encounter:set_field_size(width, height)`
 
@@ -47,13 +42,19 @@ Resizes the field, remember to add two to each dimension to account for the invi
 
 Resets tile teams and states on the field.
 
-### `encounter:set_music(path)`
-
-Sets the initial battle music. Use [Resources.play_music()](/client/lua-api/resource-api/resources#resourcesplay_musicpath-loops) to change the music in the middle of the battle
-
 ### `encounter:field()`
 
 Deprecated. Use [Field](/client/lua-api/field-api/field) directly.
+
+### `encounter:set_tile_state_resources(tile_state, texture_path, animation_path)`
+
+Overrides visuals used to render tile states.
+
+`TileState.Normal` and `TileState.PermalHole` are special base states, overriding visuals for these states may affect what is drawn for other states.
+
+### `encounter:set_tile_size(width, height)`
+
+Sets the size of tiles for resolving placement.
 
 ### `encounter:enable_automatic_turn_end(enabled?)`
 
