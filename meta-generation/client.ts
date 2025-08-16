@@ -50,7 +50,7 @@ const FUNCTION_REGEX = /[A-Za-z_]+[.:][A-Za-z0-9_]*\(.*\)/;
 //// building the file
 
 function buildMetaFile() {
-  const chapters = readDocs(config, "../../docs", "01-client/03-lua-api");
+  const chapters = readDocs(config, "../../docs", "01-client/04-lua-api");
   const all_sections = chapters.flatMap((chapter) => chapter.sections);
 
   let output = [
