@@ -194,7 +194,7 @@ Returns a string or `nil`
 
 Same as `entity:sprite():palette()`
 
-### `entity:set_palette(path)`
+### `entity:set_palette(path?)`
 
 Same as `entity:sprite():set_palette(path)`
 
