@@ -40,6 +40,11 @@ Number, influences generated [HitProps](/client/lua-api/attack-api/hit-props).
 
 Displayed during time freeze.
 
+### `card_properties.boosted_damage`
+
+Number, represents the increase in damage from boosts. You should also modify `damage` when adjusting this value, as `damage` represents the final damage value.
+Subtract this value from `damage` to get the original damage value.
+
 ### `card_properties.recover`
 
 Number, used by other mods for conditional behavior.
