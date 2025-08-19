@@ -1080,7 +1080,7 @@ function Entity:set_texture(path) end
 function Entity:palette() end
 
 --- Same as `entity:sprite():set_palette(path)`
----@param path string
+---@param path? string
 function Entity:set_palette(path) end
 
 --- Same as `entity:sprite():hide()`
