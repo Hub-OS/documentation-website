@@ -57,11 +57,21 @@ Allows for spectator input to be read.
 
 ### `AudioBehavior.Default`
 
+Audio will play regardless of other audio. Same as `AudioBehavior.Overlap`
+
+### `AudioBehavior.Overlap`
+
 Audio will play regardless of other audio.
 
 ### `AudioBehavior.NoOverlap`
 
-Audio will not play if another instance of itself is playing with NoOverlap or LoopSection.
+Audio will not play if another instance of itself is playing with NoOverlap, Restart, or LoopSection.
+
+### `AudioBehavior.Restart`
+
+If this audio is already playing with NoOverlap or Restart, it will be restarted. Looping audio will not be restarted.
+
+Plays the audio as normal if there is no other instance of itself.
 
 ### `AudioBehavior.LoopSection(start_sample, end_sample)`
 
