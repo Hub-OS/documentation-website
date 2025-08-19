@@ -803,6 +803,9 @@ DeckCard = {}
 ---@field code string
 --- Number, used by other mods for conditional behavior.
 ---@field recover number
+--- Number, represents the increase in damage from boosts. You should also modify `damage` when adjusting this value, as `damage` represents the final damage value.
+--- Subtract this value from `damage` to get the original damage value.
+---@field boosted_damage number
 --- Number, influences generated [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props).
 --- 
 --- Displayed during time freeze.
