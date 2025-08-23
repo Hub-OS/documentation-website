@@ -1098,6 +1098,16 @@ function Entity:hide() end
 --- Same as `entity:sprite():reveal()`
 function Entity:reveal() end
 
+--- Returns a number.
+--- 
+--- Same as `entity:sprite():layer()`
+---@return number
+function Entity:layer() end
+
+--- Same as `entity:sprite():set_layer(layer)`
+---@param layer number
+function Entity:set_layer(layer) end
+
 --- Returns [Color](https://docs.hubos.dev/client/lua-api/resource-api/sprite#color)
 --- 
 --- Same as `entity:sprite():color()`
@@ -1123,6 +1133,10 @@ function Entity:set_never_flip(never_flip) end
 --- Same as `entity:sprite():create_node()`
 ---@return Sprite
 function Entity:create_node() end
+
+--- Same as `entity:sprite():remove_node(sprite)`
+---@param sprite Sprite
+function Entity:remove_node(sprite) end
 
 --- Returns a [SyncNode](https://docs.hubos.dev/client/lua-api/resource-api/sprite#syncnode).
 ---@return SyncNode
