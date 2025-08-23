@@ -206,6 +206,16 @@ Same as `entity:sprite():hide()`
 
 Same as `entity:sprite():reveal()`
 
+### `entity:layer()`
+
+Returns a number.
+
+Same as `entity:sprite():layer()`
+
+### `entity:set_layer(layer)`
+
+Same as `entity:sprite():set_layer(layer)`
+
 ### `entity:color()`
 
 Returns [Color](/client/lua-api/resource-api/sprite#color)
@@ -231,6 +241,10 @@ Same as `entity:sprite():set_never_flip(never_flip)`
 Returns a [Sprite](/client/lua-api/resource-api/sprite)
 
 Same as `entity:sprite():create_node()`
+
+### `entity:remove_node(sprite)`
+
+Same as `entity:sprite():remove_node(sprite)`
 
 ### `entity:create_sync_node()`
 
