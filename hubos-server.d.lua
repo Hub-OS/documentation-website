@@ -11,7 +11,7 @@
 ---@class Net.EventEmitter
 Net.EventEmitter = {}
 
----@class Net.Promise<T>: { and_then: fun(callback: fun(T)) }
+---@class Net.Promise<T>: { and_then: fun(callback: fun(value: T)) }
 
 ---@class Net.Position
 ---@field x number
