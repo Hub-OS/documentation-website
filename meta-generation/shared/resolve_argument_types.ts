@@ -42,10 +42,20 @@ export default function resolveArgumentTypes(
     }
 
     if (!is_callback) {
-      const name = argument_text;
-      const type = resolve_variable_type(name);
+      const generics_start = argument_text.indexOf("<");
 
-      result.push({ name, type, optional });
+      if (generics_start == -1) {
+        const name = argument_text;
+        const type = resolve_variable_type(name);
+
+        result.push({ name, type, optional });
+      } else {
+        const name = argument_text.slice(0, generics_start);
+        const type =
+          resolve_variable_type(name) + argument_text.slice(generics_start);
+
+        result.push({ name, type, optional });
+      }
     } else {
       const type = resolveRequiredCallbackType(
         class_name,
