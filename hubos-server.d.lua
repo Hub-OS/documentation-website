@@ -147,6 +147,7 @@ Net.EventEmitter = {}
 ---@field texture_path string
 ---@field animation_path? string
 ---@field animation? string Animation state, this state will be looped.
+
 ---@class Net.TextSpriteOptions
 ---@field player_id? Net.ActorId Restricts visibility to this specific player if set.
 ---@field parent_id "widget" | "hud" | Net.ActorId
@@ -162,7 +163,6 @@ Net.EventEmitter = {}
 ---@field text_style Net.TextStyle
 ---@field h_align? "left" | "center" | "right"
 ---@field v_align? "top" | "center" | "bottom"
-
 
 --- All fields are in the range: [0, 255]
 ---@class Net.Color
