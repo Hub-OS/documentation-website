@@ -134,6 +134,14 @@ Returns [Net.EventEmitter](/server/lua-api/event-emitters), re-emits `shop_purch
 
 Sets the default text for the shop keeper. Ignored if no shop is open.
 
+### `Net.prepend_shop_items(player_id, shop_items, item_id?)`
+
+Issues may arise when multiple scripts create shops at the same time.
+
+### `Net.append_shop_items(player_id, shop_items, item_id?)`
+
+Issues may arise when multiple scripts create bshopsoards at the same time.
+
 ### `Net.update_shop_item(player_id, shop_item)`
 
 - `shop_item`: [Net.ShopItem](#netshopitem)
