@@ -301,7 +301,7 @@ Net.message_player(player_id, message, textbox_options)
 ---@field animation? string Animation state, this state will be looped.
 ```
 
-## Net.SpriteOptions
+## Net.TextSpriteOptions
 
 ```lua
 ---@class Net.TextSpriteOptions
