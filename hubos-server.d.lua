@@ -891,6 +891,18 @@ function Net.open_shop(player_id, shop_items, mug_texture_path, mug_animation_pa
 ---@param message string
 function Net.set_shop_message(player_id, message) end
 
+--- Issues may arise when multiple scripts create shops at the same time.
+---@param player_id Net.ActorId
+---@param shop_items Net.ShopItem[]
+---@param item_id? string
+function Net.prepend_shop_items(player_id, shop_items, item_id) end
+
+--- Issues may arise when multiple scripts create bshopsoards at the same time.
+---@param player_id Net.ActorId
+---@param shop_items Net.ShopItem[]
+---@param item_id? string
+function Net.append_shop_items(player_id, shop_items, item_id) end
+
 --- - `shop_item`: [Net.ShopItem](https://docs.hubos.dev/server/lua-api/widgets#netshopitem)
 --- 
 --- Replaces the `shop_item` for the item matching the `id`.
