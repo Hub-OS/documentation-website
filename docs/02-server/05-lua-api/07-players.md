@@ -164,8 +164,9 @@ dark_limit = 3
 
 [packages]
 # empty or excluded properties will allow all packages
-blacklist = ["hash_here", ...]
-whitelist = ["hash_here", ...]
+hash_whitelist = ["hash_here", ...]
+id_whitelist = ["package.id.here", ...]
+id_blacklist = ["package.id.here", ...]
 ```
 
 ### `Net.is_player_busy(player_id)`
