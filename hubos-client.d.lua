@@ -1193,6 +1193,22 @@ function Entity:create_component(lifetime) end
 ---@return AttackContext
 function Entity:context() end
 
+--- Starts a new context using the specified [action type](https://docs.hubos.dev/client/lua-api/entity-api/entity#aux_proprequire_actionaction_types).
+--- Not necessary, but useful for actions queued in a script context.
+--- 
+--- ```lua
+--- player.on_update_func = function()
+---   if player:input_has(Input.Pressed.Left) and not player:is_inactionable() and not player:has_actions() then
+---     player:start_context(ActionType.Normal) -- may activate AuxProps which can influence HitProps using context
+--- 
+---     local action = Action.new(player, "CHARACTER_SHOOT")
+---     player:queue_action(action)
+---   end
+--- end
+--- ```
+---@param action_type ActionType
+function Entity:start_context(action_type) end
+
 --- Returns true if the entity has an executing action or pending actions.
 ---@return boolean
 function Entity:has_actions() end
@@ -2426,6 +2442,12 @@ function Resources.stop_music() end
 ---@param path string
 ---@param loops? boolean
 function Resources.play_music(path, loops) end
+
+--- Returns [Color](https://docs.hubos.dev/client/lua-api/resource-api/sprite#color), tied to the Flash Brightness setting and seen as the color used for transitions to white.
+--- 
+--- Be careful when reading properties from the returned value, as settings will differ between players, and driving logic using these values can cause each client to desync.
+---@return Color
+function Resources.white_flash_color() end
 
 --- Returns true if the index represents the local player.
 ---@param player_index number
