@@ -39,6 +39,12 @@ Stops the currently playing music.
 
 Plays audio stored at `path` as music. Loops by default.
 
+### `Resources.white_flash_color()`
+
+Returns [Color](/client/lua-api/resource-api/sprite#color), tied to the Flash Brightness setting and seen as the color used for transitions to white.
+
+Be careful when reading properties from the returned value, as settings will differ between players, and driving logic using these values can cause each client to desync.
+
 ### `Resources.is_local(player_index)`
 
 Returns true if the index represents the local player.
