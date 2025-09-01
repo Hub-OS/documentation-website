@@ -299,6 +299,22 @@ Countering an attack can be achieved by hitting an enemy with [HitProps](/client
 
 Make sure to obtain context in card_init and not within a callback for countering.
 
+### `entity:start_context(action_type)`
+
+Starts a new context using the specified [action type](#aux_proprequire_actionaction_types).
+Not necessary, but useful for actions queued in a script context.
+
+```lua
+player.on_update_func = function()
+  if player:input_has(Input.Pressed.Left) and not player:is_inactionable() and not player:has_actions() then
+    player:start_context(ActionType.Normal) -- may activate AuxProps which can influence HitProps using context
+
+    local action = Action.new(player, "CHARACTER_SHOOT")
+    player:queue_action(action)
+  end
+end
+```
+
 ### `entity:has_actions()`
 
 Returns true if the entity has an executing action or pending actions.

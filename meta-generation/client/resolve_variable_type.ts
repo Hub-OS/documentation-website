@@ -69,6 +69,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Action", list: ["action"] },
   { type: "ActionStep", list: ["action_step"] },
   { type: "ActionLockout", list: ["lockout"] },
+  { type: "ActionType", list: ["action_type"] },
   { type: "Attachment", list: ["attachment"] },
   { type: "DefenseRule", list: ["defense_rule"] },
   { type: "DefensePriority", list: ["defense_priority"] },
