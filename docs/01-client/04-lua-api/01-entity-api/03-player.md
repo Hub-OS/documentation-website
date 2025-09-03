@@ -79,6 +79,12 @@ If the animation doesn't have a state matching the current emotion, it will rese
 
 Returns true if `input_query` matches the player's current input state.
 
+### `player:input_delay()`
+
+Returns a number, represents the configured input delay for this player.
+
+Useful for timing based selection, most mods will not need to use this value.
+
 ### `player:play_audio(path, audio_behavior?)`
 
 - `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.
