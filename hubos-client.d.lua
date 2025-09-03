@@ -1578,6 +1578,14 @@ function Entity:load_emotions_animation(path) end
 ---@return boolean
 function Entity:input_has(input_query) end
 
+--- Returns a number, represents the configured input delay for this player.
+--- 
+--- Useful for timing based selection, most mods will not need to use this value.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return number
+function Entity:input_delay() end
+
 --- - `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.
 --- - `audio_behavior`: [AudioBehavior](https://docs.hubos.dev/client/lua-api/resource-api/resources#audiobehavior)
 --- 
