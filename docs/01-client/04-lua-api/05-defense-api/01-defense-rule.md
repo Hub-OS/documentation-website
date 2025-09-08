@@ -6,8 +6,8 @@ See [living:add_defense_rule()](/client/lua-api/entity-api/living#livingadd_defe
 
 - `priority`
   - `DefensePriority.Barrier`
-  - `DefensePriority.Body`
   - `DefensePriority.Action`
+  - `DefensePriority.Body`
   - `DefensePriority.Trap`
     - Additionally causes all players to see `????` in the UI
   - `DefensePriority.Last`
@@ -54,16 +54,16 @@ Created for each attack resolution and passed through DefenseRule callbacks.
 
 Prevents damage and statuses from applying to the defending entity.
 
-### `defense:block_impact()`
-
-Used to mark `Hit.Impact` as handled / retaliated.
-
-Does not strip `Hit.Impact`.
-
 ### `defense:damage_blocked()`
 
 Returns true if `defense:block_damage()` was called.
 
-### `defense:impact_blocked()`
+### `defense:set_responded()`
 
-Returns true if `defense:block_impact()` was called.
+Used to track if the defense retaliated against a hit, such spawning an attack in Reflect / Shields.
+
+### `defense:responded()`
+
+Returns true if `defense:set_responded()` was called for this hit.
+
+Used to track if the defense retaliated against a hit, such spawning an attack in Reflect / Shields.

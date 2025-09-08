@@ -153,7 +153,7 @@ regular_allowed = false # optional, defaults to true for "standard" cards
 limit = 3 # optional, defaults to 5
 # optional, case sensitive
 # for valid values, see: https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags
-hit_flags = ["Impact", "Flinch", "Flash"]
+hit_flags = ["Flinch", "Flash"]
 # optional, defaults to a duration matching level 1 for all statuses
 status_durations = [
   { flag_name = "Flash", level = 1 },
