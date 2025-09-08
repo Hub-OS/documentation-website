@@ -735,7 +735,7 @@ Drag.None = nil
 --- - `Hit.RetainIntangible` prevents intangibility from being lost if the attack pierces.
 --- - `Hit.NoCounter` prevents the attack from countering.
 --- - `Hit.Drag` Allows the [drag property](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsdrag) to drag the entity.
---- - `Hit.Impact` allows the attack to counter the entity and causes the entity to appear white for one frame.
+--- - `Hit.Drain` disables the hit flash and countering, most defense rules should check for Drain to ignore hits.
 --- - `Hit.Flinch` read by the hit entity to cancel attacks and play a flinch animation.
 --- - `Hit.Flash` applies the default intangible rule to the hit entity and flickers the entity's sprite.
 --- - `Hit.Shake` causes the hit entity to shake.
@@ -3689,8 +3689,8 @@ function TurnGauge.turn_limit() end
 
 --- - `priority`
 ---   - `DefensePriority.Barrier`
----   - `DefensePriority.Body`
 ---   - `DefensePriority.Action`
+---   - `DefensePriority.Body`
 ---   - `DefensePriority.Trap`
 ---     - Additionally causes all players to see `????` in the UI
 ---   - `DefensePriority.Last`
@@ -3713,18 +3713,18 @@ function DefenseRule:replaced() end
 --- Prevents damage and statuses from applying to the defending entity.
 function Defense:block_damage() end
 
---- Used to mark `Hit.Impact` as handled / retaliated.
---- 
---- Does not strip `Hit.Impact`.
-function Defense:block_impact() end
-
 --- Returns true if `defense:block_damage()` was called.
 ---@return boolean
 function Defense:damage_blocked() end
 
---- Returns true if `defense:block_impact()` was called.
+--- Used to track if the defense retaliated against a hit, such spawning an attack in Reflect / Shields.
+function Defense:set_responded() end
+
+--- Returns true if `defense:set_responded()` was called for this hit.
+--- 
+--- Used to track if the defense retaliated against a hit, such spawning an attack in Reflect / Shields.
 ---@return boolean
-function Defense:impact_blocked() end
+function Defense:responded() end
 
 --- Returns a new IntangibleRule.
 ---@return IntangibleRule
