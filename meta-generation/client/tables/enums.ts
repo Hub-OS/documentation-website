@@ -61,7 +61,7 @@ const FLAT_ENUMS = {
   ColorMode: ["Additive", "Multiply"],
   SpriteShaderEffect: ["None", "Grayscale", "Pixelate"],
   Compare: ["LT", "LE", "EQ", "NE", "GT", "GE"],
-  DefensePriority: ["Barrier", "Body", "Action", "Trap", "Last"],
+  DefensePriority: ["Barrier", "Action", "Body", "Trap", "Last"],
   DefenseOrder: ["Always", "CollisionOnly"],
   ActionType: ["All", "Normal", "Charged", "Special", "Card", "Scripted"],
 };
