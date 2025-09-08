@@ -175,8 +175,8 @@ Compare = {
 ---@enum DefensePriority
 DefensePriority = {
   Barrier = 0,
-  Body = 0,
   Action = 0,
+  Body = 0,
   Trap = 0,
   Last = 0,
 }
