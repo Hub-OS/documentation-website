@@ -301,7 +301,7 @@ Make sure to obtain context in card_init and not within a callback for counterin
 
 ### `entity:start_context(action_type)`
 
-Starts a new context using the specified [action type](#aux_proprequire_actionaction_types).
+Starts a new context using the specified [action type](/client/lua-api/defense-api/aux-prop#aux_proprequire_actionaction_types).
 Not necessary, but useful for actions queued in a script context.
 
 ```lua
