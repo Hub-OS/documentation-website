@@ -208,10 +208,11 @@ Shadow = {
 ---@enum Hit
 ---@type { [string]: Hit }
 Hit = {}
+Hit.None = Hit._
 Hit.RetainIntangible = Hit._
 Hit.NoCounter = Hit._
 Hit.Drag = Hit._
-Hit.Impact = Hit._
+Hit.Drain = Hit._
 Hit.Flinch = Hit._
 Hit.Flash = Hit._
 Hit.Shake = Hit._
