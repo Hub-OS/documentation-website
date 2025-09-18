@@ -46,9 +46,13 @@ Same as calling [spell:attack_tile(tile)](#spellattack_tiletile) for each tile.
 
 Called when the spell hits an entity and isn't blocked by [intangibility](/client/lua-api/entity-api/living#livingset_intangibleintangible-intangible_rule).
 
+Commonly used by spells that delete on collision.
+
 ### `spell.on_attack_func = function(self, entity)`
 
-Called after processing damage on the entity, if damage isn't blocked by [DefenseRules](/client/lua-api/defense-api/defense-rule).
+Called after processing defenses on the hit entity, if damage isn't blocked by [DefenseRules](/client/lua-api/defense-api/defense-rule).
+
+Commonly used for spawning hit particles or applying secondary effects.
 
 ## Hitbox
 
