@@ -197,6 +197,13 @@ ActionType = {
   Scripted = 0,
 }
 
+---@enum TimeFreezeChainLimit
+TimeFreezeChainLimit = {
+  OnePerTeam = 0,
+  OnePerEntity = 0,
+  Unlimited = 0,
+}
+
 ---@enum Shadow
 Shadow = {
   None = "",
@@ -215,7 +222,6 @@ Hit.Drag = Hit._
 Hit.Drain = Hit._
 Hit.Flinch = Hit._
 Hit.Flash = Hit._
-Hit.Shake = Hit._
 Hit.PierceInvis = Hit._
 Hit.PierceGuard = Hit._
 Hit.PierceGround = Hit._
@@ -293,9 +299,13 @@ Input = {
 
 --- Most of these functions will throw if the entity has been erased. `entity:will_erase_eof()` and `entity:deleted()` will never throw and can be used to see if the entity is still safe to use.
 ---@class Entity
---- Called after processing damage on the entity, if damage isn't blocked by [DefenseRules](https://docs.hubos.dev/client/lua-api/defense-api/defense-rule).
+--- Called after processing defenses on the hit entity, if damage isn't blocked by [DefenseRules](https://docs.hubos.dev/client/lua-api/defense-api/defense-rule).
+--- 
+--- Commonly used for spawning hit particles or applying secondary effects.
 ---@field on_attack_func fun(self: Entity, entity: Entity)
 --- Called when the spell hits an entity and isn't blocked by [intangibility](https://docs.hubos.dev/client/lua-api/entity-api/living#livingset_intangibleintangible-intangible_rule).
+--- 
+--- Commonly used by spells that delete on collision.
 ---@field on_collision_func fun(self: Entity, entity: Entity)
 --- Called at the start of the intro state (the state before card select first opens).
 --- 
@@ -739,7 +749,6 @@ Drag.None = nil
 --- - `Hit.Drain` disables the hit flash and countering, most defense rules should check for Drain to ignore hits.
 --- - `Hit.Flinch` read by the hit entity to cancel attacks and play a flinch animation.
 --- - `Hit.Flash` applies the default intangible rule to the hit entity and flickers the entity's sprite.
---- - `Hit.Shake` causes the hit entity to shake.
 --- - `Hit.PierceInvis` read by defense rules to pierce defenses.
 --- - `Hit.PierceGuard` read by defense rules to pierce defenses.
 --- - `Hit.PierceGround` read by defense rules to pierce defenses.
@@ -3361,6 +3370,13 @@ function Encounter:enable_automatic_turn_end(enabled) end
 --- If the `limit` is hit, the battle will end as a failure.
 ---@param limit number
 function Encounter:set_turn_limit(limit) end
+
+--- - `chain_limit`
+---   - `TimeFreezeChainLimit.OnePerTeam` the default, only the last time freeze action from each team will be used.
+---   - `TimeFreezeChainLimit.OnePerEntity` only the last time freeze action from each entity will be used.
+---   - `TimeFreezeChainLimit.Unlimited` every time freeze action in the chain will be used.
+---@param chain_limit TimeFreezeChainLimit
+function Encounter:set_time_freeze_chain_limit(chain_limit) end
 
 --- - `enable`: defaults to true.
 --- - `player_index`: starts at 0, if unset applies to all players.
