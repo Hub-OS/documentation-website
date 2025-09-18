@@ -86,7 +86,6 @@ const SPECIAL_ENUMS = {
     "Hit.Drain = Hit._",
     "Hit.Flinch = Hit._",
     "Hit.Flash = Hit._",
-    "Hit.Shake = Hit._",
     "Hit.PierceInvis = Hit._",
     "Hit.PierceGuard = Hit._",
     "Hit.PierceGround = Hit._",

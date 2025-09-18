@@ -36,7 +36,6 @@ Any of the values below, or combined using bitwise or (`|`)
 - `Hit.Drain` disables the hit flash and countering, most defense rules should check for Drain to ignore hits.
 - `Hit.Flinch` read by the hit entity to cancel attacks and play a flinch animation.
 - `Hit.Flash` applies the default intangible rule to the hit entity and flickers the entity's sprite.
-- `Hit.Shake` causes the hit entity to shake.
 - `Hit.PierceInvis` read by defense rules to pierce defenses.
 - `Hit.PierceGuard` read by defense rules to pierce defenses.
 - `Hit.PierceGround` read by defense rules to pierce defenses.
