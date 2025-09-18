@@ -100,9 +100,15 @@ See [Resources.play_audio()](/client/lua-api/resource-api/resources#resourcespla
 
 Sets the color of the fully charged sprite.
 
+### `player:charge_position()`
+
+Returns `{ x: number, y: number }`.
+
+This table represents the offset for the attack charge animation.
+
 ### `player:set_charge_position(x, y)`
 
-Sets the offset of the fully charged sprite.
+Sets the offset for the attack charge animation.
 
 ### `player:slide_when_moving()`
 
