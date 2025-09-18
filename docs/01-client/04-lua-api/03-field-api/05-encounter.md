@@ -68,6 +68,13 @@ Causes turns to end without needing the player to press the EndTurn button.
 
 If the `limit` is hit, the battle will end as a failure.
 
+### `encounter:set_time_freeze_chain_limit(chain_limit)`
+
+- `chain_limit`
+  - `TimeFreezeChainLimit.OnePerTeam` the default, only the last time freeze action from each team will be used.
+  - `TimeFreezeChainLimit.OnePerEntity` only the last time freeze action from each entity will be used.
+  - `TimeFreezeChainLimit.Unlimited` every time freeze action in the chain will be used.
+
 ### `encounter:enable_flipping(enable?, player_index?)`
 
 - `enable`: defaults to true.

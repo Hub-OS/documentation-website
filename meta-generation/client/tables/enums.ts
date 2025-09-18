@@ -64,6 +64,7 @@ const FLAT_ENUMS = {
   DefensePriority: ["Barrier", "Action", "Body", "Trap", "Last"],
   DefenseOrder: ["Always", "CollisionOnly"],
   ActionType: ["All", "Normal", "Charged", "Special", "Card", "Scripted"],
+  TimeFreezeChainLimit: ["OnePerTeam", "OnePerEntity", "Unlimited"],
 };
 
 const SPECIAL_ENUMS = {

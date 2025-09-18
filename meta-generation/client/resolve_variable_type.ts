@@ -52,6 +52,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Encounter", list: ["encounter"] },
   { type: "Spawner", list: ["spawner"] },
   { type: "Mutator", list: ["mutator"] },
+  { type: "TimeFreezeChainLimit", list: ["chain_limit"] },
   { type: "Field", list: ["field"] },
   { type: "Tile", list: ["tile", "prev_tile", "dest_tile"] },
   { type: "Tile[]", list: ["tiles"] },
