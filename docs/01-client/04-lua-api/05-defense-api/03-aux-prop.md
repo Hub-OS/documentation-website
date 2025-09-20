@@ -246,6 +246,13 @@ The AuxProp will check the time freeze value on the next card on the attached en
 
 The AuxProp will check the next card on the attached entity for matching tag.
 
+### `aux_prop:require_card_not_tag(tag)`
+
+- Body priority
+- `tag`: string
+
+The AuxProp will check the next card on the attached entity for matching tag.
+
 ### `aux_prop:require_projected_health_threshold(expr, compare, percentage)`
 
 - HP Expression priority
