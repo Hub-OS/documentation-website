@@ -1616,7 +1616,15 @@ function Entity:play_audio(path, audio_behavior) end
 ---@param color Color
 function Entity:set_fully_charged_color(color) end
 
---- Sets the offset of the fully charged sprite.
+--- Returns `{ x: number, y: number }`.
+--- 
+--- This table represents the offset for the attack charge animation.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return { x: number, y: number }
+function Entity:charge_position() end
+
+--- Sets the offset for the attack charge animation.
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@param x number
@@ -4004,6 +4012,14 @@ function AuxProp:require_card_time_freeze(time_freeze) end
 ---@param tag string
 ---@return AuxProp
 function AuxProp:require_card_tag(tag) end
+
+--- - Body priority
+--- - `tag`: string
+--- 
+--- The AuxProp will check the next card on the attached entity for matching tag.
+---@param tag string
+---@return AuxProp
+function AuxProp:require_card_not_tag(tag) end
 
 --- - HP Expression priority
 --- - `expr`: [Math Expression String](https://docs.hubos.dev/client/lua-api/defense-api/aux-prop#math-expression-strings), `"DAMAGE"` will represent the total damage value for all incoming hits.
