@@ -969,6 +969,8 @@ function Entity:owner() end
 --- Marks a team or entity as the owner of this entity. If `team_or_entity` is unset the entity will be reverted to having no owner.
 --- 
 --- If a team or entity has too many entities claimed, the oldest claimed entity will be deleted.
+--- 
+--- By default, entities can own one other entity, teams can own two entities.
 ---@param team_or_entity? Team|Entity
 function Entity:set_owner(team_or_entity) end
 
@@ -2856,6 +2858,7 @@ function Color.mix(color_a, color_b, progress) end
 ---     - `"THIN"`
 ---     - `"THIN_SMALL"`
 ---     - `"MENU_TITLE"`
+---     - `"NAVIGATION"`
 ---     - `"MICRO"`
 ---     - `"CONTEXT"`
 ---     - `"CODE"`
@@ -2866,6 +2869,8 @@ function Color.mix(color_a, color_b, progress) end
 ---     - `"RESULT"`
 ---     - `"BATTLE"`
 ---     - `"ENTITY_HP"`
+---     - `"ENTITY_HP_RED"`
+---     - `"ENTITY_HP_GREEN"`
 ---   - `texture_path`: Required for custom fonts.
 ---   - `animation_path`: Required for custom fonts.
 --- 
