@@ -71,6 +71,8 @@ Marks a team or entity as the owner of this entity. If `team_or_entity` is unset
 
 If a team or entity has too many entities claimed, the oldest claimed entity will be deleted.
 
+By default, entities can own one other entity, teams can own two entities.
+
 ### `entity:get_tile(direction?, distance?)`
 
 - `direction`: [Direction](/client/lua-api/field-api/direction)

@@ -213,6 +213,7 @@ The alpha or transparency component of the color. Stored as a number in the rang
     - `"THIN"`
     - `"THIN_SMALL"`
     - `"MENU_TITLE"`
+    - `"NAVIGATION"`
     - `"MICRO"`
     - `"CONTEXT"`
     - `"CODE"`
@@ -223,6 +224,8 @@ The alpha or transparency component of the color. Stored as a number in the rang
     - `"RESULT"`
     - `"BATTLE"`
     - `"ENTITY_HP"`
+    - `"ENTITY_HP_RED"`
+    - `"ENTITY_HP_GREEN"`
   - `texture_path`: Required for custom fonts.
   - `animation_path`: Required for custom fonts.
 
