@@ -46,6 +46,10 @@ Returns a string.
 
 Returns a string.
 
+### `player:emotion_node()`
+
+Returns a [Sprite](/client/lua-api/resource-api/sprite)
+
 ### `player:set_emotions_texture(path)`
 
 - `path`: file path relative to script file, use values returned from `Resources.load_texture()` for better performance.

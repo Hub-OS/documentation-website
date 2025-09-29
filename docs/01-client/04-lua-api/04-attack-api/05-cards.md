@@ -45,6 +45,12 @@ Displayed during time freeze.
 Number, represents the increase in damage from boosts. You should also modify `damage` when adjusting this value, as `damage` represents the final damage value.
 Subtract this value from `damage` to get the original damage value.
 
+### `card_properties.dynamic_damage`
+
+Boolean or nil, decides whether `function card_dynamic_damage(entity): number` should be called to resolve damage on frames where this card is unused and visible.
+
+[CardProperties.resolve_damage()](#cardpropertiesresolve_damagecard_properties-entity) can be used to calculate the latest damage value.
+
 ### `card_properties.recover`
 
 Number, used by other mods for conditional behavior.
@@ -114,3 +120,7 @@ A list of strings, used by other mods for conditional behavior.
 ### `CardProperties.icon_texture(card_properties)`
 
 Returns a string, usable anywhere a texture is needed.
+
+### `CardProperties.resolve_damage(card_properties, entity)`
+
+Returns a number, representing the resolved damage.

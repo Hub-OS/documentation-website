@@ -143,6 +143,7 @@ preview_texture_path = "preview.png"
 description = "Beast steals panels!" # optional, used in preview
 long_description = "Beast steals panels!" # optional, used in battle
 damage = 100 # optional, defaults to 0
+dynamic_damage = false # optional, displays ??? in the library and resolves with card_dynamic_damage() during battle
 # "none" | "fire" | "aqua" | "elec" | "wood" | "sword" |
 # "wind" | "cursor" | "summon" | "plus" | "break"
 element = "sword" # optional, defaults to "none"
@@ -202,6 +203,12 @@ Expects an `entry.lua` file. See [Action](/client/lua-api/attack-api/action)
 -- ---@param entity Entity
 -- ---@param card_index number
 -- function card_mutate(entity, card_index)
+-- end
+
+-- used if dynamic_damage is true, called when this card is unused and visible
+-- ---@param entity Entity
+-- ---@return number?
+-- function card_dynamic_damage(entity)
 -- end
 
 ---@param entity Entity
