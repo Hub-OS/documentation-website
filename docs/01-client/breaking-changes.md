@@ -2,6 +2,23 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.68.0
+
+- Removed the Shake status effect, a shake effect will still be applied for hits in time freeze
+
+## 0.66.0
+
+- Added `Hit.Drain` and removed `Hit.Impact`, check your mods for `Hit.Impact` in lua files and `"Impact"` in package.toml
+- Renamed `defense:block_impact()` and `defense:impact_blocked()` to `defense:set_responded()` and `defense:responded()`
+
+## 0.64.0
+
+- `blocked_by` / `blocks_flags` now applies to individual hits and not when new statuses are processed
+
+## 0.62.0
+
+- Actions now allow automatic tile reservation by default to fix issues with drag on non-flinching characters, use `action:allow_auto_tile_reservation(false)` to disable
+
 ## 0.53
 
 - `entity:set_shadow()` no longer requires `entity:show_shadow()` to display the shadow, it is now visible by default.
