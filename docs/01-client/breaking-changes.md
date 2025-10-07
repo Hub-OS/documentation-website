@@ -2,6 +2,10 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.72.0
+
+- Removed `field:notify_on_delete()` and `field:callback_on_delete()`
+
 ## 0.68.0
 
 - Removed the Shake status effect, a shake effect will still be applied for hits in time freeze

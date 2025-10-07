@@ -63,6 +63,14 @@ Returns true if an [IntangibleRule](/client/lua-api/defense-api/intangible-rule)
 
 - `defense_rule`: [DefenseRule](/client/lua-api/defense-api/defense-rule)
 
+### `living:remove_defense(defense_priority)`
+
+Removes the first defense with the matching priority and calls its [replace callback](/client/lua-api/defense-api/defense-rule#defense_ruleon_replace_func--function).
+
+### `living:has_defense(defense_priority)`
+
+Returns true if the entity has a defense rule with a matching priority.
+
 ### `living:add_aux_prop(aux_prop)`
 
 - `aux_prop`: [AuxProp](/client/lua-api/defense-api/aux-prop)

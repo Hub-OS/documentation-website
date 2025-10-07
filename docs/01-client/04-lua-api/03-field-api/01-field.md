@@ -77,14 +77,6 @@ Returns a list of [Tiles](/client/lua-api/field-api/tile) for any tile the callb
 - `strength` number, affects how aggressively the field shakes
 - `duration` number, how many game frames the effect should last
 
-### `Field.notify_on_delete(target_id, observer_id, function(entity))`
-
-Deprecated. Use [entity:on_delete()](/client/lua-api/entity-api/entity#entityon_deletefunctionentity) instead.
-
-### `Field.callback_on_delete(id, function(entity))`
-
-Deprecated. Use [entity:on_delete()](/client/lua-api/entity-api/entity#entityon_deletefunctionentity) instead.
-
 ### `Field.reclaim_column(x, team)`
 
 Causes tiles in the column to return to the matching team as soon as possible, starting at the next frame. The transfer will be delayed by tile reservations in the column.
