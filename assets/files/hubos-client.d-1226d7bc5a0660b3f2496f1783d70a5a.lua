@@ -1429,6 +1429,19 @@ function Entity:add_defense_rule(defense_rule) end
 ---@param defense_rule DefenseRule
 function Entity:remove_defense_rule(defense_rule) end
 
+--- Removes the first defense with the matching priority and calls its [replace callback](https://docs.hubos.dev/client/lua-api/defense-api/defense-rule#defense_ruleon_replace_func--function).
+---
+--- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
+---@param defense_priority DefensePriority
+function Entity:remove_defense(defense_priority) end
+
+--- Returns true if the entity has a defense rule with a matching priority.
+---
+--- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
+---@param defense_priority DefensePriority
+---@return boolean
+function Entity:has_defense(defense_priority) end
+
 --- - `aux_prop`: [AuxProp](https://docs.hubos.dev/client/lua-api/defense-api/aux-prop)
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
@@ -3016,17 +3029,6 @@ function Field.find_tiles(callback) end
 ---@param strength number
 ---@param duration number
 function Field.shake(strength, duration) end
-
---- Deprecated. Use [entity:on_delete()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityon_deletefunctionentity) instead.
----@param target_id EntityId
----@param observer_id EntityId
----@param callback fun(entity: Entity)
-function Field.notify_on_delete(target_id, observer_id, callback) end
-
---- Deprecated. Use [entity:on_delete()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityon_deletefunctionentity) instead.
----@param id EntityId
----@param callback fun(entity: Entity)
-function Field.callback_on_delete(id, callback) end
 
 --- Causes tiles in the column to return to the matching team as soon as possible, starting at the next frame. The transfer will be delayed by tile reservations in the column.
 ---@param x number
