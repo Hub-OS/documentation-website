@@ -766,6 +766,8 @@ HitProps = {}
 
 --- A card sitting in a [Player's](https://docs.hubos.dev/client/lua-api/entity-api/player) deck.
 ---@class DeckCard
+--- Undefined type, used to resolve to an [Action](https://docs.hubos.dev/client/lua-api/attack-api/action).
+---@field namespace Namespace?
 --- String, passed to [CardProperties.from_package()](https://docs.hubos.dev/client/lua-api/attack-api/cards#cardpropertiesfrom_packagepackage_id-code).
 ---@field code string
 --- String, passed to [CardProperties.from_package()](https://docs.hubos.dev/client/lua-api/attack-api/cards#cardpropertiesfrom_packagepackage_id-code).
@@ -827,7 +829,7 @@ DeckCard = {}
 --- String, displayed during time freeze.
 ---@field short_name string
 --- Undefined type, used for resolving to an [Action](https://docs.hubos.dev/client/lua-api/attack-api/action).
----@field namespace Namespace
+---@field namespace Namespace?
 --- String, used for resolving to an [Action](https://docs.hubos.dev/client/lua-api/attack-api/action).
 ---@field package_id string
 
@@ -1620,6 +1622,26 @@ function Entity:input_has(input_query) end
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@return number
 function Entity:input_delay() end
+
+--- Stores a value that can be read in future battles.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param key string
+---@param number_or_string number|string
+function Entity:remember(key, number_or_string) end
+
+--- Returns a number, string, or nil, store values with to [player:remember()](https://docs.hubos.dev/client/lua-api/entity-api/player#playerrememberkey-number_or_string)
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param key string
+---@return number|string|nil
+function Entity:recall(key) end
+
+--- Clears a value stored through [player:remember()](https://docs.hubos.dev/client/lua-api/entity-api/player#playerrememberkey-number_or_string)
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param key string
+function Entity:forget(key) end
 
 --- - `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.
 --- - `audio_behavior`: [AudioBehavior](https://docs.hubos.dev/client/lua-api/resource-api/resources#audiobehavior)
