@@ -89,6 +89,18 @@ Returns a number, represents the configured input delay for this player.
 
 Useful for timing based selection, most mods will not need to use this value.
 
+### `player:remember(key, number_or_string)`
+
+Stores a value that can be read in future battles.
+
+### `player:recall(key)`
+
+Returns a number, string, or nil, store values with to [player:remember()](#playerrememberkey-number_or_string)
+
+### `player:forget(key)`
+
+Clears a value stored through [player:remember()](#playerrememberkey-number_or_string)
+
 ### `player:play_audio(path, audio_behavior?)`
 
 - `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.

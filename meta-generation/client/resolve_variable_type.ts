@@ -162,9 +162,11 @@ const COMPRESSED_VARIABLE_TYPES = [
       "action_types",
     ],
   },
+  { type: "number|string", list: ["number_or_string"] },
   {
     type: "string",
     list: [
+      "key",
       "text",
       "font_name",
       "emotion",
