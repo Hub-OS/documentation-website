@@ -1,5 +1,5 @@
 const COMPRESSED_VARIABLE_TYPES = [
-  { type: "Namespace", list: ["namespace"] },
+  { type: "Namespace?", list: ["namespace"] },
   {
     type: "Entity",
     list: [

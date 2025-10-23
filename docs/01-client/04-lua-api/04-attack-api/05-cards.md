@@ -12,6 +12,10 @@ String, passed to [CardProperties.from_package()](#cardpropertiesfrom_packagepac
 
 String, passed to [CardProperties.from_package()](#cardpropertiesfrom_packagepackage_id-code).
 
+### `deck_card.namespace`
+
+Undefined type, used to resolve to an [Action](/client/lua-api/attack-api/action).
+
 ## CardProperties
 
 ### `CardProperties.new()`
