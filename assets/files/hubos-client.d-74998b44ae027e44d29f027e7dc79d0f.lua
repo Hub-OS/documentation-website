@@ -3262,6 +3262,18 @@ function Direction.flip_y(direction) end
 ---@return Direction
 function Direction.reverse(direction) end
 
+--- Returns two directions, a horizontal direction and vertical direction.
+--- 
+--- ```lua
+--- local x_dir, y_dir = Direction.split(Direction.UpLeft)
+--- 
+--- assert(x_dir == Direction.Left)
+--- assert(y_dir == Direction.Up)
+--- ```
+---@param direction Direction
+---@return Direction, Direction
+function Direction.split(direction) end
+
 --- Joins two directions into a single direction.
 --- 
 --- Returns a direction.
