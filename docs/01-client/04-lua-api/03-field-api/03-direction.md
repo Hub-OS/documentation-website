@@ -37,6 +37,17 @@ assert(Direction.reverse(Direction.Left) == Direction.Right)
 assert(Direction.reverse(Direction.UpLeft) == Direction.DownRight)
 ```
 
+### `Direction.split(direction)`
+
+Returns two directions, a horizontal direction and vertical direction.
+
+```lua
+local x_dir, y_dir = Direction.split(Direction.UpLeft)
+
+assert(x_dir == Direction.Left)
+assert(y_dir == Direction.Up)
+```
+
 ### `Direction.join(direction_a, direction_b)`
 
 Joins two directions into a single direction.

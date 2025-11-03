@@ -54,6 +54,10 @@ const COMPRESSED_RETURN_TYPES = [
     list: ["Returns the facing [Direction]"],
   },
   {
+    type: "Direction, Direction",
+    list: ["Returns two directions"],
+  },
+  {
     type: "Tile[]",
     list: ["Returns a list of [Tiles]"],
   },
