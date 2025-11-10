@@ -3110,6 +3110,11 @@ function Tile:is_edge() end
 ---@return boolean
 function Tile:is_walkable() end
 
+--- Returns true as long as there are no reservations by entities where [entity:sharing_tile()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitysharing_tile) is false, excluding [entities with ids](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityid) matching the `exclude_list`.
+---@param exclude_list? EntityId[]
+---@return boolean
+function Tile:is_shareable(exclude_list) end
+
 --- Returns true if there's any reservations for this tile, excluding [entities with ids](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityid) matching the `exclude_list`.
 ---@param exclude_list? EntityId[]
 ---@return boolean
