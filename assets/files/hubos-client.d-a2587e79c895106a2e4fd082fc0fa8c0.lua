@@ -4156,6 +4156,26 @@ function AuxProp:intercept_action(callback) end
 ---@return AuxProp
 function AuxProp:interrupt_action(callback) end
 
+--- - Increase Pre Hit Damage priority
+--- - `expr`: [Math Expression String](https://docs.hubos.dev/client/lua-api/defense-api/aux-prop#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit before any modifications.
+--- 
+--- The result of `expr` will be added to the total incoming damage.
+--- 
+--- If the result is negative, it will be clamped to 0.
+---@param expr string
+---@return AuxProp
+function AuxProp:increase_pre_hit_damage(expr) end
+
+--- - Decrease Pre Hit Damage priority
+--- - `expr`: [Math Expression String](https://docs.hubos.dev/client/lua-api/defense-api/aux-prop#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit before any modifications.
+--- 
+--- The result of `expr` will be added to the total incoming damage.
+--- 
+--- If the result is negative, it will be clamped to 0.
+---@param expr string
+---@return AuxProp
+function AuxProp:decrease_pre_hit_damage(expr) end
+
 --- - Status Immunity priority
 --- - `hit_flags`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
 --- 
