@@ -54,6 +54,10 @@ Returns true if the tile is not a hole.
 
 Examples: `TileState.Broken`, `TileState.Void`, `TileState.Empty`
 
+### `tile:is_shareable(exclude_list?)`
+
+Returns true as long as there are no reservations by entities where [entity:sharing_tile()](/client/lua-api/entity-api/entity#entitysharing_tile) is false, excluding [entities with ids](/client/lua-api/entity-api/entity#entityid) matching the `exclude_list`.
+
 ### `tile:is_reserved(exclude_list?)`
 
 Returns true if there's any reservations for this tile, excluding [entities with ids](/client/lua-api/entity-api/entity#entityid) matching the `exclude_list`.
