@@ -2,6 +2,10 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.75.0
+
+- The attacker passed to `defense_rule.defense_func` can now be nil
+
 ## 0.72.0
 
 - Removed `field:notify_on_delete()` and `field:callback_on_delete()`

@@ -27,7 +27,7 @@ Returns true if a DefenseRule with the same priority replaced this rule.
 
 Called when a DefenseRule with the same priority replaced this rule.
 
-### `defense_rule.defense_func = function(defense, attacker, defender, hit_props)`
+### `defense_rule.defense_func = function(defense, attacker?, defender, hit_props)`
 
 If the defense order is `DefenseOrder.Always`, this function will be called on every hit.
 
