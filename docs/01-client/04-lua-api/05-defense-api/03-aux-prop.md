@@ -298,6 +298,8 @@ The lower the priority is in the list, the later it will execute.
 - Increase Card Multiplier
 - Intercept Action
 - Interrupt Action
+- Increase Pre Hit Damage
+- Decrease Pre Hit Damage
 - Status Immunity
 - Apply Status
 - Remove Status
@@ -336,6 +338,24 @@ Intercepts an Action moving off the action queue for execution. Returning a diff
 
 Interrupts an Action that is about to execute or has executed. The Action will be deleted after the callback finishes.
 `aux_prop:require_card_*` will refer to properties on the Action.
+
+### `aux_prop:increase_pre_hit_damage(expr)`
+
+- Increase Pre Hit Damage priority
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit before any modifications.
+
+The result of `expr` will be added to the total incoming damage.
+
+If the result is negative, it will be clamped to 0.
+
+### `aux_prop:decrease_pre_hit_damage(expr)`
+
+- Decrease Pre Hit Damage priority
+- `expr`: [Math Expression String](#math-expression-strings), `"DAMAGE"` will represent the damage value for the current hit before any modifications.
+
+The result of `expr` will be added to the total incoming damage.
+
+If the result is negative, it will be clamped to 0.
 
 ### `aux_prop:declare_immunity(hit_flags)`
 
