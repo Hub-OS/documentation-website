@@ -49,6 +49,7 @@ shape = [
 # any package ids here must also be marked as a dependency
 byproducts = []
 prevent_byproducts = false # optional, defaults to false, prevents all blocks from creating byproducts
+limit = 9 # optional, defaults to 9
 
 # this section is optional, see the Battle section for an example
 [defines]
@@ -143,6 +144,7 @@ preview_texture_path = "preview.png"
 description = "Beast steals panels!" # optional, used in preview
 long_description = "Beast steals panels!" # optional, used in battle
 damage = 100 # optional, defaults to 0
+recover = 0 # optional, defaults to 0
 dynamic_damage = false # optional, displays ??? in the library and resolves with card_dynamic_damage() during battle
 # "none" | "fire" | "aqua" | "elec" | "wood" | "sword" |
 # "wind" | "cursor" | "summon" | "plus" | "break"
