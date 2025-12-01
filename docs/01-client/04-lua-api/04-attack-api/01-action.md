@@ -47,11 +47,13 @@ Returns [Attachment](#attachment)
 
 See [animation:set_state()](/client/lua-api/resource-api/animation#animationset_statestate-frame_data)
 
-### `action:add_anim_action(frame_index, callback)`
+### `action:on_anim_frame(frame_index, callback)`
 
 Same as calling `action:owner():animation():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself-owner)
 
-See [animation:on_frame()](/client/lua-api/resource-api/animation#animationon_frameframe_index-function-do_once)
+### `action:on_end(callback)`
+
+Adds a callback to run before [action.on_action_end_func](#actionon_action_end_func--functionself)
 
 ### `action:end_action()`
 

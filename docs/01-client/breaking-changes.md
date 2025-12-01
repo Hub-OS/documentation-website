@@ -2,6 +2,11 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.78.0
+
+- `require` will ignore package ids that are not in the dependency tree (a direct dependency or dependency of a dependency). A warning appear in the console when this occurs.
+- `Character.from_package` and `CardProperties.from_package` will now error when given a package id from outside of the dependency tree
+
 ## 0.75.0
 
 - The attacker passed to `defense_rule.defense_func` can now be nil
