@@ -3555,11 +3555,13 @@ function Action:create_attachment(point_name) end
 function Action:override_animation_frames(frame_data) end
 
 --- Same as calling `action:owner():animation():on_frame(frame_index, callback)` within [action.on_execute_func](https://docs.hubos.dev/client/lua-api/attack-api/action#actionon_execute_func--functionself-owner)
---- 
---- See [animation:on_frame()](https://docs.hubos.dev/client/lua-api/resource-api/animation#animationon_frameframe_index-function-do_once)
 ---@param frame_index number
 ---@param callback fun()
-function Action:add_anim_action(frame_index, callback) end
+function Action:on_anim_frame(frame_index, callback) end
+
+--- Adds a callback to run before [action.on_action_end_func](https://docs.hubos.dev/client/lua-api/attack-api/action#actionon_action_end_func--functionself)
+---@param callback fun()
+function Action:on_end(callback) end
 
 --- Calls [action.on_action_end_func](https://docs.hubos.dev/client/lua-api/attack-api/action#actionon_action_end_func--functionself)
 --- 
