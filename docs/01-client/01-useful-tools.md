@@ -15,8 +15,10 @@
 
 - [Aseprite](https://www.aseprite.org/)
   - An image editor designed for pixel art.
+- [LibreSprite](https://libresprite.github.io/)
+  - Free and open source fork of Aseprite.
 - [Paint.NET](https://www.getpaint.net/)
-  - A popular free general image editor.
+  - Popular free general image editor.
 
 ## Generating Palettes
 
