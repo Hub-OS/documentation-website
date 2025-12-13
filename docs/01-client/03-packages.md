@@ -81,7 +81,7 @@ Expects a `package.toml` file
 ```toml
 [package]
 category = "encounter" # must match
-id = "com.discord.Konstinople#7692.cactikil" # must be unique
+id = "konstinople.cactikil" # must be unique
 past_ids = [] # optional, list of strings
 name = "Cactikil"
 description = 'Cactikil, known as "Sabotekoron" in Japan, is a cactus'
@@ -95,9 +95,9 @@ recording_overrides = []
 # this section is optional
 [defines]
 characters = [
-  { id = "com.discord.Konstinople#7692.enemy.cactikil", path = "cactikil" },
-  { id = "com.discord.Konstinople#7692.enemy.cactroll", path = "cactroll" },
-  { id = "com.discord.Konstinople#7692.enemy.cacter", path = "cacter" },
+  { id = "konstinople.enemy.cactikil", path = "cactikil" },
+  { id = "konstinople.enemy.cactroll", path = "cactroll" },
+  { id = "konstinople.enemy.cacter", path = "cacter" },
 ]
 
 # this section is optional
@@ -136,7 +136,7 @@ Expects a `package.toml` file
 ```toml
 [package]
 category = "card" # must match
-id = "com.discord.Konstinople#7692.card.AreaEater" # must be unique
+id = "konstinople.card.AreaEater" # must be unique
 past_ids = [] # optional, list of strings
 name = "AreaEatr"
 icon_texture_path = "icon.png" # 14x14
@@ -382,12 +382,15 @@ Expects a `package.toml` file
 ```toml
 [package]
 category = "player" # must match
-id = "com.discord.Konstinople#7692.player.Man" # must be unique
+id = "konstinople.player.Man" # must be unique
 past_ids = [] # optional, list of strings
 name = "Man"
 description = "Before he was Mega, he was Man"
 long_description = "" # optional
+element = "none" # optional, defaults to "none"
 health = 1000
+mega_boost = 0 # optional, default is 0
+giga_boost = 0 # optional, default is 0
 icon_texture_path = "icon.png"
 preview_texture_path = "preview.png"
 overworld_animation_path = "overworld.animation"
