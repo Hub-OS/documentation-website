@@ -105,6 +105,10 @@ Returns a [Direction](/client/lua-api/field-api/direction)
 
 Sets the facing direction used to set the initial direction of spawned entities, as well as for resolving reverting team.
 
+### `tile:original_facing()`
+
+Returns a [Direction](/client/lua-api/field-api/direction)
+
 ### `tile:set_highlight(highlight)`
 
 - `highlight`
