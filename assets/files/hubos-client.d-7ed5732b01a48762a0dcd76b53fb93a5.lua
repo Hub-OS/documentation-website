@@ -3165,6 +3165,10 @@ function Tile:facing() end
 ---@param direction Direction
 function Tile:set_facing(direction) end
 
+--- Returns a [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction)
+---@return Direction
+function Tile:original_facing() end
+
 --- - `highlight`
 ---   - `Highlight.None`
 ---   - `Highlight.Flash`
