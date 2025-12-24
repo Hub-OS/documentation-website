@@ -643,6 +643,8 @@ CustomTileState = {}
 
 --- A global sprite node, used to add sprites to the HUD.
 --- 
+--- Hiding this node will also hide engine Hud elements.
+--- 
 --- ```lua
 --- local sprite = Hud:create_node()
 --- ```
@@ -1471,6 +1473,14 @@ function Entity:apply_status(hit_flag, duration) end
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
 ---@param hit_flags Hit | number
 function Entity:remove_status(hit_flags) end
+
+--- Returns a number, representing the hit flags the entity is currently immune to.
+--- 
+--- This won't cover checks inside of statuses, such as a the `CHARACTER_HIT` animation required by `Hit.Flinch`
+---
+--- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
+---@return number
+function Entity:status_immunities() end
 
 --- - `hit_flag` a single hit flag, see [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 --- 

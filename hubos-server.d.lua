@@ -164,6 +164,9 @@ Net.EventEmitter = {}
 ---@field h_align? "left" | "center" | "right"
 ---@field v_align? "top" | "center" | "bottom"
 
+---@class Net.ReferOptions
+---@field unless_installed? boolean
+
 --- All fields are in the range: [0, 255]
 ---@class Net.Color
 ---@field r number
@@ -969,7 +972,8 @@ function Net.refer_server(player_id, name, address) end
 --- Opens a menu on the client for the player to view and install a package from their preferred package repo.
 ---@param player_id Net.ActorId
 ---@param package_id string
-function Net.refer_package(player_id, package_id) end
+---@param refer_options? Net.ReferOptions
+function Net.refer_package(player_id, package_id, refer_options) end
 
 --- Gets permission from the player to permanently install a package on their client, allowing for the package to be used when disconnected and while on other servers.
 --- 
