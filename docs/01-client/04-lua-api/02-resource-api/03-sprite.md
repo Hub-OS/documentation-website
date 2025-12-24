@@ -296,6 +296,8 @@ Returns a reference to the sync node's [Animation](/client/lua-api/resource-api/
 
 A global sprite node, used to add sprites to the HUD.
 
+Hiding this node will also hide engine Hud elements.
+
 ```lua
 local sprite = Hud:create_node()
 ```

@@ -194,7 +194,7 @@ Supports `http://` and `https://` protocols.
 
 Opens a menu for the player to save the referred server.
 
-### `Net.refer_package(player_id, package_id)`
+### `Net.refer_package(player_id, package_id, refer_options?)`
 
 Opens a menu on the client for the player to view and install a package from their preferred package repo.
 
@@ -319,4 +319,11 @@ Net.message_player(player_id, message, textbox_options)
 ---@field text_style Net.TextStyle
 ---@field h_align? "left" | "center" | "right"
 ---@field v_align? "top" | "center" | "bottom"
+```
+
+## Net.ReferOptions
+
+```lua
+---@class Net.ReferOptions
+---@field unless_installed? boolean
 ```

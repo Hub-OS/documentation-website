@@ -90,6 +90,12 @@ Queues a status update. If the status is already applied, the remaining time wil
 
 - `hit_flags` one or more hit flags stored as a single number, see [HitProps](/client/lua-api/attack-api/hit-props)
 
+### `living:status_immunities()`
+
+Returns a number, representing the hit flags the entity is currently immune to.
+
+This won't cover checks inside of statuses, such as a the `CHARACTER_HIT` animation required by `Hit.Flinch`
+
 ### `living:remaining_status_time(hit_flag)`
 
 - `hit_flag` a single hit flag, see [HitProps](/client/lua-api/attack-api/hit-props)

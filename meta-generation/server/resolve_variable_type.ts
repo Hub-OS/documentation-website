@@ -24,6 +24,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Net.TextboxOptions", list: ["textbox_options"] },
   { type: "Net.SpriteOptions", list: ["sprite_options"] },
   { type: "Net.TextSpriteOptions", list: ["text_sprite_options"] },
+  { type: "Net.ReferOptions", list: ["refer_options"] },
   { type: "Net.ShopItem[]", list: ["shop_items"] },
   { type: "Net.ShopItem", list: ["shop_item"] },
   { type: "Net.BoardPost[]", list: ["posts"] },

@@ -19,6 +19,7 @@ rapid_boost = 0 # optional, default is 0
 charge_boost = 0 # optional, default is 0
 mega_boost = 0 # optional, default is 0
 giga_boost = 0 # optional, default is 0
+dark_boost = 0 # optional, default is 0
 hand_size_boost = 0 # optional, default is 0
 priority = false # optional, default is false, this allows the augment to override behavior on forms
 
@@ -391,6 +392,7 @@ element = "none" # optional, defaults to "none"
 health = 1000
 mega_boost = 0 # optional, default is 0
 giga_boost = 0 # optional, default is 0
+dark_boost = 0 # optional, default is 0
 icon_texture_path = "icon.png"
 preview_texture_path = "preview.png"
 overworld_animation_path = "overworld.animation"
