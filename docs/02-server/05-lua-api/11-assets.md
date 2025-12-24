@@ -38,6 +38,6 @@ Calling in response to `player_request` will cause cached files on the client to
 
 Similar to [Net.provide_asset_for_player](#netprovide_asset_for_playerplayer_id-path), but also loads the package on the client.
 
-This does not "install" packages on the client. Use [Net.offer_package()](/server/lua-api/widgets#netoffer_packageplayer_id-package_path) or [Net.refer_package()](/server/lua-api/widgets#netrefer_packageplayer_id-package_id) for that use case.
+This does not "install" packages on the client. Use [Net.offer_package()](/server/lua-api/widgets#netoffer_packageplayer_id-package_path) or [Net.refer_package()](/server/lua-api/widgets#netrefer_packageplayer_id-package_id-refer_options) for that use case.
 
 Calling in response to `player_request` will cause cached files on the client to be ignored.
