@@ -30,7 +30,9 @@ Automatically set for [Players](/client/lua-api/entity-api/player).
 
 ### `entity:facing()`
 
-Returns the facing [Direction](/client/lua-api/field-api/direction) of the entity, used by attacks to decide which direction to move in.
+Returns the facing [Direction](/client/lua-api/field-api/direction) of the entity.
+
+Many mods use this to decide which direction to move in.
 
 ### `entity:facing_away()`
 
@@ -40,7 +42,12 @@ Same as `Direction.reverse(entity:facing())`
 
 ### `entity:set_facing(direction)`
 
-Sets the facing [Direction](/client/lua-api/field-api/direction) of the entity, used by attacks to decide which direction to move in.
+Returns the facing [Direction](/client/lua-api/field-api/direction) of the entity.
+
+Used by the engine to resolve how to display the visual based on perspective.
+This should be set to either `Direction.Left` or `Direction.Right` generally.
+
+Many mods use this to decide which direction to move in.
 
 ### `entity:team()`
 
