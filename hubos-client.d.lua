@@ -936,7 +936,9 @@ function Entity:element() end
 ---@param element Element
 function Entity:set_element(element) end
 
---- Returns the facing [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction) of the entity, used by attacks to decide which direction to move in.
+--- Returns the facing [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction) of the entity.
+--- 
+--- Many mods use this to decide which direction to move in.
 ---@return Direction
 function Entity:facing() end
 
@@ -946,8 +948,14 @@ function Entity:facing() end
 ---@return Direction
 function Entity:facing_away() end
 
---- Sets the facing [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction) of the entity, used by attacks to decide which direction to move in.
+--- Returns the facing [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction) of the entity.
+--- 
+--- Used by the engine to resolve how to display the visual based on perspective.
+--- This should be set to either `Direction.Left` or `Direction.Right` generally.
+--- 
+--- Many mods use this to decide which direction to move in.
 ---@param direction Direction
+---@return Direction
 function Entity:set_facing(direction) end
 
 --- Returns the [Team](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityset_teamteam) of the entity

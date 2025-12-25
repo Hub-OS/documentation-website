@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Entity | Hub OS Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.hubos.dev/client/lua-api/entity-api/entity"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Entity | Hub OS Documentation"><meta data-rh="true" name="description" content="Most of these functions will throw if the entity has been erased. entitydeleted() will never throw and can be used to see if the entity is still safe to use."><meta data-rh="true" property="og:description" content="Most of these functions will throw if the entity has been erased. entitydeleted() will never throw and can be used to see if the entity is still safe to use."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.hubos.dev/client/lua-api/entity-api/entity"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/client/lua-api/entity-api/entity" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/client/lua-api/entity-api/entity" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.9f2af24b.css">
-<script src="/assets/js/runtime~main.4a046f48.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b0183b3e.js" defer="defer"></script>
 <script src="/assets/js/main.0484a9c1.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,12 +29,16 @@
 <p>Sets the Element for the entity, affects super effectiveness of incoming attacks.</p>
 <p>Automatically set for <a href="/client/lua-api/entity-api/player">Players</a>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityfacing"><code>entity:facing()</code><a href="#entityfacing" class="hash-link" aria-label="Direct link to entityfacing" title="Direct link to entityfacing">​</a></h3>
-<p>Returns the facing <a href="/client/lua-api/field-api/direction">Direction</a> of the entity, used by attacks to decide which direction to move in.</p>
+<p>Returns the facing <a href="/client/lua-api/field-api/direction">Direction</a> of the entity.</p>
+<p>Many mods use this to decide which direction to move in.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityfacing_away"><code>entity:facing_away()</code><a href="#entityfacing_away" class="hash-link" aria-label="Direct link to entityfacing_away" title="Direct link to entityfacing_away">​</a></h3>
 <p>Returns <a href="/client/lua-api/field-api/direction">Direction</a></p>
 <p>Same as <code>Direction.reverse(entity:facing())</code></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityset_facingdirection"><code>entity:set_facing(direction)</code><a href="#entityset_facingdirection" class="hash-link" aria-label="Direct link to entityset_facingdirection" title="Direct link to entityset_facingdirection">​</a></h3>
-<p>Sets the facing <a href="/client/lua-api/field-api/direction">Direction</a> of the entity, used by attacks to decide which direction to move in.</p>
+<p>Returns the facing <a href="/client/lua-api/field-api/direction">Direction</a> of the entity.</p>
+<p>Used by the engine to resolve how to display the visual based on perspective.
+This should be set to either <code>Direction.Left</code> or <code>Direction.Right</code> generally.</p>
+<p>Many mods use this to decide which direction to move in.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityteam"><code>entity:team()</code><a href="#entityteam" class="hash-link" aria-label="Direct link to entityteam" title="Direct link to entityteam">​</a></h3>
 <p>Returns the <a href="/client/lua-api/entity-api/entity#entityset_teamteam">Team</a> of the entity</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityset_teamteam"><code>entity:set_team(team)</code><a href="#entityset_teamteam" class="hash-link" aria-label="Direct link to entityset_teamteam" title="Direct link to entityset_teamteam">​</a></h3>
@@ -123,7 +127,7 @@ Does not affect tile interactions with attacks, such as freezing on Ice tiles wh
 <p>Same as <code>entity:sprite():texture()</code></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityset_texturepath"><code>entity:set_texture(path)</code><a href="#entityset_texturepath" class="hash-link" aria-label="Direct link to entityset_texturepath" title="Direct link to entityset_texturepath">​</a></h3>
 <p>Same as <code>entity:sprite():set_texture(path)</code></p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="entitypalette"><code>entity:palette()</code><a href="#entitypalette" class="hash-link" aria-label="Direct link to entitypalette" title="Direct link to entitypalette">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="entitypalette"><code>entity:palette()</code><a href="#entitypalette" class="hash-link" aria-label="Direct link to entitypalette" title="Direct link to entitypalette"> ​</a></h3>
 <p>Returns a string or <code>nil</code></p>
 <p>Same as <code>entity:sprite():palette()</code></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="entityset_palettepath"><code>entity:set_palette(path?)</code><a href="#entityset_palettepath" class="hash-link" aria-label="Direct link to entityset_palettepath" title="Direct link to entityset_palettepath">​</a></h3>
