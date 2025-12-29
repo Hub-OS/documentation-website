@@ -132,10 +132,11 @@ Returns the ColorMode.
 ### `sprite:set_color_mode(color_mode)`
 
 - `color_mode`
-  - `ColorMode.Additive` each pixel will be added by the sprite's color, alpha will be multiplied.
+  - `ColorMode.Add` each pixel will be added by the sprite's color, alpha will be multiplied.
   - `ColorMode.Multiply` each pixel will be multiplied by the sprite's color.
+  - `ColorMode.Adopt` the RGB components of the sprite's color will be directly used, alpha will be multiplied.
 
-The color mode will be reset to `ColorMode.Additive` at the start of the next frame for root sprites.
+The color mode will be reset to `ColorMode.Add` at the start of the next frame for root sprites.
 
 ### `sprite:never_flip()`
 

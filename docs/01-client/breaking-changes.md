@@ -2,6 +2,11 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.85.0
+
+- `aux_prop:increase_card_multiplier(n)` will no longer apply when can_boost = false.
+  - This breaks `aux_prop:increase_card_multiplier(0):with_callback()`, use `:require_action(ActionType.Card)` with `:update_context()` or `:require_context_start()` instead.
+
 ## 0.78.0
 
 - `require` will ignore package ids that are not in the dependency tree (a direct dependency or dependency of a dependency). A warning appear in the console when this occurs.

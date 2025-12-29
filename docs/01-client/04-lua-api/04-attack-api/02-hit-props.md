@@ -81,6 +81,14 @@ Returns the duration in frames for a status effect at a specific level, or `1` i
 
 Returns a number, representing all of the mutually exclusive hit flags for bit manipulation.
 
+### `Hit.action_blockers()`
+
+Returns a number, representing all of the hit flags of statuses that have `blocks_actions` set to true.
+
+### `Hit.mobility_blockers()`
+
+Returns a number, representing all of the hit flags of statuses that have `blocks_mobility` set to true.
+
 ## Element
 
 - `Element.None`

@@ -114,6 +114,12 @@ The AuxProp will check the attached entity for matching element.
 
 The AuxProp will check `entity:ignoring_negative_tile_effects() == false`.
 
+### `aux_prop:require_context_start()`
+
+- Body Priority
+
+Applies when a new `entity:context()` has started.
+
 ### `aux_prop:require_action(action_types?)`
 
 - Body Priority

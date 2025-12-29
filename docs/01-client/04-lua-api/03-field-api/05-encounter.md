@@ -75,6 +75,20 @@ If the `limit` is hit, the battle will end as a failure.
   - `TimeFreezeChainLimit.OnePerEntity` only the last time freeze action from each entity will be used.
   - `TimeFreezeChainLimit.Unlimited` every time freeze action in the chain will be used.
 
+### `encounter:set_team_owner_limit(limit)`
+
+How many entities can be owned by the team before old entities start deleting, 2 by default.
+
+### `encounter:set_entity_owner_limit(limit)`
+
+How many entities can be owned by an entity before old entities start deleting, 1 by default.
+
+### `encounter:set_entities_share_ownership(share?)`
+
+Decides whether the entity owner limit is shared between the team or is tied directly to the owner, true by default.
+
+If the entity owner limit is 1, there can only be one entity owned by any member of the team when this is true, otherwise there can be one for each unique owner.
+
 ### `encounter:enable_flipping(enable?, player_index?)`
 
 - `enable`: defaults to true.

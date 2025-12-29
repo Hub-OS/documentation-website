@@ -58,7 +58,7 @@ const FLAT_ENUMS = {
   Team: ["Other", "Red", "Blue"],
   AudioBehavior: ["Default", "Overlap", "NoOverlap", "Restart", "EndLoop"],
   Playback: ["Once", "Loop", "Bounce", "Reverse"],
-  ColorMode: ["Additive", "Multiply"],
+  ColorMode: ["Add", "Multiply", "Adopt"],
   SpriteShaderEffect: ["None", "Grayscale", "Pixelate"],
   Compare: ["LT", "LE", "EQ", "NE", "GT", "GE"],
   DefensePriority: ["Barrier", "Action", "Body", "Trap", "Last"],
