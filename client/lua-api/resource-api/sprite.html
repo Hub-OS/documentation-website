@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Sprite | Hub OS Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.hubos.dev/client/lua-api/resource-api/sprite"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Sprite | Hub OS Documentation"><meta data-rh="true" name="description" content="sprite:create_node()"><meta data-rh="true" property="og:description" content="sprite:create_node()"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.hubos.dev/client/lua-api/resource-api/sprite"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/client/lua-api/resource-api/sprite" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/client/lua-api/resource-api/sprite" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.9f2af24b.css">
-<script src="/assets/js/runtime~main.b0183b3e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b41e78b9.js" defer="defer"></script>
 <script src="/assets/js/main.0484a9c1.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -87,12 +87,13 @@
 <ul>
 <li><code>color_mode</code>
 <ul>
-<li><code>ColorMode.Additive</code> each pixel will be added by the sprite&#x27;s color, alpha will be multiplied.</li>
+<li><code>ColorMode.Add</code> each pixel will be added by the sprite&#x27;s color, alpha will be multiplied.</li>
 <li><code>ColorMode.Multiply</code> each pixel will be multiplied by the sprite&#x27;s color.</li>
+<li><code>ColorMode.Adopt</code> the RGB components of the sprite&#x27;s color will be directly used, alpha will be multiplied.</li>
 </ul>
 </li>
 </ul>
-<p>The color mode will be reset to <code>ColorMode.Additive</code> at the start of the next frame for root sprites.</p>
+<p>The color mode will be reset to <code>ColorMode.Add</code> at the start of the next frame for root sprites.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="spritenever_flip"><code>sprite:never_flip()</code><a href="#spritenever_flip" class="hash-link" aria-label="Direct link to spritenever_flip" title="Direct link to spritenever_flip">​</a></h3>
 <p>Returns true if perspective does not affect the sprite.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="spriteset_never_flipnever_flip"><code>sprite:set_never_flip(never_flip?)</code><a href="#spriteset_never_flipnever_flip" class="hash-link" aria-label="Direct link to spriteset_never_flipnever_flip" title="Direct link to spriteset_never_flipnever_flip">​</a></h3>
