@@ -40,6 +40,31 @@ The lower the priority is in the list, the later it will execute.
 
 All hit related requirements will use hit properties after [DefenseRule](/client/lua-api/defense-api/defense-rule) modification and before AuxProp modification.
 
+### `aux_prop:require_chance(chance)`
+
+- Interval priority
+- `chance`: number, 1 is 100%, 0 is 0%.
+
+The AuxProp will be given a random chance to pass.
+
+```lua
+-- one in five chance on hit to paralyze:
+player:add_aux_prop(
+  AuxProp.new()
+  :require_chance(1 / 5) -- 1 in 5 chance
+  :require_hit_damage(Compare.GT, 0) -- on hit
+  :apply_status(Hit.Paralyze, 20)
+)
+
+-- 20% chance on hit to freeze:
+player:add_aux_prop(
+  AuxProp.new()
+  :require_chance(0.2)
+  :require_hit_damage(Compare.GT, 0)
+  :apply_status(Hit.Freeze, 20)
+)
+```
+
 ### `aux_prop:require_interval(frames)`
 
 - Interval priority

@@ -160,6 +160,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "start_sample",
       "end_sample",
       "action_types",
+      "chance",
     ],
   },
   { type: "number|string", list: ["number_or_string"] },
