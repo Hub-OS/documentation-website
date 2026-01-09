@@ -62,7 +62,7 @@ Map:
 - Foreground Vel Y: float
 - Foreground Parallax: float
 
-Tiles:
+Tiles and TileSets:
 
 - Shadow: string
 
