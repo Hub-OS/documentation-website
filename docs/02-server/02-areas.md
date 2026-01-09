@@ -65,9 +65,13 @@ Map:
 Tiles:
 
 - Shadow: string
+
   - "Always"
   - "Never"
   - Unset - Automatic
+
+- Minimap: bool
+  - When set and not checked, this tile will skip rendering to the minimap
 
 ## Object and Tile Classes
 
