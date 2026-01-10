@@ -224,7 +224,8 @@ Async = {}
 ---@class Net: Net.EventEmitter
 Net = {}
 
---- Constructs a new EventEmitter instance.
+--- Returns [Net.EventEmitter](https://docs.hubos.dev/server/lua-api/event-emitters)
+---@return Net.EventEmitter
 function Net.EventEmitter.new() end
 
 --- Parameters after `event_name` are custom and passed to event listeners.
