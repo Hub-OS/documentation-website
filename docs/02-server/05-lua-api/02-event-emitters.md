@@ -2,7 +2,7 @@
 
 ### `Net.EventEmitter.new()`
 
-Constructs a new EventEmitter instance.
+Returns [Net.EventEmitter](/server/lua-api/event-emitters)
 
 ### `emitter:emit(event_name, ...)`
 
