@@ -6,7 +6,9 @@ It's best to take just what you need while creating a mod, and come back to stud
 
 For an official reference and documentation on standard Lua functions see: https://www.lua.org/manual/5.4/
 
-## Variables
+## Cheat Sheet
+
+### Variables
 
 ```lua
 local a = 1
@@ -16,7 +18,7 @@ a = a + 1
 print(a) -- 2
 ```
 
-## Functions
+### Functions
 
 You should prefer to use `local` on functions (see [Scopes](#scopes)). This does not include `*_init` functions they must be visible to the engine.
 
@@ -49,7 +51,7 @@ local a, b = add_multi(1, 2, 3)
 print(a, b) -- 4 5
 ```
 
-## Globals
+### Globals
 
 You should prefer to use local wherever possible (see [Scopes](#scopes))
 
@@ -67,7 +69,7 @@ f()
 print(a, b) -- 1 nil
 ```
 
-## Scopes
+### Scopes
 
 Access to local variables is limited by scope. This can make it easier to debug by limiting where you need to check for errors related to that variable. It also allows you to avoid unwanted external changes from other parts (or even the [same part](#global-closure-clash)!) of your project using a variable with the same name.
 
@@ -90,7 +92,7 @@ end -- end scope
 print(i) -- nil, not in scope
 ```
 
-## Closures
+### Closures
 
 Variables from a scope can escape by using a closure.
 
@@ -105,7 +107,7 @@ local function create_closures()
     v = v + 1
   end
 
- -- another closure
+  -- another closure
   local function get()
     -- sees the updated value of v, even when inc updates it later
     return v
@@ -125,34 +127,7 @@ inc2()
 print(get(), get2()) -- 2 1
 ```
 
-## Global Closure Clash
-
-```lua
-local function create_closure()
-  local v = 0
-
-  -- note: given a name and missing local
-  -- this is the same as `get_and_inc = function()`, meaning we're working with a global variable
-  function get_and_inc()
-    v = v + 1
-    return v
-  end
-
-  return function()
-    -- since local wasn't used, we're really accessing a global here
-    return get_and_inc()
-  end
-end
-
-local get_and_inc1 = create_closure()
-local get_and_inc2 = create_closure()
-
-print(get_and_inc1()) -- 1
-print(get_and_inc1()) -- 2
-print(get_and_inc2()) -- 3 this isn't intended!
-```
-
-## Arrays and Iteration
+### Arrays and Iteration
 
 ```lua
 -- logs 1 through 5
@@ -185,7 +160,7 @@ for i, value in ipairs(list) do
 end
 ```
 
-## Conditions
+### Conditions
 
 ```lua
 -- nil and false are "falsy":
@@ -207,7 +182,7 @@ if true and 0 and "" and {} and f then
 end
 ```
 
-## Guard Statements
+### Guard Statements
 
 Guard statements allow you to avoid nesting, which prevents code from travelling to the right and reduces the amount of overlapping scopes you need to be aware of while debugging.
 
@@ -273,7 +248,7 @@ for _, e in ipairs(entities) do
 end
 ```
 
-## Math
+### Math
 
 ```lua
 print(1 + 1) -- 2
@@ -324,7 +299,7 @@ print(7 & ~3) -- 4, inverted 3 so only other bits could pass / every bit in 3 wa
 print(0xff) -- 255
 ```
 
-## String Concatination
+### String Concatination
 
 ```lua
 print("a".."b") -- "ab"
@@ -337,18 +312,12 @@ print("a"..false) -- everything else errors
 print("a", "b") -- ~"a b"
 ```
 
-## Removing values from a list while iterating
+### Removing values from a list while iterating
+
+Watch out for [this](#attempting-to-remove-items-while-iterating) issue.
 
 ```lua
 local list = {"a", "b", "c"}
-
--- incorrect: prints "a" -> "c" -> "nil", before creating an out of bounds error
-for i = 1, #list do
-  print(list[i])
-  table.remove(list, i)
-end
-
-list = {"a", "b", "c"}
 
 -- iterating in reverse to avoid issues with and reduced performance from shifting O(n)
 -- prints "c" -> "b" -> "a"
@@ -371,7 +340,7 @@ for i = #list, 1, -1 do
 end
 ```
 
-## Appending to a list
+### Appending to a list
 
 ```lua
 local list = {}
@@ -388,7 +357,7 @@ for _, value in ipairs(list) do
 end
 ```
 
-## Random value from a list
+### Random value from a list
 
 ```lua
 local list = {"a", "b", "c"}
@@ -396,7 +365,7 @@ local list = {"a", "b", "c"}
 print(list[math.random(#list)])
 ```
 
-## Wrapping values from a list
+### Wrapping values from a list
 
 ```lua
 local list = {"a", "b", "c"}
@@ -407,7 +376,7 @@ for i = 1, 6 do
 end
 ```
 
-## Tables
+### Tables
 
 Similar syntax to lists, as lists are a feature of tables.
 
@@ -442,4 +411,49 @@ print(t.f(t))
 
 -- using a colon when calling this function will assign the table to the first parameter
 print(t:f())
+```
+
+## Common Problems
+
+### Attempting to remove items while iterating
+
+For correct examples, click [here](#removing-values-from-a-list-while-iterating).
+
+```lua
+local list = {"a", "b", "c"}
+
+-- incorrect: prints "a" -> "c" -> "nil", before creating an out of bounds error
+for i = 1, #list do
+  print(list[i])
+  table.remove(list, i)
+end
+```
+
+### Global Closure Clash
+
+For correct examples, click [here](#closures).
+
+```lua
+local function create_closure()
+  local v = 0
+
+  -- note: given a name and missing local
+  -- this is the same as `get_and_inc = function()`, meaning we're working with a global variable
+  function get_and_inc()
+    v = v + 1
+    return v
+  end
+
+  return function()
+    -- since local wasn't used, we're really accessing a global here
+    return get_and_inc()
+  end
+end
+
+local get_and_inc1 = create_closure()
+local get_and_inc2 = create_closure()
+
+print(get_and_inc1()) -- 1
+print(get_and_inc1()) -- 2
+print(get_and_inc2()) -- 3 this isn't intended!
 ```
