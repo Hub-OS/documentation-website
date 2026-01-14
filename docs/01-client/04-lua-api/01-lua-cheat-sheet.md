@@ -1,10 +1,10 @@
 # Lua Cheat Sheet
 
-For an official reference and documentation on standard Lua functions see: https://www.lua.org/manual/5.4/
-
 It's not necessary to understand everything on this page, but the more you understand the better you will be at debugging and collaborating.
 
 It's best to take just what you need while creating a mod, and come back to study if you're curious.
+
+For an official reference and documentation on standard Lua functions see: https://www.lua.org/manual/5.4/
 
 ## Variables
 
