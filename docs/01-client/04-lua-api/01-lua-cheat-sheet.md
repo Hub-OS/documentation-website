@@ -374,6 +374,20 @@ local list = {"a", "b", "c"}
 for i = 1, 6 do
   print(list[(i - 1) % #list + 1])
 end
+
+-- same output as above
+for i = 0, 5 do
+  print(list[i % #list + 1])
+end
+
+-- same output as above
+local i = 1
+
+for _ = 1, 6 do
+  print(list[i])
+  -- resolve the next index
+  i = i % #list + 1
+end
 ```
 
 ### Tables
@@ -413,7 +427,27 @@ print(t.f(t))
 print(t:f())
 ```
 
-## Common Problems
+## Common Bugs
+
+### Index Zero
+
+In most programming languages, lists start at zero. In lua lists start at one.
+
+```lua
+local list = { 5 }
+print(list[0]) -- nil
+print(list[1]) -- 5
+
+```
+
+### Zero Indexed Wrapping
+
+For correct examples, click [here](#wrapping-values-from-a-list).
+
+```lua
+-- attempting to wrap around the list as if we're using a zero indexed language
+print(list[3 % #list]) -- nil
+```
 
 ### Attempting to remove items while iterating
 
