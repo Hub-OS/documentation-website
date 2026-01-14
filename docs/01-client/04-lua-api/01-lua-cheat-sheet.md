@@ -18,6 +18,8 @@ print(a) -- 2
 
 ## Functions
 
+You should prefer to use `local` on functions (see [Scopes](#scopes)). This does not include `*_init` functions they must be visible to the engine.
+
 ```lua
 local function add(a, b)
   return a + b
@@ -49,8 +51,10 @@ print(a, b) -- 4 5
 
 ## Globals
 
+You should prefer to use local wherever possible (see [Scopes](#scopes))
+
 ```lua
-function f()
+local function f()
   -- no local attached, modifies the outside world
   a = 1
 
@@ -65,7 +69,7 @@ print(a, b) -- 1 nil
 
 ## Scopes
 
-Access to local variables is limited by scope. This can make it easier to debug by limiting where you need to check for errors related to that variable. It also allows you to avoid unwanted external changes from other parts of your project using a variable with the same name.
+Access to local variables is limited by scope. This can make it easier to debug by limiting where you need to check for errors related to that variable. It also allows you to avoid unwanted external changes from other parts (or even the [same part](#global-closure-clash)!) of your project using a variable with the same name.
 
 Generally if a section of code ends with `end`, it qualifies as a scope.
 
@@ -91,19 +95,23 @@ print(i) -- nil, not in scope
 Variables from a scope can escape by using a closure.
 
 ```lua
-function create_closure()
+local function create_closures()
   local v = 1
 
+  -- function that accesses / "captures" an external local variable
+  -- this is called a closure
   local function inc()
     -- updates v for everyone
     v = v + 1
   end
 
+ -- another closure
   local function get()
     -- sees the updated value of v, even when inc updates it later
     return v
   end
 
+  -- these functions escape the scope of create_closures, keeping v alive and accessible
   return inc, get
 end
 
@@ -115,6 +123,33 @@ print(get()) -- 2
 local inc2, get2 = create_closure()
 inc2()
 print(get(), get2()) -- 2 1
+```
+
+## Global Closure Clash
+
+```lua
+local function create_closure()
+  local v = 0
+
+  -- note: given a name and missing local
+  -- this is the same as `get_and_inc = function()`, meaning we're working with a global variable
+  function get_and_inc()
+    v = v + 1
+    return v
+  end
+
+  return function()
+    -- since local wasn't used, we're really accessing a global here
+    return get_and_inc()
+  end
+end
+
+local get_and_inc1 = create_closure()
+local get_and_inc2 = create_closure()
+
+print(get_and_inc1()) -- 1
+print(get_and_inc1()) -- 2
+print(get_and_inc2()) -- 3 this isn't intended!
 ```
 
 ## Arrays and Iteration
@@ -387,6 +422,8 @@ local t = { a = 1, [key] = 2, ["Key with spaces"] = 3 }
 print(t["a"], t["b"], t["Key with spaces"]) -- 1 2 3
 print(t.a, t.b) -- 1 2
 
+-- defining a function on a table key, note adding local is unnecessary and will cause errors
+-- as the function will be already tied to the table
 t.f = function() return "hi" end
 -- same as:
 function t.f() return "hi" end
