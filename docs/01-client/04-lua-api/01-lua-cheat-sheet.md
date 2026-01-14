@@ -117,12 +117,12 @@ local function create_closures()
   return inc, get
 end
 
-local inc, get = create_closure()
+local inc, get = create_closures()
 inc()
 inc()
 print(get()) -- 2
 
-local inc2, get2 = create_closure()
+local inc2, get2 = create_closures()
 inc2()
 print(get(), get2()) -- 2 1
 ```
