@@ -1,6 +1,6 @@
 # Lua Cheat Sheet
 
-For an official reference and documentation on standard lua functions see: https://www.lua.org/manual/5.4/
+For an official reference and documentation on standard Lua functions see: https://www.lua.org/manual/5.4/
 
 It's not necessary to understand everything on this page, but the more you understand the better you will be at debugging and collaborating.
 
