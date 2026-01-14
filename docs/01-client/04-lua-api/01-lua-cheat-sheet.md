@@ -253,10 +253,11 @@ end
 ```lua
 print(1 + 1) -- 2
 print(1 - 1) -- 0
-print(2 ^ 4) -- 16.0, 2 to the power of 4
+print(2 * 3) -- 6
 print(10 / 3) -- 3.333
 print(10 // 3) -- 3, integer division
 print(5 % 3) -- 2, the remainder of division
+print(2 ^ 4) -- 16.0, 2 to the power of 4
 
 print(1 - 1 * 3) -- -2, operator precedence
 print((1 - 1) * 3) -- 0
