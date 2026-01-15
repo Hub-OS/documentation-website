@@ -71,7 +71,7 @@ print(a, b) -- 1 nil
 
 ### Scopes
 
-Access to local variables is limited by scope. This can make it easier to debug by limiting where you need to check for errors related to that variable. It also allows you to avoid unwanted external changes from other parts (or even the [same part](#global-closure-clash)!) of your project using a variable with the same name.
+Access to local variables is limited by scope. This can make it easier to debug by reducing where you need to check for errors related to that variable. It also allows you to avoid unwanted external changes from other parts (or even the [same part](#global-closure-clash)!) of your project using a variable with the same name.
 
 Generally if a section of code ends with `end`, it qualifies as a scope.
 
