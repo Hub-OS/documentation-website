@@ -39,3 +39,6 @@ Common animation states used by the engine and card mods.
   - Used by bomb and chips. See the [Bomb Library](https://hubos.dev/mods/dev.konstinople.library.bomb)
   - Requires a point labeled `HAND` on the first two frames.
   - 5 animation frames, timing is ignored. May accept more frames in the future.
+- `SHIELD`
+  - Optional, used by the [Shield Library](https://hubos.dev/mods/dev.konstinople.library.shield) to override the basic shield sprites if it exists.
+  - The first animation frame should last 1-2 frames.
