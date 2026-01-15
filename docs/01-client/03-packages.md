@@ -179,11 +179,14 @@ tags = ["NAVI"] # optional, list of strings, custom
 recipes = [
   { id = "BattleNetwork6.Class01.Standard.001", codes = ["A", "B", "C"] },
   { name = "Cannon", codes = ["A", "B", "C"] },
-  { mix = [
-    { id = "BattleNetwork6.Class01.Standard.070" },
-    { name = "WideSwrd" },
-    { id = "BattleNetwork6.Class01.Standard.072" }
-  ] },
+  {
+    mix = [
+      { id = "BattleNetwork6.Class01.Standard.070" },
+      { name = "WideSwrd" },
+      { id = "BattleNetwork6.Class01.Standard.072" }
+    ],
+    ordered = false # optional, setting to true activates this recipe when the cards are used in any order
+  },
 ]
 # hides the card from the deck editor and library
 hidden = false
