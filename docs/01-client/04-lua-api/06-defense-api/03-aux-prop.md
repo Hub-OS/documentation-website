@@ -284,6 +284,20 @@ The AuxProp will check the next card on the attached entity for matching tag.
 
 The AuxProp will check the next card on the attached entity for matching tag.
 
+### `aux_prop:require_statuses(hit_flags)`
+
+- Body priority
+- `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
+
+The AuxProp will check active status [flags](/client/lua-api/attack-api/hit-props#hit_propsflags) to see if all matching flags apply.
+
+### `aux_prop:require_statuses_absent(hit_flags)`
+
+- Body priority
+- `hit_flags`: [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags)
+
+The AuxProp will check active status [flags](/client/lua-api/attack-api/hit-props#hit_propsflags) to verify no flags match.
+
 ### `aux_prop:require_projected_health_threshold(expr, compare, percentage)`
 
 - HP Expression priority

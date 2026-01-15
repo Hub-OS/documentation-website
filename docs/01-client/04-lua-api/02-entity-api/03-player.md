@@ -446,6 +446,10 @@ Will not be called if there's no matching `calculate_card_charge_time_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
+### `player.movement_input_func = function(self): Direction?`
+
+Used to generate movement input, setting this overrides the input gathering method.
+
 ### `player.movement_func = function(self, direction)`
 
 Used to handle movement input, setting this overrides the default handling.
@@ -585,6 +589,13 @@ Will not be called if there's no matching `calculate_card_charge_time_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
 
+### `player_form.movement_input_func = function(self): Direction?`
+
+Overrides [player.movement_input_func](#playermovement_input_func--functionself-direction) when this form is active.
+Also overrides any [Augment](#augment)'s override.
+
+Used to generate movement input.
+
 ### `player_form.movement_func = function(self)`
 
 Overrides [player.movement_func](#playermovement_func--functionself-direction) when this form is active.
@@ -696,6 +707,12 @@ Return a number representing the minimum amount of time the card use button must
 Will not be called if there's no matching `calculate_card_charge_time_func`
 
 An [Action](/client/lua-api/attack-api/action) or `nil` is expected as a return value.
+
+### `augment.movement_input_func = function(self): Direction?`
+
+Overrides [player.movement_input_func](#playermovement_input_func--functionself-direction).
+
+Used to generate movement input.
 
 ### `augment.movement_func = function(self, direction)`
 
