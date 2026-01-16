@@ -167,6 +167,8 @@ dark_limit = 3
 hash_whitelist = ["hash_here", ...]
 id_whitelist = ["package.id.here", ...]
 id_blacklist = ["package.id.here", ...]
+tag_whitelist = ["TAG", ...]
+tag_blacklist = ["TAG", "OFFLINE_ONLY", ...]
 ```
 
 ### `Net.is_player_busy(player_id)`
