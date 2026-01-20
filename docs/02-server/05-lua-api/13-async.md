@@ -96,7 +96,13 @@ end)
 promise.and_then(print) -- says "hi" after 5s
 ```
 
-### `Async.create_function<T>(function(...): T|nil)`
+### `Async.create_scope(function())`
+
+Similar to [Async.create_scope<T>()](#asynccreate_scopetfunction-t)
+
+Returns a promise.
+
+### `Async.create_function<T>(function(...): T)`
 
 Returns a function that returns a promise, which resolves to the return value.
 
@@ -110,6 +116,12 @@ end)
 say_after("hello", 5).and_then(print) -- says "hello" after 5s
 say_after("world", 10).and_then(print) -- says "world" after 10s
 ```
+
+### `Async.create_function(function())`
+
+Similar to [Async.create_function<T>()](#asynccreate_functiontfunction-t)
+
+Returns a promise.
 
 ### `Async.request(url, request_options?)`
 
