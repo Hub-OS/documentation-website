@@ -66,7 +66,7 @@ Modifies which team the entity is on. If the entity is a [Player](/client/lua-ap
 
 Returns a boolean.
 
-Same as `entity:team() == team`
+Same as `entity:team() == team and team ~= Team.Other`
 
 ### `entity:owner()`
 
