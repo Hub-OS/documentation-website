@@ -276,25 +276,38 @@ print(math.floor(1.1)) -- 1
 -- 5 = 0101
 -- 6 = 0110
 -- 7 = 0111
+
+-- bitwise and, it's like an `and` operation on every bit
 print(1 & 1) -- 1, last bit was 1 in both
 print(1 & 2) -- 0, no bits were 1 in the same column
 print(1 & 3) -- 1, the last bit was 1 in both
 print(3 & 2) -- 2, the second to last bit was 1 in both
 print(3 & 7) -- 3, every bit in 3 matched against a bit in 7
 
+-- bitwise or, similar to an `or` operation on all bits
 print(1 | 2) -- 3, enabled the last two bits
 print(1 | 3) -- 3, the matching bit was already on in 3
 print(3 | 2) -- 3, the matching bit was already on in 3
 
+-- unary bitwise not, similar to `not value` on all bits
 print(~0) -- inverts bits, every bit is on in this number
 print(~1) -- every bit except the last bit is on
+
+-- bitwise xor
 print(3 ~ 2) -- 1, the matching bit was disabled and preserved the rest
 print(3 ~ 1) -- 2, the matching bit was disabled and preserved the rest
 print(7 ~ 3) -- 4, disabled matching bits and preserved the rest
 print(3 ~ 7) -- 4, disabled matching bits and preserved the rest
 
+-- combining bitwise `and` with `not` to disable bits
 print(7 & ~1) -- 6, inverted 1 so only other bits could pass / every bit in 1 was disabled
 print(7 & ~3) -- 4, inverted 3 so only other bits could pass / every bit in 3 was disabled
+
+-- bit shift
+print(6 >> 1) -- 3, shifted bits to the right by 1: 0110 -> 0011
+print(4 >> 2) -- 1, shifted bits to the right by 2: 0110 -> 0001
+print(1 << 1) -- 2, shifted bits to the left by 1: 0001 -> 0010
+print(1 << 2) -- 4, shifted bits to the left by 2: 0001 -> 0100
 
 -- hexadecimal
 print(0xff) -- 255
