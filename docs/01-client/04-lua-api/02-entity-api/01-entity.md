@@ -118,9 +118,17 @@ Different from [living:hitbox_enabled()](/client/lua-api/entity-api/living#livin
 
 Returns true if other entities can stand on this tile.
 
-### `entity:enable_sharing_tile(share?)`
+### `entity:enable_sharing_tile(enable?)`
 
 Allows other entities to stand on tiles reserved by this entity.
+
+### `entity:auto_reserves()`
+
+Returns true automatic tile reservation is enabled.
+
+### `entity:set_auto_reserve(enable?)`
+
+Controls whether tiles are automatically reserved when this entity changes tiles.
 
 ### `entity:ignoring_negative_tile_effects()`
 
@@ -288,7 +296,6 @@ Same as `entity:animation():load(path)`
 ### `entity:create_component(lifetime)`
 
 - `lifetime` affects when the component's update callback is called.
-
   - `Lifetime.Local` when the entity update callback is called (affected by time freeze and status effects)
   - `Lifetime.ActiveBattle` after every entity has updated and battle is active as long as time is not frozen.
   - `Lifetime.Battle` after every entity has updated and battle is active.
