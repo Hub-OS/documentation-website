@@ -139,6 +139,18 @@ The AuxProp will check the attached entity for matching element.
 
 The AuxProp will check `entity:ignoring_negative_tile_effects() == false`.
 
+### `aux_prop:require_tile_state(tile_state)`
+
+- Body priority
+
+The AuxProp will check the tile state of the tile under the entity.
+
+### `aux_prop:require_tile_state_absent(tile_state)`
+
+- Body priority
+
+The AuxProp will check the tile state of the tile under the entity.
+
 ### `aux_prop:require_context_start()`
 
 - Body Priority
