@@ -2,6 +2,8 @@
 -- https://luals.github.io/wiki/annotations/
 ---@diagnostic disable: missing-return, unused-local
 
+--- Similar to print, but for errors.
+function printerr(...) end
 ---@class Net.ActorId
 
 ---@class Net.SpriteId
@@ -72,6 +74,7 @@ Net.EventEmitter = {}
 ---@field texture_path? string
 ---@field animation_path? string
 ---@field animation? string
+---@field loop_animation? string
 ---@field x? number
 ---@field y? number
 ---@field z? number
@@ -1769,6 +1772,13 @@ function Async.await_all(promises) end
 ---@return Net.Promise<T>
 function Async.create_scope(callback) end
 
+--- Similar to [`Async.create_scope<T>()`](https://docs.hubos.dev/server/lua-api/async#asynccreate_scopetfunction-t)
+--- 
+--- Returns a promise.
+---@param callback fun()
+---@return Net.Promise<nil>
+function Async.create_scope(callback) end
+
 --- Returns a function that returns a promise, which resolves to the return value.
 --- 
 --- ```lua
@@ -1782,8 +1792,15 @@ function Async.create_scope(callback) end
 --- say_after("world", 10).and_then(print) -- says "world" after 10s
 --- ```
 ---@generic T
----@param callback fun(...): T|nil
+---@param callback fun(...): T
 ---@return fun(...): Net.Promise<T>
+function Async.create_function(callback) end
+
+--- Similar to [`Async.create_function<T>()`](https://docs.hubos.dev/server/lua-api/async#asynccreate_functiontfunction-t)
+--- 
+--- Returns a promise.
+---@param callback fun()
+---@return Net.Promise<nil>
 function Async.create_function(callback) end
 
 --- - `request_options`: [Net.RequestOptions](https://docs.hubos.dev/server/lua-api/async#netrequestoptions)

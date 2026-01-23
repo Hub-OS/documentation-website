@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[2634],{7811:(e,t,n)=>{n.r(t),n.d(t,{default:()=>i});var c=n(6540),u=n(5204),a=n(4848);function i(){return(0,c.useEffect)((()=>{window.location.replace("/client/getting-started")}),[]),(0,a.jsx)(u.A,{})}}}]);
