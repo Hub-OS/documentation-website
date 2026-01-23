@@ -117,7 +117,7 @@ The callback will be called when the `hit_flag` is applied to the entity.
 
 ### `living:is_inactionable()`
 
-Returns true if status effects that entity processing are applied.
+Returns true if status effects that block actions are applied.
 
 ### `living:is_immobile()`
 
