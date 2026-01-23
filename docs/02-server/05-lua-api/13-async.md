@@ -98,7 +98,7 @@ promise.and_then(print) -- says "hi" after 5s
 
 ### `Async.create_scope(function())`
 
-Similar to [Async.create_scope<T>()](#asynccreate_scopetfunction-t)
+Similar to [`Async.create_scope<T>()`](#asynccreate_scopetfunction-t)
 
 Returns a promise.
 
@@ -119,7 +119,7 @@ say_after("world", 10).and_then(print) -- says "world" after 10s
 
 ### `Async.create_function(function())`
 
-Similar to [Async.create_function<T>()](#asynccreate_functiontfunction-t)
+Similar to [`Async.create_function<T>()`](#asynccreate_functiontfunction-t)
 
 Returns a promise.
 
