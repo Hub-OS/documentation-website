@@ -14,6 +14,7 @@ function printerr(...) end
 Net.EventEmitter = {}
 
 ---@class Net.Promise<T>: { and_then: fun(callback: fun(value: T)) }
+---@class Net.Promise: { and_then: fun(callback: fun()) }
 
 ---@class Net.Position
 ---@field x number
@@ -150,6 +151,7 @@ Net.EventEmitter = {}
 ---@field texture_path string
 ---@field animation_path? string
 ---@field animation? string Animation state, this state will be looped.
+---@field loop_animation? boolean
 
 ---@class Net.TextSpriteOptions
 ---@field player_id? Net.ActorId Restricts visibility to this specific player if set.
