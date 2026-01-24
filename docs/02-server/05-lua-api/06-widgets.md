@@ -299,6 +299,7 @@ Net.message_player(player_id, message, textbox_options)
 ---@field texture_path string
 ---@field animation_path? string
 ---@field animation? string Animation state, this state will be looped.
+---@field loop_animation? boolean
 ```
 
 ## Net.TextSpriteOptions
