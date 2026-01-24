@@ -946,7 +946,7 @@ function Net.animate_sprite(sprite_id, state_name, loop) end
 
 --- Deletes the the sprite.
 ---@param sprite_id Net.SpriteId
-function Net.delete_sprite(sprite_id) end
+function Net.remove_sprite(sprite_id) end
 
 --- - `color`: [Net.Color](https://docs.hubos.dev/server/lua-api/widgets#netcolor)
 --- 
