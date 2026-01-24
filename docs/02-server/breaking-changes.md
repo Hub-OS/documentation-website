@@ -1,5 +1,9 @@
 # Breaking Changes
 
+## 0.91.0
+
+- Rename `Net.deletes_sprite()` -> `Net.remove_sprite()`
+
 ## 0.14.0
 
 - Removed `host` and `port` from `"server_message"` event, merged into `address`.

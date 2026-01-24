@@ -168,7 +168,7 @@ Returns sprite_id
 
 Sets the animation state for the sprite.
 
-### `Net.delete_sprite(sprite_id)`
+### `Net.remove_sprite(sprite_id)`
 
 Deletes the the sprite.
 
