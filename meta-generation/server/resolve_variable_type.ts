@@ -87,6 +87,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   {
     type: "string",
     list: [
+      "color_name",
       "text",
       "font_name",
       "emotion",

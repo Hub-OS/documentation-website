@@ -92,11 +92,11 @@ Adding any card restricts usable cards to only given cards.
 
 Accepts negative amount.
 
-### `Net.get_player_block_count(player_id, package_id, color)`
+### `Net.get_player_block_count(player_id, package_id, color_name)`
 
 Returns the amount of matching cards the player owns.
 
-### `Net.give_player_block(player_id, package_id, color, amount?)`
+### `Net.give_player_block(player_id, package_id, color_name, amount?)`
 
 Adds blocks to the player's pack.
 
