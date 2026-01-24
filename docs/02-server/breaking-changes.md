@@ -2,7 +2,8 @@
 
 ## 0.91.0
 
-- Rename `Net.deletes_sprite()` -> `Net.remove_sprite()`
+- Renamed `Net.deletes_sprite()` to `Net.remove_sprite()`
+- Removed `allies`, `enemies`, `neutral`, and `score` from battle results.
 
 ## 0.14.0
 

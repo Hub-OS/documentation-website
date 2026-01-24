@@ -277,14 +277,10 @@ Net:on("battle_results", function(event)
       player_id: Net.ActorId,
       won: boolean,
       health: number,
-      score: number,
       time: number,
       ran: bool,
       emotion: string,
       turns: number,
-      allies: { name: String, health: number }[],
-      enemies: { name: String, health: number }[],
-      neutral: { name: String, health: number }[],
     }
   ]]--
   print(event.player_id, event.health, event.time, event.ran, event.emotion, event.turns, event.enemies)

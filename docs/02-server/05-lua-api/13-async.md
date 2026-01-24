@@ -237,14 +237,10 @@ Returns `Net.Promise<Net.BattleResults?>[]`
 ---@field player_id Net.ActorId
 ---@field won boolean
 ---@field health number
----@field score number
 ---@field time number
 ---@field ran boolean
 ---@field emotion string
 ---@field turns number
----@field allies { name: string, health: number }[]
----@field enemies { name: string, health: number }[]
----@field neutral { name: string, health: number }[]
 ```
 
 ## Net.RequestOptions
