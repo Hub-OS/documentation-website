@@ -200,9 +200,15 @@ ActionType = {
 
 ---@enum TimeFreezeChainLimit
 TimeFreezeChainLimit = {
-  OnePerTeam = 0,
-  OnePerEntity = 0,
-  Unlimited = 0,
+  Unlimited = {} --[[@as TimeFreezeChainLimit]],
+  PerTeam =
+     ---@param n number
+     ---@return TimeFreezeChainLimit
+     function(n) end,
+  PerEntity =
+     ---@param n number
+     ---@return TimeFreezeChainLimit
+     function(n) end,
 }
 
 ---@enum Shadow
@@ -1259,6 +1265,10 @@ function Entity:start_context(action_type) end
 --- Returns true if the entity has an executing action or pending actions.
 ---@return boolean
 function Entity:has_actions() end
+
+--- Returns true if the entity can queue a time freeze action on this frame to counter an opponent's time freeze action.
+---@return boolean
+function Entity:can_time_freeze_counter() end
 
 --- - `action`: [Action](https://docs.hubos.dev/client/lua-api/attack-api/action)
 --- 
@@ -2861,6 +2871,18 @@ function Sprite:height() end
 ---@param height number
 function Sprite:set_height(height) end
 
+--- Returns the rotation of the sprite, in radians.
+--- 
+--- You can convert to degrees with `radians / math.pi * 180`
+---@return number
+function Sprite:rotation() end
+
+--- Sets the rotation of the sprite.
+--- 
+--- You can convert degrees to radians with `degrees / 180 * math.pi`
+---@param radians number
+function Sprite:set_rotation(radians) end
+
 --- Returns a [Color](https://docs.hubos.dev/client/lua-api/resource-api/sprite#color)
 ---@return Color
 function Sprite:color() end
@@ -3210,7 +3232,9 @@ function Tile:original_facing() end
 --- - `highlight`
 ---   - `Highlight.None`
 ---   - `Highlight.Flash`
+---     - Used to warn players about an attack that will happen.
 ---   - `Highlight.Solid`
+---     - Used to let players know they will get hit if they are on this tile.
 ---@param highlight Highlight
 function Tile:set_highlight(highlight) end
 
@@ -3478,8 +3502,9 @@ function Encounter:enable_automatic_turn_end(enabled) end
 function Encounter:set_turn_limit(limit) end
 
 --- - `chain_limit`
----   - `TimeFreezeChainLimit.OnePerTeam` the default, only the last time freeze action from each team will be used.
----   - `TimeFreezeChainLimit.OnePerEntity` only the last time freeze action from each entity will be used.
+---   - `TimeFreezeChainLimit.PerTeam(n)` only up to `n` time freeze actions from each team will be used.
+---     - The default is `TimeFreezeChainLimit.PerTeam(1)`
+---   - `TimeFreezeChainLimit.PerEntity(n)` only up to `n` time freeze actions from each entity will be used.
 ---   - `TimeFreezeChainLimit.Unlimited` every time freeze action in the chain will be used.
 ---@param chain_limit TimeFreezeChainLimit
 function Encounter:set_time_freeze_chain_limit(chain_limit) end
@@ -4056,6 +4081,20 @@ function AuxProp:require_action(action_types) end
 ---@param emotion string
 ---@return AuxProp
 function AuxProp:require_emotion(emotion) end
+
+--- - Body priority
+--- 
+--- The AuxProp will check the attached entity for a defense rule with a matching priority.
+---@param defense_priority DefensePriority
+---@return AuxProp
+function AuxProp:require_defense(defense_priority) end
+
+--- - Body priority
+--- 
+--- The AuxProp will check the attached entity for a defense rule with a matching priority.
+---@param defense_priority DefensePriority
+---@return AuxProp
+function AuxProp:require_defense_absent(defense_priority) end
 
 --- - Body priority
 --- 
