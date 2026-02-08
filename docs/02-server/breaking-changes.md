@@ -1,5 +1,12 @@
 # Breaking Changes
 
+## 0.92.0
+
+- Adjusted time freeze tracking for actions, entities can now execute actions during time freeze as long as they aren't frozen. Time freeze intros are no longer skipped when chaining actions.
+- Replaced `TimeFreezeChainLimit.OnePerTeam` with `TimeFreezeChainLimit.PerTeam(n)`
+- Replaced `TimeFreezeChainLimit.OnePerEntity` with `TimeFreezeChainLimit.PerEntity(n)`
+- `TileState.ExampleInvalidState` now returns -1 instead of nil
+
 ## 0.91.0
 
 - Renamed `Net.deletes_sprite()` to `Net.remove_sprite()`

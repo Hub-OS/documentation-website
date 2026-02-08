@@ -335,6 +335,10 @@ end
 
 Returns true if the entity has an executing action or pending actions.
 
+### `entity:can_time_freeze_counter()`
+
+Returns true if the entity can queue a time freeze action on this frame to counter an opponent's time freeze action.
+
 ### `entity:queue_action(action)`
 
 - `action`: [Action](/client/lua-api/attack-api/action)

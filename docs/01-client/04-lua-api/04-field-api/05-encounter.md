@@ -71,8 +71,9 @@ If the `limit` is hit, the battle will end as a failure.
 ### `encounter:set_time_freeze_chain_limit(chain_limit)`
 
 - `chain_limit`
-  - `TimeFreezeChainLimit.OnePerTeam` the default, only the last time freeze action from each team will be used.
-  - `TimeFreezeChainLimit.OnePerEntity` only the last time freeze action from each entity will be used.
+  - `TimeFreezeChainLimit.PerTeam(n)` only up to `n` time freeze actions from each team will be used.
+    - The default is `TimeFreezeChainLimit.PerTeam(1)`
+  - `TimeFreezeChainLimit.PerEntity(n)` only up to `n` time freeze actions from each entity will be used.
   - `TimeFreezeChainLimit.Unlimited` every time freeze action in the chain will be used.
 
 ### `encounter:set_team_owner_limit(limit)`

@@ -178,6 +178,18 @@ Otherwise the filter will be tested against any active action on the associated 
 
 The AuxProp will check the attached entity for matching emotion.
 
+### `aux_prop:require_defense(defense_priority)`
+
+- Body priority
+
+The AuxProp will check the attached entity for a defense rule with a matching priority.
+
+### `aux_prop:require_defense_absent(defense_priority)`
+
+- Body priority
+
+The AuxProp will check the attached entity for a defense rule with a matching priority.
+
 ### `aux_prop:require_charge_time(compare, time)`
 
 - Body priority

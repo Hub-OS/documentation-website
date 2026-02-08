@@ -38,13 +38,23 @@ slot = "Arms"
 # valid colors: "red" | "green" | "blue" | "pink" | "yellow" | "white"
 colors = ["pink", "red", "blue"]
 flat = false # optional, defaults to false
-# list of lists, 5x5, filled with 0 or 1s to represent the shape
+# rectangular list of lists, up to 7x7, filled with 0 or 1s to represent the shape
+# the center is where the cursor will hold the shape
 shape = [
   [0, 0, 0, 0, 0],
   [0, 0, 1, 0, 0],
   [0, 0, 1, 0, 0],
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0]
+]
+# list of shapes, you can use this version instead of the one above or use both
+# players can cycle through shapes by pressing both shoulder buttons at the same time
+shapes = [
+  [
+    [0, 1, 0],
+    [0, 1, 1],
+    [0, 0, 0]
+  ]
 ]
 # list of package ids
 # used when two augments of the same color touch on a grid
@@ -185,7 +195,7 @@ recipes = [
       { name = "WideSwrd" },
       { id = "BattleNetwork6.Class01.Standard.072" }
     ],
-    ordered = false # optional, setting to true activates this recipe when the cards are used in any order
+    ordered = true # optional, setting to false activates this recipe when the cards are used in any order
   },
 ]
 # hides the card from the deck editor and library

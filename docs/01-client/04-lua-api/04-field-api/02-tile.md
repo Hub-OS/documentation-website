@@ -114,7 +114,9 @@ Returns a [Direction](/client/lua-api/field-api/direction)
 - `highlight`
   - `Highlight.None`
   - `Highlight.Flash`
+    - Used to warn players about an attack that will happen.
   - `Highlight.Solid`
+    - Used to let players know they will get hit if they are on this tile.
 
 ### `tile:get_tile(direction, distance)`
 

@@ -115,6 +115,18 @@ Returns the height of the sprite, scale is acounted.
 
 Sets the height of the sprite, updates the scale.
 
+### `sprite:rotation()`
+
+Returns the rotation of the sprite, in radians.
+
+You can convert to degrees with `radians / math.pi * 180`
+
+### `sprite:set_rotation(radians)`
+
+Sets the rotation of the sprite.
+
+You can convert degrees to radians with `degrees / 180 * math.pi`
+
 ### `sprite:color()`
 
 Returns a [Color](#color)

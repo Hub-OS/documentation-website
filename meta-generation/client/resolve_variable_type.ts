@@ -128,6 +128,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "layer",
       "width",
       "height",
+      "radians",
       "elevation",
       "health",
       "percentage",

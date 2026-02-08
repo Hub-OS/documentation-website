@@ -92,6 +92,7 @@ const COMPRESSED_RETURN_TYPES = [
       "Returns the max amount ",
       "Returns the width ",
       "Returns the height ",
+      "Returns the rotation ",
       "Returns the column ",
       "Returns the row ",
       "Returns the total columns ",
@@ -133,11 +134,11 @@ const FLATTENED_RETURN_TYPES = COMPRESSED_RETURN_TYPES.flatMap(
     list.map((begins_with) => ({
       type,
       begins_with,
-    }))
+    })),
 );
 
 export default function resolveReturnType(
-  section: Section
+  section: Section,
 ): string | undefined {
   if (section.name.startsWith("`aux_prop:")) {
     // special exception
@@ -155,7 +156,7 @@ export default function resolveReturnType(
   const nillable = text.includes("`nil`");
 
   let typeText = FLATTENED_RETURN_TYPES.find((v) =>
-    text.startsWith(v.begins_with)
+    text.startsWith(v.begins_with),
   )?.type;
 
   if (typeText) {

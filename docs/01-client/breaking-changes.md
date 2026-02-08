@@ -2,6 +2,14 @@
 
 https://github.com/Hub-OS/mod-upgrade-tool
 
+## 0.92.0
+
+- Adjusted time freeze tracking for actions.
+  - Entities can now execute actions during time freeze as long as they aren't frozen.
+  - Time freeze intros are no longer skipped when chaining actions.
+- Replaced `TimeFreezeChainLimit.OnePerTeam` with `TimeFreezeChainLimit.PerTeam(1)`
+- Replaced `TimeFreezeChainLimit.OnePerEntity` with `TimeFreezeChainLimit.PerEntity(1)`
+
 ## 0.85.0
 
 - `aux_prop:increase_card_multiplier(n)` will no longer apply when can_boost = false.

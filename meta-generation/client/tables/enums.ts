@@ -64,10 +64,23 @@ const FLAT_ENUMS = {
   DefensePriority: ["Barrier", "Action", "Body", "Trap", "Last"],
   DefenseOrder: ["Always", "CollisionOnly"],
   ActionType: ["All", "Normal", "Charged", "Special", "Card", "Scripted"],
-  TimeFreezeChainLimit: ["OnePerTeam", "OnePerEntity", "Unlimited"],
 };
 
 const SPECIAL_ENUMS = {
+  TimeFreezeChainLimit: [
+    "---@enum TimeFreezeChainLimit",
+    "TimeFreezeChainLimit = {",
+    "  Unlimited = {} --[[@as TimeFreezeChainLimit]],",
+    "  PerTeam =",
+    "     ---@param n number",
+    "     ---@return TimeFreezeChainLimit",
+    "     function(n) end,",
+    "  PerEntity =",
+    "     ---@param n number",
+    "     ---@return TimeFreezeChainLimit",
+    "     function(n) end,",
+    "}",
+  ],
   Shadow: [
     "---@enum Shadow",
     "Shadow = {",
