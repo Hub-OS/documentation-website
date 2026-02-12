@@ -2359,6 +2359,12 @@ function Character.from_package(package_id, team, rank) end
 ---@return Rank
 function Entity:rank() end
 
+--- Returns the namespace of the mod used to create the character.
+---
+--- Throws if the Entity doesn't pass [Character.from()](https://docs.hubos.dev/client/lua-api/entity-api/character)
+---@return Namespace
+function Entity:namespace() end
+
 --- Returns a list of [CardProperties](https://docs.hubos.dev/client/lua-api/attack-api/cards#cardproperties), the first card is the next card that can be used.
 ---
 --- Throws if the Entity doesn't pass [Character.from()](https://docs.hubos.dev/client/lua-api/entity-api/character)
@@ -2543,6 +2549,12 @@ function Resources.load_texture(path) end
 ---@return string
 function Resources.load_audio(path) end
 
+--- Returns the path to the folder containing the game files.
+--- 
+--- Useful for loading assets that ship by default.
+---@return string
+function Resources.game_folder() end
+
 --- - `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.
 --- - `audio_behavior`: [AudioBehavior](https://docs.hubos.dev/client/lua-api/resource-api/resources#audiobehavior)
 --- 
@@ -2584,6 +2596,10 @@ function Resources.local_index() end
 ---@param player_index number
 ---@param input_query Input
 function Resources.input_has(player_index, input_query) end
+
+--- Returns the namespace of the VM the calling mod is currently loaded in.
+---@return Namespace
+function Resources.namespace() end
 
 --- Audio will play from the beginning (sample 0), looping back to `start_sample` when `end_sample` is reached.
 --- 
