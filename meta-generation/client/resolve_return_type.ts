@@ -2,6 +2,7 @@ import { Section } from "../shared/read_docs";
 import PRIMITIVES from "../shared/primitives";
 
 const COMPRESSED_RETURN_TYPES = [
+  { type: "Namespace", list: ["Returns the namespace"] },
   { type: "number|string|nil", list: ["Returns a number, string, or nil"] },
   {
     type: "Entity|Team|nil",

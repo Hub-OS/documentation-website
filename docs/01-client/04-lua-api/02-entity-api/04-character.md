@@ -36,6 +36,10 @@ Returns a new [Entity](/client/lua-api/entity-api/entity), throws if the package
 
 Returns the character's rank.
 
+### `character:namespace()`
+
+Returns the namespace of the mod used to create the character.
+
 ### `character:field_cards()`
 
 Returns a list of [CardProperties](/client/lua-api/attack-api/cards#cardproperties), the first card is the next card that can be used.

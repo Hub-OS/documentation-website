@@ -20,6 +20,12 @@ Returns a string.
 
 Should be used in global scope for better performance.
 
+### `Resources.game_folder()`
+
+Returns the path to the folder containing the game files.
+
+Useful for loading assets that ship by default.
+
 ### `Resources.play_audio(path, audio_behavior?)`
 
 - `path`: file path relative to script file, use values returned from `Resources.load_audio()` for better performance.
@@ -58,6 +64,10 @@ Returns a number, represents the index of the local player in the list of player
 Same as [player:input_has()](/client/lua-api/entity-api/player#playerinput_hasinput_query).
 
 Allows for spectator input to be read.
+
+### `Resources.namespace()`
+
+Returns the namespace of the VM the calling mod is currently loaded in.
 
 ## AudioBehavior
 
