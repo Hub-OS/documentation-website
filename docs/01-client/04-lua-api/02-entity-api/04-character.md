@@ -36,6 +36,10 @@ Returns a new [Entity](/client/lua-api/entity-api/entity), throws if the package
 
 Returns the character's rank.
 
+### `character:hide_rank()`
+
+Hides the character's rank when displaying names.
+
 ### `character:namespace()`
 
 Returns the namespace of the mod used to create the character.
