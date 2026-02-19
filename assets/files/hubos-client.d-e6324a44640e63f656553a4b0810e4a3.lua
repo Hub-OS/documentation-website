@@ -2359,6 +2359,11 @@ function Character.from_package(package_id, team, rank) end
 ---@return Rank
 function Entity:rank() end
 
+--- Hides the character's rank when displaying names.
+---
+--- Throws if the Entity doesn't pass [Character.from()](https://docs.hubos.dev/client/lua-api/entity-api/character)
+function Entity:hide_rank() end
+
 --- Returns the namespace of the mod used to create the character.
 ---
 --- Throws if the Entity doesn't pass [Character.from()](https://docs.hubos.dev/client/lua-api/entity-api/character)
