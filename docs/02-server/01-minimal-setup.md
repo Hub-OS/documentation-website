@@ -23,7 +23,8 @@ Use `-h` to see more options and research port forwarding or server hosting if y
 
 - [PLAYIT.GG](https://playit.gg/)
   - Routes up to 4 TCP / UDP ports through a sharable URL.
-  - <details>
-      <summary>Set tunnel type to UDP, port to 8765, and the description to `Hub OS server https://hubos.dev`</summary>
-      ![PlayIt.GG](/img/server/playit.gg.png)
-    </details>
+  - Running the [playit program](https://playit.gg/download/) should guide you through creating an account and setting up an "Agent"
+  - To forward Hub OS, you'll need to create a new tunnel.
+    - Tunnel Type: `UDP`
+    - Description: `Hub OS server https://hubos.dev`
+    - Origin Port: `8765`
