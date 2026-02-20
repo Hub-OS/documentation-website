@@ -18,3 +18,12 @@ sidebar_position: 1
 Run the server through a command prompt or terminal and join on `127.0.0.1:8765`
 
 Use `-h` to see more options and research port forwarding or server hosting if you want to share your server with others over the internet
+
+### Port Forwarding Alternatives
+
+- [PLAYIT.GG](https://playit.gg/)
+  - Routes up to 4 TCP / UDP ports through a sharable URL.
+  - <details>
+      <summary>Set tunnel type to UDP, port to 8765, and the description to `Hub OS server https://hubos.dev`</summary>
+      ![PlayIt.GG](/img/server/playit.gg.png)
+    </details>
