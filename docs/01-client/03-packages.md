@@ -29,6 +29,9 @@ priority = false # optional, default is false, this allows the augment to overri
 # some tags will be automatically added: "BLOCK", "FLAT_BLOCK"
 tags = ["BUG"]
 
+# optional, makes this augment visible in lists only when the player is using a character with a matching tag
+visible_to_tagged = ["Man"]
+
 ## switch drive specific
 # valid slots: "Head" | "Arms" | "Body" | "Legs"
 slot = "Arms"
@@ -423,6 +426,10 @@ mugshot_texture_path = "mug.png"
 mugshot_animation_path = "mug.animation"
 emotions_texture_path = "" # optional
 emotions_animation_path = "" # optional
+
+# optional, list of strings, custom
+# used by augments: `visible_to_tagged`
+tags = ["Man"]
 
 # this section is optional, see the Battle section for an example
 [defines]
