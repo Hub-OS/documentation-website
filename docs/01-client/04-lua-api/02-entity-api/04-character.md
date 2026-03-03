@@ -76,6 +76,16 @@ Inserts a card at this index, shifting cards at this position and after to the r
 
 Will cause [card_mutate()](/client/packages#cards) to restart or run again next frame.
 
+### `character:use_card()`
+
+Causes the character to use the next field card when actions and movements end.
+
+This request will be cancelled in time freeze, but can be used to TFC when appropriate.
+
+The card will remain in field_cards until it's used.
+
+Using this method will allow AuxProps to affect the card, unlike queued actions generated from a card.
+
 ### `character.intro_func = function(self): Action|nil`
 
 Called at the start of the intro state (the state before card select first opens).

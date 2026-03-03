@@ -362,9 +362,10 @@ An AuxProp can have one optional effect (but still have multiple callbacks). The
 
 The lower the priority is in the list, the later it will execute.
 
-- Update Context
+- Intercept Card
 - Increase Card Damage
 - Increase Card Multiplier
+- Update Context
 - Intercept Action
 - Interrupt Action
 - Increase Pre Hit Damage
@@ -379,11 +380,11 @@ The lower the priority is in the list, the later it will execute.
 - Recover Health
 - No Effect
 
-### `aux_prop:update_context(function(context): AttackContext)`
+### `aux_prop:intercept_card(function(card_properties): CardProperties?)`
 
-- Update Context priority
+- Intercept Card priority
 
-Allows for modification to the context on the associated entity, executes before actions are generated for cards and attacks.
+Intercepts a field card before it turns into an action. Field cards can be queued with [character:use_card()](/client/lua-api/entity-api#characteruse_card).
 
 ### `aux_prop:increase_card_damage(increase)`
 
@@ -394,6 +395,12 @@ Allows for modification to the context on the associated entity, executes before
 
 - Increase Card Multiplier priority
 - `increase`: number, the amount to increase the multiplier by.
+
+### `aux_prop:update_context(function(context): AttackContext)`
+
+- Update Context priority
+
+Allows for modification to the context on the associated entity, executes before actions are generated for cards and attacks.
 
 ### `aux_prop:intercept_action(function(action): Action|nil)`
 
