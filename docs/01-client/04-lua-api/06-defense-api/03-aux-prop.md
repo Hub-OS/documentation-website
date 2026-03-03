@@ -384,7 +384,7 @@ The lower the priority is in the list, the later it will execute.
 
 - Intercept Card priority
 
-Intercepts a field card before it turns into an action. Field cards can be queued with [character:use_card()](/client/lua-api/entity-api#characteruse_card).
+Intercepts a field card before it turns into an action. Field cards can be queued with [character:use_card()](/client/lua-api/entity-api/character#characteruse_card).
 
 ### `aux_prop:increase_card_damage(increase)`
 
