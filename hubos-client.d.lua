@@ -2415,6 +2415,17 @@ function Entity:remove_field_card(index) end
 ---@param card_properties CardProperties
 function Entity:insert_field_card(index, card_properties) end
 
+--- Causes the character to use the next field card when actions and movements end.
+--- 
+--- This request will be cancelled in time freeze, but can be used to TFC when appropriate.
+--- 
+--- The card will remain in field_cards until it's used.
+--- 
+--- Using this method will allow AuxProps to affect the card, unlike queued actions generated from a card.
+---
+--- Throws if the Entity doesn't pass [Character.from()](https://docs.hubos.dev/client/lua-api/entity-api/character)
+function Entity:use_card() end
+
 --- - `team`: [Team](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityset_teamteam)
 --- 
 --- Returns a new [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) instance.
@@ -4315,12 +4326,12 @@ function AuxProp:require_health_threshold(compare, percentage) end
 ---@return AuxProp
 function AuxProp:require_health(compare, health) end
 
---- - Update Context priority
+--- - Intercept Card priority
 --- 
---- Allows for modification to the context on the associated entity, executes before actions are generated for cards and attacks.
----@param callback fun(context: AttackContext): AttackContext
+--- Intercepts a field card before it turns into an action. Field cards can be queued with [character:use_card()](https://docs.hubos.dev/client/lua-api/entity-api/character#characteruse_card).
+---@param callback? fun(card_properties: CardProperties): CardProperties
 ---@return AuxProp
-function AuxProp:update_context(callback) end
+function AuxProp:intercept_card(callback) end
 
 --- - Increase Card Damage priority
 --- - `increase`: number, the amount to increase the card damage before multiplying.
@@ -4333,6 +4344,13 @@ function AuxProp:increase_card_damage(increase) end
 ---@param increase number
 ---@return AuxProp
 function AuxProp:increase_card_multiplier(increase) end
+
+--- - Update Context priority
+--- 
+--- Allows for modification to the context on the associated entity, executes before actions are generated for cards and attacks.
+---@param callback fun(context: AttackContext): AttackContext
+---@return AuxProp
+function AuxProp:update_context(callback) end
 
 --- - Intercept Action priority
 --- 
