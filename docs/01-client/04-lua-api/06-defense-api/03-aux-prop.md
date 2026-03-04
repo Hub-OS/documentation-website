@@ -380,7 +380,7 @@ The lower the priority is in the list, the later it will execute.
 - Recover Health
 - No Effect
 
-### `aux_prop:intercept_card(function(card_properties): CardProperties?)`
+### `aux_prop:intercept_card(function(card_properties): CardProperties|nil)`
 
 - Intercept Card priority
 
