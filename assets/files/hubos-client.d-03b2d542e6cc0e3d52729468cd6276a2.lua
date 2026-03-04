@@ -4329,7 +4329,7 @@ function AuxProp:require_health(compare, health) end
 --- - Intercept Card priority
 --- 
 --- Intercepts a field card before it turns into an action. Field cards can be queued with [character:use_card()](https://docs.hubos.dev/client/lua-api/entity-api/character#characteruse_card).
----@param callback? fun(card_properties: CardProperties): CardProperties
+---@param callback fun(card_properties: CardProperties): CardProperties|nil
 ---@return AuxProp
 function AuxProp:intercept_card(callback) end
 
