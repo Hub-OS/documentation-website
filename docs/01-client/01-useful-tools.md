@@ -10,6 +10,9 @@
   - Drag and drop image + animation files, copy the output and make backups!
 - [Hub OS Animation File Merger](https://hub-os.github.io/Animation-File-Merger/)
   - Add multiple images and animation files to output a single packed file.
+- [Hub OS Animation Viewer](https://hub-os.github.io/Animation-Viewer/)
+  - Viewer for animations and attachments, with specialized support for viewing background animations.
+  - Includes a recording utility for generating mp4 videos from animations.
 
 ## Image Editing
 
