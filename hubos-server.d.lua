@@ -75,7 +75,7 @@ Net.EventEmitter = {}
 ---@field texture_path? string
 ---@field animation_path? string
 ---@field animation? string
----@field loop_animation? string
+---@field loop_animation? boolean
 ---@field x? number
 ---@field y? number
 ---@field z? number
