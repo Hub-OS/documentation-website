@@ -81,6 +81,10 @@ Any of the values below:
 - `CardClass.Dark`
 - `CardClass.Recipe`
 
+### `card_properties.limit`
+
+Number, used by other mods for conditional behavior, defaults to 0.
+
 ### `card_properties.hit_flags`
 
 [Hit](/client/lua-api/attack-api/hit-props#hit_propsflags), influences generated [HitProps](/client/lua-api/attack-api/hit-props)

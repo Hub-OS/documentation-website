@@ -100,6 +100,12 @@ Displays a textbox that accepts text input.
 
 See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncprompt_playerplayer_id-character_limit-default_text) version of this function for handling responses.
 
+### `Net.prompt_player(player_id, textbox_options?)`
+
+Displays a textbox that accepts text input.
+
+See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncprompt_playerplayer_id-textbox_options) version of this function for handling responses.
+
 ### `Net.open_board(player_id, board_name, color, posts, open_instantly?)`
 
 - `color`: [Net.Color](#netcolor)
@@ -231,6 +237,8 @@ Currently unimplemented on the client.
 ---@class Net.TextboxOptions
 ---@field mug? Net.TextureAnimationPair
 ---@field text_style? Net.TextStyle
+---@field default_response? string | number
+---@field character_limit? number Used for text inputs
 ```
 
 ## Net.TextStyle

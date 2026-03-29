@@ -279,6 +279,7 @@ Net:on("battle_results", function(event)
       health: number,
       time: number,
       ran: bool,
+      connection_failed: bool,
       emotion: string,
       turns: number,
     }

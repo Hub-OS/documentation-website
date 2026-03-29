@@ -18,6 +18,14 @@ Allows the AuxProp to auto remove after it's effects are first applied.
 
 Allows the AuxProp to auto remove after a single test run, approximately a single battle frame.
 
+### `aux_prop:limit(limit)`
+
+Allows the AuxProp to auto remove after it's effects are have been applied `limit` times.
+
+### `aux_prop:limit_frames(limit)`
+
+Allows the AuxProp to auto remove after `limit` test runs, approximately `limit` battle frames.
+
 ### `aux_prop:with_callback(callback)`
 
 The callback will be called shortly after the AuxProp's effect is applied. Multiple callbacks can be added to a single AuxProp.

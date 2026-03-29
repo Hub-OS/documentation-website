@@ -339,6 +339,14 @@ Returns true if the entity has an executing action or pending actions.
 
 Returns true if the entity can queue a time freeze action on this frame to counter an opponent's time freeze action.
 
+### `entity:frozen()`
+
+Returns true if the entity is frozen from time freezing.
+
+### `entity:set_frozen(bool?)`
+
+Freezes the entity for time freeze, will unfreeze when time freeze ends.
+
 ### `entity:queue_action(action)`
 
 - `action`: [Action](/client/lua-api/attack-api/action)
@@ -447,6 +455,22 @@ Calls `entity:erase()` at the end of the animation.
 
 Adds a callback listener for entity deletion.
 
+This callback can be skipped if `entity:erase()` was called before `entity:delete()`
+
+Use [entity:on_erase()](#entityon_erasefunctionentity) if you need a callback that runs in all situations.
+
+### `entity:remove_on_delete(function(entity))`
+
+Removes a callback set by [entity:on_delete()](#entityon_deletefunctionentity)
+
+### `entity:on_erase(function(entity))`
+
+Adds a callback listener for entity erasure.
+
+### `entity:remove_on_erase(function(entity))`
+
+Removes a callback set by [entity:on_erase()](#entityon_erasefunctionentity)
+
 ### `entity.on_spawn_func = function(self)`
 
 Called when the entity is spawned by [Field.spawn()](/client/lua-api/field-api/field/#fieldspawnentity-tile)
@@ -469,7 +493,9 @@ Not to be confused with [living.on_countered_func](/client/lua-api/entity-api/li
 
 Called when health is 0 or `entity:delete()` is called. `entity:erase()` must be called to truly delete the entity.
 
-This function is pre-set for all entities.
+This function is pre-set for all entities, and may be skipped if `entity:erase()` is called.
+
+Use [entity:on_erase()](#entityon_erasefunctionentity) if you need a callback that runs in all situations.
 
 ### `entity.on_battle_start_func = function(self)`
 

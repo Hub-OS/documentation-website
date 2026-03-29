@@ -143,6 +143,20 @@ Prevents the player from moving, interacting, and opening menus. Multiple locks 
 
 Removes a lock on the player's input.
 
+### `Net.is_player_movement_locked(player_id)`
+
+Returns true if there's any locks on the player's movement.
+
+Unaffected by input locks.
+
+### `Net.lock_player_movement(player_id)`
+
+Prevents the player from moving. Multiple locks can exist at a time.
+
+### `Net.unlock_player_movement(player_id)`
+
+Removes a lock on the player's movement.
+
 ### `Net.teleport_player(player_id, warp, x, y, z, direction?)`
 
 Teleports the player to a new position.
@@ -155,6 +169,10 @@ Teleports the player to a new position.
 Expecting structure:
 
 ```toml
+[augments]
+blocks_enabled = true
+drives_enabled = true
+
 [deck]
 # excluded properties will use these defaults
 required_total = 30

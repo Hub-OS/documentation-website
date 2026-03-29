@@ -20,6 +20,10 @@ Returns a string.
 
 Returns a number, specifically a cryptographically secure 64 bit random integer using the system's random number generator.
 
+### `Net.protocol_version()`
+
+Returns a number, used to resolve whether two servers have compatible versions.
+
 ## Net.Position
 
 ```lua

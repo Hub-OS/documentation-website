@@ -114,6 +114,14 @@ Allows the player to use the playable character's abilities.
 
 Enabling any playable character locks the player out of using abilities on non enabled playable characters.
 
+### `Net.lock_player_equipment(player_id)`
+
+Restricts access to menu items relevant to equipment.
+
+### `Net.unlock_player_equipment(player_id)`
+
+Allows the player to access menu items relevant to equipment again.
+
 ## Net.ItemDefinition
 
 ```lua

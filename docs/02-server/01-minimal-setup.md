@@ -15,7 +15,7 @@ sidebar_position: 1
   - See [Lua API](/server/lua-api/lua-version-and-changes/)
 - Server executable
 
-Run the server through a command prompt or terminal and join on `127.0.0.1:8765`
+Run the server through a command prompt or terminal and join on `127.0.0.1:7370`
 
 Use `-h` to see more options and research port forwarding or server hosting if you want to share your server with others over the internet
 
@@ -27,4 +27,4 @@ Use `-h` to see more options and research port forwarding or server hosting if y
   - To forward Hub OS, you'll need to create a new tunnel.
     - Tunnel Type: `UDP`
     - Description: `Hub OS server https://hubos.dev`
-    - Origin Port: `8765`
+    - Origin Port: `7370`

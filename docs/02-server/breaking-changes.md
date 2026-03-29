@@ -1,5 +1,10 @@
 # Breaking Changes
 
+## 0.98.0
+
+- Added "Animation Loop" for actor property animations, the "Animation" property no longer loops
+- Default server port changed to 7370 with the aim of allowing AT&T players to join more servers (8765 appears to be blocked)
+
 ## 0.92.0
 
 - Adjusted time freeze tracking for actions, entities can now execute actions during time freeze as long as they aren't frozen. Time freeze intros are no longer skipped when chaining actions.

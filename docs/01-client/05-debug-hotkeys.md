@@ -11,5 +11,6 @@
 
 Inputs will be ignored by the battle while the `F3` key is held.
 
+- `F3+R`: Reloads all mods involved in the current battle sim.
 - `F3+V`: Lists Lua VMs sorted by memory usage in the console.
 - `F3+I`: Displays player indices on Player entities.

@@ -209,6 +209,10 @@ Returns a promise that resolves to 0-2 for option a-c, or `nil` for disconnected
 
 Returns a promise that resolves to `string`, or `nil` for disconnected.
 
+### `Async.prompt_player(player_id, textbox_options?)`
+
+Returns a promise that resolves to `string`, or `nil` for disconnected.
+
 ### `Async.initiate_encounter(player_id, package_path, encounter_data?)`
 
 - `encounter_data`: anything that could be represented as JSON.
@@ -239,6 +243,7 @@ Returns `Net.Promise<Net.BattleResults?>[]`
 ---@field health number
 ---@field time number
 ---@field ran boolean
+---@field connection_failed boolean
 ---@field emotion string
 ---@field turns number
 ```
