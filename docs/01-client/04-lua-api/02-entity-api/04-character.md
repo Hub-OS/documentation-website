@@ -18,6 +18,7 @@ Returns the entity passed in if the entity is a character or player, otherwise r
   - `Rank.V3`
   - `Rank.V4`
   - `Rank.V5`
+  - `Rank.V6`
   - `Rank.SP`
   - `Rank.EX`
   - `Rank.Rare1`
