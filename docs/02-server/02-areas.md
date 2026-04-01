@@ -65,7 +65,6 @@ Map:
 Tiles and TileSets:
 
 - Shadow: string
-
   - "Always"
   - "Never"
   - Unset - Automatic
@@ -241,6 +240,15 @@ Classes are used to denote special tiles or objects understood by the client.
 ### Bookmark
 
 - Visible in map
+
+### Marker
+
+- Objects only
+- Visible in map
+- Custom Properties
+  - Texture: string
+  - Animation: string
+  - State: string
 
 ### Arrow
 
