@@ -224,11 +224,7 @@ Currently unimplemented on the client.
 
 ```lua
 --- All fields are in the range: [0, 255]
----@class Net.Color
----@field r number
----@field g number
----@field b number
----@field a? number
+---@alias Net.Color { r: number, g: number, b: number, a?: number } | [number, number, number, number?]
 ```
 
 ## Net.TextboxOptions
