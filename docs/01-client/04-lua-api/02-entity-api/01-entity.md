@@ -347,6 +347,10 @@ Returns true if the entity is frozen from time freezing.
 
 Freezes the entity for time freeze, will unfreeze when time freeze ends.
 
+It is recommended to use `entity:set_frozen(TurnGauge.frozen())` when spawning entities during time freeze that should only be active when time isn't frozen.
+
+This allows the summon to work properly even when spawned outside of time freeze.
+
 ### `entity:queue_action(action)`
 
 - `action`: [Action](/client/lua-api/attack-api/action)
