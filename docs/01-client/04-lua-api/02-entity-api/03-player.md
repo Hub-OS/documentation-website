@@ -126,6 +126,10 @@ This table represents the offset for the attack charge animation.
 
 Sets the offset for the attack charge animation.
 
+### `player:charge_progress()`
+
+Returns a number in the range `[0, 1]`
+
 ### `player:slide_when_moving()`
 
 Returns a bool.
