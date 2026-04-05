@@ -1279,6 +1279,10 @@ function Entity:can_time_freeze_counter() end
 function Entity:frozen() end
 
 --- Freezes the entity for time freeze, will unfreeze when time freeze ends.
+--- 
+--- It is recommended to use `entity:set_frozen(TurnGauge.frozen())` when spawning entities during time freeze that should only be active when time isn't frozen.
+--- 
+--- This allows the summon to work properly even when spawned outside of time freeze.
 ---@param bool? boolean
 function Entity:set_frozen(bool) end
 
@@ -1752,6 +1756,12 @@ function Entity:charge_position() end
 ---@param x number
 ---@param y number
 function Entity:set_charge_position(x, y) end
+
+--- Returns a number in the range `[0, 1]`
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@return number
+function Entity:charge_progress() end
 
 --- Returns a bool.
 ---
@@ -2362,6 +2372,7 @@ function Character.from(entity) end
 ---   - `Rank.V3`
 ---   - `Rank.V4`
 ---   - `Rank.V5`
+---   - `Rank.V6`
 ---   - `Rank.SP`
 ---   - `Rank.EX`
 ---   - `Rank.Rare1`

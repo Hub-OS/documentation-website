@@ -175,11 +175,7 @@ Net.EventEmitter = {}
 ---@field unless_installed? boolean
 
 --- All fields are in the range: [0, 255]
----@class Net.Color
----@field r number
----@field g number
----@field b number
----@field a? number
+---@alias Net.Color { r: number, g: number, b: number, a?: number } | [number, number, number, number?]
 
 ---@class Net.TextureAnimationPair
 ---@field texture_path string
