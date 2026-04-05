@@ -41,6 +41,7 @@ const FLAT_ENUMS = {
     "V3",
     "V4",
     "V5",
+    "V6",
     "SP",
     "EX",
     "Rare1",
