@@ -11,10 +11,12 @@ const COMPRESSED_VARIABLE_TYPES = [
       "attacker",
       "defender",
       "owner",
-      "aggressor",
     ],
   },
-  { type: "EntityId", list: ["id", "entity_id", "target_id", "observer_id"] },
+  {
+    type: "EntityId",
+    list: ["id", "entity_id", "target_id", "observer_id", "aggressor"],
+  },
   { type: "EntityId[]", list: ["exclude_list"] },
   {
     type: "AttackContext",
