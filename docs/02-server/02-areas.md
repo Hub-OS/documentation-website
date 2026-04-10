@@ -30,8 +30,11 @@ Tilesets:
 
 Layers:
 
-- Horizontal Offset: 0
-- Vertical Offset: (number of layers below this one) \* -16
+- An area layer is made of an object layer and tile layer
+- Offset X: 0
+- Offset Y: (number of tile layers below) \* -16
+
+![Layering](/img/servers/layering-example.png)
 
 ## Custom properties
 
@@ -97,7 +100,7 @@ Classes are used to denote special tiles or objects understood by the client.
 
 - Tile Objects only
 - Visible in map
-- Players will be warped home if colliding with the warp
+- Players will disconnect after colliding with the warp
 - Custom properties:
   - Direction: string
     - Left
@@ -109,11 +112,13 @@ Classes are used to denote special tiles or objects understood by the client.
     - Down Left
     - Down Right
 
+![Home Warp](/img/servers/home-warp-sample.png)
+
 ### Position Warp
 
 - Tile Objects only
 - Visible in map
-- Players will be warped to the set position if colliding with the warp
+- Players will be warped to the set position after colliding with the warp
 - Custom properties:
   - X: float
   - Y: float
@@ -132,7 +137,7 @@ Classes are used to denote special tiles or objects understood by the client.
 
 - Tile Objects only
 - Visible in map
-- Players will be transferred to a different server if colliding with the warp
+- Players will be transferred to a different server after colliding with the warp
 - Custom properties:
   - Address: string
   - Data: string
@@ -149,11 +154,13 @@ Classes are used to denote special tiles or objects understood by the client.
     - Down Left
     - Down Right
 
+![Server Warp](/img/servers/server-warp-sample.png)
+
 ### Custom Server Warp
 
 - Tile Objects only
 - Visible in map
-- Players will be warped out if colliding with the warp,
+- Players will be warped out after colliding with the warp,
   the result of the warp can be resolved in a listener for [custom_warp](/server/lua-api/events#custom_warp)
 - Custom Properties:
   - Direction: string
@@ -170,7 +177,7 @@ Classes are used to denote special tiles or objects understood by the client.
 
 - Tile Objects only
 - Visible in map
-- Players will be warped out if colliding with the warp,
+- Players will be warped out after colliding with the warp,
   the result of the warp can be resolved in a listener for [custom_warp](/server/lua-api/events#custom_warp)
   - Direction: string
     - Left
@@ -195,6 +202,18 @@ Classes are used to denote special tiles or objects understood by the client.
     - Up Right
     - Down Left
     - Down Right
+
+Stairs moving Up Left / Up Right generally need a top tile placed on the next layer for proper layering.
+
+Collisions are ignored for tiles placed above a stair tile for this reason.
+
+|                      No Top                      |                       With Top                       |
+| :----------------------------------------------: | :--------------------------------------------------: |
+| ![Stairs No Top](/img/servers/stairs-no-top.png) | ![Stairs With Top](/img/servers/stairs-with-top.png) |
+
+Stair tile sample, the tile on the bottom is used as the upper half of the stairs and has no properties:
+
+![Stairs](/img/servers/stairs.png)
 
 ### Conveyor
 

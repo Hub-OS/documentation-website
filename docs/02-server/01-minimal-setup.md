@@ -6,12 +6,18 @@ sidebar_position: 1
 
 - `areas` folder
   - `.tmx` map files, `default.tmx` required
+  - The base file name is used to resolve the ID for the area: `default.tmx` is `default`
   - See [Areas](/server/areas)
 - `assets` folder
   - Tilesets, textures, audio, animations, packages
+  - Mods stored in this location can be referenced as a path by the server: `/server/mods/custom_encounter`.
   - See [Assets](/server/assets)
+- `mods` folder
+  - Stores any client mods, each mod should be in their own unzipped folder.
+  - Mods stored in this location can be referenced as a path by the server: `/server/mods/custom_encounter`.
 - `scripts` folder
   - Lua files. Entry scripts are read from `scripts/*/main.lua` for script projects, and `scripts/*.lua` for single file scripts
+  - Paths passed to `require()` are relative to the server folder: `require("scripts/libs/direction")`
   - See [Lua API](/server/lua-api/lua-version-and-changes/)
 - Server executable
 

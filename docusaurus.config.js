@@ -88,7 +88,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "server/minimal-setup",
+            docId: "server/getting-started",
             position: "left",
             label: "Server",
           },

@@ -1,6 +1,6 @@
-# Getting Started
+# Getting Started - Client
 
-This guide provides information on creating mods for the client. For creating custom servers, take a look at the [server documentation](/server/minimal-setup)
+This guide provides information on creating mods for the client. For creating custom servers, take a look at the [server documentation](/server/getting-started)
 
 ## Steps
 
