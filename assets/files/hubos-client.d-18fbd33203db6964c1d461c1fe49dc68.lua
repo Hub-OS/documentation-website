@@ -401,7 +401,7 @@ Entity = {}
 --- See [HitProps.flags](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
 ---@field flags Hit | number
 --- The EntityId of the attacking entity.
----@field aggressor Entity
+---@field aggressor EntityId
 AttackContext = {}
 
 --- 
@@ -1000,6 +1000,13 @@ function Entity:set_team(team) end
 ---@param team Team
 ---@return boolean
 function Entity:is_team(team) end
+
+--- Returns a boolean.
+--- 
+--- Same as `entity_a:id() == entity_b:id() or entity_a:is_team(entity_b:team())`
+---@param entity Entity
+---@return boolean
+function Entity:is_team(entity) end
 
 --- Returns an Entity, Team, or `nil`
 ---@return Entity|Team|nil
