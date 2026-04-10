@@ -185,6 +185,7 @@ dark_limit = 3
 hash_whitelist = ["hash_here", ...]
 id_whitelist = ["package.id.here", ...]
 id_blacklist = ["package.id.here", ...]
+namespace_whitelist = ["LDR100.", "dev.konstinople.library."]
 tag_whitelist = ["TAG", ...]
 tag_blacklist = ["TAG", "OFFLINE_ONLY", ...]
 ```
