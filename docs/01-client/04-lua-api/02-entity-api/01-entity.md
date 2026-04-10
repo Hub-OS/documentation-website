@@ -68,6 +68,12 @@ Returns a boolean.
 
 Same as `entity:team() == team and team ~= Team.Other`
 
+### `entity:is_team(entity)`
+
+Returns a boolean.
+
+Same as `entity_a:id() == entity_b:id() or entity_a:is_team(entity_b:team())`
+
 ### `entity:owner()`
 
 Returns an Entity, Team, or `nil`
