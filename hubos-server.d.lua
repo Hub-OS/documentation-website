@@ -24,8 +24,8 @@ Net.EventEmitter = {}
 ---@class Net.Object
 ---@field id number
 ---@field name string
----@field class string deprecated
----@field type string
+---@field class string
+---@field type string deprecated
 ---@field visible boolean
 ---@field x number
 ---@field y number
@@ -38,8 +38,8 @@ Net.EventEmitter = {}
 
 ---@class Net.ObjectOptions
 ---@field name? string
----@field class? string deprecated
----@field type? string
+---@field class? string
+---@field type? string deprecated
 ---@field visible? boolean
 ---@field privacy? boolean
 ---@field x? number
