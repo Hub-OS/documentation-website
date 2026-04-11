@@ -77,8 +77,8 @@ Supports rectangle, ellipse, and polygon shape objects. Any other objects, such 
 ```lua
 ---@class Net.ObjectOptions
 ---@field name? string
----@field class? string deprecated
----@field type? string
+---@field class? string
+---@field type? string deprecated
 ---@field visible? boolean
 ---@field privacy? boolean
 ---@field x? number
@@ -97,8 +97,8 @@ Supports rectangle, ellipse, and polygon shape objects. Any other objects, such 
 ---@class Net.Object
 ---@field id number
 ---@field name string
----@field class string deprecated
----@field type string
+---@field class string
+---@field type string deprecated
 ---@field visible boolean
 ---@field x number
 ---@field y number
