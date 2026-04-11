@@ -6,11 +6,11 @@ A partial alternative to the Lua scripting API on servers is the script nodes li
 
 The Script Nodes library is kicked off through the `script_nodes_entry.lua` file that ships with the server. This file can be modified to register items, implement saving data, and create custom script nodes.
 
-Nodes are map objects with a "type" starting with `Script Entry: ` or `Script Node: `, these are known as Script Entry Nodes (or just entry nodes) and Script Nodes (or just nodes) respectively. Entry nodes seed a context for execution and execute script nodes at documented events. Script nodes perform some action, and generally offer support for a `Next`/`Next 1` custom property to execute the next script node after the current node has completed. Many script nodes also have support for `Next 2` or higher custom properties, which will fall back to `Next` then `Next 1`.
+Nodes are map objects with a "class" starting with `Script Entry: ` or `Script Node: `, these are known as Script Entry Nodes (or just entry nodes) and Script Nodes (or just nodes) respectively. Entry nodes seed a context for execution and execute script nodes at documented events. Script nodes perform some action, and generally offer support for a `Next`/`Next 1` custom property to execute the next script node after the current node has completed. Many script nodes also have support for `Next 2` or higher custom properties, which will fall back to `Next` then `Next 1`.
 
 Note: Entry nodes are not the only way to begin script execution. Some script node APIs have simplified entry points such as the `On Interact` custom property for objects and actors or the `On Load` boolean for self starting script nodes.
 
-Script node types, aside from the prefixes, are case insensitive. However, the custom properties are case sensitive.
+Script node classes, aside from the prefixes, are case insensitive. However, the custom properties are case sensitive.
 
 ## Examples
 
@@ -18,11 +18,11 @@ Open the `default.tmx` file provided with the server in [Tiled](https://www.mape
 
 ## Event Entry API
 
-Implements support for the `Load`, `Server Event`, and `Player Interaction` entry types and the `On Load` property on all script nodes.
+Implements support for the `Load`, `Server Event`, and `Player Interaction` entry classes and the `On Load` property on all script nodes.
 
 When `:load()` is called on an area, any script nodes with `On Load` set to true will execute using a context containing `area_id`.
 
-As a reminder: entry nodes have a type starting with `Script Entry: ` such as `Script Entry: Load`.
+As a reminder: entry nodes have a class starting with `Script Entry: ` such as `Script Entry: Load`.
 
 ### `Load`
 
@@ -569,7 +569,7 @@ Custom properties supported by `Unpause Path`:
 
 Implements support for the `Collision` entry node, and the `Set Collider` script node.
 
-As a reminder: entry nodes have a type starting with `Script Entry: ` such as `Script Entry: Collision`
+As a reminder: entry nodes have a class starting with `Script Entry: ` such as `Script Entry: Collision`
 
 ### `Collision`
 
