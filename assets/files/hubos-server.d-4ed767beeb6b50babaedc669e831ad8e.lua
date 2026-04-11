@@ -646,13 +646,13 @@ function Net.remove_object(area_id, object_id) end
 ---@param name string
 function Net.set_object_name(area_id, object_id, name) end
 
---- Changes the object's type, clients will be updated at the end of the tick.
+--- Changes the object's type / class, clients will be updated at the end of the tick.
 ---@param area_id string
 ---@param object_id number|string
 ---@param type string
 function Net.set_object_type(area_id, object_id, type) end
 
---- Deprecated. Use set_object_type instead.
+--- Changes the object's type / class, clients will be updated at the end of the tick.
 ---@param area_id string
 ---@param object_id number|string
 ---@param class string

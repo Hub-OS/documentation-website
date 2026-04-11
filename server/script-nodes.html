@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Script Nodes | Hub OS Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.hubos.dev/server/script-nodes"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Script Nodes | Hub OS Documentation"><meta data-rh="true" name="description" content="A partial alternative to the Lua scripting API on servers is the script nodes library."><meta data-rh="true" property="og:description" content="A partial alternative to the Lua scripting API on servers is the script nodes library."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.hubos.dev/server/script-nodes"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/server/script-nodes" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/server/script-nodes" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.17e2f961.css">
-<script src="/assets/js/runtime~main.b99b27b9.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3e79f5dc.js" defer="defer"></script>
 <script src="/assets/js/main.f8a3c32c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -15,15 +15,15 @@
 <p>A partial alternative to the Lua scripting API on servers is the script nodes library.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-usage">Basic Usage<a href="#basic-usage" class="hash-link" aria-label="Direct link to Basic Usage" title="Direct link to Basic Usage" translate="no">​</a></h2>
 <p>The Script Nodes library is kicked off through the <code>script_nodes_entry.lua</code> file that ships with the server. This file can be modified to register items, implement saving data, and create custom script nodes.</p>
-<p>Nodes are map objects with a &quot;type&quot; starting with <code>Script Entry: </code> or <code>Script Node: </code>, these are known as Script Entry Nodes (or just entry nodes) and Script Nodes (or just nodes) respectively. Entry nodes seed a context for execution and execute script nodes at documented events. Script nodes perform some action, and generally offer support for a <code>Next</code>/<code>Next 1</code> custom property to execute the next script node after the current node has completed. Many script nodes also have support for <code>Next 2</code> or higher custom properties, which will fall back to <code>Next</code> then <code>Next 1</code>.</p>
+<p>Nodes are map objects with a &quot;class&quot; starting with <code>Script Entry: </code> or <code>Script Node: </code>, these are known as Script Entry Nodes (or just entry nodes) and Script Nodes (or just nodes) respectively. Entry nodes seed a context for execution and execute script nodes at documented events. Script nodes perform some action, and generally offer support for a <code>Next</code>/<code>Next 1</code> custom property to execute the next script node after the current node has completed. Many script nodes also have support for <code>Next 2</code> or higher custom properties, which will fall back to <code>Next</code> then <code>Next 1</code>.</p>
 <p>Note: Entry nodes are not the only way to begin script execution. Some script node APIs have simplified entry points such as the <code>On Interact</code> custom property for objects and actors or the <code>On Load</code> boolean for self starting script nodes.</p>
-<p>Script node types, aside from the prefixes, are case insensitive. However, the custom properties are case sensitive.</p>
+<p>Script node classes, aside from the prefixes, are case insensitive. However, the custom properties are case sensitive.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="examples">Examples<a href="#examples" class="hash-link" aria-label="Direct link to Examples" title="Direct link to Examples" translate="no">​</a></h2>
 <p>Open the <code>default.tmx</code> file provided with the server in <a href="https://www.mapeditor.org/" target="_blank" rel="noopener noreferrer" class="">Tiled</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="event-entry-api">Event Entry API<a href="#event-entry-api" class="hash-link" aria-label="Direct link to Event Entry API" title="Direct link to Event Entry API" translate="no">​</a></h2>
-<p>Implements support for the <code>Load</code>, <code>Server Event</code>, and <code>Player Interaction</code> entry types and the <code>On Load</code> property on all script nodes.</p>
+<p>Implements support for the <code>Load</code>, <code>Server Event</code>, and <code>Player Interaction</code> entry classes and the <code>On Load</code> property on all script nodes.</p>
 <p>When <code>:load()</code> is called on an area, any script nodes with <code>On Load</code> set to true will execute using a context containing <code>area_id</code>.</p>
-<p>As a reminder: entry nodes have a type starting with <code>Script Entry: </code> such as <code>Script Entry: Load</code>.</p>
+<p>As a reminder: entry nodes have a class starting with <code>Script Entry: </code> such as <code>Script Entry: Load</code>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="load"><code>Load</code><a href="#load" class="hash-link" aria-label="Direct link to load" title="Direct link to load" translate="no">​</a></h3>
 <p>Supplies a context with <code>area_id</code>.</p>
 <p>Custom properties supported by <code>Load</code>:</p>
@@ -494,7 +494,7 @@ If <code>Loop</code> is false or unspecified, paths with a loop will end at the 
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="collision-api">Collision API<a href="#collision-api" class="hash-link" aria-label="Direct link to Collision API" title="Direct link to Collision API" translate="no">​</a></h2>
 <p>Implements support for the <code>Collision</code> entry node, and the <code>Set Collider</code> script node.</p>
-<p>As a reminder: entry nodes have a type starting with <code>Script Entry: </code> such as <code>Script Entry: Collision</code></p>
+<p>As a reminder: entry nodes have a class starting with <code>Script Entry: </code> such as <code>Script Entry: Collision</code></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="collision"><code>Collision</code><a href="#collision" class="hash-link" aria-label="Direct link to collision" title="Direct link to collision" translate="no">​</a></h3>
 <p>Custom properties supported by <code>Collision</code>:</p>
 <ul>
