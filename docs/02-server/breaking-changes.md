@@ -1,5 +1,9 @@
 # Breaking Changes
 
+# 0.101.0
+
+- Merged + deprecated overlapping player + bot functions, see the [Actor API](/server/lua-api/actor-api).
+
 ## 0.98.0
 
 - Added "Animation Loop" for actor property animations, the "Animation" property no longer loops

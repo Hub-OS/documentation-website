@@ -10,71 +10,19 @@ Returns a list of `player_id`s.
 
 Returns true if the server is aware of a player with the provided id.
 
-### `Net.get_player_area(player_id)`
-
-Returns the `area_id` for the area the player is currently in.
-
 ### `Net.get_player_ip(player_id)`
 
 Returns the IP address of the player as a string. Useful for creating connection whitelists/blacklists.
 
 If you want to track data use [Net.get_player_secret()](/server/lua-api/player-data#netget_player_secretplayer_id). Otherwise you'll have issues when multiple players live within the same house.
 
-### `Net.get_player_name(player_id)`
-
-Returns the name of the player. "Nickname" in config.
-
-### `Net.set_player_name(player_id, name)`
-
-Sets the name of the player for all players to see.
-
-### `Net.get_player_direction(player_id)`
-
-Returns the facing direction of the player.
-
-### `Net.get_player_position(player_id)`
-
-Returns [Net.Position](/server/lua-api/misc#netposition)
-
-### `Net.get_player_position_multi(player_id)`
-
-Returns the player's position using multi-values.
-
-```lua
-local x, y, z = Net.get_player_position_multi(bot_id)
-```
-
 ### `Net.get_player_mugshot(player_id)`
 
 Returns [Net.TextureAnimationPair](/server/lua-api/widgets#nettextureanimationpair)
 
-### `Net.get_player_avatar(player_id)`
-
-Returns [Net.TextureAnimationPair](/server/lua-api/widgets#nettextureanimationpair)
-
-### `Net.set_player_avatar(player_id, texture_path, animation_path)`
-
-Sets the texture file and animation file used to display the player.
-
 ### `Net.get_player_avatar_name(player_id)`
 
 Returns the name of the playable character used by the player.
-
-### `Net.set_player_emote(player_id, emote_id)`
-
-Displays an emote above the player. `emote_id` is the name of an animation state in the emotes animation.
-
-An invalid `emote_id` will hide an existing emote.
-
-### `Net.exclusive_player_emote(player_id, emoter_id, emote_id)`
-
-- `emoter_id`: a `bot_id` or `player_id`
-
-Displays an emote exclusively to this player.
-
-### `Net.animate_player(player_id, state_name, loop?)`
-
-Sets the animation state for the player, the default states will be used if the player moves.
 
 ### `Net.play_sound_for_player(player_id, path)`
 
@@ -95,6 +43,12 @@ Disables collisions, interactions, and hides the actor for this player.
 ### `Net.include_actor_for_player(player_id, actor_id)`
 
 Brings back functionality removed by `Net.exclude_actor_for_player()` for this player.
+
+### `Net.exclusive_actor_emote_for_player(player_id, emoter_id, emote_id)`
+
+- `emoter_id`: a `bot_id` or `player_id`
+
+Displays an emote exclusively to this player.
 
 ### `Net.enable_camera_controls(player_id, range_x?, range_y?)`
 
@@ -156,10 +110,6 @@ Prevents the player from moving. Multiple locks can exist at a time.
 ### `Net.unlock_player_movement(player_id)`
 
 Removes a lock on the player's movement.
-
-### `Net.teleport_player(player_id, warp, x, y, z, direction?)`
-
-Teleports the player to a new position.
 
 ### `Net.set_player_restrictions(player_id, path)`
 
@@ -245,10 +195,6 @@ emitter:on("battle_message", function(event)
   Net.send_battle_message(battle_id, { a = "b" })
 end)
 ```
-
-### `Net.transfer_player(player_id, area_id, warp_in?, x?, y?, z?, direction?)`
-
-Sends the player to a different area.
 
 ### `Net.transfer_server(player_id, address, warp_out?, data?)`
 

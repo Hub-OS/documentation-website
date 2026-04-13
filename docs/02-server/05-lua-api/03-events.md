@@ -72,7 +72,7 @@ end)
 
 ### `player_move`
 
-Calling `Net.get_player_position(event.player_id)` within the listener will report the player's old position, as the player's position is updated after the event is emitted.
+Calling `Net.get_actor_position(event.player_id)` within the listener will report the player's old position, as the player's position is updated after the event is emitted.
 
 ```lua
 Net:on("player_move", function(event)
