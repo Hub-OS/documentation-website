@@ -233,7 +233,8 @@ Currently unimplemented on the client.
 ---@class Net.TextboxOptions
 ---@field mug? Net.TextureAnimationPair
 ---@field text_style? Net.TextStyle
----@field default_response? string | number
+---@field initial_response? string | number
+---@field cancel_response? string | number Supports prompts and quizzes. Quizzes accept positive integers or zero.
 ---@field character_limit? number Used for text inputs
 ```
 

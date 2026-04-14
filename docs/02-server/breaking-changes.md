@@ -3,6 +3,7 @@
 # 0.101.0
 
 - Merged + deprecated overlapping player + bot functions, see the [Actor API](/server/lua-api/actor-api).
+- `textbox_options.default_response` renamed to `textbox_options.initial_response`
 
 ## 0.98.0
 
