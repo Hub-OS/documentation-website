@@ -130,7 +130,7 @@ Expanded:
 keyframes: {
   properties: {
     property: "Animation" | "Animation Loop" | "Animation Speed" | "X" | "Y" | "Z" | "ScaleX" | "ScaleY" | "Rotation" | "Direction" | "Sound Effect" | "Sound Effect Loop",
-    ease?: "Linear" | "In" | "Out" | "InOut" | "Floor",
+    ease?: "Linear" | "In" | "Out" | "InOut" | "Floor" | "Ceil",
     value: number | string
   }[],
   duration: number
@@ -142,6 +142,6 @@ keyframes: {
 ```lua
 ---@class Net.ActorPropertyKeyframe
 ---@field property "Animation" | "Animation Loop" | "Animation Speed" | "X" | "Y" | "Z" | "ScaleX" | "ScaleY" | "Rotation" | "Direction" | "Sound Effect" | "Sound Effect Loop"
----@field ease? "Linear" | "In" | "Out" | "InOut" | "Floor",
+---@field ease? "Linear" | "In" | "Out" | "InOut" | "Floor" | "Ceil",
 ---@field value number | string
 ```
