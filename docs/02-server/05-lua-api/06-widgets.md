@@ -178,17 +178,11 @@ Sets the animation state for the sprite.
 
 Deletes the the sprite.
 
-### `Net.set_player_map_color(player_id, color)`
+### `Net.set_actor_map_color(player_id, color)`
 
 - `color`: [Net.Color](#netcolor)
 
 Sets the color of the marker used in the map menu to represent this player. Defaults to `{ r: 0, g: 0, b: 0, a: 0 }`
-
-### `Net.set_bot_map_color(bot_id, color)`
-
-- `color`: [Net.Color](#netcolor)
-
-Sets the color of the marker used in the map menu to represent this bot. Defaults to `{ r: 0, g: 0, b: 0, a: 0 }`
 
 ### `Net.refer_link(player_id, address)`
 
