@@ -65,7 +65,7 @@ Map:
 - Foreground Vel Y: float
 - Foreground Parallax: float
 
-Tiles and TileSets:
+Tiles and Tilesets:
 
 - Shadow: string
   - "Always"
@@ -74,6 +74,9 @@ Tiles and TileSets:
 
 - Minimap: bool
   - When set and not checked, this tile will skip rendering to the minimap
+
+- Layer: int
+  - Controls sprite layering within map layers, negative values appear closer to the camera.
 
 ## Object and Tile Classes
 
