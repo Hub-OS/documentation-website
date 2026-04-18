@@ -85,6 +85,10 @@ const COMPRESSED_RETURN_TYPES = [
     ],
   },
   {
+    type: "any[]",
+    list: ["Returns a list of resolved values"],
+  },
+  {
     type: "boolean",
     list: ["Returns a bool"],
   },

@@ -80,7 +80,7 @@ end))
 
 Can only be used within an async scope or coroutine.
 
-Takes a list of promises and returns a list of values.
+Returns a list of resolved values.
 
 ### `Async.create_scope<T>(function(): T)`
 
