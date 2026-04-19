@@ -166,7 +166,7 @@ Returns a SpriteShaderEffect.
 
 - `sprite_shader_effect`
   - `SpriteShaderEffect.None`
-  - ``SpriteShaderEffect.Grayscale`
+  - `SpriteShaderEffect.Grayscale`
   - `SpriteShaderEffect.Pixelate`
     - Scales with alpha.
 
