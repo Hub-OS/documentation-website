@@ -89,6 +89,10 @@ Returns a number, representing all of the hit flags of statuses that have `block
 
 Returns a number, representing all of the hit flags of statuses that have `blocks_mobility` set to true.
 
+### `Hit.ailments()`
+
+Returns a number, representing all of the hit flags of statuses that have `ailment` set to true.
+
 ## Element
 
 - `Element.None`

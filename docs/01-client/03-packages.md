@@ -303,6 +303,7 @@ blocked_by = [] # any status in the list can block this status when applied on t
 blocks_flags = [] # any status in the list will be blocked when applied on the same hit as this status
 blocks_actions = true # prevents entities from using Actions, animating, and pauses or cancels the current movement
 blocks_mobility = true # prevents entities from moving
+ailment = true # anything Status Guard should protect against, some statuses such as Uninstall should be excluded
 durations = [90] # a list of durations for each supported level of the status
 
 # this section is optional, see the Battle section for an example
