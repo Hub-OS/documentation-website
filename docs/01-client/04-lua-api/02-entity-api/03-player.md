@@ -484,6 +484,14 @@ Sets whether Form Select closes when this form is selected.
 
 Sets whether the transition and audio effect plays when this form is selected.
 
+### `player_form:activate()`
+
+Deactivates the previous form and activates this form, used to activate forms during battle.
+
+No default animation, the recommended way to animate the activation is use a time freeze action and activate in the middle of it.
+
+You can use [skip_time_freeze_intro](/client/lua-api/attack-api/cards#card_propertiesskip_time_freeze_intro) to create something close to the deactivate animation.
+
 ### `player_form:deactivate()`
 
 Deactivates the form.
