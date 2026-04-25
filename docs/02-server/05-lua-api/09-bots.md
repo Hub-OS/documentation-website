@@ -36,6 +36,7 @@ Deletes the bot and notifies clients in the same area.
 ---@field x? number
 ---@field y? number
 ---@field z? number
+---@field sprite_layer? number The render priority of the sprite, differs from map layers. Negative values are closer to the camera
 ---@field direction? string
 ---@field solid? boolean
 ```

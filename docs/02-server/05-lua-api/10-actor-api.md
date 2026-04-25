@@ -66,6 +66,22 @@ local x, y, z = Net.get_actor_position_multi(actor_id)
 
 Sets texture and animation files used to display the actor.
 
+### `Net.get_actor_sprite_layer(actor_id)`
+
+Returns a number, the sprite layer (render priority) of the actor.
+
+This differs from map layers, and is used for deciding the render order within the layer.
+
+Negative values render closer to the camera.
+
+### `Net.set_actor_sprite_layer(actor_id, sprite_layer)`
+
+Sets the sprite layer (render priority) of the actor.
+
+This differs from map layers, and is used for deciding the render order within the layer.
+
+Negative values render closer to the camera.
+
 ### `Net.set_actor_emote(actor_id, emote_id)`
 
 Displays an emote above the actor. `emote_id` is the name of an animation state in the emotes animation.

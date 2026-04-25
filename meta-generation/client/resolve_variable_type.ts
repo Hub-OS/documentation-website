@@ -128,6 +128,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "delta",
       "elapsed",
       "layer",
+      "sprite_layer",
       "width",
       "height",
       "radians",
