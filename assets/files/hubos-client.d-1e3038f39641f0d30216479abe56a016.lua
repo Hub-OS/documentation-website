@@ -2184,6 +2184,13 @@ function PlayerForm:set_close_on_select(bool) end
 ---@param bool boolean
 function PlayerForm:set_transition_on_select(bool) end
 
+--- Deactivates the previous form and activates this form, used to activate forms during battle.
+--- 
+--- No default animation, the recommended way to animate the activation is use a time freeze action and activate in the middle of it.
+--- 
+--- You can use [skip_time_freeze_intro](https://docs.hubos.dev/client/lua-api/attack-api/cards#card_propertiesskip_time_freeze_intro) to create something close to the deactivate animation.
+function PlayerForm:activate() end
+
 --- Deactivates the form.
 function PlayerForm:deactivate() end
 
@@ -2999,7 +3006,7 @@ function Sprite:shader_effect() end
 
 --- - `sprite_shader_effect`
 ---   - `SpriteShaderEffect.None`
----   - ``SpriteShaderEffect.Grayscale`
+---   - `SpriteShaderEffect.Grayscale`
 ---   - `SpriteShaderEffect.Pixelate`
 ---     - Scales with alpha.
 ---@param sprite_shader_effect SpriteShaderEffect
@@ -3846,6 +3853,10 @@ function Hit.action_blockers() end
 --- Returns a number, representing all of the hit flags of statuses that have `blocks_mobility` set to true.
 ---@return number
 function Hit.mobility_blockers() end
+
+--- Returns a number, representing all of the hit flags of statuses that have `ailment` set to true.
+---@return number
+function Hit.ailments() end
 
 --- Returns true if `element_a` is weak to `element_b`.
 ---@param element_a Element
