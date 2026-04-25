@@ -1511,7 +1511,7 @@ function Net.get_actor_sprite_layer(actor_id) end
 --- 
 --- Negative values render closer to the camera.
 ---@param actor_id Net.ActorId
----@param sprite_layer undefined
+---@param sprite_layer number
 function Net.set_actor_sprite_layer(actor_id, sprite_layer) end
 
 --- Displays an emote above the actor. `emote_id` is the name of an animation state in the emotes animation.
