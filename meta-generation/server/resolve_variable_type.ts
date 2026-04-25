@@ -57,6 +57,7 @@ const COMPRESSED_VARIABLE_TYPES = [
     list: [
       "index",
       "layer",
+      "sprite_layer",
       "x",
       "y",
       "z",
