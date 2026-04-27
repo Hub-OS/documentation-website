@@ -222,7 +222,11 @@ tile_states = [] # optional, list of package ids
 Expects an `entry.lua` file. See [Action](/client/lua-api/attack-api/action)
 
 ```lua
--- optional implementation, called when package ids change on cards tied to a character
+-- optional implementation, called when field_cards on a character change.
+-- specifically:
+--  - when card select closes and PAs are resolved
+--  - when :insert_field_card() is used
+--  - when :set_field_card() changes the id of a card
 -- ---@param entity Entity
 -- ---@param card_index number
 -- function card_mutate(entity, card_index)
