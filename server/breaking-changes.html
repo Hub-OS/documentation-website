@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Breaking Changes | Hub OS Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.hubos.dev/server/breaking-changes"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Breaking Changes | Hub OS Documentation"><meta data-rh="true" name="description" content="- Merged + deprecated overlapping player + bot functions, see the Actor API."><meta data-rh="true" property="og:description" content="- Merged + deprecated overlapping player + bot functions, see the Actor API."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.hubos.dev/server/breaking-changes"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/server/breaking-changes" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/server/breaking-changes" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.17e2f961.css">
-<script src="/assets/js/runtime~main.6f624fc4.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.6463648d.js" defer="defer"></script>
 <script src="/assets/js/main.c942d6d7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -61,7 +61,7 @@
 <li class=""><code>Async.remove_player_item()</code> removed.</li>
 <li class=""><code>Net.set_mod_whitelist_for_player()</code> and <code>Net.set_mod_blacklist_for_player()</code> removed.<!-- -->
 <ul>
-<li class="">Use <a class="" href="/server/lua-api/actors#netset_player_restrictionsplayer_id-path">Net.set_player_restrictions()</a> instead.</li>
+<li class="">Use <a class="" href="/server/lua-api/players#netset_player_restrictionsplayer_id-path">Net.set_player_restrictions()</a> instead.</li>
 </ul>
 </li>
 <li class="">Replaced MD5 with SHA-256 for hashing packages.</li>
@@ -80,7 +80,7 @@
 <li class="">Descriptions removed from items, descriptions should be handled by <code>shop_description_request</code> listeners.</li>
 </ul>
 </li>
-<li class=""><code>Net.set_bot_minimap_color()</code> renamed to <a class="" href="/server/lua-api/actors#netset_actor_map_coloractor_id-color">Net.set_bot_map_color()</a></li>
+<li class=""><code>Net.set_bot_minimap_color()</code> renamed to <a class="" href="/server/lua-api/widgets#netset_actor_map_coloractor_id-color">Net.set_bot_map_color()</a></li>
 <li class=""><code>Net.set_player_minimap_color()</code> renamed to <a class="" href="/server/lua-api/actors#netset_actor_map_coloractor_id-color">Net.set_player_map_color()</a></li>
 <li class=""><code>Net.map_to_string()</code> renamed to <a class="" href="/server/lua-api/areas#netarea_to_stringarea_id">Net.area_to_string()</a></li>
 </ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Hub-OS/documentation-website/tree/master/docs/02-server/breaking-changes.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/server/lua-api/misc"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Misc</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#0980" class="table-of-contents__link toc-highlight">0.98.0</a></li><li><a href="#0920" class="table-of-contents__link toc-highlight">0.92.0</a></li><li><a href="#0910" class="table-of-contents__link toc-highlight">0.91.0</a></li><li><a href="#0140" class="table-of-contents__link toc-highlight">0.14.0</a></li><li><a href="#090" class="table-of-contents__link toc-highlight">0.9.0</a></li><li><a href="#050" class="table-of-contents__link toc-highlight">0.5.0</a></li><li><a href="#020" class="table-of-contents__link toc-highlight">0.2.0</a></li></ul></div></div></div></div></main></div></div></div></div>
