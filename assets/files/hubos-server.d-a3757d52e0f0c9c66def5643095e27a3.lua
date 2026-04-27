@@ -1527,7 +1527,7 @@ function Net.set_actor_emote(actor_id, emote_id) end
 ---@param loop? boolean
 function Net.animate_actor(actor_id, state_name, loop) end
 
---- - `keyframes`: [Net.ActorKeyframe[]](https://docs.hubos.dev/server/lua-api/actor-api#netactorkeyframe)
+--- - `keyframes`: [Net.ActorKeyframe[]](https://docs.hubos.dev/server/lua-api/actors#netactorkeyframe)
 --- 
 --- Interpolated animations for fancy effects.
 --- 
