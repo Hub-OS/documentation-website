@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Player | Hub OS Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.hubos.dev/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.hubos.dev/client/lua-api/entity-api/player"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Player | Hub OS Documentation"><meta data-rh="true" name="description" content="Instance of Entity. All Living and Character functions are available as well."><meta data-rh="true" property="og:description" content="Instance of Entity. All Living and Character functions are available as well."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.hubos.dev/client/lua-api/entity-api/player"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/client/lua-api/entity-api/player" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.hubos.dev/client/lua-api/entity-api/player" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.17e2f961.css">
-<script src="/assets/js/runtime~main.502a60b9.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8d56fcd6.js" defer="defer"></script>
 <script src="/assets/js/main.d37efe39.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -213,12 +213,15 @@
 <p>Prevents selection in Card Select and hides the cursor.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="playerset_fixed_cardcard_properties-card_button_slot"><code>player:set_fixed_card(card_properties, card_button_slot?)</code><a href="#playerset_fixed_cardcard_properties-card_button_slot" class="hash-link" aria-label="Direct link to playerset_fixed_cardcard_properties-card_button_slot" title="Direct link to playerset_fixed_cardcard_properties-card_button_slot" translate="no">​</a></h3>
 <p>Dedicates a button slot in Card Select to the specified card. Internally defined as a <a href="#cardselectbutton" class="">CardSelectButton</a>.</p>
+<p>May behave oddly if a button is already set in the same slot directly on the player and <a href="#buttondelete" class="">button<!-- -->:delete<!-- -->()</a> was not called.</p>
 <p>Returns <a href="#cardselectbutton" class="">CardSelectButton</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="playercreate_card_buttonslot_count-card_button_slot"><code>player:create_card_button(slot_count, card_button_slot?)</code><a href="#playercreate_card_buttonslot_count-card_button_slot" class="hash-link" aria-label="Direct link to playercreate_card_buttonslot_count-card_button_slot" title="Direct link to playercreate_card_buttonslot_count-card_button_slot" translate="no">​</a></h3>
 <p>Creates a button embedded in the end of the card list in Card Select.</p>
+<p>May behave oddly if a button is already set in the same slot directly on the player and <a href="#buttondelete" class="">button<!-- -->:delete<!-- -->()</a> was not called.</p>
 <p>Returns <a href="#cardselectbutton" class="">CardSelectButton</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="playercreate_special_button"><code>player:create_special_button()</code><a href="#playercreate_special_button" class="hash-link" aria-label="Direct link to playercreate_special_button" title="Direct link to playercreate_special_button" translate="no">​</a></h3>
 <p>Creates a button under the &quot;Confirm&quot; button in Card Select.</p>
+<p>May behave oddly if a button is already set in the same slot directly on the player and <a href="#buttondelete" class="">button<!-- -->:delete<!-- -->()</a> was not called.</p>
 <p>Returns <a href="#cardselectbutton" class="">CardSelectButton</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="playercreate_form"><code>player:create_form()</code><a href="#playercreate_form" class="hash-link" aria-label="Direct link to playercreate_form" title="Direct link to playercreate_form" translate="no">​</a></h3>
 <p>Returns a new <a href="#playerform" class="">PlayerForm</a>.</p>
@@ -324,14 +327,17 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="player_formset_fixed_cardcard_properties-card_button_slot"><code>player_form:set_fixed_card(card_properties, card_button_slot?)</code><a href="#player_formset_fixed_cardcard_properties-card_button_slot" class="hash-link" aria-label="Direct link to player_formset_fixed_cardcard_properties-card_button_slot" title="Direct link to player_formset_fixed_cardcard_properties-card_button_slot" translate="no">​</a></h3>
 <p>Dedicates a button slot in Card Select to the specified card. Internally defined as a <a href="#cardselectbutton" class="">CardSelectButton</a>.
 Overrides the card button created on the Player and any <a href="#augment" class="">Augment</a>.</p>
+<p>May behave oddly if a button is already set in the same slot on this form and <a href="#buttondelete" class="">button<!-- -->:delete<!-- -->()</a> was not called.</p>
 <p>Returns <a href="#cardselectbutton" class="">CardSelectButton</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="player_formcreate_card_buttonslot_count-card_button_slot"><code>player_form:create_card_button(slot_count, card_button_slot?)</code><a href="#player_formcreate_card_buttonslot_count-card_button_slot" class="hash-link" aria-label="Direct link to player_formcreate_card_buttonslot_count-card_button_slot" title="Direct link to player_formcreate_card_buttonslot_count-card_button_slot" translate="no">​</a></h3>
 <p>Creates a button embedded in the end of the card list in Card Select.
 Overrides card buttons created on the Player and any <a href="#augment" class="">Augment</a>.</p>
+<p>May behave oddly if a button is already set in the same slot on this form and <a href="#buttondelete" class="">button<!-- -->:delete<!-- -->()</a> was not called.</p>
 <p>Returns <a href="#cardselectbutton" class="">CardSelectButton</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="player_formcreate_special_button"><code>player_form:create_special_button()</code><a href="#player_formcreate_special_button" class="hash-link" aria-label="Direct link to player_formcreate_special_button" title="Direct link to player_formcreate_special_button" translate="no">​</a></h3>
 <p>Creates a button under the &quot;Confirm&quot; button in Card Select.
 Overrides the special button created on the Player and any <a href="#augment" class="">Augment</a>.</p>
+<p>May behave oddly if a button is already set in the same slot on this form and <a href="#buttondelete" class="">button<!-- -->:delete<!-- -->()</a> was not called.</p>
 <p>Returns <a href="#cardselectbutton" class="">CardSelectButton</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="player_formset_charge_with_shootbool"><code>player_form:set_charge_with_shoot(bool?)</code><a href="#player_formset_charge_with_shootbool" class="hash-link" aria-label="Direct link to player_formset_charge_with_shootbool" title="Direct link to player_formset_charge_with_shootbool" translate="no">​</a></h3>
 <p>Configures whether the Shoot button is tied to charging for <a href="#playercharged_attack_func--functionself-actionnil" class="">player.charged_attack_func</a>, when no other augments or forms are overriding this behavior.</p>
@@ -386,7 +392,7 @@ Also overrides any <a href="#augment" class="">Augment</a>&#x27;s override.</p>
 Also overrides any <a href="#augment" class="">Augment</a>&#x27;s override.</p>
 <p>Used to handle movement input.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="augment">Augment<a href="#augment" class="hash-link" aria-label="Direct link to Augment" title="Direct link to Augment" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="augmentid"><code>augment:id()</code><a href="#augmentid" class="hash-link" aria-label="Direct link to augmentid" title="Direct link to augmentid" translate="no"> ​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="augmentid"><code>augment:id()</code><a href="#augmentid" class="hash-link" aria-label="Direct link to augmentid" title="Direct link to augmentid" translate="no">​</a></h3>
 <p>Returns the package id of the augment.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="augmentlevel"><code>augment:level()</code><a href="#augmentlevel" class="hash-link" aria-label="Direct link to augmentlevel" title="Direct link to augmentlevel" translate="no">​</a></h3>
 <p>Returns an integer.</p>
@@ -402,14 +408,17 @@ Also overrides any <a href="#augment" class="">Augment</a>&#x27;s override.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="augmentset_fixed_cardcard_properties-card_button_slot"><code>augment:set_fixed_card(card_properties, card_button_slot?)</code><a href="#augmentset_fixed_cardcard_properties-card_button_slot" class="hash-link" aria-label="Direct link to augmentset_fixed_cardcard_properties-card_button_slot" title="Direct link to augmentset_fixed_cardcard_properties-card_button_slot" translate="no">​</a></h3>
 <p>Dedicates a button slot in Card Select to the specified card. Internally defined as a <a href="#cardselectbutton" class="">CardSelectButton</a>.
 Overrides the card button created on the Player.</p>
+<p>May behave oddly if a button is already set in the same slot on this augment and <a href="#buttondelete" class="">button<!-- -->:delete<!-- -->()</a> was not called.</p>
 <p>Returns <a href="#cardselectbutton" class="">CardSelectButton</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="augmentcreate_card_buttonslot_count-card_button_slot"><code>augment:create_card_button(slot_count, card_button_slot?)</code><a href="#augmentcreate_card_buttonslot_count-card_button_slot" class="hash-link" aria-label="Direct link to augmentcreate_card_buttonslot_count-card_button_slot" title="Direct link to augmentcreate_card_buttonslot_count-card_button_slot" translate="no">​</a></h3>
 <p>Creates a button embedded in the end of the card list in Card Select.
 Overrides card buttons created on the Player.</p>
+<p>May behave oddly if a button is already set in the same slot on this augment and <a href="#buttondelete" class="">button<!-- -->:delete<!-- -->()</a> was not called.</p>
 <p>Returns <a href="#cardselectbutton" class="">CardSelectButton</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="augmentcreate_special_button"><code>augment:create_special_button()</code><a href="#augmentcreate_special_button" class="hash-link" aria-label="Direct link to augmentcreate_special_button" title="Direct link to augmentcreate_special_button" translate="no">​</a></h3>
 <p>Creates a button under the &quot;Confirm&quot; button in Card Select.
 Overrides the special button created on the Player.</p>
+<p>May behave oddly if a button is already set in the same slot on this augment and <a href="#buttondelete" class="">button<!-- -->:delete<!-- -->()</a> was not called.</p>
 <p>Returns <a href="#cardselectbutton" class="">CardSelectButton</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="augmentset_charge_with_shootbool"><code>augment:set_charge_with_shoot(bool?)</code><a href="#augmentset_charge_with_shootbool" class="hash-link" aria-label="Direct link to augmentset_charge_with_shootbool" title="Direct link to augmentset_charge_with_shootbool" translate="no">​</a></h3>
 <p>Configures whether the Shoot button is tied to charging for <a href="#playercharged_attack_func--functionself-actionnil" class="">player.charged_attack_func</a>, when no other augments or forms are overriding this behavior.</p>
