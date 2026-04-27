@@ -296,7 +296,7 @@ Prevents selection in Card Select and hides the cursor.
 
 Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
 
-May behave oddly if a button is already set in the same slot directly on the player and [button:delete()](buttondelete) was not called.
+May behave oddly if a button is already set in the same slot directly on the player and [button:delete()](#buttondelete) was not called.
 
 Returns [CardSelectButton](#cardselectbutton)
 
@@ -304,7 +304,7 @@ Returns [CardSelectButton](#cardselectbutton)
 
 Creates a button embedded in the end of the card list in Card Select.
 
-May behave oddly if a button is already set in the same slot directly on the player and [button:delete()](buttondelete) was not called.
+May behave oddly if a button is already set in the same slot directly on the player and [button:delete()](#buttondelete) was not called.
 
 Returns [CardSelectButton](#cardselectbutton)
 
@@ -312,7 +312,7 @@ Returns [CardSelectButton](#cardselectbutton)
 
 Creates a button under the "Confirm" button in Card Select.
 
-May behave oddly if a button is already set in the same slot directly on the player and [button:delete()](buttondelete) was not called.
+May behave oddly if a button is already set in the same slot directly on the player and [button:delete()](#buttondelete) was not called.
 
 Returns [CardSelectButton](#cardselectbutton)
 
@@ -507,7 +507,7 @@ Deactivates the form.
 Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
 Overrides the card button created on the Player and any [Augment](#augment).
 
-May behave oddly if a button is already set in the same slot on this form and [button:delete()](buttondelete) was not called.
+May behave oddly if a button is already set in the same slot on this form and [button:delete()](#buttondelete) was not called.
 
 Returns [CardSelectButton](#cardselectbutton)
 
@@ -516,7 +516,7 @@ Returns [CardSelectButton](#cardselectbutton)
 Creates a button embedded in the end of the card list in Card Select.
 Overrides card buttons created on the Player and any [Augment](#augment).
 
-May behave oddly if a button is already set in the same slot on this form and [button:delete()](buttondelete) was not called.
+May behave oddly if a button is already set in the same slot on this form and [button:delete()](#buttondelete) was not called.
 
 Returns [CardSelectButton](#cardselectbutton)
 
@@ -525,7 +525,7 @@ Returns [CardSelectButton](#cardselectbutton)
 Creates a button under the "Confirm" button in Card Select.
 Overrides the special button created on the Player and any [Augment](#augment).
 
-May behave oddly if a button is already set in the same slot on this form and [button:delete()](buttondelete) was not called.
+May behave oddly if a button is already set in the same slot on this form and [button:delete()](#buttondelete) was not called.
 
 Returns [CardSelectButton](#cardselectbutton)
 
@@ -656,7 +656,7 @@ Returns true if the augment was deleted from the owner. Calls to other functions
 Dedicates a button slot in Card Select to the specified card. Internally defined as a [CardSelectButton](#cardselectbutton).
 Overrides the card button created on the Player.
 
-May behave oddly if a button is already set in the same slot on this augment and [button:delete()](buttondelete) was not called.
+May behave oddly if a button is already set in the same slot on this augment and [button:delete()](#buttondelete) was not called.
 
 Returns [CardSelectButton](#cardselectbutton)
 
@@ -665,7 +665,7 @@ Returns [CardSelectButton](#cardselectbutton)
 Creates a button embedded in the end of the card list in Card Select.
 Overrides card buttons created on the Player.
 
-May behave oddly if a button is already set in the same slot on this augment and [button:delete()](buttondelete) was not called.
+May behave oddly if a button is already set in the same slot on this augment and [button:delete()](#buttondelete) was not called.
 
 Returns [CardSelectButton](#cardselectbutton)
 
@@ -674,7 +674,7 @@ Returns [CardSelectButton](#cardselectbutton)
 Creates a button under the "Confirm" button in Card Select.
 Overrides the special button created on the Player.
 
-May behave oddly if a button is already set in the same slot on this augment and [button:delete()](buttondelete) was not called.
+May behave oddly if a button is already set in the same slot on this augment and [button:delete()](#buttondelete) was not called.
 
 Returns [CardSelectButton](#cardselectbutton)
 

@@ -1,6 +1,6 @@
 # Bots
 
-See [Actors](/server/lua-api/actor-api)
+See [Actors](/server/lua-api/actors)
 
 ### `Net.list_bots(area_id)`
 

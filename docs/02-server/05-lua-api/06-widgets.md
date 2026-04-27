@@ -178,7 +178,7 @@ Sets the animation state for the sprite.
 
 Deletes the the sprite.
 
-### `Net.set_actor_map_color(player_id, color)`
+### `Net.set_actor_map_color(actor_id, color)`
 
 - `color`: [Net.Color](#netcolor)
 

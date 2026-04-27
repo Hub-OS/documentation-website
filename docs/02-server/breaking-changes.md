@@ -2,7 +2,7 @@
 
 # 0.101.0
 
-- Merged + deprecated overlapping player + bot functions, see the [Actor API](/server/lua-api/actor-api).
+- Merged + deprecated overlapping player + bot functions, see the [Actor API](/server/lua-api/actors).
 - `textbox_options.default_response` renamed to `textbox_options.initial_response`
 
 ## 0.98.0
@@ -34,9 +34,9 @@
   - Emote IDs use animation state name rather than hard coded numbers.
   - `--custom-emotes-path` split into `--emotes-animation-path` and `--emotes-texture-path`
   - Relevant functions:
-    - [Net.set_player_emote()](/server/lua-api/players#netset_player_emoteplayer_id-emote_id)
-    - [Net.exclusive_player_emote()](/server/lua-api/players#netexclusive_player_emoteplayer_id-emoter_id-emote_id)
-    - [Net.set_bot_emote()](/server/lua-api/bots#netset_bot_emotebot_id-emote_id)
+    - [Net.set_player_emote()](/server/lua-api/actors#netset_actor_emoteactor_id-emote_id)
+    - [Net.exclusive_player_emote()](/server/lua-api/players#netexclusive_actor_emote_for_playerplayer_id-emoter_id-emote_id)
+    - [Net.set_bot_emote()](/server/lua-api/actors#netset_actor_emoteactor_id-emote_id)
 
 ## 0.5.0
 
@@ -53,6 +53,6 @@
 - [Net.get_player_items()](/server/lua-api/player-data#netget_player_itemsplayer_id) now returns unique ids.
 - [Net.open_shop()](/server/lua-api/widgets#netopen_shopplayer_id-shop_items-mug_texture_path-mug_animation_path) revised.
   - Descriptions removed from items, descriptions should be handled by `shop_description_request` listeners.
-- `Net.set_bot_minimap_color()` renamed to [Net.set_bot_map_color()](/server/lua-api/widgets#netset_bot_map_colorbot_id-color)
-- `Net.set_player_minimap_color()` renamed to [Net.set_player_map_color()](/server/lua-api/widgets#netset_player_map_colorplayer_id-color)
+- `Net.set_bot_minimap_color()` renamed to [Net.set_bot_map_color()](/server/lua-api/widgets#netset_actor_map_coloractor_id-color)
+- `Net.set_player_minimap_color()` renamed to [Net.set_player_map_color()](/server/lua-api/widgets#netset_actor_map_coloractor_id-color)
 - `Net.map_to_string()` renamed to [Net.area_to_string()](/server/lua-api/areas#netarea_to_stringarea_id)
