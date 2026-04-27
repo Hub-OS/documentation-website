@@ -955,9 +955,9 @@ function Net.remove_sprite(sprite_id) end
 --- - `color`: [Net.Color](https://docs.hubos.dev/server/lua-api/widgets#netcolor)
 --- 
 --- Sets the color of the marker used in the map menu to represent this player. Defaults to `{ r: 0, g: 0, b: 0, a: 0 }`
----@param player_id Net.ActorId
+---@param actor_id Net.ActorId
 ---@param color Net.Color
-function Net.set_actor_map_color(player_id, color) end
+function Net.set_actor_map_color(actor_id, color) end
 
 --- Sends a link to the player to open in the browser. Permission will be asked before opening.
 --- 
