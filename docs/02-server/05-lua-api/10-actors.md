@@ -62,6 +62,10 @@ This is immediate for bots, delayed by a network round trip for player actors.
 local x, y, z = Net.get_actor_position_multi(actor_id)
 ```
 
+### `Net.get_actor_avatar(actor_id)`
+
+Returns [Net.TextureAnimationPair](/server/lua-api/widgets#nettextureanimationpair)
+
 ### `Net.set_actor_avatar(actor_id, texture_path, animation_path)`
 
 Sets texture and animation files used to display the actor.
