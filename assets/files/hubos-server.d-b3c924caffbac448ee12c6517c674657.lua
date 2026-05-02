@@ -1490,6 +1490,11 @@ function Net.warp_actor(actor_id, x, y, z, direction) end
 ---@param direction? string
 function Net.transfer_actor(player_id, area_id, warp_in, x, y, z, direction) end
 
+--- Returns [Net.TextureAnimationPair](https://docs.hubos.dev/server/lua-api/widgets#nettextureanimationpair)
+---@param actor_id Net.ActorId
+---@return Net.TextureAnimationPair
+function Net.get_actor_avatar(actor_id) end
+
 --- Sets texture and animation files used to display the actor.
 ---@param actor_id Net.ActorId
 ---@param texture_path string
