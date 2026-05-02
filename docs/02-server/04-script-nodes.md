@@ -158,6 +158,7 @@ All nodes expect `area_id` and optionally `object_id` on the context table.
 
 Custom properties supported by `Move Object`:
 
+- `Object` object (optional)
 - `Target` object (optional)
 - `Next [1]` a link to the next node (optional)
 
@@ -165,6 +166,7 @@ Custom properties supported by `Move Object`:
 
 Custom properties supported by `Hide Object`, `Show Object`, and `Remove Object`:
 
+- `Object` object (optional)
 - `Next [1]` a link to the next node (optional)
 
 ## Tile API
