@@ -365,6 +365,24 @@ Supported custom properties for `Has Item`:
 - `Next [1]` a link to the default node (optional)
 - `Next 2` a link to the passing node (optional)
 
+## Equipment API
+
+Implements support for the `Lock Equipment` and `Unlock Equipment` nodes.
+
+Expects `area_id` and `player_id` or `player_ids` to be defined on the context table.
+
+### `Lock Equipment`
+
+Supported custom properties for `Lock Equipment`:
+
+- `Next [1]` a link to the next node (optional)
+
+### `Unlock Equipment`
+
+Supported custom properties for `Unlock Equipment`:
+
+- `Next [1]` a link to the next node (optional)
+
 ## Link API
 
 Implements support for the `Refer Server` and `Refer Package` nodes
