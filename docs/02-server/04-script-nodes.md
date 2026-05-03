@@ -272,6 +272,7 @@ Expects `area_id` and optionally `player_id` or `player_ids` to be defined on th
 Supported custom properties:
 
 - `Target` "Player [1+]" (optional)
+- `Sound` string
 - `Next [1]` a link to the next node (optional)
 
 ## Camera API
@@ -367,7 +368,7 @@ Supported custom properties for `Has Item`:
 
 ## Equipment API
 
-Implements support for the `Lock Equipment` and `Unlock Equipment` nodes.
+Implements support for the `Lock Equipment`, `Unlock Equipment`, and `Set Restrictions` nodes.
 
 Expects `area_id` and `player_id` or `player_ids` to be defined on the context table.
 
@@ -381,6 +382,13 @@ Supported custom properties for `Lock Equipment`:
 
 Supported custom properties for `Unlock Equipment`:
 
+- `Next [1]` a link to the next node (optional)
+
+### `Set Restrictions`
+
+Supported custom properties for `Set Restrictions`:
+
+- `Path` string
 - `Next [1]` a link to the next node (optional)
 
 ## Link API
