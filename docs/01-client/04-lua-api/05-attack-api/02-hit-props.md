@@ -50,6 +50,10 @@ Any of the values below, or combined using bitwise or (`|`)
 
 A table that maps frame durations for status hit flags.
 
+```lua
+hit_props.status_durations[Hit.Paralyze] = 30
+```
+
 See [Hit.duration_for()](#hitduration_forhit_flag-level)
 
 ### `hit_props.element`

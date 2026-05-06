@@ -93,6 +93,10 @@ Number, used by other mods for conditional behavior, defaults to 0.
 
 A table that maps frame durations for status hit flags.
 
+```lua
+card_properties.status_durations[Hit.Paralyze] = 30
+```
+
 See [Hit.duration_for()](/client/lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
 
 ### `card_properties.can_boost`
