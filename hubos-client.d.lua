@@ -761,6 +761,10 @@ Drag.None = nil
 ---@field element Element
 --- A table that maps frame durations for status hit flags.
 --- 
+--- ```lua
+--- hit_props.status_durations[Hit.Paralyze] = 30
+--- ```
+--- 
 --- See [Hit.duration_for()](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
 ---@field status_durations table<Hit, number>
 --- Any of the values below, or combined using bitwise or (`|`)
@@ -817,6 +821,10 @@ DeckCard = {}
 --- Boolean or nil, used by other mods for conditional behavior.
 ---@field can_boost boolean
 --- A table that maps frame durations for status hit flags.
+--- 
+--- ```lua
+--- card_properties.status_durations[Hit.Paralyze] = 30
+--- ```
 --- 
 --- See [Hit.duration_for()](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hitduration_forhit_flag-level)
 ---@field status_durations table<Hit, number>
