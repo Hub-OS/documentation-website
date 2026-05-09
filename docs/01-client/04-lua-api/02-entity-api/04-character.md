@@ -45,6 +45,18 @@ Hides the character's rank when displaying names.
 
 Returns the namespace of the mod used to create the character.
 
+### `character:field_cards_visible()`
+
+Returns true if field cards render for this character.
+
+If this character is the local player, it may return false while still displaying cards.
+
+### `character:set_field_cards_visible(visible)`
+
+Sets the visibility of field cards on this character to all players.
+
+This will not hide cards on the local player's character from the local player.
+
 ### `character:field_cards()`
 
 Returns a list of [CardProperties](/client/lua-api/attack-api/cards#cardproperties), the first card is the next card that can be used.
