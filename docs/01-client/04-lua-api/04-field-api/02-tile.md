@@ -109,6 +109,10 @@ Sets the facing direction used to set the initial direction of spawned entities,
 
 Returns a [Direction](/client/lua-api/field-api/direction)
 
+### `tile:highlight()`
+
+Returns the Highlight value for the frame, it's best to read this in a `Lifetime.Scene` component to see the final highlight shown to players.
+
 ### `tile:set_highlight(highlight)`
 
 - `highlight`
