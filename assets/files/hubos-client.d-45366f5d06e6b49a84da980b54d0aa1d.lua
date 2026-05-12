@@ -2450,6 +2450,22 @@ function Entity:hide_rank() end
 ---@return Namespace
 function Entity:namespace() end
 
+--- Returns true if field cards render for this character.
+--- 
+--- If this character is the local player, it may return false while still displaying cards.
+---
+--- Throws if the Entity doesn't pass [Character.from()](https://docs.hubos.dev/client/lua-api/entity-api/character)
+---@return boolean
+function Entity:field_cards_visible() end
+
+--- Sets the visibility of field cards on this character to all players.
+--- 
+--- This will not hide cards on the local player's character from the local player.
+---
+--- Throws if the Entity doesn't pass [Character.from()](https://docs.hubos.dev/client/lua-api/entity-api/character)
+---@param visible boolean
+function Entity:set_field_cards_visible(visible) end
+
 --- Returns a list of [CardProperties](https://docs.hubos.dev/client/lua-api/attack-api/cards#cardproperties), the first card is the next card that can be used.
 ---
 --- Throws if the Entity doesn't pass [Character.from()](https://docs.hubos.dev/client/lua-api/entity-api/character)
@@ -3340,6 +3356,10 @@ function Tile:set_facing(direction) end
 --- Returns a [Direction](https://docs.hubos.dev/client/lua-api/field-api/direction)
 ---@return Direction
 function Tile:original_facing() end
+
+--- Returns the Highlight value for the frame, it's best to read this in a `Lifetime.Scene` component to see the final highlight shown to players.
+---@return Highlight
+function Tile:highlight() end
 
 --- - `highlight`
 ---   - `Highlight.None`
