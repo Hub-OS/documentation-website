@@ -106,7 +106,7 @@ Displays a textbox that accepts text input.
 
 See [textbox_response](/server/lua-api/events#textbox_response) or the [async](/server/lua-api/async#asyncprompt_playerplayer_id-textbox_options) version of this function for handling responses.
 
-### `Net.open_board(player_id, board_name, color, posts, open_instantly?)`
+### `Net.open_board(player_id, topic, color, posts, open_instantly?)`
 
 - `color`: [Net.Color](#netcolor)
 - `posts`: [Net.BoardPost[]](#netboardpost)
@@ -122,6 +122,18 @@ Issues may arise when multiple scripts create boards at the same time.
 Issues may arise when multiple scripts create boards at the same time.
 
 ### `Net.remove_post(player_id, post_id)`
+
+Issues may arise when multiple scripts create boards at the same time.
+
+### `Net.clear_board(player_id)`
+
+Remove all posts on the currently opened board for the player.
+
+Issues may arise when multiple scripts create boards at the same time.
+
+### `Net.update_board_topic(player_id, topic)`
+
+Updates the top label on currently opened board for the player.
 
 Issues may arise when multiple scripts create boards at the same time.
 

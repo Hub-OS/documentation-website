@@ -122,7 +122,7 @@ const COMPRESSED_VARIABLE_TYPES = [
       "question",
       "name",
       "property_value",
-      "board_name",
+      "topic",
       "default_text",
       "data",
       "event_name",
