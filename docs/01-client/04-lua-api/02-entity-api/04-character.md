@@ -4,6 +4,12 @@ Instance of [Entity](/client/lua-api/entity-api/entity). All [Living](/client/lu
 
 Character functions are accessible to all entities, but will throw if the entity is not a Character or [Player](/client/lua-api/entity-api/player).
 
+### `Character.new(team?)`
+
+- `team`: [Team](/client/lua-api/entity-api/entity#entityset_teamteam)
+
+Returns a new [Entity](/client/lua-api/entity-api/entity) instance.
+
 ### `Character.from(entity)`
 
 Returns the entity passed in if the entity is a character or player, otherwise returns `nil`.
