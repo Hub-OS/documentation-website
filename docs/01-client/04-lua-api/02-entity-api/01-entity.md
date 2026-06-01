@@ -313,6 +313,18 @@ Same as `entity:animation():load(path)`
 
   Returns a [Component](#component)
 
+### `entity:copy_sprite_tree(entity)`
+
+Copies the sprite tree of the entity parameter. Does not delete existing sprites in the tree.
+
+See [entity:copy_visual_tree()](#entitycopy_visual_treeentity) for copying sprites with animations.
+
+### `entity:copy_visual_tree(entity)`
+
+Copies the sprite tree and sync node animations of the entity parameter. Does not delete existing sprites in the tree.
+
+See [entity:copy_sprite_tree()](#entitycopy_sprite_treeentity) to copy sprites without animation.
+
 ### `entity:context()`
 
 Returns a value that can be used to decide if an attack can counter an opponent, and to resolve the owner of an attack.
