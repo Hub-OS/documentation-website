@@ -123,6 +123,10 @@ Returns true if status effects that block actions are applied.
 
 Returns true if status effects that immobilize are applied.
 
+### `living:drag(direction, distance)`
+
+Causes drag on the entity, bypasses defenses.
+
 ### `living.on_countered_func = function(self)`
 
 Called when this entity has been countered.
