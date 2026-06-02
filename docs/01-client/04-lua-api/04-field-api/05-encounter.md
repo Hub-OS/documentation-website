@@ -27,6 +27,12 @@ Marks the player as a spectator. Avoids creating an entity for this player (Mods
 
 Converts players to spectators when deleted.
 
+### `encounter:disconnect_input(player_index)`
+
+Disconnects inputs for the specified player for the rest of the match.
+
+Allows every client to avoid waiting for inputs from this player, and reduces packets sent by this player.
+
 ### `encounter:set_background(texture_path, animation_path, vel_x?, vel_y?)`
 
 - `vel_x`: if unset, uses the "VELOCITY" point on the first frame of the animation.
