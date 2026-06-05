@@ -2584,7 +2584,9 @@ function Entity:set_hit_props(hit_props) end
 --- 
 --- If this function is called on every frame by this spell, attacks queued for the same tile will be ignored after the first frame hits occur in.
 --- 
---- To allow a spell to hit multiple times on the same tile, calls to this function should be skipped for at least a frame, or a new spell should be spawned to perform the attack.
+--- Queued attacks linger for an extra frame to avoid entities dodging moving attacks by moving into the attack on the same frame it moved.
+--- 
+--- To allow a spell to hit multiple times on the same tile, calls to this function should be skipped for at least two frames (accounts for lingering), or a new spell should be spawned to perform the attack.
 --- 
 --- See [SharedHitbox](https://docs.hubos.dev/client/lua-api/entity-api/spell#sharedhitbox) for a convenience spell to handle attacks.
 ---
@@ -4016,6 +4018,8 @@ function TurnGauge.max_time() end
 function TurnGauge.set_time(time) end
 
 --- Sets the total elapsed frames required to end a turn.
+--- 
+--- Use [TurnGauge.reset_max_time()](https://docs.hubos.dev/client/lua-api/attack-api/turn-gauge#turngaugereset_max_time) to reset to the default value (512).
 ---@param time number
 function TurnGauge.set_max_time(time) end
 
