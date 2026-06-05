@@ -34,6 +34,8 @@ Sets the turn gauge's progress in elapsed frames.
 
 Sets the total elapsed frames required to end a turn.
 
+Use [TurnGauge.reset_max_time()](#turngaugereset_max_time) to reset to the default value (512).
+
 ### `TurnGauge.reset_max_time()`
 
 Sets the total elapsed frames required to end a turn to the default (512).

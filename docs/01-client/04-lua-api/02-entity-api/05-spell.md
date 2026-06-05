@@ -34,7 +34,9 @@ Attack entities on the target tile, defaults to the spell's current tile.
 
 If this function is called on every frame by this spell, attacks queued for the same tile will be ignored after the first frame hits occur in.
 
-To allow a spell to hit multiple times on the same tile, calls to this function should be skipped for at least a frame, or a new spell should be spawned to perform the attack.
+Queued attacks linger for an extra frame to avoid entities dodging moving attacks by moving into the attack on the same frame it moved.
+
+To allow a spell to hit multiple times on the same tile, calls to this function should be skipped for at least two frames (accounts for lingering), or a new spell should be spawned to perform the attack.
 
 See [SharedHitbox](#sharedhitbox) for a convenience spell to handle attacks.
 
