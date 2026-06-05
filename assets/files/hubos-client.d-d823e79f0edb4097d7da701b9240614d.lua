@@ -1258,6 +1258,18 @@ function Entity:load_animation(path) end
 ---@return Component
 function Entity:create_component(lifetime) end
 
+--- Copies the sprite tree of the entity parameter. Does not delete existing sprites in the tree.
+--- 
+--- See [entity:copy_visual_tree()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycopy_visual_treeentity) for copying sprites with animations.
+---@param entity Entity
+function Entity:copy_sprite_tree(entity) end
+
+--- Copies the sprite tree and sync node animations of the entity parameter. Does not delete existing sprites in the tree.
+--- 
+--- See [entity:copy_sprite_tree()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycopy_sprite_treeentity) to copy sprites without animation.
+---@param entity Entity
+function Entity:copy_visual_tree(entity) end
+
 --- Returns a value that can be used to decide if an attack can counter an opponent, and to resolve the owner of an attack.
 --- 
 --- Countering an attack can be achieved by hitting an enemy with [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props) containing context obtained during [card_init](https://docs.hubos.dev/client/packages#cards) or within [action.on_execute_func](https://docs.hubos.dev/client/lua-api/attack-api/action#actionon_execute_func--functionself-owner)
@@ -1606,6 +1618,13 @@ function Entity:is_inactionable() end
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
 ---@return boolean
 function Entity:is_immobile() end
+
+--- Causes drag on the entity, bypasses defenses.
+---
+--- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
+---@param direction Direction
+---@param distance number
+function Entity:drag(direction, distance) end
 
 --- Returns the entity passed in if the entity is a player, otherwise returns `nil`.
 ---@param entity Entity
@@ -2399,6 +2418,13 @@ function CardSelectButton:delete() end
 --- Returns true if the button was deleted.
 ---@return boolean
 function CardSelectButton:deleted() end
+
+--- - `team`: [Team](https://docs.hubos.dev/client/lua-api/entity-api/entity#entityset_teamteam)
+--- 
+--- Returns a new [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) instance.
+---@param team? Team
+---@return Entity
+function Character.new(team) end
 
 --- Returns the entity passed in if the entity is a character or player, otherwise returns `nil`.
 ---@param entity Entity
@@ -3585,6 +3611,12 @@ function Encounter:mark_spectator(player_index) end
 --- Converts players to spectators when deleted.
 ---@param bool? boolean
 function Encounter:set_spectate_on_delete(bool) end
+
+--- Disconnects inputs for the specified player for the rest of the match.
+--- 
+--- Allows every client to avoid waiting for inputs from this player, and reduces packets sent by this player.
+---@param player_index number
+function Encounter:disconnect_input(player_index) end
 
 --- - `vel_x`: if unset, uses the "VELOCITY" point on the first frame of the animation.
 --- - `vel_y`: if unset, uses the "VELOCITY" point on the first frame of the animation.
