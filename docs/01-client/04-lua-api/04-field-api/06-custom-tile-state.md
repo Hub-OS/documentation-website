@@ -6,6 +6,10 @@ See [Tile State Package Documentation](/client/packages#tile-states) for creatin
 
 Deprecated. Use [Field](/client/lua-api/field-api/field) directly.
 
+### `custom_tile_state.on_set_func = function(self, tile)`
+
+Called when a tile has successfully set to this tile state.
+
 ### `custom_tile_state.can_replace_func = function(self, tile, tile_state): boolean`
 
 Called when [tile:set_state()](/client/lua-api/field-api/tile#tileset_statetile_state) or [tile:can_set_state()](/client/lua-api/field-api/tile#tilecan_set_statetile_state) is called. Used to accept or deny the change.
