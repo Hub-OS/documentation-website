@@ -658,6 +658,8 @@ ActionLockout = {}
 ---@field on_replace_func fun(self: CustomTileState, tile: Tile)
 --- Called when [tile:set_state()](https://docs.hubos.dev/client/lua-api/field-api/tile#tileset_statetile_state) or [tile:can_set_state()](https://docs.hubos.dev/client/lua-api/field-api/tile#tilecan_set_statetile_state) is called. Used to accept or deny the change.
 ---@field can_replace_func fun(self: CustomTileState, tile: Tile, tile_state: TileState): boolean
+--- Called when a tile has successfully set to this tile state.
+---@field on_set_func fun(self: CustomTileState, tile: Tile)
 CustomTileState = {}
 
 --- A global sprite node, used to add sprites to the HUD.
@@ -1039,9 +1041,6 @@ function Entity:get_tile(direction, distance) end
 --- Returns the tile at the same position as the entity.
 ---@return Tile
 function Entity:current_tile() end
-
---- Deprecated. Use [Field](https://docs.hubos.dev/client/lua-api/field-api/field) directly.
-function Entity:field() end
 
 --- Returns true if the entity has spawned.
 --- 
@@ -3637,9 +3636,6 @@ function Encounter:set_music(path) end
 ---@param height number
 function Encounter:set_field_size(width, height) end
 
---- Deprecated. Use [Field](https://docs.hubos.dev/client/lua-api/field-api/field) directly.
-function Encounter:field() end
-
 --- Overrides visuals used to render tile states.
 --- 
 --- `TileState.Normal` and `TileState.PermalHole` are special base states, overriding visuals for these states may affect what is drawn for other states.
@@ -3747,9 +3743,6 @@ function Spawner:spawn_at(col, row) end
 --- - `entity`: [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity)
 ---@param callback fun(entity: Entity)
 function Mutator:mutate(callback) end
-
---- Deprecated. Use [Field](https://docs.hubos.dev/client/lua-api/field-api/field) directly.
-function CustomTileState:field() end
 
 --- - `entity`: the [Entity](https://docs.hubos.dev/client/lua-api/entity-api/entity) to tie the action to.
 --- - `state`: string, the animation state to play when the action executes.
