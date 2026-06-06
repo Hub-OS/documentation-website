@@ -2,10 +2,6 @@
 
 See [Tile State Package Documentation](/client/packages#tile-states) for creating new tile states.
 
-### `custom_tile_state:field()`
-
-Deprecated. Use [Field](/client/lua-api/field-api/field) directly.
-
 ### `custom_tile_state.on_set_func = function(self, tile)`
 
 Called when a tile has successfully set to this tile state.

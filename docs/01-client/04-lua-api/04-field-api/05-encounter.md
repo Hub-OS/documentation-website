@@ -48,10 +48,6 @@ Resizes the field, remember to add two to each dimension to account for the invi
 
 Resets tile teams and states on the field.
 
-### `encounter:field()`
-
-Deprecated. Use [Field](/client/lua-api/field-api/field) directly.
-
 ### `encounter:set_tile_state_resources(tile_state, texture_path, animation_path)`
 
 Overrides visuals used to render tile states.

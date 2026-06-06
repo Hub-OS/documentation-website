@@ -98,10 +98,6 @@ Returns the current tile if any parameters are unset.
 
 Returns the tile at the same position as the entity.
 
-### `entity:field()`
-
-Deprecated. Use [Field](/client/lua-api/field-api/field) directly.
-
 ### `entity:spawned()`
 
 Returns true if the entity has spawned.
