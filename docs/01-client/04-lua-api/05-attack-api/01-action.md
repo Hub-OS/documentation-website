@@ -1,9 +1,5 @@
 # Action
 
-While actions execute, their owners will stop auto reserving tiles.
-
-[Players](/client/lua-api/entity-api/player), [Characters](/client/lua-api/entity-api/character), and [Obstacles](/client/lua-api/entity-api/obstacle) automatically reserve tiles outside of executing actions.
-
 ### `Action.new(entity, state?)`
 
 - `entity`: the [Entity](/client/lua-api/entity-api/entity) to tie the action to.
@@ -28,9 +24,9 @@ Returns the [Entity](/client/lua-api/entity-api/entity) tied to this action
 
 ### `action:allow_auto_tile_reservation(bool?)`
 
-By default, actions prevent entities from creating tile reservations on movement.
+By default, actions allow entities to creating tile reservations on movement.
 
-Calling this function with `true` or `nil` will allow the action's owner to reserve entered tiles and unreserve left tiles.
+Calling this function with `false` (and not `nil`) will stop the action's owner from automatically reserving entered tiles and unreserving left tiles.
 This only matters for entities that automatically reserve tiles by default, such as Characters and Obstacles.
 
 ### `action:create_step()`
