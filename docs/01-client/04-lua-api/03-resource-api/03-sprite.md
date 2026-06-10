@@ -170,9 +170,17 @@ Returns a SpriteShaderEffect.
   - `SpriteShaderEffect.Pixelate`
     - Scales with alpha.
 
+### `sprite:using_root_shader()`
+
+Returns true if the sprite is using the root sprite's shader.
+
 ### `sprite:use_root_shader(enable?)`
 
 Temporarily adopts the color, color mode, and shader effect of the root sprite during render.
+
+### `sprite:using_parent_shader()`
+
+Returns true if the sprite is using the parent shader.
 
 ### `sprite:use_parent_shader(enable?)`
 
