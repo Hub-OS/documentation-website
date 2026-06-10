@@ -104,6 +104,15 @@ Net:on("player_avatar_change", function(event)
 end)
 ```
 
+### `player_name_change`
+
+```lua
+Net:on("player_name_change", function(event)
+  -- { player_id: Net.ActorId, name: string, prevent_default: Function }
+  print(event.player_id, event)
+end)
+```
+
 ### `player_emote`
 
 ```lua
