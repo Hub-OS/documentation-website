@@ -39,6 +39,10 @@ Returns a new [ActionStep](#actionstep)
 
 Returns [Attachment](#attachment)
 
+### `action:remove_attachment(attachment)`
+
+Removes an attachment and any attachments attached to it.
+
 ### `action:override_animation_frames(frame_data)`
 
 See [animation:set_state()](/client/lua-api/resource-api/animation#animationset_statestate-frame_data)
