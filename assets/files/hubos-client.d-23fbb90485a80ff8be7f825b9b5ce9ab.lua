@@ -3079,9 +3079,17 @@ function Sprite:shader_effect() end
 ---@param sprite_shader_effect SpriteShaderEffect
 function Sprite:set_shader_effect(sprite_shader_effect) end
 
+--- Returns true if the sprite is using the root sprite's shader.
+---@return boolean
+function Sprite:using_root_shader() end
+
 --- Temporarily adopts the color, color mode, and shader effect of the root sprite during render.
 ---@param enable? boolean
 function Sprite:use_root_shader(enable) end
+
+--- Returns true if the sprite is using the parent shader.
+---@return boolean
+function Sprite:using_parent_shader() end
 
 --- Adopts the color, color mode, and shader effect of the parent sprite during render.
 ---@param enable? boolean
@@ -3787,6 +3795,10 @@ function Action:create_step() end
 ---@param point_name string
 ---@return Attachment
 function Action:create_attachment(point_name) end
+
+--- Removes an attachment and any attachments attached to it.
+---@param attachment Attachment
+function Action:remove_attachment(attachment) end
 
 --- See [animation:set_state()](https://docs.hubos.dev/client/lua-api/resource-api/animation#animationset_statestate-frame_data)
 ---@param frame_data [number, number][]
