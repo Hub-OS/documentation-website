@@ -52,7 +52,7 @@ If the actor belongs to a player, it will play a warp animation for the movement
 
 This is immediate for bots, delayed by a network round trip for player actors.
 
-### `Net.transfer_actor(player_id, area_id, warp_in?, x?, y?, z?, direction?)`
+### `Net.transfer_actor(actor_id, area_id, warp_in?, x?, y?, z?, direction?)`
 
 Sends the actor to a different area.
 

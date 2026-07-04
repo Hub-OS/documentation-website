@@ -26,6 +26,7 @@ export const STRUCT_NAMES = [
   "Net.TileData",
   "Net.BattleResults",
   "Net.RequestOptions",
+  "Net.CommandInfo",
 ];
 
 export function defineStructs(definitions: DefinitionMap) {

@@ -337,3 +337,12 @@ Net:on("authorization", function(event)
   print(event.identity, event.host, event.data)
 end)
 ```
+
+### `command`
+
+```lua
+Net:on("command", function(event)
+  -- { player_id: string?, command: string }
+  print(event.player_id, event.command)
+end)
+```

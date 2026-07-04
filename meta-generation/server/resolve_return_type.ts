@@ -140,7 +140,11 @@ const COMPRESSED_RETURN_TYPES = [
   },
   {
     type: "string[]",
-    list: ["Returns a list of `tileset_path`", "Returns a list of area_ids"],
+    list: [
+      "Returns a list of `tileset_path`",
+      "Returns a list of area_ids",
+      "Returns a list of all registered command names",
+    ],
   },
   { type: "fun(): any", list: ["Returns an iterator from an async iterator"] },
   { type: "any", list: ["Returns the value passed by and_then"] },

@@ -30,6 +30,7 @@ const COMPRESSED_VARIABLE_TYPES = [
   { type: "Net.BoardPost[]", list: ["posts"] },
   { type: "Net.RequestOptions", list: ["request_options"] },
   { type: "Net.Color", list: ["color"] },
+  { type: "Net.CommandInfo", list: ["command_info"] },
   { type: "Net.Promise<any>", list: ["promise"] },
   { type: "Net.Promise<any>[]", list: ["promises"] },
   { type: "fun(value: T)", list: ["resolve"] },
@@ -130,9 +131,8 @@ const COMPRESSED_VARIABLE_TYPES = [
       "post_id",
     ],
   },
-  { type: "string[]", list: ["Returns a list of area_ids"] },
   { type: "fun()", list: ["callback"] },
-  { type: "any", list: ["encounter_data"] },
+  { type: "any", list: ["encounter_data", "any"] },
 ];
 
 const VARIABLE_TYPE_MAP: { [name: string]: string } = {};
