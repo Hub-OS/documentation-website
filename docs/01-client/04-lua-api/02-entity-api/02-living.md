@@ -96,6 +96,12 @@ Returns a number, representing the hit flags the entity is currently immune to.
 
 This won't cover checks inside of statuses, such as a the `CHARACTER_HIT` animation required by `Hit.Flinch`
 
+### `living:applied_statuses()`
+
+Returns a number, representing the hit flags of statuses currently applied on the entity.
+
+Does not include pending statuses, a non time freeze tick may be required to see statuses update.
+
 ### `living:remaining_status_time(hit_flag)`
 
 - `hit_flag` a single hit flag, see [HitProps](/client/lua-api/attack-api/hit-props)
