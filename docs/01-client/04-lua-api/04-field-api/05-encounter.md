@@ -143,6 +143,12 @@ Sends a message to the server that initiated this battle, which can be accessed 
 
 Receives a message sent from the server by [Net.send_battle_message()](/server/lua-api/players#netsend_battle_messagebattle_id-encounter_data).
 
+### `encounter:on_disconnect_recommendation(function(player_index))`
+
+When clients agree a player is causing lag, a recommendation to disconnect this player will be made.
+
+You can choose how to handle or ignore this recommendation. Such as deleting the player and [disconnecting input](#encounterdisconnect_inputplayer_index), or only disconnecting input after the player is deleted.
+
 ## Spawner
 
 Spawns characters at the start of battle.
