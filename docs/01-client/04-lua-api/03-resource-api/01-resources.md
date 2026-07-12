@@ -59,6 +59,16 @@ Returns true if the index represents the local player.
 
 Returns a number, represents the index of the local player in the list of players sent from the server.
 
+### `Resources.is_connected(player_index)`
+
+Returns true if the player is connected.
+
+### `Resources.is_input_connected(player_index)`
+
+Returns true if the player's input is connected.
+
+See [encounter:disconnect_input()](/client/lua-api/field-api/encounter#encounterdisconnect_inputplayer_index) for details on disconnecting input.
+
 ### `Resources.input_has(player_index, input_query)`
 
 Same as [player:input_has()](/client/lua-api/entity-api/player#playerinput_hasinput_query).
