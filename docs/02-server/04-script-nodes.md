@@ -542,7 +542,7 @@ Expects `area_id` and optionally `player_id`, or `player_ids` to be defined on t
 Custom properties supported by `Area Transition`:
 
 - `Fade` a color to fade to (optional)
-- `Direction` number, the direction players should walk or face during the transition (optional)
+- `Direction` string, the direction players should walk or face during the transition (optional)
 - `Walk Distance` number, how far players should walk during the transition (optional)
 - `Next [1]` a link to the next node, executes before the screen fades back in. (optional)
 
