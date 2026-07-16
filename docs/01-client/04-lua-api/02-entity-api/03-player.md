@@ -555,6 +555,10 @@ Called when the form is selected or staged, the player's emotions should be modi
 
 Called when the form is deselected or unstaged, the player's emotions should be reverted here.
 
+### `player_form.on_intro_func = function(self)`
+
+Called 20f before the form is activated.
+
 ### `player_form.on_activate_func = function(self)`
 
 Called when the form is activated, the player's appearance should be modified here.
