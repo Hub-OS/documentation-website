@@ -219,6 +219,9 @@ Net.EventEmitter = {}
 ---@field headers? table<string, string>
 ---@field body? string
 
+---@class Net.CommandInfo
+---@field description string
+
 --- If you want to use IO while players are connected, you'll want to use the Async API to prevent server hiccups.
 --- Note: paths in this section use system paths and not asset paths.
 Async = {}
@@ -1494,14 +1497,14 @@ function Net.warp_actor(actor_id, x, y, z, direction) end
 --- ```lua
 --- local x, y, z = Net.get_actor_position_multi(actor_id)
 --- ```
----@param player_id Net.ActorId
+---@param actor_id Net.ActorId
 ---@param area_id string
 ---@param warp_in? boolean
 ---@param x? number
 ---@param y? number
 ---@param z? number
 ---@param direction? string
-function Net.transfer_actor(player_id, area_id, warp_in, x, y, z, direction) end
+function Net.transfer_actor(actor_id, area_id, warp_in, x, y, z, direction) end
 
 --- Returns [Net.TextureAnimationPair](https://docs.hubos.dev/server/lua-api/widgets#nettextureanimationpair)
 ---@param actor_id Net.ActorId
@@ -1943,6 +1946,38 @@ function Async.initiate_pvp(player_1_id, player_2_id, package_path, encounter_da
 ---@param encounter_data? any
 ---@return Net.Promise<Net.BattleResults?>[]
 function Async.initiate_netplay(player_ids, package_path, encounter_data) end
+
+--- Stops the server.
+function Net.shutdown() end
+
+--- Logs a message to the specified user, or the console if nil.
+---@param player_id? Net.ActorId
+---@param any any
+function Net.print_to(player_id, any) end
+
+--- Logs a warning to the specified user, or the console if nil.
+---@param player_id? Net.ActorId
+---@param any any
+function Net.warn_to(player_id, any) end
+
+--- Logs an error to the specified user, or the console if nil.
+---@param player_id? Net.ActorId
+---@param any any
+function Net.error_to(player_id, any) end
+
+--- Registers a command. The command can be processed through the `command` server event.
+---@param name string
+---@param command_info Net.CommandInfo
+function Net.register_command(name, command_info) end
+
+--- Returns a list of all registered command names.
+---@return string[]
+function Net.list_commands() end
+
+--- Returns a string or nil, for the description of the command created through [Net.register_command()](https://docs.hubos.dev/server/lua-api/administration#netregister_commandname-command_info)
+---@param name string
+---@return string
+function Net.get_command_description(name) end
 
 --- Encodes characters for use in a URI or within file names.
 --- 

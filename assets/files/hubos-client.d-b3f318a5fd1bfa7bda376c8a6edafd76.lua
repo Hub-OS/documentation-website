@@ -611,6 +611,8 @@ Augment = {}
 ---@field on_deactivate_func fun(self: PlayerForm)
 --- Called when the form is activated, the player's appearance should be modified here.
 ---@field on_activate_func fun(self: PlayerForm)
+--- Called 20f before the form is activated.
+---@field on_intro_func fun(self: PlayerForm)
 --- Called when the form is deselected or unstaged, the player's emotions should be reverted here.
 ---@field on_deselect_func fun(self: PlayerForm)
 --- Called when the form is selected or staged, the player's emotions should be modified here.
@@ -1575,6 +1577,14 @@ function Entity:remove_status(hit_flags) end
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
 ---@return number
 function Entity:status_immunities() end
+
+--- Returns a number, representing the hit flags of statuses currently applied on the entity.
+--- 
+--- Does not include pending statuses, a non time freeze tick may be required to see statuses update.
+---
+--- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
+---@return number
+function Entity:applied_statuses() end
 
 --- - `hit_flag` a single hit flag, see [HitProps](https://docs.hubos.dev/client/lua-api/attack-api/hit-props)
 --- 
@@ -2727,6 +2737,18 @@ function Resources.is_local(player_index) end
 ---@return number
 function Resources.local_index() end
 
+--- Returns true if the player is connected.
+---@param player_index number
+---@return boolean
+function Resources.is_connected(player_index) end
+
+--- Returns true if the player's input is connected.
+--- 
+--- See [encounter:disconnect_input()](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounterdisconnect_inputplayer_index) for details on disconnecting input.
+---@param player_index number
+---@return boolean
+function Resources.is_input_connected(player_index) end
+
 --- Same as [player:input_has()](https://docs.hubos.dev/client/lua-api/entity-api/player#playerinput_hasinput_query).
 --- 
 --- Allows for spectator input to be read.
@@ -3738,6 +3760,12 @@ function Encounter:send_to_server(data) end
 ---@param callback fun(data: any)
 function Encounter:on_server_message(callback) end
 
+--- When clients agree a player is causing lag, a recommendation to disconnect this player will be made.
+--- 
+--- You can choose how to handle or ignore this recommendation. Such as deleting the player and [disconnecting input](https://docs.hubos.dev/client/lua-api/field-api/encounter#encounterdisconnect_inputplayer_index), or only disconnecting input after the player is deleted.
+---@param callback fun(player_index: number)
+function Encounter:on_disconnect_recommendation(callback) end
+
 --- Spawns the character at this position.
 --- 
 --- The tile at this position decides facing direction and team.
@@ -4022,9 +4050,13 @@ function TurnGauge.set_time(time) end
 
 --- Sets the total elapsed frames required to end a turn.
 --- 
+--- Passing `frame_limit` will cause the max time to revert to the last non limited max time after the specified limit passes.
+--- All calls will cancel any previously existing `frame_limit`
+--- 
 --- Use [TurnGauge.reset_max_time()](https://docs.hubos.dev/client/lua-api/attack-api/turn-gauge#turngaugereset_max_time) to reset to the default value (512).
----@param time number
-function TurnGauge.set_max_time(time) end
+---@param max_time number
+---@param frame_limit? number
+function TurnGauge.set_max_time(max_time, frame_limit) end
 
 --- Sets the total elapsed frames required to end a turn to the default (512).
 function TurnGauge.reset_max_time() end
