@@ -431,6 +431,7 @@ mugshot_texture_path = "mug.png"
 mugshot_animation_path = "mug.animation"
 emotions_texture_path = "" # optional
 emotions_animation_path = "" # optional
+emblem_texture_path = "emblem.png"
 
 # optional, list of strings, custom
 # used by augments: `visible_to_tagged`
