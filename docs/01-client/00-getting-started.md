@@ -57,12 +57,20 @@ The best way to learn is to add your own changes to simple mods from others befo
 
 Some starter mods (Note: some mods have dependencies that can be automatically installed by downloading through the client):
 
-- [Man](https://hubos.dev/mods/com.discord.Konstinople%237692.player.Man)
-  - Features: Simple forms, basic attacks.
-- [Bass](https://hubos.dev/mods/dev.konstinople.player.Bass)
-  - Features: Emotions, custom actions, chip charging, intro.
-- [ProtoMan](https://hubos.dev/mods/BattleNetwork6.ProtoMan)
-  - Features: Emotions, custom actions, chip charging, special attack, fixed cards, reusing cards as attacks.
+- Chips:
+  - [MiniBomb](https://hubos.dev/mods/BattleNetwork6.Class01.Standard.058)
+    - Features: BombLib, beast jump positioning (Check tags)
+  - [Shotgun](https://hubos.dev/mods/BattleNetwork3.Class01.Standard.011.Shotgun)
+    - Features: Attachments, projectiles, artifacts, collision callbacks
+  - [WideSword](https://hubos.dev/mods/BattleNetwork6.Class01.Standard.071)
+    - Features: SwordLib, beast jump positioning (Check tags)
+- Navis:
+  - [Man](https://hubos.dev/mods/com.discord.Konstinople%237692.player.Man)
+    - Features: Simple forms, basic attacks.
+  - [Bass](https://hubos.dev/mods/dev.konstinople.player.Bass)
+    - Features: Emotions, custom actions, chip charging, intro.
+  - [ProtoMan](https://hubos.dev/mods/BattleNetwork6.ProtoMan)
+    - Features: Emotions, custom actions, chip charging, special attack, fixed cards, reusing cards as attacks.
 
 If you want to start from scratch take a look at the [Packages](/client/packages) page for the base requirements of each type of mod.
 
