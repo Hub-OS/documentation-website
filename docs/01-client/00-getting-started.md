@@ -64,6 +64,8 @@ Some starter mods (Note: some mods have dependencies that can be automatically i
     - Features: Attachments, projectiles, artifacts, collision callbacks
   - [WideSword](https://hubos.dev/mods/BattleNetwork6.Class01.Standard.071)
     - Features: SwordLib, beast jump positioning (Check tags)
+  - [TomahawkMan](https://hubos.dev/mods/BattleNetwork6.Class02.Mega.F10.TomahawkMan)
+    - Features: ChipNaviLib, NAVI tag (Check tags)
 - Navis:
   - [Man](https://hubos.dev/mods/com.discord.Konstinople%237692.player.Man)
     - Features: Simple forms, basic attacks.
