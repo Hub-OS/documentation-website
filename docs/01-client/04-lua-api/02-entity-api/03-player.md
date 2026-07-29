@@ -408,6 +408,12 @@ Automatically resets to false when the value is used by the engine.
 
 Returns the amount of time in game frames, the `Shoot` button would need to be held for a fully charged attack if the [player.calculate_charge_time](#playercalculate_charge_time) function was not set.
 
+The result is based on [player:charge_level()](#playercharge_level), and corresponds to the chart below.
+
+| Level  | 1   | 2   | 3   | 4   | 5+  |
+| ------ | --- | --- | --- | --- | --- |
+| Frames | 100 | 90  | 80  | 70  | 60  |
+
 ### `player:calculate_charge_time()`
 
 Returns the amount of time in game frames, the `Shoot` button should be held for a fully charged attack.
