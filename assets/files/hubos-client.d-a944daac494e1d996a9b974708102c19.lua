@@ -2191,6 +2191,12 @@ function Entity:set_charge_with_shoot(bool) end
 function Entity:mark_charging(bool) end
 
 --- Returns the amount of time in game frames, the `Shoot` button would need to be held for a fully charged attack if the [player.calculate_charge_time](https://docs.hubos.dev/client/lua-api/entity-api/player#playercalculate_charge_time) function was not set.
+--- 
+--- The result is based on [player:charge_level()](https://docs.hubos.dev/client/lua-api/entity-api/player#playercharge_level), and corresponds to the chart below.
+--- 
+--- | Level  | 1   | 2   | 3   | 4   | 5+  |
+--- | ------ | --- | --- | --- | --- | --- |
+--- | Frames | 100 | 90  | 80  | 70  | 60  |
 ---
 --- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
 ---@return number
