@@ -4431,7 +4431,7 @@ function AuxProp:require_card_class(card_class) end
 --- The AuxProp will check the next card on the attached entity for a non-matching class.
 ---@param card_class CardClass
 ---@return AuxProp
-function AuxProp:require_card_not_class(card_class) end
+function AuxProp:require_card_class_absent(card_class) end
 
 --- - Body priority
 --- - `time_freeze`: bool
@@ -4455,7 +4455,7 @@ function AuxProp:require_card_tag(tag) end
 --- The AuxProp will check the next card on the attached entity for matching tag.
 ---@param tag string
 ---@return AuxProp
-function AuxProp:require_card_not_tag(tag) end
+function AuxProp:require_card_tag_absent(tag) end
 
 --- - Body priority
 --- - `hit_flags`: [Hit](https://docs.hubos.dev/client/lua-api/attack-api/hit-props#hit_propsflags)
