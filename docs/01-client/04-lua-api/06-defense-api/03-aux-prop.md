@@ -288,7 +288,7 @@ The AuxProp will check the next card on the attached entity for matching code.
 
 The AuxProp will check the next card on the attached entity for matching class.
 
-### `aux_prop:require_card_not_class(card_class)`
+### `aux_prop:require_card_class_absent(card_class)`
 
 - Body priority
 - `card_class`: [CardClass](/client/lua-api/attack-api/cards#card_propertiescard_class)
@@ -309,7 +309,7 @@ The AuxProp will check the time freeze value on the next card on the attached en
 
 The AuxProp will check the next card on the attached entity for matching tag.
 
-### `aux_prop:require_card_not_tag(tag)`
+### `aux_prop:require_card_tag_absent(tag)`
 
 - Body priority
 - `tag`: string
