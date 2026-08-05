@@ -785,7 +785,8 @@ Drag.None = nil
 --- - `Hit.Root` applies root status on hit.
 --- - `Hit.Blind` applies blindness status on hit.
 --- - `Hit.Confuse` applies confusion status on hit.
---- - `Hit.NoCounter` prevents the attack from countering. Do not use this unless you know what you're doing (ask), this is automatically applied through [entity:context()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycontext).
+--- - `Hit.NoCounter` prevents the attack from countering.
+---   - Do not use this unless you know what you're doing (ask), this is automatically applied through [entity:context()](https://docs.hubos.dev/client/lua-api/entity-api/entity#entitycontext).
 --- - [Hit.[flag_name]](https://docs.hubos.dev/client/packages#statuses)
 ---@field flags Hit | number
 --- A number, used to calculate how much health to take away from entities hit by the attack.
