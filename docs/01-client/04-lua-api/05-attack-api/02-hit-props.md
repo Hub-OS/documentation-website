@@ -31,7 +31,6 @@ Any of the values below, or combined using bitwise or (`|`)
 
 - `Hit.None`
 - `Hit.RetainIntangible` prevents intangibility from being lost if the attack pierces.
-- `Hit.NoCounter` prevents the attack from countering.
 - `Hit.Drag` Allows the [drag property](#hit_propsdrag) to drag the entity.
 - `Hit.Drain` disables the hit flash and countering, most defense rules should check for Drain to ignore hits.
 - `Hit.Flinch` read by the hit entity to cancel attacks and play a flinch animation.
@@ -44,6 +43,8 @@ Any of the values below, or combined using bitwise or (`|`)
 - `Hit.Root` applies root status on hit.
 - `Hit.Blind` applies blindness status on hit.
 - `Hit.Confuse` applies confusion status on hit.
+- `Hit.NoCounter` prevents the attack from countering.
+  - Do not use this unless you know what you're doing (ask), this is automatically applied through [entity:context()](/client/lua-api/entity-api/entity#entitycontext).
 - [Hit.[flag_name]](/client/packages#statuses)
 
 ### `hit_props.status_durations`

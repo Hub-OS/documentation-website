@@ -325,9 +325,11 @@ See [entity:copy_sprite_tree()](#entitycopy_sprite_treeentity) to copy sprites w
 
 Returns a value that can be used to decide if an attack can counter an opponent, and to resolve the owner of an attack.
 
-Countering an attack can be achieved by hitting an enemy with [HitProps](/client/lua-api/attack-api/hit-props) containing context obtained during [card_init](/client/packages#cards) or within [action.on_execute_func](/client/lua-api/attack-api/action#actionon_execute_func--functionself-owner)
+This is also used to prevent countering, depending on the _context_ of the attack.
 
-Make sure to obtain context in card_init and not within a callback for countering.
+Make sure to obtain context where the action is created (`*_init` / `*_func`), or within the within [action.on_execute_func](/client/lua-api/attack-api/action#actionon_execute_func--functionself-owner) your action.
+
+Capture context early and pass to [HitProps](/client/lua-api/attack-api/hit-props), or create your HitProps early and pass that to attacks created later in the action.
 
 ### `entity:start_context(action_type)`
 
