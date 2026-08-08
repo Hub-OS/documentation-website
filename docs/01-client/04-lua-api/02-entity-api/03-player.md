@@ -340,14 +340,6 @@ If the level before boosting is 0, the [Augment](#augment) is initialized.
 
 If the level after boosting is 0, the Augment's delete callback is called and the Augment is removed.
 
-### `player:boost_max_health(health)`
-
-- `health`: integer
-
-Adds the `health` value to the max health.
-
-If it is the player's health is greater than the new max health it will be reduced to the new max health.
-
 ### `player:hand_size()`
 
 Returns the max amount of cards the player can view from the deck accounting for boosts.

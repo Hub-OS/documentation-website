@@ -12,6 +12,14 @@ Returns the entity passed in if the entity is considered living, otherwise retur
 
 Returns the entity's max health.
 
+### `player:boost_max_health(health)`
+
+- `health`: integer
+
+Adds the `health` value to the max health.
+
+The entity's health will capped to the new max health.
+
 ### `living:health()`
 
 Returns the entity's current health.
