@@ -1458,6 +1458,16 @@ function Living.from(entity) end
 ---@return number
 function Entity:max_health() end
 
+--- - `health`: integer
+--- 
+--- Adds the `health` value to the max health.
+--- 
+--- The entity's health will capped to the new max health.
+---
+--- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
+---@param health number
+function Entity:boost_max_health(health) end
+
 --- Returns the entity's current health.
 ---
 --- Throws if the Entity doesn't pass [Living.from()](https://docs.hubos.dev/client/lua-api/entity-api/living)
@@ -2104,16 +2114,6 @@ function Entity:augments() end
 ---@param package_id string
 ---@param level_increment number
 function Entity:boost_augment(package_id, level_increment) end
-
---- - `health`: integer
---- 
---- Adds the `health` value to the max health.
---- 
---- If it is the player's health is greater than the new max health it will be reduced to the new max health.
----
---- Throws if the Entity doesn't pass [Player.from()](https://docs.hubos.dev/client/lua-api/entity-api/player)
----@param health number
-function Entity:boost_max_health(health) end
 
 --- Returns the max amount of cards the player can view from the deck accounting for boosts.
 ---
