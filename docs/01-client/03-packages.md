@@ -276,6 +276,7 @@ characters = [] # optional, list of package ids
 libraries = [] # optional, list of package ids
 statuses = [] # optional, list of package ids
 tile_states = [] # optional, list of package ids
+players = [] # optional, list of package ids
 ```
 
 May contain an `entry.lua` file.
