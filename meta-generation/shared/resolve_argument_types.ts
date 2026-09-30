@@ -3,10 +3,14 @@ import resolveRequiredCallbackType from "./resolve_required_callback_type";
 export default function resolveArgumentTypes(
   class_name: string,
   argument_group: string,
-  resolve_variable_type: (name: string) => string
-): { name: string; type: string; optional: boolean }[] {
+  resolve_variable_type: (name: string) => string | undefined,
+): { name: string; type: string | undefined; optional: boolean }[] {
   const arguments_text = argument_group.slice(1, argument_group.length - 1);
-  const result: { name: string; type: string; optional: boolean }[] = [];
+  const result: {
+    name: string;
+    type: string | undefined;
+    optional: boolean;
+  }[] = [];
 
   let exhausted = false;
   let start_index = 0;
@@ -60,7 +64,7 @@ export default function resolveArgumentTypes(
       const type = resolveRequiredCallbackType(
         class_name,
         argument_text,
-        resolve_variable_type
+        resolve_variable_type,
       );
 
       result.push({ name: "callback", type, optional });

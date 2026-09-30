@@ -3,18 +3,18 @@ import resolveArgumentTypes from "./resolve_argument_types";
 export default function resolveRequiredCallbackType(
   class_name: string,
   argument_text: string,
-  resolve_variable_type: (name: string) => string
+  resolve_variable_type: (name: string) => string | undefined,
 ): string {
   const argument_group_end = argument_text.indexOf(")") + 1;
   const argument_group = argument_text.slice(
     argument_text.indexOf("("),
-    argument_group_end
+    argument_group_end,
   );
 
   const argument_info = resolveArgumentTypes(
     class_name,
     argument_group,
-    resolve_variable_type
+    resolve_variable_type,
   );
 
   const argument_strings = argument_info.map(({ type, name, optional }) => {

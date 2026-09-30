@@ -28,7 +28,7 @@ const config = require("../docusaurus.config");
 
 //// warning suppression
 
-const DUPLICATE_ALLOWED = [];
+const DUPLICATE_ALLOWED: string[] = [];
 
 //// definitions
 
@@ -109,7 +109,7 @@ function buildMetaFile() {
       continue;
     }
 
-    let type: string;
+    let type: string | undefined;
 
     if (heading.includes("function(")) {
       // ### `table.callback_func = function()`
@@ -215,7 +215,7 @@ function documentEnumValue(
 function documentField(
   definition: TypeDefinition,
   name: string,
-  type: string,
+  type: string | undefined,
   comments: string[],
 ) {
   let index = 0;

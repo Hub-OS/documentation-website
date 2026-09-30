@@ -35,7 +35,7 @@ const DUPLICATE_ALLOWED = [
 
 //// definitions
 
-const TABLE_DEFINITIONS = {};
+const TABLE_DEFINITIONS: { [key: string]: string[] } = {};
 
 defineVague(TABLE_DEFINITIONS);
 defineEnums(TABLE_DEFINITIONS);
@@ -97,14 +97,14 @@ function buildMetaFile() {
       continue;
     }
 
-    let type: string;
+    let type: string | undefined;
 
     if (heading.includes("function(")) {
       // ### `table.callback_func = function()`
       type = resolveRequiredCallbackType(
         table_name,
         heading,
-        resolveVariableType
+        resolveVariableType,
       );
     } else {
       // ### `table.property`
@@ -157,17 +157,17 @@ function resolveFieldName(trimmed_section_name: string): string {
   }
   return trimmed_section_name.slice(
     trimmed_section_name.indexOf(".") + 1,
-    name_end_index
+    name_end_index,
   );
 }
 
 function documentEnumValue(
   definition: TypeDefinition,
   name: string,
-  comments: string[]
+  comments: string[],
 ) {
   const insertIndex = definition.findIndex((line) =>
-    line.trim().startsWith(name)
+    line.trim().startsWith(name),
   );
 
   if (insertIndex == -1) {
@@ -180,8 +180,8 @@ function documentEnumValue(
 function documentField(
   definition: TypeDefinition,
   name: string,
-  type: string,
-  comments: string[]
+  type: string | undefined,
+  comments: string[],
 ) {
   let index = 0;
 
@@ -203,12 +203,12 @@ function documentField(
 function outputFunctionDefinition(
   output: string[],
   section: Section,
-  heading: string
+  heading: string,
 ) {
   const paren_open_index = heading.indexOf("(");
   const separator_index = Math.max(
     heading.lastIndexOf(".", paren_open_index),
-    heading.lastIndexOf(":", paren_open_index)
+    heading.lastIndexOf(":", paren_open_index),
   );
   const separator = heading[separator_index];
 
@@ -228,7 +228,7 @@ function outputFunctionDefinition(
 
     output.push("---");
     output.push(
-      `--- Throws if the Entity doesn't pass [${original_table_name}.from()](${table_url})`
+      `--- Throws if the Entity doesn't pass [${original_table_name}.from()](${table_url})`,
     );
   }
 
@@ -236,7 +236,7 @@ function outputFunctionDefinition(
   const argumentTypes = resolveArgumentTypes(
     table_name,
     argument_group,
-    resolveVariableType
+    resolveVariableType,
   );
 
   for (const { type, name, optional } of argumentTypes) {
@@ -259,7 +259,7 @@ function outputFunctionDefinition(
 
   // inject declaration
   output.push(
-    `function ${table_name}${separator}${function_name}${argument_group} end`
+    `function ${table_name}${separator}${function_name}${argument_group} end`,
   );
 
   // spacing
