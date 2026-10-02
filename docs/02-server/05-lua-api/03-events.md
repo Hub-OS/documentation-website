@@ -135,7 +135,7 @@ end)
 
 ### `object_interaction`
 
-The player has pressed the Interact button on an Object.
+The player has pressed an interaction button on an Object.
 
 ```lua
 Net:on("object_interaction", function(event)
@@ -146,7 +146,7 @@ end)
 
 ### `actor_interaction`
 
-The player has pressed the Interact button on another Player or Bot.
+The player has pressed an interaction button on another Player or Bot.
 
 ```lua
 Net:on("actor_interaction", function(event)
@@ -158,10 +158,21 @@ end)
 
 ### `tile_interaction`
 
-The player has pressed the Interact button with no Actor or Object in range.
+The player has pressed an interaction button with no Actor or Object in range.
 
 ```lua
 Net:on("tile_interaction", function(event)
+  -- { player_id: Net.ActorId, x: number, y: number, z: number, button: number }
+  print(event.player_id, event.x, event.y, event.z, event.button)
+end)
+```
+
+### `free_cam_tile_interaction`
+
+The player has pressed an interaction button while controlling the camera through [Net.enable_camera_controls()](/server/lua-api/players#netenable_camera_controlsplayer_id-free_cam_options).
+
+```lua
+Net:on("free_cam_tile_interaction", function(event)
   -- { player_id: Net.ActorId, x: number, y: number, z: number, button: number }
   print(event.player_id, event.x, event.y, event.z, event.button)
 end)

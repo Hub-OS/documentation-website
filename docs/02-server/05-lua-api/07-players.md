@@ -50,12 +50,13 @@ Brings back functionality removed by `Net.exclude_actor_for_player()` for this p
 
 Displays an emote exclusively to this player.
 
-### `Net.enable_camera_controls(player_id, range_x?, range_y?)`
+### `Net.enable_camera_controls(player_id, free_cam_options?)`
 
-- `range_x`: number
-- `range_y`: number
+Switches the player's movement control to camera control.
 
-Not implemented. Subject to change.
+### `Net.disable_camera_controls(player_id)`
+
+Disables free control of the camera by the player.
 
 ### `Net.move_player_camera(player_id, x, y, z, holdTimeInSeconds?)`
 
@@ -207,3 +208,11 @@ end)
   - Readable in [authorization](/server/lua-api/events#authorization) on the remote server
 
 ### `Net.kick_player(player_id, reason, warp_out?)`
+
+## Net.FreeCamOptions
+
+```lua
+---@class Net.FreeCamOptions
+---@field speed? number defaults to 4
+---@field fast_speed? number defaults to 8
+```

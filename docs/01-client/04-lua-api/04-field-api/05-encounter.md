@@ -23,6 +23,12 @@ Sets the spawn position for this player.
 
 Marks the player as a spectator. Avoids creating an entity for this player (Mods from this player will still be loaded).
 
+### `encounter:marked_spectator(player_index)`
+
+- `player_index`: number, starts at 0
+
+Returns true if the player was marked as a spectator.
+
 ### `encounter:set_spectate_on_delete(bool?)`
 
 Converts players to spectators when deleted.

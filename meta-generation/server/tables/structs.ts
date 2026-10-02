@@ -17,6 +17,7 @@ export const STRUCT_NAMES = [
   "Net.TextStyle",
   "Net.SpriteOptions",
   "Net.TextSpriteOptions",
+  "Net.FreeCamOptions",
   "Net.ReferOptions",
   "Net.Color",
   "Net.TextureAnimationPair",
