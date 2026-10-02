@@ -173,6 +173,10 @@ Net.EventEmitter = {}
 ---@field h_align? "left" | "center" | "right"
 ---@field v_align? "top" | "center" | "bottom"
 
+---@class Net.FreeCamOptions
+---@field speed? number defaults to 4
+---@field fast_speed? number defaults to 8
+
 ---@class Net.ReferOptions
 ---@field unless_installed? boolean
 
@@ -1063,14 +1067,14 @@ function Net.include_actor_for_player(player_id, actor_id) end
 ---@param emote_id string
 function Net.exclusive_actor_emote_for_player(player_id, emoter_id, emote_id) end
 
---- - `range_x`: number
---- - `range_y`: number
---- 
---- Not implemented. Subject to change.
+--- Switches the player's movement control to camera control.
 ---@param player_id Net.ActorId
----@param range_x? number
----@param range_y? number
-function Net.enable_camera_controls(player_id, range_x, range_y) end
+---@param free_cam_options? Net.FreeCamOptions
+function Net.enable_camera_controls(player_id, free_cam_options) end
+
+--- Disables free control of the camera by the player.
+---@param player_id Net.ActorId
+function Net.disable_camera_controls(player_id) end
 
 --- Snaps the camera to a specific position.
 --- 

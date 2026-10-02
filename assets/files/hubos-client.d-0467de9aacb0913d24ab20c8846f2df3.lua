@@ -3646,6 +3646,13 @@ function Encounter:spawn_player(player_index, col, row) end
 ---@param player_index number
 function Encounter:mark_spectator(player_index) end
 
+--- - `player_index`: number, starts at 0
+--- 
+--- Returns true if the player was marked as a spectator.
+---@param player_index number
+---@return boolean
+function Encounter:marked_spectator(player_index) end
+
 --- Converts players to spectators when deleted.
 ---@param bool? boolean
 function Encounter:set_spectate_on_delete(bool) end
