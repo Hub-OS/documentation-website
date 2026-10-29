@@ -4,7 +4,7 @@ This guide provides information on creating mods for the client. For creating cu
 
 ## Steps
 
-- [Install VS Code](#install-visual-studio-code)
+- [Install a Supported Text Editor](#install-a-supported-text-editor)
 - [Open Mods Folder in VS Code](#open-the-mods-folder-in-vs-code)
 - [Install Extensions](#install-extensions)
 - [Add Type Definitions File](#add-type-definitions-file)
@@ -12,11 +12,15 @@ This guide provides information on creating mods for the client. For creating cu
 - [Your First Mod!](#your-first-mod)
 - [Utilizing Types](#utilizing-types)
 
-## Install Visual Studio Code
+## Install a Supported Text Editor
 
-Download from the [official website](https://code.visualstudio.com/)
+- [VSCodium](https://vscodium.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-## Open the Mods Folder in VS Code
+For more editors, you can refer to [this list](https://microsoft.github.io/language-server-protocol/implementors/tools/).
+It's recommended to set up the [Lua Language Server by sumneko](https://luals.github.io/).
+
+## Open the Mods Folder in the Editor
 
 You can open your mods folder in VS Code by right clicking on the folder and selecting `Open with Code` or by using `File -> Open Folder` within VS Code.
 

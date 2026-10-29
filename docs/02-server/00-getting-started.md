@@ -11,7 +11,7 @@ This guide provides information on creating custom servers. For client modding, 
   - [Learning from the Default Area](#learning-from-the-default-area)
   - [Tiles and Map Markers](#tiles-and-map-markers)
 - Optional / Lua Scripting
-  - [Install VS Code](#install-visual-studio-code)
+  - [Install a Supported Text Editor](#install-a-supported-text-editor)
   - [Open the Server Folder](#open-the-server-folder-in-vs-code)
   - [Install Extensions](#install-extensions)
   - [Add Type Definitions File](#add-type-definitions-file)
@@ -71,9 +71,13 @@ Check the [Areas, Objects, and Tiles](/server/areas) documentation to read more 
 
 ## Optional / Lua Scripting
 
-### Install Visual Studio Code
+## Install a Supported Text Editor
 
-Download from the [official website](https://code.visualstudio.com/)
+- [VSCodium](https://vscodium.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+For more editors, you can refer to [this list](https://microsoft.github.io/language-server-protocol/implementors/tools/).
+It's recommended to set up the [Lua Language Server by sumneko](https://luals.github.io/).
 
 ### Open the Server Folder in VS Code
 
