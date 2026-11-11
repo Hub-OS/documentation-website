@@ -3853,7 +3853,11 @@ function Action:override_animation_frames(frame_data) end
 ---@param callback fun()
 function Action:on_anim_frame(frame_index, callback) end
 
---- Adds a callback to run before [action.on_action_end_func](https://docs.hubos.dev/client/lua-api/attack-api/action#actionon_action_end_func--functionself)
+--- Adds a callback to run before [action.on_execute_func](https://docs.hubos.dev/client/lua-api/attack-api/action#actionon_execute_func--functionself-owner)
+---@param callback fun()
+function Action:on_execute(callback) end
+
+--- Adds a callback to run after [action.on_action_end_func](https://docs.hubos.dev/client/lua-api/attack-api/action#actionon_action_end_func--functionself)
 ---@param callback fun()
 function Action:on_end(callback) end
 
@@ -4011,6 +4015,11 @@ function CardProperties.from_package(package_id, code) end
 ---@param card_properties CardProperties
 ---@return string
 function CardProperties.icon_texture(card_properties) end
+
+--- Returns a string, usable anywhere a texture is needed.
+---@param card_properties CardProperties
+---@return string
+function CardProperties.preview_texture(card_properties) end
 
 --- Returns a number, representing the resolved damage.
 ---@param card_properties CardProperties
