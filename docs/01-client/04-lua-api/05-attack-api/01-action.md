@@ -51,9 +51,13 @@ See [animation:set_state()](/client/lua-api/resource-api/animation#animationset_
 
 Same as calling `action:owner():animation():on_frame(frame_index, callback)` within [action.on_execute_func](#actionon_execute_func--functionself-owner)
 
+### `action:on_execute(callback)`
+
+Adds a callback to run before [action.on_execute_func](#actionon_execute_func--functionself-owner)
+
 ### `action:on_end(callback)`
 
-Adds a callback to run before [action.on_action_end_func](#actionon_action_end_func--functionself)
+Adds a callback to run after [action.on_action_end_func](#actionon_action_end_func--functionself)
 
 ### `action:end_action()`
 

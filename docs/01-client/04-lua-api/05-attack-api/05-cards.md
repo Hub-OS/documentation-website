@@ -133,6 +133,10 @@ A list of strings, used by other mods for conditional behavior.
 
 Returns a string, usable anywhere a texture is needed.
 
+### `CardProperties.preview_texture(card_properties)`
+
+Returns a string, usable anywhere a texture is needed.
+
 ### `CardProperties.resolve_damage(card_properties, entity)`
 
 Returns a number, representing the resolved damage.
