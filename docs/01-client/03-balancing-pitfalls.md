@@ -31,6 +31,7 @@ Keep in mind you will usually need to come back and rebalance a mod after publis
 - Copying strong unique chip abilities
   - Anything mimicking an AreaGrab is very powerful, MetaGel was nerfed to one code with the PA in a state of flux.
   - New defense chips should be in a non `*` code to reduce excessive availability.
+- Skipping to this list and not checking the [General](#general) pitfalls.
 
 ## Navis
 
@@ -40,6 +41,7 @@ Keep in mind you will usually need to come back and rebalance a mod after publis
 - Being unaware of whether an element is multi-hit or non-multi-hit on chips
   - Boosting wood +50 can make some scary bees
   - Looking at [Link Navi System Boosts](<https://www.therockmanexezone.com/wiki/Link_Navis_(MMBN6)>) can help hint at this
+- Skipping to this list and not checking the [General](#general) pitfalls.
 
 ## The Greatest Pitfall
 
