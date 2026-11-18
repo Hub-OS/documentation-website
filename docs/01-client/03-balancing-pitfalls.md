@@ -38,7 +38,8 @@ Keep in mind you will usually need to come back and rebalance a mod after publis
 
 - Setting playable navi health to anything other than 1000
   - This should be used at best for story telling purposes (dark navi has -3 HP from chip usage, bulky / frail navi has +-100 HP) and the adjustment should be kept low to avoid requiring heavy mechanic balancing.
-  - People have tried balancing 200 HP navis in two ways heavy stalling, or powerful enough to beat opponents in the few turns they can survive. Both affect gameplay in ways that are not fun to play against.
+  - People have tried balancing 200-500 HP navis in two ways: heavy stalling, or powerful enough to beat opponents in the few turns they can survive. Both affect gameplay in ways that are not fun to play against.
+  - If you feel you need to adjust the navi's HP to balance a powerful ability, you probably need to rethink that ability, scale it back, or find another way to balance it out. HP should not be treated as a balancing lever.
 - Being unaware of whether an element is multi-hit or non-multi-hit on chips.
   - Boosting wood +50 can make some scary bees.
   - Looking at [Link Navi System Boosts](<https://www.therockmanexezone.com/wiki/Link_Navis_(MMBN6)>) can help hint at this.
