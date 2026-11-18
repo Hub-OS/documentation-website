@@ -5,7 +5,7 @@ This guide provides information on creating mods for the client. For creating cu
 ## Steps
 
 - [Install a Supported Text Editor](#install-a-supported-text-editor)
-- [Open Mods Folder in VS Code](#open-the-mods-folder-in-vs-code)
+- [Open Mods Folder in the Editor](#open-the-mods-folder-in-the-editor)
 - [Install Extensions](#install-extensions)
 - [Add Type Definitions File](#add-type-definitions-file)
 - [Understanding the Mods Folder](#understanding-the-mods-folder)
