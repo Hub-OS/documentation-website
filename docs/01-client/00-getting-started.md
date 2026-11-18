@@ -80,6 +80,8 @@ Some starter mods (Note: some mods have dependencies that can be automatically i
 
 If you want to start from scratch take a look at the [Packages](/client/packages) page for the base requirements of each type of mod.
 
+And for some balancing tips check out [Balancing Pitfalls](/client/balancing-pitfalls)
+
 ## Utilizing Types
 
 If you provide correct type information for your function parameters, the Lua extension can provide in-editor documentation and code suggestions from the type definitions file.
