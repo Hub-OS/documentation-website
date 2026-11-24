@@ -144,6 +144,7 @@ const COMPRESSED_RETURN_TYPES = [
       "Returns a list of `tileset_path`",
       "Returns a list of area_ids",
       "Returns a list of all registered command names",
+      "Returns a list of asset paths",
     ],
   },
   { type: "fun(): any", list: ["Returns an iterator from an async iterator"] },

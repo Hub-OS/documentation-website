@@ -112,7 +112,7 @@ Prevents the player from moving. Multiple locks can exist at a time.
 
 Removes a lock on the player's movement.
 
-### `Net.set_player_restrictions(player_id, path)`
+### `Net.set_player_restrictions(player_id, path?)`
 
 - `path`: `string`
   - Server asset path to a toml file.

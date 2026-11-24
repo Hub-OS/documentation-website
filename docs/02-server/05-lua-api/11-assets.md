@@ -1,5 +1,9 @@
 # Assets
 
+### `Net.list_assets()`
+
+Returns a list of asset paths.
+
 ### `Net.update_asset(server_path, content)`
 
 - `content`: `string`
