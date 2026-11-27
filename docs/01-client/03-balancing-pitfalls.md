@@ -43,6 +43,8 @@ Keep in mind you will usually need to come back and rebalance a mod after publis
 - Being unaware of whether an element is multi-hit or non-multi-hit on chips.
   - Boosting wood +50 can make some scary bees.
   - Looking at [Link Navi System Boosts](<https://www.therockmanexezone.com/wiki/Link_Navis_(MMBN6)>) can help hint at this.
+- 200+ Damage CS
+  - Link Navis may reach close to 200, but cap ATK to 5 to avoid breaking Life Aura
 - Skipping the [General](#general) pitfalls list.
   - Contains tips that apply to all mods, don't forget to read it!
 
